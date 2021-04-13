@@ -34,6 +34,7 @@ Something like "Comparative judgement in mathematics education research: a meta-
 * Perhaps enough to simply email and ask the lead author to reply with the .csv (though we could still use an online form to gather responses)
 * We need to add metadata to [data/00-judging_sessions.yml](data/00-judging_sessions.yml)
 * As part of that process, we need to look closely at the data that has been provided and compare with what is reported in the paper (see 00-process-raw-files.R and 01-data-summary.Rmd)
+* Technical point: in cases where the researcher(s) have filtered out judges (e.g. for badly misfitting or implausibly low time spent judging) do we want the _raw_ judgement data or the _filtered_ judgement data? Perhaps the line to take is that we want the judgement data "as analysed in the research", i.e. after filtering?
 
 ## RQ1: How do assessment characteristics influence reliability?
 
