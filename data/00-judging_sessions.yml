@@ -26,6 +26,7 @@
       N_R: 18
       items: scripts with solutions to 3 Bowland tasks
       judge_expertise: expert
+      note: "TODO: should this be combined with Bowland070211data?"
     - study: Bowland070211data
       N_A: 11
       N_R: 18
@@ -36,6 +37,7 @@
       N_R: 18
       items: scripts from GCSE exams
       judge_expertise: expert
+      note: "TODO: should this be combined with GCSE070211data?"
     - study: GCSE070211data
       N_A: 11
       N_R: 18
@@ -53,6 +55,7 @@
       N_R: 168
       items: answers to a conceptual question
       judge_expertise: expert
+      note: "TODO: combine with expert2?"
     - study: expert2
       N_A: 11
       N_R: 168
@@ -68,6 +71,7 @@
       N_R: 168
       items: answers to a conceptual question
       judge_expertise: peer
+      note: "TODO: combine with peer2?"
     - study: peer2
       N_A: 93
       N_R: 168

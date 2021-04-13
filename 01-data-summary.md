@@ -525,7 +525,7 @@ expert
 
 <td style="text-align:left;">
 
-NA
+TODO: should this be combined with Bowland070211data?
 
 </td>
 
@@ -605,7 +605,7 @@ expert
 
 <td style="text-align:left;">
 
-NA
+TODO: should this be combined with GCSE070211data?
 
 </td>
 
@@ -691,7 +691,7 @@ expert
 
 <td style="text-align:left;">
 
-NA
+TODO: combine with expert2?
 
 </td>
 
@@ -811,7 +811,7 @@ peer
 
 <td style="text-align:left;">
 
-NA
+TODO: combine with peer2?
 
 </td>
 
@@ -1712,6 +1712,149 @@ individual question responses to various A-Level exam questions
 <td style="text-align:left;">
 
 expert
+
+</td>
+
+<td style="text-align:left;">
+
+TODO: get this data\!
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+Various things to do:
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+judging\_session
+
+</th>
+
+<th style="text-align:left;">
+
+note
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Bisson2016\_calculus
+
+</td>
+
+<td style="text-align:left;">
+
+TODO: two participants were removed from analyses - check value for
+N\_A, should it be 28?
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Jones2014\_expert1
+
+</td>
+
+<td style="text-align:left;">
+
+TODO: combine with expert2?
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Jones2014\_peer1
+
+</td>
+
+<td style="text-align:left;">
+
+TODO: combine with peer2?
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Jones2015\_Bowland030211data
+
+</td>
+
+<td style="text-align:left;">
+
+TODO: should this be combined with Bowland070211data?
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Jones2015\_GCSE030211data
+
+</td>
+
+<td style="text-align:left;">
+
+TODO: should this be combined with GCSE070211data?
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+McMahon2015\_expert
+
+</td>
+
+<td style="text-align:left;">
+
+TODO: GET THIS DATA\!
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Jones2016\_scripts
 
 </td>
 

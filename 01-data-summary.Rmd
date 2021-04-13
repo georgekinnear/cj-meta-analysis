@@ -166,3 +166,12 @@ judgement_data_tidy %>%
   select(judging_session, citation, items, judge_expertise, note) %>% 
   basic_kable()
 ```
+
+Various things to do:
+
+```{r}
+judgement_data_tidy %>% 
+  filter(str_detect(note, "TODO")) %>% 
+  select(judging_session, note) %>% 
+  basic_kable()
+```

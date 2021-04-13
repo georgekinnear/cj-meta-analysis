@@ -1,12 +1,12 @@
 project_id,doi,open_data,republish,study,N_A,N_R,items,judge_expertise,note
-Jones2015,10.1007/s10763-013-9497-6,FALSE,TRUE,Bowland030211data,12,18,scripts with solutions to 3 Bowland tasks,expert,NA
+Jones2015,10.1007/s10763-013-9497-6,FALSE,TRUE,Bowland030211data,12,18,scripts with solutions to 3 Bowland tasks,expert,TODO: should this be combined with Bowland070211data?
 Jones2015,10.1007/s10763-013-9497-6,FALSE,TRUE,Bowland070211data,11,18,scripts with solutions to 3 Bowland tasks,expert,NA
-Jones2015,10.1007/s10763-013-9497-6,FALSE,TRUE,GCSE030211data,12,18,scripts from GCSE exams,expert,NA
+Jones2015,10.1007/s10763-013-9497-6,FALSE,TRUE,GCSE030211data,12,18,scripts from GCSE exams,expert,TODO: should this be combined with GCSE070211data?
 Jones2015,10.1007/s10763-013-9497-6,FALSE,TRUE,GCSE070211data,11,18,scripts from GCSE exams,expert,NA
-Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,expert1,11,168,answers to a conceptual question,expert,NA
+Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,expert1,11,168,answers to a conceptual question,expert,TODO: combine with expert2?
 Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,expert2,11,168,answers to a conceptual question,expert,NA
 Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,novice,9,168,answers to a conceptual question,novice,NA
-Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,peer1,100,168,answers to a conceptual question,peer,NA
+Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,peer1,100,168,answers to a conceptual question,peer,TODO: combine with peer2?
 Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,peer2,93,168,answers to a conceptual question,peer,NA
 McMahon2015,10.1080/0969594X.2014.978839,FALSE,TRUE,expert,5,154,writeup of a science investigation by 14-15-year-olds,expert,TODO: GET THIS DATA!
 McMahon2015,10.1080/0969594X.2014.978839,FALSE,TRUE,peer,37,154,writeup of a science investigation by 14-15-year-olds,peer,NA
