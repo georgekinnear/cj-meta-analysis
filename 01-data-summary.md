@@ -1390,6 +1390,8 @@ NA
 
 </table>
 
+## Issues with the data
+
 The following sessions have \(N_A\) or \(N_R\) values that differ from
 those expected:
 

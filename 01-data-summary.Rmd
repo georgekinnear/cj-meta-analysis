@@ -147,6 +147,8 @@ judgement_data <- judgement_data_tidy %>%
   select(judging_session, judge, won, lost)
 ```
 
+## Issues with the data
+
 The following sessions have $N_A$ or $N_R$ values that differ from those expected:
 
 ```{r}
