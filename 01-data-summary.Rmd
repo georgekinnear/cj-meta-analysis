@@ -1,0 +1,165 @@
+---
+title: 'CJ meta-analysis: data summary'
+author: "George Kinnear"
+date: "12/04/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+
+# for plotting
+theme_set(theme_minimal())
+#library(patchwork)
+
+library(knitr)
+library(kableExtra)
+basic_kable = function(df) {
+  df %>% 
+    kable() %>%
+    kable_styling(bootstrap_options = "striped", full_width = F)
+}
+```
+
+We gathered comparative judgement data from a range of research studies.
+
+```{r}
+# Read in the data about sessions
+sessions <- yaml::read_yaml("data/00-judging_sessions.yml")
+
+# tibble(
+#   project_id = map_chr(sessions, "project_id"),
+#   citation = map_chr(sessions, "citation"),
+#   doi = map_chr(sessions, "doi"),
+#   open_data = map_chr(sessions, "open_data"),
+#   republish = map_lgl(sessions, "republish"),
+#   judging_sessions = map(sessions, "judging_sessions")
+# ) %>%
+#   unnest_longer(judging_sessions) %>%
+#   unnest_wider(judging_sessions)
+
+all_sessions <- tibble(project = sessions) %>% 
+  unnest_wider(project) %>% 
+  mutate(
+    open_data = map_chr(sessions, "open_data")
+  ) %>% 
+  unnest_longer(judging_sessions) %>%
+  unnest_wider(judging_sessions)
+
+# save a summary of the data as a .csv
+all_sessions %>% 
+  select(-citation) %>% 
+  write_csv("data/00-judging_sessions_summary.csv")
+
+```
+
+* This document summarises the sample in a readable way.
+* It draws on raw data in the `data/00-judging_sessions.yml` file.
+* The raw data is also summarised in CSV format in `data/00-judging_sessions_summary.csv`.
+
+# Publications/projects
+
+Judgement data was gathered from the publications/projects summarised in the table below.
+
+* `open_data` records whether the judgement data is already publicly available
+* `republish` records whether we have permission to publish the judgement data in our open dataset
+
+```{r}
+all_sessions %>% 
+  select(project_id, citation, doi, open_data, republish) %>% 
+  mutate(doi = if_else(str_detect(doi, "doi.org"), doi, paste0("https://doi.org/", doi))) %>% 
+  mutate(doi_link = text_spec(doi, link = doi)) %>% 
+  select(-doi) %>% 
+  distinct() %>%
+  kable("html", escape = FALSE) %>%
+  kable_styling() 
+```
+
+# CJ sessions
+
+```{r}
+all_sessions %>% 
+  select(-citation, -doi, -open_data, -republish) %>%
+  kable("html", escape = FALSE) %>%
+  kable_styling() %>%
+  collapse_rows(columns = 1, valign = "top")
+```
+
+```{r message=FALSE, warning=FALSE}
+files <- fs::dir_ls(path = "data", glob = "*.csv")
+
+judgement_data_raw <- tibble(path = files) %>% 
+  filter(!str_starts(path, "data/00-")) %>% 
+  # add columns describing the course and cohort from parsing the filename
+  mutate(
+    judging_session = str_remove_all(path, "data/|.csv"),
+  ) %>% 
+  mutate(
+    csv_contents = map(path, read_csv, na = c("-"))
+  )
+
+judgement_data_tidy <- judgement_data_raw %>% 
+  # Tidy up the contents of each judgement data CSV to just the judge/won/lost columns
+  mutate(
+    csv_contents = map(csv_contents, function(df) {
+      if (all(has_name(df, c("judge", "candidate_chosen", "candidate_not_chosen")))) {
+        df_out <- df %>% select(
+          judge = judge,
+          won = candidate_chosen,
+          lost = candidate_not_chosen
+        ) %>% return()
+      } else if (all(has_name(df, c("judge", "won", "lost")))) {
+        df_out <- df %>% select(judge, won, lost)
+      } else {
+        warning("Could not find suitable CJ decision columns")
+        df_out <- tibble(judge = 1, won = 1, lost = 1)
+      }
+      # change all columns to characters, so they can be combined later
+      return(df_out %>% mutate_all(as.character))
+    })
+  ) %>% 
+  # check the number of representations and assessors
+  mutate(
+    observed_N_A = map_int(csv_contents, function(df) {
+      df %>% select(judge) %>% distinct() %>% nrow() %>% return()
+    }),
+    observed_N_R = map_int(csv_contents, function(df) {
+      bind_rows(
+        df %>% select(script = won),
+        df %>% select(script = lost),
+      ) %>% distinct() %>% nrow() %>% return()
+    }),
+    observed_N_C = map_int(csv_contents, nrow)
+  ) %>% 
+  # cross-check with the metadata
+  full_join(
+    all_sessions %>% 
+      mutate(judging_session = if_else(is.na(study), project_id, paste0(project_id, "_", study)), .before = 1),
+    by = "judging_session"
+  )
+
+
+judgement_data <- judgement_data_tidy %>% 
+  # unpack all the results and tidy up
+  unnest(cols = c(csv_contents)) %>% 
+  select(judging_session, judge, won, lost)
+```
+
+The following sessions have $N_A$ or $N_R$ values that differ from those expected:
+
+```{r}
+judgement_data_tidy %>% 
+  select(judging_session, contains("N_", ignore.case = FALSE)) %>% 
+  filter(observed_N_R != N_R | observed_N_A != N_A) %>% 
+  basic_kable()
+```
+
+The following sessions have missing data:
+
+```{r}
+judgement_data_tidy %>% 
+  filter(is.na(observed_N_C)) %>% 
+  select(judging_session, citation, items, judge_expertise, note) %>% 
+  basic_kable()
+```

@@ -1,0 +1,22 @@
+project_id,doi,open_data,republish,study,N_A,N_R,items,judge_expertise,note
+Jones2015,10.1007/s10763-013-9497-6,FALSE,TRUE,Bowland030211data,12,18,scripts with solutions to 3 Bowland tasks,expert,NA
+Jones2015,10.1007/s10763-013-9497-6,FALSE,TRUE,Bowland070211data,11,18,scripts with solutions to 3 Bowland tasks,expert,NA
+Jones2015,10.1007/s10763-013-9497-6,FALSE,TRUE,GCSE030211data,12,18,scripts from GCSE exams,expert,NA
+Jones2015,10.1007/s10763-013-9497-6,FALSE,TRUE,GCSE070211data,11,18,scripts from GCSE exams,expert,NA
+Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,expert1,11,168,answers to a conceptual question,expert,NA
+Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,expert2,11,168,answers to a conceptual question,expert,NA
+Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,novice,9,168,answers to a conceptual question,novice,NA
+Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,peer1,100,168,answers to a conceptual question,peer,NA
+Jones2014,10.1080/03075079.2013.821974,FALSE,TRUE,peer2,93,168,answers to a conceptual question,peer,NA
+McMahon2015,10.1080/0969594X.2014.978839,FALSE,TRUE,expert,5,154,writeup of a science investigation by 14-15-year-olds,expert,TODO: GET THIS DATA!
+McMahon2015,10.1080/0969594X.2014.978839,FALSE,TRUE,peer,37,154,writeup of a science investigation by 14-15-year-olds,peer,NA
+Jones2015b,10.1016/j.stueduc.2015.09.004,FALSE,TRUE,NA,76,24,answers to a question about fractions,novice,NA
+Bisson2019,10.1080/14794802.2019.1692060,https://doi.org/10.17028/rd.lboro.5845683.v1,TRUE,NA,10,189,responses to an open-ended question about derivatives,expert,NA
+Jones2013,NA,FALSE,TRUE,NA,8,25,answers to a question about fractions,expert,NA
+Bisson2016,10.1007/s40753-016-0024-3,FALSE,TRUE,stats,10,20,written explanation of p-value,expert,NA
+Bisson2016,10.1007/s40753-016-0024-3,FALSE,TRUE,calculus,30,42,written explanation of derivatives,expert,"TODO: two participants were removed from analyses - check value for N_A, should it be 28?"
+Bisson2016,10.1007/s40753-016-0024-3,FALSE,TRUE,algebra,10,46,written explanation of how letters are used in algebra,expert,NA
+Davies2020,10.1007/s10649-020-09984-x,https://doi.org/10.17028/rd.lboro.8940149.v1,TRUE,NA,11,143,written summaries of a proof,expert,NA
+Jones2019,10.1002/berj.3519,https://repository.lboro.ac.uk/s/2d4cfa142ebf1ff24841,TRUE,NA,10,188,written explanation of how letters are used in algebra,expert,NA
+Jones2016,10.1002/BERJ.3224,FALSE,TRUE,scripts,20,546,individual question responses to various A-Level exam questions,expert,TODO: get this data!
+Jones2016,10.1002/BERJ.3224,FALSE,TRUE,perfect,18,48,model answers for various A-Level exam questions,expert,NA
