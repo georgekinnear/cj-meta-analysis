@@ -19,6 +19,21 @@ Something like "Comparative judgement in mathematics education research: a meta-
 * Comparative judgement
   * Not using adaptivity
 
+### Method
+
+Systematic approach to identifying CJ studies
+
+* Do a literature search for uses of "comparative judgement" e.g. https://www.lens.org/lens/search/scholar/list?q=(%22comparative%20judgement%22)
+* Consolidate the resulting list, grouping studies by lead author
+* Invite each lead author to contribute data
+* Send a followup reminder 1 month later if they have not responded
+* Have a closing date one month after that, beyond which we will count it as a null response
+
+Collecting and storing the data
+
+* Perhaps enough to simply email and ask the lead author to reply with the .csv (though we could still use an online form to gather responses)
+* We need to add metadata to `data/00-judging_sessions.yml`
+
 ## RQ1: How do assessment characteristics influence reliability?
 
 Building on the prior findings of Verhavert et al. (2019), where the number of comparisons per representation had the strongest association with reliability, we will investigate the impact on reliability of various characteristics that can be varied when setting up a CJ session:
@@ -55,3 +70,10 @@ Standard errors
 NB - could perhaps also do a simulation study to investigate split-halves, similar to the approach used by Bramley (2015) to investigate the effect of adaptivity on reliability.
 ![image](https://user-images.githubusercontent.com/30723394/114529618-0de7c600-9c42-11eb-82d1-0e7c91dcc4eb.png)
 
+# References
+
+Bramley, T. (2015). Investigating the reliability of Adaptive Comparative Judgment. Retrieved from http://www.cambridgeassessment.org.uk/
+
+Verhavert, S., Bouwer, R., Donche, V., & De Maeyer, S. (2019). A meta-analysis on the reliability of comparative judgement. Assessment in Education: Principles, Policy & Practice, 26(5), 541–562. https://doi.org/10.1080/0969594X.2019.1602027
+
+Verhavert, S., De Maeyer, S., Donche, V., & Coertjens, L. (2018). Scale Separation Reliability: What Does It Mean in the Context of Comparative Judgment? Applied Psychological Measurement, 42(6), 428–445. https://doi.org/10.1177/0146621617748321
