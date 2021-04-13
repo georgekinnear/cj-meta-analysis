@@ -32,7 +32,7 @@ Something like "Comparative judgement in mathematics education research: a meta-
 #### Collecting and storing the data
 
 * Perhaps enough to simply email and ask the lead author to reply with the .csv (though we could still use an online form to gather responses)
-* We need to add metadata to [data/00-judging_sessions.yml]
+* We need to add metadata to [data/00-judging_sessions.yml](data/00-judging_sessions.yml)
 
 ## RQ1: How do assessment characteristics influence reliability?
 
