@@ -19,7 +19,7 @@ Something like "Comparative judgement in mathematics education research: a meta-
 * Comparative judgement
   * Not using adaptivity
 
-### Method
+## Method
 
 #### Systematic approach to identifying CJ studies
 
