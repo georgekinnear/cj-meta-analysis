@@ -21,7 +21,7 @@ Something like "Comparative judgement in mathematics education research: a meta-
 
 ### Method
 
-Systematic approach to identifying CJ studies
+#### Systematic approach to identifying CJ studies
 
 * Do a literature search for uses of "comparative judgement" e.g. https://www.lens.org/lens/search/scholar/list?q=(%22comparative%20judgement%22)
 * Consolidate the resulting list, grouping studies by lead author
@@ -29,10 +29,10 @@ Systematic approach to identifying CJ studies
 * Send a followup reminder 1 month later if they have not responded
 * Have a closing date one month after that, beyond which we will count it as a null response
 
-Collecting and storing the data
+#### Collecting and storing the data
 
 * Perhaps enough to simply email and ask the lead author to reply with the .csv (though we could still use an online form to gather responses)
-* We need to add metadata to `data/00-judging_sessions.yml`
+* We need to add metadata to [data/00-judging_sessions.yml]
 
 ## RQ1: How do assessment characteristics influence reliability?
 
