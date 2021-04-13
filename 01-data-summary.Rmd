@@ -2,7 +2,8 @@
 title: 'CJ meta-analysis: data summary'
 author: "George Kinnear"
 date: "12/04/2021"
-output: html_document
+output: github_document
+always_allow_html: true
 ---
 
 ```{r setup, include=FALSE}
