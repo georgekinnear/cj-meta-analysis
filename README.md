@@ -34,6 +34,7 @@ Something like "Comparative judgement as a research tool: a meta-analysis and us
    - Perhaps also search works citing Thurstone 1927, other key studies, ...
 * Consolidate the resulting list, grouping studies by lead author
 * Invite each lead author to contribute data
+  - remember to explicity ask whether we have permission to republish the dataset along with our open data+code
 * Send a followup reminder 1 month later if they have not responded
 * Have a closing date one month after that, beyond which we will count it as a null response
 
@@ -71,6 +72,8 @@ Verhavert et al. (2018) Figure C1 bottom left panel shows a reasonably good corr
 Split-halves reliability
 * How does it compare to SSR?
 * How many iterations do you need to do for stable results?
+  - For small studies, it may be that you just do all possible splits (and there aren't 1000)
+  - Could be "mission creep" to investigate this question.
 
 ## Other questions?
 
