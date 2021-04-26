@@ -7,6 +7,7 @@ TODO: flesh out the points made under Scope: https://github.com/georgekinnear/cj
 Possible criteria:
 
 * must be based on actual comparative judgement decisions made by humans, i.e. no simulation studies or use of data like tennis matches to rank players
+* written in English
 
 ## Search strategy
 
