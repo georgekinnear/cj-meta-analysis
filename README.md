@@ -56,7 +56,13 @@ Building on the prior findings of Verhavert et al. (2019), where the number of c
 | N_CR| Number of comparisons per representation (N_C/N_R * 2)
 | Expertise	|Judges can be either <ul><li>Expert - with high level of domain-specific knowledge relevant to the task</li><li>Novice - little or no domain-specific knowledge</li><li>Peer - contributed a response to the task that is being judged</li></ul>|
 
-Also consider N_CA, the number of comparisons made by each assessor? There has been some discussion about this point, whether judges get fatigued over the course of judging or conversely might improve with experience of the task. It is touched on by Verhavert et al. (2019, bottom of p. 544) but they do not present any data on it.
+Other things to consider:
+
+* N_CA, the number of comparisons made by each assessor? There has been some discussion about this point, whether judges get fatigued over the course of judging or conversely might improve with experience of the task. It is touched on by Verhavert et al. (2019, bottom of p. 544) but they do not present any data on it.
+* format/content of the items - we will gather a short description in the "items" field as we go, then perhaps we should bin them into categories (e.g. multi-page response, short text, maths solution, video, ...)
+* median judging time (if available in the data)
+
+
 
 ## RQ2: How does SSR compare with split-halves reliability?
 
