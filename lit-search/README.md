@@ -13,14 +13,9 @@ This searches various datbases (including Crossref), looking at all fields, incl
 Search for the following keyword combinations:
 
 - "comparative judgement" OR "comparative judgment"
-- ("pairwise comparisons" OR "paired comparisons") AND "Bradley"
-
-(The inclusion of Bradley is to ensure there is some use of the Bradley-Terry model to combine the paired comparisons.)
+- ("pairwise comparisons" OR "paired comparisons") AND "Bradley"  (The inclusion of Bradley is to ensure there is some use of the Bradley-Terry model to combine the paired comparisons.)
 
 Filtering to publications from 2000 onwards, gives 1851 results: https://link.lens.org/BYK5bDJelFg
-
-These results are saved here: https://www.lens.org/lens/search/scholar/list?collectionId=190655
-This is another copy of the list of results, where we could remove items to filter them out: https://www.lens.org/lens/search/scholar/list?collectionId=190654
 
 ### Other sources?
 Perhaps also search for work that cites key papers? e.g.
@@ -37,8 +32,10 @@ We can be open to adding additional sources recommended by the researchers that 
 
 ## Managing the data
 From this, produce a single list of papers.
+- The lens.org results are saved here: https://www.lens.org/lens/search/scholar/list?collectionId=190655
 
 Divide them up for us to evaluate according to the criteria above. (TODO: decide a way to do this, and a method for recording the decisions.)
+- This is another copy of the lens.org results, where we could remove items to filter them out: https://www.lens.org/lens/search/scholar/list?collectionId=190654 - but that's perhaps hard to keep track of which ones have been screened already.
 
 Ultimately this should result in a filtered list of papers where we have identified that CJ was used and there should be judgement data that we could include in our analysis.
 
@@ -80,3 +77,11 @@ What to do about these cases that are unusual?
 
 * https://doi.org/10.1016/j.ejor.2015.06.069
   - this gives an example of ranking tennis players, but doesn't seem to be using Bradley-Terry (though it cites work that does, which is why it was picked up in the search).
+
+* Reynvoet, B., Vos, H., & Henik, A. (2019). Comparative judgment of familiar objects is modulated by their size. Experimental psychology. https://doi.org/10.1027/1618-3169/a000418
+  - PDF available at https://www.researchgate.net/publication/330362323_Comparative_Judgment_of_Familiar_Objects_Is_Modulated_by_Their_Size
+  - this is an example of a psychology experiment that has participants do paired comparisons, but does not try to use these to produce a scale
+
+* Araki, K., Hirose, Y., & Komaki, F. (2019). Paired comparison models with age effects modeled as piecewise quadratic splines. International Journal of Forecasting, 35(2), 733-740. https://doi.org/10.1016/j.ijforecast.2018.02.006
+  - uses data on sumo wrestlers
+  - perhaps representative of a section of the literature that will be drawing on public data, mainly with a technical aspect?
