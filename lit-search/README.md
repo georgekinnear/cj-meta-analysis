@@ -4,6 +4,10 @@
 
 TODO: flesh out the points made under Scope: https://github.com/georgekinnear/cj-meta-analysis/blob/main/README.md#scope
 
+Possible criteria:
+
+* must be based on actual comparative judgement decisions made by humans, i.e. no simulation studies or use of data like tennis matches to rank players
+
 ## Search strategy
 
 ### lens.org
@@ -13,9 +17,9 @@ This searches various datbases (including Crossref), looking at all fields, incl
 Search for the following keyword combinations:
 
 - "comparative judgement" OR "comparative judgment"
-- ("pairwise comparisons" OR "paired comparisons") AND "Bradley"  (The inclusion of Bradley is to ensure there is some use of the Bradley-Terry model to combine the paired comparisons.)
+- ("pairwise comparisons" OR "paired comparisons") AND "Bradley" AND "Terry"  (The inclusion of Bradley+Terry is to ensure there is some use of the Bradley-Terry model to combine the paired comparisons.)
 
-Filtering to publications from 2000 onwards, gives 1851 results: https://link.lens.org/BYK5bDJelFg
+Filtering to publications from 2000 onwards, gives 1156 results: https://link.lens.org/ivKDS6EocKk
 
 ### Other sources?
 Perhaps also search for work that cites key papers? e.g.
@@ -36,6 +40,10 @@ From this, produce a single list of papers.
 
 Divide them up for us to evaluate according to the criteria above. (TODO: decide a way to do this, and a method for recording the decisions.)
 - This is another copy of the lens.org results, where we could remove items to filter them out: https://www.lens.org/lens/search/scholar/list?collectionId=190654 - but that's perhaps hard to keep track of which ones have been screened already.
+- Perhaps a way forward is using a downloaded .bib file
+  * Here is a download of the lens.org results: [.bib](lit-search/lens-export-2021-04-26.bib)
+  * Using JabRef, these can be added to groups to keep track of decisions, e.g. ![image](https://user-images.githubusercontent.com/30723394/116118433-34334a00-a6b5-11eb-90f5-5f3d6d0bc7a4.png)
+
 
 Ultimately this should result in a filtered list of papers where we have identified that CJ was used and there should be judgement data that we could include in our analysis.
 
