@@ -4,7 +4,7 @@
 
 This article should be the one that people cite when they do a CJ study, to justify their approach to checking reliability.
 
-Something like "Comparative judgement as a research tool: a meta-analysis and users' guide"
+Something like "Comparative judgement as a research tool: a meta-analysis of reliability"
 
 * Provide a self-contained introduction to CJ and BTM
   * Perhaps also a bit of a survey of the range of uses in the literature, as part of describing our sample?
@@ -29,11 +29,8 @@ Something like "Comparative judgement as a research tool: a meta-analysis and us
 
 #### Systematic approach to identifying CJ studies
 
-* Do a literature search for uses of "comparative judgement" e.g. https://www.lens.org/lens/search/scholar/list?q=(%22comparative%20judgement%22)
-  * Also need to check for references to "paired comparisons" - though we will only included cases where these are combined to produce a rank order.
-   - Other variants to search for: "paired comparisons", "comparative judgment", "Bradley-Terry", "pairwise comparisons" ...? <all to have a think about other search terms>
-   - Perhaps also search works citing Thurstone 1927, other key studies, ...
-* Consolidate the resulting list, grouping studies by lead author
+See [details of plan for literature search](lit-search/README.md).
+
 * Invite each lead author to contribute data
   - remember to explicity ask whether we have permission to republish the dataset along with our open data+code
 * Send a followup reminder 1 month later if they have not responded
