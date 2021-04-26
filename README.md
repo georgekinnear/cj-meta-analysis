@@ -14,10 +14,11 @@ Something like "Comparative judgement in education research: a meta-analysis and
 ### Scope
 
 * Education research
-  * Focus is not specifically on mathematics education.
+  * Focus is education (but not specifically on mathematics education).
   * Focus on education research rather than practical use in education - how to draw that line clearly? Perhaps "published => research" is good enough (i.e. someone using CJ for practical teaching but taking the time to write it up, counts as research) but we can also include research that is not published (criteria needed there?)
 * Comparative judgement
   * Not using adaptivity
+  * Also need to check for references to "paired comparisons" - though we will only included cases where these are combined to produce a rank order.
 
 ## Method
 
