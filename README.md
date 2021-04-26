@@ -67,13 +67,13 @@ Other things to consider:
 
 Verhavert et al. (2018) Figure C1 bottom left panel shows a reasonably good correlation, but with only 29 data points, so this would extend that and could possibly allow for finer-grained analysis based on other assessment characteristics, like in RQ1.
 
-Split-halves reliability
-* How does it compare to SSR?
-* How many iterations do you need to do for stable results?
-  - For small studies, it may be that you just do all possible splits (and there aren't 1000)
-  - Could be "mission creep" to investigate this question.
 
 ## Other questions?
+
+Split-halves
+* How many iterations do you need to do for stable results?
+  - For small studies, it may be that you just do all possible splits (and there aren't 1000)
+  - Could be "mission creep" to investigate this question along with everything else above.
 
 Misfits
 * Is it worth bothering about these?
