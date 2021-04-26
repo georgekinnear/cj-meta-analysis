@@ -21,6 +21,11 @@ Perhaps also search for work that cites:
 - Bradley, R. A., & Terry, M. E. (1952). Rank analysis of incomplete block designs: I. The method of paired comparisons. Biometrika, 39(3/4), 324.
 - ...?
 
+From this, produce a single list of papers to evaluate according to the criteria above.
+
+Then for the filtered list of papers, approach the lead authors requesting the judgement data:
+
+> TODO: draft a template email. Remember to include question about whether we can include the dataset in our repository.
 
 ## Edge cases
 
