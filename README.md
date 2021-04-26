@@ -4,7 +4,7 @@
 
 This article should be the one that people cite when they do a CJ study, to justify their approach to checking reliability.
 
-Something like "Comparative judgement in education research: a meta-analysis and users' guide"
+Something like "Comparative judgement as a research tool: a meta-analysis and users' guide"
 
 * Provide a self-contained introduction to CJ and BTM
   * Perhaps also a bit of a survey of the range of uses in the literature, as part of describing our sample?
@@ -13,18 +13,21 @@ Something like "Comparative judgement in education research: a meta-analysis and
 
 ### Scope
 
-* Education research
+* Education research - just one part of research, e.g. could be psychology, business, ....
   * Focus is education (but not specifically on mathematics education).
   * Focus on education research rather than practical use in education - how to draw that line clearly? Perhaps "published => research" is good enough (i.e. someone using CJ for practical teaching but taking the time to write it up, counts as research) but we can also include research that is not published (criteria needed there?)
 * Comparative judgement
   * Not using adaptivity
-  * Also need to check for references to "paired comparisons" - though we will only included cases where these are combined to produce a rank order.
+  * The paired decisions are sent to Bradley-Terry and reliability is computed.
 
 ## Method
 
 #### Systematic approach to identifying CJ studies
 
 * Do a literature search for uses of "comparative judgement" e.g. https://www.lens.org/lens/search/scholar/list?q=(%22comparative%20judgement%22)
+  * Also need to check for references to "paired comparisons" - though we will only included cases where these are combined to produce a rank order.
+   - Other variants to search for: "paired comparisons", "comparative judgment", "Bradley-Terry", "pairwise comparisons" ...? <all to have a think about other search terms>
+   - Perhaps also search works citing Thurstone 1927, other key studies, ...
 * Consolidate the resulting list, grouping studies by lead author
 * Invite each lead author to contribute data
 * Send a followup reminder 1 month later if they have not responded
