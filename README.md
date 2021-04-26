@@ -13,16 +13,17 @@ Something like "Comparative judgement as a research tool: a meta-analysis and us
 
 ### Scope
 
-* Education research - just one part of research, e.g. could be psychology, business, ....
-  * Focus is education (but not specifically on mathematics education).
-  * Focus on education research rather than practical use in education - how to draw that line clearly? Perhaps "published => research" is good enough (i.e. someone using CJ for practical teaching but taking the time to write it up, counts as research) but we can also include research that is not published (criteria needed there?)
+* Use of CJ in research generally - may be in education but could be (e.g.) psychology, business, ....
+  * Much broader than just mathematics education.
+  * Focus on research rather than practical use in education - how to draw that line clearly? Perhaps "published => research" is good enough (i.e. someone using CJ for practical teaching but taking the time to write it up, counts as research)
+  * Can also include research that is not published (criteria needed there?)
   * Categories:
     - Peer reviewed articles
     - Reports (e.g. Ofqual, conference proceedings)
     - Unpublished
 * Comparative judgement
   * Not using adaptivity
-  * The paired decisions are sent to Bradley-Terry and reliability is computed.
+  * The paired decisions are sent to Bradley-Terry and reliability is computed. (Some research will use paired comparisons but never combine those to produce a rank order, so we would not include such studies.)
 
 ## Method
 
