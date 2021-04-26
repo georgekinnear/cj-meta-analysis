@@ -94,3 +94,6 @@ What to do about these cases that are unusual?
 * Araki, K., Hirose, Y., & Komaki, F. (2019). Paired comparison models with age effects modeled as piecewise quadratic splines. International Journal of Forecasting, 35(2), 733-740. https://doi.org/10.1016/j.ijforecast.2018.02.006
   - uses data on sumo wrestlers
   - perhaps representative of a section of the literature that will be drawing on public data, mainly with a technical aspect?
+
+* Kawamura, G., Bagarinao, T., Yong, A. S. K., Fen, T. C., & Lim, L.-S. (2017-01-12). Shelter colour preference of the postlarvae of the giant freshwater prawn Macrobrachium rosenbergii. Fisheries Science, 83(2), 259–264. https://doi.org/10.1007/s12562-017-1062-8
+  - Nonhuman judges(!)
