@@ -4,7 +4,7 @@
 
 This article should be the one that people cite when they do a CJ study, to justify their approach to checking reliability.
 
-Something like "Comparative judgement in mathematics education research: a meta-analysis and users' guide"
+Something like "Comparative judgement in education research: a meta-analysis and users' guide"
 
 * Provide a self-contained introduction to CJ and BTM
   * Perhaps also a bit of a survey of the range of uses in the literature, as part of describing our sample?
@@ -13,8 +13,8 @@ Something like "Comparative judgement in mathematics education research: a meta-
 
 ### Scope
 
-* Mathematics education research
-  * Focus specifically on mathematics education? Perhaps that is unnecessarily narrow.
+* Education research
+  * Focus is not specifically on mathematics education.
   * Focus on education research rather than practical use in education - how to draw that line clearly? Perhaps "published => research" is good enough (i.e. someone using CJ for practical teaching but taking the time to write it up, counts as research) but we can also include research that is not published (criteria needed there?)
 * Comparative judgement
   * Not using adaptivity
