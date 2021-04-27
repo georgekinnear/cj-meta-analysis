@@ -7,6 +7,7 @@ TODO: flesh out the points made under Scope: https://github.com/georgekinnear/cj
 Possible criteria:
 
 * must be based on actual comparative judgement decisions made by humans, i.e. no simulation studies or use of data like tennis matches to rank players
+* written in English
 
 ## Search strategy
 
@@ -43,6 +44,7 @@ Divide them up for us to evaluate according to the criteria above. (TODO: decide
 - Perhaps a way forward is using a downloaded .bib file
   * Here is a download of the lens.org results: [.bib](lens-export-2021-04-26.bib)
   * Using JabRef, these can be added to groups to keep track of decisions, e.g. ![image](https://user-images.githubusercontent.com/30723394/116118433-34334a00-a6b5-11eb-90f5-5f3d6d0bc7a4.png)
+  * I have gone throug the first ~50 and so far have only found 1-2 that might be relevant. It's taking about 1min per entry on average, so that's about 18 hours to do the rest(!)
 
 
 Ultimately this should result in a filtered list of papers where we have identified that CJ was used and there should be judgement data that we could include in our analysis.
@@ -93,3 +95,6 @@ What to do about these cases that are unusual?
 * Araki, K., Hirose, Y., & Komaki, F. (2019). Paired comparison models with age effects modeled as piecewise quadratic splines. International Journal of Forecasting, 35(2), 733-740. https://doi.org/10.1016/j.ijforecast.2018.02.006
   - uses data on sumo wrestlers
   - perhaps representative of a section of the literature that will be drawing on public data, mainly with a technical aspect?
+
+* Kawamura, G., Bagarinao, T., Yong, A. S. K., Fen, T. C., & Lim, L.-S. (2017-01-12). Shelter colour preference of the postlarvae of the giant freshwater prawn Macrobrachium rosenbergii. Fisheries Science, 83(2), 259–264. https://doi.org/10.1007/s12562-017-1062-8
+  - Nonhuman judges(!)
