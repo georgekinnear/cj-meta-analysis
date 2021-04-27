@@ -44,6 +44,7 @@ Divide them up for us to evaluate according to the criteria above. (TODO: decide
 - Perhaps a way forward is using a downloaded .bib file
   * Here is a download of the lens.org results: [.bib](lens-export-2021-04-26.bib)
   * Using JabRef, these can be added to groups to keep track of decisions, e.g. ![image](https://user-images.githubusercontent.com/30723394/116118433-34334a00-a6b5-11eb-90f5-5f3d6d0bc7a4.png)
+  * I have gone throug the first ~50 and so far have only found 1-2 that might be relevant. It's taking about 1min per entry on average, so that's about 18 hours to do the rest(!)
 
 
 Ultimately this should result in a filtered list of papers where we have identified that CJ was used and there should be judgement data that we could include in our analysis.
