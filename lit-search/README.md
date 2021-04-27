@@ -15,17 +15,17 @@ Possible criteria:
 
 This searches various datbases (including Crossref), looking at all fields, including title, abstract, keywords and full text.
 
-Search for the following keyword combinations:
+An initial search for the following keyword combinations:
 
 - "comparative judgement" OR "comparative judgment"
 - ("pairwise comparisons" OR "paired comparisons") AND "Bradley" AND "Terry"  (The inclusion of Bradley+Terry is to ensure there is some use of the Bradley-Terry model to combine the paired comparisons.)
 
-Filtering to publications from 2000 onwards, gives 1156 results: https://link.lens.org/ivKDS6EocKk
+was filtered for publications from 2000 onwards, giving 1156 results: https://link.lens.org/ivKDS6EocKk
 
-Altering the query so that Bradley-Terry is always required:
+Checking the first 50 results, only 1 or 2 were actually relevant. To make the search more manageable, we refined the query so that Bradley-Terry is always required:
 > (("comparative judgment") OR ("comparative judgement") OR ("paired comparisons") OR ("pairwise comparisons") AND "Bradley" AND "Terry")
 
-gives 210 results, with the publication year filter removed: https://link.lens.org/dypRiEumdok
+This gives 210 results, with the publication year filter removed: https://link.lens.org/dypRiEumdok
 
 ### Other sources?
 Perhaps also search for work that cites key papers? e.g.
@@ -103,3 +103,7 @@ What to do about these cases that are unusual?
 
 * Kawamura, G., Bagarinao, T., Yong, A. S. K., Fen, T. C., & Lim, L.-S. (2017-01-12). Shelter colour preference of the postlarvae of the giant freshwater prawn Macrobrachium rosenbergii. Fisheries Science, 83(2), 259–264. https://doi.org/10.1007/s12562-017-1062-8
   - Nonhuman judges(!)
+
+* Crispino, M., Arjas, E., Vitelli, V., Barrett, N., & Frigessi, A. (2019). A Bayesian Mallows approach to nontransitive pair comparison data: How human are sounds?. The Annals of Applied Statistics, 13(1), 492-519. http://doi.org/10.1214/18-aoas1203
+  - see p. 496: 46 people each made 30 paired comparisons from a set of 12 sounds.
+  - but they do not use Bradley-Terry to analyse the results
