@@ -49,15 +49,11 @@ We can be open to adding additional sources recommended by the researchers that 
 
 ## Managing the data
 From this, produce a single list of papers.
-- The lens.org results are saved here: https://www.lens.org/lens/search/scholar/list?collectionId=190655
+- The lens.org results are saved here: [.bib](lens-export-2021-04-27.bib) [.csv](lens-export-2021-04-27.csv)
 
 Divide them up for us to evaluate according to the criteria above. (TODO: decide a way to do this, and a method for recording the decisions.)
-- This is another copy of the lens.org results, where we could remove items to filter them out: https://www.lens.org/lens/search/scholar/list?collectionId=190654 - but that's perhaps hard to keep track of which ones have been screened already.
-- Perhaps a way forward is using a downloaded .bib file
-  * Here is a download of the lens.org results: [.bib](lens-export-2021-04-26.bib)
-  * Using JabRef, these can be added to groups to keep track of decisions, e.g. ![image](https://user-images.githubusercontent.com/30723394/116118433-34334a00-a6b5-11eb-90f5-5f3d6d0bc7a4.png)
-  * I have gone throug the first ~50 and so far have only found 1-2 that might be relevant. It's taking about 1min per entry on average, so that's about 18 hours to do the rest(!)
-
+- Record decisions by editing the `groups` field in the .bib file
+- Using JabRef editing groups is quite easy, e.g. ![image](https://user-images.githubusercontent.com/30723394/116118433-34334a00-a6b5-11eb-90f5-5f3d6d0bc7a4.png)
 
 Ultimately this should result in a filtered list of papers where we have identified that CJ was used and there should be judgement data that we could include in our analysis.
 
