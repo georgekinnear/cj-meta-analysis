@@ -11,18 +11,25 @@ Possible criteria:
 
 ## Search strategy
 
-### lens.org
+### Database search
 
-This searches various datbases (including Crossref), looking at all fields, including title, abstract, keywords and full text.
+The Lens (lens.org) searches various databases, including Crossref. Searches can look for keyword matches in all fields, including title, abstract, keywords and full text.
 
 An initial search for the following keyword combinations:
 
-- "comparative judgement" OR "comparative judgment"
-- ("pairwise comparisons" OR "paired comparisons") AND "Bradley" AND "Terry"  (The inclusion of Bradley+Terry is to ensure there is some use of the Bradley-Terry model to combine the paired comparisons.)
+> "comparative judgement" OR "comparative judgment"
+> 
+> OR
+> 
+> ("pairwise comparisons" OR "paired comparisons") AND "Bradley" AND "Terry"
+> 
+> _(The inclusion of Bradley+Terry is to ensure there is some use of the Bradley-Terry model to combine the paired comparisons.)_
 
 was filtered for publications from 2000 onwards, giving 1156 results: https://link.lens.org/ivKDS6EocKk
 
-Checking the first 50 results, only 1 or 2 were actually relevant. To make the search more manageable, we refined the query so that Bradley-Terry is always required:
+Checking the first 50 results, only 1 or 2 were actually relevant (many results mentioned a "comparative judgement" only in the sense of making one comparison, rather than describing the paired comparisons approach).
+
+To make the search more manageable, we refined the query so that a mention of Bradley-Terry is always required:
 > (("comparative judgment") OR ("comparative judgement") OR ("paired comparisons") OR ("pairwise comparisons") AND "Bradley" AND "Terry")
 
 This gives 210 results, with the publication year filter removed: https://link.lens.org/dypRiEumdok
