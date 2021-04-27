@@ -22,6 +22,11 @@ Search for the following keyword combinations:
 
 Filtering to publications from 2000 onwards, gives 1156 results: https://link.lens.org/ivKDS6EocKk
 
+Altering the query so that Bradley-Terry is always required:
+> (("comparative judgment") OR ("comparative judgement") OR ("paired comparisons") OR ("pairwise comparisons") AND "Bradley" AND "Terry")
+
+gives 210 results, with the publication year filter removed: https://link.lens.org/dypRiEumdok
+
 ### Other sources?
 Perhaps also search for work that cites key papers? e.g.
 
