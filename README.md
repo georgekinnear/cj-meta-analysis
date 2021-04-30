@@ -43,6 +43,17 @@ See [details of plan for literature search](lit-search/README.md).
 * As part of that process, we need to look closely at the data that has been provided and compare with what is reported in the paper (see 00-process-raw-files.R and 01-data-summary.Rmd)
 * Technical point: in cases where the researcher(s) have filtered out judges (e.g. for badly misfitting or implausibly low time spent judging) do we want the _raw_ judgement data or the _filtered_ judgement data? Perhaps the line to take is that we want the judgement data "as analysed in the research", i.e. after filtering?
 
+### Timeline
+
+Rough plan:
+
+| When | What |
+|------|------|
+| May | Systematic literature search - aim to have a refined list of studies by end of May |
+| June | First approach to lead authors requesting data |
+| July | Followup approach - deadline end of July? |
+| August | Writeup |
+
 ## RQ1: How do assessment characteristics influence reliability?
 
 Building on the prior findings of Verhavert et al. (2019), where the number of comparisons per representation had the strongest association with reliability, we will investigate the impact on reliability of various characteristics that can be varied when setting up a CJ session:
