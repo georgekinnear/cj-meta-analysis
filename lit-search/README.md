@@ -114,7 +114,7 @@ What to do about these cases that are unusual?
 
 ## Ben's lit review (05/05/2021) 
 
-###Initial searches
+### Initial searches
 Lens.org query: ("comparative judgement" OR "comparative judgment")   OR  (("pairwise comparisons" OR "paired comparisons") AND "Bradley" AND "Terry")
 Returned 1211 hits when restricted to 2010 or later. (Curiously the downloaded .bib file only contained 1207). 
 
