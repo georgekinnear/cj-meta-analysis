@@ -134,6 +134,8 @@ As of 05/05, I've been through ~300/1200 which has taken two sittings of 2-3 hou
 
 - There are a handful of papers I can't access, either because they don't exist online (and the lens.org listing only includes title but no location) or because my combination of UCL/Lboro/WVU libraries doesn't allow me in. (these are rare but I'm losing a lot of time logging-in and out of various accounts. Suggetsions welcome!)
 
+- Several of George's 'Fringe cases' don't appear in my search. I don't have an explanation for this but thought it worth flagging. 
+
 ### Next steps
 
 - I'm happy to finish a first pass next week, but this will need detailed checking. For the most part, I've been reading abstracts (rather than methods sections) in the interests of time. I think this is probably 95% accuracte but I definitely won't rule out having missed things. 
