@@ -110,3 +110,38 @@ What to do about these cases that are unusual?
 * Crispino, M., Arjas, E., Vitelli, V., Barrett, N., & Frigessi, A. (2019). A Bayesian Mallows approach to nontransitive pair comparison data: How human are sounds?. The Annals of Applied Statistics, 13(1), 492-519. http://doi.org/10.1214/18-aoas1203
   - see p. 496: 46 people each made 30 paired comparisons from a set of 12 sounds.
   - but they do not use Bradley-Terry to analyse the results
+
+
+## Ben's lit review (05/05/2021) 
+
+###Initial searches
+Lens.org query: ("comparative judgement" OR "comparative judgment")   OR  (("pairwise comparisons" OR "paired comparisons") AND "Bradley" AND "Terry")
+Returned 1211 hits when restricted to 2010 or later. (Curiously the downloaded .bib file only contained 1207). 
+
+I also experiemented with variations including restricting citations to seminal works (Thurstone, Andrich, Luce, Politt etc) but all seems to cut own works known to be desirable for our search. To cut down on irrelevant results, I also tried including 'Reliability' but this was too restrictive. Ultimately, the current search has returend a bunch of junk that I'd prefer to have removed, but I don't think its that big a deal just to do this manually. 
+
+### Categorising (in progress). 
+
+As of 05/05, I've been through ~300/1200 which has taken two sittings of 2-3 hours. Note that these has been artificially speedy given that I decided to filter known relevant works for the first ~100 (e.g. including all of the Lboro work, then all of the Antwerp work etc). See screenshot below for a flavour of progress. 
+
+![image](https://user-images.githubusercontent.com/23063116/117259340-0b276c00-aea2-11eb-8dd6-26b754a14bba.png)
+
+^^ No idea if you can see that image. Email me if not
+
+###Issues arising from work-in-progress: 
+
+- Need a decison on ACJ. For now, these are included in the 'request data' category and are very easy to remove/section later. A similar 'adapt' search will do 95% of this for us
+
+- Somewhat lazily, I've put a series of papers in the 'theoretical' cateogry. This will need to be reviewed (and likely split-up) in a second pass. This currently includes work from statistical journals on the nuances of Rasch analysis etc, to education work on CJ but with a more theoretical bent (E.g. Pollitt 2012)
+
+- There are a handful of papers I can't access, either because they don't exist online (and the lens.org listing only includes title but no location) or because my combination of UCL/Lboro/WVU libraries doesn't allow me in. (these are rare but I'm losing a lot of time logging-in and out of various accounts. Suggetsions welcome!)
+
+### Next steps
+
+- I'm happy to finish a first pass next week, but this will need detailed checking. For the most part, I've been reading abstracts (rather than methods sections) in the interests of time. I think this is probably 95% accuracte but I definitely won't rule out having missed things. 
+
+- There are big methodological decisions to be made (ACJ, theoretical works with toy data etc). I think these warrant a meeting in mid-late May. 
+
+-(I haven't shared my JabRef Library because I'm scared of version duplication. Let me know if you'd like to see it).
+
+
