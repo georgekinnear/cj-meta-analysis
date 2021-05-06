@@ -126,9 +126,7 @@ As of 05/05, I've been through ~300/1200 which has taken two sittings of 2-3 hou
 
 ![image](https://user-images.githubusercontent.com/23063116/117259340-0b276c00-aea2-11eb-8dd6-26b754a14bba.png)
 
-^^ No idea if you can see that image. Email me if not
-
-###Issues arising from work-in-progress: 
+### Issues arising from work-in-progress: 
 
 - Need a decison on ACJ. For now, these are included in the 'request data' category and are very easy to remove/section later. A similar 'adapt' search will do 95% of this for us
 
