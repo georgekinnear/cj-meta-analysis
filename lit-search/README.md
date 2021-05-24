@@ -78,6 +78,7 @@ Then for the filtered list of papers, approach the lead authors requesting the j
 > 
 > Name
 
+Possibly also circulate a general call, to try to surface unpublished work? e.g. https://twitter.com/tuebang/status/1389908603201626118
 
 ## Edge cases
 
