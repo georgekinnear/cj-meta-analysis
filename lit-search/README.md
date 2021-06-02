@@ -145,4 +145,20 @@ As of 05/05, I've been through ~300/1200 which has taken two sittings of 2-3 hou
 
 -(I haven't shared my JabRef Library because I'm scared of version duplication. Let me know if you'd like to see it).
 
+## Ben's finished lit review (02/06/2021) 
+
+I have now finished parsing the full 1200+ item bank in JabRef, and have uploaded to this GitHub with filename '20210602 CJMetaAnalysis FirstParse'
+
+There are 5 core categories in this first parse: 
+- Exclude: Not relevant (876)
+- Exclude: Theoretical (93)
+- Exclude: Not in English (64)
+- Request data: Education-related (91)
+- Request data: Other (84)
+
+Total 1208 (One paper has been tagged twice but infuriatingly, I can't find which one!)
+
+There is still substantial work to be done here, including reviewing the 'Theoretical' papers for relevance, and parsing the 'Request data' categories in more detail. There are definitely some in here that won't have data in the exact format that we'll want. (There is also a 99% chance I've spuriously labelled a handful of relevant papers as 'non-relevant'. In the interests of time, I didn't take a detailed look at most papers and used a combination fo title and abstract to make a judgement. This will be fairly reliable but not flawless. We can discuss this in our next meeting!). 
+
+
 
