@@ -184,7 +184,7 @@ Comparing the content of the .bib files:
 
 At the time, my search returned 1156 results; now it gives 1731 - perhaps that accounts for some of the discrepancy, i.e. that Ben's search is picking up many that were not in lens.org at the time I ran my search.
 
-However it doesn't explain why so many of my results are missing from Ben's results. About 200 of the 599 missing ones are pre-2010 so that explains part of it. But still leaves aboue 400 missing, e.g. from my list of edge cases above:
+However it doesn't explain why so many of my results are missing from Ben's results. About 200 of the 599 missing ones are pre-2010 so that explains part of it. But still leaves about 400 missing, e.g. from my list of edge cases above:
 
 #### Missing
 
