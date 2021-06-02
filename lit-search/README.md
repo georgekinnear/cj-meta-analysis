@@ -177,6 +177,7 @@ These queries look like they should give the same results -- apart from the date
 Comparing the content of the .bib files:
 
 | In search results | N |
+| :------ | --: |
 | Ben + George | 559 |
 | Ben only | 649 |
 | George only | 599 |
