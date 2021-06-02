@@ -1,0 +1,51 @@
+---
+title: "Comparing Bib files"
+author: "George Kinnear"
+date: "02/06/2021"
+always_allow_html: true
+output: github_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+
+# Tables
+library(knitr)
+library(kableExtra)
+basic_kable = function(df, ...) {
+  df %>% 
+    kable(...) %>%
+    kable_styling(bootstrap_options = "striped", full_width = F)
+}
+```
+
+```{r message=FALSE, warning=FALSE}
+ben <- bib2df::bib2df("../20210602 CJMetaAnalysis FirstParse.bib") %>% janitor::clean_names()
+george <- bib2df::bib2df("lens-export-2021-04-26.bib") %>% janitor::clean_names()
+```
+
+```{r}
+comparison <- full_join(
+  ben %>% select(bibtexkey, author, year, title, doi) %>% mutate(source1 = "Ben"),
+  george %>% select(bibtexkey, author, year, title, doi) %>% mutate(source2 = "George"),
+  by = c("bibtexkey", "author", "year", "title", "doi")
+)
+
+comparison %>% 
+  group_by(source1) %>% 
+  count(source2) %>% 
+  kable(format = 'markdown')
+```
+
+Of the entries that only appear in George's .bib, this is the breakdown by publication year:
+
+```{r}
+comparison %>% 
+  filter(is.na(source1)) %>% 
+  select(year, title) %>% 
+  arrange(year, title) %>% 
+  count(year) %>% 
+  kable(format = 'markdown')
+```
+

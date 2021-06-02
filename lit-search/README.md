@@ -94,7 +94,7 @@ What to do about these cases that are unusual?
   - It argues that paired comparisons are inadequate and instead has participants put a larger set of items into a rank order.
   - However it does report briefly on some pilot CJ studies (Appendix A) though does not report SSR.
 
-* https://doi.org/10.1016/j.ejor.2015.06.069
+* Bozóki, S., Csató, L., & Temesi, J. (2016). An application of incomplete pairwise comparison matrices for ranking top tennis players. European Journal of Operational Research, 248(1), 211-218. https://doi.org/10.1016/j.ejor.2015.06.069
   - this gives an example of ranking tennis players, but doesn't seem to be using Bradley-Terry (though it cites work that does, which is why it was picked up in the search).
 
 * Reynvoet, B., Vos, H., & Henik, A. (2019). Comparative judgment of familiar objects is modulated by their size. Experimental psychology. https://doi.org/10.1027/1618-3169/a000418
@@ -160,5 +160,40 @@ Total 1208 (One paper has been tagged twice but infuriatingly, I can't find whic
 
 There is still substantial work to be done here, including reviewing the 'Theoretical' papers for relevance, and parsing the 'Request data' categories in more detail. There are definitely some in here that won't have data in the exact format that we'll want. (There is also a 99% chance I've spuriously labelled a handful of relevant papers as 'non-relevant'. In the interests of time, I didn't take a detailed look at most papers and used a combination fo title and abstract to make a judgement. This will be fairly reliable but not flawless. We can discuss this in our next meeting!). 
 
+### Comments from George
 
+Ben's query:
 
+> ("comparative judgement" OR "comparative judgment") OR (("pairwise comparisons" OR "paired comparisons") AND "Bradley" AND "Terry")
+> + restricted to 2010 onwards
+
+George's query:
+
+> ("comparative judgment") OR ("comparative judgement") OR (("paired comparisons") OR ("pairwise comparisons") AND "Bradley" AND "Terry")
+> + filtered for publications from 2000 onwards
+
+These queries look like they should give the same results -- apart from the date filtering -- but they do not.
+
+Comparing the content of the .bib files:
+
+| In search results | N |
+| Ben + George | 559 |
+| Ben only | 649 |
+| George only | 599 |
+
+At the time, my search returned 1156 results; now it gives 1731 - perhaps that accounts for some of the discrepancy, i.e. that Ben's search is picking up many that were not in lens.org at the time I ran my search.
+
+However it doesn't explain why so many of my results are missing from Ben's results. About 200 of the 599 missing ones are pre-2010 so that explains part of it. But still leaves aboue 400 missing, e.g. from my list of edge cases above:
+
+#### Missing
+
+* Roose at al. (2019). _has "comparative judgement" in the title!_
+* Kaufman et al. - preprint, was not in the lens.org results
+* Bozóki et al. (2016)
+* Reynvoet et al. (2019).
+* Araki et al. (2019)
+
+#### Included
+
+* Kawamura et al. (2017).
+* Crispino et al. (2019).

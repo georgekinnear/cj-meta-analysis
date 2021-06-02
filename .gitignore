@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+data-cache/*
+data-raw/*
+*.bak
+*.sav
+20210304 HowToCJ IJ + BD.docx
+0x-*
+2021 CJ meta-analysis.Rproj
+MS Form first draft from Ben.pdf
