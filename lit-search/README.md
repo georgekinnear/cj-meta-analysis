@@ -1,4 +1,14 @@
-# Plans for CJ meta-analysis lit search
+# CJ meta-analysis lit search
+
+Draft of content for the Method section.
+
+TODO: Ben
+
+
+
+# ROUGH WORK
+
+Work-in-progress notes below:
 
 ## Inclusion/exclusion criteria
 
