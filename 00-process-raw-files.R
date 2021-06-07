@@ -57,3 +57,8 @@ vroom("data-raw/jones/BERJ2019decisions.csv", .name_repair = janitor::make_clean
 vroom("data-raw/jones/BERJperfect.csv", .name_repair = janitor::make_clean_names) %>% write_csv("data/Jones2016_perfect.csv")
 
 
+# Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
+# open data: https://figshare.com/s/7e0270daa8153bb0416e
+# open code: https://github.com/S-hannon/complexity-solar-cycle
+# Note: apparently the comarisons data includes some duplicate rows, see https://github.com/S-hannon/complexity-solar-cycle/blob/3bb74202cd8bbbeddff9bbefdf589aec7072e228/popfss_compare_solar_storms_workflow.py#L308
+# Perhaps worth asking the authors to share the processed judging data? Otherwise would have to put effort into getting their code to run.
