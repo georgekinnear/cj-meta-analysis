@@ -1,0 +1,50 @@
+---
+title: "CJ meta-analysis: final screening"
+author: "George Kinnear"
+date: "07/06/2021"
+always_allow_html: true
+output:
+  github_document: default
+  html_document: default
+# knit: (function(inputFile, encoding) {
+#   rmarkdown::render(inputFile, encoding = encoding,
+#   output_format = "all") })
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+
+# Tables
+library(knitr)
+library(kableExtra)
+basic_kable = function(df, ...) {
+  df %>% 
+    kable(...) %>%
+    kable_styling(bootstrap_options = "striped", full_width = F)
+}
+```
+
+Divide up the "request data" group between us.
+
+```{r echo=TRUE}
+# TODO: some code to pull out relevant content from the .bib file and produce a spreadsheet
+```
+
+## Screening steps
+
+* For each publication, consult the full-text to confirm there is CJ going on.
+
+* If so, record details in the spreadsheet to prepare for the data request emails.
+
+The spreadsheet should look like this:
+
+| Column        | Value       |
+| ------------- |-------------|
+| publication details | this will be a group of columns, produced automatically in the previous step (lens.org link, authors, year, title, doi) |
+| uses_cj | yes/no - does this publication report on CJ data that is within scope? |
+| corresponding_author_name | identify the corresponding author (who we will contact about the data request) |
+| corresponding_author_email | e-mail address for the corresponding author |
+| open_data | link to openly-available data, if it exists (otherwise leave blank) |
+| open_data_notes | space for comments about the open data, e.g. "judge IDs seem to be missing" or "looks like lots of filtering is needed" |
+| email_notes | if there is no open data, write a snippet that can be used in the data request email to clarify the request, e.g. "decision files for experiment 2" |
