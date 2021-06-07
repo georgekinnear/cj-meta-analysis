@@ -8,79 +8,89 @@ to be due to the way the publication date filter was applied (Ben was
 specifying year+month+day, while specifying only the year seems pick up
 more results).
 
-Curiously there are about 200 results that are missing from the new
-search (more on that below), but there are about 500 new hits:
+To check what’s going on, here we compare:
+
+1.  `Original` = Ben’s original .bib file, where the year filter was
+    based on the calendar picker (“Date Published = ( 2010-01-01 -
+    2021-06-01 )”)
+2.  `Topup` = A new version of the .bib file downloaded on 2021-06-07,
+    with the date filter applied as “Year Published = ( 2010 - 2021 )”
+3.  `Nofilter` = A new version of the .bib file downloaded on
+    2021-06-07, with no date filter
+
+Curiously there are 160 results from `Original` that are missing from
+`Topup` (more on that below), but there are about 500 new hits (and
+about 800 that were date-filtered out in both cases):
 
 | source1  | source2 |    n |
 | :------- | :------ | ---: |
-| Original | Topup   | 1013 |
-| Original | NA      |  195 |
-| NA       | Topup   |  527 |
+| Original | Topup   | 1048 |
+| Original | NA      |  160 |
+| NA       | Topup   |  492 |
+| NA       | NA      |  830 |
 
-Breakdown by the groups allocated by Ben in the first pass:
+Comparing with the results of the same search with no date filter
+applied (`Nofilter`):
 
-| source1  | source2 | groups                    |   n |
-| :------- | :------ | :------------------------ | --: |
-| Original | Topup   | Education, Request data   |   3 |
-| Original | Topup   | Not in English            |  54 |
-| Original | Topup   | Not Relevant              | 733 |
-| Original | Topup   | Not Relevant, Theoretical |   1 |
-| Original | Topup   | Other, Request data       |   2 |
-| Original | Topup   | Request data, Education   |  85 |
-| Original | Topup   | Request data, Other       |  62 |
-| Original | Topup   | Theoretical               |  72 |
-| Original | Topup   | Theoretical, Education    |   1 |
-| Original | NA      | Not in English            |  10 |
-| Original | NA      | Not Relevant              | 142 |
-| Original | NA      | Request data, Education   |   2 |
-| Original | NA      | Request data, Other       |  20 |
-| Original | NA      | Theoretical               |  19 |
-| Original | NA      | NA                        |   2 |
-| NA       | Topup   | NA                        | 527 |
+| source1  | source2 | source3  |    n |
+| :------- | :------ | :------- | ---: |
+| Original | Topup   | Nofilter | 1048 |
+| Original | NA      | Nofilter |  154 |
+| Original | NA      | NA       |    6 |
+| NA       | Topup   | Nofilter |  492 |
+| NA       | NA      | Nofilter |  830 |
 
-Here are the details of the results that were in Original but not Topup,
-and that Ben had marked as either “Request data” or “Theoretical”:
+The 154 results that appeared in `Original` but not `Topup` are in fact
+all from before 2010:
 
-| bibtexkey                    | author                                                                                                     | year | title                                                                                                                                              | doi                             | groups                  | source1  | source2 |
-| :--------------------------- | :--------------------------------------------------------------------------------------------------------- | :--- | :------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------ | :---------------------- | :------- | :------ |
-| lens.org/001-462-921-953-125 | Gerd Gigerenzer, Thomas Sturm                                                                              | 2011 | Tools=Theories=Data? On Some Circular Dynamics in Cognitive Science.                                                                               | 10.5565/rev/qpsicologia.949     | Theoretical             | Original | NA      |
-| lens.org/001-738-917-382-352 | Joshua E. Menke, Tony R. Martinez                                                                          | 2007 | A Bradleyâ€“Terry artificial neural network model for individual ratings in group competitions                                                     | 10.1007/s00521-006-0080-8       | Theoretical             | Original | NA      |
-| lens.org/003-799-461-053-21X | Kenichiro Masaoka, Masaki Emoto, Masayuki Sugawara, Yuji Nojiri                                            | 2007 | Human Vision and Electronic Imaging - Comparing realness between real objects and images at various resolutions                                    | 10.1117/12.704947               | Request data, Other     | Original | NA      |
-| lens.org/007-757-716-913-454 | Christof KÃ¶rner, Heiner Gertzen, Clemens Bettinger, Dietrich Albert                                       | 2006 | Comparative judgments with missing information: a regression and process tracing analysis.                                                         | 10.1016/j.actpsy.2006.06.005    | Request data, Other     | Original | NA      |
-| lens.org/008-345-854-806-257 | Reinhold Hatzinger, Josef A. Mazanec                                                                       | 2007 | Measuring the part worth of the mode of transport in a trip package: An extended Bradley-Terry model for paired-comparison conjoint data.          | 10.1016/j.jbusres.2007.04.010   | Request data, Other     | Original | NA      |
-| lens.org/010-131-925-503-471 | Alexandra Grand, Regina Dittrich                                                                           | 2021 | Modelling changes over time in a multivariate paired comparison: An application to window display design                                           | 10.1177/1471082x21995675        | Theoretical             | Original | NA      |
-| lens.org/012-305-287-203-844 | Paige H. Forster                                                                                           | 2005 | An Argument for the Admissibility of Execution Impact Evidence in Pennsylvania                                                                     | 10.5195/lawreview.2005.66       | Theoretical             | Original | NA      |
-| lens.org/013-193-314-258-860 | Alan Schwartz                                                                                              | 2005 | From Comparative Judgments to Absolute Scales                                                                                                      | 10.1177/0272989x05277601        | Request data, Other     | Original | NA      |
-| lens.org/014-002-936-066-582 | Mukesh Bhargava, John Kim, Rajendra K. Srivastava                                                          | 2000 | Explaining Context Effects on Choice Using a Model of Comparative Judgment                                                                         | 10.1207/15327660051044132       | Request data, Other     | Original | NA      |
-| lens.org/016-816-561-634-912 | Julio GonzÃ¡lez-DÃ­az, Ruud Hendrickx, Edwin Lohmann                                                       | 2013 | Paired comparisons analysis: an axiomatic approach to ranking methods                                                                              | 10.1007/s00355-013-0726-2       | Theoretical             | Original | NA      |
-| lens.org/018-191-594-451-288 | Greg J. Strimel, Scott R. Bartholomew, Senay Purzer, Liwei Zhang, Emily Yoshikawa Ruesch                   | 2020 | Informing engineering design through adaptive comparative judgment                                                                                 | NA                              | Request data, Other     | Original | NA      |
-| lens.org/023-887-295-460-738 | James J. Crile, James R. McManamey                                                                         | 2002 | Validation of a New Analysis Program for Law of Comparative Judgement Data                                                                         | NA                              | Request data, Other     | Original | NA      |
-| lens.org/027-100-783-494-498 | Edul N. Dalal, John C. Handley, Wencheng Wu, J. Wang                                                       | 2008 | Anchored paired comparisons                                                                                                                        | 10.1117/12.766363               | Request data, Other     | Original | NA      |
-| lens.org/028-422-206-398-04X | Ethan D. Montag                                                                                            | 2006 | Empirical formula for creating error bars for the method of paired comparison                                                                      | 10.1117/1.2181547               | Theoretical             | Original | NA      |
-| lens.org/030-083-472-302-977 | I. C. McManus, M Thompson, J Mollon                                                                        | 2006 | Assessment of examiner leniency and stringency (‘hawk-dove effect’) in the MRCP(UK) clinical examination (PACES) using multi-facet Rasch modelling | 10.1186/1472-6920-6-42          | Request data, Education | Original | NA      |
-| lens.org/032-096-904-158-91X | Waldemar W. Koczkodaj, Stanislaw J. Szarek                                                                 | 2010 | On Distance-based Inconsistency Reduction Algorithms for Pairwise Comparisons                                                                      | 10.1093/jigpal/jzp062           | Theoretical             | Original | NA      |
-| lens.org/038-142-730-467-183 | Haoyi Liang, Daniel S. Weller                                                                              | 2016 | Comparison-Based Image Quality Assessment for Selecting Image Restoration Parameters                                                               | 10.1109/tip.2016.2601783        | Request data, Other     | Original | NA      |
-| lens.org/041-706-379-743-767 | Regina Dittrich, Reinhold Hatzinger, W. Katzenbeisser                                                      | 2002 | Modelling the effect of subject-specific covariates in paired comparison studies with an application to university rankings                        | 10.1111/1467-9876.00125         | Request data, Other     | Original | NA      |
-| lens.org/042-273-335-026-059 | Rajeev Ramchand, John M. MacDonald, Amelia M. Haviland, Andrew R. Morral                                   | 2008 | A Developmental Approach for Measuring the Severity of Crimes                                                                                      | 10.1007/s10940-008-9061-7       | Request data, Other     | Original | NA      |
-| lens.org/042-360-057-959-435 | Rolf Reber, Beat Meier, Marie-Antoinette Ruch-Monachon, Mara Tiberini                                      | 2006 | Effects of processing fluency on comparative performance judgments.                                                                                | 10.1016/j.actpsy.2006.02.001    | Request data, Other     | Original | NA      |
-| lens.org/045-058-234-966-591 | Ulf BÃ¶ckenholt                                                                                            | 2005 | Visualizing individual differences in pairwise comparison data                                                                                     | NA                              | Request data, Other     | Original | NA      |
-| lens.org/057-226-726-733-714 | Vicente RodrÃ­guez MontequÃ­n, JoaquÃ­n Villanueva Balsera, Marina DÃ­az PiloÃ±eta, CÃ©sar Ã lvarez PÃ©rez | 2020 | A Bradley-Terry Model-Based Approach to Prioritize the Balance Scorecard Driving Factors: The Case Study of a Financial Software Factory           | 10.3390/math8020276             | Request data, Other     | Original | NA      |
-| lens.org/057-994-138-749-017 | Malcolm Budd                                                                                               | 2007 | The Intersubjective Validity of Aesthetic Judgements                                                                                               | 10.1093/aesthj/aym021           | Request data, Other     | Original | NA      |
-| lens.org/062-869-004-811-688 | John I. Marden                                                                                             | 2005 | Bradleyâ€“Terry Model                                                                                                                              | 10.1002/0470013192.bsa061       | Theoretical             | Original | NA      |
-| lens.org/063-660-295-312-385 | John C. Handley, Jason S. Babcock, Jeff B. Pelz                                                            | 2003 | Experimental congruence of interval scale production from paired comparisons and ranking for image evaluation                                      | 10.1117/12.526623               | Request data, Other     | Original | NA      |
-| lens.org/066-800-999-703-000 | David B. Mackay                                                                                            | 2004 | Thurstone’s Theory of Comparative Judgment                                                                                                         | 10.1002/0471667196.ess2724      | Theoretical             | Original | NA      |
-| lens.org/071-458-322-887-08X | Greg J. Strimel, Scott R. Bartholomew, Senay Purzer, Liwei Zhang, Emily Yoshikawa Ruesch                   | 2020 | Informing engineering design through adaptive comparative judgment                                                                                 | 10.1080/03043797.2020.1718614   | Request data, Education | Original | NA      |
-| lens.org/081-370-959-105-221 | David R. Hunter                                                                                            | 2004 | MM algorithms for generalized Bradley-Terry models                                                                                                 | 10.1214/aos/1079120141          | Theoretical             | Original | NA      |
-| lens.org/081-892-809-633-182 | John C. Duchi, Lester Mackey, Michael I. Jordan                                                            | 2013 | The asymptotics of ranking algorithms                                                                                                              | 10.1214/13-aos1142              | Theoretical             | Original | NA      |
-| lens.org/087-934-185-145-340 | Cheng Qiu, Catherine Yeung                                                                                 | 2008 | Mood and Comparative Judgment: Does Mood Influence Everything and Finally Nothing?                                                                 | NA                              | Request data, Other     | Original | NA      |
-| lens.org/096-322-872-135-442 | null HuangTzu-Kuo, C WengRuby, null LinChih-Jen                                                            | 2006 | Generalized Bradley-Terry Models and Multi-Class Probability Estimates                                                                             | NA                              | Theoretical             | Original | NA      |
-| lens.org/105-928-819-975-021 | Ulrike GraÃŸhoff, Rainer Schwabe                                                                           | 2007 | Optimal design for the Bradleyâ€“Terry paired comparison model                                                                                     | 10.1007/s10260-007-0058-4       | Theoretical             | Original | NA      |
-| lens.org/107-502-979-834-732 | Stan Lipovetsky                                                                                            | 2008 | BRADLEYâ€“TERRY CHOICE PROBABILITY IN MAXIMUM LIKELIHOOD AND EIGENPROBLEM SOLUTIONS                                                                | NA                              | Theoretical             | Original | NA      |
-| lens.org/113-841-490-444-660 | Ethan D. Montag                                                                                            | 2003 | Louis Leon Thurstone in Monte Carlo: Creating error bars for the method of paired comparison                                                       | 10.1117/12.526215               | Theoretical             | Original | NA      |
-| lens.org/130-840-457-402-612 | Regina Dittrich, Reinhold Hatzinger                                                                        | 2009 | Fitting loglinear Bradley-Terry models (LLBT) for paired comparisons using the R package prefmod                                                   | NA                              | Theoretical             | Original | NA      |
-| lens.org/136-653-213-837-69X | Peter B. Imrey                                                                                             | 2005 | Encyclopedia of Biostatistics - Bradleyâ€“Terry Model                                                                                              | 10.1002/0470011815.b2a10008     | Theoretical             | Original | NA      |
-| lens.org/139-469-008-309-782 | Jing Wang, Robert S. Wyer Jr                                                                               | 2002 | Comparative Judgment Processes: The Effects of Task Objectives and Time Delay on Product Evaluations                                               | 10.1207/15327660260382360       | Request data, Other     | Original | NA      |
-| lens.org/139-709-039-980-309 | David R. Berman, Sandra C. McLaurin, Douglas D. Smith                                                      | 2004 | Ranking whist players                                                                                                                              | NA                              | Theoretical             | Original | NA      |
-| lens.org/148-136-420-311-762 | David B. Mackay                                                                                            | 2006 | Encyclopedia of Statistical Sciences - Thurstone’s Theory of Comparative Judgment â€                                                               | 10.1002/0471667196.ess2724.pub2 | Theoretical             | Original | NA      |
-| lens.org/195-656-865-139-575 | Keith A Schneider, Marcell Komlos                                                                          | 2008 | Attention biases decisions but does not alter appearance.                                                                                          | NA                              | Request data, Other     | Original | NA      |
-| lens.org/198-306-009-967-350 | James R. McManamey                                                                                         | 2000 | Applying the Law of Comparative Judement to Target Signature Evaluation                                                                            | NA                              | Request data, Other     | Original | NA      |
+| year |  n |
+| :--- | -: |
+| 2000 |  6 |
+| 2001 |  6 |
+| 2002 |  6 |
+| 2003 |  7 |
+| 2004 | 14 |
+| 2005 | 12 |
+| 2006 | 22 |
+| 2007 | 24 |
+| 2008 | 34 |
+| 2009 | 23 |
+
+The 6 results that don’t show up in `Nofilter` are more troubling -
+these are sources in the `Original` search that are no longer being
+returned, making it hard to reproduce our process.
+
+Moreover they include some that were tagged up for inclusion:
+
+| groups                  | n |
+| :---------------------- | -: |
+| Not Relevant            | 2 |
+| Request data, Education | 1 |
+| Theoretical             | 1 |
+| NA                      | 2 |
+
+| bibtexkey                          | author.x                                                                                     | year.x | title.x                                                                                                                                                                                 | doi.x                         | groups                  |
+| :--------------------------------- | :------------------------------------------------------------------------------------------- | :----- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- | :---------------------- |
+| lens.org/030-740-680-225-678       | Zhang XiaoTong, Li LiangTao , Wang XiaoJun , Xiao He , Ji Ning , Wang Jing                   | 2010   | Agricultural landscape preferential model from subjective preference and spatial landscape index:A case study of the characteristics of 11 agricultural landscape partitions in Beijing | 10.3724/sp.j.1011.2010.00180  | Not Relevant            |
+| lens.org/071-458-322-887-08X       | Greg J. Strimel , Scott R. Bartholomew , Senay Purzer , Liwei Zhang , Emily Yoshikawa Ruesch | 2020   | Informing engineering design through adaptive comparative judgment                                                                                                                      | 10.1080/03043797.2020.1718614 | Request data, Education |
+| lens.org/079-086-540-787-956       | Enoch Kung , Maria Vittoria Bufali, Alec Morton                                              | 2021   | A visual approach to the economic evaluation of vaccines: opening the health economic black box.                                                                                        | 10.1080/14737167.2021.1894931 | Not Relevant            |
+| lens.org/096-322-872-135-442       | null HuangTzu-Kuo, C WengRuby , null LinChih-Jen                                             | 2006   | Generalized Bradley-Terry Models and Multi-Class Probability Estimates                                                                                                                  | NA                            | Theoretical             |
+| jabref-meta: databaseType:bibtex;} | NA                                                                                           | NA     | NA                                                                                                                                                                                      | NA                            | NA                      |
+| jabref-meta: grouping:             | NA                                                                                           | NA     | NA                                                                                                                                                                                      | NA                            | NA                      |
+
+Actually, 2 of them are just JabRef metadata. For the others:
+
+1.  appears in the topup as lens.org/127-146-777-695-049
+2.  appears in the topup as lens.org/018-191-594-451-288
+3.  doesn’t appear, but is not relevant anyway
+4.  is from 2006 so would be excluded anyway
+
+# Conclusion
+
+The date filter seems to have behaved strangely in the original search,
+but the new “topup” search fixes this and catches further publications
+that should be screened for inclusion.
+
+We extract from the `Topup` results only those items that have not yet
+been screened, and write them to a new .bib file,
+`lit-search/2021-06-07-topup.bib`.

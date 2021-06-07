@@ -133,6 +133,6 @@ topup_extras <- comparison %>%
 
 topup_raw %>% 
   semi_join(topup_extras, by = c("BIBTEXKEY" = "bibtexkey")) %>% 
-  bib2df::df2bib(file = "lit-search/2021-06-07-topup.bib")
+  bib2df::df2bib(file = "2021-06-07-topup.bib")
 ```
 
