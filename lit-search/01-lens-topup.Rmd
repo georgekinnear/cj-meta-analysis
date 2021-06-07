@@ -1,0 +1,138 @@
+---
+title: "Lens topup"
+author: "George Kinnear"
+date: "07/06/2021"
+always_allow_html: true
+output:
+  github_document: default
+  html_document: default
+# knit: (function(inputFile, encoding) {
+#   rmarkdown::render(inputFile, encoding = encoding,
+#   output_format = "all") })
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+
+# Tables
+library(knitr)
+library(kableExtra)
+basic_kable = function(df, ...) {
+  df %>% 
+    kable(...) %>%
+    kable_styling(bootstrap_options = "striped", full_width = F)
+}
+```
+
+Ben's original Lens.org search was missing various results. This seemed to be due to the way the publication date filter was applied (Ben was specifying year+month+day, while specifying only the year seems pick up more results).
+
+To check what's going on, here we compare:
+
+1. `Original` = Ben's original .bib file, where the year filter was based on the calendar picker ("Date Published = ( 2010-01-01 - 2021-06-01  )")
+2. `Topup` = A new version of the .bib file downloaded on 2021-06-07, with the date filter applied as "Year Published = ( 2010 - 2021  )"
+3. `Nofilter` = A new version of the .bib file downloaded on 2021-06-07, with no date filter
+
+```{r message=FALSE, warning=FALSE}
+original_raw <- bib2df::bib2df("../20210602 CJMetaAnalysis FirstParse.bib")
+original <- original_raw %>% janitor::clean_names()
+topup_raw <- bib2df::bib2df("ben-search-redone-2021-06-07.bib")
+topup <- topup_raw %>% janitor::clean_names()
+nofilter <- bib2df::bib2df("ben-search-redone-nofilter-2021-06-07.bib") %>% janitor::clean_names()
+```
+
+```{r}
+# this version tries to join together keeping the author/year/title, but that causes some mismatches so we don't use this version
+comparison_original <- full_join(
+    original %>% select(bibtexkey, author, year, title, doi, groups) %>% mutate(source1 = "Original"),
+    topup %>% select(bibtexkey, author, year, title, doi) %>% mutate(source2 = "Topup", year = as.character(year)),
+    by = c("bibtexkey", "author", "year", "title", "doi")
+  ) %>%
+  full_join(
+    nofilter %>% select(bibtexkey, author, year, title, doi) %>% mutate(source3 = "Nofilter", year = as.character(year)),
+    by = c("bibtexkey", "author", "year", "title", "doi")
+  )
+
+# instead we join using only the bibtexkey
+comparison <- full_join(
+    original %>% select(bibtexkey, author, year, title, doi, groups) %>% mutate(source1 = "Original"),
+    topup %>% select(bibtexkey, author, year, title, doi) %>% mutate(source2 = "Topup", year = as.character(year)),
+    by = c("bibtexkey")
+  ) %>%
+  full_join(
+    nofilter %>% select(bibtexkey, author, year, title, doi) %>% mutate(source3 = "Nofilter", year = as.character(year)),
+    by = c("bibtexkey")
+  )
+```
+
+Curiously there are 160 results from `Original` that are missing from `Topup` (more on that below), but there are about 500 new hits (and about 800 that were date-filtered out in both cases):
+
+```{r}
+comparison %>% 
+  group_by(source1) %>% 
+  count(source2) %>% 
+  kable(format = 'markdown')
+```
+
+Comparing with the results of the same search with no date filter applied (`Nofilter`):
+
+```{r}
+comparison %>% 
+  group_by(source1, source2) %>% 
+  count(source3) %>% 
+  kable(format = 'markdown')
+```
+
+The 154 results that appeared in `Original` but not `Topup` are in fact all from before 2010:
+
+```{r}
+comparison %>% 
+  filter(source1 == "Original", is.na(source2), source3 == "Nofilter") %>% 
+  count(year) %>% 
+  kable(format = 'markdown')
+```
+
+The 6 results that don't show up in `Nofilter` are more troubling - these are sources in the `Original` search that are no longer being returned, making it hard to reproduce our process.
+
+Moreover they include some that were tagged up for inclusion:
+
+```{r}
+comparison %>% 
+  filter(source1 == "Original", is.na(source2), is.na(source3)) %>% 
+  count(groups) %>% 
+  kable(format = 'markdown')
+```
+
+```{r}
+worrying <- comparison %>% 
+  filter(source1 == "Original", is.na(source2), is.na(source3)) %>% 
+  select(-c(source1:source3))
+
+worrying %>% 
+#   rowwise() %>% 
+#   mutate(author = str_c(author.x, collapse = ", ")) %>% 
+  kable(format = 'markdown')
+```
+
+Actually, 2 of them are just JabRef metadata. For the others:
+
+1. appears in the topup as lens.org/127-146-777-695-049
+2. appears in the topup as lens.org/018-191-594-451-288
+3. doesn't appear, but is not relevant anyway
+4. is from 2006 so would be excluded anyway
+
+# Conclusion
+
+The date filter seems to have behaved strangely in the original search, but the new "topup" search fixes this and catches further publications that should be screened for inclusion.
+
+We extract from the `Topup` results only those items that have not yet been screened, and write them to a new .bib file,  `lit-search/2021-06-07-topup.bib`.
+
+```{r}
+topup_extras <- comparison %>% 
+  filter(source2 == "Topup", is.na(source1))
+
+topup_raw %>% 
+  semi_join(topup_extras, by = c("BIBTEXKEY" = "bibtexkey")) %>% 
+  bib2df::df2bib(file = "lit-search/2021-06-07-topup.bib")
+```
+
