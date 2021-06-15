@@ -130,9 +130,36 @@ We extract from the `Topup` results only those items that have not yet been scre
 ```{r}
 topup_extras <- comparison %>% 
   filter(source2 == "Topup", is.na(source1))
+```
 
-topup_raw %>% 
+There are `r nrow(topup_extras)` entries to top up with.
+
+We use `bib2df::df2bib` to write these to file. A first attempt produced a .bib file that threw errors when opened with JabRef.
+
+One possible problem was that `df2bib` can't handle UTF8 character encoding properly (see https://github.com/ropensci/bib2df/issues/44)
+
+However the real culprit seems to be that the NOTES field contains URLs and these sometimes end up malformed, e.g. with missing `}` at the end of `\url{...}`, which breaks the .bib entry. So we simply remove the NOTES field before writing to file.
+
+```{r}
+# contains_utf8_chars <- paste0("lens.org/", c("003-909-841-114-189", "023-244-523-791-629", "087-558-313-113-09X", "115-000-267-673-846", "119-387-403-546-011", "142-025-041-431-967", "155-252-500-807-129", "158-392-503-239-327"))
+# 
+# topup_raw %>% 
+#   semi_join(topup_extras, by = c("BIBTEXKEY" = "bibtexkey")) %>% 
+#   filter(BIBTEXKEY %in% bug_with_utf8) %>% 
+#   kable(format = 'markdown')
+```
+
+```{r}
+topup_output <- topup_raw %>% 
   semi_join(topup_extras, by = c("BIBTEXKEY" = "bibtexkey")) %>% 
+  #filter(!BIBTEXKEY %in% bug_with_utf8) %>% 
+  select(-NOTE)
+```
+
+The remaining `r nrow(topup_output)` entries are written to `2021-06-07-topup.bib`.
+
+```{r}
+topup_output %>% 
   bib2df::df2bib(file = "2021-06-07-topup.bib")
 ```
 

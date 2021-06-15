@@ -94,3 +94,18 @@ that should be screened for inclusion.
 We extract from the `Topup` results only those items that have not yet
 been screened, and write them to a new .bib file,
 `lit-search/2021-06-07-topup.bib`.
+
+There are 492 entries to top up with.
+
+We use `bib2df::df2bib` to write these to file. A first attempt produced
+a .bib file that threw errors when opened with JabRef.
+
+One possible problem was that `df2bib` can’t handle UTF8 character
+encoding properly (see <https://github.com/ropensci/bib2df/issues/44>)
+
+However the real culprit seems to be that the NOTES field contains URLs
+and these sometimes end up malformed, e.g. with missing `}` at the end
+of `\url{...}`, which breaks the .bib entry. So we simply remove the
+NOTES field before writing to file.
+
+The remaining 492 entries are written to `2021-06-07-topup.bib`.
