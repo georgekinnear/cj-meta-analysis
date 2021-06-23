@@ -1,7 +1,7 @@
 ---
 title: "CJ meta-analysis: reliability check"
 author: "George Kinnear"
-date: "07/06/2021"
+date: "23/06/2021"
 always_allow_html: true
 output:
   github_document: default
@@ -25,4 +25,85 @@ basic_kable = function(df, ...) {
 }
 ```
 
-TODO: pick out random sample of 10% of the "not relevant" and "theoretical" groups for Ian/George to check.
+Ben completed the first pass of categorisation:
+
+```{r message=FALSE, warning=FALSE}
+ben_part1 <- bib2df::bib2df("../20210602 CJMetaAnalysis FirstParse.bib") %>% 
+  mutate(
+    decision = case_when(
+      str_detect(GROUPS, "Not") ~ "Exclude",
+      str_detect(GROUPS, "Theoretical") ~ "Theoretical",
+      str_detect(GROUPS, "Request") ~ "Request data",
+      TRUE ~ NA_character_
+    )
+  )
+```
+
+```{r}
+ben_part1 %>% 
+  select(BIBTEXKEY, decision)  %>% 
+  janitor::tabyl(decision) %>% 
+  janitor::adorn_totals() %>% 
+  select(-valid_percent) %>%
+  janitor::adorn_pct_formatting(,,,,"percent") %>% 
+  basic_kable()
+```
+
+We pick out random sample of 10% of the "Exclude" and "Theoretical" groups for Ian/George to check.
+
+```{r}
+set.seed(1)
+part1_sample <- ben_part1 %>%
+  # remove the NOTE field as that messes up the .bib output
+  select(-NOTE) %>% 
+  # we'll look at the "request data" ones more closely anyway, so ignore for now
+  filter(decision != "Request data") %>% 
+  group_by(decision) %>% 
+  slice_sample(prop = 0.1) %>% 
+  ungroup()
+
+part1_sample %>% 
+  group_by(decision) %>% 
+  tally() %>% 
+  basic_kable()
+```
+
+These are divided up evenly between George and Ian, and the entries are written to two new .bib files:
+
+* `2021-06-23-reliability-part1-GK.bib`
+* `2021-06-23-reliability-part1-IJ.bib`
+
+```{r}
+part1_sample <- part1_sample %>% 
+  # give even rows to George, odd rows to Ian
+  mutate(reviewer = case_when(
+    row_number() %% 2 == 0 ~ "George",
+    TRUE ~ "Ian"
+  )) %>% 
+  # hide the previously-assigned groups
+  select(-any_of(c("GROUPS", "decision")))
+
+part1_sample %>% 
+  filter(reviewer == "George") %>% 
+  select(-reviewer) %>% 
+  bib2df::df2bib(file = "2021-06-23-reliability-part1-GK.bib")
+
+part1_sample %>% 
+  filter(reviewer == "Ian") %>% 
+  select(-reviewer) %>% 
+  bib2df::df2bib(file = "2021-06-23-reliability-part1-IJ.bib")
+```
+
+## Review process
+
+Setup: 
+
+1. Open the .bib file using JabRef (https://www.jabref.org/).
+2. Make sure "View > Groups interface" is turned on. Then in the bottom of the Groups panel, click the "+" icon to add a new group. Type `Agree` for the group name, then click OK. Repeat, to set up another group called "Disagree".
+
+Reviewing:
+
+1. Work your way down the list of articles. There is a column of globe icons, which gives the link for each item - either the DOI (taking you direct to the full text) or the lens.org page (where you can look for details of how to find the article).
+2. Review the full text to check if you agree that the article is not within scope.
+3. Record your decision by dragging and dropping the item onto the relevant group (Agree = exclude, Disagree = should be included).
+4. Save the .bib file!
