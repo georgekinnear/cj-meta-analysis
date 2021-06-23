@@ -238,4 +238,14 @@ Reviewing:
     within scope.
 3.  Record your decision by dragging and dropping the item onto the
     relevant group (Agree = exclude, Disagree = should be included).
+
+<!-- end list -->
+
+  - for cases where you disagree, you can use the “Comments” field to
+    add some notes (in JabRef, double-click the item (or use View \>
+    Open entry editor) so the editor appears, and swtich to the Comments
+    tab).
+
+<!-- end list -->
+
 4.  Save the .bib file\!
