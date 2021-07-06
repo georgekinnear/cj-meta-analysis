@@ -1,7 +1,7 @@
 ---
 title: "CJ meta-analysis: final screening"
 author: "George Kinnear"
-date: "07/06/2021"
+date: "06/07/2021"
 always_allow_html: true
 output:
   github_document: default
@@ -25,11 +25,106 @@ basic_kable = function(df, ...) {
 }
 ```
 
-Divide up the "request data" group between us.
+Following the first pass of screening, we have a set of papers that have been tagged as "Request data".
 
-```{r echo=TRUE}
-# TODO: some code to pull out relevant content from the .bib file and produce a spreadsheet
+```{r message=FALSE, warning=FALSE}
+screened_papers <- bib2df::bib2df("../20210702 CJMetaAnalysis.bib") %>% 
+  mutate(
+    decision = case_when(
+      str_detect(GROUPS, "Not") ~ "Exclude",
+      str_detect(GROUPS, "Theoretical") ~ "Theoretical",
+      str_detect(GROUPS, "Request") ~ "Request data",
+      TRUE ~ NA_character_
+    )
+  )
 ```
+
+```{r}
+screened_papers %>% 
+  select(BIBTEXKEY, decision)  %>% 
+  janitor::tabyl(decision) %>% 
+  janitor::adorn_totals() %>% 
+  select(-valid_percent) %>%
+  janitor::adorn_pct_formatting(,,,,"percent") %>% 
+  basic_kable()
+```
+
+We need to scrutinise these papers more closely for inclusion in the meta-analysis.
+
+```{r}
+request_data_papers <- screened_papers %>% 
+  filter(decision == "Request data") %>% 
+  janitor::clean_names()
+
+request_data_table <- request_data_papers %>% 
+  rowwise() %>% 
+  transmute(
+    bibtexkey,
+    author = paste(stringr::word(author, start = -1), collapse = ", "),
+    year,
+    title,
+    doi,
+    url,
+    category = case_when(str_detect(groups, "Education") ~ "Education", TRUE ~ "Other")
+  )
+
+request_data_table %>% 
+  janitor::tabyl(category) %>% 
+  basic_kable()
+
+request_data_table %>% 
+  basic_kable()
+```
+
+## Divide up between us
+
+```{r}
+set.seed(12345)
+
+allocation <- request_data_table %>% 
+  mutate(
+    assigned_to = case_when(
+      str_detect(author, "Bartholomew|Seery") ~ "George",
+      str_detect(author, "Davies|Verhavert|Lesterhuis|Goossens|Roose|Coertjens") ~ "Ben",
+      str_detect(author, "Jones|Alcock|Inglis|Barmby|Benton|Wheadon|Bramley|Pollitt") ~ "Ian",
+      # these authors each have 2-3 papers
+      str_detect(author, "Attali|Barber|Newhouse|Tarricone") ~ "George",
+      TRUE ~ sample(c("Ben", "Ian", "George"), 1)
+    )
+  )
+
+allocation %>%
+  janitor::tabyl(assigned_to, category) %>%
+  left_join(
+    allocation %>%
+      janitor::tabyl(assigned_to),
+    by = "assigned_to") %>%
+  basic_kable()
+
+# allocation %>% 
+#   filter(is.na(assigned_to)) %>% 
+#   select(author) %>% 
+#   mutate(author = str_split(author, pattern = " ")) %>% 
+#   unnest(author) %>% 
+#   janitor::tabyl(author) %>% 
+#   arrange(-n) %>% 
+#   basic_kable()
+
+```
+
+```{r eval=FALSE, include=FALSE}
+# this chunk is set to eval=FALSE now so that we don't overwrite the spreadsheet!
+allocation %>% 
+  mutate(uses_cj = "",
+         corresponding_author_name = "",
+         corresponding_author_email = "",
+         open_data = "",
+         open_data_notes = "",
+         email_notes = "") %>% 
+  arrange(assigned_to, category, author, year) %>% 
+  writexl::write_xlsx("2021-06-07-final-screening-blank.xlsx")
+```
+
 
 ## Screening steps
 
