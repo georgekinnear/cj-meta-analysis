@@ -2,7 +2,34 @@
 
 Draft of content for the Method section.
 
-TODO: Ben
+## Categories
+
+
+Request data
+
+- Education
+- Other
+
+Exclude
+
+- Not in English
+- Theoretical
+- Not relevant
+ 
+
+## Explanation of categorisation
+
+Papers included in the ‘request data’ categories are those with clear empirical uses of pairwise comparisons, performed by human judges, modelled using the Bradley Terry model (or similar), to produce a score or ranking of objects. We exclude cases where binary decisions were not made by humans (e.g. simulations), and where the human agents producing the binary decisions were not doing so explicitly as ‘judgements’ (e.g. football teams competing head-to-head). 
+
+Within this category, those labelled ‘Education’ are typically related to the assessment of students’(or teachers’) knowledge in a specific domain or of student-produced work. Other items include, for example, student evaluations of course design features (Grand, Dittrich and Francis, 2015). The ‘other’ category comprises papers from experimental psychology, medicine, economics, sport science, amongst others. 
+
+Papers identified by our lens.org search but excluded from further consideration for one of three reasons, corresponding to three (possibly overlapping categories): ‘Not in English’, ‘theoretical’ or ‘not relevant. For simplicity and ease of analysis, first, we exclude all papers not published primarily in English. We note this as a non-trivial limitation of our work, and are concerned by the EDI implications of this decision. [insert further justification later]. We also exclude papers deemed as ‘theoretical’ in nature. These are papers primarily focused on the statistical methodology of generating scores from binary decisions. For example, John and Choi (2018) write of ‘The spare Luce Model’. This paper discusses a popular ranking model used on pairwise comparisons, and considers a modification of the Luce Model in comparison with the more popular Bradley-Terry model. This modification is illustrated by a small application to real-world data. However, this data is not the main focus of the paper, nor is the particular context of this data central to addressing the authors’ research questions or objectives. For this reason, although this paper features some empirical results, we deem this work ‘theoretical’ in nature and beyond the scope of our review. 
+
+Finally, we reach the largest category; those deemed not relevant to our interests in empirical pairwise comparisons modelled using pairwise comparisons. A plurality of papers in this ‘not relevant’ category address ‘comparisons’ made between objects where the response was more than simply a ‘binary decision’. These were often studies in which participants the paired comparison was used as a prompt to elicit reactions to each item, or a justification for preferences for particular objects/features. 
+
+To perform this categorisation, first, one of the authors of this work parsed all ~1700 papers. In many cases, a decision could be made based on the title and journal alone. For example, Andreas (2011) entitled ‘A structuralist Theory of Belief Revision’, published in the Journal of Logic, Language and Information, could be excluded without further consideration. Similarly, Hartell et al. (2018), entitled ‘Adaptive Comparative Judgement In Open-ended Design Scenarios’ could be included without further investigation. In less clear cases, this author would refer to abstracts for more detailed information about the study. In rare cases where an abstract did not yield sufficient information, the author turned to methods and results sections first, before resorting to reading the paper in its entirety. 
+
+This series of shortcuts made the analysis of all 1700 papers possible within the time constraints of the project, but also likely introduced a non-zero degree of inaccuracy to our analysis. Researchers two and three investigated this degree of inaccuracy by [insert detailed mechanism here]. While this series of reliability checks allow us to evaluate our own process, it does not provide certainty about the entirety of our analysis. That said, the purpose of our meta-analysis is to [insert something fluffy that makes it acceptable to have made errors here]. Moreover, there will be gaps in our data for other reasons, including but not limited to our search criteria, choice of database, and the response rate on the next step. Hence, having missed a handful in this process adds only a relatively small volume of noise to an otherwise messy process…
 
 
 
