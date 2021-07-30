@@ -8,9 +8,11 @@ As part of this we have searched the literature and identified the following **[
 
 **[insert list - if there are multiple, perhaps number them for ease of reference?]**
 
-Would it be possible for you to share the (anonymised) raw judgement data from this work with me, to be included in our meta-analysis? This could be a link to an online repository, or simply by attaching data in .csv format to an email. If you are able to share data, can you please confirm whether it is OK for us to include this data in our open data repository at the end of the project.
+Would it be possible for you to share the (anonymised) raw judgement data from this work with me, to be included in our meta-analysis?
 
-Also, if you have data from any other studies using comparative judgement that we have not found on the list above (e.g. conference proceedings that may not have been indexed in the database that we searched), I would be keen to hear about those too.
+1. If so, this could be a link to an online repository, or simply by attaching data in .csv format to an email.
+2. Please confirm whether it is OK for us to include this data in our open data repository at the end of the project.
+3. Also, if you have data from any other studies using comparative judgement that we have not found on the list above (e.g. conference proceedings that may not have been indexed in the database that we searched), I would be keen to hear about those too.
 
 Best wishes,
 
