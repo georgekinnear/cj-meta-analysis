@@ -235,3 +235,5 @@ However it doesn't explain why so many of my results are missing from Ben's resu
 
 * Kawamura et al. (2017).
 * Crispino et al. (2019).
+
+Note: we figured out the reason behind the difference. It was due to the way that we were applying the date filter (for publications after 2010). Ben was using the calendar picker whereas I was using the slider. The calendar picker seems to produce a more specific query that requires entries to have full date information, which would explain why some results were missing in Ben's first pass.
