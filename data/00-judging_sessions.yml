@@ -8,12 +8,53 @@
 #   judging_sessions:
 #    - study: identifier for the CJ session
 #    - N_A: number of assessors (i.e. judges)
-#    - N_R: number of representations (i.e. scripts)
-#    - items: short description of what is being judged
-#    - judge_expertise:
+#      N_R: number of representations (i.e. scripts)
+#      N_J: total number of judgements
+#      items: short description of what is being judged
+#      judge_expertise:
 #            expert = judges are teachers/researchers with relevant expertise
 #            peer = judges are drawn from the group of people who produced the representations, typically students doing peer assessment
 #            novice = judges have little or no domain-specific expertise, and have not produced their own representations
+#      judging_prompt: what the judges were asked to base their decisions on
+
+ - project_id: Coertjens_2021
+   citation: Coertjens, L., Lesterhuis, M., De Winter, B. Y., Goossens, M., De Maeyer, S., & Michels, N. R. (2021). Improving Self-Reflection Assessment Practices: Comparative Judgment as an Alternative to Rubrics. Teaching and Learning in Medicine, 1-11.
+   doi: 10.1080/10401334.2021.1877709
+   open_data: https://zenodo.org/record/3746671#.YRZqB8ozaUk
+   republish: Y
+   judging_sessions:
+    - N_A: 8
+      N_R: 22
+      N_J: 202
+      items: written self-reflections by medical students
+      judge_expertise: expert
+      judging_prompt: "Which is the better self-reflection?"
+      
+ - project_id: Holmes_2017
+   citation: Holmes, S. D., He, Q., & Meadows, M. (2017). An investigation of construct relevant and irrelevant features of mathematics problem-solving questions using comparative judgement and Kelly’s Repertory Grid. Research in Mathematics Education, 19(2), 112–129.
+   doi: 10.1080/14794802.2017.1334576
+   open_data: N
+   republish: Y
+   judging_sessions:
+    - N_A: 33
+      N_R: 66
+      N_J: 1650
+      items: secondary school students' mathematics problem solving responses
+      judge_expertise: expert
+      judging_prompt: "Which item best elicits mathematical problem-solving as described by AO3?"
+      
+ - project_id: Holmes_2018
+   citation: Holmes, S. D., Meadows, M., Stockford, I., & He, Q. (2018). Investigating the comparability of examination difficulty using comparative judgement and Rasch modelling. International Journal of Testing, 18, 366–391.
+   doi: 10.1080/15305058.2018.1486316
+   open_data: N
+   republish: Y
+   judging_sessions:
+    - N_A: 43
+      N_R: 2150
+      N_J: 35000
+      items: GCSE mathematics items (not responses)
+      judge_expertise: expert
+      judging_prompt: “Which Item is the More Mathematically Difficult to Answer Fully?"
 
 - project_id: Jones2015
   citation: Jones, I., Swan, M., & Pollitt, A. (2015). Assessing mathematical problem solving using comparative judgement. International Journal of Science and Mathematics Education, 13(1), 151-177.
