@@ -17,6 +17,30 @@
 #            novice = judges have little or no domain-specific expertise, and have not produced their own representations
 #      judging_prompt: what the judges were asked to base their decisions on
 
+ - project_id: Bramley_2019
+   citation: Bramley, T., & Vitello, S. (2019). The effect of adaptivity on the reliability coefficient in adaptive comparative judgement. Assessment in Education: Principles, Policy & Practice, 26(1), 43–58. 
+   doi: 10.1080/0969594X.2017.1418734
+   open_data: N
+   republish: Y
+   judging_sessions:
+    - study: ALLPLAYALL (Bramley: this has the data for the all-play-all, excluding the data from one of the judges (judge 19) who it says on p49 of Bramley & Vitello (2019) we excluded for implausibly fast judgements.  20 scripts and 17 judges in total.).
+    - N_A: 18
+      N_R: 20
+      N_J: 180
+    - study: ACJ (Bramley: this has the data for the adaptive study.  Same judges, no exclusions.  150 scripts (including the 20 from the all-play-all) and 18 judges in total (same judges as the all-play-all)).
+    - N_A: 18
+      N_R: 150
+      N_J: 1079
+    - study: RANDOM (Bramley: this has the data for the ‘random’ (but chosen in advance) study.  The same 150 scripts but 16 different judges.).
+    - N_A: 16
+      N_R: 150
+      N_J: 1097
+      items: GCSE English autobiographical essays (real scripts)
+      judge_expertise: expert
+      judging_prompt: "Which essay is better?"
+      author_note: there are some apparently missing judge numbers – I think this was judges who dropped out of the study
+
+ 
  - project_id: Coertjens_2021
    citation: Coertjens, L., Lesterhuis, M., De Winter, B. Y., Goossens, M., De Maeyer, S., & Michels, N. R. (2021). Improving Self-Reflection Assessment Practices: Comparative Judgment as an Alternative to Rubrics. Teaching and Learning in Medicine, 1-11.
    doi: 10.1080/10401334.2021.1877709
