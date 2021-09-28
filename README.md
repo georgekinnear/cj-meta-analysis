@@ -22,7 +22,7 @@ Something like "Comparative judgement as a research tool: a meta-analysis of rel
     - Reports (e.g. Ofqual, conference proceedings)
     - Unpublished
 * Comparative judgement
-  * Not using adaptivity
+  * Not using adaptivity REALLY?
   * The paired decisions are sent to Bradley-Terry and reliability is computed. (Some research will use paired comparisons but never combine those to produce a rank order, so we would not include such studies.)
 
 ## Method
