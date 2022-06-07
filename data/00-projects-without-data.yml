@@ -1,0 +1,1035 @@
+    
+- project_id: Hartell2019
+  citation: 'Hartell, E. (2019). Comparative judgment: How it can be used to enhance
+    teachers'' formative assessment skills and students'' learning. Education Canada
+    Magazine/EdCan Network, 59(1), 18-21.'
+  doi: .na.character
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+        
+- project_id: Barber2018
+  citation: 'Barber, J. (2018). Five go marking an exam question: the use of Adaptive
+    Comparative Judgement to manage subjective bias. Practitioner Research in Higher
+    Education, 11(1), 94-100.'
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Demonacos2019a
+  citation: 'Demonacos, C., Ellis, S., & Barber, J. (2019). Student Peer Assessment
+    Using Adaptive Comparative Judgment: Grading Accuracy versus Quality of Feedback. Practitioner
+    Research in Higher Education, 12(1), 50-59.'
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Sumner2021
+  citation: Sumner, J. (2021). Comparative judgement. Innovative language pedagogy
+    report, 63.
+  doi: 10.14705/rpnet.2021.50.1237
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Steedle2016
+  citation: Steedle, J. T., & Ferrara, S. (2016). Evaluating comparative judgment
+    as an approach to essay scoring. Applied Measurement in Education, 29(3), 211-223.
+  doi: 10.1080/08957347.2016.1171769
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Cukurova2018
+  citation: 'Cukurova, M., & Luckin, R. (2018, June). Evaluating Innovative Collaborative
+    Learning Practice: An''Innovative''Delphi Approach. In International Conference
+    of the Learning Sciences (ICLS2018) (Vol. 2, pp. 681-688). International Society
+    of the Learning Sciences (ISLS).'
+  doi: .na.character
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Johnson2020
+  citation: Johnson, M. W., Rodriguez-Arciniegas, S., & Kataeva, A. N. (2020). Comparative
+    judgement and the visualisation of construct formation in a personal learning
+    environment. Interactive Learning Environments, 1-20.
+  doi: 10.1080/10494820.2020.1799030
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Yasar2017
+  citation: Yaşar, M. (2018). Scaling of Ideal Teachers Characteristics with Pairwise
+    Comparison Judgments According to Pre-service Teachers Opinions. International
+    Journal of Assessment Tools in Education, 5(1), 130-145.
+  doi: 10.21449/ijate.369233
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Jones2020
+  citation: Jones, S. R., Scott, C. J., Barnard, L. A., Highfield, R., Lintott, C.
+    J., & Baeten, E. (2020). The visual complexity of coronal mass ejections follows
+    the solar cycle. Space Weather, 18(10), e2020SW002556.
+  doi: 10.1029/2020sw002556
+  open_data: The paired comparison data from “Protect our Planet from Solar Storms”
+    can be found at https://figshare.com/s/7e0270daa8153bb0416e, and the code used
+    is available at https://github.com/S-hannon/complexity-solar-cycle website
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Potter2017
+  citation: 'Potter, T., Englund, L., Charbonneau, J., MacLean, M. T., Newell, J.,
+    & Roll, I. (2017). ComPAIR: A new online tool using adaptive comparative judgement
+    to support learning with peer feedback. Teaching & Learning Inquiry, 5(2), 89-113.'
+  doi: 10.20343/teachlearninqu.5.2.8
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Sims2020
+  citation: 'Sims, M. E., Cox, T. L., Eckstein, G. T., Hartshorn, K. J., Wilcox, M.
+    P., & Hart, J. M. (2020). Rubric Rating with MFRM versus Randomly Distributed
+    Comparative Judgment: A Comparison of Two Approaches to Second‐Language Writing
+    Assessment. Educational Measurement: Issues and Practice.'
+  doi: 10.1111/emip.12329
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Tabarestani2020
+  citation: Tabarestani, F. Z. H., Mousazadegan, F., & Ezazshahabi, N. (2020). Assessment
+    of the thermal insulation properties of multilayered mittens considering the airflow
+    speed. International Journal of Clothing Science and Technology.
+  doi: 10.1108/ijcst-01-2020-0007
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Burggraaff2015
+  citation: 'Burggraaff, J., Dorn, J., D''Souza, M., Morrison, C., Kamm, C. P., Kontschieder,
+    P., ... & Uitdehaag, B. (2020). Video-Based Pairwise Comparison: Enabling the
+    Development of Automated Rating of Motor Dysfunction in Multiple Sclerosis. Archives
+    of physical medicine and rehabilitation, 101(2), 234-241. https://doi.org/10.1016/j.apmr.2019.07.016'
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Sogaard2016
+  citation: Søgaard, J., Shahid, M., Pokhrel, J., & Brunnström, K. (2017). On subjective
+    quality assessment of adaptive video streaming via crowdsourcing and laboratory
+    based experiments. Multimedia tools and applications, 76(15), 16727-16748.
+  doi: 10.1007/s11042-016-3948-3
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Li2013
+  citation: 'Li, J., Barkowsky, M., & Le Callet, P. (2013, March). Boosting paired
+    comparison methodology in measuring visual discomfort of 3DTV: performances of
+    three different designs. In Stereoscopic Displays and Applications XXIV (Vol.
+    8648, p. 86481V). International Society for Optics and Photonics.'
+  doi: 10.1117/12.2002075
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Lee2012
+  citation: Lee, J. S., Goldmann, L., & Ebrahimi, T. (2013). Paired comparison-based
+    subjective quality assessment of stereoscopic images. Multimedia tools and applications, 67(1),
+    31-48.
+  doi: 10.1007/s11042-012-1011-6
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: KarpinskaKrakowiak2018
+  citation: Karpińska-Krakowiak, M. (2018). Ratings or pairwise comparisons? An experimental
+    study on scale usability. Economic and Environmental Studies, 18 (46), 653-664.
+  doi: 10.25167/ees.2018.46.11
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Burkner2021
+  citation: Bürkner, P. (2021, February 25). On the information obtainable from comparative
+    judgments. https://doi.org/10.31234/osf.io/j5efn
+  doi: 10.31234/osf.io/j5efn
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Suzuki2010
+  citation: Suzuki, T., Yasui, S., & Ojima, Y. (2010). Evaluating adaptive paired
+    comparison experiments. In Frontiers in Statistical Quality Control 9 (pp. 341-350).
+    Physica-Verlag HD.
+  doi: 10.1007/978-3-7908-2380-6_22
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Oraby2016
+  citation: 'Tamer Oraby, Michael G. Tyshenko, Margit Westphal, Shalu Darshan, Maxine
+    C. Croteau, Willy Aspinall, Susie Elsaadany, Neil Cashman & Daniel Krewski (2016)
+    Using expert judgments to improve chronic wasting disease risk management in Canada,
+    Journal of Toxicology and Environmental Health, Part A, 79:16-17, 713-728, DOI:
+    10.1080/15287394.2016.1174005'
+  doi: 10.1080/15287394.2016.1174005
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Fu2016
+  citation: Fu, Y., Hospedales, T. M., Xiang, T., Xiong, J., Gong, S., Wang, Y., &
+    Yao, Y. (2015). Robust subjective visual property prediction from crowdsourced
+    pairwise labels. IEEE transactions on pattern analysis and machine intelligence, 38(3),
+    563-577.
+  doi: 10.1109/tpami.2015.2456887
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Davies2011
+  citation: Davies, D., Collier, C., & Howe, A. (2012). Assessing scientific and technological
+    enquiry skills at age 11 using the e-scape system. International Journal of Technology
+    and Design Education, 22(2), 247-263.
+  doi: 10.1007/s10798-011-9191-3
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Canty2012a
+  citation: Canty, D. (2012). The impact of holistic assessment using adaptive comparative
+    judgement on student learning. http://hdl.handle.net/10344/6766
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Canty2019
+  citation: 'Canty, D., Buckley, J., & Seery, N. (2019). Inducting ITE students in
+    assessment practices through the use of comparative judgement. In PATT37 Conference
+    2019: Developing a knowledge economy through technology and engineering education..
+    Technology Education Research Group.'
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Buckley2020a
+  citation: Buckley, J., Canty, D., & Seery, N. (2020). An exploration into the criteria
+    used in assessing design activities with adaptive comparative judgment in technology
+    education. Irish Educational Studies, 1-19.
+  doi: 10.1080/03323315.2020.1814838
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Metzgar2016
+  citation: Metzgar, M. (2016). Using adaptive comparative judgement to assess student
+    work in an MBA course. International Journal for Infonomics, 9(3), 1217-1219.
+  doi: 10.20533/iji.1742.4712.2016.0148
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Seery2011
+  citation: Seery, N., Canty, D., & Phelan, P. (2012). The validity and value of peer
+    assessment using adaptive comparative judgement in design driven practical education. International
+    Journal of Technology and Design Education, 22(2), 205-226.
+  doi: 10.1007/s10798-011-9194-0
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Rowsome2013
+  citation: Rowsome, P., Seery, N., Lane, D., & Gordon, S. (2013). The development
+    of pre-service design educator’s capacity to make professional judgments on design
+    capability using adaptive comparative judgment. American Society for Engineering
+    Education.
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Seery2016
+  citation: Seery, N., Buckley, J., Doyle, A., & Canty, D. (2016). The validity and
+    reliability of adaptive comparative judgements in the assessment of graphical
+    capability. In ASEE Engineering Design Graphics Division 71st Mid-Year Conference..
+    ASEE.
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Seery2018
+  citation: Seery, N., Buckley, J., Delahunty, T., & Canty, D. (2019). Integrating
+    learners into the assessment process using adaptive comparative judgement with
+    an ipsative approach to identifying competence based gains relative to student
+    ability levels. International Journal of Technology and Design Education, 29(4),
+    701-715.
+  doi: 10.1007/s10798-018-9468-x
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Kimbell2021
+  citation: Kimbell, R. (2021). Examining the reliability of Adaptive Comparative
+    Judgement (ACJ) as an assessment tool in educational settings. International Journal
+    of Technology and Design Education, 1-15.
+  doi: 10.1007/s10798-021-09654-w
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Bartholomew2018a
+  citation: Bartholomew, S. R., Nadelson, L. S., Goodridge, W. H., & Reeve, E. M.
+    (2018). Adaptive comparative judgment as a tool for assessing open-ended design
+    problems and model eliciting activities. Educational Assessment, 23(2), 85-101.
+  doi: 10.1080/10627197.2018.1444986
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Bartholomew2018b
+  citation: Bartholomew, S. R., Strimel, G. J., Garcia, E., Yoshikawa, E., & Zhang,
+    L. (2018, June). Formative feedback for improved student performance through adaptive
+    comparative judgment. In 2018 ASEE Annual Conference & Exposition.
+  doi: 10.18260/1-2--30531
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Bartholomew2018c
+  citation: Bartholomew, S. R., Strimel, G. J., Purzer, S., Zhang, L., & Yoshikawa,
+    E. (2018, June). Differences and Similarities in Student, Instructor, and Professional
+    Perceptions of" Good Engineering Design" through Adaptive Comparative Judgment.
+    In 2018 ASEE Annual Conference & Exposition.
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Bartholomew2018d
+  citation: Bartholomew, S. R., Strimel, G. J., & Yoshikawa, E. (2019). Using adaptive
+    comparative judgment for student formative feedback and learning during a middle
+    school design project. International Journal of Technology and Design Education, 29(2),
+    363-385.
+  doi: 10.1007/s10798-018-9442-7
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Strimel2018
+  citation: Bartholomew, S. R., Strimel, G., & Jackson, A. (2018). A comparison of
+    traditional and adaptive comparative judgment assessment techniques for freshmen
+    engineering design projects. International Journal of Engineering Education, 34(1),
+    20-33.
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Baniya2019
+  citation: 'Baniya, S., Mentzer, N., Bartholomew, S. R., Chesley, A., Moon, C., &
+    Sherman, D. (2019). Using adaptive comparative judgment in writing assessment:
+    An investigation of reliability among interdisciplinary evaluators. Journal of
+    Technology Studies, 45(1), 24-35.'
+  doi: 10.21061/jots.v45i1.a.3
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Bartholomew2019a
+  citation: Bartholomew, S. R., Ruesch, E. Y., Hartell, E., & Strimel, G. J. (2020).
+    Identifying design values across countries through adaptive comparative judgment. International
+    Journal of Technology & Design Education, 30(2).
+  doi: 10.1007/s10798-019-09506-8
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Bartholomew2020a
+  citation: Bartholomew, S. R., Mentzer, N., Jones, M., Sherman, D., & Baniya, S.
+    (2020). Learning by evaluating (LbE) through adaptive comparative judgment. International
+    Journal of Technology and Design Education, 1-15.
+  doi: 10.1007/s10798-020-09639-1
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Rhind2017
+  citation: 'Rhind, S. M., Hughes, K. J., Yool, D., Shaw, D., Kerr, W., & Reed, N.
+    (2017). Adaptive comparative judgment: a tool to support students'' assessment
+    literacy. Journal of veterinary medical education, 44(4), 686-691.'
+  doi: 10.3138/jvme.0616-113r
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Tarricone2017
+  citation: Tarricone, P., & Newhouse, C. P. (2017). An investigation of the reliability
+    of using comparative judgment to score creative products. Educational Assessment,
+    22(4), 220-230.
+  doi: 10.1080/10627197.2017.1381553
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Myers2015
+  citation: Myers, B. R., & Finnegan, E. M. (2015). The effects of articulation on
+    the perceived loudness of the projected voice. Journal of Voice, 29(3), 390-e9.
+  doi: 10.1016/j.jvoice.2014.07.022
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Verhavert2017
+  citation: '-'
+  doi: 10.1177/0146621617748321
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Verhavert2019
+  citation: Meta-analysis. To be discussed
+  doi: 10.1080/0969594x.2019.1602027
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Whitehouse2012
+  citation: 'Whitehouse, C. (2012). Testing the validity of judgements about geography
+    essays using the Adaptive Comparative Judgement method. Manchester: AQA Centre
+    for Education Research and Policy.'
+  doi: .na.character
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Mortier2015a
+  citation: 'Mortier, A. V., Lesterhuis, M., Vlerick, P., & De Maeyer, S. (2015, June).
+    Comparative judgment within online assessment: exploring students feedback reactions.
+    In International Computer Assisted Assessment Conference (pp. 69-79). Springer,
+    Cham.'
+  doi: 10.1007/978-3-319-27704-2_8
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Mortier2016
+  citation: 'Mortier, Anneleen, Lesterhuis, M., Vlerick, P., & De Maeyer, S. (2016).
+    Comparative Judgment-based feedback versus the traditional approach: similarities
+    and differences. AHE: Leading Assessment for Learning in Higher Education. Presented
+    at the AHE: Leading Assessment for Learning in Higher Education.'
+  doi: .na.character
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Keppens2019a
+  citation: 'Keppens, K., Consuegra, E., Goossens, M., De Maeyer, S., & Vanderlinde,
+    R. (2019). Measuring pre-service teachers'' professional vision of inclusive classrooms:
+    A video-based comparative judgement instrument. Teaching and Teacher Education, 78,
+    1-14.'
+  doi: 10.1016/j.tate.2018.10.007
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Roose2017
+  citation: Roose, I., Vantieghem, W., Vanderlinde, R., & Van Avermaet, P. (2017).
+    Video-based comparative judgement as a method to measure teachers' professional
+    vision. In 17th Biennal EARLI Conference for Research on Learning and Instruction.
+  doi: .na.character
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Roose2018a
+  citation: 'Roose, I., Goossens, M., Vanderlinde, R., Vantieghem, W., & Van Avermaet,
+    P. (2018). Measuring professional vision of inclusive classrooms in secondary
+    education through video-based comparative judgement: An expert study. Studies
+    in Educational Evaluation, 56, 71-84.'
+  doi: 10.1016/j.stueduc.2017.11.007
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Roose2018b
+  citation: 'Roose, I., Goossens, M., Vanderlinde, R., Vantieghem, W., & Van Avermaet,
+    P. (2018). Measuring professional vision of inclusive classrooms in secondary
+    education through video-based comparative judgement: An expert study. Studies
+    in Educational Evaluation, 56, 71-84.'
+  doi: .na.character
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Roose2019
+  citation: Roose, I., Vantieghem, W., Van Damme, K., Lambert, P., Vanderlinde, R.,
+    & Van Avermaet, P. (2019). Measuring teachers’ professional vision of inclusive
+    classrooms through video-based comparative judgement. What does it mean to misfit?. International
+    Journal of Educational Research, 98, 257-271.
+  doi: 10.1016/j.ijer.2019.09.004
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Coertjens2017
+  citation: Coertjens, Liesje ; Lesterhuis, Marije ; De Winter, Benedicte ; De Maeyer,
+    Sven ; Michels, Nele. Assessing self-reflections in medical education using Comparative
+    Judgement.European Association for Research in Learning and Instruction (EARLI)
+    (Tampere, Finland, du 29/08/2017 au 02/09/2017).
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Lesterhuis2017a
+  citation: Lesterhuis, M., Verhavert, S., Coertjens, L., Donche, V., & De Maeyer,
+    S. (2017). Comparative judgement as a promising alternative to score competences.
+    In Innovative practices for higher education assessment and measurement (pp. 119-138).
+    IGI Global.
+  doi: 10.4018/978-1-5225-0531-0.ch007
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Coertjens2019
+  citation: 'Coertjens, Liesje ; Hody, Quentin ; Van Meenen, Florence ; Van Nes, Marie-Claire
+    ; Verschuren, Franck. Clumping of peer-assessment grades: Is comparative judgement
+    an alternative for rubrics rating?.EARLI (Aachen, du 12/08/2019 au 16/08/2019).'
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Gijsen2021
+  citation: 'Gijsen, M., van Daal, T., Lesterhuis, M., Gijbels, D., & De Maeyer, S.
+    (2021). The Complexity of Comparative Judgments in Assessing Argumentative Writing:
+    An Eye Tracking Study. Front. Educ. 5: 582800. doi: 10.3389/feduc.'
+  doi: 10.3389/feduc.2020.582800
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Murray2018
+  citation: Murray, N., & Sharpling, G. (2019). What traits do academics value in
+    student writing? Insights from a psychometric approach. Assessment & Evaluation
+    in Higher Education, 44(3), 489-500.
+  doi: 10.1080/02602938.2018.1521372
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Wheadon2019
+  citation: 'Wheadon, C., Barmby, P., Christodoulou, D., & Henderson, B. (2020). A
+    comparative judgement approach to the large-scale assessment of primary writing
+    in England. Assessment in Education: Principles, Policy & Practice, 27(1), 46–64.'
+  doi: 10.1080/0969594x.2019.1700212
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Wheadon2020
+  citation: Wheadon, C., de Moira, A. P., & Christodoulou, D. (2020, September 7).
+    The classification accuracy and consistency of comparative judgement of writing
+    compared to rubric-based teacher assessment. https://doi.org/10.31235/osf.io/vzus4
+  doi: 10.31235/osf.io/vzus4
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Lesterhuis2017b
+  citation: 'Lesterhuis, M., De Smedt, F., Bouwer, R., Van Keer, H., & De Maeyer,
+    S. (2017). Best of two worlds in writing assessment: Integrating benchmarking
+    and comparative judgement. In 17th Biennial EARLI Conference.'
+  doi: .na.character
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Herpt2020
+  citation: van Herpt, C. J. S. (2020). Using comparative judgement for the assessment
+    of written texts in primary education.
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Gasse2019
+  citation: 'Van Gasse, R., Lesterhuis, M., Verhavert, S., Bouwer, R., Vanhoof, J.,
+    Van Petegem, P., & De Maeyer, S. (2019). Encouraging professional learning communities
+    to increase the shared consensus in writing assessments: The added value of comparative
+    judgement. Journal of Professional Capital and Community.'
+  doi: 10.1108/jpcc-08-2018-0021
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Goossens2018
+  citation: 'Goossens, M., & De Maeyer, S. (2017, October). How to obtain efficient
+    high reliabilities in assessing texts: Rubrics vs comparative judgement. In International
+    conference on technology enhanced assessment (pp. 13-25). Springer, Cham.'
+  doi: 10.1007/978-3-319-97807-9_2
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Daal2016
+  citation: 'van Daal, T., Lesterhuis, M., Coertjens, L., Donche, V., & De Maeyer,
+    S. (2019). Validity of comparative judgement to assess academic writing: Examining
+    implications of its holistic character and building on a shared consensus. Assessment
+    in Education: Principles, Policy & Practice, 26(1), 59-74.'
+  doi: 10.1080/0969594x.2016.1253542
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Daal2017
+  citation: 'van Daal, T., Lesterhuis, M., Coertjens, L., van de Kamp, M. T., Donche,
+    V., & De Maeyer, S. (2017, August). The complexity of assessing student work using
+    comparative judgment: The moderating role of decision accuracy. In Frontiers in
+    Education (Vol. 2, p. 44). Frontiers.'
+  doi: 10.3389/feduc.2017.00044
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Wheadon2014
+  citation: .na.character
+  doi: .na.character
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Coertjens2014
+  citation: Coertjens, Liesje ; van Daal, Tine ; Lesterhuis, Marije ; De Maeyer, Sven
+    ; Donche, Vincent ; et. al. Using Adaptive Comparative Judgement to assess competences.Association
+    for Educational Assessment Europe (Tallinn, Estonia, du 06/11/2014 au 8/11/2014).
+  doi: .na.character
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+- project_id: Boonen2019
+  citation: Boonen, N., Kloots, H., & Gillis, S. (2020). Rating the overall speech
+    quality of hearing-impaired children by means of comparative judgements. Journal
+    of communication disorders, 83, 105969.
+  doi: 10.1016/j.jcomdis.2019.105969
+  open_data: 'N'
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
