@@ -547,15 +547,24 @@
     conceptual understanding using comparative judgement. International Journal of
     Research in Undergraduate Mathematics Education, 2, 141–164.
   doi: 10.1007/s40753-016-0024-3
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: N
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: stats
+    N_A: 10
+    N_R: 20
+    items: written explanation of p-value
+    judge_expertise: expert
+  - study: calculus
+    N_A: 30
+    N_R: 42
+    items: written explanation of derivatives
+    judge_expertise: expert
+    note: "TODO: two participants were removed from analyses - check value for N_A, should it be 28?"
+  - study: algebra
+    N_A: 10
+    N_R: 46
+    items: written explanation of how letters are used in algebra
+    judge_expertise: expert
   
 - project_id: Hunter2018
   citation: 'Hunter, J., & Jones, I. (2018). Free-response tasks in primary mathematics:
