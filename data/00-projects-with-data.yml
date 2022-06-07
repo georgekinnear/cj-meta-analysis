@@ -552,17 +552,20 @@
   - study: stats
     N_A: 10
     N_R: 20
+    N_J: "not reported - see p. 145: They were instructed to complete one hour of judging, and they completed between 25 and 50 judgements each (M =45.3, SD = 8.7), with each script being compared between 40 and 50 times (M =45.3, SD = 3.0)."
     items: written explanation of p-value
     judge_expertise: expert
   - study: calculus
     N_A: 30
     N_R: 42
+    N_J: 1260
     items: written explanation of derivatives
     judge_expertise: expert
     note: "TODO: two participants were removed from analyses - check value for N_A, should it be 28?"
   - study: algebra
     N_A: 10
     N_R: 46
+    N_J: 460
     items: written explanation of how letters are used in algebra
     judge_expertise: expert
   
@@ -589,10 +592,8 @@
   doi: 10.1080/14794802.2019.1692060
   open_data: TODO... CHECK FOR OPEN DATA
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - N_A: 10
+    N_R: 189
+    N_J: 2060
+    items: responses to an open-ended question about derivatives
+    judge_expertise: expert
