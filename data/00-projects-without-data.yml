@@ -1033,3 +1033,16 @@
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
+
+- project_id: Honeychurch2019
+  citation: NA - just slides
+  doi: .na.character
+  open_data: TODO... CHECK FOR OPEN DATA
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
