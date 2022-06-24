@@ -7,15 +7,18 @@
     variations in aesthetic responses to fractal patterns. Frontiers in human neuroscience, 10,
     350.
   doi: 10.3389/fnhum.2016.00350
-  open_data: TODO... CHECK FOR OPEN DATA
-  judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  open_data: NA
+  judging_sessions: 
+  - study: Experiment 1
+    N_A: 310
+    N_R: 9
+    N_J: 66960 (72*3*310)
+    items: Computer-generated fractals (grayscale, threshold or edges only)
+    judge_expertise: Novice (psychology undergrads)
+    judging_prompt: Which [fractal] appears more complex?
+    Note: Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ
+    
+ 
   
 - project_id: StadthagenGonzalez2017
   citation: Stadthagen-González, H., López, L., Couto, M. C. P., & Párraga, C. A.
@@ -23,30 +26,32 @@
     judgments for code-switching research. Linguistic Approaches to Bilingualism, 8(1),
     67-97.
   doi: 10.1075/lab.16030.sta
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: NA
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: Experiment 2
+    N_A: 42
+    N_R: ??
+    N_J: 126 (plus some more) 
+    items: Acceptibility of non-native speaker sentence constructions
+    judge_expertise: Expert
+    judging_prompt: Pick the 'sentence' closer to the way you would speak to another bilingual person
+  Note: I honestly have no clue how many scripts or judgements were performed here. its ostensibly on page 82/83 but its so badly written that i don't know
   
 - project_id: Vatavu2020
   citation: 'Vatavu, R. D., & Vanderdonckt, J. (2020, November). Design Space and
     Users’ Preferences for Smartglasses Graphical Menus: A Vignette Study. In 19th
     International Conference on Mobile and Ubiquitous Multimedia (pp. 1-12).'
   doi: 10.1145/3428361.3428467
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: NA
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: User preferences for Smatglasseses graphical menus 
+    N_A: 251
+    N_R: 14
+    N_J: 22841 
+    items: menu layout preference
+    judge_expertise: Novice
+    judging_prompt: select the variants  preferred most by relying exclusively on the visual appearance of
+the presented information
   
 - project_id: Ramos2021
   citation: Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’ Assessments
@@ -54,13 +59,13 @@
   doi: 10.1007/s10516-021-09545-8
   open_data: https://doi.org/10.17028/rd.lboro.12458486.v1
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: 
+    N_A: 38
+    N_R: 9
+    N_J: 760
+    items: Mathematical explanations
+    judge_expertise: Expert
+    judging_prompt: which argument best explains why the proposition holds
   
 - project_id: Smith2020
   citation: Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused
@@ -70,12 +75,13 @@
   open_data: TODO... CHECK FOR OPEN DATA
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+    N_A: 5
+    N_R: 15
+    N_J: 345 (approximate value. Actual value not given in paper)
+    items: GSCE Creative writing samples
+    judge_expertise: Expert (teachers)
+    judging_prompt: Choose the most proficient text
+    Note: 5 assessors and 15 scripts is explicitly stated. Number of judgements ambiguous. "The total number of judgements was set at 80... to ensure a dufficient number of judgements per script (at an average of 23 decisions per script)"
   
 - project_id: Pollitt2012a
   citation: Whitehouse, C., & Pollitt, A. (2012). Using adaptive comparative judgement
