@@ -307,24 +307,8 @@ the presented information
     items: GCSE English essays
     judge_expertise: expert
     judging_prompt: Which essay is better?
-    adaptivity: no  
+    adaptivity: no
   
-- project_id: Coertjens2015
-  citation: Coertjens, Liesje; Verhavert, San; Lesterhuis, Marije; Goossens, Maarten; De
-    Maeyer, Sven. Is comparative judgment more efficient? An explorative study into
-    the reliabilityefficiency trade-off when using rubrics or comparative judgment. Association
-    for Educational Assessment Europe Conference (Glasgow, Scotland, from 05/11/2015
-    to 7/11/2015).
-  doi: .na.character
-  open_data: 'N'
-  judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
   
 - project_id: Settembri2018
   citation: Settembri, P., Van Gasse, R., Coertjens, L., & De Maeyer, S. (2018). Oranges
