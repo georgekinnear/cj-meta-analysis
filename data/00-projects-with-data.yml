@@ -309,22 +309,21 @@ the presented information
     judging_prompt: Which essay is better?
     adaptivity: no
   
-  
 - project_id: Settembri2018
   citation: Settembri, P., Van Gasse, R., Coertjens, L., & De Maeyer, S. (2018). Oranges
     and Apples? Using Comparative Judgement for Reliable Briefing Paper Assessment
     in Simulation Games. In Simulations of Decision-Making as Active Learning Tools (pp.
     93-108). Springer, Cham.
   doi: 10.1007/978-3-319-74147-5_8
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: N
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+    N_A: 4
+    N_R: 84
+    N_J: 620
+    items: Political science students briefing documents
+    judge_expertise: expert
+    judging_prompt: unsure
+    adaptivity: unsure
   
 - project_id: Coertjens2021
   citation: 'Coertjens, L., Lesterhuis, M., De Winter, B. Y., Goossens, M., De Maeyer,
