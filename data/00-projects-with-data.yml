@@ -396,27 +396,53 @@ the presented information
   doi: 10.1016/j.jmathb.2020.100824
   open_data: Lboro repository
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: expert judges
+    N_A: 29
+    N_R: 175
+    N_J: 1941
+    items: undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer
+    judge_expertise: expert
+    judging_prompt: better
+    adaptive: no
+  - study: novice judges
+    N_A: 10
+    N_R: 175
+    N_J: 1740
+    items: undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer
+    judge_expertise: novice
+    judging_prompt: better
+    adaptive: no
   
 - project_id: Jones2013a
   citation: Jones, I., & Alcock, L. (2014). Peer assessment without assessment criteria.
     Studies in Higher Education, 39(10), 1774–1787. https://doi.org/10.1080/03075079.2013.821974
   doi: 10.1080/03075079.2013.821974
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: expert judges
+    N_A: 11
+    N_R: 168
+    N_J: 2797
+    items: undergraduate calculus test
+    judge_expertise: expert
+    judging_prompt: better 
+    adaptive: yes
+  - study: peer judges
+    N_A: 193
+    N_R: 168
+    N_J: 2813
+    items: undergraduate calculus test
+    judge_expertise: peer
+    judging_prompt: better 
+    adaptive: yes
+  - study: novice judges
+    N_A: 9
+    N_R: 168
+    N_J: 1217
+    items: undergraduate calculus test
+    judge_expertise: novice
+    judging_prompt: better 
+    adaptive: yes        
   
 - project_id: Jones2013b
   citation: 'Jones, I., Inglis, M., Gilmore, C., & Hodgen, J. (2013). Measuring conceptual
@@ -424,60 +450,87 @@ the presented information
     of the 37th Conference of the International Group for the Psychology of Mathematics
     Education (Vol. 3, pp. 113–120). IGPME.'
   doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+    N_A: 8
+    N_R: 25
+    N_J: 400
+    items: Secondary student responses to a fractions test question
+    judge_expertise: expert
+    judging_prompt: better
+    adaptive: yes
   
 - project_id: Jones2014
   citation: Jones, I., Swan, M., & Pollitt, A. (2014). Assessing mathematical problem
     solving using comparative judgement. International Journal of Science and Mathematics
     Education, 13(1), 151–177. https://doi.org/10.1007/s10763-013-9497-6
   doi: 10.1007/s10763-013-9497-6
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
-  
+  - study: GCSE maths
+    N_A: 23
+    N_R: 18
+    N_J: 301
+    items: Secondary student responses to GCSE maths questions
+    judge_expertise: expert
+    judging_prompt: which candidate is the more able mathematician?
+    adaptive: yes  
+  - study: Bowland maths
+    N_A: 23
+    N_R: 18
+    N_J: 350
+    items: Secondary student responses to problem solving questions
+    judge_expertise: expert
+    judging_prompt: which candidate is the more able mathematician?
+    adaptive: yes
+      
 - project_id: McMahon2014
-  citation: 'McMahon, S., & Jones, I. (2015). A comparative judgement approach to
+  citation: McMahon, S., & Jones, I. (2015). A comparative judgement approach to
     teacher assessment. Assessment in Education: Principles, Policy & Practice, 22(3),
-    368–389. https://doi.org/10.1080/0969594X.2014.978839'
+    368–389. https://doi.org/10.1080/0969594X.2014.978839
   doi: 10.1080/0969594x.2014.978839
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: expert judges  
+    N_A: 5
+    N_R: 154
+    N_J: 1550
+    items: Secondary student chemistry experiment write-ups
+    judge_expertise: expert
+    judging_prompt: unstated
+    adaptive: unstated
+  - study: peer judges  
+    N_A: 37
+    N_R: 154
+    N_J: 3722
+    items: Secondary student chemistry experiment write-ups
+    judge_expertise: peer
+    judging_prompt: unstated
+    adaptive: unstated    
   
 - project_id: Jones2015a
-  citation: 'Jones, I., & Inglis, M. (2015). The problem of assessing problem solving:
+  citation: Jones, I., & Inglis, M. (2015). The problem of assessing problem solving:
     Can comparative judgement help? Educational Studies in Mathematics, 89(3), 337–355.
-    https://doi.org/10.1007/s10649-015-9607-1'
+    https://doi.org/10.1007/s10649-015-9607-1
   doi: 10.1007/s10649-015-9607-1
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: all 750 scripts
+    N_A: 15
+    N_R: 750
+    N_J: 3607
+    items: Secondary student responses to problem-solving maths questions
+    judge_expertise: expert
+    judging_prompt: most mathematically able
+    adaptive: unstated
+  - study: subset of 250 scripts
+    N_A: 5
+    N_R: 250
+    N_J: 1250
+    items: Secondary student responses to problem-solving maths questions
+    judge_expertise: expert
+    judging_prompt: most mathematically able
+    adaptive: unstated
   
 - project_id: Jones2015b
   citation: Jones, I., & Wheadon, C. (2015). Peer assessment using comparative and
