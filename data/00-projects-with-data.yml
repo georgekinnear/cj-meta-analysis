@@ -667,19 +667,19 @@ the presented information
     judge_expertise: expert
   
 - project_id: Hunter2018
-  citation: 'Hunter, J., & Jones, I. (2018). Free-response tasks in primary mathematics:
+  citation: Hunter, J., & Jones, I. (2018). Free-response tasks in primary mathematics:
     A window on students’ thinking. Proceedings of the 41st Annual Conference of the
-    Mathematics Education Research Group of Australasia, 41, 400–407.'
-  doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+    Mathematics Education Research Group of Australasia, 41, 400–407.
+  doi: https://eric.ed.gov/?id=ED592426
+  open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+    N_A: 20
+    N_R: 1912
+    N_J: 12888
+    items: Primary student responses to open-ended maths questions
+    judge_expertise: expert
+    judging_prompt: better response
+    adaptive: no
   
 - project_id: Bisson2019
   citation: 'Bisson, M.-J., Gilmore, C., Inglis, M., & Jones, I. (2019). Teaching
