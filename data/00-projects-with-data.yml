@@ -378,14 +378,13 @@ the presented information
     181-197.
   doi: 10.1007/s10649-020-09984-x
   open_data:  https://doi.org/10.17028/rd.lboro.8940149
-- study: WAS THIS MORE THAN ONE STUDY OR IS THAT JUST IN BENS THESIS?
   judging_sessions:
     N_A: 11
     N_R: 134
     N_J: 1573
     items: Undergraduate proof summaries
     judge_expertise: expert
-    judging_prompt: better
+    judging_prompt: judges clicking left or right to indicate which they judged better
     adaptive: no
   
 - project_id: Davies2021
@@ -441,14 +440,14 @@ the presented information
     items: undergraduate calculus test
     judge_expertise: novice
     judging_prompt: better 
-    adaptive: yes        
+    adaptive: yes
   
 - project_id: Jones2013b
-  citation: 'Jones, I., Inglis, M., Gilmore, C., & Hodgen, J. (2013). Measuring conceptual
-    understanding: The case of fractions. In A. M. Lindmeier & A. Heinze (Eds.), Proceedings
+  citation: Jones, I., Inglis, M., Gilmore, C., & Hodgen, J. (2013). Measuring conceptual
+    understanding The case of fractions. In A. M. Lindmeier & A. Heinze (Eds.), Proceedings
     of the 37th Conference of the International Group for the Psychology of Mathematics
-    Education (Vol. 3, pp. 113–120). IGPME.'
-  doi: .na.character
+    Education (Vol. 3, pp. 113–120). IGPME.
+  doi: N
   open_data: no
   judging_sessions:
     N_A: 8
@@ -456,7 +455,7 @@ the presented information
     N_J: 400
     items: Secondary student responses to a fractions test question
     judge_expertise: expert
-    judging_prompt: better
+    judging_prompt: better conceptual understanding
     adaptive: yes
   
 - project_id: Jones2014
@@ -496,16 +495,16 @@ the presented information
     N_J: 1550
     items: Secondary student chemistry experiment write-ups
     judge_expertise: expert
-    judging_prompt: unstated
-    adaptive: unstated
+    judging_prompt: select the best science report
+    adaptive: yes
   - study: peer judges  
     N_A: 37
     N_R: 154
     N_J: 3722
     items: Secondary student chemistry experiment write-ups
     judge_expertise: peer
-    judging_prompt: unstated
-    adaptive: unstated    
+    judging_prompt: select the best science report
+    adaptive: yes
   
 - project_id: Jones2015a
   citation: Jones, I., & Inglis, M. (2015). The problem of assessing problem solving:
@@ -521,7 +520,7 @@ the presented information
     items: Secondary student responses to problem-solving maths questions
     judge_expertise: expert
     judging_prompt: most mathematically able
-    adaptive: unstated
+    adaptive: unsure
   - study: subset of 250 scripts
     N_A: 5
     N_R: 250
@@ -529,7 +528,7 @@ the presented information
     items: Secondary student responses to problem-solving maths questions
     judge_expertise: expert
     judging_prompt: most mathematically able
-    adaptive: unstated
+    adaptive: unsure
   
 - project_id: Jones2015b
   citation: Jones, I., & Wheadon, C. (2015). Peer assessment using comparative and
@@ -543,7 +542,7 @@ the presented information
     items: Secondary student responses to a fractions test question
     judge_expertise: peer
     judging_prompt: better understanding of fractions
-    adaptive: unstated
+    adaptive: unsure
   
 - project_id: Jones2016a
   citation: Jones, I., & Karadeniz, I. (2016). An alternative approach to assessing
@@ -559,7 +558,7 @@ the presented information
     items: Secondary student responses to open-ended maths test questions
     judge_expertise: expert
     judging_prompt: the better mathematician
-    adaptive: unstated
+    adaptive: unsure
   
 - project_id: Jones2016b
   citation: Jones, I., Wheadon, C., Humphries, S., & Inglis, M. (2016). Fifty years
@@ -575,7 +574,7 @@ the presented information
     items: GCSE maths scripts
     judge_expertise: expert
     judging_prompt: which student you think is the better mathematician
-    adaptive: unstated
+    adaptive: unclear
   - study: GCSE maths perfect answers
     N_A: 18
     N_R: 48
@@ -583,7 +582,7 @@ the presented information
     items: Perfect GCSE maths scripts
     judge_expertise: expert
     judging_prompt: which student you think is the better mathematician
-    adaptive: unstated    
+    adaptive: unclear   
   
 - project_id: Jones2017
   citation: Jones, I., & Sirl, D. (2017). Peer assessment of mathematical understanding
@@ -627,7 +626,7 @@ the presented information
     N_J: 1911
     items: Secondary student statistics projects
     judge_expertise: expert
-    judging_prompt: unstated
+    judging_prompt: unstated, but judges attended a training session
     adaptive: no
   - study: English
     N_A: 17
@@ -635,7 +634,7 @@ the presented information
     N_J: 1856
     items: Secondary student written reports
     judge_expertise: expert
-    judging_prompt: unstated
+    judging_prompt: unstated, but judges attended a training session
     adaptive: no
   
 - project_id: Bisson2016
