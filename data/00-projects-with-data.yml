@@ -340,7 +340,6 @@ the presented information
     judge_expertise: expert
     judging_prompt: Which is the better self-reflection?
     adaptive: unsure
-    adaptive: no
   
 - project_id: Holmes2017
   citation: Holmes, S. D., He, Q., & Meadows, M. (2017). An investigation of construct
@@ -348,7 +347,7 @@ the presented information
     comparative judgement and Kelly’s Repertory Grid. Research in Mathematics Education, 19(2),
     112-129.
   doi: 10.1080/14794802.2017.1334576
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: N
   judging_sessions:
     N_A: 33
     N_R: 66
@@ -363,9 +362,8 @@ the presented information
     the comparability of examination difficulty using comparative judgement and Rasch
     modelling. International Journal of Testing, 18, 366–391.
   doi: 10.1080/15305058.2018.1486316
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: N
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
     N_A: 35
     N_R: 230
     N_J: ~3450
@@ -380,6 +378,7 @@ the presented information
     181-197.
   doi: 10.1007/s10649-020-09984-x
   open_data:  https://doi.org/10.17028/rd.lboro.8940149
+- study: WAS THIS MORE THAN ONE STUDY OR IS THAT JUST IN BENS THESIS?
   judging_sessions:
     N_A: 11
     N_R: 134
