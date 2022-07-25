@@ -323,7 +323,7 @@ the presented information
     items: Political science students briefing documents
     judge_expertise: expert
     judging_prompt: unsure
-    adaptivity: unsure
+    adaptivity: no
   
 
 - project_id: Coertjens2021
@@ -339,7 +339,7 @@ the presented information
     items: Medical students self-reflections 
     judge_expertise: expert
     judging_prompt: Which is the better self-reflection?
-    adaptive: unsure
+    adaptive: no
   
 - project_id: Holmes2017
   citation: Holmes, S. D., He, Q., & Meadows, M. (2017). An investigation of construct
