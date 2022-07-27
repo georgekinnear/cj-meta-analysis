@@ -17,7 +17,7 @@
     judge_expertise: Novice 
     judging_prompt: Which [fractal] appears more complex?
     note: Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ
-    adaptive: no
+    adaptivity: no
   - study: Threshold
     N_A: 310
     N_R: 9
@@ -26,7 +26,7 @@
     judge_expertise: Novice 
     judging_prompt: Which [fractal] appears more complex?
     note: Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ
-    adaptive: no
+    adaptivity: no
   - study: EdgesOnly
     N_A: 310
     N_R: 9
@@ -35,7 +35,7 @@
     judge_expertise: Novice 
     judging_prompt: Which [fractal] appears more complex?
     note: Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ
-    adaptive: no
+    adaptivity: no
     
   
 - project_id: StadthagenGonzalez2017
@@ -44,7 +44,7 @@
     judgments for code-switching research. Linguistic Approaches to Bilingualism, 8(1),
     67-97.
   doi: 10.1075/lab.16030.sta
-  open_data: NA
+  open_data: no
   judging_sessions:
   - N_A: 42
     N_R: ??
@@ -52,7 +52,7 @@
     items: Acceptibility of non-native speaker sentence constructions
     judge_expertise: Expert
     judging_prompt: Pick the 'sentence' closer to the way you would speak to another bilingual person
-    adaptive: no 
+    adaptivity: no 
     note: I honestly have no clue how many scripts or judgements were performed here. its ostensibly on page 82/83 but its so badly written that i don't know
   
 - project_id: Vatavu2020
@@ -60,16 +60,15 @@
     Users’ Preferences for Smartglasses Graphical Menus: A Vignette Study. In 19th
     International Conference on Mobile and Ubiquitous Multimedia (pp. 1-12).'
   doi: 10.1145/3428361.3428467
-  open_data: NA
+  open_data: no
   judging_sessions: 
   - N_A: 251
     N_R: 14
     N_J: 22841 
     items: menu layout preference
     judge_expertise: Novice
-    judging_prompt: select the variants  preferred most by relying exclusively on the visual appearance of
-the presented information
-    adaptive: no 
+    judging_prompt: select the variants  preferred most by relying exclusively on the visual appearance of the presented information
+    adaptivity: no 
   
 - project_id: Ramos2021
   citation: Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’ Assessments
@@ -83,7 +82,7 @@ the presented information
     items: Mathematical explanations
     judge_expertise: Expert
     judging_prompt: which argument best explains why the proposition holds
-    adaptive: no 
+    adaptivity: no 
   
 - project_id: Smith2020
   citation: Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused
@@ -98,7 +97,7 @@ the presented information
     items: GSCE Creative writing samples
     judge_expertise: Expert (teachers)
     judging_prompt: Choose the most proficient text
-    adaptive: no 
+    adaptivity: no 
     note: 5 assessors and 15 scripts is explicitly stated. Number of judgements ambiguous. "The total number of judgements was set at 80... to ensure a dufficient number of judgements per script (at an average of 23 decisions per script)"
   
 - project_id: Pollitt2012a
@@ -106,7 +105,7 @@ the presented information
     to obtain a highly reliable rank order in summative assessment. Manchester, NH: AQA
     Centre for Education Research and Policy. Retrieved from https://cerp.aqa.org.uk/research-library/using-adaptive-comparative-judgement-obtain-highly-reliable-rank-order-summative-assessment
   doi: .na.character
-  open_data: 'N'
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -115,13 +114,13 @@ the presented information
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
-    adaptive: yes 
+    adaptivity: yes 
   
 - project_id: Pollitt2017
   citation: Pollitt, A. (2017). Using professional judgement to equate exam standards.
     In Standard Setting in Education (pp. 279-298). Springer, Cham.
   doi: 10.1007/978-3-319-50856-6_16
-  open_data: 'N'
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -149,7 +148,7 @@ the presented information
     evaluation preferences according to learning approaches. Elementary Education
     Online, 19 (3), 1284-1294.
   doi: 10.17051/ilkonline.2020.728048
-  open_data: 'N'
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -163,7 +162,7 @@ the presented information
   citation: Esen, Y. D. (2019). Scaling the teachers’ perception of competence regarding
     measurement and evaluation. [Unpublished Masters dissertation]. Ankara University.
   doi: .na.character
-  open_data: 'N'
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -179,7 +178,7 @@ the presented information
     of the 2017 CHI Conference on Human Factors in Computing Systems (pp. 2440-2448).
     Association for Computing Machinery (ACM). https://doi.org/10.1145/3025453.3025655'
   doi: 10.1145/3025453.3025655
-  open_data: 'N'
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -236,7 +235,7 @@ the presented information
 - project_id: LuckettX
   citation: Luckett, C. (n.d.) Unpublished data.
   doi: .na.character
-  open_data: 'N'
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -264,7 +263,7 @@ the presented information
   citation: Kinnear, G., et al. (2021). Using compative judgement [Unpublished undergraduate
     dissertation]. The University of Edinburgh.
   doi: .na.character
-  open_data: 'N'
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -280,7 +279,7 @@ the presented information
 
   
 - project_id: Bramley2018
-  citation: Bramley, T., & Vitello, S. (2019). The effect of adaptivity on the reliability coefficient in adaptive comparative judgement. Assessment in Education: Principles, Policy & Practice, 26, 43–58.
+  citation: "Bramley, T., & Vitello, S. (2019). The effect of adaptivity on the reliability coefficient in adaptive comparative judgement. Assessment in Education: Principles, Policy & Practice, 26, 43–58."
   doi: 10.1080/0969594x.2017.1418734
   open_data: No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true
   judging_sessions:
@@ -317,7 +316,7 @@ the presented information
   doi: 10.1007/978-3-319-74147-5_8
   open_data: N
   judging_sessions:
-    N_A: 4
+  - N_A: 4
     N_R: 84
     N_J: 620
     items: Political science students briefing documents
@@ -327,19 +326,19 @@ the presented information
   
 
 - project_id: Coertjens2021
-  citation: Coertjens, L., Lesterhuis, M., De Winter, B. Y., Goossens, M., De Maeyer,
+  citation: "Coertjens, L., Lesterhuis, M., De Winter, B. Y., Goossens, M., De Maeyer,
     S., & Michels, N. R. (2021). Improving Self-Reflection Assessment Practices: Comparative
-    Judgment as an Alternative to Rubrics. Teaching and Learning in Medicine, 1-11.
+    Judgment as an Alternative to Rubrics. Teaching and Learning in Medicine, 1-11."
   doi: 10.1080/10401334.2021.1877709
   open_data: N
   judging_sessions:
-    N_A: 8
+  - N_A: 8
     N_R: 22
     N_J: 200
     items: Medical students self-reflections 
     judge_expertise: expert
     judging_prompt: Which is the better self-reflection?
-    adaptive: no
+    adaptivity: no
   
 - project_id: Holmes2017
   citation: Holmes, S. D., He, Q., & Meadows, M. (2017). An investigation of construct
@@ -349,13 +348,13 @@ the presented information
   doi: 10.1080/14794802.2017.1334576
   open_data: N
   judging_sessions:
-    N_A: 33
+  - N_A: 33
     N_R: 66
     N_J: 1650
     items: Student responses to maths GCSE items
     judge_expertise: expert
     judging_prompt: Which item best elicits mathematical problem-solving as described by AO3?
-    adaptive: no
+    adaptivity: no
   
 - project_id: Holmes2018
   citation: Holmes, S. D., Meadows, M., Stockford, I., & He, Q. (2018). Investigating
@@ -364,13 +363,13 @@ the presented information
   doi: 10.1080/15305058.2018.1486316
   open_data: N
   judging_sessions:
-    N_A: 35
+  - N_A: 35
     N_R: 230
     N_J: ~3450
     items: Maths GCSE items (without student responses)
     judge_expertise: expert
     judging_prompt: Which Item is the More Mathematically Difficult to Answer Fully?
-    adaptive: no
+    adaptivity: no
   
 - project_id: Davies2020a
   citation: Davies, B., Alcock, L., & Jones, I. (2020). Comparative judgement, proof
@@ -379,13 +378,13 @@ the presented information
   doi: 10.1007/s10649-020-09984-x
   open_data:  https://doi.org/10.17028/rd.lboro.8940149
   judging_sessions:
-    N_A: 11
+  - N_A: 11
     N_R: 134
     N_J: 1573
     items: Undergraduate proof summaries
     judge_expertise: expert
     judging_prompt: judges clicking left or right to indicate which they judged better
-    adaptive: no
+    adaptivity: no
   
 - project_id: Davies2021
   citation: Davies, B., Alcock, L., & Jones, I. (2021). What do mathematicians mean
@@ -401,7 +400,7 @@ the presented information
     items: undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer
     judge_expertise: expert
     judging_prompt: better
-    adaptive: no
+    adaptivity: no
   - study: novice judges
     N_A: 10
     N_R: 175
@@ -409,7 +408,7 @@ the presented information
     items: undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer
     judge_expertise: novice
     judging_prompt: better
-    adaptive: no
+    adaptivity: no
   
 - project_id: Jones2013a
   citation: Jones, I., & Alcock, L. (2014). Peer assessment without assessment criteria.
@@ -424,7 +423,7 @@ the presented information
     items: undergraduate calculus test
     judge_expertise: expert
     judging_prompt: better 
-    adaptive: yes
+    adaptivity: yes
   - study: peer judges
     N_A: 193
     N_R: 168
@@ -432,7 +431,7 @@ the presented information
     items: undergraduate calculus test
     judge_expertise: peer
     judging_prompt: better 
-    adaptive: yes
+    adaptivity: yes
   - study: novice judges
     N_A: 9
     N_R: 168
@@ -440,23 +439,23 @@ the presented information
     items: undergraduate calculus test
     judge_expertise: novice
     judging_prompt: better 
-    adaptive: yes
+    adaptivity: yes
   
 - project_id: Jones2013b
   citation: Jones, I., Inglis, M., Gilmore, C., & Hodgen, J. (2013). Measuring conceptual
     understanding The case of fractions. In A. M. Lindmeier & A. Heinze (Eds.), Proceedings
     of the 37th Conference of the International Group for the Psychology of Mathematics
     Education (Vol. 3, pp. 113–120). IGPME.
-  doi: N
+  doi: .na.character
   open_data: no
   judging_sessions:
-    N_A: 8
+  - N_A: 8
     N_R: 25
     N_J: 400
     items: Secondary student responses to a fractions test question
     judge_expertise: expert
     judging_prompt: better conceptual understanding
-    adaptive: yes
+    adaptivity: yes
   
 - project_id: Jones2014
   citation: Jones, I., Swan, M., & Pollitt, A. (2014). Assessing mathematical problem
@@ -472,7 +471,7 @@ the presented information
     items: Secondary student responses to GCSE maths questions
     judge_expertise: expert
     judging_prompt: which candidate is the more able mathematician?
-    adaptive: yes  
+    adaptivity: yes  
   - study: Bowland maths
     N_A: 23
     N_R: 18
@@ -480,12 +479,12 @@ the presented information
     items: Secondary student responses to problem solving questions
     judge_expertise: expert
     judging_prompt: which candidate is the more able mathematician?
-    adaptive: yes
+    adaptivity: yes
       
 - project_id: McMahon2014
-  citation: McMahon, S., & Jones, I. (2015). A comparative judgement approach to
+  citation: "McMahon, S., & Jones, I. (2015). A comparative judgement approach to
     teacher assessment. Assessment in Education: Principles, Policy & Practice, 22(3),
-    368–389. https://doi.org/10.1080/0969594X.2014.978839
+    368–389. https://doi.org/10.1080/0969594X.2014.978839"
   doi: 10.1080/0969594x.2014.978839
   open_data: no
   judging_sessions:
@@ -496,7 +495,7 @@ the presented information
     items: Secondary student chemistry experiment write-ups
     judge_expertise: expert
     judging_prompt: select the best science report
-    adaptive: yes
+    adaptivity: yes
   - study: peer judges  
     N_A: 37
     N_R: 154
@@ -504,12 +503,12 @@ the presented information
     items: Secondary student chemistry experiment write-ups
     judge_expertise: peer
     judging_prompt: select the best science report
-    adaptive: yes
+    adaptivity: yes
   
 - project_id: Jones2015a
-  citation: Jones, I., & Inglis, M. (2015). The problem of assessing problem solving:
+  citation: "Jones, I., & Inglis, M. (2015). The problem of assessing problem solving:
     Can comparative judgement help? Educational Studies in Mathematics, 89(3), 337–355.
-    https://doi.org/10.1007/s10649-015-9607-1
+    https://doi.org/10.1007/s10649-015-9607-1"
   doi: 10.1007/s10649-015-9607-1
   open_data: no
   judging_sessions:
@@ -520,7 +519,7 @@ the presented information
     items: Secondary student responses to problem-solving maths questions
     judge_expertise: expert
     judging_prompt: most mathematically able
-    adaptive: unsure
+    adaptivity: unsure
   - study: subset of 250 scripts
     N_A: 5
     N_R: 250
@@ -528,7 +527,7 @@ the presented information
     items: Secondary student responses to problem-solving maths questions
     judge_expertise: expert
     judging_prompt: most mathematically able
-    adaptive: unsure
+    adaptivity: unsure
   
 - project_id: Jones2015b
   citation: Jones, I., & Wheadon, C. (2015). Peer assessment using comparative and
@@ -536,34 +535,34 @@ the presented information
   doi: 10.1016/j.stueduc.2015.09.004
   open_data: no
   judging_sessions:
-    N_A: 76
+  - N_A: 76
     N_R: 24
     N_J: 1983
     items: Secondary student responses to a fractions test question
     judge_expertise: peer
     judging_prompt: better understanding of fractions
-    adaptive: unsure
+    adaptivity: unsure
   
 - project_id: Jones2016a
   citation: Jones, I., & Karadeniz, I. (2016). An alternative approach to assessing
     achievement. In C. Csikos, A. Rausch, & J. Szitanyi (Eds.), The 40th Conference
     of the International Group for the Psychology of Mathematics Education (Vol. 3,
-    pp. 51–58). IGPME.
-  doi: https://repository.lboro.ac.uk/articles/conference_contribution/An_alternative_approach_to_assessing_achievement/9373622/files/16984337.pdf
+    pp. 51–58). IGPME. https://hdl.handle.net/2134/21090
+  doi: .na.character
   open_data: no
   judging_sessions:
-    N_A: 11
+  - N_A: 11
     N_R: 686
     N_J: 6600
     items: Secondary student responses to open-ended maths test questions
     judge_expertise: expert
     judging_prompt: the better mathematician
-    adaptive: unsure
+    adaptivity: unsure
   
 - project_id: Jones2016b
-  citation: Jones, I., Wheadon, C., Humphries, S., & Inglis, M. (2016). Fifty years
+  citation: "Jones, I., Wheadon, C., Humphries, S., & Inglis, M. (2016). Fifty years
     of A-level mathematics: Have standards changed? British Educational Research Journal,
-    42(4), 543–560. https://doi.org/10.1002/berj.3224
+    42(4), 543–560. https://doi.org/10.1002/berj.3224"
   doi: 10.1002/berj.3224
   open_data: no
   judging_sessions:
@@ -574,7 +573,7 @@ the presented information
     items: GCSE maths scripts
     judge_expertise: expert
     judging_prompt: which student you think is the better mathematician
-    adaptive: unclear
+    adaptivity: unclear
   - study: GCSE maths perfect answers
     N_A: 18
     N_R: 48
@@ -582,41 +581,41 @@ the presented information
     items: Perfect GCSE maths scripts
     judge_expertise: expert
     judging_prompt: which student you think is the better mathematician
-    adaptive: unclear   
+    adaptivity: unclear   
   
 - project_id: Jones2017
   citation: Jones, I., & Sirl, D. (2017). Peer assessment of mathematical understanding
     using comparative judgement. Nordic Studies in Mathematics Education, 22(4), 147–164.
-  doi: NA
+  doi: .na.character
   open_data: no
   judging_sessions:
-    N_A: 132
+  - N_A: 132
     N_R: 141
     N_J: 3258
     items: undergraduate calculus test
     judge_expertise: peer
     judging_prompt: the better understanding
-    adaptive: yes
+    adaptivity: yes
   
 - project_id: Jones2019
-  citation: Jones, I., Bisson, M., Gilmore, C., & Inglis, M. (2019). Measuring conceptual
+  citation: "Jones, I., Bisson, M., Gilmore, C., & Inglis, M. (2019). Measuring conceptual
     understanding in randomised controlled trials: Can comparative judgement help?
-    British Educational Research Journal, 45(3), 662–680. https://doi.org/10.1002/berj.3519
+    British Educational Research Journal, 45(3), 662–680. https://doi.org/10.1002/berj.3519"
   doi: 10.1002/berj.3519
   open_data: https://lboro.figshare.com/s/2d4cfa 142ebf1ff24841
   judging_sessions:
-    N_A: 10
+  - N_A: 10
     N_R: 188
     N_J: 1890
     items: Primary student responses to an open-ended algebra test question
     judge_expertise: expert
     judging_prompt: which student demonstrated the better conceptual understanding of the use of letters in algebra
-    adaptive: no
+    adaptivity: no
   
 - project_id: Marshall2020
-  citation: Marshall, N., Shaw, K., Hunter, J., & Jones, I. (2020). Assessment by
+  citation: "Marshall, N., Shaw, K., Hunter, J., & Jones, I. (2020). Assessment by
     Comparative Judgement: An Application to Secondary Statistics and English in New
-    Zealand. New Zealand Journal of Educational Studies, 55(1), 49–71.
+    Zealand. New Zealand Journal of Educational Studies, 55(1), 49–71."
   doi: 10.1007/s40841-020-00163-3
   open_data: no
   judging_sessions:
@@ -627,7 +626,7 @@ the presented information
     items: Secondary student statistics projects
     judge_expertise: expert
     judging_prompt: unstated, but judges attended a training session
-    adaptive: no
+    adaptivity: no
   - study: English
     N_A: 17
     N_R: 253
@@ -635,7 +634,7 @@ the presented information
     items: Secondary student written reports
     judge_expertise: expert
     judging_prompt: unstated, but judges attended a training session
-    adaptive: no
+    adaptivity: no
   
 - project_id: Bisson2016
   citation: Bisson, M.-J., Gilmore, C., Inglis, M., & Jones, I. (2016). Measuring
@@ -665,19 +664,19 @@ the presented information
     judge_expertise: expert
   
 - project_id: Hunter2018
-  citation: Hunter, J., & Jones, I. (2018). Free-response tasks in primary mathematics:
+  citation: "Hunter, J., & Jones, I. (2018). Free-response tasks in primary mathematics:
     A window on students’ thinking. Proceedings of the 41st Annual Conference of the
     Mathematics Education Research Group of Australasia, 41, 400–407.
-  doi: https://eric.ed.gov/?id=ED592426
+  doi: https://eric.ed.gov/?id=ED592426"
   open_data: no
   judging_sessions:
-    N_A: 20
+  - N_A: 20
     N_R: 1912
     N_J: 12888
     items: Primary student responses to open-ended maths questions
     judge_expertise: expert
     judging_prompt: better response
-    adaptive: no
+    adaptivity: no
   
 - project_id: Bisson2019
   citation: 'Bisson, M.-J., Gilmore, C., Inglis, M., & Jones, I. (2019). Teaching
