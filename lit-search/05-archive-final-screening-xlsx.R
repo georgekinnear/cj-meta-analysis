@@ -29,10 +29,9 @@ all_papers <- all_papers_raw %>%
 
 all_papers %>% tabyl(uses_cj, source)
 
-# NB - Bürkner 2021 is "uses_cj = No" but has request_data = TRUE.
-# I guess this was a mis-categorisation when screening to decide whether to request data?
-# How do we count this?
-
+# NB - Bürkner 2021 is "uses_cj = No" but had request_data = TRUE.
+# This was a mis-categorisation when screening, so we corrected it,
+# see https://github.com/georgekinnear/cj-meta-analysis/issues/3
 all_papers %>% tabyl(uses_cj, request_data)
 all_papers %>% 
   filter(uses_cj == "No", request_data)
@@ -77,3 +76,20 @@ all_papers %>%
   ) %>% 
   # the -DONOTOVERWRITE has been added to avoid writing over the subsequent manually-entered data
   yaml::write_yaml(file = "data/00-projects-with-data-DONOTOVERWRITE.yml", column.major = FALSE)
+
+
+all_papers %>%
+  filter(!data_retrieved) %>% 
+  arrange(who_contact) %>% 
+  mutate(open_data = case_when(
+    open_data == "Y" ~ open_data_notes,
+    open_data == "N" ~ "N",
+    TRUE ~ "TODO... CHECK FOR OPEN DATA"
+  )) %>% 
+  select(project_id,
+         citation = APA_citation,
+         doi,
+         open_data
+  ) %>% 
+  # the -DONOTOVERWRITE has been added to avoid writing over the subsequent manually-entered data
+  yaml::write_yaml(file = "data/00-projects-without-data-DONOTOVERWRITE.yml", column.major = FALSE)

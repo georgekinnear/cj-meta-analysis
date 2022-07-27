@@ -4,8 +4,8 @@ author: "George Kinnear"
 date: "28/06/2022"
 always_allow_html: true
 output:
-  github_document: default
   html_document: default
+  github_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -141,35 +141,64 @@ all_papers_in_screening %>%
   basic_kable()
 ```
 
-
-See here for example of creating a flowchart using DiagrammeR:
-
-https://mikeyharper.uk/flowcharts-in-r-using-diagrammer/
-
-```
+```{r}
 # Define some sample data
-data <- list(a=1000, b=800, c=600, d=400)
+data <- list(
+  step1 = nrow(lens_search_results),
+  step2 = all_papers_in_screening %>% filter(source == "Lens search") %>% nrow(),
+  step3 = all_papers_in_screening %>%
+    filter(request_data == TRUE, source == "Lens search") %>% nrow(),
+  step4 = all_papers_in_screening %>% 
+  filter(data_retrieved == TRUE, source == "Lens search") %>% nrow()
+)
 
+step2outdata <- lens_search_results %>% 
+  janitor::tabyl(decision) %>% 
+  janitor::adorn_totals() %>% 
+  filter(str_detect(decision, "Exclude")) %>% 
+  # fix the 5 entries that were added back in after reliability check
+  mutate(n = ifelse(decision == "Exclude - Not Relevant", n - 5, n)) %>% 
+  transmute(text = str_glue("{str_remove(decision, 'Exclude - ')} (n={n})")) %>%
+  pull(text) %>% 
+  paste(collapse = "\n")
 
-DiagrammeR::grViz("
+flowchart <- DiagrammeR::grViz("
 digraph graph2 {
 
 graph [layout = dot]
 
 # node definitions with substituted label text
 node [shape = rectangle, width = 4, fillcolor = Biege]
-a [label = '@@1']
-b [label = '@@2']
-c [label = '@@3']
-d [label = '@@4']
+step1 [label = '@@1', fontname = 'Arial']
+step2 [label = '@@2', fontname = 'Arial']
+step3 [label = '@@3', fontname = 'Arial']
+step4 [label = '@@4', fontname = 'Arial']
+step5 [label = '@@5', fontname = 'Arial']
+step2out [label = '@@6', fontname = 'Arial']
+step3out [label = '@@7', fontname = 'Arial']
 
-a -> b -> c -> d
+# make the exclusions appear on the same level as their step
+subgraph { rank = same; step2; step2out }
+subgraph { rank = same; step3; step3out }
+
+step1 -> step2 -> step3 -> step4 -> step5
+step2 -> step2out
+step3 -> step3out
 
 }
 
-[1]:  paste0('Raw Data (n = ', data$a, ')')
-[2]: paste0('Remove Errors (n = ', data$b, ')')
-[3]: paste0('Identify Potential Customers (n = ', data$c, ')')
-[4]: paste0('Select Top Priorities (n = ', data$d, ')')
+[1]: paste0('Records identified from lens.org (n = ', data$step1, ')')
+[2]: paste0('Records screened (n = ', data$step1, ')')
+[3]: paste0('Reports assessed for eligibility (n = ', data$step2, ')')
+[4]: paste0('Reports identified as eligible (n = ', data$step3, ')')
+[5]: paste0('Data obtained (n = ', data$step4, ')')
+[6]: paste0('Records excluded: \\n ', step2outdata)
+[7]: paste0('Reports excluded (n = 103)')
 ")
+
+flowchart %>% 
+  DiagrammeRsvg::export_svg() %>% 
+  writeLines("flowchart.svg")
+
+flowchart
 ```

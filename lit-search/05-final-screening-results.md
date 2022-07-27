@@ -1553,32 +1553,7 @@ Total
 </tbody>
 </table>
 
-See here for example of creating a flowchart using DiagrammeR:
+    ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 
-<https://mikeyharper.uk/flowcharts-in-r-using-diagrammer/>
-
-    # Define some sample data
-    data <- list(a=1000, b=800, c=600, d=400)
-
-
-    DiagrammeR::grViz("
-    digraph graph2 {
-
-    graph [layout = dot]
-
-    # node definitions with substituted label text
-    node [shape = rectangle, width = 4, fillcolor = Biege]
-    a [label = '@@1']
-    b [label = '@@2']
-    c [label = '@@3']
-    d [label = '@@4']
-
-    a -> b -> c -> d
-
-    }
-
-    [1]:  paste0('Raw Data (n = ', data$a, ')')
-    [2]: paste0('Remove Errors (n = ', data$b, ')')
-    [3]: paste0('Identify Potential Customers (n = ', data$c, ')')
-    [4]: paste0('Select Top Priorities (n = ', data$d, ')')
-    ")
+<div id="htmlwidget-c843146c456cd09caa3e" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c843146c456cd09caa3e">{"x":{"diagram":"\ndigraph graph2 {\n\ngraph [layout = dot]\n\n# node definitions with substituted label text\nnode [shape = rectangle, width = 4, fillcolor = Biege]\nstep1 [label = \"Records identified from lens.org (n = 1538)\", fontname = \"Arial\"]\nstep2 [label = \"Records screened (n = 1538)\", fontname = \"Arial\"]\nstep3 [label = \"Reports assessed for eligibility (n = 205)\", fontname = \"Arial\"]\nstep4 [label = \"Reports identified as eligible (n = 102)\", fontname = \"Arial\"]\nstep5 [label = \"Data obtained (n = 34)\", fontname = \"Arial\"]\nstep2out [label = \"Records excluded: \n Not in English (n=72)\nNot Relevant (n=1129)\nTheoretical (n=132)\", fontname = \"Arial\"]\nstep3out [label = \"Reports excluded (n = 103)\", fontname = \"Arial\"]\n\n# make the exclusions appear on the same level as their step\nsubgraph { rank = same; step2; step2out }\nsubgraph { rank = same; step3; step3out }\n\nstep1 -> step2 -> step3 -> step4 -> step5\nstep2 -> step2out\nstep3 -> step3out\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
