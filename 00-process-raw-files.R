@@ -207,7 +207,7 @@ ramos2021 <- ramos2021 %>%
   select(-created_at)
 purrr::iwalk(
   split(ramos2021, ramos2021$group),
-  ~ vroom_write(.x, glue::glue("data/Ramos2021-{.y}.csv"), ",")
+  ~ vroom_write(.x, glue::glue("data/Ramos2021_{.y}.csv"), ",")
 )
 
 # Davies, B., Alcock, L., & Jones, I. (2021). What do mathematicians mean by proof? A comparative-judgement study of students’ and mathematicians’ views. The Journal of Mathematical Behavior, 61, 100824.
