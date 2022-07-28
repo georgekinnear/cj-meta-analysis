@@ -48,7 +48,8 @@ vroom("data-raw/jones/IJRUMEalgebradecisions.csv", .name_repair = janitor::make_
   select(judge, contains("candidate")) %>% write_csv("data/Bisson2016_algebra.csv")
 
 # Davies, B., Alcock, L., & Jones, I. (2020). Comparative judgement, proof summaries and proof comprehension. Educational Studies in Mathematics, 105(2), 181–197.
-vroom("data-raw/jones/ESM2020RawDecisionData.csv", .name_repair = janitor::make_clean_names) %>% write_csv("data/Davies2020.csv")
+vroom("data-raw/jones/ESM2020RawDecisionData.csv", .name_repair = janitor::make_clean_names) %>%
+  write_csv("data/Davies2020a.csv")
 
 # Jones, I., Bisson, M., Gilmore, C., & Inglis, M. (2019). Measuring conceptual understanding in randomised controlled trials: Can comparative judgement help? British Educational Research Journal, 45(3), 662–680. https://doi.org/10.1002/berj.3519
 vroom("data-raw/jones/BERJ2019decisions.csv", .name_repair = janitor::make_clean_names) %>% write_csv("data/Jones2019.csv")
