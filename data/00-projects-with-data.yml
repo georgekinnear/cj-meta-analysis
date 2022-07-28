@@ -76,9 +76,18 @@
   doi: 10.1007/s10516-021-09545-8
   open_data: https://doi.org/10.17028/rd.lboro.12458486.v1
   judging_sessions: 
-  - N_A: 38
+  - study: Auckland
+    N_A: 16
     N_R: 9
-    N_J: 760
+    N_J: 320
+    items: Mathematical explanations
+    judge_expertise: Expert
+    judging_prompt: which argument best explains why the proposition holds
+    adaptivity: no 
+  - study: Rutgers
+    N_A: 22
+    N_R: 9
+    N_J: 440
     items: Mathematical explanations
     judge_expertise: Expert
     judging_prompt: which argument best explains why the proposition holds

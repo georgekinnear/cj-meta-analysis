@@ -186,6 +186,16 @@ nrow(sirt_output$effects)
 
 nrow(sirt_output[["fit_judges"]])
 
+# Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’ Assessments of the Explanatory Value of Proofs. Axiomathes (2021). doi: 10.1007/s10516-021-09545-8
+ramos2021 <- vroom("data-raw/Mejia-Ramos et al. (2021)/Mejia-Ramos et al Binary decisions.csv", .name_repair = janitor::make_clean_names)
+ramos2021 <- ramos2021 %>% 
+  mutate(group = if_else(group == "A", "Auckland", "Rutgers")) %>% 
+  select(-created_at)
+purrr::iwalk(
+  split(ramos2021, ramos2021$group),
+  ~ vroom_write(.x, glue::glue("data/Ramos2021-{.y}.csv"), ",")
+)
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle
