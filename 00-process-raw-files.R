@@ -64,6 +64,39 @@ vroom("data-raw/jones/ESM2015_ALL.csv", .name_repair = janitor::make_clean_names
 vroom("data-raw/jones/ESM2015_250.csv", .name_repair = janitor::make_clean_names) %>% 
   write_csv("data/Jones2015a_subset-of-scripts.csv")
 
+# Sangwin, C., & Kinnear, G. (2021, June 4). Investigating insight and rigour as separate constructs in mathematical proof. https://doi.org/10.35542/osf.io/egks4
+# judgement data from http://doi.org/10.5281/zenodo.4893915
+sangwin2021 <- read_csv("https://raw.githubusercontent.com/georgekinnear/rigour-insight-students/master/data-out/judgement_data.csv")
+sangwin2021out <- sangwin2021 %>% 
+  transmute(
+    session = str_glue("{study}-{dimension}"),
+    judge = JudgeID,
+    candidate_chosen = Won,
+    candidate_not_chosen = Lost,
+    time_taken = TimeTaken
+  )
+purrr::iwalk(
+  split(sangwin2021out, sangwin2021out$session),
+  ~ vroom_write(.x, glue::glue("data/Sangwin2021_{.y}.csv"), ",")
+)
+
+
+# Kinnear, G., et al. (2021). Using compative judgement [Unpublished undergraduate dissertation]. The University of Edinburgh.
+file_dir <- "data-raw/Kinnear/ug-project/"
+kinnear2021 <- vroom(fs::dir_ls(path = file_dir), .name_repair = janitor::make_clean_names, id = "study") %>% 
+  mutate(study = str_remove(study, file_dir) %>% str_remove(".csv")) %>% 
+  mutate(study = study %>% str_remove("diagnostic") %>% str_remove("test") %>% str_remove("decision")) %>% 
+  mutate(study = str_replace(study, "experts", "experts-")) %>% 
+  mutate(study = ifelse(str_detect(study, "^expert"), study, paste0("students-", study))) %>% 
+  rename(candidate_chosen = chosen, candidate_not_chosen = not_chosen)
+kinnear2021 %>% 
+  group_by(study) %>% tally()
+
+purrr::iwalk(
+  split(kinnear2021, kinnear2021$study),
+  ~ vroom_write(.x, glue::glue("data/Kinnear2021_{.y}.csv"), ",")
+)
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle
