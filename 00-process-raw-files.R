@@ -157,13 +157,34 @@ spehar2016_expt2 %>%
 
 purrr::iwalk(
   split(spehar2016_expt2, spehar2016_expt2$type),
-  ~ vroom_write(.x, glue::glue("data/Spehar2016_{.y}.csv"), ",")
+  ~ vroom_write(.x, glue::glue("data/Spehar2016_expt2-{.y}.csv"), ",")
 )
 
 # TODO - this seems to be data from this paper: https://doi.org/10.1016/j.visres.2020.11.011 (from snowballing?)
 nguyen2021 <- tibble(path = fs::dir_ls(path = "data-raw/Spehar et al/expt1/")) %>% 
   mutate(dat = map(path, ~ vroom(.x, col_select = c("Subject_No", "Slope_selected", "Slope_not_selected")))) %>%
   unnest(cols = dat)
+
+# Vatavu, R. D., & Vanderdonckt, J. (2020, November). Design Space and Users’ Preferences for Smartglasses Graphical Menus: A Vignette Study. In 19th International Conference on Mobile and Ubiquitous Multimedia (pp. 1-12).  doi: 10.1145/3428361.3428467
+vatavu2020 <- vroom("data-raw/Vatavu and Vanderdonckt (2020)/GAM-EICS2019-ForBenDavies.csv", .name_repair = janitor::make_clean_names)
+
+# unclear how to read the columns - they say chosen/not chosen but there's also a "choice" column that says left/right
+# Try running through BTM to see if the scores look like those in the paper?
+sirt_output <- vatavu2020 %>% 
+  sirt::btm(
+    data = vatavu2020 %>%
+      mutate(decision = case_when(choice == "left" ~ 1, choice == "right" ~ 0, choice == "ties" ~ 0.5))%>%
+      select(candidate_chosen, candidate_not_chosen, decision) %>%
+      data.frame,
+    judge = vatavu2020 %>% pull(judge),
+    maxit = 400 , fix.eta = 0 , ignore.ties = FALSE
+  )
+
+# The number of judges and scripts seems off:
+sirt_output$effects
+nrow(sirt_output$effects)
+
+nrow(sirt_output[["fit_judges"]])
 
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e

@@ -6,6 +6,7 @@
   citation: Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual variations in aesthetic responses to fractal patterns. Frontiers in human neuroscience, 10, 350.
   doi: 10.3389/fnhum.2016.00350
   open_data: no
+  note: "TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/11"
   judging_sessions: 
   - study: Grayscale
     N_A: 310
@@ -43,6 +44,7 @@
     67-97.
   doi: 10.1075/lab.16030.sta
   open_data: no
+  note: "TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/12"
   judging_sessions:
   - N_A: 42
     N_R: ??
@@ -51,7 +53,6 @@
     judge_expertise: Expert
     judging_prompt: Pick the 'sentence' closer to the way you would speak to another bilingual person
     adaptivity: no 
-    note: I honestly have no clue how many scripts or judgements were performed here. its ostensibly on page 82/83 but its so badly written that i don't know
   
 - project_id: Vatavu2020
   citation: 'Vatavu, R. D., & Vanderdonckt, J. (2020, November). Design Space and
@@ -59,6 +60,7 @@
     International Conference on Mobile and Ubiquitous Multimedia (pp. 1-12).'
   doi: 10.1145/3428361.3428467
   open_data: no
+  note: "TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/13"
   judging_sessions: 
   - N_A: 251
     N_R: 14
@@ -658,7 +660,7 @@
   doi: 10.1080/0969594x.2014.978839
   open_data: no
   judging_sessions:
-  - study: expert  
+  - study: teachers  
     N_A: 5
     N_R: 154
     N_J: 1550
@@ -736,7 +738,7 @@
   doi: 10.1002/berj.3224
   open_data: no
   judging_sessions:
-  - study: scripts
+  - study: realscripts
     N_A: 20
     N_R: 546
     N_J: 5000
