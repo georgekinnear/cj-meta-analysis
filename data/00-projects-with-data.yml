@@ -537,7 +537,7 @@
   doi: 10.1016/j.jmathb.2020.100824
   open_data: no
   judging_sessions:
-  - study: expert judges
+  - study: expert
     N_A: 29
     N_R: 175
     N_J: 1941
@@ -545,7 +545,7 @@
     judge_expertise: expert
     judging_prompt: better
     adaptivity: no
-  - study: novice judges
+  - study: novice
     N_A: 10
     N_R: 175
     N_J: 1740
