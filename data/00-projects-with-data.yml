@@ -416,23 +416,39 @@
   doi: 10.1080/03075079.2013.821974
   open_data: no
   judging_sessions:
-  - study: expert judges
+  - study: expert1
     N_A: 11
     N_R: 168
-    N_J: 2797
+    N_J: about half of 2797?
     items: undergraduate calculus test
     judge_expertise: expert
-    judging_prompt: better 
+    judging_prompt: which student had demonstrated the better conceptual understanding 
     adaptivity: yes
-  - study: peer judges
-    N_A: 193
+  - study: expert2
+    N_A: 11
     N_R: 168
-    N_J: 2813
+    N_J: about half of 2797?
+    items: undergraduate calculus test
+    judge_expertise: expert
+    judging_prompt: which student had demonstrated the better conceptual understanding 
+    adaptivity: yes
+  - study: peer1
+    N_A: 100
+    N_R: 168
+    N_J: about half of 2813?
     items: undergraduate calculus test
     judge_expertise: peer
     judging_prompt: better 
     adaptivity: yes
-  - study: novice judges
+  - study: peer2
+    N_A: 93
+    N_R: 168
+    N_J: about half of 2813?
+    items: undergraduate calculus test
+    judge_expertise: peer
+    judging_prompt: better 
+    adaptivity: yes
+  - study: novice
     N_A: 9
     N_R: 168
     N_J: 1217
@@ -440,6 +456,7 @@
     judge_expertise: novice
     judging_prompt: better 
     adaptivity: yes
+  
   
 - project_id: Jones2013b
   citation: Jones, I., Inglis, M., Gilmore, C., & Hodgen, J. (2013). Measuring conceptual

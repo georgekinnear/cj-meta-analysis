@@ -18,7 +18,7 @@ jones2014 <- vroom("data-raw/jones/SHE2014decisions.csv", .name_repair = janitor
 
 purrr::iwalk(
   split(jones2014, jones2014$group),
-  ~ vroom_write(.x, glue::glue("data/Jones2014_{.y}.csv"), ",")
+  ~ vroom_write(.x, glue::glue("data/Jones2013a_{.y}.csv"), ",")
 )
 jones2014 %>% group_by(group, judge) %>% tally() %>% count()
 
