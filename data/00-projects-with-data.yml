@@ -521,7 +521,7 @@
   doi: 10.1080/0969594x.2014.978839
   open_data: no
   judging_sessions:
-  - study: expert judges  
+  - study: expert  
     N_A: 5
     N_R: 154
     N_J: 1550
@@ -529,7 +529,7 @@
     judge_expertise: expert
     judging_prompt: select the best science report
     adaptivity: yes
-  - study: peer judges  
+  - study: peer  
     N_A: 37
     N_R: 154
     N_J: 3722

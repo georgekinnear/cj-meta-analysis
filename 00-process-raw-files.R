@@ -24,7 +24,7 @@ jones2014 %>% group_by(group, judge) %>% tally() %>% count()
 
 #McMahon, S., & Jones, I. (2015). A comparative judgement approach to teacher assessment. Assessment in Education: Principles, Policy & Practice, 22(3), 368-389.
 mcmahon2015 <- vroom("data-raw/jones/AIE_PEERDECISIONS.csv", .name_repair = janitor::make_clean_names)
-mcmahon2015 %>% write_csv("data/McMahon2015_peer.csv")
+mcmahon2015 %>% write_csv("data/McMahon2014_peer.csv")
 
 # Jones, I., & Wheadon, C. (2015). Peer assessment using comparative and absolute judgement. Studies in Educational Evaluation, 47, 93–101. https://doi.org/10.1016/j.stueduc.2015.09.004
 jones2015b<- vroom("data-raw/jones/SEE2015alljudgements.csv", .name_repair = janitor::make_clean_names)
