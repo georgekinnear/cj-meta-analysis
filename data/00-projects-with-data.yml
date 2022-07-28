@@ -599,7 +599,7 @@
   doi: 10.1002/berj.3224
   open_data: no
   judging_sessions:
-  - study: GCSE maths scripts
+  - study: scripts
     N_A: 20
     N_R: 546
     N_J: 5000
@@ -607,7 +607,7 @@
     judge_expertise: expert
     judging_prompt: which student you think is the better mathematician
     adaptivity: unclear
-  - study: GCSE maths perfect answers
+  - study: perfect
     N_A: 18
     N_R: 48
     N_J: 810

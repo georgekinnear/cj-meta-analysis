@@ -55,7 +55,8 @@ vroom("data-raw/jones/ESM2020RawDecisionData.csv", .name_repair = janitor::make_
 vroom("data-raw/jones/BERJ2019decisions.csv", .name_repair = janitor::make_clean_names) %>% write_csv("data/Jones2019.csv")
 
 # Jones, I., Wheadon, C., Humphries, S., & Inglis, M. (2016). Fifty years of A‐level mathematics: have standards changed? British Educational Research Journal, 42(4), 543–560. https://doi.org/10.1002/BERJ.3224
-vroom("data-raw/jones/BERJperfect.csv", .name_repair = janitor::make_clean_names) %>% write_csv("data/Jones2016_perfect.csv")
+vroom("data-raw/jones/BERJperfect.csv", .name_repair = janitor::make_clean_names) %>%
+  write_csv("data/Jones2016b_perfect.csv")
 
 
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
