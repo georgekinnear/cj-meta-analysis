@@ -1,53 +1,57 @@
 project_id,doi,open_data,study,N_A,N_R,N_J,items,judge_expertise,judging_prompt,note,adaptivity
-Spehar2016,10.3389/fnhum.2016.00350,FALSE,,,,,Grayscale Computer-generated fractals,Novice,Which [fractal] appears more complex?,Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ,
-Spehar2016,10.3389/fnhum.2016.00350,FALSE,,,,,Threshold Computer-generated fractals,Novice,Which [fractal] appears more complex?,Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ,
-Spehar2016,10.3389/fnhum.2016.00350,FALSE,,,,,Edge-only Computer-generated fractals,Novice,Which [fractal] appears more complex?,Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ,
-StadthagenGonzalez2017,10.1075/lab.16030.sta,FALSE,,,,,Acceptibility of non-native speaker sentence constructions,Expert,Pick the 'sentence' closer to the way you would speak to another bilingual person,I honestly have no clue how many scripts or judgements were performed here. its ostensibly on page 82/83 but its so badly written that i don't know,
-Vatavu2020,10.1145/3428361.3428467,FALSE,,,,,menu layout preference,Novice,select the variants  preferred most by relying exclusively on the visual appearance of the presented information,NA,
-Ramos2021,10.1007/s10516-021-09545-8,https://doi.org/10.17028/rd.lboro.12458486.v1,,,,,Mathematical explanations,Expert,which argument best explains why the proposition holds,NA,
-Smith2020,10.1007/978-3-030-38994-9_5,FALSE,,,,,GSCE Creative writing samples,Expert (teachers),Choose the most proficient text,"5 assessors and 15 scripts is explicitly stated. Number of judgements ambiguous. ""The total number of judgements was set at 80... to ensure a dufficient number of judgements per script (at an average of 23 decisions per script)""",
-Pollitt2012a,NA,FALSE,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-Pollitt2017,10.1007/978-3-319-50856-6_16,FALSE,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-PollittX,NA,TODO... CHECK FOR OPEN DATA,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-Isnac2020,10.17051/ilkonline.2020.728048,FALSE,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-Esen2019,NA,FALSE,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-AlMaimani2017,10.1145/3025453.3025655,FALSE,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-Clark2018,10.1371/journal.pone.0190393,https://doi.org/10.17633/rd.brunel.4902977.v1,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-LuckettX,NA,FALSE,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-Kinnear2021,NA,FALSE,,,,,[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,
-Bramley2018,10.1080/0969594x.2017.1418734,No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true,,,,,GCSE English essays,expert,Which essay is better?,NA,
-Bramley2018,10.1080/0969594x.2017.1418734,No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true,,,,,GCSE English essays,expert,Which essay is better?,NA,
-Bramley2018,10.1080/0969594x.2017.1418734,No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true,,,,,GCSE English essays,expert,Which essay is better?,NA,
-Settembri2018,10.1007/978-3-319-74147-5_8,FALSE,,,,,Political science students briefing documents,expert,unsure,NA,
-Coertjens2021,10.1080/10401334.2021.1877709,FALSE,,,,,Medical students self-reflections,expert,Which is the better self-reflection?,NA,
-Holmes2017,10.1080/14794802.2017.1334576,FALSE,,,,,Student responses to maths GCSE items,expert,Which item best elicits mathematical problem-solving as described by AO3?,NA,
-Holmes2018,10.1080/15305058.2018.1486316,FALSE,,,,,Maths GCSE items (without student responses),expert,Which Item is the More Mathematically Difficult to Answer Fully?,NA,
-Davies2020a,10.1007/s10649-020-09984-x,https://doi.org/10.17028/rd.lboro.8940149,,,,,Undergraduate proof summaries,expert,judges clicking left or right to indicate which they judged better,NA,
-Davies2021,10.1016/j.jmathb.2020.100824,Lboro repository,,,,,undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer,expert,better,NA,
-Davies2021,10.1016/j.jmathb.2020.100824,Lboro repository,,,,,undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer,novice,better,NA,
-Jones2013a,10.1080/03075079.2013.821974,FALSE,,,,,undergraduate calculus test,expert,better,NA,
-Jones2013a,10.1080/03075079.2013.821974,FALSE,,,,,undergraduate calculus test,peer,better,NA,
-Jones2013a,10.1080/03075079.2013.821974,FALSE,,,,,undergraduate calculus test,novice,better,NA,
-Jones2013b,NA,FALSE,,,,,Secondary student responses to a fractions test question,expert,better conceptual understanding,NA,
-Jones2014,10.1007/s10763-013-9497-6,FALSE,,,,,Secondary student responses to GCSE maths questions,expert,which candidate is the more able mathematician?,NA,
-Jones2014,10.1007/s10763-013-9497-6,FALSE,,,,,Secondary student responses to problem solving questions,expert,which candidate is the more able mathematician?,NA,
-McMahon2014,10.1080/0969594x.2014.978839,FALSE,,,,,Secondary student chemistry experiment write-ups,expert,select the best science report,NA,
-McMahon2014,10.1080/0969594x.2014.978839,FALSE,,,,,Secondary student chemistry experiment write-ups,peer,select the best science report,NA,
-Jones2015a,10.1007/s10649-015-9607-1,FALSE,,,,,Secondary student responses to problem-solving maths questions,expert,most mathematically able,NA,
-Jones2015a,10.1007/s10649-015-9607-1,FALSE,,,,,Secondary student responses to problem-solving maths questions,expert,most mathematically able,NA,
-Jones2015b,10.1016/j.stueduc.2015.09.004,FALSE,,,,,Secondary student responses to a fractions test question,peer,better understanding of fractions,NA,
-Jones2016a,NA,FALSE,,,,,Secondary student responses to open-ended maths test questions,expert,the better mathematician,NA,
-Jones2016b,10.1002/berj.3224,FALSE,,,,,GCSE maths scripts,expert,which student you think is the better mathematician,NA,
-Jones2016b,10.1002/berj.3224,FALSE,,,,,Perfect GCSE maths scripts,expert,which student you think is the better mathematician,NA,
-Jones2017,NA,FALSE,,,,,undergraduate calculus test,peer,the better understanding,NA,
-Jones2019,10.1002/berj.3519,https://lboro.figshare.com/s/2d4cfa 142ebf1ff24841,,,,,Primary student responses to an open-ended algebra test question,expert,which student demonstrated the better conceptual understanding of the use of letters in algebra,NA,
-Marshall2020,10.1007/s40841-020-00163-3,FALSE,,,,,Secondary student statistics projects,expert,"unstated, but judges attended a training session",NA,
-Marshall2020,10.1007/s40841-020-00163-3,FALSE,,,,,Secondary student written reports,expert,"unstated, but judges attended a training session",NA,
-Bisson2016,10.1007/s40753-016-0024-3,FALSE,,,,,written explanation of p-value,expert,NA,NA,
-Bisson2016,10.1007/s40753-016-0024-3,FALSE,,,,,written explanation of derivatives,expert,NA,"TODO: two participants were removed from analyses - check value for N_A, should it be 28?",
-Bisson2016,10.1007/s40753-016-0024-3,FALSE,,,,,written explanation of how letters are used in algebra,expert,NA,NA,
-Hunter2018,NA,FALSE,,,,,Primary student responses to open-ended maths questions,expert,better response,NA,
-Bisson2019,10.1080/14794802.2019.1692060,https://doi.org/10.17028/rd.lboro.5845683.v1,,,,,responses to an open-ended question about derivatives,expert,NA,NA,
+Spehar2016,10.3389/fnhum.2016.00350,FALSE,Grayscale,310,9,??,Grayscale Computer-generated fractals,Novice,Which [fractal] appears more complex?,Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ,FALSE
+Spehar2016,10.3389/fnhum.2016.00350,FALSE,Threshold,310,9,??,Threshold Computer-generated fractals,Novice,Which [fractal] appears more complex?,Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ,FALSE
+Spehar2016,10.3389/fnhum.2016.00350,FALSE,EdgesOnly,310,9,??,Edge-only Computer-generated fractals,Novice,Which [fractal] appears more complex?,Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ,FALSE
+StadthagenGonzalez2017,10.1075/lab.16030.sta,FALSE,NA,42,??,126 (plus some more),Acceptibility of non-native speaker sentence constructions,Expert,Pick the 'sentence' closer to the way you would speak to another bilingual person,I honestly have no clue how many scripts or judgements were performed here. its ostensibly on page 82/83 but its so badly written that i don't know,FALSE
+Vatavu2020,10.1145/3428361.3428467,FALSE,NA,251,14,22841,menu layout preference,Novice,select the variants  preferred most by relying exclusively on the visual appearance of the presented information,NA,FALSE
+Ramos2021,10.1007/s10516-021-09545-8,https://doi.org/10.17028/rd.lboro.12458486.v1,NA,38,9,760,Mathematical explanations,Expert,which argument best explains why the proposition holds,NA,FALSE
+Smith2020,10.1007/978-3-030-38994-9_5,FALSE,NA,5,15,345 (approximate value. Actual value not given in paper),GSCE Creative writing samples,Expert (teachers),Choose the most proficient text,"5 assessors and 15 scripts is explicitly stated. Number of judgements ambiguous. ""The total number of judgements was set at 80... to ensure a dufficient number of judgements per script (at an average of 23 decisions per script)""",FALSE
+Pollitt2012a,NA,FALSE,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,TRUE
+Pollitt2017,10.1007/978-3-319-50856-6_16,FALSE,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+PollittX,NA,TODO... CHECK FOR OPEN DATA,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+Isnac2020,10.17051/ilkonline.2020.728048,FALSE,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+Esen2019,NA,FALSE,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+AlMaimani2017,10.1145/3025453.3025655,FALSE,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+Clark2018,10.1371/journal.pone.0190393,https://doi.org/10.17633/rd.brunel.4902977.v1,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+LuckettX,NA,FALSE,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+Kinnear2021,NA,FALSE,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
+Bramley2018,10.1080/0969594x.2017.1418734,No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true,1a,18,150,1080,GCSE English essays,expert,Which essay is better?,NA,TRUE
+Bramley2018,10.1080/0969594x.2017.1418734,No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true,1b,17,20,190,GCSE English essays,expert,Which essay is better?,NA,FALSE
+Bramley2018,10.1080/0969594x.2017.1418734,No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true,2,16,150,1120,GCSE English essays,expert,Which essay is better?,NA,FALSE
+Settembri2018,10.1007/978-3-319-74147-5_8,FALSE,NA,4,84,620,Political science students briefing documents,expert,unsure,NA,FALSE
+Coertjens2021,10.1080/10401334.2021.1877709,FALSE,NA,8,22,200,Medical students self-reflections,expert,Which is the better self-reflection?,NA,FALSE
+Holmes2017,10.1080/14794802.2017.1334576,FALSE,NA,33,66,1650,Student responses to maths GCSE items,expert,Which item best elicits mathematical problem-solving as described by AO3?,NA,FALSE
+Holmes2018,10.1080/15305058.2018.1486316,FALSE,NA,35,230,~3450,Maths GCSE items (without student responses),expert,Which Item is the More Mathematically Difficult to Answer Fully?,NA,FALSE
+Davies2020a,10.1007/s10649-020-09984-x,https://doi.org/10.17028/rd.lboro.8940149,NA,11,134,1573,Undergraduate proof summaries,expert,judges clicking left or right to indicate which they judged better,NA,FALSE
+Davies2021,10.1016/j.jmathb.2020.100824,FALSE,expert judges,29,175,1941,undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer,expert,better,NA,FALSE
+Davies2021,10.1016/j.jmathb.2020.100824,FALSE,novice judges,10,175,1740,undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer,novice,better,NA,FALSE
+Jones2013a,10.1080/03075079.2013.821974,FALSE,expert1,11,168,about half of 2797?,undergraduate calculus test,expert,which student had demonstrated the better conceptual understanding,NA,TRUE
+Jones2013a,10.1080/03075079.2013.821974,FALSE,expert2,11,168,about half of 2797?,undergraduate calculus test,expert,which student had demonstrated the better conceptual understanding,NA,TRUE
+Jones2013a,10.1080/03075079.2013.821974,FALSE,peer1,100,168,about half of 2813?,undergraduate calculus test,peer,better,NA,TRUE
+Jones2013a,10.1080/03075079.2013.821974,FALSE,peer2,93,168,about half of 2813?,undergraduate calculus test,peer,better,NA,TRUE
+Jones2013a,10.1080/03075079.2013.821974,FALSE,novice,9,168,1217,undergraduate calculus test,novice,better,NA,TRUE
+Jones2013b,NA,FALSE,NA,8,25,400,Secondary student responses to a fractions test question,expert,better conceptual understanding,NA,TRUE
+Jones2014,10.1007/s10763-013-9497-6,FALSE,Bowland030211data,12,18,173,Secondary student responses to problem solving questions,expert,which candidate is the more able mathematician?,NA,TRUE
+Jones2014,10.1007/s10763-013-9497-6,FALSE,Bowland070211data,11,18,177,Secondary student responses to problem solving questions,expert,which candidate is the more able mathematician?,NA,TRUE
+Jones2014,10.1007/s10763-013-9497-6,FALSE,GCSE030211data,12,18,151,Secondary student responses to GCSE maths questions,expert,which candidate is the more able mathematician?,NA,TRUE
+Jones2014,10.1007/s10763-013-9497-6,FALSE,GCSE070211data,11,18,150,Secondary student responses to GCSE maths questions,expert,which candidate is the more able mathematician?,NA,TRUE
+McMahon2014,10.1080/0969594x.2014.978839,FALSE,expert,5,154,1550,Secondary student chemistry experiment write-ups,expert,select the best science report,NA,TRUE
+McMahon2014,10.1080/0969594x.2014.978839,FALSE,peer,37,154,3722,Secondary student chemistry experiment write-ups,peer,select the best science report,NA,TRUE
+Jones2015a,10.1007/s10649-015-9607-1,FALSE,all-scripts,15,750,3607,Secondary student responses to problem-solving maths questions,expert,most mathematically able,NA,unsure
+Jones2015a,10.1007/s10649-015-9607-1,FALSE,subset-of-scripts,5,250,1250,Secondary student responses to problem-solving maths questions,expert,most mathematically able,NA,unsure
+Jones2015b,10.1016/j.stueduc.2015.09.004,FALSE,NA,76,24,1983,Secondary student responses to a fractions test question,peer,better understanding of fractions,NA,unsure
+Jones2016a,NA,FALSE,NA,11,686,6600,Secondary student responses to open-ended maths test questions,expert,the better mathematician,NA,unsure
+Jones2016b,10.1002/berj.3224,FALSE,scripts,20,546,5000,GCSE maths scripts,expert,which student you think is the better mathematician,NA,unclear
+Jones2016b,10.1002/berj.3224,FALSE,perfect,18,48,810,Perfect GCSE maths scripts,expert,which student you think is the better mathematician,NA,unclear
+Jones2017,NA,FALSE,NA,132,141,3258,undergraduate calculus test,peer,the better understanding,NA,TRUE
+Jones2019,10.1002/berj.3519,https://lboro.figshare.com/s/2d4cfa 142ebf1ff24841,NA,10,188,1890,Primary student responses to an open-ended algebra test question,expert,which student demonstrated the better conceptual understanding of the use of letters in algebra,NA,FALSE
+Marshall2020,10.1007/s40841-020-00163-3,FALSE,Statistics,21,113,1911,Secondary student statistics projects,expert,"unstated, but judges attended a training session",NA,FALSE
+Marshall2020,10.1007/s40841-020-00163-3,FALSE,English,17,253,1856,Secondary student written reports,expert,"unstated, but judges attended a training session",NA,FALSE
+Bisson2016,10.1007/s40753-016-0024-3,FALSE,stats,10,20,"not reported - see p. 145: They were instructed to complete one hour of judging, and they completed between 25 and 50 judgements each (M =45.3, SD = 8.7), with each script being compared between 40 and 50 times (M =45.3, SD = 3.0).",written explanation of p-value,expert,NA,NA,NA
+Bisson2016,10.1007/s40753-016-0024-3,FALSE,calculus,30,42,1260,written explanation of derivatives,expert,NA,"TODO: two participants were removed from analyses - check value for N_A, should it be 28?",NA
+Bisson2016,10.1007/s40753-016-0024-3,FALSE,algebra,10,46,460,written explanation of how letters are used in algebra,expert,NA,NA,NA
+Hunter2018,NA,FALSE,NA,20,1912,12888,Primary student responses to open-ended maths questions,expert,better response,NA,FALSE
+Bisson2019,10.1080/14794802.2019.1692060,https://doi.org/10.17028/rd.lboro.5845683.v1,NA,10,189,2060,responses to an open-ended question about derivatives,expert,NA,NA,NA

@@ -27,7 +27,8 @@ We gathered comparative judgement data from a range of research studies.
 
 ```{r}
 # Read in the data about sessions
-sessions <- yaml::read_yaml("data/00-judging_sessions.yml")
+#sessions <- yaml::read_yaml("data/00-judging_sessions.yml")
+sessions <- yaml::read_yaml("data/00-projects-with-data.yml")
 
 # tibble(
 #   project_id = map_chr(sessions, "project_id"),
@@ -46,13 +47,16 @@ all_sessions <- tibble(project = sessions) %>%
     open_data = map_chr(sessions, "open_data")
   ) %>% 
   unnest_longer(judging_sessions) %>%
-  unnest_wider(judging_sessions)
+  unnest_wider(judging_sessions) %>%
+  # replace columns containing length-1 lists with just the contents
+  mutate(across(c("study", "N_A", "N_R", "N_J", "adaptivity"), as.character)) %>% 
+  # tidy up the missing entries - replace NULL with NA
+  mutate(across(c("study", "N_A", "N_R", "N_J", "adaptivity"), ~ na_if(.x, "NULL")))
 
 # save a summary of the data as a .csv
 all_sessions %>% 
   select(-citation) %>% 
   write_csv("data/00-judging_sessions_summary.csv")
-
 ```
 
 * This document summarises the sample in a readable way.
@@ -61,14 +65,29 @@ all_sessions %>%
 
 # Publications/projects
 
+```{r}
+still_to_do <- all_sessions %>% 
+  filter(str_detect(study, "TODO")) %>% 
+  select(project_id)
+
+all_sessions <- all_sessions %>% 
+  filter(is.na(study) | !str_detect(study, "TODO"))
+```
+
+There are `r nrow(still_to_do)` studies in the .yml file still to be processed:
+
+```{r}
+still_to_do %>% basic_kable()
+```
+
+
 Judgement data was gathered from the publications/projects summarised in the table below.
 
 * `open_data` records whether the judgement data is already publicly available
-* `republish` records whether we have permission to publish the judgement data in our open dataset
 
 ```{r}
 all_sessions %>% 
-  select(project_id, citation, doi, open_data, republish) %>% 
+  select(project_id, citation, doi, open_data) %>% 
   mutate(doi = if_else(str_detect(doi, "doi.org"), doi, paste0("https://doi.org/", doi))) %>% 
   mutate(doi_link = text_spec(doi, link = doi)) %>% 
   select(-doi) %>% 
@@ -81,7 +100,7 @@ all_sessions %>%
 
 ```{r}
 all_sessions %>% 
-  select(-citation, -doi, -open_data, -republish) %>%
+  select(-citation, -doi, -open_data) %>%
   kable("html", escape = FALSE) %>%
   kable_styling() %>%
   collapse_rows(columns = 1, valign = "top")
@@ -99,7 +118,9 @@ judgement_data_raw <- tibble(path = files) %>%
   mutate(
     csv_contents = map(path, read_csv, na = c("-"))
   )
+```
 
+```{r}
 judgement_data_tidy <- judgement_data_raw %>% 
   # Tidy up the contents of each judgement data CSV to just the judge/won/lost columns
   mutate(
@@ -149,11 +170,22 @@ judgement_data <- judgement_data_tidy %>%
 
 ## Issues with the data
 
+These ones are all fine:
+
+```{r}
+judgement_data_tidy %>% 
+  select(judging_session, contains("N_", ignore.case = FALSE)) %>% 
+  filter(!is.na(observed_N_R), !is.na(observed_N_A)) %>% 
+  filter(observed_N_R == N_R & observed_N_A == N_A) %>% 
+  basic_kable()
+```
+
 The following sessions have $N_A$ or $N_R$ values that differ from those expected:
 
 ```{r}
 judgement_data_tidy %>% 
   select(judging_session, contains("N_", ignore.case = FALSE)) %>% 
+  filter(!is.na(observed_N_R), !is.na(observed_N_A)) %>% 
   filter(observed_N_R != N_R | observed_N_A != N_A) %>% 
   basic_kable()
 ```
