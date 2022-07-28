@@ -840,9 +840,9 @@
   doi: .na.character
   open_data: no
   judging_sessions:
-  - N_A: 20
-    N_R: 1912
-    N_J: 12888
+  - N_A: 39 (paper reports 20)
+    N_R: 2035 (paper reports 1912)
+    N_J: 26364 (paper reports 12888)
     items: Primary student responses to open-ended maths questions
     judge_expertise: expert
     judging_prompt: better response
