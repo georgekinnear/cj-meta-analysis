@@ -796,7 +796,7 @@
   doi: 10.1007/s40841-020-00163-3
   open_data: no
   judging_sessions:
-  - study: Statistics
+  - study: statistics
     N_A: 21
     N_R: 113
     N_J: 1911
@@ -804,7 +804,7 @@
     judge_expertise: expert
     judging_prompt: unstated, but judges attended a training session
     adaptivity: no
-  - study: English
+  - study: written
     N_A: 17
     N_R: 253
     N_J: 1856

@@ -25,6 +25,13 @@ jones2014 %>% group_by(group, judge) %>% tally() %>% count()
 #McMahon, S., & Jones, I. (2015). A comparative judgement approach to teacher assessment. Assessment in Education: Principles, Policy & Practice, 22(3), 368-389.
 mcmahon2015 <- vroom("data-raw/jones/AIE_PEERDECISIONS.csv", .name_repair = janitor::make_clean_names)
 mcmahon2015 %>% write_csv("data/McMahon2014_peer.csv")
+vroom("data-raw/jones/McMahon2014_teachers.csv", .name_repair = janitor::make_clean_names) %>%
+  mutate(
+    candidate_chosen = ifelse(chose_a == 1, a, b),
+    candidate_not_chosen = ifelse(chose_a == 1, b, a)
+  ) %>% 
+  select(judge, starts_with("candidate")) %>%
+  write_csv("data/McMahon2014_teachers.csv")
 
 # Jones, I., & Wheadon, C. (2015). Peer assessment using comparative and absolute judgement. Studies in Educational Evaluation, 47, 93–101. https://doi.org/10.1016/j.stueduc.2015.09.004
 jones2015b<- vroom("data-raw/jones/SEE2015alljudgements.csv", .name_repair = janitor::make_clean_names)
@@ -57,6 +64,13 @@ vroom("data-raw/jones/BERJ2019decisions.csv", .name_repair = janitor::make_clean
 # Jones, I., Wheadon, C., Humphries, S., & Inglis, M. (2016). Fifty years of A‐level mathematics: have standards changed? British Educational Research Journal, 42(4), 543–560. https://doi.org/10.1002/BERJ.3224
 vroom("data-raw/jones/BERJperfect.csv", .name_repair = janitor::make_clean_names) %>%
   write_csv("data/Jones2016b_perfect.csv")
+vroom("data-raw/jones/BERJ_realscripts.csv", .name_repair = janitor::make_clean_names) %>%
+  mutate(
+    candidate_chosen = ifelse(chose_a == 1, a, b),
+    candidate_not_chosen = ifelse(chose_a == 1, b, a)
+  ) %>% 
+  select(judge, starts_with("candidate")) %>%
+  write_csv("data/Jones2016b_realscripts.csv")
 
 # Jones, I., & Inglis, M. (2015). The problem of assessing problem solving: Can comparative judgement help? Educational Studies in Mathematics, 89(3), 337–355. https://doi.org/10.1007/s10649-015-9607-1
 vroom("data-raw/jones/ESM2015_ALL.csv", .name_repair = janitor::make_clean_names) %>% 
