@@ -37,7 +37,7 @@ vroom("data-raw/jones/RME2019decisions.csv", .name_repair = janitor::make_clean_
 # The case of fractions. Proceedings of the 37th Conference of the International Group for the
 # Psychology of Mathematics Education, 3, 113–120.
 vroom("data-raw/jones/PMEfractionsdecisions.csv", .name_repair = janitor::make_clean_names) %>%
-  select(judge, contains("candidate")) %>% write_csv("data/Jones2013.csv")
+  select(judge, contains("candidate")) %>% write_csv("data/Jones2013b.csv")
 
 # Bisson, M.-J., Gilmore, C., Inglis, M., & Jones, I. (2016). Measuring Conceptual Understanding Using Comparative Judgement. International Journal of Research in Undergraduate Mathematics Education, 2(2), 141–164. https://doi.org/10.1007/s40753-016-0024-3
 vroom("data-raw/jones/IJRUMEstatsdecisions.csv", .name_repair = janitor::make_clean_names) %>%
