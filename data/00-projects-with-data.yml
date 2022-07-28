@@ -15,7 +15,6 @@
     items: Grayscale Computer-generated fractals 
     judge_expertise: Novice 
     judging_prompt: Which [fractal] appears more complex?
-    note: Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ
     adaptivity: no
   - study: Threshold
     N_A: 310
@@ -24,7 +23,6 @@
     items: Threshold Computer-generated fractals 
     judge_expertise: Novice 
     judging_prompt: Which [fractal] appears more complex?
-    note: Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ
     adaptivity: no
   - study: EdgesOnly
     N_A: 310
@@ -33,7 +31,6 @@
     items: Edge-only Computer-generated fractals 
     judge_expertise: Novice 
     judging_prompt: Which [fractal] appears more complex?
-    note: Participants were split into three groups (by image type). Could consider this three indepedent studies). Paper has a second experiment that is NOT CJ
     adaptivity: no
     
   
@@ -99,6 +96,7 @@
     Cham.
   doi: 10.1007/978-3-030-38994-9_5
   open_data: No 
+  note: 5 assessors and 15 scripts is explicitly stated. Number of judgements ambiguous. "The total number of judgements was set at 80... to ensure a dufficient number of judgements per script (at an average of 23 decisions per script)"
   judging_sessions:
   - N_A: 5
     N_R: 15
@@ -107,7 +105,6 @@
     judge_expertise: Expert (teachers)
     judging_prompt: Choose the most proficient text
     adaptivity: no 
-    note: 5 assessors and 15 scripts is explicitly stated. Number of judgements ambiguous. "The total number of judgements was set at 80... to ensure a dufficient number of judgements per script (at an average of 23 decisions per script)"
   
 - project_id: Pollitt2012a
   citation: Whitehouse, C., & Pollitt, A. (2012). Using adaptive comparative judgement
@@ -194,7 +191,6 @@
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
-    Note: CANNOT FIND PUBLICATION
   
 - project_id: AlMaimani2017
   citation: 'Al Maimani, A. , & Roudaut, A. (2017). Frozen suit: designing a changeable
@@ -836,7 +832,7 @@
     N_J: 1260
     items: written explanation of derivatives
     judge_expertise: expert
-    note: "TODO: two participants were removed from analyses - check value for N_A, should it be 28?"
+    comment: "TODO: two participants were removed from analyses - check value for N_A, should it be 28?"
   - study: algebra
     N_A: 10
     N_R: 46
