@@ -223,6 +223,44 @@ smith2020 %>% count(judge)
 smith2020 %>% count(candidate_chosen)
 smith2020 %>% write_csv("data/Smith2020.csv")
 
+# Whitehouse, C., & Pollitt, A. (2012). Using adaptive comparative judgement to obtain a highly reliable rank order in summative assessment. Manchester, NH: AQA Centre for Education Research and Policy. Retrieved from https://cerp.aqa.org.uk/research-library/using-adaptive-comparative-judgement-obtain-highly-reliable-rank-order-summative-assessment
+Pollitt2012a <- vroom("data-raw/pollitt/Whitehouse & Pollitt 2012.txt", skip = 590, delim = " ") %>% 
+  separate(`Data=`, into = c("judge", "script_a", "script_b", "winner"), sep = "\t") %>% 
+  transmute(
+    judge = judge,
+    candidate_chosen = if_else(winner == script_a, script_a, script_b),
+    candidate_not_chosen = if_else(winner == script_a, script_b, script_a)
+  )
+
+Pollitt2012a %>% count(judge)
+Pollitt2012a %>% count(candidate_chosen)
+Pollitt2012a %>% write_csv("data/Pollitt2012a.csv")
+
+# Pollitt, A. (2017). Using professional judgement to equate exam standards. In Standard Setting in Education (pp. 279-298). Springer, Cham.
+Pollitt2017 <- vroom("data-raw/pollitt/SSiE Ex 4. 2009.txt", skip = 1057, delim = " ") %>% 
+  separate(`Data:`, into = c("judge", "script_a", "script_b", "winner"), sep = " ") %>% 
+  transmute(
+    judge = judge,
+    candidate_chosen = if_else(winner == script_a, script_a, script_b),
+    candidate_not_chosen = if_else(winner == script_a, script_b, script_a)
+  )
+
+Pollitt2017 %>% count(judge)
+Pollitt2017 %>% count(candidate_chosen)
+Pollitt2017 %>% write_csv("data/Pollitt2017_example4.csv")
+
+example2 <- vroom("data-raw/pollitt/SSiE Ex 2. 2015.txt", skip = 143, delim = "\t") %>% 
+  separate(`Data =`, into = c("judge", "script_a", "script_b", "winner"), sep = "\t") %>% 
+  transmute(
+    judge = judge,
+    candidate_chosen = if_else(winner == script_a, script_a, script_b),
+    candidate_not_chosen = if_else(winner == script_a, script_b, script_a)
+  )
+
+example2 %>% count(judge)
+example2 %>% count(candidate_chosen)
+example2 %>% write_csv("data/Pollitt2017_example2.csv")
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle
