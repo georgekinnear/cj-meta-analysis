@@ -391,7 +391,7 @@
     by proof? A comparative-judgement study of students’ and mathematicians’ views. The
     Journal of Mathematical Behavior, 61, 100824.
   doi: 10.1016/j.jmathb.2020.100824
-  open_data: Lboro repository
+  open_data: no
   judging_sessions:
   - study: expert judges
     N_A: 29
@@ -699,8 +699,8 @@
 - project_id: Hunter2018
   citation: "Hunter, J., & Jones, I. (2018). Free-response tasks in primary mathematics:
     A window on students’ thinking. Proceedings of the 41st Annual Conference of the
-    Mathematics Education Research Group of Australasia, 41, 400–407.
-  doi: https://eric.ed.gov/?id=ED592426"
+    Mathematics Education Research Group of Australasia, 41, 400–407. https://eric.ed.gov/?id=ED592426"
+  doi: .na.character
   open_data: no
   judging_sessions:
   - N_A: 20
