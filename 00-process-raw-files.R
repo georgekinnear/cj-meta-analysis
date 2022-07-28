@@ -216,6 +216,12 @@ vroom("data-raw/Davies/ExpertDecisions.csv", .name_repair = janitor::make_clean_
 vroom("data-raw/Davies/NonExpertDecisions.csv", .name_repair = janitor::make_clean_names) %>%
   write_csv("data/Davies2021_novice.csv")
 
+# Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused Research in Further Adult and Vocational Education (pp. 77-98). Palgrave Macmillan, Cham.
+smith2020 <- vroom("data-raw/smith/nmm_judgements.csv", .name_repair = janitor::make_clean_names) %>% 
+  select(judge, candidate_chosen = chosen, candidate_not_chosen = not_chosen, time_taken)
+smith2020 %>% count(judge)
+smith2020 %>% count(candidate_chosen)
+smith2020 %>% write_csv("data/Smith2020.csv")
 
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e

@@ -91,20 +91,17 @@
     adaptivity: no 
   
 - project_id: Smith2020
-  citation: Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused
-    Research in Further Adult and Vocational Education (pp. 77-98). Palgrave Macmillan,
-    Cham.
+  citation: Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused Research in Further Adult and Vocational Education (pp. 77-98). Palgrave Macmillan, Cham.
   doi: 10.1007/978-3-030-38994-9_5
   open_data: No 
-  note: 5 assessors and 15 scripts is explicitly stated. Number of judgements ambiguous. "The total number of judgements was set at 80... to ensure a dufficient number of judgements per script (at an average of 23 decisions per script)"
   judging_sessions:
   - N_A: 5
     N_R: 15
-    N_J: 345 (approximate value. Actual value not given in paper)
+    N_J: 350
     items: GSCE Creative writing samples
-    judge_expertise: Expert (teachers)
+    judge_expertise: expert
     judging_prompt: Choose the most proficient text
-    adaptivity: no 
+    adaptivity: yes
   
 - project_id: Pollitt2012a
   citation: Whitehouse, C., & Pollitt, A. (2012). Using adaptive comparative judgement
