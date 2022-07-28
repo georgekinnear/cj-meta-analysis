@@ -1,7 +1,7 @@
 ---
 title: 'CJ meta-analysis: data summary'
 author: "George Kinnear"
-date: "12/04/2021"
+date: "2022-07-28"
 output: github_document
 always_allow_html: true
 ---
@@ -27,19 +27,7 @@ We gathered comparative judgement data from a range of research studies.
 
 ```{r}
 # Read in the data about sessions
-#sessions <- yaml::read_yaml("data/00-judging_sessions.yml")
 sessions <- yaml::read_yaml("data/00-projects-with-data.yml")
-
-# tibble(
-#   project_id = map_chr(sessions, "project_id"),
-#   citation = map_chr(sessions, "citation"),
-#   doi = map_chr(sessions, "doi"),
-#   open_data = map_chr(sessions, "open_data"),
-#   republish = map_lgl(sessions, "republish"),
-#   judging_sessions = map(sessions, "judging_sessions")
-# ) %>%
-#   unnest_longer(judging_sessions) %>%
-#   unnest_wider(judging_sessions)
 
 all_sessions <- tibble(project = sessions) %>% 
   unnest_wider(project) %>% 
@@ -60,7 +48,7 @@ all_sessions %>%
 ```
 
 * This document summarises the sample in a readable way.
-* It draws on raw data in the `data/00-judging_sessions.yml` file.
+* It draws on raw data in the `data/00-projects-with-data.yml` file.
 * The raw data is also summarised in CSV format in `data/00-judging_sessions_summary.csv`.
 
 # Publications/projects
@@ -116,7 +104,7 @@ judgement_data_raw <- tibble(path = files) %>%
     judging_session = str_remove_all(path, "data/|.csv"),
   ) %>% 
   mutate(
-    csv_contents = map(path, read_csv, na = c("-"))
+    csv_contents = map(path, read_csv, na = c("-"), show_col_types = FALSE)
   )
 ```
 
@@ -134,7 +122,7 @@ judgement_data_tidy <- judgement_data_raw %>%
       } else if (all(has_name(df, c("judge", "won", "lost")))) {
         df_out <- df %>% select(judge, won, lost)
       } else {
-        warning("Could not find suitable CJ decision columns")
+        warning("Could not find suitable CJ decision columns", names(df))
         df_out <- tibble(judge = 1, won = 1, lost = 1)
       }
       # change all columns to characters, so they can be combined later
@@ -204,6 +192,7 @@ Various things to do:
 ```{r}
 judgement_data_tidy %>% 
   filter(str_detect(note, "TODO")) %>% 
-  select(judging_session, note) %>% 
-  basic_kable()
+  select(judging_session, note) %>%
+  kable("html", escape = FALSE) %>%
+  kable_styling()
 ```

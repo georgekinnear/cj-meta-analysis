@@ -1,18 +1,18 @@
 CJ meta-analysis: data summary
 ================
 George Kinnear
-12/04/2021
+2022-07-28
 
 We gathered comparative judgement data from a range of research studies.
 
 -   This document summarises the sample in a readable way.
--   It draws on raw data in the `data/00-judging_sessions.yml` file.
+-   It draws on raw data in the `data/00-projects-with-data.yml` file.
 -   The raw data is also summarised in CSV format in
     `data/00-judging_sessions_summary.csv`.
 
 # Publications/projects
 
-There are 12 studies in the .yml file still to be processed:
+There are 4 studies in the .yml file still to be processed:
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -25,22 +25,7 @@ project_id
 <tbody>
 <tr>
 <td style="text-align:left;">
-Pollitt2012a
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2017
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 PollittX
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Isnac2020
 </td>
 </tr>
 <tr>
@@ -50,37 +35,12 @@ Esen2019
 </tr>
 <tr>
 <td style="text-align:left;">
-AlMaimani2017
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Clark2018
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Zucco2019
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Luckett2018
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 LuckettX
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sangwin2021
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
 </td>
 </tr>
 </tbody>
@@ -189,6 +149,137 @@ FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/978-3-030-38994-9_5" style="     ">https://doi.org/10.1007/978-3-030-38994-9_5</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2012a
+</td>
+<td style="text-align:left;">
+Whitehouse, C., & Pollitt, A. (2012). Using adaptive comparative
+judgement to obtain a highly reliable rank order in summative
+assessment. Manchester, NH: AQA Centre for Education Research and
+Policy. Retrieved
+from <https://cerp.aqa.org.uk/research-library/using-adaptive-comparative-judgement-obtain-highly-reliable-rank-order-summative-assessment>
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017
+</td>
+<td style="text-align:left;">
+Pollitt, A. (2017). Using professional judgement to equate exam
+standards. In Standard Setting in Education (pp. 279-298). Springer,
+Cham.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1007/978-3-319-50856-6_16" style="     ">https://doi.org/10.1007/978-3-319-50856-6_16</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Isnac2020
+</td>
+<td style="text-align:left;">
+İsnaç, F., & Doğan, C. D. (2020). Scaling of secondary school students’
+evaluation preferences according to learning approaches. Elementary
+Education Online, 19 (3), 1284-1294.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.17051/ilkonline.2020.728048" style="     ">https://doi.org/10.17051/ilkonline.2020.728048</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AlMaimani2017
+</td>
+<td style="text-align:left;">
+Al Maimani, A. , & Roudaut, A. (2017). Frozen suit: designing a
+changeable stiffness suit and its application to increase realism in
+games. In Proceedings of the 2017 CHI Conference on Human Factors in
+Computing Systems (pp. 2440-2448). Association for Computing Machinery
+(ACM). <https://doi.org/10.1145/3025453.3025655>
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1145/3025453.3025655" style="     ">https://doi.org/10.1145/3025453.3025655</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zucco2019
+</td>
+<td style="text-align:left;">
+Zucco Jr, C., Batista, M., & Power, T. J. (2019). Measuring portfolio
+salience using the Bradley–Terry model: An illustration with data from
+Brazil. Research & Politics, 6(1), 2053168019832089.
+</td>
+<td style="text-align:left;">
+<https://doi.org/10.7910/DVN/HJZSIM>
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1177/2053168019832089" style="     ">https://doi.org/10.1177/2053168019832089</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018
+</td>
+<td style="text-align:left;">
+Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates
+of Relative Acceptability from Paired Preferences.
+<https://doi.org/10.31234/osf.io/gvq97>
+</td>
+<td style="text-align:left;">
+<https://doi.org/10.17605/OSF.IO/SGJ6N>
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.31234/osf.io/gvq97" style="     ">https://doi.org/10.31234/osf.io/gvq97</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021
+</td>
+<td style="text-align:left;">
+Sangwin, C., & Kinnear, G. (2021, June 4). Investigating insight and
+rigour as separate constructs in mathematical proof.
+<https://doi.org/10.35542/osf.io/egks4>
+</td>
+<td style="text-align:left;">
+<http://doi.org/10.5281/zenodo.4893915>
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+Kinnear, G., et al. (2021). Using compative judgement \[Unpublished
+undergraduate dissertation\]. The University of Edinburgh.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
 </td>
 </tr>
 <tr>
@@ -553,6 +644,9 @@ Research in Mathematics Education, 22, 284–303.
 project_id
 </th>
 <th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
 study
 </th>
 <th style="text-align:left;">
@@ -574,10 +668,10 @@ judge_expertise
 judging_prompt
 </th>
 <th style="text-align:left;">
-note
+adaptivity
 </th>
 <th style="text-align:left;">
-adaptivity
+comment
 </th>
 </tr>
 </thead>
@@ -585,6 +679,9 @@ adaptivity
 <tr>
 <td style="text-align:left;">
 Spehar2016
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
 </td>
 <td style="text-align:left;">
 Grayscale
@@ -608,17 +705,18 @@ Novice
 Which \[fractal\] appears more complex?
 </td>
 <td style="text-align:left;">
-Participants were split into three groups (by image type). Could
-consider this three indepedent studies). Paper has a second experiment
-that is NOT CJ
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Spehar2016
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
 </td>
 <td style="text-align:left;">
 Threshold
@@ -642,17 +740,18 @@ Novice
 Which \[fractal\] appears more complex?
 </td>
 <td style="text-align:left;">
-Participants were split into three groups (by image type). Could
-consider this three indepedent studies). Paper has a second experiment
-that is NOT CJ
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Spehar2016
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
 </td>
 <td style="text-align:left;">
 EdgesOnly
@@ -676,17 +775,18 @@ Novice
 Which \[fractal\] appears more complex?
 </td>
 <td style="text-align:left;">
-Participants were split into three groups (by image type). Could
-consider this three indepedent studies). Paper has a second experiment
-that is NOT CJ
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 StadthagenGonzalez2017
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/12>
 </td>
 <td style="text-align:left;">
 NA
@@ -711,17 +811,18 @@ Pick the ‘sentence’ closer to the way you would speak to another
 bilingual person
 </td>
 <td style="text-align:left;">
-I honestly have no clue how many scripts or judgements were performed
-here. its ostensibly on page 82/83 but its so badly written that i don’t
-know
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Vatavu2020
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/13>
 </td>
 <td style="text-align:left;">
 NA
@@ -746,10 +847,10 @@ select the variants preferred most by relying exclusively on the visual
 appearance of the presented information
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
@@ -760,13 +861,16 @@ Ramos2021
 NA
 </td>
 <td style="text-align:left;">
-38
+Auckland
+</td>
+<td style="text-align:left;">
+16
 </td>
 <td style="text-align:left;">
 9
 </td>
 <td style="text-align:left;">
-760
+320
 </td>
 <td style="text-align:left;">
 Mathematical explanations
@@ -778,15 +882,53 @@ Expert
 which argument best explains why the proposition holds
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ramos2021
+</td>
+<td style="text-align:left;">
 NA
 </td>
 <td style="text-align:left;">
+Rutgers
+</td>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+440
+</td>
+<td style="text-align:left;">
+Mathematical explanations
+</td>
+<td style="text-align:left;">
+Expert
+</td>
+<td style="text-align:left;">
+which argument best explains why the proposition holds
+</td>
+<td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Smith2020
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -798,30 +940,975 @@ NA
 15
 </td>
 <td style="text-align:left;">
-345 (approximate value. Actual value not given in paper)
+350
 </td>
 <td style="text-align:left;">
 GSCE Creative writing samples
 </td>
 <td style="text-align:left;">
-Expert (teachers)
+expert
 </td>
 <td style="text-align:left;">
 Choose the most proficient text
 </td>
 <td style="text-align:left;">
-5 assessors and 15 scripts is explicitly stated. Number of judgements
-ambiguous. “The total number of judgements was set at 80… to ensure a
-dufficient number of judgements per script (at an average of 23
-decisions per script)”
+TRUE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2012a
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+564
+</td>
+<td style="text-align:left;">
+3519
+</td>
+<td style="text-align:left;">
+GCSE Geography essays
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+which essay demonstrated the stronger performance?
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Comparing standards in UK A-level examinations (1997)
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:left;">
+A-level biology examinations
+</td>
+<td style="text-align:left;">
+Expert
+</td>
+<td style="text-align:left;">
+Which candidate’s work was better
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Comparing accountancy examinations (2015)
+</td>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+122
+</td>
+<td style="text-align:left;">
+2054
+</td>
+<td style="text-align:left;">
+A-level accountancy
+</td>
+<td style="text-align:left;">
+Expert
+</td>
+<td style="text-align:left;">
+Which candidate’s work was better
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Comparing business examination (2015)
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+40
+</td>
+<td style="text-align:left;">
+200
+</td>
+<td style="text-align:left;">
+A-level Business examination
+</td>
+<td style="text-align:left;">
+Expert
+</td>
+<td style="text-align:left;">
+Which candidate’s work was better
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Isnac2020
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+444
+</td>
+<td style="text-align:left;">
+unknown?
+</td>
+<td style="text-align:left;">
+unknown?
+</td>
+<td style="text-align:left;">
+Assessment methods
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+What is your preferred method of assessment?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AlMaimani2017
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+72
+</td>
+<td style="text-align:left;">
+Elbow patches
+</td>
+<td style="text-align:left;">
+Expert
+</td>
+<td style="text-align:left;">
+Which patch was more restrictive?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zucco2019
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+278
+</td>
+<td style="text-align:left;">
+37
+</td>
+<td style="text-align:left;">
+3101
+</td>
+<td style="text-align:left;">
+Brazilian governmental portfolios
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which portfolio is most valuable?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Coffee
+</td>
+<td style="text-align:left;">
+100
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+\[TODO\] short description of what is being judged
+</td>
+<td style="text-align:left;">
+\[TODO\] expert/peer/novice
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Soda
+</td>
+<td style="text-align:left;">
+98
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+\[TODO\] short description of what is being judged
+</td>
+<td style="text-align:left;">
+\[TODO\] expert/peer/novice
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Icecream
+</td>
+<td style="text-align:left;">
+86
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+\[TODO\] short description of what is being judged
+</td>
+<td style="text-align:left;">
+\[TODO\] expert/peer/novice
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Pizza
+</td>
+<td style="text-align:left;">
+91
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+\[TODO\] short description of what is being judged
+</td>
+<td style="text-align:left;">
+\[TODO\] expert/peer/novice
+</td>
+<td style="text-align:left;">
+\[TODO\]
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+study1-insight
+</td>
+<td style="text-align:left;">
+29
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+not reported (judges were asked to do between 10 and 25)
+</td>
+<td style="text-align:left;">
+proofs
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+select the proof which gives more insight
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+study1-rigour
+</td>
+<td style="text-align:left;">
+24
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+not reported (judges were asked to do between 10 and 25)
+</td>
+<td style="text-align:left;">
+proofs
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+select the proof which is more rigorous
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+study2-rigour
+</td>
+<td style="text-align:left;">
+39
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+636
+</td>
+<td style="text-align:left;">
+proofs
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which proof is more rigorous?
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+study2-insight
+</td>
+<td style="text-align:left;">
+25
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+438
+</td>
+<td style="text-align:left;">
+proofs
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which proof gives more insight into why the theorem is true?
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+study2-simple
+</td>
+<td style="text-align:left;">
+32
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+526
+</td>
+<td style="text-align:left;">
+proofs
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which proof is the simplest?
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+study2-understanding
+</td>
+<td style="text-align:left;">
+34
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+611
+</td>
+<td style="text-align:left;">
+proofs
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which proof best helps you understand why the theorem is true?
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+study2-marks
+</td>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+382
+</td>
+<td style="text-align:left;">
+proofs
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which proof would get the most marks in an assessment?
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+experts-even
+</td>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+160
+</td>
+<td style="text-align:left;">
+Diagnostic test questions (even-numbered)
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+experts-odd
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+181
+</td>
+<td style="text-align:left;">
+Diagnostic test questions (odd-numbered)
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+experts-withsolutions
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+302
+</td>
+<td style="text-align:left;">
+Diagnostic test questions
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+students-even
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+200
+</td>
+<td style="text-align:left;">
+Diagnostic test questions (even-numbered)
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+students-odd
+</td>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+215
+</td>
+<td style="text-align:left;">
+Diagnostic test questions (odd-numbered)
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+students-withoutsolutions
+</td>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+440
+</td>
+<td style="text-align:left;">
+Diagnostic test questions (with no solutions shown)
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+students-withsolutions
+</td>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+422
+</td>
+<td style="text-align:left;">
+Diagnostic test questions
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+students-withsolutions1
+</td>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+142
+</td>
+<td style="text-align:left;">
+Diagnostic test questions
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+students-withsolutions2
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+331
+</td>
+<td style="text-align:left;">
+Diagnostic test questions
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Bramley2018
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 1a
@@ -845,15 +1932,18 @@ expert
 Which essay is better?
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Bramley2018
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 1b
@@ -877,15 +1967,18 @@ expert
 Which essay is better?
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Bramley2018
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 2
@@ -909,15 +2002,18 @@ expert
 Which essay is better?
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Settembri2018
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -941,15 +2037,18 @@ expert
 unsure
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Coertjens2021
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -973,15 +2072,18 @@ expert
 Which is the better self-reflection?
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Holmes2017
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1006,15 +2108,18 @@ Which item best elicits mathematical problem-solving as described by
 AO3?
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Holmes2018
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1038,15 +2143,18 @@ expert
 Which Item is the More Mathematically Difficult to Answer Fully?
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Davies2020a
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1070,10 +2178,10 @@ expert
 judges clicking left or right to indicate which they judged better
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
@@ -1081,7 +2189,10 @@ FALSE
 Davies2021
 </td>
 <td style="text-align:left;">
-expert judges
+NA
+</td>
+<td style="text-align:left;">
+expert
 </td>
 <td style="text-align:left;">
 29
@@ -1103,10 +2214,10 @@ expert
 better
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
@@ -1114,7 +2225,10 @@ FALSE
 Davies2021
 </td>
 <td style="text-align:left;">
-novice judges
+NA
+</td>
+<td style="text-align:left;">
+novice
 </td>
 <td style="text-align:left;">
 10
@@ -1136,15 +2250,18 @@ novice
 better
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2013a
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 expert1
@@ -1168,15 +2285,18 @@ expert
 which student had demonstrated the better conceptual understanding
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2013a
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 expert2
@@ -1200,15 +2320,18 @@ expert
 which student had demonstrated the better conceptual understanding
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2013a
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 peer1
@@ -1232,15 +2355,18 @@ peer
 better
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2013a
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 peer2
@@ -1264,15 +2390,18 @@ peer
 better
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2013a
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 novice
@@ -1296,15 +2425,18 @@ novice
 better
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2013b
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1328,15 +2460,18 @@ expert
 better conceptual understanding
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2014
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 Bowland030211data
@@ -1360,15 +2495,18 @@ expert
 which candidate is the more able mathematician?
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2014
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 Bowland070211data
@@ -1392,15 +2530,18 @@ expert
 which candidate is the more able mathematician?
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2014
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 GCSE030211data
@@ -1424,15 +2565,18 @@ expert
 which candidate is the more able mathematician?
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2014
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 GCSE070211data
@@ -1456,10 +2600,10 @@ expert
 which candidate is the more able mathematician?
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
@@ -1467,7 +2611,10 @@ TRUE
 McMahon2014
 </td>
 <td style="text-align:left;">
-expert
+NA
+</td>
+<td style="text-align:left;">
+teachers
 </td>
 <td style="text-align:left;">
 5
@@ -1488,15 +2635,18 @@ expert
 select the best science report
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 McMahon2014
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 peer
@@ -1520,15 +2670,18 @@ peer
 select the best science report
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2015a
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 all-scripts
@@ -1552,15 +2705,18 @@ expert
 most mathematically able
 </td>
 <td style="text-align:left;">
-NA
+unsure
 </td>
 <td style="text-align:left;">
-unsure
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2015a
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 subset-of-scripts
@@ -1584,15 +2740,18 @@ expert
 most mathematically able
 </td>
 <td style="text-align:left;">
-NA
+unsure
 </td>
 <td style="text-align:left;">
-unsure
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2015b
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1616,15 +2775,18 @@ peer
 better understanding of fractions
 </td>
 <td style="text-align:left;">
-NA
+unsure
 </td>
 <td style="text-align:left;">
-unsure
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2016a
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1648,10 +2810,10 @@ expert
 the better mathematician
 </td>
 <td style="text-align:left;">
-NA
+unsure
 </td>
 <td style="text-align:left;">
-unsure
+NA
 </td>
 </tr>
 <tr>
@@ -1659,7 +2821,10 @@ unsure
 Jones2016b
 </td>
 <td style="text-align:left;">
-scripts
+NA
+</td>
+<td style="text-align:left;">
+realscripts
 </td>
 <td style="text-align:left;">
 20
@@ -1680,15 +2845,18 @@ expert
 which student you think is the better mathematician
 </td>
 <td style="text-align:left;">
-NA
+unclear
 </td>
 <td style="text-align:left;">
-unclear
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2016b
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 perfect
@@ -1712,15 +2880,18 @@ expert
 which student you think is the better mathematician
 </td>
 <td style="text-align:left;">
-NA
+unclear
 </td>
 <td style="text-align:left;">
-unclear
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2017
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1744,15 +2915,18 @@ peer
 the better understanding
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-TRUE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Jones2019
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1777,10 +2951,10 @@ which student demonstrated the better conceptual understanding of the
 use of letters in algebra
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
@@ -1788,7 +2962,10 @@ FALSE
 Marshall2020
 </td>
 <td style="text-align:left;">
-Statistics
+NA
+</td>
+<td style="text-align:left;">
+statistics
 </td>
 <td style="text-align:left;">
 21
@@ -1809,10 +2986,10 @@ expert
 unstated, but judges attended a training session
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
@@ -1820,7 +2997,10 @@ FALSE
 Marshall2020
 </td>
 <td style="text-align:left;">
-English
+NA
+</td>
+<td style="text-align:left;">
+written
 </td>
 <td style="text-align:left;">
 17
@@ -1841,15 +3021,18 @@ expert
 unstated, but judges attended a training session
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Bisson2016
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 stats
@@ -1887,6 +3070,9 @@ NA
 Bisson2016
 </td>
 <td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
 calculus
 </td>
 <td style="text-align:left;">
@@ -1908,16 +3094,19 @@ expert
 NA
 </td>
 <td style="text-align:left;">
-TODO: two participants were removed from analyses - check value for N_A,
-should it be 28?
+NA
 </td>
 <td style="text-align:left;">
-NA
+TODO: two participants were removed from analyses - check value for N_A,
+should it be 28?
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Bisson2016
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 algebra
@@ -1955,13 +3144,16 @@ Hunter2018
 NA
 </td>
 <td style="text-align:left;">
-20
+NA
 </td>
 <td style="text-align:left;">
-1912
+39 (paper reports 20)
 </td>
 <td style="text-align:left;">
-12888
+2035 (paper reports 1912)
+</td>
+<td style="text-align:left;">
+26364 (paper reports 12888)
 </td>
 <td style="text-align:left;">
 Primary student responses to open-ended maths questions
@@ -1973,15 +3165,18 @@ expert
 better response
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
-FALSE
+NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Bisson2019
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2092,6 +3287,52 @@ not reported - see p. 145: They were instructed to complete one hour of
 judging, and they completed between 25 and 50 judgements each (M =45.3,
 SD = 8.7), with each script being compared between 40 and 50 times (M
 =45.3, SD = 3.0).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Davies2021_expert
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+175
+</td>
+<td style="text-align:right;">
+1941
+</td>
+<td style="text-align:left;">
+29
+</td>
+<td style="text-align:left;">
+175
+</td>
+<td style="text-align:left;">
+1941
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Davies2021_novice
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+175
+</td>
+<td style="text-align:right;">
+1740
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+175
+</td>
+<td style="text-align:left;">
+1740
 </td>
 </tr>
 <tr>
@@ -2395,6 +3636,236 @@ Jones2015b
 </tr>
 <tr>
 <td style="text-align:left;">
+Jones2016b_realscripts
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+546
+</td>
+<td style="text-align:right;">
+5000
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+546
+</td>
+<td style="text-align:left;">
+5000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_experts-even
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+160
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_experts-odd
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+181
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+181
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_experts-withsolutions
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+302
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-even
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+200
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-odd
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+215
+</td>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+215
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-withoutsolutions
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+440
+</td>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+440
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-withsolutions
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+422
+</td>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+422
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-withsolutions1
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+142
+</td>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+142
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-withsolutions2
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+331
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+331
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 McMahon2014_peer
 </td>
 <td style="text-align:right;">
@@ -2414,6 +3885,259 @@ McMahon2014_peer
 </td>
 <td style="text-align:left;">
 3722
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+McMahon2014_teachers
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+154
+</td>
+<td style="text-align:right;">
+1550
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+154
+</td>
+<td style="text-align:left;">
+1550
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ramos2021_Auckland
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+320
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ramos2021_Rutgers
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+440
+</td>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+440
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study1-insight
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+454
+</td>
+<td style="text-align:left;">
+29
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+not reported (judges were asked to do between 10 and 25)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study1-rigour
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+438
+</td>
+<td style="text-align:left;">
+24
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+not reported (judges were asked to do between 10 and 25)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study2-insight
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+438
+</td>
+<td style="text-align:left;">
+25
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+438
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study2-marks
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+382
+</td>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+382
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study2-rigour
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+636
+</td>
+<td style="text-align:left;">
+39
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+636
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study2-simple
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+526
+</td>
+<td style="text-align:left;">
+32
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+526
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study2-understanding
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+611
+</td>
+<td style="text-align:left;">
+34
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+611
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smith2020
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+388
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+350
 </td>
 </tr>
 </tbody>
@@ -2546,6 +4270,29 @@ Jones2016b_perfect
 </tr>
 <tr>
 <td style="text-align:left;">
+Jones2017
+</td>
+<td style="text-align:right;">
+132
+</td>
+<td style="text-align:right;">
+139
+</td>
+<td style="text-align:right;">
+3258
+</td>
+<td style="text-align:left;">
+132
+</td>
+<td style="text-align:left;">
+141
+</td>
+<td style="text-align:left;">
+3258
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Jones2019
 </td>
 <td style="text-align:right;">
@@ -2565,6 +4312,52 @@ Jones2019
 </td>
 <td style="text-align:left;">
 1890
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Marshall2020_statistics
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+119
+</td>
+<td style="text-align:right;">
+1911
+</td>
+<td style="text-align:left;">
+21
+</td>
+<td style="text-align:left;">
+113
+</td>
+<td style="text-align:left;">
+1911
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Marshall2020_written
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+253
+</td>
+<td style="text-align:right;">
+1856
+</td>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+253
+</td>
+<td style="text-align:left;">
+1856
 </td>
 </tr>
 </tbody>
@@ -2609,9 +4402,7 @@ Grayscale Computer-generated fractals
 Novice
 </td>
 <td style="text-align:left;">
-Participants were split into three groups (by image type). Could
-consider this three indepedent studies). Paper has a second experiment
-that is NOT CJ
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
 </td>
 </tr>
 <tr>
@@ -2630,9 +4421,7 @@ Threshold Computer-generated fractals
 Novice
 </td>
 <td style="text-align:left;">
-Participants were split into three groups (by image type). Could
-consider this three indepedent studies). Paper has a second experiment
-that is NOT CJ
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
 </td>
 </tr>
 <tr>
@@ -2651,9 +4440,7 @@ Edge-only Computer-generated fractals
 Novice
 </td>
 <td style="text-align:left;">
-Participants were split into three groups (by image type). Could
-consider this three indepedent studies). Paper has a second experiment
-that is NOT CJ
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
 </td>
 </tr>
 <tr>
@@ -2673,9 +4460,7 @@ Acceptibility of non-native speaker sentence constructions
 Expert
 </td>
 <td style="text-align:left;">
-I honestly have no clue how many scripts or judgements were performed
-here. its ostensibly on page 82/83 but its so badly written that i don’t
-know
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/12>
 </td>
 </tr>
 <tr>
@@ -2695,19 +4480,41 @@ menu layout preference
 Novice
 </td>
 <td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/13>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2012a
+</td>
+<td style="text-align:left;">
+Whitehouse, C., & Pollitt, A. (2012). Using adaptive comparative
+judgement to obtain a highly reliable rank order in summative
+assessment. Manchester, NH: AQA Centre for Education Research and
+Policy. Retrieved
+from <https://cerp.aqa.org.uk/research-library/using-adaptive-comparative-judgement-obtain-highly-reliable-rank-order-summative-assessment>
+</td>
+<td style="text-align:left;">
+GCSE Geography essays
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
 NA
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Ramos2021
+Pollitt2017_Comparing standards in UK A-level examinations (1997)
 </td>
 <td style="text-align:left;">
-Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’
-Assessments of the Explanatory Value of Proofs. Axiomathes (2021). 
+Pollitt, A. (2017). Using professional judgement to equate exam
+standards. In Standard Setting in Education (pp. 279-298). Springer,
+Cham.
 </td>
 <td style="text-align:left;">
-Mathematical explanations
+A-level biology examinations
 </td>
 <td style="text-align:left;">
 Expert
@@ -2718,24 +4525,175 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-Smith2020
+Pollitt2017_Comparing accountancy examinations (2015)
 </td>
 <td style="text-align:left;">
-Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused
-Research in Further Adult and Vocational Education (pp. 77-98). Palgrave
-Macmillan, Cham.
+Pollitt, A. (2017). Using professional judgement to equate exam
+standards. In Standard Setting in Education (pp. 279-298). Springer,
+Cham.
 </td>
 <td style="text-align:left;">
-GSCE Creative writing samples
+A-level accountancy
 </td>
 <td style="text-align:left;">
-Expert (teachers)
+Expert
 </td>
 <td style="text-align:left;">
-5 assessors and 15 scripts is explicitly stated. Number of judgements
-ambiguous. “The total number of judgements was set at 80… to ensure a
-dufficient number of judgements per script (at an average of 23
-decisions per script)”
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017_Comparing business examination (2015)
+</td>
+<td style="text-align:left;">
+Pollitt, A. (2017). Using professional judgement to equate exam
+standards. In Standard Setting in Education (pp. 279-298). Springer,
+Cham.
+</td>
+<td style="text-align:left;">
+A-level Business examination
+</td>
+<td style="text-align:left;">
+Expert
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Isnac2020
+</td>
+<td style="text-align:left;">
+İsnaç, F., & Doğan, C. D. (2020). Scaling of secondary school students’
+evaluation preferences according to learning approaches. Elementary
+Education Online, 19 (3), 1284-1294.
+</td>
+<td style="text-align:left;">
+Assessment methods
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AlMaimani2017
+</td>
+<td style="text-align:left;">
+Al Maimani, A. , & Roudaut, A. (2017). Frozen suit: designing a
+changeable stiffness suit and its application to increase realism in
+games. In Proceedings of the 2017 CHI Conference on Human Factors in
+Computing Systems (pp. 2440-2448). Association for Computing Machinery
+(ACM). <https://doi.org/10.1145/3025453.3025655>
+</td>
+<td style="text-align:left;">
+Elbow patches
+</td>
+<td style="text-align:left;">
+Expert
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zucco2019
+</td>
+<td style="text-align:left;">
+Zucco Jr, C., Batista, M., & Power, T. J. (2019). Measuring portfolio
+salience using the Bradley–Terry model: An illustration with data from
+Brazil. Research & Politics, 6(1), 2053168019832089.
+</td>
+<td style="text-align:left;">
+Brazilian governmental portfolios
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018_Coffee
+</td>
+<td style="text-align:left;">
+Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates
+of Relative Acceptability from Paired Preferences.
+<https://doi.org/10.31234/osf.io/gvq97>
+</td>
+<td style="text-align:left;">
+\[TODO\] short description of what is being judged
+</td>
+<td style="text-align:left;">
+\[TODO\] expert/peer/novice
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018_Soda
+</td>
+<td style="text-align:left;">
+Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates
+of Relative Acceptability from Paired Preferences.
+<https://doi.org/10.31234/osf.io/gvq97>
+</td>
+<td style="text-align:left;">
+\[TODO\] short description of what is being judged
+</td>
+<td style="text-align:left;">
+\[TODO\] expert/peer/novice
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018_Icecream
+</td>
+<td style="text-align:left;">
+Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates
+of Relative Acceptability from Paired Preferences.
+<https://doi.org/10.31234/osf.io/gvq97>
+</td>
+<td style="text-align:left;">
+\[TODO\] short description of what is being judged
+</td>
+<td style="text-align:left;">
+\[TODO\] expert/peer/novice
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018_Pizza
+</td>
+<td style="text-align:left;">
+Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates
+of Relative Acceptability from Paired Preferences.
+<https://doi.org/10.31234/osf.io/gvq97>
+</td>
+<td style="text-align:left;">
+\[TODO\] short description of what is being judged
+</td>
+<td style="text-align:left;">
+\[TODO\] expert/peer/novice
+</td>
+<td style="text-align:left;">
+NA
 </td>
 </tr>
 <tr>
@@ -2877,65 +4835,6 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-Davies2021_expert judges
-</td>
-<td style="text-align:left;">
-Davies, B., Alcock, L., & Jones, I. (2021). What do mathematicians mean
-by proof? A comparative-judgement study of students’ and mathematicians’
-views. The Journal of Mathematical Behavior, 61, 100824.
-</td>
-<td style="text-align:left;">
-undergraduate responses to explain what mathematicians mean by proof in
-40 words or fewer
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Davies2021_novice judges
-</td>
-<td style="text-align:left;">
-Davies, B., Alcock, L., & Jones, I. (2021). What do mathematicians mean
-by proof? A comparative-judgement study of students’ and mathematicians’
-views. The Journal of Mathematical Behavior, 61, 100824.
-</td>
-<td style="text-align:left;">
-undergraduate responses to explain what mathematicians mean by proof in
-40 words or fewer
-</td>
-<td style="text-align:left;">
-novice
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-McMahon2014_expert
-</td>
-<td style="text-align:left;">
-McMahon, S., & Jones, I. (2015). A comparative judgement approach to
-teacher assessment. Assessment in Education: Principles, Policy &
-Practice, 22(3), 368–389. <https://doi.org/10.1080/0969594X.2014.978839>
-</td>
-<td style="text-align:left;">
-Secondary student chemistry experiment write-ups
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Jones2016a
 </td>
 <td style="text-align:left;">
@@ -2947,84 +4846,6 @@ Education (Vol. 3, pp. 51–58). IGPME.
 </td>
 <td style="text-align:left;">
 Secondary student responses to open-ended maths test questions
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2016b_scripts
-</td>
-<td style="text-align:left;">
-Jones, I., Wheadon, C., Humphries, S., & Inglis, M. (2016). Fifty years
-of A-level mathematics: Have standards changed? British Educational
-Research Journal, 42(4), 543–560. <https://doi.org/10.1002/berj.3224>
-</td>
-<td style="text-align:left;">
-GCSE maths scripts
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2017
-</td>
-<td style="text-align:left;">
-Jones, I., & Sirl, D. (2017). Peer assessment of mathematical
-understanding using comparative judgement. Nordic Studies in Mathematics
-Education, 22(4), 147–164.
-</td>
-<td style="text-align:left;">
-undergraduate calculus test
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Marshall2020_Statistics
-</td>
-<td style="text-align:left;">
-Marshall, N., Shaw, K., Hunter, J., & Jones, I. (2020). Assessment by
-Comparative Judgement: An Application to Secondary Statistics and
-English in New Zealand. New Zealand Journal of Educational Studies,
-55(1), 49–71.
-</td>
-<td style="text-align:left;">
-Secondary student statistics projects
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Marshall2020_English
-</td>
-<td style="text-align:left;">
-Marshall, N., Shaw, K., Hunter, J., & Jones, I. (2020). Assessment by
-Comparative Judgement: An Application to Secondary Statistics and
-English in New Zealand. New Zealand Journal of Educational Studies,
-55(1), 49–71.
-</td>
-<td style="text-align:left;">
-Secondary student written reports
 </td>
 <td style="text-align:left;">
 expert
@@ -3058,7 +4879,7 @@ NA
 
 Various things to do:
 
-<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -3072,11 +4893,42 @@ note
 <tbody>
 <tr>
 <td style="text-align:left;">
-Bisson2016_calculus
+Spehar2016_Grayscale
 </td>
 <td style="text-align:left;">
-TODO: two participants were removed from analyses - check value for N_A,
-should it be 28?
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_Threshold
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_EdgesOnly
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StadthagenGonzalez2017
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/12>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vatavu2020
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/13>
 </td>
 </tr>
 </tbody>
