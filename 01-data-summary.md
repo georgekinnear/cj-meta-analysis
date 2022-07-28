@@ -12,7 +12,7 @@ We gathered comparative judgement data from a range of research studies.
 
 # Publications/projects
 
-There are 4 studies in the .yml file still to be processed:
+There are 3 studies in the .yml file still to be processed:
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -23,11 +23,6 @@ project_id
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-</tr>
 <tr>
 <td style="text-align:left;">
 Esen2019
@@ -183,6 +178,20 @@ FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/978-3-319-50856-6_16" style="     ">https://doi.org/10.1007/978-3-319-50856-6_16</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+Pollitt, A. (n.d.). Unpublished data.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
 </td>
 </tr>
 <tr>
@@ -671,6 +680,9 @@ judging_prompt
 adaptivity
 </th>
 <th style="text-align:left;">
+judging prompt
+</th>
+<th style="text-align:left;">
 comment
 </th>
 </tr>
@@ -710,6 +722,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -745,6 +760,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -776,6 +794,9 @@ Which \[fractal\] appears more complex?
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -816,6 +837,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -848,6 +872,9 @@ appearance of the presented information
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -887,6 +914,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -918,6 +948,9 @@ which argument best explains why the proposition holds
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -957,6 +990,9 @@ TRUE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -992,38 +1028,6 @@ TRUE
 <td style="text-align:left;">
 NA
 </td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2017
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Comparing standards in UK A-level examinations (1997)
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-16
-</td>
-<td style="text-align:left;">
-Unknown
-</td>
-<td style="text-align:left;">
-A-level biology examinations
-</td>
-<td style="text-align:left;">
-Expert
-</td>
-<td style="text-align:left;">
-Which candidate’s work was better
-</td>
-<td style="text-align:left;">
-NA
-</td>
 <td style="text-align:left;">
 NA
 </td>
@@ -1036,7 +1040,45 @@ Pollitt2017
 NA
 </td>
 <td style="text-align:left;">
-Comparing accountancy examinations (2015)
+example4
+</td>
+<td style="text-align:left;">
+52
+</td>
+<td style="text-align:left;">
+1000
+</td>
+<td style="text-align:left;">
+8161
+</td>
+<td style="text-align:left;">
+Pilot Level 4 Writing Tests, for pupils aged 9-12 years in England
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+not explicitly stated, but based on quality
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+example2
 </td>
 <td style="text-align:left;">
 18
@@ -1048,13 +1090,16 @@ Comparing accountancy examinations (2015)
 2054
 </td>
 <td style="text-align:left;">
-A-level accountancy
+Papers from accountancy exams for age 17/18
 </td>
 <td style="text-align:left;">
-Expert
+expert
 </td>
 <td style="text-align:left;">
-Which candidate’s work was better
+not explicitly stated, but based on quality
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 NA
@@ -1065,31 +1110,568 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-Pollitt2017
+PollittX
 </td>
 <td style="text-align:left;">
 NA
 </td>
 <td style="text-align:left;">
-Comparing business examination (2015)
+art1
 </td>
 <td style="text-align:left;">
-10
+19
+</td>
+<td style="text-align:left;">
+75
+</td>
+<td style="text-align:left;">
+496
+</td>
+<td style="text-align:left;">
+Visual art pieces from high schools
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which is better? But I don’t know the exact wording.
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+art2
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+75
+</td>
+<td style="text-align:left;">
+497
+</td>
+<td style="text-align:left;">
+Art pieces from high schools
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which is better? But I don’t know the exact wording.
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+business
+</td>
+<td style="text-align:left;">
+4
 </td>
 <td style="text-align:left;">
 40
 </td>
 <td style="text-align:left;">
+639
+</td>
+<td style="text-align:left;">
+Exam scripts of 17/18 yo Business students
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which is better? But I don’t know the exact wording.
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+design
+</td>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+370
+</td>
+<td style="text-align:left;">
+2569
+</td>
+<td style="text-align:left;">
+Exam scripts of 17/18 yo Design students
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which is better? But I don’t know the exact wording.
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+college
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+72
+</td>
+<td style="text-align:left;">
+496
+</td>
+<td style="text-align:left;">
+FE College Students’ portfolios on a given topic
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which is better? But I don’t know the exact wording.
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+efl-oracy
+</td>
+<td style="text-align:left;">
+39
+</td>
+<td style="text-align:left;">
+134
+</td>
+<td style="text-align:left;">
+932
+</td>
+<td style="text-align:left;">
+Tape recordings of international candidates’ Oral performances
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which student speaks better?
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+efl-writing
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+100
+</td>
+<td style="text-align:left;">
+1000
+</td>
+<td style="text-align:left;">
+EFL writing in a European country
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which is better? (without any specific training)
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+ielts-writing
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+90
+</td>
+<td style="text-align:left;">
+639
+</td>
+<td style="text-align:left;">
+IELTS writing scripts
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which student is better at writing in English?
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+mcq-difficulty
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
 200
 </td>
 <td style="text-align:left;">
-A-level Business examination
+2002
 </td>
 <td style="text-align:left;">
-Expert
+Multiple Choice items from a professional qualification test
 </td>
 <td style="text-align:left;">
-Which candidate’s work was better
+expert
+</td>
+<td style="text-align:left;">
+Which item do you think will be the more difficult?
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+music
+</td>
+<td style="text-align:left;">
+39
+</td>
+<td style="text-align:left;">
+804
+</td>
+<td style="text-align:left;">
+4148
+</td>
+<td style="text-align:left;">
+Music performances
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which performance was better?
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+peer-assessment
+</td>
+<td style="text-align:left;">
+135
+</td>
+<td style="text-align:left;">
+128
+</td>
+<td style="text-align:left;">
+1272
+</td>
+<td style="text-align:left;">
+Technical Design Brief portfolios written by University Teacher Training
+students
+</td>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:left;">
+The student judge analysed each portfolio for evidence of capability and
+then decided on which portfolio was better.
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+philosophy1
+</td>
+<td style="text-align:left;">
+29
+</td>
+<td style="text-align:left;">
+700
+</td>
+<td style="text-align:left;">
+4436
+</td>
+<td style="text-align:left;">
+Essays in a philosophy exam
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which is better? But I don’t know the exact wording.
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+philosophy2a
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+320
+</td>
+<td style="text-align:left;">
+1610
+</td>
+<td style="text-align:left;">
+Essays in a philosophy exam
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which is better? But I don’t know the exact wording.
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+philosophy2b
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+320
+</td>
+<td style="text-align:left;">
+1621
+</td>
+<td style="text-align:left;">
+Essays in a philosophy exam
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which is better? But I don’t know the exact wording.
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+philosophy2c
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+320
+</td>
+<td style="text-align:left;">
+1631
+</td>
+<td style="text-align:left;">
+Essays in a philosophy exam
+</td>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:left;">
+Which is better? But I don’t know the exact wording.
+</td>
+<td style="text-align:left;">
+unknown
 </td>
 <td style="text-align:left;">
 NA
@@ -1132,6 +1714,9 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1160,6 +1745,9 @@ Expert
 </td>
 <td style="text-align:left;">
 Which patch was more restrictive?
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1202,6 +1790,9 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1230,6 +1821,9 @@ Coffee
 </td>
 <td style="text-align:left;">
 \[TODO\]
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1272,6 +1866,9 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1300,6 +1897,9 @@ Icecream
 </td>
 <td style="text-align:left;">
 \[TODO\]
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1342,6 +1942,9 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1373,6 +1976,9 @@ select the proof which gives more insight
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1412,6 +2018,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1443,6 +2052,9 @@ which proof is more rigorous?
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1482,6 +2094,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1513,6 +2128,9 @@ which proof is the simplest?
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1552,6 +2170,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1587,6 +2208,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1615,6 +2239,9 @@ expert
 </td>
 <td style="text-align:left;">
 which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1657,6 +2284,9 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1685,6 +2315,9 @@ expert
 </td>
 <td style="text-align:left;">
 which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1727,6 +2360,9 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1755,6 +2391,9 @@ peer
 </td>
 <td style="text-align:left;">
 which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1797,6 +2436,9 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1825,6 +2467,9 @@ peer
 </td>
 <td style="text-align:left;">
 which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1867,6 +2512,9 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1895,6 +2543,9 @@ peer
 </td>
 <td style="text-align:left;">
 which question do you think Year 1 students find most difficult?
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -1937,6 +2588,9 @@ TRUE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1968,6 +2622,9 @@ Which essay is better?
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2007,6 +2664,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2042,6 +2702,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2073,6 +2736,9 @@ Which is the better self-reflection?
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2113,6 +2779,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2148,6 +2817,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2179,6 +2851,9 @@ judges clicking left or right to indicate which they judged better
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2219,6 +2894,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2251,6 +2929,9 @@ better
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2290,6 +2971,9 @@ TRUE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2321,6 +3005,9 @@ which student had demonstrated the better conceptual understanding
 </td>
 <td style="text-align:left;">
 TRUE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2360,6 +3047,9 @@ TRUE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2391,6 +3081,9 @@ better
 </td>
 <td style="text-align:left;">
 TRUE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2430,6 +3123,9 @@ TRUE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2461,6 +3157,9 @@ better conceptual understanding
 </td>
 <td style="text-align:left;">
 TRUE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2500,6 +3199,9 @@ TRUE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2531,6 +3233,9 @@ which candidate is the more able mathematician?
 </td>
 <td style="text-align:left;">
 TRUE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2570,6 +3275,9 @@ TRUE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2601,6 +3309,9 @@ which candidate is the more able mathematician?
 </td>
 <td style="text-align:left;">
 TRUE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2640,6 +3351,9 @@ TRUE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2671,6 +3385,9 @@ select the best science report
 </td>
 <td style="text-align:left;">
 TRUE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2710,6 +3427,9 @@ unsure
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2741,6 +3461,9 @@ most mathematically able
 </td>
 <td style="text-align:left;">
 unsure
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2780,6 +3503,9 @@ unsure
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2811,6 +3537,9 @@ the better mathematician
 </td>
 <td style="text-align:left;">
 unsure
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2850,6 +3579,9 @@ unclear
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2885,6 +3617,9 @@ unclear
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2916,6 +3651,9 @@ the better understanding
 </td>
 <td style="text-align:left;">
 TRUE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -2956,6 +3694,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2991,6 +3732,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -3022,6 +3766,9 @@ unstated, but judges attended a training session
 </td>
 <td style="text-align:left;">
 FALSE
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -3064,6 +3811,9 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -3089,6 +3839,9 @@ written explanation of derivatives
 </td>
 <td style="text-align:left;">
 expert
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -3135,6 +3888,9 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -3170,6 +3926,9 @@ FALSE
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -3195,6 +3954,9 @@ responses to an open-ended question about derivatives
 </td>
 <td style="text-align:left;">
 expert
+</td>
+<td style="text-align:left;">
+NA
 </td>
 <td style="text-align:left;">
 NA
@@ -3912,6 +4674,282 @@ McMahon2014_teachers
 </tr>
 <tr>
 <td style="text-align:left;">
+Pollitt2012a
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+564
+</td>
+<td style="text-align:right;">
+3519
+</td>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+564
+</td>
+<td style="text-align:left;">
+3519
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017_example2
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+122
+</td>
+<td style="text-align:right;">
+2054
+</td>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+122
+</td>
+<td style="text-align:left;">
+2054
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_business
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+40
+</td>
+<td style="text-align:left;">
+639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_college
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+72
+</td>
+<td style="text-align:right;">
+411
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+72
+</td>
+<td style="text-align:left;">
+496
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_design
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+370
+</td>
+<td style="text-align:right;">
+2569
+</td>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+370
+</td>
+<td style="text-align:left;">
+2569
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_efl-writing
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+1000
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+100
+</td>
+<td style="text-align:left;">
+1000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_mcq-difficulty
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+200
+</td>
+<td style="text-align:left;">
+2002
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_music
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+804
+</td>
+<td style="text-align:right;">
+4148
+</td>
+<td style="text-align:left;">
+39
+</td>
+<td style="text-align:left;">
+804
+</td>
+<td style="text-align:left;">
+4148
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy1
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+700
+</td>
+<td style="text-align:right;">
+4436
+</td>
+<td style="text-align:left;">
+29
+</td>
+<td style="text-align:left;">
+700
+</td>
+<td style="text-align:left;">
+4436
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy2a
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+1610
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+320
+</td>
+<td style="text-align:left;">
+1610
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy2b
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+1621
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+320
+</td>
+<td style="text-align:left;">
+1621
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy2c
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+1631
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+320
+</td>
+<td style="text-align:left;">
+1631
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Ramos2021_Auckland
 </td>
 <td style="text-align:right;">
@@ -4360,6 +5398,144 @@ Marshall2020_written
 1856
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017_example4
+</td>
+<td style="text-align:right;">
+54
+</td>
+<td style="text-align:right;">
+999
+</td>
+<td style="text-align:right;">
+8161
+</td>
+<td style="text-align:left;">
+52
+</td>
+<td style="text-align:left;">
+1000
+</td>
+<td style="text-align:left;">
+8161
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_art1
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+496
+</td>
+<td style="text-align:left;">
+19
+</td>
+<td style="text-align:left;">
+75
+</td>
+<td style="text-align:left;">
+496
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_art2
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+497
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+75
+</td>
+<td style="text-align:left;">
+497
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_efl-oracy
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+134
+</td>
+<td style="text-align:right;">
+932
+</td>
+<td style="text-align:left;">
+39
+</td>
+<td style="text-align:left;">
+134
+</td>
+<td style="text-align:left;">
+932
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_ielts-writing
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+639
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+90
+</td>
+<td style="text-align:left;">
+639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_peer-assessment
+</td>
+<td style="text-align:right;">
+128
+</td>
+<td style="text-align:right;">
+128
+</td>
+<td style="text-align:right;">
+1272
+</td>
+<td style="text-align:left;">
+135
+</td>
+<td style="text-align:left;">
+128
+</td>
+<td style="text-align:left;">
+1272
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -4481,84 +5657,6 @@ Novice
 </td>
 <td style="text-align:left;">
 TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/13>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2012a
-</td>
-<td style="text-align:left;">
-Whitehouse, C., & Pollitt, A. (2012). Using adaptive comparative
-judgement to obtain a highly reliable rank order in summative
-assessment. Manchester, NH: AQA Centre for Education Research and
-Policy. Retrieved
-from <https://cerp.aqa.org.uk/research-library/using-adaptive-comparative-judgement-obtain-highly-reliable-rank-order-summative-assessment>
-</td>
-<td style="text-align:left;">
-GCSE Geography essays
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2017_Comparing standards in UK A-level examinations (1997)
-</td>
-<td style="text-align:left;">
-Pollitt, A. (2017). Using professional judgement to equate exam
-standards. In Standard Setting in Education (pp. 279-298). Springer,
-Cham.
-</td>
-<td style="text-align:left;">
-A-level biology examinations
-</td>
-<td style="text-align:left;">
-Expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2017_Comparing accountancy examinations (2015)
-</td>
-<td style="text-align:left;">
-Pollitt, A. (2017). Using professional judgement to equate exam
-standards. In Standard Setting in Education (pp. 279-298). Springer,
-Cham.
-</td>
-<td style="text-align:left;">
-A-level accountancy
-</td>
-<td style="text-align:left;">
-Expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2017_Comparing business examination (2015)
-</td>
-<td style="text-align:left;">
-Pollitt, A. (2017). Using professional judgement to equate exam
-standards. In Standard Setting in Education (pp. 279-298). Springer,
-Cham.
-</td>
-<td style="text-align:left;">
-A-level Business examination
-</td>
-<td style="text-align:left;">
-Expert
-</td>
-<td style="text-align:left;">
-NA
 </td>
 </tr>
 <tr>

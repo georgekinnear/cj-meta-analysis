@@ -10,7 +10,21 @@ Smith2020,10.1007/978-3-030-38994-9_5,FALSE,NA,NA,5,15,350,GSCE Creative writing
 Pollitt2012a,NA,FALSE,NA,NA,23,564,3519,GCSE Geography essays,expert,which essay demonstrated the stronger performance?,TRUE,NA,NA
 Pollitt2017,10.1007/978-3-319-50856-6_16,FALSE,NA,example4,52,1000,8161,"Pilot Level 4 Writing Tests, for pupils aged 9-12 years in England",expert,NA,TRUE,"not explicitly stated, but based on quality",NA
 Pollitt2017,10.1007/978-3-319-50856-6_16,FALSE,NA,example2,18,122,2054,Papers from accountancy exams for age 17/18,expert,"not explicitly stated, but based on quality",FALSE,NA,NA
-PollittX,NA,TODO... CHECK FOR OPEN DATA,NA,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA,NA
+PollittX,NA,FALSE,NA,art1,19,75,496,Visual art pieces from high schools,expert,Which is better? But I don't know the exact wording.,unknown,NA,NA
+PollittX,NA,FALSE,NA,art2,20,75,497,Art pieces from high schools,expert,Which is better? But I don't know the exact wording.,unknown,NA,NA
+PollittX,NA,FALSE,NA,business,4,40,639,Exam scripts of 17/18 yo Business students,expert,Which is better? But I don't know the exact wording.,unknown,NA,NA
+PollittX,NA,FALSE,NA,design,18,370,2569,Exam scripts of 17/18 yo Design students,expert,Which is better? But I don't know the exact wording.,unknown,NA,NA
+PollittX,NA,FALSE,NA,college,5,72,496,FE College Students’ portfolios on a given topic,expert,Which is better? But I don't know the exact wording.,unknown,NA,NA
+PollittX,NA,FALSE,NA,efl-oracy,39,134,932,Tape recordings of international candidates' Oral performances,expert,Which student speaks better?,unknown,NA,NA
+PollittX,NA,FALSE,NA,efl-writing,10,100,1000,EFL writing in a European country,expert,Which is better? (without any specific training),unknown,NA,NA
+PollittX,NA,FALSE,NA,ielts-writing,15,90,639,IELTS writing scripts,expert,Which student is better at writing in English?,unknown,NA,NA
+PollittX,NA,FALSE,NA,mcq-difficulty,7,200,2002,Multiple Choice items from a professional qualification test,expert,Which item do you think will be the more difficult?,unknown,NA,NA
+PollittX,NA,FALSE,NA,music,39,804,4148,Music performances,expert,Which performance was better?,unknown,NA,NA
+PollittX,NA,FALSE,NA,peer-assessment,135,128,1272,Technical Design Brief portfolios written by University Teacher Training students,peer,The student judge analysed each portfolio for evidence of capability and then decided on which portfolio was better.,unknown,NA,NA
+PollittX,NA,FALSE,NA,philosophy1,29,700,4436,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA,NA
+PollittX,NA,FALSE,NA,philosophy2a,20,320,1610,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA,NA
+PollittX,NA,FALSE,NA,philosophy2b,20,320,1621,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA,NA
+PollittX,NA,FALSE,NA,philosophy2c,20,320,1631,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA,NA
 Isnac2020,10.17051/ilkonline.2020.728048,FALSE,NA,NA,444,unknown?,unknown?,Assessment methods,expert,What is your preferred method of assessment?,NA,NA,NA
 Esen2019,NA,FALSE,NA,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA,NA
 AlMaimani2017,10.1145/3025453.3025655,FALSE,NA,NA,12,4,72,Elbow patches,Expert,Which patch was more restrictive?,NA,NA,NA

@@ -261,6 +261,62 @@ example2 %>% count(judge)
 example2 %>% count(candidate_chosen)
 example2 %>% write_csv("data/Pollitt2017_example2.csv")
 
+process_pollitt_data <- function(df, sep = "\t", data_name = "Data") {
+  df %>% 
+    separate(data_name, into = c("judge", "script_a", "script_b", "winner"), sep = sep) %>% 
+    transmute(
+      judge = judge,
+      candidate_chosen = if_else(winner == script_a, script_a, script_b),
+      candidate_not_chosen = if_else(winner == script_a, script_b, script_a)
+    )
+}
+
+vroom("data-raw/pollitt/additional-data-sets/Art 1 2012.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_art1.csv")
+vroom("data-raw/pollitt/additional-data-sets/Art 2 2012.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_art2.csv")
+vroom("data-raw/pollitt/additional-data-sets/Business.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_business.csv")
+vroom("data-raw/pollitt/additional-data-sets/Design.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_design.csv")
+vroom("data-raw/pollitt/additional-data-sets/College portfolios.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_college.csv")
+vroom("data-raw/pollitt/additional-data-sets/EFL Oracy.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_efl-oracy.csv")
+vroom("data-raw/pollitt/additional-data-sets/Foreign EFL Writing.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_efl-writing.csv")
+vroom("data-raw/pollitt/additional-data-sets/IELTS Writing.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_ielts-writing.csv")
+vroom("data-raw/pollitt/additional-data-sets/ItemD 2015.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_mcq-difficulty.csv")
+vroom("data-raw/pollitt/additional-data-sets/Music.txt", skip = 871, delim = "\t") %>% 
+  process_pollitt_data(data_name = "Data =", sep = " ") %>% 
+  write_csv("data/PollittX_music.csv")
+vroom("data-raw/pollitt/additional-data-sets/PeerAss.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_peer-assessment.csv")
+vroom("data-raw/pollitt/additional-data-sets/Philo 1 2015.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_philosophy1.csv")
+vroom("data-raw/pollitt/additional-data-sets/Philo 2.1 2016.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_philosophy2a.csv")
+vroom("data-raw/pollitt/additional-data-sets/Philo 2.2 2016.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_philosophy2b.csv")
+vroom("data-raw/pollitt/additional-data-sets/Philo 2.3 2016.txt", skip = 12, delim = "\t") %>% 
+  process_pollitt_data() %>% 
+  write_csv("data/PollittX_philosophy2c.csv")
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle

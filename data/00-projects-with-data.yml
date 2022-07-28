@@ -145,13 +145,126 @@
   doi: .na.character
   open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: art1
+    N_A: 19
+    N_R: 75
+    N_J: 496
+    items: Visual art pieces from high schools
+    judge_expertise: expert
+    judging_prompt: Which is better? But I don't know the exact wording.
+    adaptivity: unknown
+  - study: art2
+    N_A: 20
+    N_R: 75
+    N_J: 497
+    items: Art pieces from high schools
+    judge_expertise: expert
+    judging_prompt: Which is better? But I don't know the exact wording.
+    adaptivity: unknown
+  - study: business
+    N_A: 4
+    N_R: 40
+    N_J: 639
+    items: Exam scripts of 17/18 yo Business students
+    judge_expertise: expert
+    judging_prompt: Which is better? But I don't know the exact wording.
+    adaptivity: unknown
+  - study: design
+    N_A: 18
+    N_R: 370
+    N_J: 2569
+    items: Exam scripts of 17/18 yo Design students
+    judge_expertise: expert
+    judging_prompt: Which is better? But I don't know the exact wording.
+    adaptivity: unknown
+  - study: college
+    N_A: 5
+    N_R: 72
+    N_J: 496
+    items: FE College Students’ portfolios on a given topic
+    judge_expertise: expert
+    judging_prompt: Which is better? But I don't know the exact wording.
+    adaptivity: unknown
+  - study: efl-oracy
+    N_A: 39
+    N_R: 134
+    N_J: 932
+    items: Tape recordings of international candidates' Oral performances
+    judge_expertise: expert
+    judging_prompt: Which student speaks better?
+    adaptivity: unknown
+  - study: efl-writing
+    N_A: 10
+    N_R: 100
+    N_J: 1000
+    items: EFL writing in a European country
+    judge_expertise: expert
+    judging_prompt: Which is better? (without any specific training)
+    adaptivity: unknown
+  - study: ielts-writing
+    N_A: 15
+    N_R: 90
+    N_J: 639
+    items: IELTS writing scripts
+    judge_expertise: expert
+    judging_prompt: Which student is better at writing in English?
+    adaptivity: unknown
+  - study: mcq-difficulty
+    N_A: 7
+    N_R: 200
+    N_J: 2002
+    items: Multiple Choice items from a professional qualification test
+    judge_expertise: expert
+    judging_prompt: Which item do you think will be the more difficult?
+    adaptivity: unknown
+  - study: music
+    N_A: 39
+    N_R: 804
+    N_J: 4148
+    items: Music performances
+    judge_expertise: expert
+    judging_prompt: Which performance was better?
+    adaptivity: unknown
+  - study: peer-assessment
+    N_A: 135
+    N_R: 128
+    N_J: 1272
+    items: Technical Design Brief portfolios written by University Teacher Training students
+    judge_expertise: peer
+    judging_prompt: "The student judge analysed each portfolio for evidence of capability and then decided on which portfolio was better."
+    adaptivity: unknown
+  - study: philosophy1
+    N_A: 29
+    N_R: 700
+    N_J: 4436
+    items: Essays in a philosophy exam
+    judge_expertise: expert
+    judging_prompt: Which is better? But I don't know the exact wording.
+    adaptivity: unknown
+  - study: philosophy2a
+    N_A: 20
+    N_R: 320
+    N_J: 1610
+    items: Essays in a philosophy exam
+    judge_expertise: expert
+    judging_prompt: Which is better? But I don't know the exact wording.
+    adaptivity: unknown
+  - study: philosophy2b
+    N_A: 20
+    N_R: 320
+    N_J: 1621
+    items: Essays in a philosophy exam
+    judge_expertise: expert
+    judging_prompt: Which is better? But I don't know the exact wording.
+    adaptivity: unknown
+  - study: philosophy2c
+    N_A: 20
+    N_R: 320
+    N_J: 1631
+    items: Essays in a philosophy exam
+    judge_expertise: expert
+    judging_prompt: Which is better? But I don't know the exact wording.
+    adaptivity: unknown
   
 - project_id: Isnac2020
   citation: İsnaç, F., & Doğan, C. D. (2020). Scaling of secondary school students'
