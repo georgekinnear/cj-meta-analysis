@@ -7,7 +7,7 @@ jones2015 <- vroom("data-raw/jones/IJSME2014.csv", .name_repair = janitor::make_
 
 purrr::iwalk(
   split(jones2015, jones2015$session),
-  ~ vroom_write(.x, glue::glue("data/Jones2015_{.y}.csv"), ",")
+  ~ vroom_write(.x, glue::glue("data/Jones2014_{.y}.csv"), ",")
 )
 jones2015 %>% group_by(session, judge) %>% tally() %>% count()
 

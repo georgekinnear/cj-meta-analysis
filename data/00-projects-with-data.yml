@@ -480,20 +480,36 @@
     Education, 13(1), 151–177. https://doi.org/10.1007/s10763-013-9497-6
   doi: 10.1007/s10763-013-9497-6
   open_data: no
-  judging_sessions:
-  - study: GCSE maths
-    N_A: 23
+  judging_sessions:  
+  - study: Bowland030211data
+    N_A: 12
     N_R: 18
-    N_J: 301
+    N_J: 173
+    items: Secondary student responses to problem solving questions
+    judge_expertise: expert
+    judging_prompt: which candidate is the more able mathematician?
+    adaptivity: yes
+  - study: Bowland070211data
+    N_A: 11
+    N_R: 18
+    N_J: 177
+    items: Secondary student responses to problem solving questions
+    judge_expertise: expert
+    judging_prompt: which candidate is the more able mathematician?
+    adaptivity: yes
+  - study: GCSE030211data   
+    N_A: 12
+    N_R: 18
+    N_J: 151
     items: Secondary student responses to GCSE maths questions
     judge_expertise: expert
     judging_prompt: which candidate is the more able mathematician?
-    adaptivity: yes  
-  - study: Bowland maths
-    N_A: 23
+    adaptivity: yes
+  - study: GCSE070211data
+    N_A: 11
     N_R: 18
-    N_J: 350
-    items: Secondary student responses to problem solving questions
+    N_J: 150
+    items: Secondary student responses to GCSE maths questions
     judge_expertise: expert
     judging_prompt: which candidate is the more able mathematician?
     adaptivity: yes
