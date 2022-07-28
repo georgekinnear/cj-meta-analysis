@@ -58,6 +58,11 @@ vroom("data-raw/jones/BERJ2019decisions.csv", .name_repair = janitor::make_clean
 vroom("data-raw/jones/BERJperfect.csv", .name_repair = janitor::make_clean_names) %>%
   write_csv("data/Jones2016b_perfect.csv")
 
+# Jones, I., & Inglis, M. (2015). The problem of assessing problem solving: Can comparative judgement help? Educational Studies in Mathematics, 89(3), 337–355. https://doi.org/10.1007/s10649-015-9607-1
+vroom("data-raw/jones/ESM2015_ALL.csv", .name_repair = janitor::make_clean_names) %>% 
+  write_csv("data/Jones2015a_all-scripts.csv")
+vroom("data-raw/jones/ESM2015_250.csv", .name_repair = janitor::make_clean_names) %>% 
+  write_csv("data/Jones2015a_subset-of-scripts.csv")
 
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e

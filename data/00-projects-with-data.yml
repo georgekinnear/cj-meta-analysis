@@ -545,7 +545,7 @@
   doi: 10.1007/s10649-015-9607-1
   open_data: no
   judging_sessions:
-  - study: all 750 scripts
+  - study: all-scripts
     N_A: 15
     N_R: 750
     N_J: 3607
@@ -553,7 +553,7 @@
     judge_expertise: expert
     judging_prompt: most mathematically able
     adaptivity: unsure
-  - study: subset of 250 scripts
+  - study: subset-of-scripts
     N_A: 5
     N_R: 250
     N_J: 1250
