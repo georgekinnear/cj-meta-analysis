@@ -107,13 +107,12 @@
   doi: .na.character
   open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - N_A: 23
+    N_R: 564
+    N_J: 3519
+    items: GCSE Geography essays
+    judge_expertise: expert
+    judging_prompt: which essay demonstrated the stronger performance?
     adaptivity: yes 
   
 - project_id: Pollitt2017
@@ -122,13 +121,29 @@
   doi: 10.1007/978-3-319-50856-6_16
   open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: Comparing standards in UK A-level examinations (1997)
+    N_A: 10
+    N_R: 16
+    N_J: Unknown
+    items: A-level biology examinations
+    judge_expertise: Expert
+    judging_prompt: Which candidate's work was better
+    
+  - study: Comparing accountancy examinations (2015)
+    N_A: 18
+    N_R: 122
+    N_J: 2054
+    items: A-level accountancy
+    judge_expertise: Expert
+    judging_prompt: Which candidate's work was better    
+    
+  - study: Comparing business examination (2015)
+    N_A: 10
+    N_R: 40
+    N_J: 200
+    items: A-level Business examination
+    judge_expertise: Expert
+    judging_prompt: Which candidate's work was better       
   
 - project_id: PollittX
   citation: Pollitt, A. (n.d.). Unpublished data.
@@ -150,13 +165,12 @@
   doi: 10.17051/ilkonline.2020.728048
   open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - N_A: 444
+    N_R: ?
+    N_J: ?
+    items: Assessment methods
+    judge_expertise: expert
+    judging_prompt: 'What is your preferred method of assessment?'
   
 - project_id: Esen2019
   citation: Esen, Y. D. (2019). Scaling the teachers’ perception of competence regarding
@@ -171,6 +185,7 @@
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
+    Note: CANNOT FIND PUBLICATION
   
 - project_id: AlMaimani2017
   citation: 'Al Maimani, A. , & Roudaut, A. (2017). Frozen suit: designing a changeable
@@ -180,13 +195,12 @@
   doi: 10.1145/3025453.3025655
   open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - N_A: 12
+    N_R: 4
+    N_J: 72
+    items: Elbow patches
+    judge_expertise: Expert
+    judging_prompt: Which patch was more restrictive?
   
 - project_id: Clark2018
   citation: Clark, A. P., Howard, K. L., Woods, A. T., Penton-Voak, I. S., & Neumann,
@@ -196,12 +210,12 @@
   open_data: https://doi.org/10.17633/rd.brunel.4902977.v1
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+    N_A: 56
+    N_R: 82
+    N_J: 4592
+    items: Photos of men
+    judge_expertise: expert
+    judging_prompt: Which man is stronger?
   
 - project_id: Zucco2019
   citation: 'Zucco Jr, C., Batista, M., & Power, T. J. (2019). Measuring portfolio
@@ -210,13 +224,12 @@
   doi: 10.1177/2053168019832089
   open_data: https://doi.org/10.7910/DVN/HJZSIM
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - N_A: 278
+    N_R: 37
+    N_J: 3101
+    items: Brazilian governmental portfolios
+    judge_expertise: expert
+    judging_prompt: Which portfolio is most valuable?
   
 - project_id: Luckett2018
   citation: Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates
@@ -224,14 +237,39 @@
   doi: 10.31234/osf.io/gvq97
   open_data: https://doi.org/10.17605/OSF.IO/SGJ6N
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
+  Note: Holy smokes this study is complicated. Needs more thought... 
+  - study: Coffee
+    N_A: 100
     N_R: '[TODO]'
     N_J: '[TODO]'
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
-  
+    
+   - study: Soda
+    N_A: 98
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+  - study: Icecream
+    N_A: 86
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+    
+  - study: Pizza
+    N_A: 91
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
+       
 - project_id: LuckettX
   citation: Luckett, C. (n.d.) Unpublished data.
   doi: .na.character
