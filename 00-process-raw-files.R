@@ -97,6 +97,74 @@ purrr::iwalk(
   ~ vroom_write(.x, glue::glue("data/Kinnear2021_{.y}.csv"), ",")
 )
 
+# Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual
+# variations in aesthetic responses to fractal patterns. Frontiers in human neuroscience, 10, 350.
+# https://doi.org/10.3389/fnhum.2016.00350
+
+# Experiment 1
+
+# ???
+
+# Experiment 2
+sheet1 <- readxl::read_excel("data-raw/Spehar et al/Experiment 2.xlsx", sheet = 1)
+sheet2 <- readxl::read_excel("data-raw/Spehar et al/Experiment 2.xlsx", sheet = 2)
+sheet3 <- readxl::read_excel("data-raw/Spehar et al/Experiment 2.xlsx", sheet = 3)
+sheet4 <- readxl::read_excel("data-raw/Spehar et al/Experiment 2.xlsx", sheet = 4)
+sheet5 <- readxl::read_excel("data-raw/Spehar et al/Experiment 2.xlsx", sheet = 5)
+
+# extract the relevant bits of data, in the form we need
+dat1 <- sheet1 %>% 
+  transmute(judge = subject,
+            type = trialcode,
+            item1 = stimulusitem2,
+            item2 = stimulusitem3,
+            choice = Choice) %>% 
+  filter(type != "inst1") %>% 
+  mutate(
+    candidate_chosen = choice,
+    candidate_not_chosen = str_remove(paste0(item1,item2), choice)
+  ) %>% 
+  separate(type, into = c(NA, "type", NA), sep = "_") %>% 
+  select(judge, type, starts_with("candidate"))
+
+# now do this across all 5 sheets in an efficient way
+all_data <- tibble(seed_image = c(1:5)) %>% 
+  mutate(raw_spreadsheet = map(seed_image, ~ readxl::read_excel("data-raw/Spehar et al/Experiment 2.xlsx", sheet = .x))) %>% 
+  mutate(
+    data = map(raw_spreadsheet, ~ .x %>% 
+                 transmute(judge = subject,
+                           type = trialcode,
+                           item1 = stimulusitem2,
+                           item2 = stimulusitem3,
+                           choice = Choice) %>% 
+                 filter(type != "inst1") %>% 
+                 mutate(
+                   candidate_chosen = choice,
+                   candidate_not_chosen = str_remove(paste0(item1,item2), choice)
+                 ) %>% 
+                 separate(type, into = c(NA, "type", NA), sep = "_") %>% 
+                 select(judge, type, starts_with("candidate")))
+  )
+
+spehar2016_expt2 <- all_data %>% 
+  select(-raw_spreadsheet) %>% 
+  unnest(cols = data)
+# visual check that the judge id's are unique across the different spreadsheets,
+# and each judge does the same number of judgements as stated in the paper
+spehar2016_expt2 %>% 
+  ggplot(aes(x = judge)) +
+  geom_histogram(binwidth = 1)
+
+purrr::iwalk(
+  split(spehar2016_expt2, spehar2016_expt2$type),
+  ~ vroom_write(.x, glue::glue("data/Spehar2016_{.y}.csv"), ",")
+)
+
+# TODO - this seems to be data from this paper: https://doi.org/10.1016/j.visres.2020.11.011 (from snowballing?)
+nguyen2021 <- tibble(path = fs::dir_ls(path = "data-raw/Spehar et al/expt1/")) %>% 
+  mutate(dat = map(path, ~ vroom(.x, col_select = c("Subject_No", "Slope_selected", "Slope_not_selected")))) %>%
+  unnest(cols = dat)
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle

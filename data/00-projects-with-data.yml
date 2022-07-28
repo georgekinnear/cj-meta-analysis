@@ -3,11 +3,9 @@
 #
   
 - project_id: Spehar2016
-  citation: Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual
-    variations in aesthetic responses to fractal patterns. Frontiers in human neuroscience, 10,
-    350.
+  citation: Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual variations in aesthetic responses to fractal patterns. Frontiers in human neuroscience, 10, 350.
   doi: 10.3389/fnhum.2016.00350
-  open_data: N
+  open_data: no
   judging_sessions: 
   - study: Grayscale
     N_A: 310
