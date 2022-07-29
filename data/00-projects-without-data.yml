@@ -1,3 +1,18 @@
+- project_id: Jones2016a
+  citation: Jones, I., & Karadeniz, I. (2016). An alternative approach to assessing
+    achievement. In C. Csikos, A. Rausch, & J. Szitanyi (Eds.), The 40th Conference
+    of the International Group for the Psychology of Mathematics Education (Vol. 3,
+    pp. 51–58). IGPME. https://hdl.handle.net/2134/21090
+  doi: .na.character
+  open_data: no
+  judging_sessions:
+  - N_A: 11
+    N_R: 686
+    N_J: 6600
+    items: Secondary student responses to open-ended maths test questions
+    judge_expertise: expert
+    judging_prompt: the better mathematician
+    adaptivity: unsure
     
 - project_id: Coertjens2015
   citation: Coertjens, Liesje; Verhavert, San; Lesterhuis, Marije; Goossens, Maarten; De Maeyer, Sven. Is comparative judgment more efficient? An explorative study into the reliability efficiency trade-off when using rubrics or comparative judgment. Association for Educational Assessment Europe Conference (Glasgow, Scotland, from 05/11/2015 to 7/11/2015).

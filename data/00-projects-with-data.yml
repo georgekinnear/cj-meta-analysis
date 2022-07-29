@@ -832,22 +832,6 @@
     judging_prompt: better understanding of fractions
     adaptivity: unsure
   
-- project_id: Jones2016a
-  citation: Jones, I., & Karadeniz, I. (2016). An alternative approach to assessing
-    achievement. In C. Csikos, A. Rausch, & J. Szitanyi (Eds.), The 40th Conference
-    of the International Group for the Psychology of Mathematics Education (Vol. 3,
-    pp. 51–58). IGPME. https://hdl.handle.net/2134/21090
-  doi: .na.character
-  open_data: no
-  judging_sessions:
-  - N_A: 11
-    N_R: 686
-    N_J: 6600
-    items: Secondary student responses to open-ended maths test questions
-    judge_expertise: expert
-    judging_prompt: the better mathematician
-    adaptivity: unsure
-  
 - project_id: Jones2016b
   citation: "Jones, I., Wheadon, C., Humphries, S., & Inglis, M. (2016). Fifty years
     of A-level mathematics: Have standards changed? British Educational Research Journal,
