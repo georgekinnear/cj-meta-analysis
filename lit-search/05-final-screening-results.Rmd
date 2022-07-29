@@ -46,7 +46,7 @@ HOWEVER, the .bib file included some entries with publication dates before our c
 
 Here we filter the .bib contents to focus only on those published in 2010 or later, and show the breakdown of the decisions:
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 full_bib <- bib2df::bib2df("../20210702 CJMetaAnalysis.bib") %>% 
   mutate(
     decision = case_when(
@@ -117,9 +117,9 @@ all_papers_in_screening %>%
   basic_kable()
 ```
 
-## 4. Data retrieved (N=34+5)
+## 4. Data retrieved (N=33+5)
 
-From the 102 studies where data was requested, we received the data for 34:
+From the 102 studies where data was requested, we received the data for 33:
 
 ```{r}
 all_papers_in_screening %>% 
@@ -148,8 +148,12 @@ data <- list(
   step2 = all_papers_in_screening %>% filter(source == "Lens search") %>% nrow(),
   step3 = all_papers_in_screening %>%
     filter(request_data == TRUE, source == "Lens search") %>% nrow(),
-  step4 = all_papers_in_screening %>% 
-  filter(data_retrieved == TRUE, source == "Lens search") %>% nrow()
+  step4 = all_papers_in_screening %>%
+    filter(data_retrieved == TRUE, source == "Lens search") %>% nrow(),
+  snowball = all_papers_in_screening %>%
+    filter(data_retrieved == TRUE, source == "Snowballing") %>% nrow(),
+  final = all_papers_in_screening %>%
+    filter(data_retrieved == TRUE) %>% nrow()
 )
 
 step2outdata <- lens_search_results %>% 
@@ -176,14 +180,19 @@ step4 [label = '@@4', fontname = 'Arial']
 step5 [label = '@@5', fontname = 'Arial']
 step2out [label = '@@6', fontname = 'Arial']
 step3out [label = '@@7', fontname = 'Arial']
+snowball [label = '@@8', fontname = 'Arial']
+final [label = '@@9', fontname = 'Arial']
 
 # make the exclusions appear on the same level as their step
 subgraph { rank = same; step2; step2out }
 subgraph { rank = same; step3; step3out }
+subgraph { rank = same; step5; snowball }
 
 step1 -> step2 -> step3 -> step4 -> step5
 step2 -> step2out
 step3 -> step3out
+snowball -> final
+step5 -> final
 
 }
 
@@ -194,6 +203,8 @@ step3 -> step3out
 [5]: paste0('Data obtained (n = ', data$step4, ')')
 [6]: paste0('Records excluded: \\n ', step2outdata)
 [7]: paste0('Reports excluded (n = 103)')
+[8]: paste0('Additional reports identified (n = ', data$snowball, ')')
+[8]: paste0('Final dataset (n = ', data$final, ')')
 ")
 
 flowchart %>% 

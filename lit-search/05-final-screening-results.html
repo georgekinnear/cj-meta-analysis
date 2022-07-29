@@ -1830,17 +1830,6 @@ before our cut-off of 2010. We manually deleted these from the final
 screening spreadsheet at the time.</p>
 <p>Here we filter the .bib contents to focus only on those published in
 2010 or later, and show the breakdown of the decisions:</p>
-<pre><code>## Some BibTeX entries may have been dropped.
-##             The result could be malformed.
-##             Review the .bib file and make sure every single entry starts
-##             with a &#39;@&#39;.</code></pre>
-<pre><code>## Warning: `as_data_frame()` was deprecated in tibble 2.0.0.
-## Please use `as_tibble()` instead.
-## The signature and semantics have changed, see `?as_tibble`.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
-<pre><code>## Column `YEAR` contains character strings.
-##               No coercion to numeric applied.</code></pre>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -3235,10 +3224,10 @@ Total
 </tbody>
 </table>
 </div>
-<div id="data-retrieved-n345" class="section level2">
-<h2>4. Data retrieved (N=34+5)</h2>
+<div id="data-retrieved-n335" class="section level2">
+<h2>4. Data retrieved (N=33+5)</h2>
 <p>From the 102 studies where data was requested, we received the data
-for 34:</p>
+for 33:</p>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -3259,10 +3248,10 @@ percent
 Education
 </td>
 <td style="text-align:right;">
-26
+25
 </td>
 <td style="text-align:left;">
-76.5%
+75.8%
 </td>
 </tr>
 <tr>
@@ -3273,7 +3262,7 @@ Other
 8
 </td>
 <td style="text-align:left;">
-23.5%
+24.2%
 </td>
 </tr>
 <tr>
@@ -3281,7 +3270,7 @@ Other
 Total
 </td>
 <td style="text-align:right;">
-34
+33
 </td>
 <td style="text-align:left;">
 100.0%
@@ -3341,8 +3330,8 @@ Total
 </tr>
 </tbody>
 </table>
-<div id="htmlwidget-d137cd00318f42450aaf" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d137cd00318f42450aaf">{"x":{"diagram":"\ndigraph graph2 {\n\ngraph [layout = dot]\n\n# node definitions with substituted label text\nnode [shape = rectangle, width = 4, fillcolor = Biege]\nstep1 [label = \"Records identified from lens.org (n = 1538)\", fontname = \"Arial\"]\nstep2 [label = \"Records screened (n = 1538)\", fontname = \"Arial\"]\nstep3 [label = \"Reports assessed for eligibility (n = 205)\", fontname = \"Arial\"]\nstep4 [label = \"Reports identified as eligible (n = 102)\", fontname = \"Arial\"]\nstep5 [label = \"Data obtained (n = 34)\", fontname = \"Arial\"]\nstep2out [label = \"Records excluded: \n Not in English (n=72)\nNot Relevant (n=1129)\nTheoretical (n=132)\", fontname = \"Arial\"]\nstep3out [label = \"Reports excluded (n = 103)\", fontname = \"Arial\"]\n\n# make the exclusions appear on the same level as their step\nsubgraph { rank = same; step2; step2out }\nsubgraph { rank = same; step3; step3out }\n\nstep1 -> step2 -> step3 -> step4 -> step5\nstep2 -> step2out\nstep3 -> step3out\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-872d7f9d15987e8a2592" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-872d7f9d15987e8a2592">{"x":{"diagram":"\ndigraph graph2 {\n\ngraph [layout = dot]\n\n# node definitions with substituted label text\nnode [shape = rectangle, width = 4, fillcolor = Biege]\nstep1 [label = \"Records identified from lens.org (n = 1538)\", fontname = \"Arial\"]\nstep2 [label = \"Records screened (n = 1538)\", fontname = \"Arial\"]\nstep3 [label = \"Reports assessed for eligibility (n = 205)\", fontname = \"Arial\"]\nstep4 [label = \"Reports identified as eligible (n = 102)\", fontname = \"Arial\"]\nstep5 [label = \"Data obtained (n = 33)\", fontname = \"Arial\"]\nstep2out [label = \"Records excluded: \n Not in English (n=72)\nNot Relevant (n=1129)\nTheoretical (n=132)\", fontname = \"Arial\"]\nstep3out [label = \"Reports excluded (n = 103)\", fontname = \"Arial\"]\nsnowball [label = \"Additional reports identified (n = 5)\", fontname = \"Arial\"]\nfinal [label = \"Final dataset (n = 38)\", fontname = \"Arial\"]\n\n# make the exclusions appear on the same level as their step\nsubgraph { rank = same; step2; step2out }\nsubgraph { rank = same; step3; step3out }\nsubgraph { rank = same; step5; snowball }\n\nstep1 -> step2 -> step3 -> step4 -> step5\nstep2 -> step2out\nstep3 -> step3out\nsnowball -> final\nstep5 -> final\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
