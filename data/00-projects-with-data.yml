@@ -381,13 +381,20 @@
   doi: .na.character
   open_data: no
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - study: odor-familiar
+    N_A: ??
+    N_R: 6
+    N_J: ??
+    items: samples of odors (vanillin, linalool, r-carvone, pentyl acetate, phenylethyl alcohol, methyl scalicylate)
+    judge_expertise: layperson
+    judging_prompt: which odor is more familiar
+  - study: odor-pleasant
+    N_A: ??
+    N_R: 6
+    N_J: ??
+    items: samples of odors (vanillin, linalool, r-carvone, pentyl acetate, phenylethyl alcohol, methyl scalicylate)
+    judge_expertise: layperson
+    judging_prompt: which odor is more pleasant
   
 - project_id: Sangwin2021
   citation: Sangwin, C., & Kinnear, G. (2021, June 4). Investigating insight and rigour

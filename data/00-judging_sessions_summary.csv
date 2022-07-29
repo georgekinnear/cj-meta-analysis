@@ -34,7 +34,8 @@ Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,coldb
 Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,cola,98,6,"980 (10 pairs per judge, completed across two sessions)",samples of commercially available cola-flavored sodas,layperson,identify the samples they preferred,FALSE,NA,NA
 Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,icecream,86,5,430 (5 pairs per judge),samples of commercially available vanilla ice creams,layperson,identify the samples they preferred,FALSE,NA,NA
 Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,pizza,91,5,455 (5 pairs per judge),samples of commercially available frozen four-cheese pizzas,layperson,identify the samples they preferred,FALSE,NA,NA
-LuckettX,NA,FALSE,NA,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA,NA
+LuckettX,NA,FALSE,NA,odor-familiar,??,6,??,"samples of odors (vanillin, linalool, r-carvone, pentyl acetate, phenylethyl alcohol, methyl scalicylate)",layperson,which odor is more familiar,NA,NA,NA
+LuckettX,NA,FALSE,NA,odor-pleasant,??,6,??,"samples of odors (vanillin, linalool, r-carvone, pentyl acetate, phenylethyl alcohol, methyl scalicylate)",layperson,which odor is more pleasant,NA,NA,NA
 Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study1-insight,29,13,not reported (judges were asked to do between 10 and 25),proofs,peer,select the proof which gives more insight,FALSE,NA,NA
 Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study1-rigour,24,13,not reported (judges were asked to do between 10 and 25),proofs,peer,select the proof which is more rigorous,FALSE,NA,NA
 Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-rigour,39,15,636,proofs,peer,which proof is more rigorous?,FALSE,NA,NA
