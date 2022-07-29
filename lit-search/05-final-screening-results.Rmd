@@ -211,5 +211,7 @@ flowchart %>%
   DiagrammeRsvg::export_svg() %>% 
   writeLines("flowchart.svg")
 
+rsvg::rsvg_pdf(svg = "flowchart.svg", file = "flowchart.pdf")
+
 flowchart
 ```
