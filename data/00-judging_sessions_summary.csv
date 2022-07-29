@@ -30,10 +30,10 @@ Esen2019,NA,FALSE,NA,[TODO] name for the study (only needed if there are many),[
 AlMaimani2017,10.1145/3025453.3025655,FALSE,NA,NA,12,4,72,Elbow patches,Expert,Which patch was more restrictive?,NA,NA,NA
 Clark2018,10.1371/journal.pone.0190393,https://doi.org/10.17633/rd.brunel.4902977.v1,NA,[TODO] name for the study (only needed if there are many),56,82,4592,Photos of men,expert,Which man is stronger?,NA,NA,NA
 Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,NA,NA,278,37,3101,Brazilian governmental portfolios,expert,Which portfolio is most valuable?,NA,NA,NA
-Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,Coffee,100,[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA,NA
-Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,Soda,98,[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA,NA
-Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,Icecream,86,[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA,NA
-Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,Pizza,91,[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA,NA
+Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,coldbrew,100,3,300,samples of cold-brew coffee,layperson,identify the samples they preferred,FALSE,NA,NA
+Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,cola,98,6,"980 (10 pairs per judge, completed across two sessions)",samples of commercially available cola-flavored sodas,layperson,identify the samples they preferred,FALSE,NA,NA
+Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,icecream,86,5,430 (5 pairs per judge),samples of commercially available vanilla ice creams,layperson,identify the samples they preferred,FALSE,NA,NA
+Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,pizza,91,5,455 (5 pairs per judge),samples of commercially available frozen four-cheese pizzas,layperson,identify the samples they preferred,FALSE,NA,NA
 LuckettX,NA,FALSE,NA,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA,NA
 Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study1-insight,29,13,not reported (judges were asked to do between 10 and 25),proofs,peer,select the proof which gives more insight,FALSE,NA,NA
 Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study1-rigour,24,13,not reported (judges were asked to do between 10 and 25),proofs,peer,select the proof which is more rigorous,FALSE,NA,NA

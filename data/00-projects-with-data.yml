@@ -339,39 +339,42 @@
     judging_prompt: Which portfolio is most valuable?
   
 - project_id: Luckett2018
-  citation: Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates
-    of Relative Acceptability from Paired Preferences. https://doi.org/10.31234/osf.io/gvq97
+  citation: Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates of Relative Acceptability from Paired Preferences. https://doi.org/10.31234/osf.io/gvq97
   doi: 10.31234/osf.io/gvq97
   open_data: https://doi.org/10.17605/OSF.IO/SGJ6N
   judging_sessions:
-  - study: Coffee
+  - study: coldbrew
     N_A: 100
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
-  - study: Soda
+    N_R: 3
+    N_J: 300
+    items: samples of cold-brew coffee
+    judge_expertise: layperson
+    judging_prompt: "identify the samples they preferred"
+    adaptivity: no
+  - study: cola
     N_A: 98
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
-  - study: Icecream
+    N_R: 6
+    N_J: 980 (10 pairs per judge, completed across two sessions)
+    items: samples of commercially available cola-flavored sodas
+    judge_expertise: layperson
+    judging_prompt: "identify the samples they preferred"
+    adaptivity: no
+  - study: icecream
     N_A: 86
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
-  - study: Pizza
+    N_R: 5
+    N_J: 430 (5 pairs per judge)
+    items: samples of commercially available vanilla ice creams
+    judge_expertise: layperson
+    judging_prompt: "identify the samples they preferred"
+    adaptivity: no
+  - study: pizza
     N_A: 91
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+    N_R: 5
+    N_J: 455 (5 pairs per judge)
+    items: samples of commercially available frozen four-cheese pizzas
+    judge_expertise: layperson
+    judging_prompt: "identify the samples they preferred"
+    adaptivity: no
        
 - project_id: LuckettX
   citation: Luckett, C. (n.d.) Unpublished data.
