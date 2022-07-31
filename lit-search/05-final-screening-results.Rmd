@@ -165,28 +165,30 @@ step2outdata <- lens_search_results %>%
   transmute(text = str_glue("{str_remove(decision, 'Exclude - ')} (n={n})")) %>%
   pull(text) %>% 
   paste(collapse = "\n")
+```
 
-flowchart <- DiagrammeR::grViz("
-digraph graph2 {
+```{r}
+flowchart <- DiagrammeR::grViz(str_glue("
+digraph graph2 {{
 
 graph [layout = dot]
 
 # node definitions with substituted label text
-node [shape = rectangle, width = 4, fillcolor = Biege]
-step1 [label = '@@1', fontname = 'Arial']
-step2 [label = '@@2', fontname = 'Arial']
-step3 [label = '@@3', fontname = 'Arial']
-step4 [label = '@@4', fontname = 'Arial']
-step5 [label = '@@5', fontname = 'Arial']
-step2out [label = '@@6', fontname = 'Arial']
-step3out [label = '@@7', fontname = 'Arial']
-snowball [label = '@@8', fontname = 'Arial']
-final [label = '@@9', fontname = 'Arial']
+node [shape = rectangle, width = 4, fillcolor = Biege, fontname = 'Arial']
+step1 [label = 'Records identified from lens.org (n = {data$step1})']
+step2 [label = 'Records screened (n = {data$step1})']
+step3 [label = 'Reports assessed for eligibility (n = {data$step2})']
+step4 [label = 'Reports identified as eligible (n = {data$step3})']
+step5 [label = 'Data obtained (n = {data$step4})']
+step2out [label = 'Records excluded: \\n {step2outdata}']
+step3out [label = 'Reports excluded (n = {data$step2 - data$step3})']
+snowball [label = 'Additional reports identified (n = {data$snowball})']
+final [label = 'Final dataset (n = {data$final})']
 
 # make the exclusions appear on the same level as their step
-subgraph { rank = same; step2; step2out }
-subgraph { rank = same; step3; step3out }
-subgraph { rank = same; step5; snowball }
+subgraph {{ rank = same; step2; step2out }}
+subgraph {{ rank = same; step3; step3out }}
+subgraph {{ rank = same; step5; snowball }}
 
 step1 -> step2 -> step3 -> step4 -> step5
 step2 -> step2out
@@ -194,18 +196,9 @@ step3 -> step3out
 snowball -> final
 step5 -> final
 
-}
+}}
 
-[1]: paste0('Records identified from lens.org (n = ', data$step1, ')')
-[2]: paste0('Records screened (n = ', data$step1, ')')
-[3]: paste0('Reports assessed for eligibility (n = ', data$step2, ')')
-[4]: paste0('Reports identified as eligible (n = ', data$step3, ')')
-[5]: paste0('Data obtained (n = ', data$step4, ')')
-[6]: paste0('Records excluded: \\n ', step2outdata)
-[7]: paste0('Reports excluded (n = 103)')
-[8]: paste0('Additional reports identified (n = ', data$snowball, ')')
-[8]: paste0('Final dataset (n = ', data$final, ')')
-")
+"))
 
 flowchart %>% 
   DiagrammeRsvg::export_svg() %>% 
