@@ -50,6 +50,31 @@
     judge_expertise: Expert
     judging_prompt: Pick the 'sentence' closer to the way you would speak to another bilingual person
     adaptivity: no 
+    
+- project_id: StadthagenGonzalez2019
+  citation: "Stadthagen-González, H., Parafita Couto, M. C., Párraga, C. A., & Damian, M. F. (2019). Testing alternative theoretical accounts of code-switching: Insights from comparative judgments of adjective–noun order. International Journal of Bilingualism, 23(1), 200-220."
+  doi: 10.1177/1367006917728390
+  open_data: no
+  note: "TODO - this one came from snowballing; add it to the 05-final-screening-results"
+  judging_sessions:
+  - study: eng-to-spa
+    N_A: 40
+    N_R: 20
+    N_J: 1200 
+    comment: There are 5 base sentences with 4 variants. The paper summarises the scores at the level of the variants.
+    items: Sentences that start off in English then switch to Spanish
+    judge_expertise: layperson
+    judging_prompt: "pick the one closer to the way they would speak to another bilingual person"
+    adaptivity: no 
+  - study: spa-to-eng
+    N_A: 40
+    N_R: 20
+    N_J: 1200
+    comment: There are 5 base sentences with 4 variants. The paper summarises the scores at the level of the variants.
+    items: Sentences that start off in Spanish then switch to English
+    judge_expertise: layperson
+    judging_prompt: "pick the one closer to the way they would speak to another bilingual person"
+    adaptivity: no 
   
 - project_id: Vatavu2020
   citation: 'Vatavu, R. D., & Vanderdonckt, J. (2020, November). Design Space and

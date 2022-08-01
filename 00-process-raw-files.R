@@ -353,6 +353,54 @@ vroom("data-raw/luckett/extra-data/odor_pleasantness.csv", .name_repair = janito
             candidate_not_chosen = loser) %>% 
   write_csv("data/LuckettX_odor-pleasant.csv")
 
+
+# StadthagenGonzalez2019
+# 10.1177/1367006917728390
+engspa <- readxl::read_excel("data-raw/Stadthagen-Gonzalez et al/Stadthagen-Gonzalez et al 2019 (Adjective-Noun).xlsx", sheet = 1)
+sg19_engspa <- engspa %>% 
+  rename(judge = `Participant ID`) %>% 
+  pivot_longer(cols = !judge, names_to = "comparison", values_to = "decision") %>% 
+  separate(comparison, into = c("variant1", "variant2", "base_sentence"), sep = c(1:2)) %>% 
+  transmute(
+    judge = judge,
+    candidate_chosen = paste0(decision, base_sentence),
+    candidate_not_chosen = ifelse(decision == variant1, paste0(variant2, base_sentence), paste0(variant1, base_sentence))
+  )
+sg19_engspa %>% write_csv("data/StadthagenGonzalez2019_eng-to-spa.csv")
+
+spaeng <- readxl::read_excel("data-raw/Stadthagen-Gonzalez et al/Stadthagen-Gonzalez et al 2019 (Adjective-Noun).xlsx", sheet = 2)
+sg19_spaeng <- spaeng %>% 
+  rename(judge = `ParticipantID`) %>% 
+  select(judge, starts_with(c("E", "F", "G", "H"))) %>% 
+  pivot_longer(cols = !judge, names_to = "comparison", values_to = "decision") %>% 
+  separate(comparison, into = c("variant1", "variant2", "base_sentence"), sep = c(1:2)) %>% 
+  transmute(
+    judge = judge,
+    candidate_chosen = paste0(decision, base_sentence),
+    candidate_not_chosen = ifelse(decision == variant1, paste0(variant2, base_sentence), paste0(variant1, base_sentence))
+  )
+sg19_spaeng %>% write_csv("data/StadthagenGonzalez2019_spa-to-eng.csv")
+
+sg19_btm <- sirt::btm(
+  data = sg19_engspa %>%
+    select(candidate_chosen, candidate_not_chosen) %>% 
+    mutate(winner = 1) %>%
+    data.frame,
+  judge = sg19_engspa %>% pull(judge),
+  maxit = 400 , fix.eta = 0 , ignore.ties = FALSE
+)
+
+# in the paper they compute 4 scores (see Table 3), perhaps just based on the letters?
+sg19_reduced_btm <- sirt::btm(
+  data = sg19_engspa %>%
+    select(candidate_chosen, candidate_not_chosen) %>% 
+    mutate(across(starts_with("candidate"), ~ str_remove(., "[1-6]"))) %>% 
+    mutate(winner = 1) %>%
+    data.frame,
+  judge = sg19_engspa %>% pull(judge),
+  maxit = 400 , fix.eta = 0 , ignore.ties = FALSE
+)
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle
