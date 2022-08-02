@@ -403,6 +403,29 @@ sg19_reduced_btm <- sirt::btm(
   maxit = 400 , fix.eta = 0 , ignore.ties = FALSE
 )
 
+# Isnac2020
+# 10.17051/ilkonline.2020.728048
+
+# Author (Dogan) provided raw data in SPSS format
+library(haven)
+dogan <- read_sav("data-raw/dogan/RAW DATA A.sav")
+
+dogan %>% 
+  zap_labels() %>% # get rid of the SPSS labels on the a_b column
+  rownames_to_column(var = "judge") %>% 
+  pivot_longer(
+    cols = contains("_"),
+    names_to = "pair",
+    values_to = "decision"
+  ) %>% 
+  separate(pair, into = c("left", "right"), sep = "_") %>% 
+  mutate(
+    candidate_chosen = ifelse(decision == 1, left, right),
+    candidate_not_chosen = ifelse(decision == 1, right, left),
+  ) %>% 
+  select(judge, starts_with("candidate")) %>% 
+  write_csv("data/Isnac2020.csv")
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle

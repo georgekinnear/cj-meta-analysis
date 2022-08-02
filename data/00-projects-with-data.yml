@@ -32,7 +32,7 @@
     judge_expertise: Novice 
     judging_prompt: Which [fractal] appears more complex?
     adaptivity: no
-    
+
   
 - project_id: StadthagenGonzalez2017
   citation: Stadthagen-González, H., López, L., Couto, M. C. P., & Párraga, C. A.
@@ -299,11 +299,13 @@
   open_data: no
   judging_sessions:
   - N_A: 444
-    N_R: unknown?
-    N_J: unknown?
+    N_R: 8
+    N_J: 28
     items: Assessment methods
-    judge_expertise: expert
+    judge_expertise: layperson
     judging_prompt: 'What is your preferred method of assessment?'
+    adaptivity: no
+    comment: judges made all possible paired comparisons between the 8 items
   
 - project_id: Esen2019
   citation: Esen, Y. D. (2019). Scaling the teachers’ perception of competence regarding
