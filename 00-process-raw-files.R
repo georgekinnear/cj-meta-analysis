@@ -559,6 +559,34 @@ sirt_output$effects %>% as_tibble() %>%
   arrange(-theta)
 sirt_output$fit_judges %>% as_tibble()
 
+# Zucco2019
+# 10.1177/2053168019832089
+
+# I loaded each of the Rdata files as in their provided .R script, then used this command to write the data out in .csv format:
+#   
+#   library(tidyverse)
+# the.set$the.set %>% as_tibble() %>% group_by(ref) %>% tally()
+# the.set$the.set %>% as_tibble() %>% write_csv("data-abcp.csv")
+# 
+# (and similarly for data-bls)
+zucco2019_experts <- read_csv("data-raw/zucco/data-abcp.csv")
+zucco2019_experts %>% 
+  transmute(
+    judge = ref,
+    candidate_chosen = ifelse(winX1, X1, X2),
+    candidate_not_chosen = ifelse(winX1, X2, X1),
+  ) %>% 
+  write_csv("data/Zucco2019_experts.csv")
+zucco2019_legislators <- read_csv("data-raw/zucco/data-bls.csv")
+zucco2019_legislators %>% 
+  transmute(
+    judge = ref,
+    candidate_chosen = ifelse(winX1, X1, X2),
+    candidate_not_chosen = ifelse(winX1, X2, X1),
+  ) %>% 
+  write_csv("data/Zucco2019_legislators.csv")
+
+
 
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e

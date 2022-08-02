@@ -120,9 +120,9 @@ judgement_data_tidy %>%
   mutate(btm_results = pmap_dfr(., compute_btm)) %>% 
   unnest(cols = btm_results)
 
-judgement_data_tidy %>%
-  filter(str_detect(judging_session, "Luck")) %>%
-  pmap_dfr(compute_btm)
+# judgement_data_tidy %>%
+#   filter(str_detect(judging_session, "Luck")) %>%
+#   pmap_dfr(compute_btm)
 
 # Read in all the saved SSR values
 ssr_values <- tibble(path = fs::dir_ls("data-cache", recurse = TRUE, glob = "*btm_ssr*")) %>% 

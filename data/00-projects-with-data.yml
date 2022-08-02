@@ -357,12 +357,22 @@
   doi: 10.1177/2053168019832089
   open_data: https://doi.org/10.7910/DVN/HJZSIM
   judging_sessions:
-  - N_A: 278
+  - study: legislators
+    N_A: 142
+    N_R: 37
+    N_J: 560
+    items: Brazilian governmental portfolios
+    judge_expertise: expert
+    judging_prompt: Which portfolio is most valuable?
+    adaptivity: no
+  - study: experts
+    N_A: 278
     N_R: 37
     N_J: 3101
     items: Brazilian governmental portfolios
     judge_expertise: expert
     judging_prompt: Which portfolio is most valuable?
+    adaptivity: no
   
 - project_id: Luckett2018
   citation: Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates of Relative Acceptability from Paired Preferences. https://doi.org/10.31234/osf.io/gvq97
