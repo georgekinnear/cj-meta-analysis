@@ -358,7 +358,8 @@ vroom("data-raw/luckett/extra-data/odor_pleasantness.csv", .name_repair = janito
 # 10.1177/1367006917728390
 engspa <- readxl::read_excel("data-raw/Stadthagen-Gonzalez et al/Stadthagen-Gonzalez et al 2019 (Adjective-Noun).xlsx", sheet = 1)
 sg19_engspa <- engspa %>% 
-  rename(judge = `Participant ID`) %>% 
+  mutate(judge = paste0(row_number(), "_", `Participant ID`)) %>% 
+  select(-`Participant ID`) %>% 
   pivot_longer(cols = !judge, names_to = "comparison", values_to = "decision") %>% 
   separate(comparison, into = c("variant1", "variant2", "base_sentence"), sep = c(1:2)) %>% 
   transmute(
@@ -370,7 +371,8 @@ sg19_engspa %>% write_csv("data/StadthagenGonzalez2019_eng-to-spa.csv")
 
 spaeng <- readxl::read_excel("data-raw/Stadthagen-Gonzalez et al/Stadthagen-Gonzalez et al 2019 (Adjective-Noun).xlsx", sheet = 2)
 sg19_spaeng <- spaeng %>% 
-  rename(judge = `ParticipantID`) %>% 
+  mutate(judge = paste0(row_number(), "_", `ParticipantID`)) %>% 
+  select(-`ParticipantID`) %>%
   select(judge, starts_with(c("E", "F", "G", "H"))) %>% 
   pivot_longer(cols = !judge, names_to = "comparison", values_to = "decision") %>% 
   separate(comparison, into = c("variant1", "variant2", "base_sentence"), sep = c(1:2)) %>% 
