@@ -14,29 +14,42 @@ compute_btm <- function(csv_contents, judging_session, seed = 123, ...) {
   dir.create(file.path("data-cache", judging_session), showWarnings = FALSE)
   cache_file <- paste0("data-cache/", judging_session, "/btm_results.csv")
   
-  # format the judgements in the way that sirt::btm expects
-  judgements_for_sirt <- csv_contents %>%
-    select(won, lost) %>% 
-    mutate(winner = 1) %>% # sirt's way to indicate the leftmost column is the winner
-    data.frame
+  if(file.exists(cache_file)) {
+    ssr_cached = read_csv(cache_file %>% str_replace("_results", "_ssr"), show_col_types = FALSE)
+    btm_cached = read_csv(cache_file, show_col_types = FALSE)
+    print(str_glue("  ✔ retrieved from cache"))
+    
+    return(list(
+      ssr = list(ssr_cached$ssr),
+      btm_estimates = list(btm_cached)
+    ))
+  } else {
   
-  # use the assigned seed for this judging session to make sure the computation is repeatable
-  set.seed(seed)
+    # format the judgements in the way that sirt::btm expects
+    judgements_for_sirt <- csv_contents %>%
+      select(won, lost) %>% 
+      mutate(winner = 1) %>% # sirt's way to indicate the leftmost column is the winner
+      data.frame
+
+    # use the assigned seed for this judging session to make sure the computation is repeatable
+    set.seed(seed)
+    
+    # call sirt::btm
+    sirt_result <- sirt::btm(
+        data = judgements_for_sirt,
+        judge = csv_contents %>% pull(judge),
+        maxit = 400 , fix.eta = 0 , ignore.ties = TRUE
+      )
+    
+    write_csv(sirt_result$effects, file = cache_file)
+    write_csv(tibble(ssr = sirt_result$mle.rel), file = cache_file %>% str_replace("_results", "_ssr"))
+    
+    return(list(
+      ssr = list(sirt_result$mle.rel),
+      btm_estimates = list(sirt_result$effects)
+    ))
   
-  # call sirt::btm
-  sirt_result <- sirt::btm(
-      data = judgements_for_sirt,
-      judge = csv_contents %>% pull(judge),
-      maxit = 400 , fix.eta = 0 , ignore.ties = TRUE
-    )
-  
-  write_csv(sirt_result$effects, file = cache_file)
-  write_csv(tibble(ssr = sirt_result$mle.rel), file = cache_file %>% str_replace("_results", "_ssr"))
-  
-  return(list(
-    ssr = list(sirt_result$mle.rel),
-    btm_estimates = list(sirt_result$effects)
-  ))
+  }
   
 }
 
@@ -107,8 +120,8 @@ judgement_data_tidy %>%
   mutate(btm_results = pmap_dfr(., compute_btm)) %>% 
   unnest(cols = btm_results)
 
-judgement_data_tidy %>% 
-  filter(str_detect(judging_session, "Luckett")) %>% 
+judgement_data_tidy %>%
+  filter(str_detect(judging_session, "Luck")) %>%
   pmap_dfr(compute_btm)
 
 # Read in all the saved SSR values
@@ -186,6 +199,8 @@ meta_analysis_data %>%
   xlim(c(0,1)) +
   ylim(c(0,1))
 
+meta_analysis_data %>% 
+  filter(mean_split_corr > ssr) %>% select(judging_session, starts_with("observed"), mean_split_corr, ssr)
 
 meta_analysis_data %>% 
   filter(mean_split_corr < 0.5) %>% 
@@ -193,7 +208,6 @@ meta_analysis_data %>%
 
 split_halves_data %>% 
   filter(judging_session == "Kinnear2021_students-withsolutions2") %>% 
-  mutate(split_corr = map_dbl(split_data, ~ cor(.x$theta.x, .x$theta.y, method = "pearson"))) %>% 
   group_by(judging_session) %>% 
   ggplot(aes(x = split_corr)) +
   geom_density()
