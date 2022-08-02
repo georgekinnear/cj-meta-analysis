@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-data-cache/*
+data-cache/*/split-halves*
 data-raw/*
 *.bak
 *.sav
