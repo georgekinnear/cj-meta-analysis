@@ -82,13 +82,12 @@
     International Conference on Mobile and Ubiquitous Multimedia (pp. 1-12).'
   doi: 10.1145/3428361.3428467
   open_data: no
-  note: "TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/13"
   judging_sessions: 
   - N_A: 251
     N_R: 14
-    N_J: 22841 
+    N_J: 7530 
     items: menu layout preference
-    judge_expertise: Novice
+    judge_expertise: layperson
     judging_prompt: select the variants  preferred most by relying exclusively on the visual appearance of the presented information
     adaptivity: no 
   

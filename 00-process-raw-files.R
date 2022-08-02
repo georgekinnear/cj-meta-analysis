@@ -180,19 +180,88 @@ nguyen2021 <- tibble(path = fs::dir_ls(path = "data-raw/Spehar et al/expt1/")) %
   unnest(cols = dat)
 
 # Vatavu, R. D., & Vanderdonckt, J. (2020, November). Design Space and Users’ Preferences for Smartglasses Graphical Menus: A Vignette Study. In 19th International Conference on Mobile and Ubiquitous Multimedia (pp. 1-12).  doi: 10.1145/3428361.3428467
-vatavu2020 <- vroom("data-raw/Vatavu and Vanderdonckt (2020)/GAM-EICS2019-ForBenDavies.csv", .name_repair = janitor::make_clean_names)
-
-# unclear how to read the columns - they say chosen/not chosen but there's also a "choice" column that says left/right
-# Try running through BTM to see if the scores look like those in the paper?
-sirt_output <- vatavu2020 %>% 
-  sirt::btm(
+vatavu2020_raw <-
+  readxl::read_excel(
+    "data-raw/Vatavu and Vanderdonckt (2020)/GlassMenus-Interact2019-23Jan2019.xlsx",
+    sheet = 1,
+    skip = 59
+  )
+# data is provided as a matrix for each participant. The matrix is symmetric, so
+# the actual judgements appear twice. We need only the upper triangular part.
+vatavu2020_items <- tibble(
+  item_num = c(1:14),
+  item_name = c(
+    "BHBi-r",
+    "BHUni-l",
+    "MCBi-r",
+    "MCUni-l",
+    "MHBi-r",
+    "MHUni-l",
+    "MRBi-r",
+    "MRUni-r",
+    "MVBi-l",
+    "MVUni-r",
+    "SVBi-l",
+    "SVUni-r",
+    "THBi-l",
+    "THUni-l"
+  )
+)
+upper_triangle <- vatavu2020_items %>% rename(item1_num = item_num, item1 = item_name) %>% 
+  crossing(vatavu2020_items %>% rename(item2_num = item_num, item2 = item_name)) %>% 
+  filter(item2_num > item1_num) %>% 
+  select(item1, item2)
+vatavu2020 <- vatavu2020_raw %>% 
+  select(judge = PID, item1 = `I vs J`, `BHBi-r`:`THUni-l`) %>% 
+  fill(judge) %>% 
+  pivot_longer(`BHBi-r`:`THUni-l`, names_to = "item2", values_to = "decision") %>% 
+  filter(!is.na(decision)) %>% 
+  # TODO - should discuss if this is the right approach for ties
+  # discard ties
+  filter(decision != "E") %>% 
+  # keep only the upper triangle of decisions (the lower triangle is duplicated data)
+  semi_join(upper_triangle, by = c("item1", "item2")) %>% 
+  transmute(
+    judge = judge,
+    candidate_chosen = ifelse(decision == "+", item1, item2),
+    candidate_not_chosen = ifelse(decision == "-", item1, item2)
+  )
+# check that the ordering of the items matches what appears in the paper
+sirt_output <- sirt::btm(
     data = vatavu2020 %>%
-      mutate(decision = case_when(choice == "left" ~ 1, choice == "right" ~ 0, choice == "ties" ~ 0.5))%>%
+      mutate(decision = 1)%>% 
       select(candidate_chosen, candidate_not_chosen, decision) %>%
       data.frame,
     judge = vatavu2020 %>% pull(judge),
     maxit = 400 , fix.eta = 0 , ignore.ties = FALSE
   )
+sirt_output$effects %>% as_tibble() %>% 
+  arrange(-theta)
+sirt_output$fit_judges %>% as_tibble()
+
+vatavu2020 %>% write_csv("data/Vatavu2020.csv")
+
+# Vatavu2019
+# https://doi.org/10.1145/3331160 (snowballing)
+vatavu2019 <- vroom("data-raw/Vatavu and Vanderdonckt (2020)/GAM-EICS2019-ForBenDavies.csv", .name_repair = janitor::make_clean_names)
+
+# unclear how to read the columns - they say chosen/not chosen but there's also a "choice" column that says left/right
+# Try running through BTM to see if the scores look like those in the paper?
+sirt_output <- vatavu2019 %>% 
+  sirt::btm(
+    data = vatavu2019 %>%
+      # if the "choice" column refers to the two columns in the spreadsheet,
+      # i.e. the chosen/notchosen columns are really Left and Right
+      #mutate(decision = case_when(choice == "left" ~ 1, choice == "right" ~ 0, choice == "ties" ~ 0.5))%>%
+      # if chosen/not_chosen in the column names is accurate
+      mutate(decision = case_when(choice == "ties" ~ 0.5, TRUE ~ 1))%>% 
+      select(candidate_chosen, candidate_not_chosen, decision) %>%
+      data.frame,
+    judge = vatavu2019 %>% pull(judge),
+    maxit = 400 , fix.eta = 0 , ignore.ties = FALSE
+  )
+# neither version seems to give results that fit with the paper:
+# Vanderdonckt, Jean; Zen, Mathieu; Vatavu, Radu-Daniel  (2019). AB4Web. Proceedings of the ACM on Human-Computer Interaction, 3(EICS), 1–28. doi:10.1145/3331160
 
 # The number of judges and scripts seems off:
 sirt_output$effects
