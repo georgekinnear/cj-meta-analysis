@@ -174,10 +174,22 @@ purrr::iwalk(
   ~ vroom_write(.x, glue::glue("data/Spehar2016_expt2-{.y}.csv"), ",")
 )
 
-# TODO - this seems to be data from this paper: https://doi.org/10.1016/j.visres.2020.11.011 (from snowballing?)
-nguyen2021 <- tibble(path = fs::dir_ls(path = "data-raw/Spehar et al/expt1/")) %>% 
-  mutate(dat = map(path, ~ vroom(.x, col_select = c("Subject_No", "Slope_selected", "Slope_not_selected")))) %>%
+# Nguyen2021
+# https://doi.org/10.1016/j.visres.2020.11.011 (from snowballing)
+nguyen2021 <- tibble(path = fs::dir_ls(path = "data-raw/Spehar et al/nguyen2021-expt1/",
+                                       glob = "*Response_2*" # TODO - read in all the files instead?
+                                       )) %>% 
+  mutate(dat = map(path, ~ vroom(.x, col_select = c("Subject_No", "Stimulus_selected", "Stimulus_not_selected")))) %>%
   unnest(cols = dat)
+
+nguyen2021_btm <- sirt::btm(
+  data = nguyen2021 %>%
+    mutate(decision = 1)%>% 
+    select(Stimulus_selected, Stimulus_not_selected, decision) %>%
+    data.frame,
+  judge = nguyen2021 %>% pull(Subject_No),
+  maxit = 400 , fix.eta = 0 , ignore.ties = FALSE
+)
 
 # Vatavu, R. D., & Vanderdonckt, J. (2020, November). Design Space and Users’ Preferences for Smartglasses Graphical Menus: A Vignette Study. In 19th International Conference on Mobile and Ubiquitous Multimedia (pp. 1-12).  doi: 10.1145/3428361.3428467
 vatavu2020_raw <-
@@ -247,27 +259,29 @@ vatavu2019 <- vroom("data-raw/Vatavu and Vanderdonckt (2020)/GAM-EICS2019-ForBen
 
 # unclear how to read the columns - they say chosen/not chosen but there's also a "choice" column that says left/right
 # Try running through BTM to see if the scores look like those in the paper?
-sirt_output <- vatavu2019 %>% 
+vatavu2019_noties <- vatavu2019 %>% filter(choice != "ties")
+sirt_output <- 
   sirt::btm(
-    data = vatavu2019 %>%
+    data = vatavu2019_noties %>%
       # if the "choice" column refers to the two columns in the spreadsheet,
       # i.e. the chosen/notchosen columns are really Left and Right
-      #mutate(decision = case_when(choice == "left" ~ 1, choice == "right" ~ 0, choice == "ties" ~ 0.5))%>%
+      mutate(decision = case_when(choice == "left" ~ 1, choice == "right" ~ 0, choice == "ties" ~ 0.5))%>%
       # if chosen/not_chosen in the column names is accurate
-      mutate(decision = case_when(choice == "ties" ~ 0.5, TRUE ~ 1))%>% 
+      #mutate(decision = 1)%>% 
       select(candidate_chosen, candidate_not_chosen, decision) %>%
       data.frame,
-    judge = vatavu2019 %>% pull(judge),
-    maxit = 400 , fix.eta = 0 , ignore.ties = FALSE
+    judge = vatavu2019_noties %>% pull(judge),
+    maxit = 400 , fix.eta = 0 , ignore.ties = TRUE
   )
 # neither version seems to give results that fit with the paper:
 # Vanderdonckt, Jean; Zen, Mathieu; Vatavu, Radu-Daniel  (2019). AB4Web. Proceedings of the ACM on Human-Computer Interaction, 3(EICS), 1–28. doi:10.1145/3331160
 
 # The number of judges and scripts seems off:
-sirt_output$effects
+sirt_output$effects %>% as_tibble() %>% arrange(-theta)
 nrow(sirt_output$effects)
 
 nrow(sirt_output[["fit_judges"]])
+
 
 # Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’ Assessments of the Explanatory Value of Proofs. Axiomathes (2021). doi: 10.1007/s10516-021-09545-8
 ramos2021 <- vroom("data-raw/Mejia-Ramos et al. (2021)/Mejia-Ramos et al Binary decisions.csv", .name_repair = janitor::make_clean_names)
