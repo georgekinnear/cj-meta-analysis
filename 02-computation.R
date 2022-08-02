@@ -206,8 +206,8 @@ meta_analysis_data %>%
   filter(mean_split_corr < 0.5) %>% 
   select(judging_session, starts_with("observed"), mean_split_corr, ssr)
 
-split_halves_data %>% 
-  filter(judging_session == "Kinnear2021_students-withsolutions2") %>% 
-  group_by(judging_session) %>% 
-  ggplot(aes(x = split_corr)) +
-  geom_density()
+# split_halves_data %>% 
+#   filter(judging_session == "Kinnear2021_students-withsolutions2") %>% 
+#   group_by(judging_session) %>% 
+#   ggplot(aes(x = split_corr)) +
+#   geom_density()

@@ -29,9 +29,10 @@ PollittX,NA,FALSE,NA,philosophy2b,20,320,1621,Essays in a philosophy exam,expert
 PollittX,NA,FALSE,NA,philosophy2c,20,320,1631,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA
 Isnac2020,10.17051/ilkonline.2020.728048,FALSE,NA,NA,444,8,28,Assessment methods,layperson,What is your preferred method of assessment?,FALSE,judges made all possible paired comparisons between the 8 items
 Esen2019,NA,FALSE,NA,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
-AlMaimani2017,10.1145/3025453.3025655,FALSE,NA,NA,12,4,72,Elbow patches,Expert,Which patch was more restrictive?,NA,NA
+AlMaimani2017,10.1145/3025453.3025655,FALSE,NA,NA,12,4,144,Elbow patches,layperson,Which patch was more restrictive?,FALSE,"p.4: The procedure was repeated for all possible different comparisons of patches - this means all 12 pairs in {A,B,C,D}^2"
 Clark2018,10.1371/journal.pone.0190393,https://doi.org/10.17633/rd.brunel.4902977.v1,NA,[TODO] name for the study (only needed if there are many),56,82,4592,Photos of men,expert,Which man is stronger?,NA,NA
-Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,NA,NA,278,37,3101,Brazilian governmental portfolios,expert,Which portfolio is most valuable?,NA,NA
+Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,NA,legislators,142,37,560,Brazilian governmental portfolios,expert,Which portfolio is most valuable?,FALSE,NA
+Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,NA,experts,278,37,3101,Brazilian governmental portfolios,expert,Which portfolio is most valuable?,FALSE,NA
 Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,coldbrew,100,3,300,samples of cold-brew coffee,layperson,identify the samples they preferred,FALSE,NA
 Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,cola,98,6,"980 (10 pairs per judge, completed across two sessions)",samples of commercially available cola-flavored sodas,layperson,identify the samples they preferred,FALSE,NA
 Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,icecream,86,5,430 (5 pairs per judge),samples of commercially available vanilla ice creams,layperson,identify the samples they preferred,FALSE,NA
@@ -54,9 +55,9 @@ Kinnear2021,NA,FALSE,NA,students-withoutsolutions,22,20,440,Diagnostic test ques
 Kinnear2021,NA,FALSE,NA,students-withsolutions,22,20,422,Diagnostic test questions,peer,which question do you think Year 1 students find most difficult?,NA,NA
 Kinnear2021,NA,FALSE,NA,students-withsolutions1,8,20,142,Diagnostic test questions,peer,which question do you think Year 1 students find most difficult?,NA,NA
 Kinnear2021,NA,FALSE,NA,students-withsolutions2,9,20,331,Diagnostic test questions,peer,which question do you think Year 1 students find most difficult?,NA,NA
-Bramley2018,10.1080/0969594x.2017.1418734,No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true,NA,1a,18,150,1080,GCSE English essays,expert,Which essay is better?,TRUE,NA
-Bramley2018,10.1080/0969594x.2017.1418734,No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true,NA,1b,17,20,190,GCSE English essays,expert,Which essay is better?,FALSE,NA
-Bramley2018,10.1080/0969594x.2017.1418734,No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true,NA,2,16,150,1120,GCSE English essays,expert,Which essay is better?,FALSE,NA
+Bramley2018,10.1080/0969594x.2017.1418734,FALSE,"Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true",1a,18,150,1080,GCSE English essays,expert,Which essay is better?,TRUE,NA
+Bramley2018,10.1080/0969594x.2017.1418734,FALSE,"Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true",1b,18,20,190,GCSE English essays,expert,Which essay is better?,FALSE,NA
+Bramley2018,10.1080/0969594x.2017.1418734,FALSE,"Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true",2,16,150,1120,GCSE English essays,expert,Which essay is better?,FALSE,NA
 Settembri2018,10.1007/978-3-319-74147-5_8,FALSE,NA,NA,4,84,620,Political science students briefing documents,expert,unsure,FALSE,NA
 Coertjens2021,10.1080/10401334.2021.1877709,FALSE,NA,NA,8,22,200,Medical students self-reflections,expert,Which is the better self-reflection?,FALSE,NA
 Holmes2017,10.1080/14794802.2017.1334576,FALSE,NA,NA,33,66,1650,Student responses to maths GCSE items,expert,Which item best elicits mathematical problem-solving as described by AO3?,FALSE,NA

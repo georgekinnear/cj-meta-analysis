@@ -573,7 +573,8 @@
 - project_id: Bramley2018
   citation: "Bramley, T., & Vitello, S. (2019). The effect of adaptivity on the reliability coefficient in adaptive comparative judgement. Assessment in Education: Principles, Policy & Practice, 26, 43–58."
   doi: 10.1080/0969594x.2017.1418734
-  open_data: No decision data but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true
+  open_data: no
+  note: Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true
   judging_sessions:
   - study: 1a
     N_A: 18
@@ -584,7 +585,7 @@
     judging_prompt: Which essay is better?
     adaptivity: yes
   - study: 1b
-    N_A: 17
+    N_A: 18
     N_R: 20
     N_J: 190
     items: GCSE English essays

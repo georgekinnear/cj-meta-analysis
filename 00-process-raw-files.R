@@ -587,6 +587,29 @@ zucco2019_legislators %>%
   write_csv("data/Zucco2019_legislators.csv")
 
 
+# Bramley2018
+# Bramley, T., & Vitello, S. (2019). The effect of adaptivity on the reliability coefficient in adaptive comparative judgement. Assessment in Education: Principles, Policy & Practice, 26, 43–58.
+# doi: 10.1080/0969594x.2017.1418734
+bramley2018 <- vroom(fs::dir_ls(path = "data-raw/Cambridge Assessment/"), .name_repair = janitor::make_clean_names, id = "study")
+bramley2018 %>% 
+  transmute(
+    study = case_when(
+      str_detect(study, "AugACJ") ~ "1a",
+      str_detect(study, "AugFixed") ~ "1b",
+      str_detect(study, "SepFixed") ~ "2"
+    ),
+    judge = judge,
+    candidate_chosen = winner,
+    candidate_not_chosen = loser
+  ) %>% 
+  nest(data = !study) %>% 
+  purrr::pwalk(function(data, study) { vroom_write(data, glue::glue("data/Bramley2018_{study}.csv"), ",") })
+
+purrr::iwalk(
+  split(jones2015, jones2015$session),
+  ~ vroom_write(.x, glue::glue("data/Jones2014_{.y}.csv"), ",")
+)
+jones2015 %>% group_by(session, judge) %>% tally() %>% count()
 
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
