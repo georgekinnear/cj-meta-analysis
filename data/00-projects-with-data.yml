@@ -154,7 +154,7 @@
     N_J: 8161
     items: Pilot Level 4 Writing Tests, for pupils aged 9-12 years in England
     judge_expertise: expert
-    judging prompt: not explicitly stated, but based on quality
+    judging_prompt: not explicitly stated, but based on quality
     adaptivity: yes
   - study: example2
     N_A: 18
