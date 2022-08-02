@@ -611,6 +611,18 @@ purrr::iwalk(
 )
 jones2015 %>% group_by(session, judge) %>% tally() %>% count()
 
+
+# Coertjens2021
+# Coertjens, L., Lesterhuis, M., De Winter, B. Y., Goossens, M., De Maeyer, S., & Michels, N. R. (2021). Improving Self-Reflection Assessment Practices: Comparative Judgment as an Alternative to Rubrics. Teaching and Learning in Medicine, 1-11.
+# doi: 10.1080/10401334.2021.1877709
+Coertjens2021 <- read_csv("data-raw/Belgians/CoertjensEtAl_EARLI2017_and_TLM2021.csv") %>% 
+  transmute(
+    judge = `assessor Anonymous`,
+    candidate_chosen = `selected representation`,
+    candidate_not_chosen = ifelse(`selected representation` == `representation A`, `representation B`, `representation A`)
+  ) %>% 
+  write_csv("data/Coertjens2021.csv")
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle

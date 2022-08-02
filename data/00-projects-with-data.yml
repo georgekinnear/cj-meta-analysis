@@ -618,7 +618,18 @@
     judge_expertise: expert
     judging_prompt: unsure
     adaptivity: no
-  
+    
+- project_id: Coertjens2015
+  citation: "Coertjens, Liesje; Verhavert, San; Lesterhuis, Marije; Goossens, Maarten; De Maeyer, Sven. Is comparative judgment more efficient? An explorative study into the reliability efficiency trade-off when using rubrics or comparative judgment. Association for Educational Assessment Europe Conference (Glasgow, Scotland, from 05/11/2015 to 7/11/2015)."
+  open_data: no
+  judging_sessions:
+  - study: '[TODO] name for the study (only needed if there are many)'
+    N_A: '[TODO]'
+    N_R: '[TODO]'
+    N_J: '[TODO]'
+    items: '[TODO] short description of what is being judged'
+    judge_expertise: '[TODO] expert/peer/novice'
+    judging_prompt: '[TODO]'
 
 - project_id: Coertjens2021
   citation: "Coertjens, L., Lesterhuis, M., De Winter, B. Y., Goossens, M., De Maeyer,
