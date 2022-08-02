@@ -332,7 +332,7 @@
     N_R: 4
     N_J: 72
     items: Elbow patches
-    judge_expertise: Expert
+    judge_expertise: layperson
     judging_prompt: Which patch was more restrictive?
   
 - project_id: Clark2018

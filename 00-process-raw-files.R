@@ -509,6 +509,57 @@ dogan %>%
   select(judge, starts_with("candidate")) %>% 
   write_csv("data/Isnac2020.csv")
 
+# AlMaimani2017
+# 10.1145/3025453.3025655
+almaimani2017 <- read_csv("data-raw/maimani-roudat/Book2.csv")
+# 12 judges
+# 4 patches, named A,B,C,D
+# all pairs were compared, twice
+almaimani2017 %>% 
+  transmute(
+    judge = userId,
+    item1 = condition1,
+    item2 = condition2,
+    choice1 = case_when(
+      flex1Cond1 == 2 ~ condition1,
+      flex1Cond2 == 2 ~ condition2,
+      # ties were allowed, but were rare - just exclude them
+      TRUE ~ NA_character_
+    ),
+    choice2 = case_when(
+      flex2Cond1 == 2 ~ condition1,
+      flex2Cond2 == 2 ~ condition2,
+      # ties were allowed, but were rare - just exclude them
+      TRUE ~ NA_character_
+    )
+  ) %>% 
+  # try without the second choice, not sure if that is part of the data?
+  select(-choice2) %>% 
+  pivot_longer(cols = starts_with("choice"), names_to = "occasion", values_to = "item_chosen") %>% 
+  filter(!is.na(item_chosen)) %>% 
+  transmute(
+    judge = judge,
+    candidate_chosen = item_chosen,
+    candidate_not_chosen = str_remove(paste0(item1, item2), item_chosen)
+  ) %>% 
+  write_csv("data/AlMaimani2017.csv")
+
+# check that the ordering of the items matches what appears in the paper
+dat <- read_csv("data/AlMaimani2017.csv")
+sirt_output <- sirt::btm(
+  data = dat %>%
+    mutate(decision = 1)%>% 
+    select(candidate_chosen, candidate_not_chosen, decision) %>%
+    data.frame,
+  judge = dat %>% pull(judge),
+  maxit = 400 , fix.eta = 0 , ignore.ties = FALSE
+)
+sirt_output$mle.rel
+sirt_output$effects %>% as_tibble() %>% 
+  arrange(-theta)
+sirt_output$fit_judges %>% as_tibble()
+
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle
