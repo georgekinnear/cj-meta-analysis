@@ -330,10 +330,12 @@
   judging_sessions:
   - N_A: 12
     N_R: 4
-    N_J: 72
+    N_J: 144
     items: Elbow patches
     judge_expertise: layperson
     judging_prompt: Which patch was more restrictive?
+    comment: "p.4: The procedure was repeated for all possible different comparisons of patches - this means all 12 pairs in {A,B,C,D}^2"
+    adaptivity: no
   
 - project_id: Clark2018
   citation: Clark, A. P., Howard, K. L., Woods, A. T., Penton-Voak, I. S., & Neumann,
@@ -607,7 +609,7 @@
     in Simulation Games. In Simulations of Decision-Making as Active Learning Tools (pp.
     93-108). Springer, Cham.
   doi: 10.1007/978-3-319-74147-5_8
-  open_data: N
+  open_data: no
   judging_sessions:
   - N_A: 4
     N_R: 84
