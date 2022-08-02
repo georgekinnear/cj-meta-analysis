@@ -623,6 +623,25 @@ Coertjens2021 <- read_csv("data-raw/Belgians/CoertjensEtAl_EARLI2017_and_TLM2021
   ) %>% 
   write_csv("data/Coertjens2021.csv")
 
+# Holmes2017
+# citation: Holmes, S. D., He, Q., & Meadows, M. (2017). An investigation of construct
+# relevant and irrelevant features of mathematics problem-solving questions using
+# comparative judgement and Kelly’s Repertory Grid. Research in Mathematics Education, 19(2),
+# 112-129.
+# doi: 10.1080/14794802.2017.1334576
+holmes2017 <- vroom("data-raw/Ofqual/Holmes_2017.csv", .name_repair = janitor::make_clean_names) %>% 
+  select(judge, starts_with("candidate")) %>% 
+  write_csv("data/Holmes2017.csv")
+
+# Holmes2018
+# citation: Holmes, S. D., Meadows, M., Stockford, I., & He, Q. (2018). Investigating
+# the comparability of examination difficulty using comparative judgement and Rasch
+# modelling. International Journal of Testing, 18, 366–391.
+# doi: 10.1080/15305058.2018.1486316
+holmes2018 <- vroom("data-raw/Ofqual/Holmes_2018.csv", .name_repair = janitor::make_clean_names) %>% 
+  select(judge, starts_with("candidate")) %>% 
+  write_csv("data/Holmes2018.csv")
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle
