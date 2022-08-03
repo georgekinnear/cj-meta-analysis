@@ -30,7 +30,8 @@ PollittX,NA,FALSE,NA,philosophy2c,20,320,1631,Essays in a philosophy exam,expert
 Isnac2020,10.17051/ilkonline.2020.728048,FALSE,NA,NA,444,8,28,Assessment methods,layperson,What is your preferred method of assessment?,FALSE,judges made all possible paired comparisons between the 8 items,NA
 Esen2019,NA,FALSE,NA,NA,459,8,12852,"Assessment competencies, e.g. ""giving effective feedback to students based on the exam results""",expert,"In whichever of the two fields in each line you find yourself more competent, check the box next to it. [Translation from the original Turkish]",NA,NA,snowballing
 AlMaimani2017,10.1145/3025453.3025655,FALSE,NA,NA,12,4,144,Elbow patches,layperson,Which patch was more restrictive?,FALSE,"p.4: The procedure was repeated for all possible different comparisons of patches - this means all 12 pairs in {A,B,C,D}^2",NA
-Clark2018,10.1371/journal.pone.0190393,https://doi.org/10.17633/rd.brunel.4902977.v1,NA,[TODO] name for the study (only needed if there are many),56,82,4592,Photos of men,expert,Which man is stronger?,NA,NA,NA
+Clark2018,10.1371/journal.pone.0190393,https://doi.org/10.17633/rd.brunel.4902977.v1,NA,Study1,56,82,4592,Photos of men,layperson,Which man is stronger?,FALSE,NA,NA
+Clark2018,10.1371/journal.pone.0190393,https://doi.org/10.17633/rd.brunel.4902977.v1,NA,Study2,96,82,7872,Photos of men,layperson,Which man is stronger?,FALSE,NA,NA
 Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,NA,legislators,142,37,560,Brazilian governmental portfolios,expert,Which portfolio is most valuable?,FALSE,NA,NA
 Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,NA,experts,278,37,3101,Brazilian governmental portfolios,expert,Which portfolio is most valuable?,FALSE,NA,NA
 Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,coldbrew,100,3,300,samples of cold-brew coffee,layperson,identify the samples they preferred,FALSE,NA,NA

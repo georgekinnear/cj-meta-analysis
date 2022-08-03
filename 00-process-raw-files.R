@@ -757,6 +757,21 @@ esen2019 %>%
   select(judge, starts_with("candidate")) %>% 
   write_csv("data/Esen2019.csv")
 
+# Clark2018
+# citation: Clark, A. P., Howard, K. L., Woods, A. T., Penton-Voak, I. S., & Neumann,
+# C. (2018). Why rate when you could compare? Using the “EloChoice” package to assess
+# pairwise comparisons of perceived physical strength. PloS one, 13(1), e0190393.
+# doi: 10.1371/journal.pone.0190393
+clark2018 <- vroom(fs::dir_ls(path = "data-raw/clark2018/"), .name_repair = janitor::make_clean_names, id = "study")
+clark2018 %>% 
+  transmute(
+    study = str_extract(study, "Study(\\d)"),
+    judge = rater,
+    candidate_chosen = winner,
+    candidate_not_chosen = loser
+  ) %>% 
+  nest(data = !study) %>% 
+  purrr::pwalk(function(data, study) { vroom_write(data, glue::glue("data/Clark2018_{study}.csv"), ",") })
 
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e

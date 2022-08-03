@@ -345,13 +345,22 @@
   doi: 10.1371/journal.pone.0190393
   open_data: https://doi.org/10.17633/rd.brunel.4902977.v1
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
+  - study: Study1
     N_A: 56
     N_R: 82
     N_J: 4592
     items: Photos of men
-    judge_expertise: expert
+    judge_expertise: layperson
     judging_prompt: Which man is stronger?
+    adaptivity: no
+  - study: Study2
+    N_A: 96
+    N_R: 82
+    N_J: 7872
+    items: Photos of men
+    judge_expertise: layperson
+    judging_prompt: Which man is stronger?
+    adaptivity: no
   
 - project_id: Zucco2019
   citation: 'Zucco Jr, C., Batista, M., & Power, T. J. (2019). Measuring portfolio
