@@ -55,7 +55,7 @@
   citation: "Stadthagen-González, H., Parafita Couto, M. C., Párraga, C. A., & Damian, M. F. (2019). Testing alternative theoretical accounts of code-switching: Insights from comparative judgments of adjective–noun order. International Journal of Bilingualism, 23(1), 200-220."
   doi: 10.1177/1367006917728390
   open_data: no
-  note: "TODO - this one came from snowballing; add it to the 05-final-screening-results"
+  source: snowballing
   judging_sessions:
   - study: eng-to-spa
     N_A: 40
@@ -168,6 +168,7 @@
   citation: Pollitt, A. (n.d.). Unpublished data.
   doi: .na.character
   open_data: no
+  source: snowballing
   judging_sessions:
   - study: art1
     N_A: 19
@@ -311,6 +312,7 @@
     measurement and evaluation. [Unpublished Masters dissertation]. Ankara University.
   doi: .na.character
   open_data: no
+  source: snowballing
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -418,6 +420,7 @@
   citation: Luckett, C. (n.d.) Unpublished data.
   doi: .na.character
   open_data: no
+  source: snowballing
   judging_sessions:
   - study: odor-familiar
     N_A: ??
@@ -439,6 +442,7 @@
     as separate constructs in mathematical proof. https://doi.org/10.35542/osf.io/egks4
   doi: .na.character
   open_data: http://doi.org/10.5281/zenodo.4893915
+  source: snowballing
   judging_sessions:
   - study: study1-insight
     N_A: 29
@@ -502,6 +506,7 @@
     dissertation]. The University of Edinburgh.
   doi: .na.character
   open_data: no
+  source: snowballing
   judging_sessions:
   - study: experts-even
     N_A: 8
@@ -622,7 +627,6 @@
 - project_id: Coertjens2015
   citation: "Coertjens, Liesje; Verhavert, San; Lesterhuis, Marije; Goossens, Maarten; De Maeyer, Sven. Is comparative judgment more efficient? An explorative study into the reliability efficiency trade-off when using rubrics or comparative judgment. Association for Educational Assessment Europe Conference (Glasgow, Scotland, from 05/11/2015 to 7/11/2015)."
   open_data: no
-  note: "TODO - this was in the projects-without-data so make sure the 05-final-screening-results is updated"
   judging_sessions:
   - study: stress
     N_A: ??
@@ -640,7 +644,6 @@
     comparative judgment: The moderating role of decision accuracy. In Frontiers in
     Education (Vol. 2, p. 44). Frontiers.'
   doi: 10.3389/feduc.2017.00044
-  note: "TODO - moved from projects-with-data so make sure 05-final-screening-results is updated"
   open_data: no
   judging_sessions:
   - study: sample1
