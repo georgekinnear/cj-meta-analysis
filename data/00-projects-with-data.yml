@@ -633,7 +633,39 @@
     judge_expertise: unknown
     judging_prompt: unknown
     adaptivity: unknown
-
+    
+- project_id: Daal2017
+  citation: 'van Daal, T., Lesterhuis, M., Coertjens, L., van de Kamp, M. T., Donche,
+    V., & De Maeyer, S. (2017, August). The complexity of assessing student work using
+    comparative judgment: The moderating role of decision accuracy. In Frontiers in
+    Education (Vol. 2, p. 44). Frontiers.'
+  doi: 10.3389/feduc.2017.00044
+  note: "TODO - moved from projects-with-data so make sure 05-final-screening-results is updated"
+  open_data: no
+  judging_sessions:
+  - study: sample1
+    N_A: 49
+    N_R: 135
+    N_J: 1127
+    items: 'Written assignments by secondary school students in Flanders, about "getting children"'
+    judge_expertise: expert
+    judging_prompt: 'choose the essay that better evidenced the competence argumentative writing'
+  - study: sample2
+    N_A: 49
+    N_R: 135
+    N_J: 870
+    items: 'Written assignments by secondary school students in Flanders, about "getting children"'
+    judge_expertise: expert
+    judging_prompt: 'choose the essay that better evidenced the competence argumentative writing'
+  - study: sample3
+    N_A: 13
+    N_R: 147
+    N_J: 2193
+    items: "High school students' visual portfolios on the relationship between technology and the senses"
+    judge_expertise: expert
+    judging_prompt: 'pick each time the portfolio event that evidenced higher originality in visual arts'
+    comment: "TODO - spreadsheet in data-raw has no judge identifiers"
+    
 - project_id: Coertjens2021
   citation: "Coertjens, L., Lesterhuis, M., De Winter, B. Y., Goossens, M., De Maeyer,
     S., & Michels, N. R. (2021). Improving Self-Reflection Assessment Practices: Comparative

@@ -710,6 +710,35 @@ Coertjens2015 <- vroom("data-raw/Belgians/Coertjens 2015 AEA/Coertjens 2015 AEA 
   ) %>% 
   write_csv("data/Coertjens2015_stress.csv")
 
+# Daal2017
+# citation: 'van Daal, T., Lesterhuis, M., Coertjens, L., van de Kamp, M. T., Donche,
+#     V., & De Maeyer, S. (2017, August). The complexity of assessing student work using
+#     comparative judgment: The moderating role of decision accuracy. In Frontiers in
+#     Education (Vol. 2, p. 44). Frontiers.'
+# doi: 10.3389/feduc.2017.00044
+sample1 <- vroom("data-raw/Belgians/van Daal 2017 Frontiers/Coertjens 2015 AEA judgements kinderen.csv",
+                 .name_repair = janitor::make_clean_names) %>% 
+  transmute(
+    judge = `assessor_r`,
+    candidate_chosen = `selected_object`,
+    candidate_not_chosen = ifelse(`selected_object` == `object_a`, `object_b`, `object_a`)
+  ) %>% 
+  write_csv("data/Daal2017_sample1.csv")
+
+sample2 <- vroom("data-raw/Belgians/van Daal 2017 Frontiers/Coertjens 2015 AEA judgements organ.csv",
+                 .name_repair = janitor::make_clean_names) %>% 
+  transmute(
+    judge = `assessor_r`,
+    candidate_chosen = `selected_object`,
+    candidate_not_chosen = ifelse(`selected_object` == `object_a`, `object_b`, `object_a`)
+  ) %>% 
+  write_csv("data/Daal2017_sample2.csv")
+
+sample3 <- vroom("data-raw/Belgians/van de Kamp et al 2021/van de Kamp et al 2021 The relationship of types of exploration activities with originality of visual arts designs.csv",
+                 .name_repair = janitor::make_clean_names)
+# There are no judge identifiers in this spreadsheet
+
+
 
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e

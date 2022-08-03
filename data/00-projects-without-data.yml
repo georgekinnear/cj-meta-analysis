@@ -1001,23 +1001,7 @@
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
-    
-- project_id: Daal2017
-  citation: 'van Daal, T., Lesterhuis, M., Coertjens, L., van de Kamp, M. T., Donche,
-    V., & De Maeyer, S. (2017, August). The complexity of assessing student work using
-    comparative judgment: The moderating role of decision accuracy. In Frontiers in
-    Education (Vol. 2, p. 44). Frontiers.'
-  doi: 10.3389/feduc.2017.00044
-  open_data: TODO... CHECK FOR OPEN DATA
-  judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
-    
+
 - project_id: Wheadon2014
   citation: .na.character
   doi: .na.character
