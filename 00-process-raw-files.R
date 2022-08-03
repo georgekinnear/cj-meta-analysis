@@ -738,6 +738,24 @@ sample3 <- vroom("data-raw/Belgians/van de Kamp et al 2021/van de Kamp et al 202
                  .name_repair = janitor::make_clean_names)
 # There are no judge identifiers in this spreadsheet
 
+# Esen2019
+# citation: Esen, Y. D. (2019). Scaling the teachers’ perception of competence regarding
+# measurement and evaluation. [Unpublished Masters dissertation]. Ankara University.
+esen2019 <- readxl::read_excel("data-raw/dogan/RAW DATA B.xlsx", skip = 1)
+esen2019 %>% 
+  rename(judge = `...1`) %>% 
+  pivot_longer(
+    cols = !judge,
+    names_to = "pair",
+    values_to = "decision"
+  ) %>% 
+  separate(pair, into = c("left", "right"), sep = 1) %>% 
+  mutate(
+    candidate_chosen = ifelse(decision == 1, left, right),
+    candidate_not_chosen = ifelse(decision == 1, right, left),
+  ) %>% 
+  select(judge, starts_with("candidate")) %>% 
+  write_csv("data/Esen2019.csv")
 
 
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556

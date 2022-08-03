@@ -314,13 +314,12 @@
   open_data: no
   source: snowballing
   judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
+  - N_A: 459
+    N_R: 8
+    N_J: 12852
+    items: 'Assessment competencies, e.g. "giving effective feedback to students based on the exam results"'
+    judge_expertise: expert
+    judging_prompt: 'In whichever of the two fields in each line you find yourself more competent, check the box next to it. [Translation from the original Turkish]'
   
 - project_id: AlMaimani2017
   citation: 'Al Maimani, A. , & Roudaut, A. (2017). Frozen suit: designing a changeable

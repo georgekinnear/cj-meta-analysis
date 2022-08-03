@@ -1,97 +1,97 @@
-project_id,doi,open_data,note,study,N_A,N_R,N_J,items,judge_expertise,judging_prompt,adaptivity,comment
-Spehar2016,10.3389/fnhum.2016.00350,FALSE,TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/11,Grayscale,310,9,??,Grayscale Computer-generated fractals,Novice,Which [fractal] appears more complex?,FALSE,NA
-Spehar2016,10.3389/fnhum.2016.00350,FALSE,TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/11,Threshold,310,9,??,Threshold Computer-generated fractals,Novice,Which [fractal] appears more complex?,FALSE,NA
-Spehar2016,10.3389/fnhum.2016.00350,FALSE,TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/11,EdgesOnly,310,9,??,Edge-only Computer-generated fractals,Novice,Which [fractal] appears more complex?,FALSE,NA
-StadthagenGonzalez2017,10.1075/lab.16030.sta,FALSE,TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/12,NA,42,??,126 (plus some more),Acceptibility of non-native speaker sentence constructions,Expert,Pick the 'sentence' closer to the way you would speak to another bilingual person,FALSE,NA
-StadthagenGonzalez2019,10.1177/1367006917728390,FALSE,TODO - this one came from snowballing; add it to the 05-final-screening-results,eng-to-spa,40,20,1200,Sentences that start off in English then switch to Spanish,layperson,pick the one closer to the way they would speak to another bilingual person,FALSE,There are 5 base sentences with 4 variants. The paper summarises the scores at the level of the variants.
-StadthagenGonzalez2019,10.1177/1367006917728390,FALSE,TODO - this one came from snowballing; add it to the 05-final-screening-results,spa-to-eng,40,20,1200,Sentences that start off in Spanish then switch to English,layperson,pick the one closer to the way they would speak to another bilingual person,FALSE,There are 5 base sentences with 4 variants. The paper summarises the scores at the level of the variants.
-Vatavu2020,10.1145/3428361.3428467,FALSE,NA,NA,251,14,7530,menu layout preference,layperson,select the variants  preferred most by relying exclusively on the visual appearance of the presented information,FALSE,NA
-Ramos2021,10.1007/s10516-021-09545-8,https://doi.org/10.17028/rd.lboro.12458486.v1,NA,Auckland,16,9,320,Mathematical explanations,Expert,which argument best explains why the proposition holds,FALSE,NA
-Ramos2021,10.1007/s10516-021-09545-8,https://doi.org/10.17028/rd.lboro.12458486.v1,NA,Rutgers,22,9,440,Mathematical explanations,Expert,which argument best explains why the proposition holds,FALSE,NA
-Smith2020,10.1007/978-3-030-38994-9_5,FALSE,NA,NA,5,15,350,GSCE Creative writing samples,expert,Choose the most proficient text,TRUE,NA
-Pollitt2012a,NA,FALSE,NA,NA,23,564,3519,GCSE Geography essays,expert,which essay demonstrated the stronger performance?,TRUE,NA
-Pollitt2017,10.1007/978-3-319-50856-6_16,FALSE,NA,example4,52,1000,8161,"Pilot Level 4 Writing Tests, for pupils aged 9-12 years in England",expert,"not explicitly stated, but based on quality",TRUE,NA
-Pollitt2017,10.1007/978-3-319-50856-6_16,FALSE,NA,example2,18,122,2054,Papers from accountancy exams for age 17/18,expert,"not explicitly stated, but based on quality",FALSE,NA
-PollittX,NA,FALSE,NA,art1,19,75,496,Visual art pieces from high schools,expert,Which is better? But I don't know the exact wording.,unknown,NA
-PollittX,NA,FALSE,NA,art2,20,75,497,Art pieces from high schools,expert,Which is better? But I don't know the exact wording.,unknown,NA
-PollittX,NA,FALSE,NA,business,4,40,639,Exam scripts of 17/18 yo Business students,expert,Which is better? But I don't know the exact wording.,unknown,NA
-PollittX,NA,FALSE,NA,design,18,370,2569,Exam scripts of 17/18 yo Design students,expert,Which is better? But I don't know the exact wording.,unknown,NA
-PollittX,NA,FALSE,NA,college,5,72,496,FE College Students’ portfolios on a given topic,expert,Which is better? But I don't know the exact wording.,unknown,NA
-PollittX,NA,FALSE,NA,efl-oracy,39,134,932,Tape recordings of international candidates' Oral performances,expert,Which student speaks better?,unknown,NA
-PollittX,NA,FALSE,NA,efl-writing,10,100,1000,EFL writing in a European country,expert,Which is better? (without any specific training),unknown,NA
-PollittX,NA,FALSE,NA,ielts-writing,15,90,639,IELTS writing scripts,expert,Which student is better at writing in English?,unknown,NA
-PollittX,NA,FALSE,NA,mcq-difficulty,7,200,2002,Multiple Choice items from a professional qualification test,expert,Which item do you think will be the more difficult?,unknown,NA
-PollittX,NA,FALSE,NA,music,39,804,4148,Music performances,expert,Which performance was better?,unknown,NA
-PollittX,NA,FALSE,NA,peer-assessment,135,128,1272,Technical Design Brief portfolios written by University Teacher Training students,peer,The student judge analysed each portfolio for evidence of capability and then decided on which portfolio was better.,unknown,NA
-PollittX,NA,FALSE,NA,philosophy1,29,700,4436,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA
-PollittX,NA,FALSE,NA,philosophy2a,20,320,1610,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA
-PollittX,NA,FALSE,NA,philosophy2b,20,320,1621,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA
-PollittX,NA,FALSE,NA,philosophy2c,20,320,1631,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA
-Isnac2020,10.17051/ilkonline.2020.728048,FALSE,NA,NA,444,8,28,Assessment methods,layperson,What is your preferred method of assessment?,FALSE,judges made all possible paired comparisons between the 8 items
-Esen2019,NA,FALSE,NA,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
-AlMaimani2017,10.1145/3025453.3025655,FALSE,NA,NA,12,4,144,Elbow patches,layperson,Which patch was more restrictive?,FALSE,"p.4: The procedure was repeated for all possible different comparisons of patches - this means all 12 pairs in {A,B,C,D}^2"
-Clark2018,10.1371/journal.pone.0190393,https://doi.org/10.17633/rd.brunel.4902977.v1,NA,[TODO] name for the study (only needed if there are many),56,82,4592,Photos of men,expert,Which man is stronger?,NA,NA
-Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,NA,legislators,142,37,560,Brazilian governmental portfolios,expert,Which portfolio is most valuable?,FALSE,NA
-Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,NA,experts,278,37,3101,Brazilian governmental portfolios,expert,Which portfolio is most valuable?,FALSE,NA
-Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,coldbrew,100,3,300,samples of cold-brew coffee,layperson,identify the samples they preferred,FALSE,NA
-Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,cola,98,6,"980 (10 pairs per judge, completed across two sessions)",samples of commercially available cola-flavored sodas,layperson,identify the samples they preferred,FALSE,NA
-Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,icecream,86,5,430 (5 pairs per judge),samples of commercially available vanilla ice creams,layperson,identify the samples they preferred,FALSE,NA
-Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,pizza,91,5,455 (5 pairs per judge),samples of commercially available frozen four-cheese pizzas,layperson,identify the samples they preferred,FALSE,NA
-LuckettX,NA,FALSE,NA,odor-familiar,??,6,??,"samples of odors (vanillin, linalool, r-carvone, pentyl acetate, phenylethyl alcohol, methyl scalicylate)",layperson,which odor is more familiar,NA,NA
-LuckettX,NA,FALSE,NA,odor-pleasant,??,6,??,"samples of odors (vanillin, linalool, r-carvone, pentyl acetate, phenylethyl alcohol, methyl scalicylate)",layperson,which odor is more pleasant,NA,NA
-Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study1-insight,29,13,not reported (judges were asked to do between 10 and 25),proofs,peer,select the proof which gives more insight,FALSE,NA
-Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study1-rigour,24,13,not reported (judges were asked to do between 10 and 25),proofs,peer,select the proof which is more rigorous,FALSE,NA
-Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-rigour,39,15,636,proofs,peer,which proof is more rigorous?,FALSE,NA
-Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-insight,25,15,438,proofs,peer,which proof gives more insight into why the theorem is true?,FALSE,NA
-Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-simple,32,15,526,proofs,peer,which proof is the simplest?,FALSE,NA
-Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-understanding,34,15,611,proofs,peer,which proof best helps you understand why the theorem is true?,FALSE,NA
-Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-marks,23,15,382,proofs,peer,which proof would get the most marks in an assessment?,FALSE,NA
-Kinnear2021,NA,FALSE,NA,experts-even,8,10,160,Diagnostic test questions (even-numbered),expert,which question do you think Year 1 students find most difficult?,NA,NA
-Kinnear2021,NA,FALSE,NA,experts-odd,10,10,181,Diagnostic test questions (odd-numbered),expert,which question do you think Year 1 students find most difficult?,NA,NA
-Kinnear2021,NA,FALSE,NA,experts-withsolutions,13,20,302,Diagnostic test questions,expert,which question do you think Year 1 students find most difficult?,NA,NA
-Kinnear2021,NA,FALSE,NA,students-even,10,10,200,Diagnostic test questions (even-numbered),peer,which question do you think Year 1 students find most difficult?,NA,NA
-Kinnear2021,NA,FALSE,NA,students-odd,12,10,215,Diagnostic test questions (odd-numbered),peer,which question do you think Year 1 students find most difficult?,NA,NA
-Kinnear2021,NA,FALSE,NA,students-withoutsolutions,22,20,440,Diagnostic test questions (with no solutions shown),peer,which question do you think Year 1 students find most difficult?,NA,NA
-Kinnear2021,NA,FALSE,NA,students-withsolutions,22,20,422,Diagnostic test questions,peer,which question do you think Year 1 students find most difficult?,NA,NA
-Kinnear2021,NA,FALSE,NA,students-withsolutions1,8,20,142,Diagnostic test questions,peer,which question do you think Year 1 students find most difficult?,NA,NA
-Kinnear2021,NA,FALSE,NA,students-withsolutions2,9,20,331,Diagnostic test questions,peer,which question do you think Year 1 students find most difficult?,NA,NA
-Bramley2018,10.1080/0969594x.2017.1418734,FALSE,"Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true",1a,18,150,1080,GCSE English essays,expert,Which essay is better?,TRUE,NA
-Bramley2018,10.1080/0969594x.2017.1418734,FALSE,"Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true",1b,18,20,190,GCSE English essays,expert,Which essay is better?,FALSE,NA
-Bramley2018,10.1080/0969594x.2017.1418734,FALSE,"Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true",2,16,150,1120,GCSE English essays,expert,Which essay is better?,FALSE,NA
-Settembri2018,10.1007/978-3-319-74147-5_8,FALSE,NA,NA,4,84,620,Political science students briefing documents,expert,unsure,FALSE,NA
-Coertjens2015,NA,FALSE,TODO - this was in the projects-without-data so make sure the 05-final-screening-results is updated,stress,??,??,??,Essays on the topic of stress,unknown,unknown,unknown,this was a presentation so the full text is not available
-Daal2017,10.3389/feduc.2017.00044,FALSE,TODO - moved from projects-with-data so make sure 05-final-screening-results is updated,sample1,49,135,1127,"Written assignments by secondary school students in Flanders, about ""getting children""",expert,choose the essay that better evidenced the competence argumentative writing,NA,NA
-Daal2017,10.3389/feduc.2017.00044,FALSE,TODO - moved from projects-with-data so make sure 05-final-screening-results is updated,sample2,49,135,870,"Written assignments by secondary school students in Flanders, about ""getting children""",expert,choose the essay that better evidenced the competence argumentative writing,NA,NA
-Daal2017,10.3389/feduc.2017.00044,FALSE,TODO - moved from projects-with-data so make sure 05-final-screening-results is updated,sample3,13,147,2193,High school students' visual portfolios on the relationship between technology and the senses,expert,pick each time the portfolio event that evidenced higher originality in visual arts,NA,TODO - spreadsheet in data-raw has no judge identifiers
-Coertjens2021,10.1080/10401334.2021.1877709,FALSE,NA,NA,8,22,200,Medical students self-reflections,expert,Which is the better self-reflection?,FALSE,NA
-Holmes2017,10.1080/14794802.2017.1334576,FALSE,NA,NA,33,66,1650,Student responses to maths GCSE items,expert,Which item best elicits mathematical problem-solving as described by AO3?,FALSE,NA
-Holmes2018,10.1080/15305058.2018.1486316,FALSE,TODO - sort out the discrepancy with the data (see GitHub issue #18,NA,35,230,~3450,Maths GCSE items (without student responses),expert,Which Item is the More Mathematically Difficult to Answer Fully?,FALSE,NA
-Davies2020a,10.1007/s10649-020-09984-x,https://doi.org/10.17028/rd.lboro.8940149,NA,NA,11,134,1573,Undergraduate proof summaries,expert,judges clicking left or right to indicate which they judged better,FALSE,NA
-Davies2021,10.1016/j.jmathb.2020.100824,FALSE,NA,expert,29,175,1941,undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer,expert,better,FALSE,NA
-Davies2021,10.1016/j.jmathb.2020.100824,FALSE,NA,novice,10,175,1740,undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer,novice,better,FALSE,NA
-Jones2013a,10.1080/03075079.2013.821974,FALSE,NA,expert1,11,168,about half of 2797?,undergraduate calculus test,expert,which student had demonstrated the better conceptual understanding,TRUE,NA
-Jones2013a,10.1080/03075079.2013.821974,FALSE,NA,expert2,11,168,about half of 2797?,undergraduate calculus test,expert,which student had demonstrated the better conceptual understanding,TRUE,NA
-Jones2013a,10.1080/03075079.2013.821974,FALSE,NA,peer1,100,168,about half of 2813?,undergraduate calculus test,peer,better,TRUE,NA
-Jones2013a,10.1080/03075079.2013.821974,FALSE,NA,peer2,93,168,about half of 2813?,undergraduate calculus test,peer,better,TRUE,NA
-Jones2013a,10.1080/03075079.2013.821974,FALSE,NA,novice,9,168,1217,undergraduate calculus test,novice,better,TRUE,NA
-Jones2013b,NA,FALSE,NA,NA,8,25,400,Secondary student responses to a fractions test question,expert,better conceptual understanding,TRUE,NA
-Jones2014,10.1007/s10763-013-9497-6,FALSE,NA,Bowland030211data,12,18,173,Secondary student responses to problem solving questions,expert,which candidate is the more able mathematician?,TRUE,NA
-Jones2014,10.1007/s10763-013-9497-6,FALSE,NA,Bowland070211data,11,18,177,Secondary student responses to problem solving questions,expert,which candidate is the more able mathematician?,TRUE,NA
-Jones2014,10.1007/s10763-013-9497-6,FALSE,NA,GCSE030211data,12,18,151,Secondary student responses to GCSE maths questions,expert,which candidate is the more able mathematician?,TRUE,NA
-Jones2014,10.1007/s10763-013-9497-6,FALSE,NA,GCSE070211data,11,18,150,Secondary student responses to GCSE maths questions,expert,which candidate is the more able mathematician?,TRUE,NA
-McMahon2014,10.1080/0969594x.2014.978839,FALSE,NA,teachers,5,154,1550,Secondary student chemistry experiment write-ups,expert,select the best science report,TRUE,NA
-McMahon2014,10.1080/0969594x.2014.978839,FALSE,NA,peer,37,154,3722,Secondary student chemistry experiment write-ups,peer,select the best science report,TRUE,NA
-Jones2015a,10.1007/s10649-015-9607-1,FALSE,NA,all-scripts,15,750,3607,Secondary student responses to problem-solving maths questions,expert,most mathematically able,unsure,NA
-Jones2015a,10.1007/s10649-015-9607-1,FALSE,NA,subset-of-scripts,5,250,1250,Secondary student responses to problem-solving maths questions,expert,most mathematically able,unsure,NA
-Jones2015b,10.1016/j.stueduc.2015.09.004,FALSE,NA,NA,76,24,1983,Secondary student responses to a fractions test question,peer,better understanding of fractions,unsure,NA
-Jones2016b,10.1002/berj.3224,FALSE,NA,realscripts,20,546,5000,GCSE maths scripts,expert,which student you think is the better mathematician,unclear,NA
-Jones2016b,10.1002/berj.3224,FALSE,NA,perfect,18,48,810,Perfect GCSE maths scripts,expert,which student you think is the better mathematician,unclear,NA
-Jones2017,NA,FALSE,NA,NA,132,141,3258,undergraduate calculus test,peer,the better understanding,TRUE,NA
-Jones2019,10.1002/berj.3519,https://lboro.figshare.com/s/2d4cfa 142ebf1ff24841,NA,NA,10,188,1890,Primary student responses to an open-ended algebra test question,expert,which student demonstrated the better conceptual understanding of the use of letters in algebra,FALSE,NA
-Marshall2020,10.1007/s40841-020-00163-3,FALSE,NA,statistics,21,113,1911,Secondary student statistics projects,expert,"unstated, but judges attended a training session",FALSE,NA
-Marshall2020,10.1007/s40841-020-00163-3,FALSE,NA,written,17,253,1856,Secondary student written reports,expert,"unstated, but judges attended a training session",FALSE,NA
-Bisson2016,10.1007/s40753-016-0024-3,FALSE,NA,stats,10,20,"not reported - see p. 145: They were instructed to complete one hour of judging, and they completed between 25 and 50 judgements each (M =45.3, SD = 8.7), with each script being compared between 40 and 50 times (M =45.3, SD = 3.0).",written explanation of p-value,expert,NA,NA,NA
-Bisson2016,10.1007/s40753-016-0024-3,FALSE,NA,calculus,30,42,1260,written explanation of derivatives,expert,NA,NA,"TODO: two participants were removed from analyses - check value for N_A, should it be 28?"
-Bisson2016,10.1007/s40753-016-0024-3,FALSE,NA,algebra,10,46,460,written explanation of how letters are used in algebra,expert,NA,NA,NA
-Hunter2018,NA,FALSE,NA,NA,39 (paper reports 20),2035 (paper reports 1912),26364 (paper reports 12888),Primary student responses to open-ended maths questions,expert,better response,FALSE,NA
-Bisson2019,10.1080/14794802.2019.1692060,https://doi.org/10.17028/rd.lboro.5845683.v1,NA,NA,10,189,2060,responses to an open-ended question about derivatives,expert,NA,NA,NA
+project_id,doi,open_data,note,study,N_A,N_R,N_J,items,judge_expertise,judging_prompt,adaptivity,comment,source
+Spehar2016,10.3389/fnhum.2016.00350,FALSE,TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/11,Grayscale,310,9,??,Grayscale Computer-generated fractals,Novice,Which [fractal] appears more complex?,FALSE,NA,NA
+Spehar2016,10.3389/fnhum.2016.00350,FALSE,TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/11,Threshold,310,9,??,Threshold Computer-generated fractals,Novice,Which [fractal] appears more complex?,FALSE,NA,NA
+Spehar2016,10.3389/fnhum.2016.00350,FALSE,TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/11,EdgesOnly,310,9,??,Edge-only Computer-generated fractals,Novice,Which [fractal] appears more complex?,FALSE,NA,NA
+StadthagenGonzalez2017,10.1075/lab.16030.sta,FALSE,TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/12,NA,42,??,126 (plus some more),Acceptibility of non-native speaker sentence constructions,Expert,Pick the 'sentence' closer to the way you would speak to another bilingual person,FALSE,NA,NA
+StadthagenGonzalez2019,10.1177/1367006917728390,FALSE,NA,eng-to-spa,40,20,1200,Sentences that start off in English then switch to Spanish,layperson,pick the one closer to the way they would speak to another bilingual person,FALSE,There are 5 base sentences with 4 variants. The paper summarises the scores at the level of the variants.,snowballing
+StadthagenGonzalez2019,10.1177/1367006917728390,FALSE,NA,spa-to-eng,40,20,1200,Sentences that start off in Spanish then switch to English,layperson,pick the one closer to the way they would speak to another bilingual person,FALSE,There are 5 base sentences with 4 variants. The paper summarises the scores at the level of the variants.,snowballing
+Vatavu2020,10.1145/3428361.3428467,FALSE,NA,NA,251,14,7530,menu layout preference,layperson,select the variants  preferred most by relying exclusively on the visual appearance of the presented information,FALSE,NA,NA
+Ramos2021,10.1007/s10516-021-09545-8,https://doi.org/10.17028/rd.lboro.12458486.v1,NA,Auckland,16,9,320,Mathematical explanations,Expert,which argument best explains why the proposition holds,FALSE,NA,NA
+Ramos2021,10.1007/s10516-021-09545-8,https://doi.org/10.17028/rd.lboro.12458486.v1,NA,Rutgers,22,9,440,Mathematical explanations,Expert,which argument best explains why the proposition holds,FALSE,NA,NA
+Smith2020,10.1007/978-3-030-38994-9_5,FALSE,NA,NA,5,15,350,GSCE Creative writing samples,expert,Choose the most proficient text,TRUE,NA,NA
+Pollitt2012a,NA,FALSE,NA,NA,23,564,3519,GCSE Geography essays,expert,which essay demonstrated the stronger performance?,TRUE,NA,NA
+Pollitt2017,10.1007/978-3-319-50856-6_16,FALSE,NA,example4,52,1000,8161,"Pilot Level 4 Writing Tests, for pupils aged 9-12 years in England",expert,"not explicitly stated, but based on quality",TRUE,NA,NA
+Pollitt2017,10.1007/978-3-319-50856-6_16,FALSE,NA,example2,18,122,2054,Papers from accountancy exams for age 17/18,expert,"not explicitly stated, but based on quality",FALSE,NA,NA
+PollittX,NA,FALSE,NA,art1,19,75,496,Visual art pieces from high schools,expert,Which is better? But I don't know the exact wording.,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,art2,20,75,497,Art pieces from high schools,expert,Which is better? But I don't know the exact wording.,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,business,4,40,639,Exam scripts of 17/18 yo Business students,expert,Which is better? But I don't know the exact wording.,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,design,18,370,2569,Exam scripts of 17/18 yo Design students,expert,Which is better? But I don't know the exact wording.,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,college,5,72,496,FE College Students’ portfolios on a given topic,expert,Which is better? But I don't know the exact wording.,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,efl-oracy,39,134,932,Tape recordings of international candidates' Oral performances,expert,Which student speaks better?,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,efl-writing,10,100,1000,EFL writing in a European country,expert,Which is better? (without any specific training),unknown,NA,snowballing
+PollittX,NA,FALSE,NA,ielts-writing,15,90,639,IELTS writing scripts,expert,Which student is better at writing in English?,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,mcq-difficulty,7,200,2002,Multiple Choice items from a professional qualification test,expert,Which item do you think will be the more difficult?,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,music,39,804,4148,Music performances,expert,Which performance was better?,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,peer-assessment,135,128,1272,Technical Design Brief portfolios written by University Teacher Training students,peer,The student judge analysed each portfolio for evidence of capability and then decided on which portfolio was better.,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,philosophy1,29,700,4436,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,philosophy2a,20,320,1610,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,philosophy2b,20,320,1621,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA,snowballing
+PollittX,NA,FALSE,NA,philosophy2c,20,320,1631,Essays in a philosophy exam,expert,Which is better? But I don't know the exact wording.,unknown,NA,snowballing
+Isnac2020,10.17051/ilkonline.2020.728048,FALSE,NA,NA,444,8,28,Assessment methods,layperson,What is your preferred method of assessment?,FALSE,judges made all possible paired comparisons between the 8 items,NA
+Esen2019,NA,FALSE,NA,NA,459,8,12852,"Assessment competencies, e.g. ""giving effective feedback to students based on the exam results""",expert,"In whichever of the two fields in each line you find yourself more competent, check the box next to it. [Translation from the original Turkish]",NA,NA,snowballing
+AlMaimani2017,10.1145/3025453.3025655,FALSE,NA,NA,12,4,144,Elbow patches,layperson,Which patch was more restrictive?,FALSE,"p.4: The procedure was repeated for all possible different comparisons of patches - this means all 12 pairs in {A,B,C,D}^2",NA
+Clark2018,10.1371/journal.pone.0190393,https://doi.org/10.17633/rd.brunel.4902977.v1,NA,[TODO] name for the study (only needed if there are many),56,82,4592,Photos of men,expert,Which man is stronger?,NA,NA,NA
+Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,NA,legislators,142,37,560,Brazilian governmental portfolios,expert,Which portfolio is most valuable?,FALSE,NA,NA
+Zucco2019,10.1177/2053168019832089,https://doi.org/10.7910/DVN/HJZSIM,NA,experts,278,37,3101,Brazilian governmental portfolios,expert,Which portfolio is most valuable?,FALSE,NA,NA
+Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,coldbrew,100,3,300,samples of cold-brew coffee,layperson,identify the samples they preferred,FALSE,NA,NA
+Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,cola,98,6,"980 (10 pairs per judge, completed across two sessions)",samples of commercially available cola-flavored sodas,layperson,identify the samples they preferred,FALSE,NA,NA
+Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,icecream,86,5,430 (5 pairs per judge),samples of commercially available vanilla ice creams,layperson,identify the samples they preferred,FALSE,NA,NA
+Luckett2018,10.31234/osf.io/gvq97,https://doi.org/10.17605/OSF.IO/SGJ6N,NA,pizza,91,5,455 (5 pairs per judge),samples of commercially available frozen four-cheese pizzas,layperson,identify the samples they preferred,FALSE,NA,NA
+LuckettX,NA,FALSE,NA,odor-familiar,??,6,??,"samples of odors (vanillin, linalool, r-carvone, pentyl acetate, phenylethyl alcohol, methyl scalicylate)",layperson,which odor is more familiar,NA,NA,snowballing
+LuckettX,NA,FALSE,NA,odor-pleasant,??,6,??,"samples of odors (vanillin, linalool, r-carvone, pentyl acetate, phenylethyl alcohol, methyl scalicylate)",layperson,which odor is more pleasant,NA,NA,snowballing
+Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study1-insight,29,13,not reported (judges were asked to do between 10 and 25),proofs,peer,select the proof which gives more insight,FALSE,NA,snowballing
+Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study1-rigour,24,13,not reported (judges were asked to do between 10 and 25),proofs,peer,select the proof which is more rigorous,FALSE,NA,snowballing
+Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-rigour,39,15,636,proofs,peer,which proof is more rigorous?,FALSE,NA,snowballing
+Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-insight,25,15,438,proofs,peer,which proof gives more insight into why the theorem is true?,FALSE,NA,snowballing
+Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-simple,32,15,526,proofs,peer,which proof is the simplest?,FALSE,NA,snowballing
+Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-understanding,34,15,611,proofs,peer,which proof best helps you understand why the theorem is true?,FALSE,NA,snowballing
+Sangwin2021,NA,http://doi.org/10.5281/zenodo.4893915,NA,study2-marks,23,15,382,proofs,peer,which proof would get the most marks in an assessment?,FALSE,NA,snowballing
+Kinnear2021,NA,FALSE,NA,experts-even,8,10,160,Diagnostic test questions (even-numbered),expert,which question do you think Year 1 students find most difficult?,NA,NA,snowballing
+Kinnear2021,NA,FALSE,NA,experts-odd,10,10,181,Diagnostic test questions (odd-numbered),expert,which question do you think Year 1 students find most difficult?,NA,NA,snowballing
+Kinnear2021,NA,FALSE,NA,experts-withsolutions,13,20,302,Diagnostic test questions,expert,which question do you think Year 1 students find most difficult?,NA,NA,snowballing
+Kinnear2021,NA,FALSE,NA,students-even,10,10,200,Diagnostic test questions (even-numbered),peer,which question do you think Year 1 students find most difficult?,NA,NA,snowballing
+Kinnear2021,NA,FALSE,NA,students-odd,12,10,215,Diagnostic test questions (odd-numbered),peer,which question do you think Year 1 students find most difficult?,NA,NA,snowballing
+Kinnear2021,NA,FALSE,NA,students-withoutsolutions,22,20,440,Diagnostic test questions (with no solutions shown),peer,which question do you think Year 1 students find most difficult?,NA,NA,snowballing
+Kinnear2021,NA,FALSE,NA,students-withsolutions,22,20,422,Diagnostic test questions,peer,which question do you think Year 1 students find most difficult?,NA,NA,snowballing
+Kinnear2021,NA,FALSE,NA,students-withsolutions1,8,20,142,Diagnostic test questions,peer,which question do you think Year 1 students find most difficult?,NA,NA,snowballing
+Kinnear2021,NA,FALSE,NA,students-withsolutions2,9,20,331,Diagnostic test questions,peer,which question do you think Year 1 students find most difficult?,NA,NA,snowballing
+Bramley2018,10.1080/0969594x.2017.1418734,FALSE,"Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true",1a,18,150,1080,GCSE English essays,expert,Which essay is better?,TRUE,NA,NA
+Bramley2018,10.1080/0969594x.2017.1418734,FALSE,"Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true",1b,18,20,190,GCSE English essays,expert,Which essay is better?,FALSE,NA,NA
+Bramley2018,10.1080/0969594x.2017.1418734,FALSE,"Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true",2,16,150,1120,GCSE English essays,expert,Which essay is better?,FALSE,NA,NA
+Settembri2018,10.1007/978-3-319-74147-5_8,FALSE,NA,NA,4,84,620,Political science students briefing documents,expert,unsure,FALSE,NA,NA
+Coertjens2015,NA,FALSE,NA,stress,??,??,??,Essays on the topic of stress,unknown,unknown,unknown,this was a presentation so the full text is not available,NA
+Daal2017,10.3389/feduc.2017.00044,FALSE,NA,sample1,49,135,1127,"Written assignments by secondary school students in Flanders, about ""getting children""",expert,choose the essay that better evidenced the competence argumentative writing,NA,NA,NA
+Daal2017,10.3389/feduc.2017.00044,FALSE,NA,sample2,49,135,870,"Written assignments by secondary school students in Flanders, about ""getting children""",expert,choose the essay that better evidenced the competence argumentative writing,NA,NA,NA
+Daal2017,10.3389/feduc.2017.00044,FALSE,NA,sample3,13,147,2193,High school students' visual portfolios on the relationship between technology and the senses,expert,pick each time the portfolio event that evidenced higher originality in visual arts,NA,TODO - spreadsheet in data-raw has no judge identifiers,NA
+Coertjens2021,10.1080/10401334.2021.1877709,FALSE,NA,NA,8,22,200,Medical students self-reflections,expert,Which is the better self-reflection?,FALSE,NA,NA
+Holmes2017,10.1080/14794802.2017.1334576,FALSE,NA,NA,33,66,1650,Student responses to maths GCSE items,expert,Which item best elicits mathematical problem-solving as described by AO3?,FALSE,NA,NA
+Holmes2018,10.1080/15305058.2018.1486316,FALSE,TODO - sort out the discrepancy with the data (see GitHub issue #18,NA,35,230,~3450,Maths GCSE items (without student responses),expert,Which Item is the More Mathematically Difficult to Answer Fully?,FALSE,NA,NA
+Davies2020a,10.1007/s10649-020-09984-x,https://doi.org/10.17028/rd.lboro.8940149,NA,NA,11,134,1573,Undergraduate proof summaries,expert,judges clicking left or right to indicate which they judged better,FALSE,NA,NA
+Davies2021,10.1016/j.jmathb.2020.100824,FALSE,NA,expert,29,175,1941,undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer,expert,better,FALSE,NA,NA
+Davies2021,10.1016/j.jmathb.2020.100824,FALSE,NA,novice,10,175,1740,undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer,novice,better,FALSE,NA,NA
+Jones2013a,10.1080/03075079.2013.821974,FALSE,NA,expert1,11,168,about half of 2797?,undergraduate calculus test,expert,which student had demonstrated the better conceptual understanding,TRUE,NA,NA
+Jones2013a,10.1080/03075079.2013.821974,FALSE,NA,expert2,11,168,about half of 2797?,undergraduate calculus test,expert,which student had demonstrated the better conceptual understanding,TRUE,NA,NA
+Jones2013a,10.1080/03075079.2013.821974,FALSE,NA,peer1,100,168,about half of 2813?,undergraduate calculus test,peer,better,TRUE,NA,NA
+Jones2013a,10.1080/03075079.2013.821974,FALSE,NA,peer2,93,168,about half of 2813?,undergraduate calculus test,peer,better,TRUE,NA,NA
+Jones2013a,10.1080/03075079.2013.821974,FALSE,NA,novice,9,168,1217,undergraduate calculus test,novice,better,TRUE,NA,NA
+Jones2013b,NA,FALSE,NA,NA,8,25,400,Secondary student responses to a fractions test question,expert,better conceptual understanding,TRUE,NA,NA
+Jones2014,10.1007/s10763-013-9497-6,FALSE,NA,Bowland030211data,12,18,173,Secondary student responses to problem solving questions,expert,which candidate is the more able mathematician?,TRUE,NA,NA
+Jones2014,10.1007/s10763-013-9497-6,FALSE,NA,Bowland070211data,11,18,177,Secondary student responses to problem solving questions,expert,which candidate is the more able mathematician?,TRUE,NA,NA
+Jones2014,10.1007/s10763-013-9497-6,FALSE,NA,GCSE030211data,12,18,151,Secondary student responses to GCSE maths questions,expert,which candidate is the more able mathematician?,TRUE,NA,NA
+Jones2014,10.1007/s10763-013-9497-6,FALSE,NA,GCSE070211data,11,18,150,Secondary student responses to GCSE maths questions,expert,which candidate is the more able mathematician?,TRUE,NA,NA
+McMahon2014,10.1080/0969594x.2014.978839,FALSE,NA,teachers,5,154,1550,Secondary student chemistry experiment write-ups,expert,select the best science report,TRUE,NA,NA
+McMahon2014,10.1080/0969594x.2014.978839,FALSE,NA,peer,37,154,3722,Secondary student chemistry experiment write-ups,peer,select the best science report,TRUE,NA,NA
+Jones2015a,10.1007/s10649-015-9607-1,FALSE,NA,all-scripts,15,750,3607,Secondary student responses to problem-solving maths questions,expert,most mathematically able,unsure,NA,NA
+Jones2015a,10.1007/s10649-015-9607-1,FALSE,NA,subset-of-scripts,5,250,1250,Secondary student responses to problem-solving maths questions,expert,most mathematically able,unsure,NA,NA
+Jones2015b,10.1016/j.stueduc.2015.09.004,FALSE,NA,NA,76,24,1983,Secondary student responses to a fractions test question,peer,better understanding of fractions,unsure,NA,NA
+Jones2016b,10.1002/berj.3224,FALSE,NA,realscripts,20,546,5000,GCSE maths scripts,expert,which student you think is the better mathematician,unclear,NA,NA
+Jones2016b,10.1002/berj.3224,FALSE,NA,perfect,18,48,810,Perfect GCSE maths scripts,expert,which student you think is the better mathematician,unclear,NA,NA
+Jones2017,NA,FALSE,NA,NA,132,141,3258,undergraduate calculus test,peer,the better understanding,TRUE,NA,NA
+Jones2019,10.1002/berj.3519,https://lboro.figshare.com/s/2d4cfa 142ebf1ff24841,NA,NA,10,188,1890,Primary student responses to an open-ended algebra test question,expert,which student demonstrated the better conceptual understanding of the use of letters in algebra,FALSE,NA,NA
+Marshall2020,10.1007/s40841-020-00163-3,FALSE,NA,statistics,21,113,1911,Secondary student statistics projects,expert,"unstated, but judges attended a training session",FALSE,NA,NA
+Marshall2020,10.1007/s40841-020-00163-3,FALSE,NA,written,17,253,1856,Secondary student written reports,expert,"unstated, but judges attended a training session",FALSE,NA,NA
+Bisson2016,10.1007/s40753-016-0024-3,FALSE,NA,stats,10,20,"not reported - see p. 145: They were instructed to complete one hour of judging, and they completed between 25 and 50 judgements each (M =45.3, SD = 8.7), with each script being compared between 40 and 50 times (M =45.3, SD = 3.0).",written explanation of p-value,expert,NA,NA,NA,NA
+Bisson2016,10.1007/s40753-016-0024-3,FALSE,NA,calculus,30,42,1260,written explanation of derivatives,expert,NA,NA,"TODO: two participants were removed from analyses - check value for N_A, should it be 28?",NA
+Bisson2016,10.1007/s40753-016-0024-3,FALSE,NA,algebra,10,46,460,written explanation of how letters are used in algebra,expert,NA,NA,NA,NA
+Hunter2018,NA,FALSE,NA,NA,39 (paper reports 20),2035 (paper reports 1912),26364 (paper reports 12888),Primary student responses to open-ended maths questions,expert,better response,FALSE,NA,NA
+Bisson2019,10.1080/14794802.2019.1692060,https://doi.org/10.17028/rd.lboro.5845683.v1,NA,NA,10,189,2060,responses to an open-ended question about derivatives,expert,NA,NA,NA,NA
