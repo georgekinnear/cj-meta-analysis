@@ -642,6 +642,31 @@ holmes2018 <- vroom("data-raw/Ofqual/Holmes_2018.csv", .name_repair = janitor::m
   select(judge, starts_with("candidate")) %>% 
   write_csv("data/Holmes2018.csv")
 
+# investigate the data, since it doesn't seem to fit with the paper
+holmesparts <-
+  holmes2018 %>%
+  pivot_longer(cols = starts_with("cand"),
+               names_to = "col",
+               values_to = "item") %>%
+  select(item) %>%
+  distinct() %>%
+  separate(item, sep = "[-_]Q_", into = c("paper", "part")) %>%
+  mutate(question_number = str_extract(part, "\\d*"))
+
+homlesparts_eng <- holmesparts %>%
+  filter(str_detect(paper, "ENG")) %>%
+  separate(paper, into = c("board", "paper"), sep = "_") %>% 
+  mutate(paper = str_trim(paper))
+
+homlesparts_eng %>% 
+  group_by(board, paper) %>% 
+  summarise(
+    n_qs = n_distinct(question_number),
+    n_parts = n_distinct(part)
+  ) %>%
+  arrange(board, paper) %>% 
+  knitr::kable(format = "markdown")
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle

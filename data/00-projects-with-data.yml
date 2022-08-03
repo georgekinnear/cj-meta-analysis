@@ -668,6 +668,7 @@
     modelling. International Journal of Testing, 18, 366–391.
   doi: 10.1080/15305058.2018.1486316
   open_data: no
+  note: "TODO - sort out the discrepancy with the data (see GitHub issue #18"
   judging_sessions:
   - N_A: 35
     N_R: 230
