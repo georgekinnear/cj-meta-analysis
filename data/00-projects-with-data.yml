@@ -90,6 +90,20 @@
     judge_expertise: layperson
     judging_prompt: select the variants  preferred most by relying exclusively on the visual appearance of the presented information
     adaptivity: no 
+
+- project_id: Vatavu2019
+  citation: 'Vanderdonckt, J., Zen, M., & Vatavu, R. D. (2019). AB4Web: An on-line A/B tester for comparing user interface design alternatives. Proceedings of the ACM on Human-Computer Interaction, 3(EICS), 1-28.'
+  doi: 10.1145/3331160
+  open_data: no
+  source: snowballing
+  judging_sessions: 
+  - N_A: 108
+    N_R: 49
+    N_J: 5400 
+    items: graphical adaptive menus
+    judge_expertise: layperson
+    judging_prompt: select the variant they preferred by relying solely on visual aesthetics
+    adaptivity: no 
   
 - project_id: Ramos2021
   citation: Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’ Assessments

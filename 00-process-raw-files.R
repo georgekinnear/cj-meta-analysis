@@ -253,34 +253,46 @@ sirt_output$fit_judges %>% as_tibble()
 
 vatavu2020 %>% write_csv("data/Vatavu2020.csv")
 
+
 # Vatavu2019
 # https://doi.org/10.1145/3331160 (snowballing)
-vatavu2019 <- vroom("data-raw/Vatavu and Vanderdonckt (2020)/GAM-EICS2019-ForBenDavies.csv", .name_repair = janitor::make_clean_names)
-
-# unclear how to read the columns - they say chosen/not chosen but there's also a "choice" column that says left/right
-# Try running through BTM to see if the scores look like those in the paper?
-vatavu2019_noties <- vatavu2019 %>% filter(choice != "ties")
-sirt_output <- 
-  sirt::btm(
-    data = vatavu2019_noties %>%
-      # if the "choice" column refers to the two columns in the spreadsheet,
-      # i.e. the chosen/notchosen columns are really Left and Right
-      mutate(decision = case_when(choice == "left" ~ 1, choice == "right" ~ 0, choice == "ties" ~ 0.5))%>%
-      # if chosen/not_chosen in the column names is accurate
-      #mutate(decision = 1)%>% 
-      select(candidate_chosen, candidate_not_chosen, decision) %>%
-      data.frame,
-    judge = vatavu2019_noties %>% pull(judge),
-    maxit = 400 , fix.eta = 0 , ignore.ties = TRUE
+Vatavu2019_raw <-
+  readxl::read_excel(
+    "data-raw/Vatavu and Vanderdonckt (2020)/GAM-EICS2019-DataSet.xlsx",
+    sheet = 1,
+    skip = 74
   )
-# neither version seems to give results that fit with the paper:
-# Vanderdonckt, Jean; Zen, Mathieu; Vatavu, Radu-Daniel  (2019). AB4Web. Proceedings of the ACM on Human-Computer Interaction, 3(EICS), 1–28. doi:10.1145/3331160
 
-# The number of judges and scripts seems off:
-sirt_output$effects %>% as_tibble() %>% arrange(-theta)
-nrow(sirt_output$effects)
+Vatavu2019 <- Vatavu2019_raw %>% 
+  select(judge = ID, item1 = `Adaptive Menus`, `Blinking Menu`:`Weared Menu`) %>% 
+  fill(judge) %>% 
+  pivot_longer(!c(judge,item1), names_to = "item2", values_to = "decision") %>% 
+  filter(!is.na(decision)) %>% 
+  filter(item1 < item2) %>% 
+  # TODO - should discuss if this is the right approach for ties
+  # discard ties
+  filter(decision != "E") %>%
+  transmute(
+    judge = judge,
+    candidate_chosen = ifelse(decision == "+", item1, item2),
+    candidate_not_chosen = ifelse(decision == "-", item1, item2)
+  )
+  
+# check that the ordering of the items matches what appears in the paper
+sirt_output <- sirt::btm(
+  data = Vatavu2019 %>%
+    mutate(decision = 1)%>% 
+    select(candidate_chosen, candidate_not_chosen, decision) %>%
+    data.frame,
+  judge = Vatavu2019 %>% pull(judge),
+  maxit = 400 , fix.eta = 0 , ignore.ties = TRUE
+)
+sirt_output$mle.rel
+sirt_output$effects %>% as_tibble() %>% 
+  arrange(-theta)
+sirt_output$fit_judges %>% as_tibble()
 
-nrow(sirt_output[["fit_judges"]])
+Vatavu2019 %>% write_csv("data/Vatavu2019.csv")
 
 
 # Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’ Assessments of the Explanatory Value of Proofs. Axiomathes (2021). doi: 10.1007/s10516-021-09545-8
