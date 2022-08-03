@@ -698,6 +698,18 @@ settembri2018 <- vroom("data-raw/Belgians/Settembri2018.csv", .name_repair = jan
   ) %>% 
   write_csv("data/Settembri2018.csv")
 
+# project_id: Coertjens2015
+# citation: "Coertjens, Liesje; Verhavert, San; Lesterhuis, Marije; Goossens, Maarten; De Maeyer, Sven. Is comparative judgment more efficient? An explorative study into the reliability efficiency trade-off when using rubrics or comparative judgment. Association for Educational Assessment Europe Conference (Glasgow, Scotland, from 05/11/2015 to 7/11/2015)."
+Coertjens2015 <- vroom("data-raw/Belgians/Coertjens 2015 AEA/Coertjens 2015 AEA judgements stress.csv",
+                       .name_repair = janitor::make_clean_names) %>% 
+  filter(selected_object != "N/A") %>% 
+  transmute(
+    judge = `assessor_r`,
+    candidate_chosen = `selected_object`,
+    candidate_not_chosen = ifelse(`selected_object` == `object_a`, `object_b`, `object_a`)
+  ) %>% 
+  write_csv("data/Coertjens2015_stress.csv")
+
 
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
