@@ -62,7 +62,7 @@ Settembri2018,10.1007/978-3-319-74147-5_8,FALSE,NA,NA,4,84,620,Political science
 Coertjens2015,NA,FALSE,NA,[TODO] name for the study (only needed if there are many),[TODO],[TODO],[TODO],[TODO] short description of what is being judged,[TODO] expert/peer/novice,[TODO],NA,NA
 Coertjens2021,10.1080/10401334.2021.1877709,FALSE,NA,NA,8,22,200,Medical students self-reflections,expert,Which is the better self-reflection?,FALSE,NA
 Holmes2017,10.1080/14794802.2017.1334576,FALSE,NA,NA,33,66,1650,Student responses to maths GCSE items,expert,Which item best elicits mathematical problem-solving as described by AO3?,FALSE,NA
-Holmes2018,10.1080/15305058.2018.1486316,FALSE,NA,NA,35,230,~3450,Maths GCSE items (without student responses),expert,Which Item is the More Mathematically Difficult to Answer Fully?,FALSE,NA
+Holmes2018,10.1080/15305058.2018.1486316,FALSE,TODO - sort out the discrepancy with the data (see GitHub issue #18,NA,35,230,~3450,Maths GCSE items (without student responses),expert,Which Item is the More Mathematically Difficult to Answer Fully?,FALSE,NA
 Davies2020a,10.1007/s10649-020-09984-x,https://doi.org/10.17028/rd.lboro.8940149,NA,NA,11,134,1573,Undergraduate proof summaries,expert,judges clicking left or right to indicate which they judged better,FALSE,NA
 Davies2021,10.1016/j.jmathb.2020.100824,FALSE,NA,expert,29,175,1941,undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer,expert,better,FALSE,NA
 Davies2021,10.1016/j.jmathb.2020.100824,FALSE,NA,novice,10,175,1740,undergraduate responses to explain what mathematicians mean by proof in 40 words or fewer,novice,better,FALSE,NA

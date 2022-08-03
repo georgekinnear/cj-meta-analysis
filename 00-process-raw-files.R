@@ -667,6 +667,38 @@ homlesparts_eng %>%
   arrange(board, paper) %>% 
   knitr::kable(format = "markdown")
 
+homlesparts_eng %>% 
+  group_by(board, paper) %>% 
+  summarise(
+    n_qs = n_distinct(question_number),
+    n_parts = n_distinct(part)
+  ) %>% 
+  filter(!str_detect(paper, "8300")) %>% 
+  mutate(tier = case_when(
+    board %in% c("ENGAQ", "ENGED") ~ ifelse(str_detect(paper, "F"), "Foundation", "Higher"),
+    board == "ENGOC" & str_detect(paper, "J560") ~ ifelse(str_detect(paper, "01|02|03"), "Foundation", "Higher"),
+    board == "ENGOC" & str_detect(paper, "A501|A502") ~ "Higher",
+    board == "ENGOC" & str_detect(paper, "A503") ~ "Foundation",
+  )) %>%
+  group_by(board, tier) %>% 
+  summarise(
+    n_parts = sum(n_qs)
+  )
+
+# Settembri2018
+# citation: Settembri, P., Van Gasse, R., Coertjens, L., & De Maeyer, S. (2018). Oranges
+# and Apples? Using Comparative Judgement for Reliable Briefing Paper Assessment
+# in Simulation Games. In Simulations of Decision-Making as Active Learning Tools (pp. 93-108). Springer, Cham.
+# doi: 10.1007/978-3-319-74147-5_8
+settembri2018 <- vroom("data-raw/Belgians/Settembri2018.csv", .name_repair = janitor::make_clean_names) %>% 
+  transmute(
+    judge = `assessor`,
+    candidate_chosen = `selected_representation`,
+    candidate_not_chosen = ifelse(`selected_representation` == `representation_a`, `representation_b`, `representation_a`)
+  ) %>% 
+  write_csv("data/Settembri2018.csv")
+
+
 # Jones, S., Scott, C. J., Barnard, L., Highfield, R., Lintott, C., & Baeten, E. (2020-10-05). The Visual Complexity of Coronal Mass Ejections Follows the Solar Cycle. Space Weather, 18(10), Article 10. https://doi.org/10.1029/2020sw002556
 # open data: https://figshare.com/s/7e0270daa8153bb0416e
 # open code: https://github.com/S-hannon/complexity-solar-cycle
