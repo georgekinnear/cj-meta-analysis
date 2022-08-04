@@ -651,14 +651,14 @@
   open_data: no
   judging_sessions:
   - study: stress
-    N_A: ??
-    N_R: ??
-    N_J: ??
+    N_A: 40
+    N_R: 35
+    N_J: 474
     comment: "this was a presentation so the full text is not available"
     items: 'Essays on the topic of stress'
-    judge_expertise: unknown
-    judging_prompt: unknown
-    adaptivity: unknown
+    judge_expertise: expert
+    judging_prompt: the rater indicated which of the two texts was better
+    adaptivity: no
     
 - project_id: Daal2017
   citation: 'van Daal, T., Lesterhuis, M., Coertjens, L., van de Kamp, M. T., Donche,
