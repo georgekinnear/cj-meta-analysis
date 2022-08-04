@@ -722,18 +722,16 @@
     judging_prompt: Which item best elicits mathematical problem-solving as described by AO3?
     adaptivity: no
   
-- project_id: Holmes2018
-  citation: Holmes, S. D., Meadows, M., Stockford, I., & He, Q. (2018). Investigating
-    the comparability of examination difficulty using comparative judgement and Rasch
-    modelling. International Journal of Testing, 18, 366–391.
-  doi: 10.1080/15305058.2018.1486316
+- project_id: Ofqual2015
+  citation: Ofqual (2015). A Comparison of Expected Difficulty, Actual Difficulty and Assessment of 
+  Problem Solving across GCSE Maths Sample Assessment Materials.
+  doi: https://tinyurl.com/y8v2e4xx
   open_data: no
-  note: "TODO - sort out the discrepancy with the data (see GitHub issue #18"
   judging_sessions:
   - N_A: 35
-    N_R: 230
-    N_J: ~3450
-    items: Maths GCSE items (without student responses)
+    N_R: 2150
+    N_J: 35000
+    items: International secondary maths items (without student responses)
     judge_expertise: expert
     judging_prompt: Which Item is the More Mathematically Difficult to Answer Fully?
     adaptivity: no
