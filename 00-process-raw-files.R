@@ -169,10 +169,28 @@ spehar2016_expt2 %>%
   ggplot(aes(x = judge)) +
   geom_histogram(binwidth = 1)
 
+spehar2016_expt2 %>% pivot_longer(cols = starts_with("candidate")) %>% select(value) %>% distinct()
+
 purrr::iwalk(
   split(spehar2016_expt2, spehar2016_expt2$type),
   ~ vroom_write(.x, glue::glue("data/Spehar2016_expt2-{.y}.csv"), ",")
 )
+
+sirt_output <- sirt::btm(
+  data = spehar2016_expt2 %>%
+    filter(type == "Thr") %>% 
+    mutate(decision = 1) %>% 
+    select(candidate_chosen, candidate_not_chosen, decision) %>%
+    data.frame,
+  judge = spehar2016_expt2 %>%
+    filter(type == "Thr") %>%  pull(judge),
+  maxit = 400 , fix.eta = 0 , ignore.ties = FALSE
+)
+sirt_output$mle.rel
+sirt_output$effects %>% as_tibble() %>% 
+  arrange(-theta)
+sirt_output$fit_judges %>% as_tibble()
+
 
 # Nguyen2021
 # https://doi.org/10.1016/j.visres.2020.11.011 (from snowballing)
@@ -256,20 +274,18 @@ vatavu2020 %>% write_csv("data/Vatavu2020.csv")
 
 # Vatavu2019
 # https://doi.org/10.1145/3331160 (snowballing)
-Vatavu2019_raw <-
+Vatavu2019 <-
   readxl::read_excel(
     "data-raw/Vatavu and Vanderdonckt (2020)/GAM-EICS2019-DataSet.xlsx",
     sheet = 1,
     skip = 74
-  )
-
-Vatavu2019 <- Vatavu2019_raw %>% 
+  ) %>% 
   select(judge = ID, item1 = `Adaptive Menus`, `Blinking Menu`:`Weared Menu`) %>% 
   fill(judge) %>% 
   pivot_longer(!c(judge,item1), names_to = "item2", values_to = "decision") %>% 
   filter(!is.na(decision)) %>% 
+  # we only need one copy of each comparison
   filter(item1 < item2) %>% 
-  # TODO - should discuss if this is the right approach for ties
   # discard ties
   filter(decision != "E") %>%
   transmute(
