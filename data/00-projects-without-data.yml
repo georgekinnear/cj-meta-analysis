@@ -14,6 +14,21 @@
     judging_prompt: the better mathematician
     adaptivity: unsure
     
+- project_id: Holmes2018
+  citation: Holmes, S. D., Meadows, M., Stockford, I., & He, Q. (2018). Investigating
+    the comparability of examination difficulty using comparative judgement and Rasch
+    modelling. International Journal of Testing, 18, 366–391.
+  doi: 10.1080/15305058.2018.1486316
+  open_data: no
+  judging_sessions:
+  - N_A: 35
+    N_R: 230
+    N_J: ~3450
+    items: Maths GCSE items (without student responses)
+    judge_expertise: expert
+    judging_prompt: Which Item is the More Mathematically Difficult to Answer Fully?
+    adaptivity: no
+    
 - project_id: Coertjens2015
   citation: Coertjens, Liesje; Verhavert, San; Lesterhuis, Marije; Goossens, Maarten; De Maeyer, Sven. Is comparative judgment more efficient? An explorative study into the reliability efficiency trade-off when using rubrics or comparative judgment. Association for Educational Assessment Europe Conference (Glasgow, Scotland, from 05/11/2015 to 7/11/2015).
   open_data: N
