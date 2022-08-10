@@ -723,9 +723,9 @@
     adaptivity: no
   
 - project_id: Ofqual2015
-  citation: Ofqual (2015). A Comparison of Expected Difficulty, Actual Difficulty and Assessment of 
-  Problem Solving across GCSE Maths Sample Assessment Materials.
-  doi: https://tinyurl.com/y8v2e4xx
+  citation: "Ofqual (2015). A Comparison of Expected Difficulty, Actual Difficulty and Assessment of 
+  Problem Solving across GCSE Maths Sample Assessment Materials. https://tinyurl.com/y8v2e4xx"
+  doi: .na.character
   open_data: no
   judging_sessions:
   - N_A: 35

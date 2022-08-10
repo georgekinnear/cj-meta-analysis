@@ -162,7 +162,11 @@ all_data <- tibble(seed_image = c(1:5)) %>%
 
 spehar2016_expt2 <- all_data %>% 
   select(-raw_spreadsheet) %>% 
-  unnest(cols = data)
+  unnest(cols = data) %>% 
+  mutate(
+    candidate_chosen = paste0(type, parse_number(candidate_chosen)),
+    candidate_not_chosen = paste0(type, parse_number(candidate_not_chosen))
+  )
 # visual check that the judge id's are unique across the different spreadsheets,
 # and each judge does the same number of judgements as stated in the paper
 spehar2016_expt2 %>% 
@@ -666,9 +670,11 @@ holmes2017 <- vroom("data-raw/Ofqual/Holmes_2017.csv", .name_repair = janitor::m
 # the comparability of examination difficulty using comparative judgement and Rasch
 # modelling. International Journal of Testing, 18, 366–391.
 # doi: 10.1080/15305058.2018.1486316
-holmes2018 <- vroom("data-raw/Ofqual/Holmes_2018.csv", .name_repair = janitor::make_clean_names) %>% 
+
+# Ofqual2015 replaced Holmes2018
+vroom("data-raw/Ofqual/Ofqual2015.csv", .name_repair = janitor::make_clean_names) %>% 
   select(judge, starts_with("candidate")) %>% 
-  write_csv("data/Holmes2018.csv")
+  write_csv("data/Ofqual2015.csv")
 
 # investigate the data, since it doesn't seem to fit with the paper
 holmesparts <-
