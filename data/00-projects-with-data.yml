@@ -689,8 +689,7 @@
     items: "High school students' visual portfolios on the relationship between technology and the senses"
     judge_expertise: expert
     judging_prompt: 'pick each time the portfolio event that evidenced higher originality in visual arts'
-    comment: "TODO - spreadsheet in data-raw has no judge identifiers"
-    
+
 - project_id: Coertjens2021
   citation: "Coertjens, L., Lesterhuis, M., De Winter, B. Y., Goossens, M., De Maeyer,
     S., & Michels, N. R. (2021). Improving Self-Reflection Assessment Practices: Comparative

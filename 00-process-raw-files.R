@@ -768,9 +768,14 @@ sample2 <- vroom("data-raw/Belgians/van Daal 2017 Frontiers/Coertjens 2015 AEA j
   ) %>% 
   write_csv("data/Daal2017_sample2.csv")
 
-sample3 <- vroom("data-raw/Belgians/van de Kamp et al 2021/van de Kamp et al 2021 The relationship of types of exploration activities with originality of visual arts designs.csv",
-                 .name_repair = janitor::make_clean_names)
-# There are no judge identifiers in this spreadsheet
+sample3 <- vroom("data-raw/Belgians/van Daal 2017 Frontiers/Daal2017Ssample3.csv",
+                 .name_repair = janitor::make_clean_names) %>% 
+  transmute(
+    judge = `assessor_r`,
+    candidate_chosen = `selected_object`,
+    candidate_not_chosen = ifelse(`selected_object` == `object_a`, `object_b`, `object_a`)
+  ) %>% 
+  write_csv("data/Daal2017_sample3.csv")
 
 # Esen2019
 # citation: Esen, Y. D. (2019). Scaling the teachers’ perception of competence regarding
