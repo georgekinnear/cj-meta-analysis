@@ -817,3 +817,54 @@ clark2018 %>%
 # open code: https://github.com/S-hannon/complexity-solar-cycle
 # Note: apparently the comarisons data includes some duplicate rows, see https://github.com/S-hannon/complexity-solar-cycle/blob/3bb74202cd8bbbeddff9bbefdf589aec7072e228/popfss_compare_solar_storms_workflow.py#L308
 # Perhaps worth asking the authors to share the processed judging data? Otherwise would have to put effort into getting their code to run.
+jones2020 <- vroom("data-raw/Jones2020/protect-our-planet-from-solar-storms-classifications_complete.csv")
+jones2020
+
+# # string matching way, takes a while
+# jones2020 %>% 
+#   head(n = 1000) %>% 
+#   mutate(
+#     selected = str_extract(annotations, "Image on the \\w*"),
+#     subject_left = str_extract(subject_data, "(?<=asset_0\\\":\\\")[^.]*.jpg"),
+#     subject_right = str_extract(subject_data, "(?<=asset_1\\\":\\\")[^.]*.jpg"),
+#     judge = str_extract(subject_data, "(?<=subject_id\\\":\\\")[\\d]*")
+#   ) %>% 
+#   select(selected, subject_left, subject_right, judge)
+
+# Parse the json using jsonlite
+library(jsonlite)
+jones2020_extracted <- jones2020 %>% 
+  #head(n = 10000) %>% 
+  mutate(json = map(subject_data, fromJSON)) %>% 
+  mutate(
+    judge = user_name,
+    item_left = map2_chr(json, subject_ids, ~ .x[[paste0(.y)]]$asset_0),
+    item_right = map2_chr(json, subject_ids, ~ .x[[paste0(.y)]]$asset_1),
+    chosen = str_extract(annotations, "Image on the \\w*"),
+    candidate_chosen = ifelse(chosen == "Image on the left", item_left, item_right),
+    candidate_not_chosen = ifelse(chosen == "Image on the left", item_right, item_left)
+  ) %>% 
+  select(judge, candidate_chosen, candidate_not_chosen)
+
+jones2020_extracted %>% select(judge) %>% distinct() %>% nrow()
+
+jones2020_extracted %>% write_csv("data/Jones2020_main-study.csv")
+
+# Now do the second study
+jones2020b <- vroom("data-raw/Jones2020/protect-our-planet-from-solar-storms-classifications_brightness_equalised.csv")
+jones2020b_extracted <- jones2020b %>% 
+  #head(n = 100) %>% 
+  mutate(json = map(subject_data, fromJSON)) %>% 
+  mutate(
+    judge = user_name,
+    item_left = map2_chr(json, subject_ids, ~ .x[[paste0(.y)]]$asset_0),
+    item_right = map2_chr(json, subject_ids, ~ .x[[paste0(.y)]]$asset_1),
+    chosen = str_extract(annotations, "Image on the \\w*"),
+    candidate_chosen = ifelse(chosen == "Image on the left", item_left, item_right),
+    candidate_not_chosen = ifelse(chosen == "Image on the left", item_right, item_left)
+  ) %>% 
+  select(judge, candidate_chosen, candidate_not_chosen)
+
+jones2020b_extracted %>% select(judge) %>% distinct() %>% nrow() %>% paste("judges")
+jones2020b_extracted %>% nrow() %>% paste("judgements")
+jones2020b_extracted %>% write_csv("data/Jones2020_brightness-equalised.csv")

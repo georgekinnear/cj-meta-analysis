@@ -160,23 +160,6 @@
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
     
-- project_id: Jones2020
-  citation: Jones, S. R., Scott, C. J., Barnard, L. A., Highfield, R., Lintott, C.
-    J., & Baeten, E. (2020). The visual complexity of coronal mass ejections follows
-    the solar cycle. Space Weather, 18(10), e2020SW002556.
-  doi: 10.1029/2020sw002556
-  open_data: The paired comparison data from “Protect our Planet from Solar Storms”
-    can be found at https://figshare.com/s/7e0270daa8153bb0416e, and the code used
-    is available at https://github.com/S-hannon/complexity-solar-cycle website
-  judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
-    
 - project_id: Potter2017
   citation: 'Potter, T., Englund, L., Charbonneau, J., MacLean, M. T., Newell, J.,
     & Roll, I. (2017). ComPAIR: A new online tool using adaptive comparative judgement

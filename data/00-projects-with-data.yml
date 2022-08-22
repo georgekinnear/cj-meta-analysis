@@ -1073,3 +1073,29 @@
     N_J: 2060
     items: responses to an open-ended question about derivatives
     judge_expertise: expert
+
+- project_id: Jones2020
+  citation: Jones, S. R., Scott, C. J., Barnard, L. A., Highfield, R., Lintott, C.
+    J., & Baeten, E. (2020). The visual complexity of coronal mass ejections follows
+    the solar cycle. Space Weather, 18(10), e2020SW002556.
+  doi: 10.1029/2020sw002556
+  open_data: The paired comparison data from “Protect our Planet from Solar Storms”
+    can be found at https://figshare.com/s/7e0270daa8153bb0416e, and the code used
+    is available at https://github.com/S-hannon/complexity-solar-cycle website
+  judging_sessions:
+  - study: main-study
+    N_A: 4028
+    N_R: 1111
+    N_J: 246692
+    items: 'images of coronal mass ejections'
+    judge_expertise: 'layperson'
+    judging_prompt: 'which of these two storms looks the most complicated?'
+    adaptivity: no
+  - study: brightness-equalised
+    N_A: ??
+    N_R: ??
+    N_J: ??
+    items: 'images of coronal mass ejections, with images edited to have the same brightness (see section 4.2.3 of the paper)'
+    judge_expertise: 'layperson'
+    judging_prompt: 'which of these two storms looks the most complicated?'
+    adaptivity: no
