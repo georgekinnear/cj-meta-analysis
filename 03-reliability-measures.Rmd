@@ -1,0 +1,84 @@
+---
+title: 'CJ meta-analysis: reliability measures'
+author: "George Kinnear"
+date: "2022-08-22"
+output: github_document
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+
+# for plotting
+theme_set(theme_minimal())
+#library(patchwork)
+
+library(knitr)
+library(kableExtra)
+basic_kable = function(df, ...) {
+  df %>% 
+    kable(...) %>%
+    kable_styling(bootstrap_options = "striped", full_width = F)
+}
+```
+
+# About the sample
+
+```{r}
+cj_sessions <- read_csv("data/00-judging_sessions_summary.csv", show_col_types = FALSE)
+reliability_stats <- read_csv("data/01-reliability-values.csv", show_col_types = FALSE)
+
+meta_analysis_data <- cj_sessions %>% 
+  left_join(reliability_stats, by = "judging_session")
+```
+
+```{r}
+meta_analysis_data %>% 
+  mutate(source = replace_na(source, "literature search")) %>% 
+  janitor::tabyl(source) %>% 
+  janitor::adorn_pct_formatting(digits = 0) %>% 
+  basic_kable()
+```
+
+
+```{r}
+meta_analysis_data %>% 
+  janitor::tabyl(adaptivity) %>% 
+  janitor::adorn_pct_formatting(digits = 0) %>% 
+  basic_kable()
+```
+
+
+```{r}
+meta_analysis_data %>% 
+  filter(!is.na(ssr)) %>% 
+  mutate(pt_label = ifelse(mean_split_corr < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = ssr, y = mean_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x") +
+  ggrepel::geom_text_repel(alpha = 0.3) +
+  geom_abline(slope = 1, intercept = 0) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(x = "SSR", y = "Mean split-halves correlation")
+```
+It is very rare for the split-halves measure to be higher than SSR:
+
+```{r}
+meta_analysis_data %>% 
+  filter(mean_split_corr > ssr) %>% select(judging_session, starts_with("observed"), mean_split_corr, ssr) %>% 
+  basic_kable(digits = 3)
+```
+
+There are a few sessions with very low (<0.5) mean split-halves reliability:
+
+```{r}
+meta_analysis_data %>% 
+  filter(mean_split_corr < 0.5) %>% 
+  select(judging_session, starts_with("observed"), mean_split_corr, ssr) %>% 
+  basic_kable(digits = 3)
+```
+

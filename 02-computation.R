@@ -1,12 +1,7 @@
 library(tidyverse)
 
-
-
-# need to run 01-data-summary first
-# TODO - strip out the relevant bits of that here (to build judgement_data_tidy)
-
-
-
+# get the judgement_data_tidy table set up
+source("00-load-all-judgement-data.R")
 
 compute_btm <- function(csv_contents, judging_session, seed = 123, ...) {
   print(judging_session)
@@ -172,42 +167,6 @@ split_halves_values <- split_halves_data %>%
   group_by(judging_session) %>%
   summarise(mean_split_corr = mean(split_corr))
 
-# # Read in all the saved split-halves data, and compute the correlations
-# # (a) read in the data
-# split_halves_data <- tibble(path = fs::dir_ls("data-cache", recurse = TRUE, glob = "*split-halves/split*")) %>%
-#   separate(path, into = c(NA, "judging_session", NA, NA), sep = "/", remove = FALSE) %>%
-#   mutate(split_data = map(path, vroom::vroom, delim = ",", show_col_types = FALSE))
-# # (b) use the data to compute the correlations
-# split_halves_values <- split_halves_data %>%
-#   mutate(split_corr = map_dbl(split_data, ~ cor(.x$theta.x, .x$theta.y, method = "pearson"))) %>%
-#   group_by(judging_session) %>%
-#   summarise(mean_split_corr = mean(split_corr))
-# # TODO - cache these results
-
-meta_analysis_data <- judgement_data_tidy %>% 
-  left_join(ssr_values, by = "judging_session") %>% 
-  left_join(split_halves_values, by = "judging_session")
-
-meta_analysis_data %>% 
-  filter(!str_detect(judging_session, "Spehar")) %>% 
-  mutate(pt_label = ifelse(mean_split_corr < 0.5, judging_session, "")) %>% 
-  ggplot(aes(x = ssr, y = mean_split_corr, label = pt_label)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  ggrepel::geom_text_repel(alpha = 0.3) +
-  geom_abline(slope = 1, intercept = 0) +
-  xlim(c(0,1)) +
-  ylim(c(0,1))
-
-meta_analysis_data %>% 
-  filter(mean_split_corr > ssr) %>% select(judging_session, starts_with("observed"), mean_split_corr, ssr)
-
-meta_analysis_data %>% 
-  filter(mean_split_corr < 0.5) %>% 
-  select(judging_session, starts_with("observed"), mean_split_corr, ssr)
-
-# split_halves_data %>% 
-#   filter(judging_session == "Kinnear2021_students-withsolutions2") %>% 
-#   group_by(judging_session) %>% 
-#   ggplot(aes(x = split_corr)) +
-#   geom_density()
+ssr_values %>% 
+  left_join(split_halves_values, by = "judging_session") %>% 
+  write_csv("data/01-reliability-values.csv")

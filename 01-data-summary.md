@@ -7,32 +7,13 @@ We gathered comparative judgement data from a range of research studies.
 
 -   This document summarises the sample in a readable way.
 -   It draws on raw data in the `data/00-projects-with-data.yml` file.
--   The raw data is also summarised in CSV format in
+-   This script processes the raw data and saves it in CSV format in
     `data/00-judging_sessions_summary.csv`.
 
 # Publications/projects
 
-There are 0 studies in the .yml file still to be processed:
-
-<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-project_id
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-</tr>
-</tbody>
-</table>
-
 Judgement data was gathered from the publications/projects summarised in
 the table below.
-
--   `open_data` records whether the judgement data is already publicly
-    available
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -117,6 +98,22 @@ FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1145/3428361.3428467" style="     ">https://doi.org/10.1145/3428361.3428467</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vatavu2019
+</td>
+<td style="text-align:left;">
+Vanderdonckt, J., Zen, M., & Vatavu, R. D. (2019). AB4Web: An on-line
+A/B tester for comparing user interface design alternatives. Proceedings
+of the ACM on Human-Computer Interaction, 3(EICS), 1-28.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1145/3331160" style="     ">https://doi.org/10.1145/3331160</a>
 </td>
 </tr>
 <tr>
@@ -446,19 +443,18 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
-Holmes2018
+Ofqual2015
 </td>
 <td style="text-align:left;">
-Holmes, S. D., Meadows, M., Stockford, I., & He, Q. (2018).
-Investigating the comparability of examination difficulty using
-comparative judgement and Rasch modelling. International Journal of
-Testing, 18, 366–391.
+Ofqual (2015). A Comparison of Expected Difficulty, Actual Difficulty
+and Assessment of Problem Solving across GCSE Maths Sample Assessment
+Materials. <https://tinyurl.com/y8v2e4xx>
 </td>
 <td style="text-align:left;">
 FALSE
 </td>
 <td style="text-align:left;">
-<a href="https://doi.org/10.1080/15305058.2018.1486316" style="     ">https://doi.org/10.1080/15305058.2018.1486316</a>
+<a href="NA" style="     ">NA</a>
 </td>
 </tr>
 <tr>
@@ -708,10 +704,76 @@ Research in Mathematics Education, 22, 284–303.
 <a href="https://doi.org/10.1080/14794802.2019.1692060" style="     ">https://doi.org/10.1080/14794802.2019.1692060</a>
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+Jones2020
+</td>
+<td style="text-align:left;">
+Jones, S. R., Scott, C. J., Barnard, L. A., Highfield, R., Lintott, C.
+J., & Baeten, E. (2020). The visual complexity of coronal mass ejections
+follows the solar cycle. Space Weather, 18(10), e2020SW002556.
+</td>
+<td style="text-align:left;">
+The paired comparison data from “Protect our Planet from Solar Storms”
+can be found at <https://figshare.com/s/7e0270daa8153bb0416e>, and the
+code used is available
+at <https://github.com/S-hannon/complexity-solar-cycle> website
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1029/2020sw002556" style="     ">https://doi.org/10.1029/2020sw002556</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+## Open data
+
+`open_data` records whether the judgement data is already publicly
+available. It is fairly uncommon in our sample:
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+open_data
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:left;">
+percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:left;">
+78.6%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+21.4%
+</td>
+</tr>
 </tbody>
 </table>
 
 # CJ sessions
+
+Many of the publications report on multiple CJ sessions:
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -720,3565 +782,16 @@ Research in Mathematics Education, 22, 284–303.
 project_id
 </th>
 <th style="text-align:left;">
-note
-</th>
-<th style="text-align:left;">
-study
-</th>
-<th style="text-align:left;">
-N_A
-</th>
-<th style="text-align:left;">
-N_R
-</th>
-<th style="text-align:left;">
-N_J
-</th>
-<th style="text-align:left;">
-items
-</th>
-<th style="text-align:left;">
-judge_expertise
-</th>
-<th style="text-align:left;">
-judging_prompt
-</th>
-<th style="text-align:left;">
-adaptivity
-</th>
-<th style="text-align:left;">
-comment
-</th>
-<th style="text-align:left;">
-source
+studies
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-Spehar2016
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-<td style="text-align:left;">
-Grayscale
-</td>
-<td style="text-align:left;">
-310
-</td>
-<td style="text-align:left;">
-9
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-Grayscale Computer-generated fractals
-</td>
-<td style="text-align:left;">
-Novice
-</td>
-<td style="text-align:left;">
-Which \[fractal\] appears more complex?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-<td style="text-align:left;">
-Threshold
-</td>
-<td style="text-align:left;">
-310
-</td>
-<td style="text-align:left;">
-9
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-Threshold Computer-generated fractals
-</td>
-<td style="text-align:left;">
-Novice
-</td>
-<td style="text-align:left;">
-Which \[fractal\] appears more complex?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-<td style="text-align:left;">
-EdgesOnly
-</td>
-<td style="text-align:left;">
-310
-</td>
-<td style="text-align:left;">
-9
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-Edge-only Computer-generated fractals
-</td>
-<td style="text-align:left;">
-Novice
-</td>
-<td style="text-align:left;">
-Which \[fractal\] appears more complex?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-StadthagenGonzalez2017
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/12>
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-42
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-126 (plus some more)
-</td>
-<td style="text-align:left;">
-Acceptibility of non-native speaker sentence constructions
-</td>
-<td style="text-align:left;">
-Expert
-</td>
-<td style="text-align:left;">
-Pick the ‘sentence’ closer to the way you would speak to another
-bilingual person
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-StadthagenGonzalez2019
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-eng-to-spa
-</td>
-<td style="text-align:left;">
-40
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-1200
-</td>
-<td style="text-align:left;">
-Sentences that start off in English then switch to Spanish
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-pick the one closer to the way they would speak to another bilingual
-person
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-There are 5 base sentences with 4 variants. The paper summarises the
-scores at the level of the variants.
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-StadthagenGonzalez2019
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-spa-to-eng
-</td>
-<td style="text-align:left;">
-40
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-1200
-</td>
-<td style="text-align:left;">
-Sentences that start off in Spanish then switch to English
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-pick the one closer to the way they would speak to another bilingual
-person
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-There are 5 base sentences with 4 variants. The paper summarises the
-scores at the level of the variants.
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Vatavu2020
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-251
-</td>
-<td style="text-align:left;">
-14
-</td>
-<td style="text-align:left;">
-7530
-</td>
-<td style="text-align:left;">
-menu layout preference
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-select the variants preferred most by relying exclusively on the visual
-appearance of the presented information
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Ramos2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Auckland
-</td>
-<td style="text-align:left;">
-16
-</td>
-<td style="text-align:left;">
-9
-</td>
-<td style="text-align:left;">
-320
-</td>
-<td style="text-align:left;">
-Mathematical explanations
-</td>
-<td style="text-align:left;">
-Expert
-</td>
-<td style="text-align:left;">
-which argument best explains why the proposition holds
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Ramos2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Rutgers
-</td>
-<td style="text-align:left;">
-22
-</td>
-<td style="text-align:left;">
-9
-</td>
-<td style="text-align:left;">
-440
-</td>
-<td style="text-align:left;">
-Mathematical explanations
-</td>
-<td style="text-align:left;">
-Expert
-</td>
-<td style="text-align:left;">
-which argument best explains why the proposition holds
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Smith2020
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-15
-</td>
-<td style="text-align:left;">
-350
-</td>
-<td style="text-align:left;">
-GSCE Creative writing samples
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Choose the most proficient text
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2012a
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-23
-</td>
-<td style="text-align:left;">
-564
-</td>
-<td style="text-align:left;">
-3519
-</td>
-<td style="text-align:left;">
-GCSE Geography essays
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which essay demonstrated the stronger performance?
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2017
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-example4
-</td>
-<td style="text-align:left;">
-52
-</td>
-<td style="text-align:left;">
-1000
-</td>
-<td style="text-align:left;">
-8161
-</td>
-<td style="text-align:left;">
-Pilot Level 4 Writing Tests, for pupils aged 9-12 years in England
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-not explicitly stated, but based on quality
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2017
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-example2
-</td>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-122
-</td>
-<td style="text-align:left;">
-2054
-</td>
-<td style="text-align:left;">
-Papers from accountancy exams for age 17/18
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-not explicitly stated, but based on quality
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-art1
-</td>
-<td style="text-align:left;">
-19
-</td>
-<td style="text-align:left;">
-75
-</td>
-<td style="text-align:left;">
-496
-</td>
-<td style="text-align:left;">
-Visual art pieces from high schools
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is better? But I don’t know the exact wording.
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-art2
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-75
-</td>
-<td style="text-align:left;">
-497
-</td>
-<td style="text-align:left;">
-Art pieces from high schools
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is better? But I don’t know the exact wording.
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-business
-</td>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-40
-</td>
-<td style="text-align:left;">
-639
-</td>
-<td style="text-align:left;">
-Exam scripts of 17/18 yo Business students
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is better? But I don’t know the exact wording.
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-design
-</td>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-370
-</td>
-<td style="text-align:left;">
-2569
-</td>
-<td style="text-align:left;">
-Exam scripts of 17/18 yo Design students
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is better? But I don’t know the exact wording.
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-college
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-72
-</td>
-<td style="text-align:left;">
-496
-</td>
-<td style="text-align:left;">
-FE College Students’ portfolios on a given topic
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is better? But I don’t know the exact wording.
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-efl-oracy
-</td>
-<td style="text-align:left;">
-39
-</td>
-<td style="text-align:left;">
-134
-</td>
-<td style="text-align:left;">
-932
-</td>
-<td style="text-align:left;">
-Tape recordings of international candidates’ Oral performances
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which student speaks better?
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-efl-writing
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-100
-</td>
-<td style="text-align:left;">
-1000
-</td>
-<td style="text-align:left;">
-EFL writing in a European country
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is better? (without any specific training)
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-ielts-writing
-</td>
-<td style="text-align:left;">
-15
-</td>
-<td style="text-align:left;">
-90
-</td>
-<td style="text-align:left;">
-639
-</td>
-<td style="text-align:left;">
-IELTS writing scripts
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which student is better at writing in English?
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-mcq-difficulty
-</td>
-<td style="text-align:left;">
-7
-</td>
-<td style="text-align:left;">
-200
-</td>
-<td style="text-align:left;">
-2002
-</td>
-<td style="text-align:left;">
-Multiple Choice items from a professional qualification test
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which item do you think will be the more difficult?
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-music
-</td>
-<td style="text-align:left;">
-39
-</td>
-<td style="text-align:left;">
-804
-</td>
-<td style="text-align:left;">
-4148
-</td>
-<td style="text-align:left;">
-Music performances
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which performance was better?
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-peer-assessment
-</td>
-<td style="text-align:left;">
-135
-</td>
-<td style="text-align:left;">
-128
-</td>
-<td style="text-align:left;">
-1272
-</td>
-<td style="text-align:left;">
-Technical Design Brief portfolios written by University Teacher Training
-students
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-The student judge analysed each portfolio for evidence of capability and
-then decided on which portfolio was better.
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-philosophy1
-</td>
-<td style="text-align:left;">
-29
-</td>
-<td style="text-align:left;">
-700
-</td>
-<td style="text-align:left;">
-4436
-</td>
-<td style="text-align:left;">
-Essays in a philosophy exam
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is better? But I don’t know the exact wording.
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-philosophy2a
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-320
-</td>
-<td style="text-align:left;">
-1610
-</td>
-<td style="text-align:left;">
-Essays in a philosophy exam
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is better? But I don’t know the exact wording.
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-philosophy2b
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-320
-</td>
-<td style="text-align:left;">
-1621
-</td>
-<td style="text-align:left;">
-Essays in a philosophy exam
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is better? But I don’t know the exact wording.
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-philosophy2c
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-320
-</td>
-<td style="text-align:left;">
-1631
-</td>
-<td style="text-align:left;">
-Essays in a philosophy exam
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is better? But I don’t know the exact wording.
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Isnac2020
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-444
-</td>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-28
-</td>
-<td style="text-align:left;">
-Assessment methods
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-What is your preferred method of assessment?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-judges made all possible paired comparisons between the 8 items
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Esen2019
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-459
-</td>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-12852
-</td>
-<td style="text-align:left;">
-Assessment competencies, e.g. “giving effective feedback to students
-based on the exam results”
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-In whichever of the two fields in each line you find yourself more
-competent, check the box next to it. \[Translation from the original
-Turkish\]
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 AlMaimani2017
 </td>
 <td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-12
-</td>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-144
-</td>
-<td style="text-align:left;">
-Elbow patches
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-Which patch was more restrictive?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-p.4: The procedure was repeated for all possible different comparisons
-of patches - this means all 12 pairs in {A,B,C,D}^2
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Clark2018
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Study1
-</td>
-<td style="text-align:left;">
-56
-</td>
-<td style="text-align:left;">
-82
-</td>
-<td style="text-align:left;">
-4592
-</td>
-<td style="text-align:left;">
-Photos of men
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-Which man is stronger?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Clark2018
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Study2
-</td>
-<td style="text-align:left;">
-96
-</td>
-<td style="text-align:left;">
-82
-</td>
-<td style="text-align:left;">
-7872
-</td>
-<td style="text-align:left;">
-Photos of men
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-Which man is stronger?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Zucco2019
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-legislators
-</td>
-<td style="text-align:left;">
-142
-</td>
-<td style="text-align:left;">
-37
-</td>
-<td style="text-align:left;">
-560
-</td>
-<td style="text-align:left;">
-Brazilian governmental portfolios
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which portfolio is most valuable?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Zucco2019
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-experts
-</td>
-<td style="text-align:left;">
-278
-</td>
-<td style="text-align:left;">
-37
-</td>
-<td style="text-align:left;">
-3101
-</td>
-<td style="text-align:left;">
-Brazilian governmental portfolios
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which portfolio is most valuable?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Luckett2018
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-coldbrew
-</td>
-<td style="text-align:left;">
-100
-</td>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-300
-</td>
-<td style="text-align:left;">
-samples of cold-brew coffee
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-identify the samples they preferred
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Luckett2018
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-cola
-</td>
-<td style="text-align:left;">
-98
-</td>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-980 (10 pairs per judge, completed across two sessions)
-</td>
-<td style="text-align:left;">
-samples of commercially available cola-flavored sodas
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-identify the samples they preferred
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Luckett2018
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-icecream
-</td>
-<td style="text-align:left;">
-86
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-430 (5 pairs per judge)
-</td>
-<td style="text-align:left;">
-samples of commercially available vanilla ice creams
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-identify the samples they preferred
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Luckett2018
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-pizza
-</td>
-<td style="text-align:left;">
-91
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-455 (5 pairs per judge)
-</td>
-<td style="text-align:left;">
-samples of commercially available frozen four-cheese pizzas
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-identify the samples they preferred
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-LuckettX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-odor-familiar
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-samples of odors (vanillin, linalool, r-carvone, pentyl acetate,
-phenylethyl alcohol, methyl scalicylate)
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-which odor is more familiar
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-LuckettX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-odor-pleasant
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-samples of odors (vanillin, linalool, r-carvone, pentyl acetate,
-phenylethyl alcohol, methyl scalicylate)
-</td>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:left;">
-which odor is more pleasant
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sangwin2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-study1-insight
-</td>
-<td style="text-align:left;">
-29
-</td>
-<td style="text-align:left;">
-13
-</td>
-<td style="text-align:left;">
-not reported (judges were asked to do between 10 and 25)
-</td>
-<td style="text-align:left;">
-proofs
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-select the proof which gives more insight
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sangwin2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-study1-rigour
-</td>
-<td style="text-align:left;">
-24
-</td>
-<td style="text-align:left;">
-13
-</td>
-<td style="text-align:left;">
-not reported (judges were asked to do between 10 and 25)
-</td>
-<td style="text-align:left;">
-proofs
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-select the proof which is more rigorous
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sangwin2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-study2-rigour
-</td>
-<td style="text-align:left;">
-39
-</td>
-<td style="text-align:left;">
-15
-</td>
-<td style="text-align:left;">
-636
-</td>
-<td style="text-align:left;">
-proofs
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which proof is more rigorous?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sangwin2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-study2-insight
-</td>
-<td style="text-align:left;">
-25
-</td>
-<td style="text-align:left;">
-15
-</td>
-<td style="text-align:left;">
-438
-</td>
-<td style="text-align:left;">
-proofs
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which proof gives more insight into why the theorem is true?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sangwin2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-study2-simple
-</td>
-<td style="text-align:left;">
-32
-</td>
-<td style="text-align:left;">
-15
-</td>
-<td style="text-align:left;">
-526
-</td>
-<td style="text-align:left;">
-proofs
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which proof is the simplest?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sangwin2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-study2-understanding
-</td>
-<td style="text-align:left;">
-34
-</td>
-<td style="text-align:left;">
-15
-</td>
-<td style="text-align:left;">
-611
-</td>
-<td style="text-align:left;">
-proofs
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which proof best helps you understand why the theorem is true?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sangwin2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-study2-marks
-</td>
-<td style="text-align:left;">
-23
-</td>
-<td style="text-align:left;">
-15
-</td>
-<td style="text-align:left;">
-382
-</td>
-<td style="text-align:left;">
-proofs
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which proof would get the most marks in an assessment?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-experts-even
-</td>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-160
-</td>
-<td style="text-align:left;">
-Diagnostic test questions (even-numbered)
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which question do you think Year 1 students find most difficult?
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-experts-odd
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-181
-</td>
-<td style="text-align:left;">
-Diagnostic test questions (odd-numbered)
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which question do you think Year 1 students find most difficult?
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-experts-withsolutions
-</td>
-<td style="text-align:left;">
-13
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-302
-</td>
-<td style="text-align:left;">
-Diagnostic test questions
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which question do you think Year 1 students find most difficult?
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-students-even
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-200
-</td>
-<td style="text-align:left;">
-Diagnostic test questions (even-numbered)
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which question do you think Year 1 students find most difficult?
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-students-odd
-</td>
-<td style="text-align:left;">
-12
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-215
-</td>
-<td style="text-align:left;">
-Diagnostic test questions (odd-numbered)
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which question do you think Year 1 students find most difficult?
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-students-withoutsolutions
-</td>
-<td style="text-align:left;">
-22
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-440
-</td>
-<td style="text-align:left;">
-Diagnostic test questions (with no solutions shown)
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which question do you think Year 1 students find most difficult?
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-students-withsolutions
-</td>
-<td style="text-align:left;">
-22
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-422
-</td>
-<td style="text-align:left;">
-Diagnostic test questions
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which question do you think Year 1 students find most difficult?
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-students-withsolutions1
-</td>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-142
-</td>
-<td style="text-align:left;">
-Diagnostic test questions
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which question do you think Year 1 students find most difficult?
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-students-withsolutions2
-</td>
-<td style="text-align:left;">
-9
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-331
-</td>
-<td style="text-align:left;">
-Diagnostic test questions
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-which question do you think Year 1 students find most difficult?
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-snowballing
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Bramley2018
-</td>
-<td style="text-align:left;">
-Decision data is not openly available, but contextual and other data
-here
-<https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true>
-</td>
-<td style="text-align:left;">
-1a
-</td>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-150
-</td>
-<td style="text-align:left;">
-1080
-</td>
-<td style="text-align:left;">
-GCSE English essays
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which essay is better?
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Bramley2018
-</td>
-<td style="text-align:left;">
-Decision data is not openly available, but contextual and other data
-here
-<https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true>
-</td>
-<td style="text-align:left;">
-1b
-</td>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-190
-</td>
-<td style="text-align:left;">
-GCSE English essays
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which essay is better?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Bramley2018
-</td>
-<td style="text-align:left;">
-Decision data is not openly available, but contextual and other data
-here
-<https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true>
-</td>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-16
-</td>
-<td style="text-align:left;">
-150
-</td>
-<td style="text-align:left;">
-1120
-</td>
-<td style="text-align:left;">
-GCSE English essays
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which essay is better?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Settembri2018
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-84
-</td>
-<td style="text-align:left;">
-620
-</td>
-<td style="text-align:left;">
-Political science students briefing documents
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-unsure
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Coertjens2015
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-stress
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-??
-</td>
-<td style="text-align:left;">
-Essays on the topic of stress
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:left;">
-this was a presentation so the full text is not available
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Daal2017
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-sample1
-</td>
-<td style="text-align:left;">
-49
-</td>
-<td style="text-align:left;">
-135
-</td>
-<td style="text-align:left;">
-1127
-</td>
-<td style="text-align:left;">
-Written assignments by secondary school students in Flanders, about
-“getting children”
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-choose the essay that better evidenced the competence argumentative
-writing
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Daal2017
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-sample2
-</td>
-<td style="text-align:left;">
-49
-</td>
-<td style="text-align:left;">
-135
-</td>
-<td style="text-align:left;">
-870
-</td>
-<td style="text-align:left;">
-Written assignments by secondary school students in Flanders, about
-“getting children”
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-choose the essay that better evidenced the competence argumentative
-writing
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Daal2017
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-sample3
-</td>
-<td style="text-align:left;">
-13
-</td>
-<td style="text-align:left;">
-147
-</td>
-<td style="text-align:left;">
-2193
-</td>
-<td style="text-align:left;">
-High school students’ visual portfolios on the relationship between
-technology and the senses
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-pick each time the portfolio event that evidenced higher originality in
-visual arts
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-TODO - spreadsheet in data-raw has no judge identifiers
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Coertjens2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-22
-</td>
-<td style="text-align:left;">
-200
-</td>
-<td style="text-align:left;">
-Medical students self-reflections
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which is the better self-reflection?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Holmes2017
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-33
-</td>
-<td style="text-align:left;">
-66
-</td>
-<td style="text-align:left;">
-1650
-</td>
-<td style="text-align:left;">
-Student responses to maths GCSE items
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which item best elicits mathematical problem-solving as described by
-AO3?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Holmes2018
-</td>
-<td style="text-align:left;">
-TODO - sort out the discrepancy with the data (see GitHub issue \#18
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-35
-</td>
-<td style="text-align:left;">
-230
-</td>
-<td style="text-align:left;">
-\~3450
-</td>
-<td style="text-align:left;">
-Maths GCSE items (without student responses)
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-Which Item is the More Mathematically Difficult to Answer Fully?
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Davies2020a
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-11
-</td>
-<td style="text-align:left;">
-134
-</td>
-<td style="text-align:left;">
-1573
-</td>
-<td style="text-align:left;">
-Undergraduate proof summaries
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-judges clicking left or right to indicate which they judged better
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Davies2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-29
-</td>
-<td style="text-align:left;">
-175
-</td>
-<td style="text-align:left;">
-1941
-</td>
-<td style="text-align:left;">
-undergraduate responses to explain what mathematicians mean by proof in
-40 words or fewer
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-better
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Davies2021
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-novice
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-175
-</td>
-<td style="text-align:left;">
-1740
-</td>
-<td style="text-align:left;">
-undergraduate responses to explain what mathematicians mean by proof in
-40 words or fewer
-</td>
-<td style="text-align:left;">
-novice
-</td>
-<td style="text-align:left;">
-better
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2013a
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-expert1
-</td>
-<td style="text-align:left;">
-11
-</td>
-<td style="text-align:left;">
-168
-</td>
-<td style="text-align:left;">
-about half of 2797?
-</td>
-<td style="text-align:left;">
-undergraduate calculus test
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which student had demonstrated the better conceptual understanding
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2013a
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-expert2
-</td>
-<td style="text-align:left;">
-11
-</td>
-<td style="text-align:left;">
-168
-</td>
-<td style="text-align:left;">
-about half of 2797?
-</td>
-<td style="text-align:left;">
-undergraduate calculus test
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which student had demonstrated the better conceptual understanding
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2013a
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-peer1
-</td>
-<td style="text-align:left;">
-100
-</td>
-<td style="text-align:left;">
-168
-</td>
-<td style="text-align:left;">
-about half of 2813?
-</td>
-<td style="text-align:left;">
-undergraduate calculus test
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-better
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2013a
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-peer2
-</td>
-<td style="text-align:left;">
-93
-</td>
-<td style="text-align:left;">
-168
-</td>
-<td style="text-align:left;">
-about half of 2813?
-</td>
-<td style="text-align:left;">
-undergraduate calculus test
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-better
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2013a
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-novice
-</td>
-<td style="text-align:left;">
-9
-</td>
-<td style="text-align:left;">
-168
-</td>
-<td style="text-align:left;">
-1217
-</td>
-<td style="text-align:left;">
-undergraduate calculus test
-</td>
-<td style="text-align:left;">
-novice
-</td>
-<td style="text-align:left;">
-better
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2013b
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-25
-</td>
-<td style="text-align:left;">
-400
-</td>
-<td style="text-align:left;">
-Secondary student responses to a fractions test question
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-better conceptual understanding
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2014
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Bowland030211data
-</td>
-<td style="text-align:left;">
-12
-</td>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-173
-</td>
-<td style="text-align:left;">
-Secondary student responses to problem solving questions
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which candidate is the more able mathematician?
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2014
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Bowland070211data
-</td>
-<td style="text-align:left;">
-11
-</td>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-177
-</td>
-<td style="text-align:left;">
-Secondary student responses to problem solving questions
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which candidate is the more able mathematician?
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2014
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-GCSE030211data
-</td>
-<td style="text-align:left;">
-12
-</td>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-151
-</td>
-<td style="text-align:left;">
-Secondary student responses to GCSE maths questions
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which candidate is the more able mathematician?
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2014
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-GCSE070211data
-</td>
-<td style="text-align:left;">
-11
-</td>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-150
-</td>
-<td style="text-align:left;">
-Secondary student responses to GCSE maths questions
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which candidate is the more able mathematician?
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-McMahon2014
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-teachers
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-154
-</td>
-<td style="text-align:left;">
-1550
-</td>
-<td style="text-align:left;">
-Secondary student chemistry experiment write-ups
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-select the best science report
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-McMahon2014
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-37
-</td>
-<td style="text-align:left;">
-154
-</td>
-<td style="text-align:left;">
-3722
-</td>
-<td style="text-align:left;">
-Secondary student chemistry experiment write-ups
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-select the best science report
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2015a
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-all-scripts
-</td>
-<td style="text-align:left;">
-15
-</td>
-<td style="text-align:left;">
-750
-</td>
-<td style="text-align:left;">
-3607
-</td>
-<td style="text-align:left;">
-Secondary student responses to problem-solving maths questions
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-most mathematically able
-</td>
-<td style="text-align:left;">
-unsure
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2015a
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-subset-of-scripts
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-250
-</td>
-<td style="text-align:left;">
-1250
-</td>
-<td style="text-align:left;">
-Secondary student responses to problem-solving maths questions
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-most mathematically able
-</td>
-<td style="text-align:left;">
-unsure
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2015b
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-76
-</td>
-<td style="text-align:left;">
-24
-</td>
-<td style="text-align:left;">
-1983
-</td>
-<td style="text-align:left;">
-Secondary student responses to a fractions test question
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-better understanding of fractions
-</td>
-<td style="text-align:left;">
-unsure
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2016b
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-realscripts
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-546
-</td>
-<td style="text-align:left;">
-5000
-</td>
-<td style="text-align:left;">
-GCSE maths scripts
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which student you think is the better mathematician
-</td>
-<td style="text-align:left;">
-unclear
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2016b
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-perfect
-</td>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-48
-</td>
-<td style="text-align:left;">
-810
-</td>
-<td style="text-align:left;">
-Perfect GCSE maths scripts
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which student you think is the better mathematician
-</td>
-<td style="text-align:left;">
-unclear
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2017
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-132
-</td>
-<td style="text-align:left;">
-141
-</td>
-<td style="text-align:left;">
-3258
-</td>
-<td style="text-align:left;">
-undergraduate calculus test
-</td>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:left;">
-the better understanding
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2019
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-188
-</td>
-<td style="text-align:left;">
-1890
-</td>
-<td style="text-align:left;">
-Primary student responses to an open-ended algebra test question
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-which student demonstrated the better conceptual understanding of the
-use of letters in algebra
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Marshall2020
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-statistics
-</td>
-<td style="text-align:left;">
-21
-</td>
-<td style="text-align:left;">
-113
-</td>
-<td style="text-align:left;">
-1911
-</td>
-<td style="text-align:left;">
-Secondary student statistics projects
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-unstated, but judges attended a training session
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Marshall2020
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-written
-</td>
-<td style="text-align:left;">
-17
-</td>
-<td style="text-align:left;">
-253
-</td>
-<td style="text-align:left;">
-1856
-</td>
-<td style="text-align:left;">
-Secondary student written reports
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-unstated, but judges attended a training session
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
 </td>
 </tr>
 <tr>
@@ -4286,155 +799,7 @@ NA
 Bisson2016
 </td>
 <td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-stats
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-20
-</td>
-<td style="text-align:left;">
-not reported - see p. 145: They were instructed to complete one hour of
-judging, and they completed between 25 and 50 judgements each (M =45.3,
-SD = 8.7), with each script being compared between 40 and 50 times (M
-=45.3, SD = 3.0).
-</td>
-<td style="text-align:left;">
-written explanation of p-value
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Bisson2016
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-calculus
-</td>
-<td style="text-align:left;">
-30
-</td>
-<td style="text-align:left;">
-42
-</td>
-<td style="text-align:left;">
-1260
-</td>
-<td style="text-align:left;">
-written explanation of derivatives
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-TODO: two participants were removed from analyses - check value for N_A,
-should it be 28?
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Bisson2016
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-algebra
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-46
-</td>
-<td style="text-align:left;">
-460
-</td>
-<td style="text-align:left;">
-written explanation of how letters are used in algebra
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Hunter2018
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-39 (paper reports 20)
-</td>
-<td style="text-align:left;">
-2035 (paper reports 1912)
-</td>
-<td style="text-align:left;">
-26364 (paper reports 12888)
-</td>
-<td style="text-align:left;">
-Primary student responses to open-ended maths questions
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-better response
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
+stats<br>calculus<br>algebra
 </td>
 </tr>
 <tr>
@@ -4442,45 +807,319 @@ NA
 Bisson2019
 </td>
 <td style="text-align:left;">
-NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bramley2018
 </td>
 <td style="text-align:left;">
-NA
+1a<br>1b<br>2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Clark2018
 </td>
 <td style="text-align:left;">
-10
+Study1<br>Study2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Coertjens2015
 </td>
 <td style="text-align:left;">
-189
+stress
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Coertjens2021
 </td>
 <td style="text-align:left;">
-2060
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Daal2017
 </td>
 <td style="text-align:left;">
-responses to an open-ended question about derivatives
+sample1<br>sample2<br>sample3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Davies2020a
 </td>
 <td style="text-align:left;">
-expert
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Davies2021
 </td>
 <td style="text-align:left;">
-NA
+expert<br>novice
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Esen2019
 </td>
 <td style="text-align:left;">
-NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Holmes2017
 </td>
 <td style="text-align:left;">
-NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hunter2018
 </td>
 <td style="text-align:left;">
-NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Isnac2020
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2013a
+</td>
+<td style="text-align:left;">
+expert1<br>expert2<br>peer1<br>peer2<br>novice
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2013b
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2014
+</td>
+<td style="text-align:left;">
+Bowland030211data<br>Bowland070211data<br>GCSE030211data<br>GCSE070211data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2015a
+</td>
+<td style="text-align:left;">
+all-scripts<br>subset-of-scripts
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2015b
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2016b
+</td>
+<td style="text-align:left;">
+realscripts<br>perfect
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2017
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2019
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2020
+</td>
+<td style="text-align:left;">
+main-study<br>brightness-equalised
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+experts-even<br>experts-odd<br>experts-withsolutions<br>students-even<br>students-odd<br>students-withoutsolutions<br>students-withsolutions<br>students-withsolutions1<br>students-withsolutions2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018
+</td>
+<td style="text-align:left;">
+coldbrew<br>cola<br>icecream<br>pizza
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LuckettX
+</td>
+<td style="text-align:left;">
+odor-familiar<br>odor-pleasant
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Marshall2020
+</td>
+<td style="text-align:left;">
+statistics<br>written
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+McMahon2014
+</td>
+<td style="text-align:left;">
+teachers<br>peer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ofqual2015
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2012a
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017
+</td>
+<td style="text-align:left;">
+example4<br>example2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+art1<br>art2<br>business<br>design<br>college<br>efl-oracy<br>efl-writing<br>ielts-writing<br>mcq-difficulty<br>music<br>peer-assessment<br>philosophy1<br>philosophy2a<br>philosophy2b<br>philosophy2c
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ramos2021
+</td>
+<td style="text-align:left;">
+Auckland<br>Rutgers
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021
+</td>
+<td style="text-align:left;">
+study1-insight<br>study1-rigour<br>study2-rigour<br>study2-insight<br>study2-simple<br>study2-understanding<br>study2-marks
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Settembri2018
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smith2020
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016
+</td>
+<td style="text-align:left;">
+Grayscale<br>Threshold<br>EdgesOnly
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StadthagenGonzalez2017
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StadthagenGonzalez2019
+</td>
+<td style="text-align:left;">
+eng-to-spa<br>spa-to-eng
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vatavu2019
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vatavu2020
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zucco2019
+</td>
+<td style="text-align:left;">
+legislators<br>experts
 </td>
 </tr>
 </tbody>
 </table>
 
+## Reading the data
+
+All the judgement data is stored in the `data` folder, with filenames
+corresponding to the `project_id` (and for papers with multiple CJ
+sessions, the `study` within that project, e.g. `Bisson2016_stats.csv`).
+
 ## Issues with the data
 
-These ones are all fine:
+These ones all have
+![N_R](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;N_R "N_R")
+and
+![N_A](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;N_A "N_A")
+numbers that match our records of what is reported in the paper:
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -5158,6 +1797,29 @@ Jones2016b_realscripts
 </tr>
 <tr>
 <td style="text-align:left;">
+Jones2020_main-study
+</td>
+<td style="text-align:right;">
+4028
+</td>
+<td style="text-align:right;">
+1111
+</td>
+<td style="text-align:right;">
+246692
+</td>
+<td style="text-align:left;">
+4028
+</td>
+<td style="text-align:left;">
+1111
+</td>
+<td style="text-align:left;">
+246692
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Kinnear2021_experts-even
 </td>
 <td style="text-align:right;">
@@ -5430,6 +2092,29 @@ McMahon2014_teachers
 </td>
 <td style="text-align:left;">
 1550
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ofqual2015
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+2150
+</td>
+<td style="text-align:right;">
+35000
+</td>
+<td style="text-align:left;">
+35
+</td>
+<td style="text-align:left;">
+2150
+</td>
+<td style="text-align:left;">
+35000
 </td>
 </tr>
 <tr>
@@ -6009,6 +2694,29 @@ StadthagenGonzalez2019_spa-to-eng
 </tr>
 <tr>
 <td style="text-align:left;">
+Vatavu2019
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+4056
+</td>
+<td style="text-align:left;">
+108
+</td>
+<td style="text-align:left;">
+49
+</td>
+<td style="text-align:left;">
+5400
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Vatavu2020
 </td>
 <td style="text-align:right;">
@@ -6032,6 +2740,8 @@ Vatavu2020
 </tr>
 </tbody>
 </table>
+
+### Data inconsistent with reported values
 
 The following sessions have
 ![N_A](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;N_A "N_A")
@@ -6126,13 +2836,13 @@ Coertjens2015_stress
 474
 </td>
 <td style="text-align:left;">
-??
+40
 </td>
 <td style="text-align:left;">
-??
+35
 </td>
 <td style="text-align:left;">
-??
+474
 </td>
 </tr>
 <tr>
@@ -6183,6 +2893,29 @@ Daal2017_sample2
 </tr>
 <tr>
 <td style="text-align:left;">
+Daal2017_sample3
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+149
+</td>
+<td style="text-align:right;">
+2251
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+147
+</td>
+<td style="text-align:left;">
+2193
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Davies2020a
 </td>
 <td style="text-align:right;">
@@ -6202,29 +2935,6 @@ Davies2020a
 </td>
 <td style="text-align:left;">
 1573
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Holmes2018
-</td>
-<td style="text-align:right;">
-35
-</td>
-<td style="text-align:right;">
-2150
-</td>
-<td style="text-align:right;">
-35000
-</td>
-<td style="text-align:left;">
-35
-</td>
-<td style="text-align:left;">
-230
-</td>
-<td style="text-align:left;">
-\~3450
 </td>
 </tr>
 <tr>
@@ -6317,6 +3027,29 @@ Jones2019
 </td>
 <td style="text-align:left;">
 1890
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2020_brightness-equalised
+</td>
+<td style="text-align:right;">
+1920
+</td>
+<td style="text-align:right;">
+1111
+</td>
+<td style="text-align:right;">
+163197
+</td>
+<td style="text-align:left;">
+??
+</td>
+<td style="text-align:left;">
+??
+</td>
+<td style="text-align:left;">
+??
 </td>
 </tr>
 <tr>
@@ -6667,6 +3400,8 @@ Zucco2019_legislators
 </tbody>
 </table>
 
+### Data is missing
+
 The following sessions have missing data:
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -6767,31 +3502,13 @@ Expert
 TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/12>
 </td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Daal2017_sample3
-</td>
-<td style="text-align:left;">
-van Daal, T., Lesterhuis, M., Coertjens, L., van de Kamp, M. T., Donche,
-V., & De Maeyer, S. (2017, August). The complexity of assessing student
-work using comparative judgment: The moderating role of decision
-accuracy. In Frontiers in Education (Vol. 2, p. 44). Frontiers.
-</td>
-<td style="text-align:left;">
-High school students’ visual portfolios on the relationship between
-technology and the senses
-</td>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
 </tbody>
 </table>
 
-Various things to do:
+### Other issues
+
+Various other unresolved issues are noted with a “TODO” in the project’s
+`note` field:
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -6805,14 +3522,6 @@ note
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Holmes2018
-</td>
-<td style="text-align:left;">
-TODO - sort out the discrepancy with the data (see GitHub issue \#18
-</td>
-</tr>
 <tr>
 <td style="text-align:left;">
 Spehar2016_Grayscale
@@ -6847,3 +3556,126 @@ TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/12>
 </tr>
 </tbody>
 </table>
+
+# Other things to do
+
+## Adaptivity
+
+We wanted to add a note about whether the CJ method used adaptivity.
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+adaptivity
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+percent
+</th>
+<th style="text-align:right;">
+valid_percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+0.4190476
+</td>
+<td style="text-align:right;">
+0.5432099
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+0.1619048
+</td>
+<td style="text-align:right;">
+0.2098765
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+unclear
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.0190476
+</td>
+<td style="text-align:right;">
+0.0246914
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0.1428571
+</td>
+<td style="text-align:right;">
+0.1851852
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+unsure
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.0285714
+</td>
+<td style="text-align:right;">
+0.0370370
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+0.2285714
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+
+## Projects without data
+
+Do we want to fill out details for these studies?
+
+At least, we might want to trawl through looking for open data? We
+included Jones2020 on this basis, see
+<https://github.com/georgekinnear/cj-meta-analysis/issues/2>
+
+    ##                    open_data  n   percent
+    ##                        FALSE 40 0.5714286
+    ##  TODO... CHECK FOR OPEN DATA 30 0.4285714

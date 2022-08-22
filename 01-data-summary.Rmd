@@ -42,36 +42,18 @@ all_sessions <- tibble(project = sessions) %>%
   mutate(across(c("study", "N_A", "N_R", "N_J", "adaptivity"), ~ na_if(.x, "NULL")))
 
 # save a summary of the data as a .csv
-all_sessions %>% 
-  select(-citation) %>% 
-  write_csv("data/00-judging_sessions_summary.csv")
+# all_sessions %>% 
+#   select(-citation) %>% 
+#   write_csv("data/00-judging_sessions_summary.csv")
 ```
 
 * This document summarises the sample in a readable way.
 * It draws on raw data in the `data/00-projects-with-data.yml` file.
-* The raw data is also summarised in CSV format in `data/00-judging_sessions_summary.csv`.
+* This script processes the raw data and saves it in CSV format in `data/00-judging_sessions_summary.csv`.
 
 # Publications/projects
 
-```{r}
-still_to_do <- all_sessions %>% 
-  filter(str_detect(study, "TODO")) %>% 
-  select(project_id)
-
-all_sessions <- all_sessions %>% 
-  filter(is.na(study) | !str_detect(study, "TODO"))
-```
-
-There are `r nrow(still_to_do)` studies in the .yml file still to be processed:
-
-```{r}
-still_to_do %>% basic_kable()
-```
-
-
 Judgement data was gathered from the publications/projects summarised in the table below.
-
-* `open_data` records whether the judgement data is already publicly available
 
 ```{r}
 all_sessions %>% 
@@ -84,81 +66,52 @@ all_sessions %>%
   kable_styling() 
 ```
 
-# CJ sessions
+## Open data
+
+`open_data` records whether the judgement data is already publicly available. It is fairly uncommon in our sample:
 
 ```{r}
 all_sessions %>% 
-  select(-citation, -doi, -open_data) %>%
-  kable("html", escape = FALSE) %>%
-  kable_styling() %>%
-  collapse_rows(columns = 1, valign = "top")
+  select(project_id, open_data) %>% 
+  distinct() %>% 
+  mutate(open_data = ifelse(open_data != "FALSE", "Yes", "No")) %>% 
+  janitor::tabyl(open_data) %>% 
+  janitor::adorn_pct_formatting() %>% 
+  basic_kable()
 ```
 
-```{r message=FALSE, warning=FALSE}
-files <- fs::dir_ls(path = "data", glob = "*.csv")
 
-judgement_data_raw <- tibble(path = files) %>% 
-  filter(!str_starts(path, "data/00-")) %>% 
-  # add columns describing the course and cohort from parsing the filename
-  mutate(
-    judging_session = str_remove_all(path, "data/|.csv"),
-  ) %>% 
-  mutate(
-    csv_contents = map(path, read_csv, na = c("-"), show_col_types = FALSE)
-  )
-```
+# CJ sessions
+
+Many of the publications report on multiple CJ sessions:
 
 ```{r}
-judgement_data_tidy <- judgement_data_raw %>% 
-  # Tidy up the contents of each judgement data CSV to just the judge/won/lost columns
-  mutate(
-    csv_contents = map(csv_contents, function(df) {
-      if (all(has_name(df, c("judge", "candidate_chosen", "candidate_not_chosen")))) {
-        df_out <- df %>% select(
-          judge = judge,
-          won = candidate_chosen,
-          lost = candidate_not_chosen
-        ) %>% return()
-      } else if (all(has_name(df, c("judge", "won", "lost")))) {
-        df_out <- df %>% select(judge, won, lost)
-      } else {
-        warning("Could not find suitable CJ decision columns", names(df))
-        df_out <- tibble(judge = 1, won = 1, lost = 1)
-      }
-      # change all columns to characters, so they can be combined later
-      return(df_out %>% mutate_all(as.character))
-    })
+all_sessions %>% 
+  select(project_id, study) %>%
+  group_by(project_id) %>% 
+  summarise(
+    studies = paste0(study, collapse = "<br>")
   ) %>% 
-  # check the number of representations and assessors
-  mutate(
-    observed_N_A = map_int(csv_contents, function(df) {
-      df %>% select(judge) %>% distinct() %>% nrow() %>% return()
-    }),
-    observed_N_R = map_int(csv_contents, function(df) {
-      bind_rows(
-        df %>% select(script = won),
-        df %>% select(script = lost),
-      ) %>% distinct() %>% nrow() %>% return()
-    }),
-    observed_N_C = map_int(csv_contents, nrow)
-  ) %>% 
-  # cross-check with the metadata
-  full_join(
-    all_sessions %>% 
-      mutate(judging_session = if_else(is.na(study), project_id, paste0(project_id, "_", study)), .before = 1),
-    by = "judging_session"
-  )
+  mutate(studies = ifelse(studies == "NA", "", studies)) %>%  
+  kable("html", escape = FALSE) %>%
+  kable_styling()
+```
 
+## Reading the data
 
-judgement_data <- judgement_data_tidy %>% 
-  # unpack all the results and tidy up
-  unnest(cols = c(csv_contents)) %>% 
-  select(judging_session, judge, won, lost)
+All the judgement data is stored in the `data` folder, with filenames corresponding to the `project_id` (and for papers with multiple CJ sessions, the `study` within that project, e.g. `Bisson2016_stats.csv`).
+
+```{r message=FALSE, warning=FALSE}
+source("00-load-all-judgement-data.R")
+
+judgement_data_tidy %>% 
+  select(-csv_contents, -path) %>% 
+  write_csv("data/00-judging_sessions_summary.csv")
 ```
 
 ## Issues with the data
 
-These ones are all fine:
+These ones all have $N_R$ and $N_A$ numbers that match our records of what is reported in the paper:
 
 ```{r}
 judgement_data_tidy %>% 
@@ -167,6 +120,8 @@ judgement_data_tidy %>%
   filter(observed_N_R == N_R & observed_N_A == N_A) %>% 
   basic_kable()
 ```
+
+### Data inconsistent with reported values
 
 The following sessions have $N_A$ or $N_R$ values that differ from those expected:
 
@@ -178,6 +133,8 @@ judgement_data_tidy %>%
   basic_kable()
 ```
 
+### Data is missing
+
 The following sessions have missing data:
 
 ```{r}
@@ -187,7 +144,9 @@ judgement_data_tidy %>%
   basic_kable()
 ```
 
-Various things to do:
+### Other issues
+
+Various other unresolved issues are noted with a "TODO" in the project's `note` field:
 
 ```{r}
 judgement_data_tidy %>% 
@@ -196,3 +155,46 @@ judgement_data_tidy %>%
   kable("html", escape = FALSE) %>%
   kable_styling()
 ```
+
+
+# Other things to do
+
+## Adaptivity
+
+We wanted to add a note about whether the CJ method used adaptivity.
+
+```{r}
+judgement_data_tidy %>% 
+  select(judging_session, adaptivity) %>%
+  janitor::tabyl(adaptivity) %>% 
+  kable("html", escape = FALSE) %>%
+  kable_styling()
+```
+
+
+## Projects without data
+
+Do we want to fill out details for these studies?
+
+```{r}
+# import projects-without-data
+nodata <- yaml::read_yaml("data/00-projects-without-data.yml")
+
+nodata_sessions <- tibble(project = nodata) %>% 
+  unnest_wider(project) %>% 
+  mutate(open_data = paste0(open_data)) %>% 
+  unnest_longer(judging_sessions) %>%
+  unnest_wider(judging_sessions) %>%
+  # replace columns containing length-1 lists with just the contents
+  mutate(across(c("study", "N_A", "N_R", "N_J", "adaptivity"), as.character)) %>% 
+  # tidy up the missing entries - replace NULL with NA
+  mutate(across(c("study", "N_A", "N_R", "N_J", "adaptivity"), ~ na_if(.x, "NULL")))
+```
+
+At least, we might want to trawl through looking for open data? We included Jones2020 on this basis, see <https://github.com/georgekinnear/cj-meta-analysis/issues/2>
+
+```{r}
+# count entries with TODO in the open data field
+nodata_sessions %>% janitor::tabyl(open_data)
+```
+
