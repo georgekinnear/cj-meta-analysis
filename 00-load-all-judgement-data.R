@@ -1,3 +1,17 @@
+sessions <- yaml::read_yaml("data/00-projects-with-data.yml")
+
+all_sessions <- tibble(project = sessions) %>% 
+  unnest_wider(project) %>% 
+  mutate(
+    open_data = map_chr(sessions, "open_data")
+  ) %>% 
+  unnest_longer(judging_sessions) %>%
+  unnest_wider(judging_sessions) %>%
+  # replace columns containing length-1 lists with just the contents
+  mutate(across(c("study", "N_A", "N_R", "N_J", "adaptivity"), as.character)) %>% 
+  # tidy up the missing entries - replace NULL with NA
+  mutate(across(c("study", "N_A", "N_R", "N_J", "adaptivity"), ~ na_if(.x, "NULL")))
+
 files <- fs::dir_ls(path = "data", glob = "*.csv")
 
 judgement_data_raw <- tibble(path = files) %>% 

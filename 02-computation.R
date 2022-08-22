@@ -1,7 +1,13 @@
 library(tidyverse)
+library(EloChoice) # used in compute_elo()
 
 # get the judgement_data_tidy table set up
 source("00-load-all-judgement-data.R")
+
+
+#### SSR ####
+
+# 1. helper function ----
 
 compute_btm <- function(csv_contents, judging_session, seed = 123, ...) {
   print(judging_session)
@@ -47,6 +53,33 @@ compute_btm <- function(csv_contents, judging_session, seed = 123, ...) {
   }
   
 }
+
+# 2. iterate over the judging sessions ----
+
+judgement_data_tidy %>% 
+  filter(!is.na(observed_N_A)) %>% 
+  # could optionally specify a seed, but the default of 123 provided by compute_btm is fine
+  # mutate(seed = digest::digest2int(judging_session) %>% abs) %>% 
+  mutate(btm_results = pmap_dfr(., compute_btm)) %>% 
+  unnest(cols = btm_results)
+
+# to run just for specific judging sessions:
+# judgement_data_tidy %>%
+#   filter(str_detect(judging_session, "Luck")) %>%
+#   pmap_dfr(compute_btm)
+
+# 3. Read in all the saved SSR values ----
+
+ssr_values <- tibble(path = fs::dir_ls("data-cache", recurse = TRUE, glob = "*btm_ssr*")) %>% 
+  separate(path, into = c(NA, "judging_session", NA), sep = "/", remove = FALSE) %>% 
+  mutate(ssr = map(path, vroom::vroom, delim = ",", show_col_types = FALSE)) %>% 
+  unnest(ssr) %>% 
+  select(-path)
+
+
+#### Split-halves ####
+
+#1. helper function ----
 
 generate_split_halves <- function(csv_contents, judging_session, seed = 123, splits = 100, ...) {
   print(str_glue("{judging_session} split halves..."))
@@ -96,7 +129,7 @@ generate_split_halves <- function(csv_contents, judging_session, seed = 123, spl
     
     btm1 <- purrr::quietly(sirt::btm)(judgements1 %>% data.frame , maxit=400 , fix.eta=0 , ignore.ties=TRUE )$result
     btm2 <- purrr::quietly(sirt::btm)(judgements2 %>% data.frame , maxit=400 , fix.eta=0 , ignore.ties=TRUE )$result
-
+    
     merged_effects <- merge(btm1$effects, btm2$effects, by="individual")
     
     # Save results
@@ -104,27 +137,11 @@ generate_split_halves <- function(csv_contents, judging_session, seed = 123, spl
   }
 }
 
+#2. generate the split halves ----
+
 pmap_dfr(judgement_data_tidy %>% filter(!is.na(observed_N_A)), generate_split_halves)
 
-#dat_out <- pmap_dfr(head(judgement_data_tidy), compute_btm)
-
-judgement_data_tidy %>% 
-  filter(!is.na(observed_N_A)) %>% 
-  # could optionally specify a seed, but the default of 123 provided by compute_btm is fine
-  # mutate(seed = digest::digest2int(judging_session) %>% abs) %>% 
-  mutate(btm_results = pmap_dfr(., compute_btm)) %>% 
-  unnest(cols = btm_results)
-
-# judgement_data_tidy %>%
-#   filter(str_detect(judging_session, "Luck")) %>%
-#   pmap_dfr(compute_btm)
-
-# Read in all the saved SSR values
-ssr_values <- tibble(path = fs::dir_ls("data-cache", recurse = TRUE, glob = "*btm_ssr*")) %>% 
-  separate(path, into = c(NA, "judging_session", NA), sep = "/", remove = FALSE) %>% 
-  mutate(ssr = map(path, vroom::vroom, delim = ",", show_col_types = FALSE)) %>% 
-  unnest(ssr) %>% 
-  select(-path)
+#3. read the cached results ----
 
 compute_split_half_cors_from_cache <- function(judging_session, ...) {
   fs::dir_ls(str_glue("data-cache/{judging_session}/split-halves/")) %>% 
@@ -167,6 +184,68 @@ split_halves_values <- split_halves_data %>%
   group_by(judging_session) %>%
   summarise(mean_split_corr = mean(split_corr))
 
+
+#### EloChoice ####
+
+#1. helper function ----
+compute_elo <- function(csv_contents, judging_session, seed = 123, ...) {
+  print(judging_session)
+  # make sure the cache folder exists for this judging session
+  dir.create(file.path("data-cache", judging_session), showWarnings = FALSE)
+  cache_file <- paste0("data-cache/", judging_session, "/elo_results.csv")
+  
+  if(file.exists(cache_file)) {
+    elo_cached = read_csv(cache_file, show_col_types = FALSE)
+    elo_reliabilities_cached = read_csv(cache_file %>% str_replace("results", "reliabilities"), show_col_types = FALSE)
+    print(str_glue("  ✔ retrieved from cache"))
+    
+    return(list(
+      elo_reliability = list(elo_reliabilities_cached),
+      elo_estimates = list(elo_cached)
+    ))
+  } else {
+    # use the assigned seed for this judging session to make sure the computation is repeatable
+    set.seed(seed)
+    
+    # call EloChoice::elochoice
+    res <- elochoice(winner = csv_contents$won, loser = csv_contents$lost, runs = 1000)
+    
+    # save the estimated item scores
+    item_scores <- ratings(res, show = "mean", drawplot = FALSE) %>% enframe()
+    item_scores %>% write_csv(file = cache_file)
+    
+    # compute reliability measures and save them
+    elo_rel <- reliability(res) %>% 
+      summarise(
+        mean_eloR = mean(upset),
+        mean_eloR_weighted = mean(upset.wgt)
+      )
+    elo_rel %>% write_csv(file = cache_file %>% str_replace("results", "reliabilities"))
+    
+    return(list(
+      elo_reliability = list(elo_rel),
+      elo_estimates = list(item_scores)
+    ))
+    
+  }
+  
+}
+
+#2. iterate over all judging sessions ----
+
+elo_values <- judgement_data_tidy %>% 
+  filter(!is.na(observed_N_A)) %>% 
+  filter(!str_detect(judging_session, "Jones2020")) %>% 
+  mutate(elo = pmap_dfr(., compute_elo)) %>% 
+  unnest(cols = elo) %>%
+  unnest(cols = elo_reliability) %>%  
+  select(judging_session, starts_with("mean_eloR"))
+
+
+
+#### 🏗️ Assemble all the data ####
+
 ssr_values %>% 
   left_join(split_halves_values, by = "judging_session") %>% 
+  left_join(elo_values, by = "judging_session") %>% 
   write_csv("data/01-reliability-values.csv")
