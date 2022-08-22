@@ -82,7 +82,7 @@
 <g id="node5" class="node">
 <title>step5</title>
 <polygon fill="none" stroke="#000000" points="288,-108 0,-108 0,-72 288,-72 288,-108"/>
-<text text-anchor="middle" x="144" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">Data obtained (n = 34)</text>
+<text text-anchor="middle" x="144" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">Data obtained (n = 33)</text>
 </g>
 <!-- step4&#45;&gt;step5 -->
 <g id="edge4" class="edge">
@@ -94,7 +94,7 @@
 <g id="node9" class="node">
 <title>final</title>
 <polygon fill="none" stroke="#000000" points="441,-36 153,-36 153,0 441,0 441,-36"/>
-<text text-anchor="middle" x="297" y="-13.8" font-family="Arial" font-size="14.00" fill="#000000">Final dataset (n = 40)</text>
+<text text-anchor="middle" x="297" y="-13.8" font-family="Arial" font-size="14.00" fill="#000000">Final dataset (n = 41)</text>
 </g>
 <!-- step5&#45;&gt;final -->
 <g id="edge8" class="edge">
@@ -106,7 +106,7 @@
 <g id="node8" class="node">
 <title>snowball</title>
 <polygon fill="none" stroke="#000000" points="594,-108 306,-108 306,-72 594,-72 594,-108"/>
-<text text-anchor="middle" x="450" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">Additional reports identified (n = 6)</text>
+<text text-anchor="middle" x="450" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">Additional reports identified (n = 8)</text>
 </g>
 <!-- snowball&#45;&gt;final -->
 <g id="edge7" class="edge">
