@@ -9,6 +9,8 @@ always_allow_html: true
 ```{r setup, include=FALSE}
 library(tidyverse)
 knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.path='figs-web/03-reliability-measures/')
+knitr::opts_chunk$set(dpi=300,fig.width=7)
 
 # for plotting
 theme_set(theme_minimal())
@@ -49,8 +51,9 @@ meta_analysis_data %>%
   basic_kable()
 ```
 
+# SSR vs split-halves
 
-```{r}
+```{r ssr-vs-splithalves}
 meta_analysis_data %>% 
   filter(!is.na(ssr)) %>% 
   mutate(pt_label = ifelse(mean_split_corr < 0.5 | ssr < 0.7, judging_session, "")) %>% 
@@ -65,6 +68,7 @@ meta_analysis_data %>%
   ylim(c(0,1)) +
   labs(x = "SSR", y = "Mean split-halves correlation")
 ```
+
 It is very rare for the split-halves measure to be higher than SSR:
 
 ```{r}
@@ -82,3 +86,40 @@ meta_analysis_data %>%
   basic_kable(digits = 3)
 ```
 
+# SSR vs EloChoice
+
+
+```{r ssr-vs-elo}
+meta_analysis_data %>% 
+  filter(!is.na(mean_eloR_weighted)) %>% 
+  mutate(pt_label = ifelse(mean_eloR_weighted < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = ssr, y = mean_eloR_weighted, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x") +
+  ggrepel::geom_text_repel(alpha = 0.3) +
+  geom_abline(slope = 1, intercept = 0) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(x = "SSR", y = "Mean EloChoice R (weighted)")
+```
+
+# EloChoice cs split-halves
+
+
+```{r splithalves-vs-elo}
+meta_analysis_data %>% 
+  filter(!is.na(mean_eloR_weighted)) %>% 
+  mutate(pt_label = ifelse(mean_eloR_weighted < 0.5 | mean_split_corr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = mean_split_corr, y = mean_eloR_weighted, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x") +
+  ggrepel::geom_text_repel(alpha = 0.3) +
+  geom_abline(slope = 1, intercept = 0) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(x = "Mean split-halves", y = "Mean EloChoice R (weighted)")
+```
