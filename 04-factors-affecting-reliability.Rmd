@@ -1,0 +1,145 @@
+---
+title: 'CJ meta-analysis: factors affecting reliability measures'
+author: "George Kinnear"
+date: "2022-08-22"
+output: github_document
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.path='figs-web/04-factors-affecting-reliability/')
+knitr::opts_chunk$set(dpi=300,fig.width=5)
+
+# for plotting
+theme_set(theme_minimal())
+#library(patchwork)
+
+library(knitr)
+library(kableExtra)
+basic_kable = function(df, ...) {
+  df %>% 
+    kable(...) %>%
+    kable_styling(bootstrap_options = "striped", full_width = F)
+}
+```
+
+# About the sample
+
+```{r}
+cj_sessions <- read_csv("data/00-judging_sessions_summary.csv", show_col_types = FALSE)
+reliability_stats <- read_csv("data/01-reliability-values.csv", show_col_types = FALSE)
+
+meta_analysis_data <- cj_sessions %>% 
+  left_join(reliability_stats, by = "judging_session")
+
+source("00-load-all-judgement-data.R")
+```
+
+The judging sessions in the sample span a wide range of number of judgements made:
+
+```{r num-judgements}
+judgement_data %>% 
+  group_by(judging_session) %>% 
+  count(name = "num_judgements") %>% 
+  mutate(log10_judgements = log(num_judgements, base = 10)) %>% 
+  ggplot(aes(x = num_judgements)) +
+  geom_histogram(bins = 30) +
+  #scale_x_continuous(trans='log10')
+  scale_x_log10(breaks = scales::trans_breaks("log10", function(x) 10^x),
+              labels = scales::trans_format("log10", scales::math_format(10^.x)))
+```
+There is also a wide range of numbers of items in the different judging sessions - from a handful to a maximum of `r max(meta_analysis_data$observed_N_R, na.rm = TRUE)`.
+
+```{r num-items}
+meta_analysis_data %>% 
+  filter(observed_N_R > 0) %>% 
+  ggplot(aes(x = observed_N_R)) +
+  geom_histogram(bins = 30) +
+  scale_x_continuous(trans='log10') +
+  labs(x = "Number of items being judged")
+```
+
+# Proportion of the comparison matrix that is filled
+
+For a judging session with $N$ items, there are $\frac{N(N-1)}{2}$ possible pairs to judge.
+
+Perhaps a factor that influences reliability is how many of these possible pairs are actually considered by judges?
+
+Here we compute the number of possible pairs in each judging session, and compare that with the actual number of pairs that were seen by judges:
+
+```{r}
+# TODO - this is computationally a bit heavy, so maybe move it to 02-computation and cache the results
+comparison_matrices <- judgement_data_tidy %>%
+  #head() %>%
+  filter(observed_N_C > 0) %>% 
+  transmute(
+    judging_session = judging_session,
+    observed_N_R,
+    items = map(
+      csv_contents,
+      ~ .x %>% pivot_longer(
+          cols = c("won", "lost"),
+          names_to = "outcome",
+          values_to = "script"
+        ) %>% 
+        select(script) %>% 
+        distinct()
+    ),
+    pairs_judged = map(
+      csv_contents,
+      ~ .x %>% mutate(decision_num = row_number()) %>%
+        pivot_longer(
+          cols = c("won", "lost"),
+          names_to = "outcome",
+          values_to = "script"
+        ) %>%
+        arrange(decision_num, script) %>%
+        group_by(decision_num) %>%
+        mutate(item = ifelse(row_number() == 1, "item1", "item2")) %>%
+        ungroup() %>%
+        select(-outcome) %>%
+        pivot_wider(names_from = "item", values_from = "script") %>%
+        filter(item1 != item2) %>% 
+        group_by(item1, item2) %>%
+        tally()
+    )
+  ) %>% 
+  mutate(
+    all_pairs = map(
+      items,
+      ~ .x %>% expand(script, script) %>%
+        rename(item1 = 1, item2 = 2) %>%
+        filter(item1 < item2)
+    ), 
+    num_pairs = map_int(all_pairs, nrow),
+    num_pairs_judged = map_int(pairs_judged, nrow),
+    prop_pairs_judged = num_pairs_judged / num_pairs
+  )
+```
+
+There is a bimodal pattern. Most commonly, all (or nearly all) pairs are judged. But another common case is for only around 10% of possible pairs to be judged.
+
+```{r prop-judged}
+comparison_matrices %>% 
+  select(judging_session, num_pairs, num_pairs_judged, prop_pairs_judged) %>% 
+  ggplot(aes(x = prop_pairs_judged)) +
+  geom_histogram() +
+  labs(x = "Proportion of pairs judged")
+```
+
+The proportion of pairs judged does not seem to have a relationship with reliability:
+
+```{r propjudged-vs-splithalves}
+meta_analysis_data %>% 
+  left_join(comparison_matrices %>% select(judging_session, prop_pairs_judged), by = "judging_session") %>% 
+  ggplot(aes(x = prop_pairs_judged, y = mean_split_corr)) +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x") +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(x = "Proportion of pairs judged", y = "Mean split-halves correlation")
+```
+
