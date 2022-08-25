@@ -248,4 +248,4 @@ elo_values <- judgement_data_tidy %>%
 ssr_values %>% 
   left_join(split_halves_values, by = "judging_session") %>% 
   left_join(elo_values, by = "judging_session") %>% 
-  write_csv("data/01-reliability-values.csv")
+  write_csv("data/01-meta-analysis-data.csv")
