@@ -1,7 +1,7 @@
 CJ meta-analysis: data summary
 ================
 George Kinnear
-2022-08-03
+2022-08-25
 
 We gathered comparative judgement data from a range of research studies.
 
@@ -1064,7 +1064,7 @@ Smith2020
 Spehar2016
 </td>
 <td style="text-align:left;">
-Grayscale<br>Threshold<br>EdgesOnly
+Grayscale<br>Threshold<br>EdgesOnly<br>expt2-Edges<br>expt2-Fracts<br>expt2-Mountain<br>expt2-Plain<br>expt2-Thr
 </td>
 </tr>
 <tr>
@@ -3353,6 +3353,121 @@ PollittX_peer-assessment
 </tr>
 <tr>
 <td style="text-align:left;">
+Spehar2016_expt2-Edges
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Fracts
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Mountain
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Plain
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Thr
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+<td style="text-align:left;">
+TODO
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Zucco2019_experts
 </td>
 <td style="text-align:right;">
@@ -3524,6 +3639,46 @@ note
 <tbody>
 <tr>
 <td style="text-align:left;">
+Spehar2016_expt2-Edges
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Fracts
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Mountain
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Plain
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Thr
+</td>
+<td style="text-align:left;">
+TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Spehar2016_Grayscale
 </td>
 <td style="text-align:left;">
@@ -3586,13 +3741,13 @@ valid_percent
 FALSE
 </td>
 <td style="text-align:right;">
-44
+49
 </td>
 <td style="text-align:right;">
-0.4190476
+0.4666667
 </td>
 <td style="text-align:right;">
-0.5432099
+0.5697674
 </td>
 </tr>
 <tr>
@@ -3606,7 +3761,7 @@ TRUE
 0.1619048
 </td>
 <td style="text-align:right;">
-0.2098765
+0.1976744
 </td>
 </tr>
 <tr>
@@ -3620,7 +3775,7 @@ unclear
 0.0190476
 </td>
 <td style="text-align:right;">
-0.0246914
+0.0232558
 </td>
 </tr>
 <tr>
@@ -3634,7 +3789,7 @@ unknown
 0.1428571
 </td>
 <td style="text-align:right;">
-0.1851852
+0.1744186
 </td>
 </tr>
 <tr>
@@ -3648,7 +3803,7 @@ unsure
 0.0285714
 </td>
 <td style="text-align:right;">
-0.0370370
+0.0348837
 </td>
 </tr>
 <tr>
@@ -3656,10 +3811,10 @@ unsure
 NA
 </td>
 <td style="text-align:right;">
-24
+19
 </td>
 <td style="text-align:right;">
-0.2285714
+0.1809524
 </td>
 <td style="text-align:right;">
 NA

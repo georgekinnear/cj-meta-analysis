@@ -32,6 +32,46 @@
     judge_expertise: Novice 
     judging_prompt: Which [fractal] appears more complex?
     adaptivity: no
+  - study: expt2-Edges
+    N_A: TODO
+    N_R: TODO
+    N_J: TODO
+    items: TODO 
+    judge_expertise: layperson 
+    judging_prompt: Which [fractal] appears more complex?
+    adaptivity: no
+  - study: expt2-Fracts
+    N_A: TODO
+    N_R: TODO
+    N_J: TODO
+    items: TODO 
+    judge_expertise: layperson 
+    judging_prompt: Which [fractal] appears more complex?
+    adaptivity: no
+  - study: expt2-Mountain
+    N_A: TODO
+    N_R: TODO
+    N_J: TODO
+    items: TODO 
+    judge_expertise: layperson 
+    judging_prompt: Which [fractal] appears more complex?
+    adaptivity: no
+  - study: expt2-Plain
+    N_A: TODO
+    N_R: TODO
+    N_J: TODO
+    items: TODO 
+    judge_expertise: layperson 
+    judging_prompt: Which [fractal] appears more complex?
+    adaptivity: no
+  - study: expt2-Thr
+    N_A: TODO
+    N_R: TODO
+    N_J: TODO
+    items: TODO 
+    judge_expertise: layperson 
+    judging_prompt: Which [fractal] appears more complex?
+    adaptivity: no
 
   
 - project_id: StadthagenGonzalez2017
