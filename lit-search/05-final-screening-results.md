@@ -1,7 +1,7 @@
 CJ meta-analysis: final screening results
 ================
 George Kinnear
-28/06/2022
+2022-08-03
 
 Here we review the results from the “final screening” spreadsheet.
 
@@ -28,20 +28,6 @@ screening spreadsheet at the time.
 
 Here we filter the .bib contents to focus only on those published in
 2010 or later, and show the breakdown of the decisions:
-
-    ## Some BibTeX entries may have been dropped.
-    ##             The result could be malformed.
-    ##             Review the .bib file and make sure every single entry starts
-    ##             with a '@'.
-
-    ## Warning: `as_data_frame()` was deprecated in tibble 2.0.0.
-    ## Please use `as_tibble()` instead.
-    ## The signature and semantics have changed, see `?as_tibble`.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
-
-    ## Column `YEAR` contains character strings.
-    ##               No coercion to numeric applied.
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -782,7 +768,7 @@ March
 </td>
 <td style="text-align:left;">
 url{<https://ir.uiowa.edu/cgi/viewcontent.cgi?article=4719&context=etd>}
-; ; ; ; \\url{<https://www.ncbi.nlm.nih.gov/pubmed/25770375>
+; ; ; ; \url{<https://www.ncbi.nlm.nih.gov/pubmed/25770375>
 </td>
 <td style="text-align:left;">
 3
@@ -912,7 +898,7 @@ July
 </td>
 <td style="text-align:left;">
 url{<http://journal.frontiersin.org/Article/10.3389/fnhum.2016.00350/abstract>}
-; ; ; ; ; ; \\url{<https://core.ac.uk/download/pdf/82854035.pdf>
+; ; ; ; ; ; \url{<https://core.ac.uk/download/pdf/82854035.pdf>
 </td>
 <td style="text-align:left;">
 NA
@@ -1042,7 +1028,7 @@ May
 </td>
 <td style="text-align:left;">
 url{<https://dblp.uni-trier.de/db/conf/chi/chi2017.html#MaimaniR17>} ; ;
-; ; ; ; ; ; ; ; \\url{<https://core.ac.uk/download/83929853.pdf>
+; ; ; ; ; ; ; ; \url{<https://core.ac.uk/download/83929853.pdf>
 </td>
 <td style="text-align:left;">
 NA
@@ -1443,7 +1429,7 @@ Total
 </tbody>
 </table>
 
-## 4. Data retrieved (N=34+5)
+## 4. Data retrieved (N=34+8)
 
 From the 102 studies where data was requested, we received the data for
 34:
@@ -1499,7 +1485,7 @@ Total
 </tbody>
 </table>
 
-In addition, we received data through snowballing, for a further 5
+In addition, we received data through snowballing, for a further 8
 studies:
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1522,10 +1508,10 @@ percent
 Education
 </td>
 <td style="text-align:right;">
-4
+5
 </td>
 <td style="text-align:left;">
-80.0%
+62.5%
 </td>
 </tr>
 <tr>
@@ -1533,10 +1519,10 @@ Education
 Other
 </td>
 <td style="text-align:right;">
-1
+3
 </td>
 <td style="text-align:left;">
-20.0%
+37.5%
 </td>
 </tr>
 <tr>
@@ -1544,7 +1530,7 @@ Other
 Total
 </td>
 <td style="text-align:right;">
-5
+8
 </td>
 <td style="text-align:left;">
 100.0%
@@ -1553,7 +1539,213 @@ Total
 </tbody>
 </table>
 
+The proportions of Education and Other studies was similar in each case:
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+category
+</th>
+<th style="text-align:left;">
+Lens search
+</th>
+<th style="text-align:left;">
+Snowballing
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Education
+</td>
+<td style="text-align:left;">
+26 (76%)
+</td>
+<td style="text-align:left;">
+5 (62%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:left;">
+8 (24%)
+</td>
+<td style="text-align:left;">
+3 (38%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:left;">
+34 (100%)
+</td>
+<td style="text-align:left;">
+8 (100%)
+</td>
+</tr>
+</tbody>
+</table>
+
+### Number of datasets
+
+Some of the studies included data from multiple judging sessions.
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+judging_sessions
+</th>
+<th style="text-align:right;">
+studies
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+42
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+category
+</th>
+<th style="text-align:left;">
+Lens search
+</th>
+<th style="text-align:left;">
+snowballing
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Education
+</td>
+<td style="text-align:left;">
+46 (69%)
+</td>
+<td style="text-align:left;">
+33 (87%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:left;">
+21 (31%)
+</td>
+<td style="text-align:left;">
+5 (13%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:left;">
+67 (100%)
+</td>
+<td style="text-align:left;">
+38 (100%)
+</td>
+</tr>
+</tbody>
+</table>
+
+## Summary flowchart
+
     ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 
-<div id="htmlwidget-c843146c456cd09caa3e" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c843146c456cd09caa3e">{"x":{"diagram":"\ndigraph graph2 {\n\ngraph [layout = dot]\n\n# node definitions with substituted label text\nnode [shape = rectangle, width = 4, fillcolor = Biege]\nstep1 [label = \"Records identified from lens.org (n = 1538)\", fontname = \"Arial\"]\nstep2 [label = \"Records screened (n = 1538)\", fontname = \"Arial\"]\nstep3 [label = \"Reports assessed for eligibility (n = 205)\", fontname = \"Arial\"]\nstep4 [label = \"Reports identified as eligible (n = 102)\", fontname = \"Arial\"]\nstep5 [label = \"Data obtained (n = 34)\", fontname = \"Arial\"]\nstep2out [label = \"Records excluded: \n Not in English (n=72)\nNot Relevant (n=1129)\nTheoretical (n=132)\", fontname = \"Arial\"]\nstep3out [label = \"Reports excluded (n = 103)\", fontname = \"Arial\"]\n\n# make the exclusions appear on the same level as their step\nsubgraph { rank = same; step2; step2out }\nsubgraph { rank = same; step3; step3out }\n\nstep1 -> step2 -> step3 -> step4 -> step5\nstep2 -> step2out\nstep3 -> step3out\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-de6f191066efea9fdfa2" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-de6f191066efea9fdfa2">{"x":{"diagram":"digraph graph2 {\n\ngraph [layout = dot]\n\n# node definitions with substituted label text\nnode [shape = rectangle, width = 4, fillcolor = Biege, fontname = \"Arial\"]\nstep1 [label = \"Records identified from lens.org (n = 1538)\"]\nstep2 [label = \"Records screened (n = 1538)\"]\nstep3 [label = \"Reports assessed for eligibility (n = 205)\"]\nstep4 [label = \"Reports identified as eligible (n = 102)\"]\nstep5 [label = \"Data obtained (n = 34)\n(67 datasets)\"]\nstep2out [label = \"Records excluded: \\n Not in English (n=72)\nNot Relevant (n=1129)\nTheoretical (n=132)\"]\nstep3out [label = \"Reports excluded (n = 103)\"]\nsnowball [label = \"Additional reports identified (n = 8)\n(38 datasets)\"]\nfinal [label = \"Reports included in the analysis (n = 42)\n(105 datasets)\"]\n\n# make the exclusions appear on the same level as their step\nsubgraph { rank = same; step2; step2out }\nsubgraph { rank = same; step3; step3out }\nsubgraph { rank = same; step5; snowball }\n\nstep1 -> step2 -> step3 -> step4 -> step5\nstep2 -> step2out\nstep3 -> step3out\nsnowball -> final\nstep5 -> final\n\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+![Flowchart](flowchart.svg)

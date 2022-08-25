@@ -4,7 +4,6 @@ author: "George Kinnear"
 date: "2022-08-03"
 always_allow_html: true
 output:
-  html_document: default
   github_document: default
 ---
 
@@ -117,9 +116,9 @@ all_papers_in_screening %>%
   basic_kable()
 ```
 
-## 4. Data retrieved (N=33+8)
+## 4. Data retrieved (N=34+8)
 
-From the 102 studies where data was requested, we received the data for 33:
+From the 102 studies where data was requested, we received the data for 34:
 
 ```{r}
 all_papers_in_screening %>% 
@@ -140,6 +139,52 @@ all_papers_in_screening %>%
   janitor::adorn_pct_formatting(,,,,"percent") %>% 
   basic_kable()
 ```
+
+The proportions of Education and Other studies was similar in each case:
+
+```{r}
+all_papers_in_screening %>% 
+  filter(data_retrieved == TRUE) %>% 
+  janitor::tabyl(category, source) %>% 
+  janitor::adorn_totals() %>% 
+  janitor::adorn_percentages(denominator = "col") %>% 
+  janitor::adorn_pct_formatting(digits = 0) %>% 
+  janitor::adorn_ns(position = "front") %>% 
+  basic_kable()
+```
+
+
+### Number of datasets
+
+Some of the studies included data from multiple judging sessions.
+
+```{r}
+judging_sessions_summary <- read_csv("../data/00-judging_sessions_summary.csv", show_col_types = FALSE)
+
+judging_sessions_summary %>% 
+  group_by(project_id) %>% 
+  tally(name = "judging_sessions") %>% 
+  group_by(judging_sessions) %>% 
+  tally(name = "studies") %>% 
+  janitor::adorn_totals() %>% 
+  basic_kable()
+```
+
+```{r}
+judging_sessions_summary %>% 
+  mutate(source = ifelse(is.na(source), "Lens search", source)) %>% 
+  left_join(all_papers_in_screening %>% select(project_id, category), by = "project_id") %>% 
+  janitor::tabyl(category, source) %>% 
+  janitor::adorn_totals() %>% 
+  janitor::adorn_percentages(denominator = "col") %>% 
+  janitor::adorn_pct_formatting(digits = 0) %>% 
+  janitor::adorn_ns(position = "front") %>% 
+  basic_kable()
+```
+
+
+
+## Summary flowchart
 
 ```{r}
 # Define some sample data
@@ -179,11 +224,11 @@ step1 [label = 'Records identified from lens.org (n = {data$step1})']
 step2 [label = 'Records screened (n = {data$step1})']
 step3 [label = 'Reports assessed for eligibility (n = {data$step2})']
 step4 [label = 'Reports identified as eligible (n = {data$step3})']
-step5 [label = 'Data obtained (n = {data$step4})']
+step5 [label = 'Data obtained (n = {data$step4})\n({nrow(judging_sessions_summary %>% filter(is.na(source)))} datasets)']
 step2out [label = 'Records excluded: \\n {step2outdata}']
 step3out [label = 'Reports excluded (n = {data$step2 - data$step3})']
-snowball [label = 'Additional reports identified (n = {data$snowball})']
-final [label = 'Final dataset (n = {data$final})']
+snowball [label = 'Additional reports identified (n = {data$snowball})\n({nrow(judging_sessions_summary %>% filter(source == 'snowballing'))} datasets)']
+final [label = 'Reports included in the analysis (n = {data$final})\n({nrow(judging_sessions_summary)} datasets)']
 
 # make the exclusions appear on the same level as their step
 subgraph {{ rank = same; step2; step2out }}
@@ -208,3 +253,5 @@ rsvg::rsvg_pdf(svg = "flowchart.svg", file = "flowchart.pdf")
 
 flowchart
 ```
+
+![Flowchart](flowchart.svg)
