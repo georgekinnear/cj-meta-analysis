@@ -242,10 +242,78 @@ elo_values <- judgement_data_tidy %>%
   select(judging_session, starts_with("mean_eloR"))
 
 
+#### Pairs judged ####
+
+
+#1. helper function ----
+compute_pairs_judged <- function(csv_contents, judging_session, ...) {
+  print(judging_session)
+  # make sure the cache folder exists for this judging session
+  dir.create(file.path("data-cache", judging_session), showWarnings = FALSE)
+  cache_file <- paste0("data-cache/", judging_session, "/pairs_results.csv")
+  
+  if(file.exists(cache_file)) {
+    pairs_cached = read_csv(cache_file, show_col_types = FALSE)
+    print(str_glue("  ✔ retrieved from cache"))
+    
+    return(list(pairs_cached))
+  } else {
+    items <- csv_contents %>%
+      pivot_longer(
+        cols = c("won", "lost"),
+        names_to = "outcome",
+        values_to = "script"
+      ) %>%
+      select(script) %>%
+      distinct()
+    all_pairs <- items %>% 
+      expand(script, script) %>%
+      rename(item1 = 1, item2 = 2) %>%
+      filter(item1 < item2)
+    observed_pairs <- csv_contents %>% 
+      mutate(decision_num = row_number()) %>%
+      pivot_longer(
+        cols = c("won", "lost"),
+        names_to = "outcome",
+        values_to = "script"
+      ) %>%
+      arrange(decision_num, script) %>%
+      group_by(decision_num) %>%
+      mutate(item = ifelse(row_number() == 1, "item1", "item2")) %>%
+      ungroup() %>%
+      select(-outcome) %>%
+      pivot_wider(names_from = "item", values_from = "script") %>%
+      filter(item1 != item2) %>% 
+      group_by(item1, item2) %>%
+      tally()
+    
+    pairs_data <- tibble(
+      num_pairs = nrow(all_pairs),
+      num_pairs_judged = nrow(observed_pairs),
+      prop_pairs_judged = num_pairs_judged / num_pairs
+    )
+    
+    pairs_data %>% write_csv(file = cache_file)
+    
+    return(list(pairs_data))
+    
+  }
+  
+}
+
+#2. iterate over all judging sessions ----
+
+pairs_values <- judgement_data_tidy %>% 
+  filter(!is.na(observed_N_A)) %>% 
+  mutate(pairs = pmap_dfr(., compute_pairs_judged)) %>% 
+  unnest(cols = pairs) %>%
+  select(judging_session, contains("_pairs"))
+
 
 #### 🏗️ Assemble all the data ####
 
 ssr_values %>% 
   left_join(split_halves_values, by = "judging_session") %>% 
   left_join(elo_values, by = "judging_session") %>% 
+  left_join(pairs_values, by = "judging_session") %>% 
   write_csv("data/01-meta-analysis-data.csv")

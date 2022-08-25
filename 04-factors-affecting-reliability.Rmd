@@ -29,12 +29,13 @@ basic_kable = function(df, ...) {
 
 ```{r}
 cj_sessions <- read_csv("data/00-judging_sessions_summary.csv", show_col_types = FALSE)
-reliability_stats <- read_csv("data/01-reliability-values.csv", show_col_types = FALSE)
+reliability_stats <- read_csv("data/01-meta-analysis-data.csv", show_col_types = FALSE)
 
 meta_analysis_data <- cj_sessions %>% 
   left_join(reliability_stats, by = "judging_session")
 
-source("00-load-all-judgement-data.R")
+# avoid having to load all the judgement data, by pre-computing the stats in 02-computation.R and loading the results from the 01-meta-analysis-data.csv above.
+# source("00-load-all-judgement-data.R")
 ```
 
 The judging sessions in the sample span a wide range of number of judgements made:
@@ -71,52 +72,7 @@ Here we compute the number of possible pairs in each judging session, and compar
 
 ```{r}
 # TODO - this is computationally a bit heavy, so maybe move it to 02-computation and cache the results
-comparison_matrices <- judgement_data_tidy %>%
-  #head() %>%
-  filter(observed_N_C > 0) %>% 
-  transmute(
-    judging_session = judging_session,
-    observed_N_R,
-    items = map(
-      csv_contents,
-      ~ .x %>% pivot_longer(
-          cols = c("won", "lost"),
-          names_to = "outcome",
-          values_to = "script"
-        ) %>% 
-        select(script) %>% 
-        distinct()
-    ),
-    pairs_judged = map(
-      csv_contents,
-      ~ .x %>% mutate(decision_num = row_number()) %>%
-        pivot_longer(
-          cols = c("won", "lost"),
-          names_to = "outcome",
-          values_to = "script"
-        ) %>%
-        arrange(decision_num, script) %>%
-        group_by(decision_num) %>%
-        mutate(item = ifelse(row_number() == 1, "item1", "item2")) %>%
-        ungroup() %>%
-        select(-outcome) %>%
-        pivot_wider(names_from = "item", values_from = "script") %>%
-        filter(item1 != item2) %>% 
-        group_by(item1, item2) %>%
-        tally()
-    )
-  ) %>% 
-  mutate(
-    all_pairs = map(
-      items,
-      ~ .x %>% expand(script, script) %>%
-        rename(item1 = 1, item2 = 2) %>%
-        filter(item1 < item2)
-    ), 
-    num_pairs = map_int(all_pairs, nrow),
-    num_pairs_judged = map_int(pairs_judged, nrow),
-    prop_pairs_judged = num_pairs_judged / num_pairs
-  )
+
 ```
 
 There is a bimodal pattern. Most commonly, all (or nearly all) pairs are judged. But another common case is for only around 10% of possible pairs to be judged.
