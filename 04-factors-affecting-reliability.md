@@ -25,23 +25,40 @@ possible pairs to judge.
 Perhaps a factor that influences reliability is how many of these
 possible pairs are actually considered by judges?
 
-Here we compute the number of possible pairs in each judging session,
-and compare that with the actual number of pairs that were seen by
-judges:
+We compute the number of possible pairs in each judging session, and
+compare that with the actual number of pairs that were seen by judges.
 
 There is a bimodal pattern. Most commonly, all (or nearly all) pairs are
 judged. But another common case is for only around 10% of possible pairs
 to be judged.
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](figs-web/04-factors-affecting-reliability/prop-judged-1.png)<!-- -->
 
 The proportion of pairs judged does not seem to have a relationship with
 reliability:
 
-    ## Warning: Removed 4 rows containing non-finite values (stat_smooth).
-
-    ## Warning: Removed 4 rows containing missing values (geom_point).
-
 ![](figs-web/04-factors-affecting-reliability/propjudged-vs-splithalves-1.png)<!-- -->
+
+# Number of comparisons per representation
+
+This is considered important by Verhavert (2019).
+
+But an initial look at our data suggest it’s not so closely linked to
+split-halves:
+
+    ## Warning: Removed 8 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 8 rows containing missing values (geom_point).
+
+![](figs-web/04-factors-affecting-reliability/ncr-splithalves-1.png)<!-- -->
+
+Same with SSR:
+
+    ## Warning: Removed 8 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 8 rows containing missing values (geom_point).
+
+![](figs-web/04-factors-affecting-reliability/ncr-ssr-1.png)<!-- -->
+
+Unlike the Verhavert (2019) sample, we seem to have many judging
+sessions with low N_CR yet high reliability.

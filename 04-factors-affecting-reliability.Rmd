@@ -41,15 +41,12 @@ meta_analysis_data <- cj_sessions %>%
 The judging sessions in the sample span a wide range of number of judgements made:
 
 ```{r num-judgements}
-judgement_data %>% 
-  group_by(judging_session) %>% 
-  count(name = "num_judgements") %>% 
-  mutate(log10_judgements = log(num_judgements, base = 10)) %>% 
-  ggplot(aes(x = num_judgements)) +
+meta_analysis_data %>% 
+  filter(observed_N_C > 0) %>% 
+  ggplot(aes(x = observed_N_C)) +
   geom_histogram(bins = 30) +
-  #scale_x_continuous(trans='log10')
-  scale_x_log10(breaks = scales::trans_breaks("log10", function(x) 10^x),
-              labels = scales::trans_format("log10", scales::math_format(10^.x)))
+  scale_x_continuous(trans='log10', labels = scales::trans_format("log10", scales::math_format(10^.x))) +
+  labs(x = "Number of items being judged")
 ```
 There is also a wide range of numbers of items in the different judging sessions - from a handful to a maximum of `r max(meta_analysis_data$observed_N_R, na.rm = TRUE)`.
 
@@ -68,20 +65,16 @@ For a judging session with $N$ items, there are $\frac{N(N-1)}{2}$ possible pair
 
 Perhaps a factor that influences reliability is how many of these possible pairs are actually considered by judges?
 
-Here we compute the number of possible pairs in each judging session, and compare that with the actual number of pairs that were seen by judges:
-
-```{r}
-# TODO - this is computationally a bit heavy, so maybe move it to 02-computation and cache the results
-
-```
+We compute the number of possible pairs in each judging session, and compare that with the actual number of pairs that were seen by judges.
 
 There is a bimodal pattern. Most commonly, all (or nearly all) pairs are judged. But another common case is for only around 10% of possible pairs to be judged.
 
 ```{r prop-judged}
-comparison_matrices %>% 
+meta_analysis_data %>% 
+  filter(!is.na(num_pairs)) %>% 
   select(judging_session, num_pairs, num_pairs_judged, prop_pairs_judged) %>% 
   ggplot(aes(x = prop_pairs_judged)) +
-  geom_histogram() +
+  geom_histogram(binwidth = 0.05) +
   labs(x = "Proportion of pairs judged")
 ```
 
@@ -89,7 +82,7 @@ The proportion of pairs judged does not seem to have a relationship with reliabi
 
 ```{r propjudged-vs-splithalves}
 meta_analysis_data %>% 
-  left_join(comparison_matrices %>% select(judging_session, prop_pairs_judged), by = "judging_session") %>% 
+  filter(!is.na(prop_pairs_judged)) %>% 
   ggplot(aes(x = prop_pairs_judged, y = mean_split_corr)) +
   geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
   geom_point() +
@@ -99,3 +92,36 @@ meta_analysis_data %>%
   labs(x = "Proportion of pairs judged", y = "Mean split-halves correlation")
 ```
 
+# Number of comparisons per representation
+
+This is considered important by Verhavert (2019).
+
+But an initial look at our data suggest it's not so closely linked to split-halves:
+
+```{r ncr-splithalves}
+meta_analysis_data %>% 
+  filter(!is.na(observed_N_C)) %>% 
+  mutate(N_CR = observed_N_C / observed_N_R) %>% 
+  ggplot(aes(x = N_CR, y = mean_split_corr)) +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x") +
+  xlim(c(0,250)) +
+  labs(x = "Number of comparisons per representation", y = "Mean split-halves correlation")
+```
+
+Same with SSR:
+
+```{r ncr-ssr}
+meta_analysis_data %>% 
+  filter(!is.na(observed_N_C)) %>% 
+  mutate(N_CR = observed_N_C / observed_N_R) %>% 
+  ggplot(aes(x = N_CR, y = ssr)) +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x") +
+  xlim(c(0,250)) +
+  labs(x = "Number of comparisons per representation", y = "SSR")
+```
+
+Unlike the Verhavert (2019) sample, we seem to have many judging sessions with low N_CR yet high reliability.
