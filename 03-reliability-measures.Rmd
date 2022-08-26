@@ -77,21 +77,46 @@ meta_analysis_data %>%
   basic_kable(digits = 3)
 ```
 
-There are a few sessions with very low (<0.7) mean split-halves reliability:
+# Low mean split-halves reliability
+
+These sessions have split-halves reliability below 0.7.
+
+The `N_CR` column shows the "number of comparisons per representation", i.e. `N_C/N_R`.
 
 ```{r}
-meta_analysis_data %>% 
+low_splithalves <- meta_analysis_data %>% 
   filter(mean_split_corr < 0.7) %>% 
   select(judging_session, starts_with("observed"), mean_split_corr, ssr) %>% 
-  mutate(N_CR = observed_N_C/observed_N_R) %>% 
-  arrange(N_CR) %>% 
+  purrr::set_names(~ str_remove(., "observed_")) %>% 
+  mutate(N_CR = N_C/N_R, .after = "N_C") %>% 
+  arrange(mean_split_corr)
+
+low_splithalves %>% 
   basic_kable(digits = 3)
 ```
 
-> *TODO* -- plot it?
+Omitting the three sessions with N_CR = 400:
 
-# SSR vs EloChoice
+```{r low-splithaves}
+low_splithalves %>% 
+  ggplot(aes(y = mean_split_corr, x = N_CR)) +
+  geom_point() +
+  xlim(c(0,100))
+```
 
+# EloChoice
+
+Here we look at how the EloChoice results compare with the Bradley-Terry ones.
+
+## Reliability
+
+First of all, how does the measure of reliability in EloChoice compare with SSR/split-halves?
+
+There are two reliability measures proposed for EloChoice: see discussion in https://cran.r-project.org/web/packages/EloChoice/vignettes/EloChoice-tutorial.html
+
+We use the weighted version, $R'$, computed based on 1000 iterations.
+
+### SSR vs EloChoice
 
 ```{r ssr-vs-elo}
 meta_analysis_data %>% 
@@ -109,8 +134,7 @@ meta_analysis_data %>%
   labs(x = "SSR", y = "Mean EloChoice R (weighted)")
 ```
 
-# EloChoice cs split-halves
-
+### Split-halves vs EloChoice
 
 ```{r splithalves-vs-elo}
 meta_analysis_data %>% 
@@ -127,3 +151,52 @@ meta_analysis_data %>%
   ylim(c(0,1)) +
   labs(x = "Mean split-halves", y = "Mean EloChoice R (weighted)")
 ```
+
+## Scores
+
+How do the scores produced by EloChoice compare with those from Bradley-Terry?
+
+Previous work has found high agreement:
+
+* 0.95 and 0.94 in Clark et al. (2018) https://doi.org/10.1371/journal.pone.0190393
+* Kendall's tau score of 0.96 for rank orders in Gray et al. (2022) https://doi.org/10.48550/arXiv.2204.01805
+
+```{r elobtmcorr-histogram}
+meta_analysis_data %>% 
+  filter(!is.na(elo_btm_correlation)) %>% 
+  ggplot(aes(x = elo_btm_correlation)) +
+  geom_histogram(binwidth = 0.01)
+```
+
+```{r}
+meta_analysis_data %>% 
+  filter(elo_btm_correlation < 0.9) %>% 
+  arrange(-elo_btm_correlation) %>% 
+  select(elo_btm_correlation, judging_session, starts_with("observed_"), mean_eloR_weighted, mean_split_corr, ssr) %>% 
+  basic_kable()
+```
+
+The $R'$ measure is quite low for all of those.
+
+Looking at the relationship of $R'$ with the Elo-BTM correlation:
+
+```{r elo-reliability-vs-btmcorr}
+meta_analysis_data %>% 
+  filter(!is.na(elo_btm_correlation)) %>% 
+  ggplot(aes(x = mean_eloR_weighted, y = elo_btm_correlation)) +
+  geom_point()
+```
+
+It's odd that there are some judging sessions with low $R'$ but high correlation of Elo and BTM scores.
+
+```{r}
+meta_analysis_data %>% 
+  filter(elo_btm_correlation > 0.95, mean_eloR_weighted < 0.6) %>% 
+  arrange(-elo_btm_correlation) %>% 
+  select(elo_btm_correlation, judging_session, starts_with("observed_"), mean_eloR_weighted, mean_split_corr, ssr) %>% 
+  basic_kable()
+```
+
+Those ones all seem to have a small number of representations - so perhaps the $R'$ measure is systematically underestimating reliability in those cases.
+
+

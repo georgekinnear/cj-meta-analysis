@@ -56,7 +56,7 @@ compute_btm <- function(csv_contents, judging_session, seed = 123, ...) {
 
 # 2. iterate over the judging sessions ----
 
-judgement_data_tidy %>% 
+btm_data <- judgement_data_tidy %>% 
   filter(!is.na(observed_N_A)) %>% 
   # could optionally specify a seed, but the default of 123 provided by compute_btm is fine
   # mutate(seed = digest::digest2int(judging_session) %>% abs) %>% 
@@ -233,14 +233,42 @@ compute_elo <- function(csv_contents, judging_session, seed = 123, ...) {
 
 #2. iterate over all judging sessions ----
 
-elo_values <- judgement_data_tidy %>% 
+elo_data <- judgement_data_tidy %>% 
   filter(!is.na(observed_N_A)) %>% 
   filter(!str_detect(judging_session, "Jones2020")) %>% 
   mutate(elo = pmap_dfr(., compute_elo)) %>% 
-  unnest(cols = elo) %>%
+  unnest(cols = elo)
+  
+elo_values <- elo_data %>% 
   unnest(cols = elo_reliability) %>%  
   select(judging_session, starts_with("mean_eloR"))
 
+#3. compare scores with BTM
+elo_scores <- elo_data %>%
+  select(judging_session, elo_estimates) %>% 
+  mutate(elo_estimates = purrr::map(elo_estimates, ~ .x %>% mutate(name = as.character(name)))) %>% 
+  unnest(cols = elo_estimates) %>% 
+  rename(elo_score = value)
+
+btm_scores <- btm_data %>%
+  select(judging_session, btm_estimates) %>%
+  mutate(btm_estimates = purrr::map(
+    btm_estimates,
+    ~ .x %>%
+      transmute(name = as.character(individual),
+                btm_score = theta)
+  )) %>% 
+  unnest(cols = btm_estimates)
+
+elo_vs_btm <- elo_scores %>%
+  left_join(
+    btm_scores,
+    by = c("judging_session", "name")
+  ) %>% 
+  group_by(judging_session) %>% 
+  summarise(
+    elo_btm_correlation = cor(elo_score, btm_score)
+  )
 
 #### Pairs judged ####
 
@@ -316,4 +344,5 @@ ssr_values %>%
   left_join(split_halves_values, by = "judging_session") %>% 
   left_join(elo_values, by = "judging_session") %>% 
   left_join(pairs_values, by = "judging_session") %>% 
+  left_join(elo_vs_btm, by = "judging_session") %>% 
   write_csv("data/01-meta-analysis-data.csv")
