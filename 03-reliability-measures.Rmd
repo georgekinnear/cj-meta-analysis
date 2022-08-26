@@ -29,7 +29,7 @@ basic_kable = function(df, ...) {
 
 ```{r}
 cj_sessions <- read_csv("data/00-judging_sessions_summary.csv", show_col_types = FALSE)
-reliability_stats <- read_csv("data/01-reliability-values.csv", show_col_types = FALSE)
+reliability_stats <- read_csv("data/01-meta-analysis-data.csv", show_col_types = FALSE)
 
 meta_analysis_data <- cj_sessions %>% 
   left_join(reliability_stats, by = "judging_session")
@@ -77,14 +77,18 @@ meta_analysis_data %>%
   basic_kable(digits = 3)
 ```
 
-There are a few sessions with very low (<0.5) mean split-halves reliability:
+There are a few sessions with very low (<0.7) mean split-halves reliability:
 
 ```{r}
 meta_analysis_data %>% 
-  filter(mean_split_corr < 0.5) %>% 
+  filter(mean_split_corr < 0.7) %>% 
   select(judging_session, starts_with("observed"), mean_split_corr, ssr) %>% 
+  mutate(N_CR = observed_N_C/observed_N_R) %>% 
+  arrange(N_CR) %>% 
   basic_kable(digits = 3)
 ```
+
+> *TODO* -- plot it?
 
 # SSR vs EloChoice
 
