@@ -74,23 +74,6 @@
     adaptivity: no
 
   
-- project_id: StadthagenGonzalez2017
-  citation: Stadthagen-González, H., López, L., Couto, M. C. P., & Párraga, C. A.
-    (2018). Using two-alternative forced choice tasks and Thurstone’s law of comparative
-    judgments for code-switching research. Linguistic Approaches to Bilingualism, 8(1),
-    67-97.
-  doi: 10.1075/lab.16030.sta
-  open_data: no
-  note: "TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/12"
-  judging_sessions:
-  - N_A: 42
-    N_R: ??
-    N_J: 126 (plus some more) 
-    items: Acceptibility of non-native speaker sentence constructions
-    judge_expertise: Expert
-    judging_prompt: Pick the 'sentence' closer to the way you would speak to another bilingual person
-    adaptivity: no 
-    
 - project_id: StadthagenGonzalez2019
   citation: "Stadthagen-González, H., Parafita Couto, M. C., Párraga, C. A., & Damian, M. F. (2019). Testing alternative theoretical accounts of code-switching: Insights from comparative judgments of adjective–noun order. International Journal of Bilingualism, 23(1), 200-220."
   doi: 10.1177/1367006917728390
