@@ -1429,10 +1429,10 @@ Total
 </tbody>
 </table>
 
-## 4. Data retrieved (N=34+8)
+## 4. Data retrieved (N=33+8)
 
 From the 102 studies where data was requested, we received the data for
-34:
+33:
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1457,7 +1457,7 @@ Education
 26
 </td>
 <td style="text-align:left;">
-76.5%
+78.8%
 </td>
 </tr>
 <tr>
@@ -1465,10 +1465,10 @@ Education
 Other
 </td>
 <td style="text-align:right;">
-8
+7
 </td>
 <td style="text-align:left;">
-23.5%
+21.2%
 </td>
 </tr>
 <tr>
@@ -1476,7 +1476,7 @@ Other
 Total
 </td>
 <td style="text-align:right;">
-34
+33
 </td>
 <td style="text-align:left;">
 100.0%
@@ -1561,7 +1561,7 @@ Snowballing
 Education
 </td>
 <td style="text-align:left;">
-26 (76%)
+26 (79%)
 </td>
 <td style="text-align:left;">
 5 (62%)
@@ -1572,7 +1572,7 @@ Education
 Other
 </td>
 <td style="text-align:left;">
-8 (24%)
+7 (21%)
 </td>
 <td style="text-align:left;">
 3 (38%)
@@ -1583,7 +1583,7 @@ Other
 Total
 </td>
 <td style="text-align:left;">
-34 (100%)
+33 (100%)
 </td>
 <td style="text-align:left;">
 8 (100%)
@@ -1613,7 +1613,7 @@ studies
 1
 </td>
 <td style="text-align:right;">
-20
+19
 </td>
 </tr>
 <tr>
@@ -1645,20 +1645,12 @@ studies
 5
 </td>
 <td style="text-align:right;">
-1
+2
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 7
-</td>
-<td style="text-align:right;">
-1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-8
 </td>
 <td style="text-align:right;">
 1
@@ -1685,7 +1677,7 @@ studies
 Total
 </td>
 <td style="text-align:right;">
-42
+41
 </td>
 </tr>
 </tbody>
@@ -1710,7 +1702,7 @@ snowballing
 Education
 </td>
 <td style="text-align:left;">
-46 (69%)
+46 (73%)
 </td>
 <td style="text-align:left;">
 33 (87%)
@@ -1721,7 +1713,7 @@ Education
 Other
 </td>
 <td style="text-align:left;">
-21 (31%)
+17 (27%)
 </td>
 <td style="text-align:left;">
 5 (13%)
@@ -1732,7 +1724,7 @@ Other
 Total
 </td>
 <td style="text-align:left;">
-67 (100%)
+63 (100%)
 </td>
 <td style="text-align:left;">
 38 (100%)
@@ -1742,10 +1734,5 @@ Total
 </table>
 
 ## Summary flowchart
-
-    ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
-
-<div id="htmlwidget-de6f191066efea9fdfa2" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-de6f191066efea9fdfa2">{"x":{"diagram":"digraph graph2 {\n\ngraph [layout = dot]\n\n# node definitions with substituted label text\nnode [shape = rectangle, width = 4, fillcolor = Biege, fontname = \"Arial\"]\nstep1 [label = \"Records identified from lens.org (n = 1538)\"]\nstep2 [label = \"Records screened (n = 1538)\"]\nstep3 [label = \"Reports assessed for eligibility (n = 205)\"]\nstep4 [label = \"Reports identified as eligible (n = 102)\"]\nstep5 [label = \"Data obtained (n = 34)\n(67 datasets)\"]\nstep2out [label = \"Records excluded: \\n Not in English (n=72)\nNot Relevant (n=1129)\nTheoretical (n=132)\"]\nstep3out [label = \"Reports excluded (n = 103)\"]\nsnowball [label = \"Additional reports identified (n = 8)\n(38 datasets)\"]\nfinal [label = \"Reports included in the analysis (n = 42)\n(105 datasets)\"]\n\n# make the exclusions appear on the same level as their step\nsubgraph { rank = same; step2; step2out }\nsubgraph { rank = same; step3; step3out }\nsubgraph { rank = same; step5; snowball }\n\nstep1 -> step2 -> step3 -> step4 -> step5\nstep2 -> step2out\nstep3 -> step3out\nsnowball -> final\nstep5 -> final\n\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 ![Flowchart](flowchart.svg)

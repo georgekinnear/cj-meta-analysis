@@ -82,8 +82,8 @@
 <g id="node5" class="node">
 <title>step5</title>
 <polygon fill="none" stroke="#000000" points="288,-119.0019 0,-119.0019 0,-77.7981 288,-77.7981 288,-119.0019"/>
-<text text-anchor="middle" x="144" y="-102.6" font-family="Arial" font-size="14.00" fill="#000000">Data obtained (n = 34)</text>
-<text text-anchor="middle" x="144" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">(67 datasets)</text>
+<text text-anchor="middle" x="144" y="-102.6" font-family="Arial" font-size="14.00" fill="#000000">Data obtained (n = 33)</text>
+<text text-anchor="middle" x="144" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">(63 datasets)</text>
 </g>
 <!-- step4&#45;&gt;step5 -->
 <g id="edge4" class="edge">
@@ -95,8 +95,8 @@
 <g id="node9" class="node">
 <title>final</title>
 <polygon fill="none" stroke="#000000" points="441,-41.4019 153,-41.4019 153,-.1981 441,-.1981 441,-41.4019"/>
-<text text-anchor="middle" x="297" y="-25" font-family="Arial" font-size="14.00" fill="#000000">Reports included in the analysis (n = 42)</text>
-<text text-anchor="middle" x="297" y="-8.2" font-family="Arial" font-size="14.00" fill="#000000">(105 datasets)</text>
+<text text-anchor="middle" x="297" y="-25" font-family="Arial" font-size="14.00" fill="#000000">Reports included in the analysis (n = 41)</text>
+<text text-anchor="middle" x="297" y="-8.2" font-family="Arial" font-size="14.00" fill="#000000">(101 datasets)</text>
 </g>
 <!-- step5&#45;&gt;final -->
 <g id="edge8" class="edge">
