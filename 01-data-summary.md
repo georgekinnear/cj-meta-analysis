@@ -51,23 +51,6 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
-StadthagenGonzalez2017
-</td>
-<td style="text-align:left;">
-Stadthagen-González, H., López, L., Couto, M. C. P., & Párraga, C. A.
-(2018). Using two-alternative forced choice tasks and Thurstone’s law of
-comparative judgments for code-switching research. Linguistic Approaches
-to Bilingualism, 8(1), 67-97.
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.1075/lab.16030.sta" style="     ">https://doi.org/10.1075/lab.16030.sta</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 StadthagenGonzalez2019
 </td>
 <td style="text-align:left;">
@@ -401,7 +384,7 @@ work using comparative judgment: The moderating role of decision
 accuracy. In Frontiers in Education (Vol. 2, p. 44). Frontiers.
 </td>
 <td style="text-align:left;">
-FALSE
+<https://osf.io/7etq2/> Ch8\>Data\>01)Raw Data
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.3389/feduc.2017.00044" style="     ">https://doi.org/10.3389/feduc.2017.00044</a>
@@ -751,10 +734,10 @@ percent
 No
 </td>
 <td style="text-align:right;">
-33
+31
 </td>
 <td style="text-align:left;">
-78.6%
+75.6%
 </td>
 </tr>
 <tr>
@@ -762,10 +745,10 @@ No
 Yes
 </td>
 <td style="text-align:right;">
-9
+10
 </td>
 <td style="text-align:left;">
-21.4%
+24.4%
 </td>
 </tr>
 </tbody>
@@ -1064,14 +1047,7 @@ Smith2020
 Spehar2016
 </td>
 <td style="text-align:left;">
-Grayscale<br>Threshold<br>EdgesOnly<br>expt2-Edges<br>expt2-Fracts<br>expt2-Mountain<br>expt2-Plain<br>expt2-Thr
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-StadthagenGonzalez2017
-</td>
-<td style="text-align:left;">
+expt2-Edges<br>expt2-Fracts<br>expt2-Mountain<br>expt2-Plain<br>expt2-Thr
 </td>
 </tr>
 <tr>
@@ -1113,7 +1089,7 @@ All the judgement data is stored in the `data` folder, with filenames
 corresponding to the `project_id` (and for papers with multiple CJ
 sessions, the `study` within that project, e.g. `Bisson2016_stats.csv`).
 
-## Issues with the data
+### Data matches with the paper
 
 These ones all have
 ![N_R](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;N_R "N_R")
@@ -2648,6 +2624,121 @@ Smith2020
 </tr>
 <tr>
 <td style="text-align:left;">
+Spehar2016_expt2-Edges
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+3600
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Fracts
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+3600
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Mountain
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+3600
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Plain
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+3600
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Thr
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+3600
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 StadthagenGonzalez2019_eng-to-spa
 </td>
 <td style="text-align:right;">
@@ -3353,121 +3444,6 @@ PollittX_peer-assessment
 </tr>
 <tr>
 <td style="text-align:left;">
-Spehar2016_expt2-Edges
-</td>
-<td style="text-align:right;">
-50
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-3600
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Fracts
-</td>
-<td style="text-align:right;">
-50
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-3600
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Mountain
-</td>
-<td style="text-align:right;">
-50
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-3600
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Plain
-</td>
-<td style="text-align:right;">
-50
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-3600
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Thr
-</td>
-<td style="text-align:right;">
-50
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-3600
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-<td style="text-align:left;">
-TODO
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Zucco2019_experts
 </td>
 <td style="text-align:right;">
@@ -3541,81 +3517,6 @@ note
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;">
-Spehar2016_Grayscale
-</td>
-<td style="text-align:left;">
-Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual
-variations in aesthetic responses to fractal patterns. Frontiers in
-human neuroscience, 10, 350.
-</td>
-<td style="text-align:left;">
-Grayscale Computer-generated fractals
-</td>
-<td style="text-align:left;">
-Novice
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_Threshold
-</td>
-<td style="text-align:left;">
-Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual
-variations in aesthetic responses to fractal patterns. Frontiers in
-human neuroscience, 10, 350.
-</td>
-<td style="text-align:left;">
-Threshold Computer-generated fractals
-</td>
-<td style="text-align:left;">
-Novice
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_EdgesOnly
-</td>
-<td style="text-align:left;">
-Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual
-variations in aesthetic responses to fractal patterns. Frontiers in
-human neuroscience, 10, 350.
-</td>
-<td style="text-align:left;">
-Edge-only Computer-generated fractals
-</td>
-<td style="text-align:left;">
-Novice
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-StadthagenGonzalez2017
-</td>
-<td style="text-align:left;">
-Stadthagen-González, H., López, L., Couto, M. C. P., & Párraga, C. A.
-(2018). Using two-alternative forced choice tasks and Thurstone’s law of
-comparative judgments for code-switching research. Linguistic Approaches
-to Bilingualism, 8(1), 67-97.
-</td>
-<td style="text-align:left;">
-Acceptibility of non-native speaker sentence constructions
-</td>
-<td style="text-align:left;">
-Expert
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/12>
-</td>
 </tr>
 </tbody>
 </table>
@@ -3638,76 +3539,6 @@ note
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Edges
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Fracts
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Mountain
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Plain
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Thr
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_Grayscale
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_Threshold
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_EdgesOnly
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/11>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-StadthagenGonzalez2017
-</td>
-<td style="text-align:left;">
-TODO - see <https://github.com/georgekinnear/cj-meta-analysis/issues/12>
-</td>
 </tr>
 </tbody>
 </table>
@@ -3741,13 +3572,13 @@ valid_percent
 FALSE
 </td>
 <td style="text-align:right;">
-49
+45
 </td>
 <td style="text-align:right;">
-0.4666667
+0.4455446
 </td>
 <td style="text-align:right;">
-0.5697674
+0.5487805
 </td>
 </tr>
 <tr>
@@ -3758,10 +3589,10 @@ TRUE
 17
 </td>
 <td style="text-align:right;">
-0.1619048
+0.1683168
 </td>
 <td style="text-align:right;">
-0.1976744
+0.2073171
 </td>
 </tr>
 <tr>
@@ -3772,10 +3603,10 @@ unclear
 2
 </td>
 <td style="text-align:right;">
-0.0190476
+0.0198020
 </td>
 <td style="text-align:right;">
-0.0232558
+0.0243902
 </td>
 </tr>
 <tr>
@@ -3786,10 +3617,10 @@ unknown
 15
 </td>
 <td style="text-align:right;">
-0.1428571
+0.1485149
 </td>
 <td style="text-align:right;">
-0.1744186
+0.1829268
 </td>
 </tr>
 <tr>
@@ -3800,10 +3631,10 @@ unsure
 3
 </td>
 <td style="text-align:right;">
-0.0285714
+0.0297030
 </td>
 <td style="text-align:right;">
-0.0348837
+0.0365854
 </td>
 </tr>
 <tr>
@@ -3814,7 +3645,7 @@ NA
 19
 </td>
 <td style="text-align:right;">
-0.1809524
+0.1881188
 </td>
 <td style="text-align:right;">
 NA
@@ -3827,10 +3658,13 @@ NA
 
 Do we want to fill out details for these studies?
 
+    ## Warning in readLines(file, warn = readLines.warn): incomplete final line found
+    ## on 'data/00-projects-without-data.yml'
+
 At least, we might want to trawl through looking for open data? We
 included Jones2020 on this basis, see
 <https://github.com/georgekinnear/cj-meta-analysis/issues/2>
 
     ##                    open_data  n   percent
-    ##                        FALSE 40 0.5714286
-    ##  TODO... CHECK FOR OPEN DATA 30 0.4285714
+    ##                        FALSE 41 0.5774648
+    ##  TODO... CHECK FOR OPEN DATA 30 0.4225352

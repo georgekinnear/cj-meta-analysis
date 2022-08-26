@@ -109,7 +109,7 @@ judgement_data_tidy %>%
   write_csv("data/00-judging_sessions_summary.csv")
 ```
 
-## Issues with the data
+### Data matches with the paper
 
 These ones all have $N_R$ and $N_A$ numbers that match our records of what is reported in the paper:
 
