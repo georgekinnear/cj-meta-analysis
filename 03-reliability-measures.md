@@ -168,7 +168,7 @@ Luckett2018_coldbrew
 </tbody>
 </table>
 
-# Low mean split-halves reliability
+## Low mean split-halves reliability
 
 These sessions have split-halves reliability below 0.7.
 

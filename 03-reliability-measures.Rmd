@@ -58,15 +58,17 @@ meta_analysis_data %>%
   filter(!is.na(ssr)) %>% 
   mutate(pt_label = ifelse(mean_split_corr < 0.5 | ssr < 0.7, judging_session, "")) %>% 
   ggplot(aes(x = ssr, y = mean_split_corr, label = pt_label)) +
-  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
-  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
-  geom_point() +
-  geom_smooth(method = "lm", formula = "y ~ x") +
-  ggrepel::geom_text_repel(alpha = 0.3) +
-  geom_abline(slope = 1, intercept = 0) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
   xlim(c(0,1)) +
   ylim(c(0,1)) +
   labs(x = "SSR", y = "Mean split-halves correlation")
+
+ggsave("figs-pdf/FIG-ssr-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
 ```
 
 It is very rare for the split-halves measure to be higher than SSR:
@@ -77,7 +79,7 @@ meta_analysis_data %>%
   basic_kable(digits = 3)
 ```
 
-# Low mean split-halves reliability
+## Low mean split-halves reliability
 
 These sessions have split-halves reliability below 0.7.
 
