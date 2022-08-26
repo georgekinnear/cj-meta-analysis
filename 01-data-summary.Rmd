@@ -57,7 +57,7 @@ Judgement data was gathered from the publications/projects summarised in the tab
 
 ```{r}
 all_sessions %>% 
-  select(project_id, citation, doi, open_data) %>% 
+  select(project_id, citation, doi) %>% 
   mutate(doi = if_else(str_detect(doi, "doi.org"), doi, paste0("https://doi.org/", doi))) %>% 
   mutate(doi_link = text_spec(doi, link = doi)) %>% 
   select(-doi) %>% 
@@ -97,7 +97,35 @@ all_sessions %>%
   kable_styling()
 ```
 
-## Reading the data
+
+## Adaptivity
+
+When adding data to the repository, we checked the publication to see whether the CJ session made use of an adaptive algorithm.
+
+This was recorded as:
+
+* `adaptivity = FALSE` when the publication stated that judgements were made on randomly selected pairs
+* `adaptivity = TRUE` when the publication stated that an adaptive algorithm was used
+* `adaptivity = unknown` when we could see no details on this point in the publication
+
+```{r}
+all_sessions %>% 
+  janitor::tabyl(adaptivity) %>% 
+  kable("html", escape = FALSE) %>%
+  kable_styling()
+```
+
+## Judge expertise
+
+```{r}
+all_sessions %>% 
+  janitor::tabyl(judge_expertise) %>% 
+  kable("html", escape = FALSE) %>%
+  kable_styling()
+```
+
+
+# Reading the data
 
 All the judgement data is stored in the `data` folder, with filenames corresponding to the `project_id` (and for papers with multiple CJ sessions, the `study` within that project, e.g. `Bisson2016_stats.csv`).
 
@@ -158,19 +186,6 @@ judgement_data_tidy %>%
 
 
 # Other things to do
-
-## Adaptivity
-
-We wanted to add a note about whether the CJ method used adaptivity.
-
-```{r}
-judgement_data_tidy %>% 
-  select(judging_session, adaptivity) %>%
-  janitor::tabyl(adaptivity) %>% 
-  kable("html", escape = FALSE) %>%
-  kable_styling()
-```
-
 
 ## Projects without data
 

@@ -25,9 +25,6 @@ project_id
 citation
 </th>
 <th style="text-align:left;">
-open_data
-</th>
-<th style="text-align:left;">
 doi_link
 </th>
 </tr>
@@ -41,9 +38,6 @@ Spehar2016
 Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual
 variations in aesthetic responses to fractal patterns. Frontiers in
 human neuroscience, 10, 350.
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.3389/fnhum.2016.00350" style="     ">https://doi.org/10.3389/fnhum.2016.00350</a>
@@ -60,9 +54,6 @@ code-switching: Insights from comparative judgments of adjective–noun
 order. International Journal of Bilingualism, 23(1), 200-220.
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1177/1367006917728390" style="     ">https://doi.org/10.1177/1367006917728390</a>
 </td>
 </tr>
@@ -75,9 +66,6 @@ Vatavu, R. D., & Vanderdonckt, J. (2020, November). Design Space and
 Users’ Preferences for Smartglasses Graphical Menus: A Vignette Study.
 In 19th International Conference on Mobile and Ubiquitous
 Multimedia (pp. 1-12).
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1145/3428361.3428467" style="     ">https://doi.org/10.1145/3428361.3428467</a>
@@ -93,9 +81,6 @@ A/B tester for comparing user interface design alternatives. Proceedings
 of the ACM on Human-Computer Interaction, 3(EICS), 1-28.
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1145/3331160" style="     ">https://doi.org/10.1145/3331160</a>
 </td>
 </tr>
@@ -106,9 +91,6 @@ Ramos2021
 <td style="text-align:left;">
 Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’
 Assessments of the Explanatory Value of Proofs. Axiomathes (2021). 
-</td>
-<td style="text-align:left;">
-<https://doi.org/10.17028/rd.lboro.12458486.v1>
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/s10516-021-09545-8" style="     ">https://doi.org/10.1007/s10516-021-09545-8</a>
@@ -122,9 +104,6 @@ Smith2020
 Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused
 Research in Further Adult and Vocational Education (pp. 77-98). Palgrave
 Macmillan, Cham.
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/978-3-030-38994-9_5" style="     ">https://doi.org/10.1007/978-3-030-38994-9_5</a>
@@ -142,9 +121,6 @@ Policy. Retrieved
 from <https://cerp.aqa.org.uk/research-library/using-adaptive-comparative-judgement-obtain-highly-reliable-rank-order-summative-assessment>
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -158,9 +134,6 @@ standards. In Standard Setting in Education (pp. 279-298). Springer,
 Cham.
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1007/978-3-319-50856-6_16" style="     ">https://doi.org/10.1007/978-3-319-50856-6_16</a>
 </td>
 </tr>
@@ -170,9 +143,6 @@ PollittX
 </td>
 <td style="text-align:left;">
 Pollitt, A. (n.d.). Unpublished data.
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
@@ -188,9 +158,6 @@ evaluation preferences according to learning approaches. Elementary
 Education Online, 19 (3), 1284-1294.
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.17051/ilkonline.2020.728048" style="     ">https://doi.org/10.17051/ilkonline.2020.728048</a>
 </td>
 </tr>
@@ -202,9 +169,6 @@ Esen2019
 Esen, Y. D. (2019). Scaling the teachers’ perception of competence
 regarding measurement and evaluation. \[Unpublished Masters
 dissertation\]. Ankara University.
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
@@ -222,9 +186,6 @@ Computing Systems (pp. 2440-2448). Association for Computing Machinery
 (ACM). <https://doi.org/10.1145/3025453.3025655>
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1145/3025453.3025655" style="     ">https://doi.org/10.1145/3025453.3025655</a>
 </td>
 </tr>
@@ -237,9 +198,6 @@ Clark, A. P., Howard, K. L., Woods, A. T., Penton-Voak, I. S., &
 Neumann, C. (2018). Why rate when you could compare? Using the
 “EloChoice” package to assess pairwise comparisons of perceived physical
 strength. PloS one, 13(1), e0190393.
-</td>
-<td style="text-align:left;">
-<https://doi.org/10.17633/rd.brunel.4902977.v1>
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1371/journal.pone.0190393" style="     ">https://doi.org/10.1371/journal.pone.0190393</a>
@@ -255,9 +213,6 @@ salience using the Bradley–Terry model: An illustration with data from
 Brazil. Research & Politics, 6(1), 2053168019832089.
 </td>
 <td style="text-align:left;">
-<https://doi.org/10.7910/DVN/HJZSIM>
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1177/2053168019832089" style="     ">https://doi.org/10.1177/2053168019832089</a>
 </td>
 </tr>
@@ -271,9 +226,6 @@ of Relative Acceptability from Paired Preferences.
 <https://doi.org/10.31234/osf.io/gvq97>
 </td>
 <td style="text-align:left;">
-<https://doi.org/10.17605/OSF.IO/SGJ6N>
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.31234/osf.io/gvq97" style="     ">https://doi.org/10.31234/osf.io/gvq97</a>
 </td>
 </tr>
@@ -283,9 +235,6 @@ LuckettX
 </td>
 <td style="text-align:left;">
 Luckett, C. (n.d.) Unpublished data.
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
@@ -301,9 +250,6 @@ rigour as separate constructs in mathematical proof.
 <https://doi.org/10.35542/osf.io/egks4>
 </td>
 <td style="text-align:left;">
-<http://doi.org/10.5281/zenodo.4893915>
-</td>
-<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -314,9 +260,6 @@ Kinnear2021
 <td style="text-align:left;">
 Kinnear, G., et al. (2021). Using compative judgement \[Unpublished
 undergraduate dissertation\]. The University of Edinburgh.
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
@@ -332,9 +275,6 @@ reliability coefficient in adaptive comparative judgement. Assessment in
 Education: Principles, Policy & Practice, 26, 43–58.
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1080/0969594x.2017.1418734" style="     ">https://doi.org/10.1080/0969594x.2017.1418734</a>
 </td>
 </tr>
@@ -347,9 +287,6 @@ Settembri, P., Van Gasse, R., Coertjens, L., & De Maeyer, S. (2018).
 Oranges and Apples? Using Comparative Judgement for Reliable Briefing
 Paper Assessment in Simulation Games. In Simulations of Decision-Making
 as Active Learning Tools (pp. 93-108). Springer, Cham.
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/978-3-319-74147-5_8" style="     ">https://doi.org/10.1007/978-3-319-74147-5_8</a>
@@ -367,9 +304,6 @@ rubrics or comparative judgment. Association for Educational Assessment
 Europe Conference (Glasgow, Scotland, from 05/11/2015 to 7/11/2015).
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -382,9 +316,6 @@ van Daal, T., Lesterhuis, M., Coertjens, L., van de Kamp, M. T., Donche,
 V., & De Maeyer, S. (2017, August). The complexity of assessing student
 work using comparative judgment: The moderating role of decision
 accuracy. In Frontiers in Education (Vol. 2, p. 44). Frontiers.
-</td>
-<td style="text-align:left;">
-<https://osf.io/7etq2/> Ch8\>Data\>01)Raw Data
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.3389/feduc.2017.00044" style="     ">https://doi.org/10.3389/feduc.2017.00044</a>
@@ -401,9 +332,6 @@ Assessment Practices: Comparative Judgment as an Alternative to
 Rubrics. Teaching and Learning in Medicine, 1-11.
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1080/10401334.2021.1877709" style="     ">https://doi.org/10.1080/10401334.2021.1877709</a>
 </td>
 </tr>
@@ -416,9 +344,6 @@ Holmes, S. D., He, Q., & Meadows, M. (2017). An investigation of
 construct relevant and irrelevant features of mathematics
 problem-solving questions using comparative judgement and Kelly’s
 Repertory Grid. Research in Mathematics Education, 19(2), 112-129.
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1080/14794802.2017.1334576" style="     ">https://doi.org/10.1080/14794802.2017.1334576</a>
@@ -434,9 +359,6 @@ and Assessment of Problem Solving across GCSE Maths Sample Assessment
 Materials. <https://tinyurl.com/y8v2e4xx>
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -448,9 +370,6 @@ Davies2020a
 Davies, B., Alcock, L., & Jones, I. (2020). Comparative judgement, proof
 summaries and proof comprehension. Educational Studies in
 Mathematics, 105(2), 181-197.
-</td>
-<td style="text-align:left;">
-<https://doi.org/10.17028/rd.lboro.8940149>
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/s10649-020-09984-x" style="     ">https://doi.org/10.1007/s10649-020-09984-x</a>
@@ -466,9 +385,6 @@ by proof? A comparative-judgement study of students’ and mathematicians’
 views. The Journal of Mathematical Behavior, 61, 100824.
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1016/j.jmathb.2020.100824" style="     ">https://doi.org/10.1016/j.jmathb.2020.100824</a>
 </td>
 </tr>
@@ -480,9 +396,6 @@ Jones2013a
 Jones, I., & Alcock, L. (2014). Peer assessment without assessment
 criteria. Studies in Higher Education, 39(10), 1774–1787.
 <https://doi.org/10.1080/03075079.2013.821974>
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1080/03075079.2013.821974" style="     ">https://doi.org/10.1080/03075079.2013.821974</a>
@@ -500,9 +413,6 @@ Group for the Psychology of Mathematics Education (Vol. 3, pp. 113–120).
 IGPME.
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -515,9 +425,6 @@ Jones, I., Swan, M., & Pollitt, A. (2014). Assessing mathematical
 problem solving using comparative judgement. International Journal of
 Science and Mathematics Education, 13(1), 151–177.
 <https://doi.org/10.1007/s10763-013-9497-6>
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/s10763-013-9497-6" style="     ">https://doi.org/10.1007/s10763-013-9497-6</a>
@@ -533,9 +440,6 @@ teacher assessment. Assessment in Education: Principles, Policy &
 Practice, 22(3), 368–389. <https://doi.org/10.1080/0969594X.2014.978839>
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1080/0969594x.2014.978839" style="     ">https://doi.org/10.1080/0969594x.2014.978839</a>
 </td>
 </tr>
@@ -547,9 +451,6 @@ Jones2015a
 Jones, I., & Inglis, M. (2015). The problem of assessing problem
 solving: Can comparative judgement help? Educational Studies in
 Mathematics, 89(3), 337–355. <https://doi.org/10.1007/s10649-015-9607-1>
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/s10649-015-9607-1" style="     ">https://doi.org/10.1007/s10649-015-9607-1</a>
@@ -565,9 +466,6 @@ absolute judgement. Studies in Educational Evaluation, 47, 93–101.
 <https://doi.org/10.1016/j.stueduc.2015.09.004>
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1016/j.stueduc.2015.09.004" style="     ">https://doi.org/10.1016/j.stueduc.2015.09.004</a>
 </td>
 </tr>
@@ -581,9 +479,6 @@ of A-level mathematics: Have standards changed? British Educational
 Research Journal, 42(4), 543–560. <https://doi.org/10.1002/berj.3224>
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1002/berj.3224" style="     ">https://doi.org/10.1002/berj.3224</a>
 </td>
 </tr>
@@ -595,9 +490,6 @@ Jones2017
 Jones, I., & Sirl, D. (2017). Peer assessment of mathematical
 understanding using comparative judgement. Nordic Studies in Mathematics
 Education, 22(4), 147–164.
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
@@ -614,9 +506,6 @@ comparative judgement help? British Educational Research Journal, 45(3),
 662–680. <https://doi.org/10.1002/berj.3519>
 </td>
 <td style="text-align:left;">
-<https://lboro.figshare.com/s/2d4cfa> 142ebf1ff24841
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1002/berj.3519" style="     ">https://doi.org/10.1002/berj.3519</a>
 </td>
 </tr>
@@ -631,9 +520,6 @@ English in New Zealand. New Zealand Journal of Educational Studies,
 55(1), 49–71.
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1007/s40841-020-00163-3" style="     ">https://doi.org/10.1007/s40841-020-00163-3</a>
 </td>
 </tr>
@@ -645,9 +531,6 @@ Bisson2016
 Bisson, M.-J., Gilmore, C., Inglis, M., & Jones, I. (2016). Measuring
 conceptual understanding using comparative judgement. International
 Journal of Research in Undergraduate Mathematics Education, 2, 141–164.
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/s40753-016-0024-3" style="     ">https://doi.org/10.1007/s40753-016-0024-3</a>
@@ -664,9 +547,6 @@ Annual Conference of the Mathematics Education Research Group of
 Australasia, 41, 400–407. <https://eric.ed.gov/?id=ED592426>
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -681,9 +561,6 @@ case of differential calculus through a comparative judgement technique.
 Research in Mathematics Education, 22, 284–303.
 </td>
 <td style="text-align:left;">
-<https://doi.org/10.17028/rd.lboro.5845683.v1>
-</td>
-<td style="text-align:left;">
 <a href="https://doi.org/10.1080/14794802.2019.1692060" style="     ">https://doi.org/10.1080/14794802.2019.1692060</a>
 </td>
 </tr>
@@ -695,12 +572,6 @@ Jones2020
 Jones, S. R., Scott, C. J., Barnard, L. A., Highfield, R., Lintott, C.
 J., & Baeten, E. (2020). The visual complexity of coronal mass ejections
 follows the solar cycle. Space Weather, 18(10), e2020SW002556.
-</td>
-<td style="text-align:left;">
-The paired comparison data from “Protect our Planet from Solar Storms”
-can be found at <https://figshare.com/s/7e0270daa8153bb0416e>, and the
-code used is available
-at <https://github.com/S-hannon/complexity-solar-cycle> website
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1029/2020sw002556" style="     ">https://doi.org/10.1029/2020sw002556</a>
@@ -1083,7 +954,136 @@ legislators<br>experts
 </tbody>
 </table>
 
-## Reading the data
+## Adaptivity
+
+When adding data to the repository, we checked the publication to see
+whether the CJ session made use of an adaptive algorithm.
+
+This was recorded as:
+
+-   `adaptivity = FALSE` when the publication stated that judgements
+    were made on randomly selected pairs
+-   `adaptivity = TRUE` when the publication stated that an adaptive
+    algorithm was used
+-   `adaptivity = unknown` when we could see no details on this point in
+    the publication
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+adaptivity
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+0.6336634
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+0.1683168
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+0.1980198
+</td>
+</tr>
+</tbody>
+</table>
+
+## Judge expertise
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+judge_expertise
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:right;">
+59
+</td>
+<td style="text-align:right;">
+0.5841584
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+layperson
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+0.2277228
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+novice
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+0.1287129
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0.0594059
+</td>
+</tr>
+</tbody>
+</table>
+
+# Reading the data
 
 All the judgement data is stored in the `data` folder, with filenames
 corresponding to the `project_id` (and for papers with multiple CJ
@@ -3545,121 +3545,9 @@ note
 
 # Other things to do
 
-## Adaptivity
-
-We wanted to add a note about whether the CJ method used adaptivity.
-
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-adaptivity
-</th>
-<th style="text-align:right;">
-n
-</th>
-<th style="text-align:right;">
-percent
-</th>
-<th style="text-align:right;">
-valid_percent
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:right;">
-45
-</td>
-<td style="text-align:right;">
-0.4455446
-</td>
-<td style="text-align:right;">
-0.5487805
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:right;">
-17
-</td>
-<td style="text-align:right;">
-0.1683168
-</td>
-<td style="text-align:right;">
-0.2073171
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-unclear
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-0.0198020
-</td>
-<td style="text-align:right;">
-0.0243902
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:right;">
-15
-</td>
-<td style="text-align:right;">
-0.1485149
-</td>
-<td style="text-align:right;">
-0.1829268
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-unsure
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-0.0297030
-</td>
-<td style="text-align:right;">
-0.0365854
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-19
-</td>
-<td style="text-align:right;">
-0.1881188
-</td>
-<td style="text-align:right;">
-NA
-</td>
-</tr>
-</tbody>
-</table>
-
 ## Projects without data
 
 Do we want to fill out details for these studies?
-
-    ## Warning in readLines(file, warn = readLines.warn): incomplete final line found
-    ## on 'data/00-projects-without-data.yml'
 
 At least, we might want to trawl through looking for open data? We
 included Jones2020 on this basis, see

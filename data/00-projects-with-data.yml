@@ -333,6 +333,7 @@
     items: 'Assessment competencies, e.g. "giving effective feedback to students based on the exam results"'
     judge_expertise: expert
     judging_prompt: 'In whichever of the two fields in each line you find yourself more competent, check the box next to it. [Translation from the original Turkish]'
+    adaptivity: no
   
 - project_id: AlMaimani2017
   citation: 'Al Maimani, A. , & Roudaut, A. (2017). Frozen suit: designing a changeable
@@ -450,6 +451,7 @@
     items: samples of odors (vanillin, linalool, r-carvone, pentyl acetate, phenylethyl alcohol, methyl scalicylate)
     judge_expertise: layperson
     judging_prompt: which odor is more familiar
+    adaptivity: no
   - study: odor-pleasant
     N_A: ??
     N_R: 6
@@ -457,6 +459,7 @@
     items: samples of odors (vanillin, linalool, r-carvone, pentyl acetate, phenylethyl alcohol, methyl scalicylate)
     judge_expertise: layperson
     judging_prompt: which odor is more pleasant
+    adaptivity: no
   
 - project_id: Sangwin2021
   citation: Sangwin, C., & Kinnear, G. (2021, June 4). Investigating insight and rigour
@@ -536,6 +539,7 @@
     items: Diagnostic test questions (even-numbered)
     judge_expertise: expert
     judging_prompt: 'which question do you think Year 1 students find most difficult?'
+    adaptivity: no
   - study: experts-odd
     N_A: 10
     N_R: 10
@@ -543,6 +547,7 @@
     items: Diagnostic test questions (odd-numbered)
     judge_expertise: expert
     judging_prompt: 'which question do you think Year 1 students find most difficult?'
+    adaptivity: no
   - study: experts-withsolutions
     N_A: 13
     N_R: 20
@@ -550,6 +555,7 @@
     items: Diagnostic test questions
     judge_expertise: expert
     judging_prompt: 'which question do you think Year 1 students find most difficult?'
+    adaptivity: no
   - study: students-even
     N_A: 10
     N_R: 10
@@ -557,6 +563,7 @@
     items: Diagnostic test questions (even-numbered)
     judge_expertise: novice
     judging_prompt: 'which question do you think Year 1 students find most difficult?'
+    adaptivity: no
   - study: students-odd
     N_A: 12
     N_R: 10
@@ -564,6 +571,7 @@
     items: Diagnostic test questions (odd-numbered)
     judge_expertise: novice
     judging_prompt: 'which question do you think Year 1 students find most difficult?'
+    adaptivity: no
   - study: students-withoutsolutions
     N_A: 22
     N_R: 20
@@ -571,6 +579,7 @@
     items: Diagnostic test questions (with no solutions shown)
     judge_expertise: novice
     judging_prompt: 'which question do you think Year 1 students find most difficult?'
+    adaptivity: no
   - study: students-withsolutions
     N_A: 22
     N_R: 20
@@ -578,6 +587,7 @@
     items: Diagnostic test questions
     judge_expertise: novice
     judging_prompt: 'which question do you think Year 1 students find most difficult?'
+    adaptivity: no
   - study: students-withsolutions1
     N_A: 8
     N_R: 20
@@ -585,6 +595,7 @@
     items: Diagnostic test questions
     judge_expertise: novice
     judging_prompt: 'which question do you think Year 1 students find most difficult?'
+    adaptivity: no
   - study: students-withsolutions2
     N_A: 9
     N_R: 20
@@ -592,6 +603,7 @@
     items: Diagnostic test questions
     judge_expertise: novice
     judging_prompt: 'which question do you think Year 1 students find most difficult?'
+    adaptivity: no
 
 #
 # Ian to do these ones
@@ -674,6 +686,7 @@
     items: 'Written assignments by secondary school students in Flanders, about "getting children"'
     judge_expertise: expert
     judging_prompt: 'choose the essay that better evidenced the competence argumentative writing'
+    adaptivity: no
   - study: sample2
     N_A: 49
     N_R: 135
@@ -681,6 +694,7 @@
     items: 'Written assignments by secondary school students in Flanders, about "getting children"'
     judge_expertise: expert
     judging_prompt: 'choose the essay that better evidenced the competence argumentative writing'
+    adaptivity: no
   - study: sample3
     N_A: 13
     N_R: 147
@@ -688,6 +702,7 @@
     items: "High school students' visual portfolios on the relationship between technology and the senses"
     judge_expertise: expert
     judging_prompt: 'pick each time the portfolio event that evidenced higher originality in visual arts'
+    adaptivity: no
 
 - project_id: Coertjens2021
   citation: "Coertjens, L., Lesterhuis, M., De Winter, B. Y., Goossens, M., De Maeyer,
@@ -1030,6 +1045,7 @@
     N_J: "not reported - see p. 145: They were instructed to complete one hour of judging, and they completed between 25 and 50 judgements each (M =45.3, SD = 8.7), with each script being compared between 40 and 50 times (M =45.3, SD = 3.0)."
     items: written explanation of p-value
     judge_expertise: expert
+    adaptivity: no
   - study: calculus
     N_A: 30
     N_R: 42
@@ -1037,12 +1053,14 @@
     items: written explanation of derivatives
     judge_expertise: expert
     comment: "TODO: two participants were removed from analyses - check value for N_A, should it be 28?"
+    adaptivity: no
   - study: algebra
     N_A: 10
     N_R: 46
     N_J: 460
     items: written explanation of how letters are used in algebra
     judge_expertise: expert
+    adaptivity: no
   
 - project_id: Hunter2018
   citation: "Hunter, J., & Jones, I. (2018). Free-response tasks in primary mathematics:
@@ -1072,6 +1090,7 @@
     N_J: 2060
     items: responses to an open-ended question about derivatives
     judge_expertise: expert
+    adaptivity: no
 
 - project_id: Jones2020
   citation: Jones, S. R., Scott, C. J., Barnard, L. A., Highfield, R., Lintott, C.
