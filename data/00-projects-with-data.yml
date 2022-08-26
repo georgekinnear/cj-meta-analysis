@@ -6,69 +6,45 @@
   citation: Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual variations in aesthetic responses to fractal patterns. Frontiers in human neuroscience, 10, 350.
   doi: 10.3389/fnhum.2016.00350
   open_data: no
-  note: "TODO - see https://github.com/georgekinnear/cj-meta-analysis/issues/11"
+  note: "Data for Experiment 1 was not available - see https://github.com/georgekinnear/cj-meta-analysis/issues/11"
   judging_sessions: 
-  - study: Grayscale
-    N_A: 310
-    N_R: 9
-    N_J: ??
-    items: Grayscale Computer-generated fractals 
-    judge_expertise: Novice 
-    judging_prompt: Which [fractal] appears more complex?
-    adaptivity: no
-  - study: Threshold
-    N_A: 310
-    N_R: 9
-    N_J: ??
-    items: Threshold Computer-generated fractals 
-    judge_expertise: Novice 
-    judging_prompt: Which [fractal] appears more complex?
-    adaptivity: no
-  - study: EdgesOnly
-    N_A: 310
-    N_R: 9
-    N_J: ??
-    items: Edge-only Computer-generated fractals 
-    judge_expertise: Novice 
-    judging_prompt: Which [fractal] appears more complex?
-    adaptivity: no
   - study: expt2-Edges
-    N_A: TODO
-    N_R: TODO
-    N_J: TODO
-    items: TODO 
+    N_A: 50
+    N_R: 9
+    N_J: 3600
+    items: "Images of fractals" 
     judge_expertise: layperson 
     judging_prompt: Which [fractal] appears more complex?
     adaptivity: no
   - study: expt2-Fracts
-    N_A: TODO
-    N_R: TODO
-    N_J: TODO
-    items: TODO 
+    N_A: 50
+    N_R: 9
+    N_J: 3600
+    items: "Images of fractals" 
     judge_expertise: layperson 
     judging_prompt: Which [fractal] appears more complex?
     adaptivity: no
   - study: expt2-Mountain
-    N_A: TODO
-    N_R: TODO
-    N_J: TODO
-    items: TODO 
+    N_A: 50
+    N_R: 9
+    N_J: 3600
+    items: "Images of fractals" 
     judge_expertise: layperson 
     judging_prompt: Which [fractal] appears more complex?
     adaptivity: no
   - study: expt2-Plain
-    N_A: TODO
-    N_R: TODO
-    N_J: TODO
-    items: TODO 
+    N_A: 50
+    N_R: 9
+    N_J: 3600
+    items: "Images of fractals" 
     judge_expertise: layperson 
     judging_prompt: Which [fractal] appears more complex?
     adaptivity: no
   - study: expt2-Thr
-    N_A: TODO
-    N_R: TODO
-    N_J: TODO
-    items: TODO 
+    N_A: 50
+    N_R: 9
+    N_J: 3600
+    items: "Images of fractals" 
     judge_expertise: layperson 
     judging_prompt: Which [fractal] appears more complex?
     adaptivity: no
