@@ -104,6 +104,43 @@ meta_analysis_data %>%
   labs(x = "Proportion of pairs judged", y = "Mean split-halves correlation")
 ```
 
+# Percentage agreement
+
+What proportion of the decisions agree with the final rank order?
+
+```{r propcorrect}
+meta_analysis_data %>% 
+  filter(!is.na(num_pairs)) %>% 
+  select(judging_session, prop_correct_judgements) %>% 
+  ggplot(aes(x = prop_correct_judgements)) +
+  geom_histogram(binwidth = 0.05) +
+  labs(x = "Proportion of pairs judged in agreement with final rank order")
+```
+
+It is generally quite high, but with a few on the low end - here are details of all the ones with less than 70% in agreement:
+
+```{r}
+meta_analysis_data %>% 
+  filter(!is.na(num_pairs)) %>% 
+  select(judging_session, prop_correct_judgements, starts_with("observed"), judge_expertise, adaptivity) %>% 
+  filter(prop_correct_judgements < 0.7) %>% 
+  arrange(prop_correct_judgements) %>% 
+  basic_kable()
+```
+
+```{r propcorrect-vs-splithalves}
+meta_analysis_data %>% 
+  filter(!is.na(prop_correct_judgements)) %>% 
+  ggplot(aes(x = prop_correct_judgements, y = mean_split_corr)) +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x") +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(x = "Proportion of pairs judged 'correctly'", y = "Mean split-halves correlation")
+```
+
+
 # Number of comparisons per representation
 
 This is considered important by Verhavert (2019).

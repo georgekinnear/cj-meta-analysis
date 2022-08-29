@@ -337,12 +337,33 @@ pairs_values <- judgement_data_tidy %>%
   unnest(cols = pairs) %>%
   select(judging_session, contains("_pairs"))
 
+#3. consider whether pairs were judged "correctly" ----
 
+prop_correct <- judgement_data_tidy %>% 
+  filter(!is.na(observed_N_A)) %>% 
+  unnest(cols = csv_contents) %>% 
+  select(judging_session, judge, won, lost) %>% 
+  left_join(
+    btm_scores %>% rename(won = name, score_won = btm_score),
+    by = c("judging_session", "won")
+  ) %>% 
+  left_join(
+    btm_scores %>% rename(lost = name, score_lost = btm_score),
+    by = c("judging_session", "lost")
+  ) %>% 
+  mutate(normatively_correct = score_won > score_lost) %>% 
+  group_by(judging_session) %>% 
+  summarise(
+    prop_correct_judgements = sum(normatively_correct) / n()
+  )
+
+  
 #### 🏗️ Assemble all the data ####
 
 ssr_values %>% 
   left_join(split_halves_values, by = "judging_session") %>% 
   left_join(elo_values, by = "judging_session") %>% 
-  left_join(pairs_values, by = "judging_session") %>% 
   left_join(elo_vs_btm, by = "judging_session") %>% 
+  left_join(pairs_values, by = "judging_session") %>% 
+  left_join(prop_correct, by = "judging_session") %>% 
   write_csv("data/01-meta-analysis-data.csv")
