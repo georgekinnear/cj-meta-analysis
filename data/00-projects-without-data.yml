@@ -198,7 +198,7 @@
     of the thermal insulation properties of multilayered mittens considering the airflow
     speed. International Journal of Clothing Science and Technology.
   doi: 10.1108/ijcst-01-2020-0007
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -229,7 +229,8 @@
     quality assessment of adaptive video streaming via crowdsourcing and laboratory
     based experiments. Multimedia tools and applications, 76(15), 16727-16748.
   doi: 10.1007/s11042-016-3948-3
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
+  comment: `interested researchers can obtain the dataset through a bilateral agreement of its use for reproduction of the results only` but we didnt get the pairwise data
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -245,7 +246,7 @@
     three different designs. In Stereoscopic Displays and Applications XXIV (Vol.
     8648, p. 86481V). International Society for Optics and Photonics.'
   doi: 10.1117/12.2002075
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -274,7 +275,7 @@
   citation: Karpińska-Krakowiak, M. (2018). Ratings or pairwise comparisons? An experimental
     study on scale usability. Economic and Environmental Studies, 18 (46), 653-664.
   doi: 10.25167/ees.2018.46.11
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -303,7 +304,7 @@
     comparison experiments. In Frontiers in Statistical Quality Control 9 (pp. 341-350).
     Physica-Verlag HD.
   doi: 10.1007/978-3-7908-2380-6_22
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -320,7 +321,7 @@
     Journal of Toxicology and Environmental Health, Part A, 79:16-17, 713-728, DOI:
     10.1080/15287394.2016.1174005'
   doi: 10.1080/15287394.2016.1174005
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -489,7 +490,7 @@
     Judgement (ACJ) as an assessment tool in educational settings. International Journal
     of Technology and Design Education, 1-15.
   doi: 10.1007/s10798-021-09654-w
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -498,6 +499,7 @@
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
+    comment: theoretical, no data
     
 - project_id: Bartholomew2018a
   citation: Bartholomew, S. R., Nadelson, L. S., Goodridge, W. H., & Reeve, E. M.
@@ -668,9 +670,9 @@
     judging_prompt: '[TODO]'
     
 - project_id: Verhavert2017
-  citation: '-'
+  citation: Verhavert S, De Maeyer S, Donche V, Coertjens L. Scale Separation Reliability: What Does It Mean in the Context of Comparative Judgment? Applied Psychological Measurement. 2018;42(6):428-445. doi:10.1177/0146621617748321
   doi: 10.1177/0146621617748321
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -679,11 +681,12 @@
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
+    comment: meta-analysis of published data
     
 - project_id: Verhavert2019
-  citation: Meta-analysis. To be discussed
+  citation:San Verhavert, Renske Bouwer, Vincent Donche & Sven De Maeyer (2019) A meta-analysis on the reliability of comparative judgement, Assessment in Education: Principles, Policy & Practice, 26:5, 541-562, DOI: 10.1080/0969594X.2019.1602027
   doi: 10.1080/0969594x.2019.1602027
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -692,13 +695,14 @@
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
+    comment: meta-analysis of published data
     
 - project_id: Whitehouse2012
   citation: 'Whitehouse, C. (2012). Testing the validity of judgements about geography
     essays using the Adaptive Comparative Judgement method. Manchester: AQA Centre
     for Education Research and Policy.'
   doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -714,7 +718,7 @@
     In International Computer Assisted Assessment Conference (pp. 69-79). Springer,
     Cham.'
   doi: 10.1007/978-3-319-27704-2_8
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -730,7 +734,7 @@
     and differences. AHE: Leading Assessment for Learning in Higher Education. Presented
     at the AHE: Leading Assessment for Learning in Higher Education.'
   doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -746,7 +750,7 @@
     A video-based comparative judgement instrument. Teaching and Teacher Education, 78,
     1-14.'
   doi: 10.1016/j.tate.2018.10.007
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -761,7 +765,7 @@
     Video-based comparative judgement as a method to measure teachers' professional
     vision. In 17th Biennal EARLI Conference for Research on Learning and Instruction.
   doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -777,23 +781,7 @@
     education through video-based comparative judgement: An expert study. Studies
     in Educational Evaluation, 56, 71-84.'
   doi: 10.1016/j.stueduc.2017.11.007
-  open_data: TODO... CHECK FOR OPEN DATA
-  judging_sessions:
-  - study: '[TODO] name for the study (only needed if there are many)'
-    N_A: '[TODO]'
-    N_R: '[TODO]'
-    N_J: '[TODO]'
-    items: '[TODO] short description of what is being judged'
-    judge_expertise: '[TODO] expert/peer/novice'
-    judging_prompt: '[TODO]'
-    
-- project_id: Roose2018b
-  citation: 'Roose, I., Goossens, M., Vanderlinde, R., Vantieghem, W., & Van Avermaet,
-    P. (2018). Measuring professional vision of inclusive classrooms in secondary
-    education through video-based comparative judgement: An expert study. Studies
-    in Educational Evaluation, 56, 71-84.'
-  doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -809,7 +797,7 @@
     classrooms through video-based comparative judgement. What does it mean to misfit?. International
     Journal of Educational Research, 98, 257-271.
   doi: 10.1016/j.ijer.2019.09.004
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -841,7 +829,7 @@
     In Innovative practices for higher education assessment and measurement (pp. 119-138).
     IGI Global.
   doi: 10.4018/978-1-5225-0531-0.ch007
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -901,7 +889,7 @@
     comparative judgement approach to the large-scale assessment of primary writing
     in England. Assessment in Education: Principles, Policy & Practice, 27(1), 46–64.'
   doi: 10.1080/0969594x.2019.1700212
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -916,7 +904,7 @@
     The classification accuracy and consistency of comparative judgement of writing
     compared to rubric-based teacher assessment. https://doi.org/10.31235/osf.io/vzus4
   doi: 10.31235/osf.io/vzus4
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -931,7 +919,7 @@
     S. (2017). Best of two worlds in writing assessment: Integrating benchmarking
     and comparative judgement. In 17th Biennial EARLI Conference.'
   doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
