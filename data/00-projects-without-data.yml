@@ -980,7 +980,7 @@
     implications of its holistic character and building on a shared consensus. Assessment
     in Education: Principles, Policy & Practice, 26(1), 59-74.'
   doi: 10.1080/0969594x.2016.1253542
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -993,7 +993,7 @@
 - project_id: Wheadon2014
   citation: .na.character
   doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -1036,7 +1036,7 @@
 - project_id: Honeychurch2019
   citation: NA - just slides
   doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
