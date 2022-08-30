@@ -46,7 +46,7 @@
     teachers'' formative assessment skills and students'' learning. Education Canada
     Magazine/EdCan Network, 59(1), 18-21.'
   doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -55,6 +55,7 @@
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
+    comment: theoretical, no data
         
 - project_id: Barber2018
   citation: 'Barber, J. (2018). Five go marking an exam question: the use of Adaptive
@@ -90,7 +91,7 @@
   citation: Sumner, J. (2021). Comparative judgement. Innovative language pedagogy
     report, 63.
   doi: 10.14705/rpnet.2021.50.1237
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -99,6 +100,7 @@
     items: '[TODO] short description of what is being judged'
     judge_expertise: '[TODO] expert/peer/novice'
     judging_prompt: '[TODO]'
+    comment: theoretical, no data
     
 - project_id: Steedle2016
   citation: Steedle, J. T., & Ferrara, S. (2016). Evaluating comparative judgment
@@ -116,11 +118,11 @@
     
 - project_id: Cukurova2018
   citation: 'Cukurova, M., & Luckin, R. (2018, June). Evaluating Innovative Collaborative
-    Learning Practice: An''Innovative''Delphi Approach. In International Conference
+    Learning Practice An''Innovative''Delphi Approach. In International Conference
     of the Learning Sciences (ICLS2018) (Vol. 2, pp. 681-688). International Society
     of the Learning Sciences (ISLS).'
   doi: .na.character
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -135,7 +137,7 @@
     judgement and the visualisation of construct formation in a personal learning
     environment. Interactive Learning Environments, 1-20.
   doi: 10.1080/10494820.2020.1799030
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -150,7 +152,7 @@
     Comparison Judgments According to Pre-service Teachers Opinions. International
     Journal of Assessment Tools in Education, 5(1), 130-145.
   doi: 10.21449/ijate.369233
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -165,7 +167,7 @@
     & Roll, I. (2017). ComPAIR: A new online tool using adaptive comparative judgement
     to support learning with peer feedback. Teaching & Learning Inquiry, 5(2), 89-113.'
   doi: 10.20343/teachlearninqu.5.2.8
-  open_data: TODO... CHECK FOR OPEN DATA
+  open_data: no
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
