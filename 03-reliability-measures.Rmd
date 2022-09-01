@@ -54,6 +54,9 @@ meta_analysis_data %>%
 # SSR vs split-halves
 
 ```{r ssr-vs-splithalves}
+SSRvSplitHalves <- cor.test(meta_analysis_data$ssr, meta_analysis_data$mean_split_corr)
+SSRvSplitHalves_r <- round(SSRvSplitHalves$estimate, 3)
+SSRvSplitHalves_p <- round(SSRvSplitHalves$p.value, 3)
 meta_analysis_data %>% 
   filter(!is.na(ssr)) %>% 
   mutate(pt_label = ifelse(mean_split_corr < 0.5 | ssr < 0.7, judging_session, "")) %>% 
@@ -66,8 +69,8 @@ meta_analysis_data %>%
   #ggrepel::geom_text_repel(alpha = 0.3) +
   xlim(c(0,1)) +
   ylim(c(0,1)) +
-  labs(x = "SSR", y = "Mean split-halves correlation")
-
+  labs(title = paste("r = ", toString(SSRvSplitHalves_r), ", p = ", toString(SSRvSplitHalves_p)), 
+       x = "SSR", y = "Mean split-halves correlation")
 ggsave("figs-pdf/FIG-ssr-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
 ```
 
@@ -121,6 +124,9 @@ We use the weighted version, $R'$, computed based on 1000 iterations.
 ### SSR vs EloChoice
 
 ```{r ssr-vs-elo}
+SSRvElo <- cor.test(meta_analysis_data$ssr, meta_analysis_data$mean_eloR_weighted, use="complete.obs")
+SSRvElo_r <- round(SSRvElo$estimate, 3)
+SSRvElo_p <- round(SSRvElo$p.value, 3)
 meta_analysis_data %>% 
   filter(!is.na(mean_eloR_weighted)) %>% 
   mutate(pt_label = ifelse(mean_eloR_weighted < 0.5 | ssr < 0.7, judging_session, "")) %>% 
@@ -133,12 +139,16 @@ meta_analysis_data %>%
   geom_abline(slope = 1, intercept = 0) +
   xlim(c(0,1)) +
   ylim(c(0,1)) +
-  labs(x = "SSR", y = "Mean EloChoice R (weighted)")
+  labs(title = paste("r = ", toString(SSRvElo_r), ", p = ", toString(SSRvElo_p)), 
+       x = "SSR", y = "Mean EloChoice R (weighted)")
 ```
 
 ### Split-halves vs EloChoice
 
 ```{r splithalves-vs-elo}
+ElovSplitHalves <- cor.test(meta_analysis_data$mean_eloR_weighted, meta_analysis_data$mean_split_corr)
+ElovSplitHalves_r <- round(ElovSplitHalves$estimate, 3)
+ElovSplitHalves_p <- round(ElovSplitHalves$p.value, 3)
 meta_analysis_data %>% 
   filter(!is.na(mean_eloR_weighted)) %>% 
   mutate(pt_label = ifelse(mean_eloR_weighted < 0.5 | mean_split_corr < 0.7, judging_session, "")) %>% 
@@ -151,7 +161,8 @@ meta_analysis_data %>%
   geom_abline(slope = 1, intercept = 0) +
   xlim(c(0,1)) +
   ylim(c(0,1)) +
-  labs(x = "Mean split-halves", y = "Mean EloChoice R (weighted)")
+  labs(title = paste("r = ", toString(ElovSplitHalves_r), ", p = ", toString(ElovSplitHalves_p)),
+       x = "Mean split-halves", y = "Mean EloChoice R (weighted)")
 ```
 
 ## Scores
