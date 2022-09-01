@@ -1007,21 +1007,13 @@ There are two reliability measures proposed for EloChoice: see
 discussion in
 <https://cran.r-project.org/web/packages/EloChoice/vignettes/EloChoice-tutorial.html>
 
-We use the weighted version,
-![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'"),
-computed based on 1000 iterations.
+We use the weighted version, $R'$, computed based on 1000 iterations.
 
 ### SSR vs EloChoice
-
-    ## Warning: ggrepel: 1 unlabeled data points (too many overlaps). Consider
-    ## increasing max.overlaps
 
 ![](figs-web/03-reliability-measures/ssr-vs-elo-1.png)<!-- -->
 
 ### Split-halves vs EloChoice
-
-    ## Warning: ggrepel: 30 unlabeled data points (too many overlaps). Consider
-    ## increasing max.overlaps
 
 ![](figs-web/03-reliability-measures/splithalves-vs-elo-1.png)<!-- -->
 
@@ -1410,19 +1402,14 @@ Bramley2018_1a
 </tbody>
 </table>
 
-The
-![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
-measure is quite low for all of those.
+The $R'$ measure is quite low for all of those.
 
-Looking at the relationship of
-![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
-with the Elo-BTM correlation:
+Looking at the relationship of $R'$ with the Elo-BTM correlation:
 
 ![](figs-web/03-reliability-measures/elo-reliability-vs-btmcorr-1.png)<!-- -->
 
-It’s odd that there are some judging sessions with low
-![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
-but high correlation of Elo and BTM scores.
+It’s odd that there are some judging sessions with low $R'$ but high
+correlation of Elo and BTM scores.
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1692,6 +1679,5 @@ Spehar2016_expt2-Plain
 </table>
 
 Those ones all seem to have a small number of representations - so
-perhaps the
-![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
-measure is systematically underestimating reliability in those cases.
+perhaps the $R'$ measure is systematically underestimating reliability
+in those cases.
