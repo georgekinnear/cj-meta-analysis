@@ -51,6 +51,15 @@ meta_analysis_data %>%
   basic_kable()
 ```
 
+
+```{r include=FALSE}
+CperR <- round(cj_sessions$observed_N_C/cj_sessions$observed_N_R,0)
+meta_analysis_data$CperR <- CperR
+meta_analysis_data_34 <- meta_analysis_data[meta_analysis_data$CperR > 33,]
+meta_analysis_data_20 <- meta_analysis_data[meta_analysis_data$CperR > 19,]
+meta_analysis_data_10 <- meta_analysis_data[meta_analysis_data$CperR > 9,]
+```
+
 # SSR vs split-halves
 
 ```{r ssr-vs-splithalves}
@@ -72,6 +81,78 @@ meta_analysis_data %>%
   labs(title = paste("r = ", toString(SSRvSplitHalves_r), ", p = ", toString(SSRvSplitHalves_p)), 
        x = "SSR", y = "Mean split-halves correlation")
 ggsave("figs-pdf/FIG-ssr-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
+```
+
+### SSR vs split-halves for `N_CR` > 10 
+NMM recommends 5 judgements per item, i.e. N_CR >= 9
+
+```{r ssr-vs-splithalves-10}
+SSRvSplitHalves_10 <- cor.test(meta_analysis_data_10$ssr, meta_analysis_data_10$mean_split_corr)
+SSRvSplitHalves_r_10 <- round(SSRvSplitHalves_10$estimate, 3)
+SSRvSplitHalves_p_10 <- round(SSRvSplitHalves_10$p.value, 3)
+meta_analysis_data_10 %>% 
+  filter(!is.na(ssr)) %>% 
+  mutate(pt_label = ifelse(mean_split_corr < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = ssr, y = mean_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(SSRvSplitHalves_r_10), ", p = ", toString(SSRvSplitHalves_p_10)), 
+       x = "SSR", y = "Mean split-halves correlation")
+ggsave("figs-pdf/FIG-ssr-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
+```
+
+### SSR vs split-halves for `N_CR` >= 20 
+Jones recommends 10 judgements per item, i.e. N_CR >= 19
+
+```{r ssr-vs-splithalves-20}
+SSRvSplitHalves_20 <- cor.test(meta_analysis_data_20$ssr, meta_analysis_data_20$mean_split_corr)
+SSRvSplitHalves_r_20 <- round(SSRvSplitHalves_20$estimate, 3)
+SSRvSplitHalves_p_20 <- round(SSRvSplitHalves_20$p.value, 3)
+meta_analysis_data_20 %>% 
+  filter(!is.na(ssr)) %>% 
+  mutate(pt_label = ifelse(mean_split_corr < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = ssr, y = mean_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(SSRvSplitHalves_r_20), ", p = ", toString(SSRvSplitHalves_p_20)), 
+       x = "SSR", y = "Mean split-halves correlation")
+ggsave("figs-pdf/FIG-ssr-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
+```
+
+### SSR vs split-halves for `N_CR` >= 34 
+Verhavert et al. 2019 recommend 17 judgements per item, i.e. N_CR >= 34
+
+```{r ssr-vs-splithalves-34}
+SSRvSplitHalves_34 <- cor.test(meta_analysis_data_34$ssr, meta_analysis_data_34$mean_split_corr)
+SSRvSplitHalves_r_34 <- round(SSRvSplitHalves_34$estimate, 3)
+SSRvSplitHalves_p_34 <- round(SSRvSplitHalves_34$p.value, 3)
+meta_analysis_data_34 %>% 
+  filter(!is.na(ssr)) %>% 
+  mutate(pt_label = ifelse(mean_split_corr < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = ssr, y = mean_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(SSRvSplitHalves_r_34), ", p = ", toString(SSRvSplitHalves_p_34)), 
+       x = "SSR", y = "Mean split-halves correlation")
+ggsave("figs-pdf/FIG-ssr-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
 ```
 
 It is very rare for the split-halves measure to be higher than SSR:
@@ -165,6 +246,72 @@ meta_analysis_data %>%
        x = "Mean split-halves", y = "Mean EloChoice R (weighted)")
 ```
 
+### Split-halves vs EloChoice `N_CR` >= 10 
+
+```{r splithalves-vs-elo-10}
+ElovSplitHalves_10 <- cor.test(meta_analysis_data_10$mean_eloR_weighted, meta_analysis_data_10$mean_split_corr)
+ElovSplitHalves_r_10 <- round(ElovSplitHalves_10$estimate, 3)
+ElovSplitHalves_p_10 <- round(ElovSplitHalves_10$p.value, 3)
+meta_analysis_data_10 %>% 
+  filter(!is.na(mean_eloR_weighted)) %>% 
+  mutate(pt_label = ifelse(mean_eloR_weighted < 0.5 | mean_split_corr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = mean_split_corr, y = mean_eloR_weighted, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x") +
+  ggrepel::geom_text_repel(alpha = 0.3) +
+  geom_abline(slope = 1, intercept = 0) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(ElovSplitHalves_r_10), ", p = ", toString(ElovSplitHalves_p_10)),
+       x = "Mean split-halves", y = "Mean EloChoice R (weighted)")
+```
+
+### Split-halves vs EloChoice `N_CR` >= 20 
+
+```{r splithalves-vs-elo-20}
+ElovSplitHalves_20 <- cor.test(meta_analysis_data_20$mean_eloR_weighted, meta_analysis_data_20$mean_split_corr)
+ElovSplitHalves_r_20 <- round(ElovSplitHalves_20$estimate, 3)
+ElovSplitHalves_p_20 <- round(ElovSplitHalves_20$p.value, 3)
+meta_analysis_data_20 %>% 
+  filter(!is.na(mean_eloR_weighted)) %>% 
+  mutate(pt_label = ifelse(mean_eloR_weighted < 0.5 | mean_split_corr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = mean_split_corr, y = mean_eloR_weighted, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x") +
+  ggrepel::geom_text_repel(alpha = 0.3) +
+  geom_abline(slope = 1, intercept = 0) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(ElovSplitHalves_r_20), ", p = ", toString(ElovSplitHalves_p_20)),
+       x = "Mean split-halves", y = "Mean EloChoice R (weighted)")
+```
+
+### Split-halves vs EloChoice `N_CR` >= 34 
+
+```{r splithalves-vs-elo-34}
+ElovSplitHalves_34 <- cor.test(meta_analysis_data_34$mean_eloR_weighted, meta_analysis_data_34$mean_split_corr)
+ElovSplitHalves_r_34 <- round(ElovSplitHalves_34$estimate, 3)
+ElovSplitHalves_p_34 <- round(ElovSplitHalves_34$p.value, 3)
+meta_analysis_data_34 %>% 
+  filter(!is.na(mean_eloR_weighted)) %>% 
+  mutate(pt_label = ifelse(mean_eloR_weighted < 0.5 | mean_split_corr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = mean_split_corr, y = mean_eloR_weighted, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x") +
+  ggrepel::geom_text_repel(alpha = 0.3) +
+  geom_abline(slope = 1, intercept = 0) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(ElovSplitHalves_r_34), ", p = ", toString(ElovSplitHalves_p_34)),
+       x = "Mean split-halves", y = "Mean EloChoice R (weighted)")
+```
+
 ## Scores
 
 How do the scores produced by EloChoice compare with those from Bradley-Terry?
@@ -213,3 +360,147 @@ meta_analysis_data %>%
 Those ones all seem to have a small number of representations - so perhaps the $R'$ measure is systematically underestimating reliability in those cases.
 
 
+# Proportion of correct judgements
+
+The proportion of judgements that are consistent with the final rank order relate more strongly to SSR and Elo than to split-halves reliability.
+
+```{r}
+prop_correct_model <- lm(prop_correct_judgements ~ ssr + mean_split_corr + mean_eloR, data = reliability_stats)
+summary(prop_correct_model)
+```
+
+## Proportion of correction judgements vs SSR
+```{r prop-vs-ssr}
+PropvsSSR <- cor.test(meta_analysis_data$prop_correct_judgements, meta_analysis_data$ssr, use = "complete.obs")
+PropvsSSR_r <- round(PropvsSSR$estimate, 3)
+PropvsSSR_p <- round(PropvsSSR$p.value, 3)
+meta_analysis_data %>% 
+  filter(!is.na(prop_correct_judgements)) %>% 
+  mutate(pt_label = ifelse(prop_correct_judgements < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = prop_correct_judgements, y = ssr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(PropvsSSR_r), ", p = ", toString(PropvsSSR_p)), 
+       x = "Proportion of correction judgements", y = "SSR")
+ggsave("figs-pdf/FIG-prop-vs-ssr.pdf", units = "cm", width = 14, height = 14)
+```
+
+## Proportion of correction judgements vs Elo
+```{r prop-vs-elo}
+PropvsElo <- cor.test(meta_analysis_data$prop_correct_judgements, meta_analysis_data$mean_eloR_weighted, use = "complete.obs")
+PropvsElo_r <- round(PropvsElo$estimate, 3)
+PropvsElo_p <- round(PropvsElo$p.value, 3)
+meta_analysis_data %>% 
+  filter(!is.na(prop_correct_judgements)) %>% 
+  mutate(pt_label = ifelse(prop_correct_judgements < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = prop_correct_judgements, y = mean_eloR_weighted, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(PropvsElo_r), ", p = ", toString(PropvsElo_p)), 
+       x = "Proportion of correction judgements", y = "Elo")
+ggsave("figs-pdf/FIG-prop-vs-elo.pdf", units = "cm", width = 14, height = 14)
+```
+
+## Proportion of correction judgements vs split-halves
+
+```{r prop-vs-splithalves}
+PropvsSplithalves <- cor.test(meta_analysis_data$prop_correct_judgements, meta_analysis_data$mean_split_corr, use = "complete.obs")
+PropvsSplithalves_r <- round(PropvsSplithalves$estimate, 3)
+PropvsSplithalves_p <- round(PropvsSplithalves$p.value, 3)
+meta_analysis_data %>% 
+  filter(!is.na(prop_correct_judgements)) %>% 
+  mutate(pt_label = ifelse(prop_correct_judgements < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = prop_correct_judgements, y = mean_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(PropvsSplithalves_r), ", p = ", toString(PropvsSplithalves_p)), 
+       x = "Proportion of correction judgements", y = "Split halves")
+ggsave("figs-pdf/FIG-prop-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
+```
+
+### Proportion of correction judgements vs split-halves for `N_CR` >= 10 
+
+```{r prop-vs-splithalves-10}
+PropvsSplithalves_10 <- cor.test(meta_analysis_data_10$prop_correct_judgements, meta_analysis_data_10$mean_split_corr, use = "complete.obs")
+PropvsSplithalves_r_10 <- round(PropvsSplithalves_10$estimate, 3)
+PropvsSplithalves_p_10 <- round(PropvsSplithalves_10$p.value, 3)
+meta_analysis_data_10 %>% 
+  filter(!is.na(prop_correct_judgements)) %>% 
+  mutate(pt_label = ifelse(prop_correct_judgements < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = prop_correct_judgements, y = mean_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(PropvsSplithalves_r_10), ", p = ", toString(PropvsSplithalves_p_10)), 
+       x = "Proportion of correction judgements", y = "Split halves")
+ggsave("figs-pdf/FIG-prop-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
+```
+
+### Proportion of correction judgements vs split-halves for `N_CR` >= 20 
+
+```{r prop-vs-splithalves-20}
+PropvsSplithalves_20 <- cor.test(meta_analysis_data_20$prop_correct_judgements, meta_analysis_data_20$mean_split_corr, use = "complete.obs")
+PropvsSplithalves_r_20 <- round(PropvsSplithalves_20$estimate, 3)
+PropvsSplithalves_p_20 <- round(PropvsSplithalves_20$p.value, 3)
+meta_analysis_data_20 %>% 
+  filter(!is.na(prop_correct_judgements)) %>% 
+  mutate(pt_label = ifelse(prop_correct_judgements < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = prop_correct_judgements, y = mean_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(PropvsSplithalves_r_20), ", p = ", toString(PropvsSplithalves_p_20)), 
+       x = "Proportion of correction judgements", y = "Split halves")
+ggsave("figs-pdf/FIG-prop-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
+```
+
+### Proportion of correction judgements vs split-halves for `N_CR` >= 34 
+
+```{r prop-vs-splithalves-34}
+PropvsSplithalves_34 <- cor.test(meta_analysis_data_34$prop_correct_judgements, meta_analysis_data_34$mean_split_corr, use = "complete.obs")
+PropvsSplithalves_r_34 <- round(PropvsSplithalves_34$estimate, 3)
+PropvsSplithalves_p_34 <- round(PropvsSplithalves_34$p.value, 3)
+meta_analysis_data_34 %>% 
+  filter(!is.na(prop_correct_judgements)) %>% 
+  mutate(pt_label = ifelse(prop_correct_judgements < 0.5 | ssr < 0.7, judging_session, "")) %>% 
+  ggplot(aes(x = prop_correct_judgements, y = mean_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(PropvsSplithalves_r_34), ", p = ", toString(PropvsSplithalves_p_34)), 
+       x = "Proportion of correction judgements", y = "Split halves")
+ggsave("figs-pdf/FIG-prop-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
+```
