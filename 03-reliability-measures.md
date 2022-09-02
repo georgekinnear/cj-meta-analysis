@@ -99,6 +99,24 @@ unknown
 
 ![](figs-web/03-reliability-measures/ssr-vs-splithalves-1.png)<!-- -->
 
+### SSR vs split-halves for `N_CR` \> 10
+
+NMM recommends 5 judgements per item, i.e. N_CR \>= 9
+
+![](figs-web/03-reliability-measures/ssr-vs-splithalves-10-1.png)<!-- -->
+
+### SSR vs split-halves for `N_CR` \>= 20
+
+Jones recommends 10 judgements per item, i.e. N_CR \>= 19
+
+![](figs-web/03-reliability-measures/ssr-vs-splithalves-20-1.png)<!-- -->
+
+### SSR vs split-halves for `N_CR` \>= 34
+
+Verhavert et al. 2019 recommend 17 judgements per item, i.e. N_CR \>= 34
+
+![](figs-web/03-reliability-measures/ssr-vs-splithalves-34-1.png)<!-- -->
+
 It is very rare for the split-halves measure to be higher than SSR:
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1017,6 +1035,18 @@ We use the weighted version, $R'$, computed based on 1000 iterations.
 
 ![](figs-web/03-reliability-measures/splithalves-vs-elo-1.png)<!-- -->
 
+### Split-halves vs EloChoice `N_CR` \>= 10
+
+![](figs-web/03-reliability-measures/splithalves-vs-elo-10-1.png)<!-- -->
+
+### Split-halves vs EloChoice `N_CR` \>= 20
+
+![](figs-web/03-reliability-measures/splithalves-vs-elo-20-1.png)<!-- -->
+
+### Split-halves vs EloChoice `N_CR` \>= 34
+
+![](figs-web/03-reliability-measures/splithalves-vs-elo-34-1.png)<!-- -->
+
 ## Scores
 
 How do the scores produced by EloChoice compare with those from
@@ -1681,3 +1711,68 @@ Spehar2016_expt2-Plain
 Those ones all seem to have a small number of representations - so
 perhaps the $R'$ measure is systematically underestimating reliability
 in those cases.
+
+# Proportion of correct judgements
+
+The proportion of judgements that are consistent with the final rank
+order relate more strongly to SSR and Elo than to split-halves
+reliability.
+
+    ## 
+    ## Call:
+    ## lm(formula = prop_correct_judgements ~ ssr + mean_split_corr + 
+    ##     mean_eloR, data = reliability_stats)
+    ## 
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.175619 -0.050941  0.004288  0.049643  0.186697 
+    ## 
+    ## Coefficients:
+    ##                 Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)      0.09335    0.10872   0.859 0.392688    
+    ## ssr              0.52218    0.14855   3.515 0.000675 ***
+    ## mean_split_corr -0.16057    0.09420  -1.705 0.091541 .  
+    ## mean_eloR        0.51453    0.10544   4.880 4.27e-06 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.07728 on 95 degrees of freedom
+    ##   (2 observations deleted due to missingness)
+    ## Multiple R-squared:  0.3114, Adjusted R-squared:  0.2897 
+    ## F-statistic: 14.32 on 3 and 95 DF,  p-value: 8.995e-08
+
+## Proportion of correction judgements vs SSR
+
+![](figs-web/03-reliability-measures/prop-vs-ssr-1.png)<!-- -->
+
+## Proportion of correction judgements vs Elo
+
+    ## Warning: Removed 2 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](figs-web/03-reliability-measures/prop-vs-elo-1.png)<!-- -->
+
+    ## Warning: Removed 2 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+## Proportion of correction judgements vs split-halves
+
+![](figs-web/03-reliability-measures/prop-vs-splithalves-1.png)<!-- -->
+
+### Proportion of correction judgements vs split-halves for `N_CR` \>= 10
+
+![](figs-web/03-reliability-measures/prop-vs-splithalves-10-1.png)<!-- -->
+
+### Proportion of correction judgements vs split-halves for `N_CR` \>= 20
+
+![](figs-web/03-reliability-measures/prop-vs-splithalves-20-1.png)<!-- -->
+
+### Proportion of correction judgements vs split-halves for `N_CR` \>= 34
+
+    ## Warning: Removed 18 rows containing missing values (geom_smooth).
+
+![](figs-web/03-reliability-measures/prop-vs-splithalves-34-1.png)<!-- -->
+
+    ## Warning: Removed 18 rows containing missing values (geom_smooth).
