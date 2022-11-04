@@ -60,6 +60,47 @@ meta_analysis_data_20 <- meta_analysis_data[meta_analysis_data$CperR > 19,]
 meta_analysis_data_10 <- meta_analysis_data[meta_analysis_data$CperR > 9,]
 ```
 
+# SSR computation
+
+There seems to be a problem with the way `sirt::btm` computes the SSR:
+
+> `mle.rel <- 1 - v2 / v0`
+> <https://github.com/alexanderrobitzsch/sirt/blame/d0afec2822740805476055add1ba6b8bd2f04a37/R/btm.R#L265>
+
+The SSR should be nonnegative, but in some cases this formula can give negative results. It tends to be in close agreement with the true SSR for higher values, but can diverge when there is limited judgement data.
+
+Here we see how the values compare in our sample - the `ssr` column is the faulty value from `sirt::btm`, while `ssr_alt` comes from computing the correct value as G^2 / (1+G^2).
+
+```{r}
+meta_analysis_data <- meta_analysis_data %>% 
+  mutate(ssr_alt = sepG^2 / (1+sepG^2))
+
+ssr_comparison_data <- meta_analysis_data %>% 
+  transmute(judging_session, ssr, sepG, ssr_alt, ssr_diff = abs(ssr_alt - ssr)) %>% 
+  arrange(-ssr_diff)
+
+ssr_comparison_data %>% basic_kable()
+```
+```{r}
+ssr_comparison_data %>% 
+  ggplot(aes(x = ssr_alt, y = ssr)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0) +
+  labs(x = "Correct SSR", y = "sirt::btm value for SSR")
+```
+
+So for the following analyses, we use the correct value of the SSR instead.
+
+```{r}
+meta_analysis_data <- meta_analysis_data %>% 
+  # keep both values around just in case
+  mutate(ssr_bad = ssr) %>% 
+  mutate(ssr_good = ssr_alt) %>% 
+  # but pick the correct one for going forward
+  mutate(ssr = ssr_good)
+```
+
+
 # SSR vs split-halves
 
 ```{r ssr-vs-splithalves}

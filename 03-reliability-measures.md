@@ -95,6 +95,1767 @@ unknown
 </tbody>
 </table>
 
+# SSR computation
+
+There seems to be a problem with the way `sirt::btm` computes the SSR:
+
+> `mle.rel <- 1 - v2 / v0`
+> <https://github.com/alexanderrobitzsch/sirt/blame/d0afec2822740805476055add1ba6b8bd2f04a37/R/btm.R#L265>
+
+The SSR should be nonnegative, but in some cases this formula can give
+negative results. It tends to be in close agreement with the true SSR
+for higher values, but can diverge when there is limited judgement data.
+
+Here we see how the values compare in our sample - the `ssr` column is
+the faulty value from `sirt::btm`, while `ssr_alt` comes from computing
+the correct value as G^2 / (1+G^2).
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+judging_session
+</th>
+<th style="text-align:right;">
+ssr
+</th>
+<th style="text-align:right;">
+sepG
+</th>
+<th style="text-align:right;">
+ssr_alt
+</th>
+<th style="text-align:right;">
+ssr_diff
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Luckett2018_icecream
+</td>
+<td style="text-align:right;">
+0.5129689
+</td>
+<td style="text-align:right;">
+1.432919
+</td>
+<td style="text-align:right;">
+0.6724809
+</td>
+<td style="text-align:right;">
+0.1595120
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-withsolutions1
+</td>
+<td style="text-align:right;">
+0.5685500
+</td>
+<td style="text-align:right;">
+1.522421
+</td>
+<td style="text-align:right;">
+0.6985923
+</td>
+<td style="text-align:right;">
+0.1300423
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Davies2021_novice
+</td>
+<td style="text-align:right;">
+0.6583007
+</td>
+<td style="text-align:right;">
+1.710716
+</td>
+<td style="text-align:right;">
+0.7453235
+</td>
+<td style="text-align:right;">
+0.0870228
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018_pizza
+</td>
+<td style="text-align:right;">
+0.6671128
+</td>
+<td style="text-align:right;">
+1.733211
+</td>
+<td style="text-align:right;">
+0.7502510
+</td>
+<td style="text-align:right;">
+0.0831382
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-withsolutions2
+</td>
+<td style="text-align:right;">
+0.6792356
+</td>
+<td style="text-align:right;">
+1.765659
+</td>
+<td style="text-align:right;">
+0.7571373
+</td>
+<td style="text-align:right;">
+0.0779017
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study2-insight
+</td>
+<td style="text-align:right;">
+0.7241967
+</td>
+<td style="text-align:right;">
+1.904146
+</td>
+<td style="text-align:right;">
+0.7838199
+</td>
+<td style="text-align:right;">
+0.0596232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Settembri2018
+</td>
+<td style="text-align:right;">
+0.7343324
+</td>
+<td style="text-align:right;">
+1.940130
+</td>
+<td style="text-align:right;">
+0.7900969
+</td>
+<td style="text-align:right;">
+0.0557645
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bramley2018_2
+</td>
+<td style="text-align:right;">
+0.7382254
+</td>
+<td style="text-align:right;">
+1.954503
+</td>
+<td style="text-align:right;">
+0.7925346
+</td>
+<td style="text-align:right;">
+0.0543092
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018_coldbrew
+</td>
+<td style="text-align:right;">
+0.7385786
+</td>
+<td style="text-align:right;">
+1.955823
+</td>
+<td style="text-align:right;">
+0.7927565
+</td>
+<td style="text-align:right;">
+0.0541779
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bramley2018_1b
+</td>
+<td style="text-align:right;">
+0.7533276
+</td>
+<td style="text-align:right;">
+2.013445
+</td>
+<td style="text-align:right;">
+0.8021354
+</td>
+<td style="text-align:right;">
+0.0488077
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-withsolutions
+</td>
+<td style="text-align:right;">
+0.7698357
+</td>
+<td style="text-align:right;">
+2.084400
+</td>
+<td style="text-align:right;">
+0.8128995
+</td>
+<td style="text-align:right;">
+0.0430639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-withoutsolutions
+</td>
+<td style="text-align:right;">
+0.7740943
+</td>
+<td style="text-align:right;">
+2.103955
+</td>
+<td style="text-align:right;">
+0.8157235
+</td>
+<td style="text-align:right;">
+0.0416291
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2014_GCSE030211data
+</td>
+<td style="text-align:right;">
+0.7763695
+</td>
+<td style="text-align:right;">
+2.114631
+</td>
+<td style="text-align:right;">
+0.8172402
+</td>
+<td style="text-align:right;">
+0.0408707
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Daal2017_sample2
+</td>
+<td style="text-align:right;">
+0.7819930
+</td>
+<td style="text-align:right;">
+2.141730
+</td>
+<td style="text-align:right;">
+0.8210134
+</td>
+<td style="text-align:right;">
+0.0390203
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Coertjens2021
+</td>
+<td style="text-align:right;">
+0.7924991
+</td>
+<td style="text-align:right;">
+2.195280
+</td>
+<td style="text-align:right;">
+0.8281567
+</td>
+<td style="text-align:right;">
+0.0356576
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zucco2019_legislators
+</td>
+<td style="text-align:right;">
+0.8032555
+</td>
+<td style="text-align:right;">
+2.254492
+</td>
+<td style="text-align:right;">
+0.8356002
+</td>
+<td style="text-align:right;">
+0.0323447
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-odd
+</td>
+<td style="text-align:right;">
+0.8035167
+</td>
+<td style="text-align:right;">
+2.255990
+</td>
+<td style="text-align:right;">
+0.8357827
+</td>
+<td style="text-align:right;">
+0.0322660
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Daal2017_sample1
+</td>
+<td style="text-align:right;">
+0.8186803
+</td>
+<td style="text-align:right;">
+2.348429
+</td>
+<td style="text-align:right;">
+0.8465109
+</td>
+<td style="text-align:right;">
+0.0278306
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2013a_peer1
+</td>
+<td style="text-align:right;">
+0.8203009
+</td>
+<td style="text-align:right;">
+2.358995
+</td>
+<td style="text-align:right;">
+0.8476738
+</td>
+<td style="text-align:right;">
+0.0273729
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2016b_realscripts
+</td>
+<td style="text-align:right;">
+0.8264817
+</td>
+<td style="text-align:right;">
+2.400641
+</td>
+<td style="text-align:right;">
+0.8521384
+</td>
+<td style="text-align:right;">
+0.0256567
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Davies2021_expert
+</td>
+<td style="text-align:right;">
+0.8287322
+</td>
+<td style="text-align:right;">
+2.416363
+</td>
+<td style="text-align:right;">
+0.8537757
+</td>
+<td style="text-align:right;">
+0.0250435
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Holmes2017
+</td>
+<td style="text-align:right;">
+0.8298705
+</td>
+<td style="text-align:right;">
+2.424433
+</td>
+<td style="text-align:right;">
+0.8546063
+</td>
+<td style="text-align:right;">
+0.0247358
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bisson2019
+</td>
+<td style="text-align:right;">
+0.8329306
+</td>
+<td style="text-align:right;">
+2.446535
+</td>
+<td style="text-align:right;">
+0.8568471
+</td>
+<td style="text-align:right;">
+0.0239165
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_experts-withsolutions
+</td>
+<td style="text-align:right;">
+0.8345351
+</td>
+<td style="text-align:right;">
+2.458369
+</td>
+<td style="text-align:right;">
+0.8580267
+</td>
+<td style="text-align:right;">
+0.0234916
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2013a_peer2
+</td>
+<td style="text-align:right;">
+0.8410015
+</td>
+<td style="text-align:right;">
+2.507861
+</td>
+<td style="text-align:right;">
+0.8628139
+</td>
+<td style="text-align:right;">
+0.0218124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study2-understanding
+</td>
+<td style="text-align:right;">
+0.8449519
+</td>
+<td style="text-align:right;">
+2.539609
+</td>
+<td style="text-align:right;">
+0.8657648
+</td>
+<td style="text-align:right;">
+0.0208129
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Marshall2020_written
+</td>
+<td style="text-align:right;">
+0.8462165
+</td>
+<td style="text-align:right;">
+2.550029
+</td>
+<td style="text-align:right;">
+0.8667137
+</td>
+<td style="text-align:right;">
+0.0204972
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_experts-odd
+</td>
+<td style="text-align:right;">
+0.8468858
+</td>
+<td style="text-align:right;">
+2.555597
+</td>
+<td style="text-align:right;">
+0.8672168
+</td>
+<td style="text-align:right;">
+0.0203310
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bisson2016_algebra
+</td>
+<td style="text-align:right;">
+0.8484215
+</td>
+<td style="text-align:right;">
+2.568510
+</td>
+<td style="text-align:right;">
+0.8683733
+</td>
+<td style="text-align:right;">
+0.0199518
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_experts-even
+</td>
+<td style="text-align:right;">
+0.8491136
+</td>
+<td style="text-align:right;">
+2.574393
+</td>
+<td style="text-align:right;">
+0.8688955
+</td>
+<td style="text-align:right;">
+0.0197819
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Plain
+</td>
+<td style="text-align:right;">
+0.8515141
+</td>
+<td style="text-align:right;">
+2.595120
+</td>
+<td style="text-align:right;">
+0.8707116
+</td>
+<td style="text-align:right;">
+0.0191975
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2014_Bowland030211data
+</td>
+<td style="text-align:right;">
+0.8534615
+</td>
+<td style="text-align:right;">
+2.612307
+</td>
+<td style="text-align:right;">
+0.8721905
+</td>
+<td style="text-align:right;">
+0.0187290
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Davies2020a
+</td>
+<td style="text-align:right;">
+0.8591749
+</td>
+<td style="text-align:right;">
+2.664771
+</td>
+<td style="text-align:right;">
+0.8765585
+</td>
+<td style="text-align:right;">
+0.0173837
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2019
+</td>
+<td style="text-align:right;">
+0.8689817
+</td>
+<td style="text-align:right;">
+2.762701
+</td>
+<td style="text-align:right;">
+0.8841590
+</td>
+<td style="text-align:right;">
+0.0151773
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2014_Bowland070211data
+</td>
+<td style="text-align:right;">
+0.8702686
+</td>
+<td style="text-align:right;">
+2.776371
+</td>
+<td style="text-align:right;">
+0.8851662
+</td>
+<td style="text-align:right;">
+0.0148976
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Daal2017_sample3
+</td>
+<td style="text-align:right;">
+0.8702782
+</td>
+<td style="text-align:right;">
+2.776474
+</td>
+<td style="text-align:right;">
+0.8851737
+</td>
+<td style="text-align:right;">
+0.0148955
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ofqual2015
+</td>
+<td style="text-align:right;">
+0.8724317
+</td>
+<td style="text-align:right;">
+2.799810
+</td>
+<td style="text-align:right;">
+0.8868642
+</td>
+<td style="text-align:right;">
+0.0144325
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luckett2018_cola
+</td>
+<td style="text-align:right;">
+0.8732902
+</td>
+<td style="text-align:right;">
+2.809279
+</td>
+<td style="text-align:right;">
+0.8875400
+</td>
+<td style="text-align:right;">
+0.0142498
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_business
+</td>
+<td style="text-align:right;">
+0.8733316
+</td>
+<td style="text-align:right;">
+2.809738
+</td>
+<td style="text-align:right;">
+0.8875726
+</td>
+<td style="text-align:right;">
+0.0142410
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2013a_expert2
+</td>
+<td style="text-align:right;">
+0.8775004
+</td>
+<td style="text-align:right;">
+2.857147
+</td>
+<td style="text-align:right;">
+0.8908689
+</td>
+<td style="text-align:right;">
+0.0133685
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2016b_perfect
+</td>
+<td style="text-align:right;">
+0.8792309
+</td>
+<td style="text-align:right;">
+2.877545
+</td>
+<td style="text-align:right;">
+0.8922444
+</td>
+<td style="text-align:right;">
+0.0130135
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+McMahon2014_teachers
+</td>
+<td style="text-align:right;">
+0.8843942
+</td>
+<td style="text-align:right;">
+2.941103
+</td>
+<td style="text-align:right;">
+0.8963740
+</td>
+<td style="text-align:right;">
+0.0119798
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_students-even
+</td>
+<td style="text-align:right;">
+0.8844710
+</td>
+<td style="text-align:right;">
+2.942080
+</td>
+<td style="text-align:right;">
+0.8964357
+</td>
+<td style="text-align:right;">
+0.0119647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bisson2016_stats
+</td>
+<td style="text-align:right;">
+0.8845189
+</td>
+<td style="text-align:right;">
+2.942690
+</td>
+<td style="text-align:right;">
+0.8964742
+</td>
+<td style="text-align:right;">
+0.0119553
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study1-insight
+</td>
+<td style="text-align:right;">
+0.8885065
+</td>
+<td style="text-align:right;">
+2.994851
+</td>
+<td style="text-align:right;">
+0.8996904
+</td>
+<td style="text-align:right;">
+0.0111839
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Edges
+</td>
+<td style="text-align:right;">
+0.8904222
+</td>
+<td style="text-align:right;">
+3.020917
+</td>
+<td style="text-align:right;">
+0.9012437
+</td>
+<td style="text-align:right;">
+0.0108215
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Coertjens2015_stress
+</td>
+<td style="text-align:right;">
+0.8924118
+</td>
+<td style="text-align:right;">
+3.048720
+</td>
+<td style="text-align:right;">
+0.9028626
+</td>
+<td style="text-align:right;">
+0.0104508
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StadthagenGonzalez2019_spa-to-eng
+</td>
+<td style="text-align:right;">
+0.8935625
+</td>
+<td style="text-align:right;">
+3.065156
+</td>
+<td style="text-align:right;">
+0.9038016
+</td>
+<td style="text-align:right;">
+0.0102391
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2013a_expert1
+</td>
+<td style="text-align:right;">
+0.8960715
+</td>
+<td style="text-align:right;">
+3.101935
+</td>
+<td style="text-align:right;">
+0.9058558
+</td>
+<td style="text-align:right;">
+0.0097843
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2017
+</td>
+<td style="text-align:right;">
+0.8987049
+</td>
+<td style="text-align:right;">
+3.141997
+</td>
+<td style="text-align:right;">
+0.9080218
+</td>
+<td style="text-align:right;">
+0.0093169
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+McMahon2014_peer
+</td>
+<td style="text-align:right;">
+0.8991638
+</td>
+<td style="text-align:right;">
+3.149138
+</td>
+<td style="text-align:right;">
+0.9084003
+</td>
+<td style="text-align:right;">
+0.0092366
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Marshall2020_statistics
+</td>
+<td style="text-align:right;">
+0.9015941
+</td>
+<td style="text-align:right;">
+3.187787
+</td>
+<td style="text-align:right;">
+0.9104102
+</td>
+<td style="text-align:right;">
+0.0088162
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2014_GCSE070211data
+</td>
+<td style="text-align:right;">
+0.9027410
+</td>
+<td style="text-align:right;">
+3.206529
+</td>
+<td style="text-align:right;">
+0.9113619
+</td>
+<td style="text-align:right;">
+0.0086209
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_peer-assessment
+</td>
+<td style="text-align:right;">
+0.9044001
+</td>
+<td style="text-align:right;">
+3.234232
+</td>
+<td style="text-align:right;">
+0.9127419
+</td>
+<td style="text-align:right;">
+0.0083419
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hunter2018
+</td>
+<td style="text-align:right;">
+0.9054866
+</td>
+<td style="text-align:right;">
+3.252769
+</td>
+<td style="text-align:right;">
+0.9136480
+</td>
+<td style="text-align:right;">
+0.0081614
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study2-simple
+</td>
+<td style="text-align:right;">
+0.9110555
+</td>
+<td style="text-align:right;">
+3.353053
+</td>
+<td style="text-align:right;">
+0.9183204
+</td>
+<td style="text-align:right;">
+0.0072650
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LuckettX_odor-familiar
+</td>
+<td style="text-align:right;">
+0.9116918
+</td>
+<td style="text-align:right;">
+3.365112
+</td>
+<td style="text-align:right;">
+0.9188574
+</td>
+<td style="text-align:right;">
+0.0071656
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_art1
+</td>
+<td style="text-align:right;">
+0.9136365
+</td>
+<td style="text-align:right;">
+3.402789
+</td>
+<td style="text-align:right;">
+0.9205022
+</td>
+<td style="text-align:right;">
+0.0068657
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_art2
+</td>
+<td style="text-align:right;">
+0.9139111
+</td>
+<td style="text-align:right;">
+3.408211
+</td>
+<td style="text-align:right;">
+0.9207349
+</td>
+<td style="text-align:right;">
+0.0068238
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study2-marks
+</td>
+<td style="text-align:right;">
+0.9221270
+</td>
+<td style="text-align:right;">
+3.583493
+</td>
+<td style="text-align:right;">
+0.9277531
+</td>
+<td style="text-align:right;">
+0.0056261
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smith2020
+</td>
+<td style="text-align:right;">
+0.9320296
+</td>
+<td style="text-align:right;">
+3.835661
+</td>
+<td style="text-align:right;">
+0.9363556
+</td>
+<td style="text-align:right;">
+0.0043259
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_college
+</td>
+<td style="text-align:right;">
+0.9335833
+</td>
+<td style="text-align:right;">
+3.880266
+</td>
+<td style="text-align:right;">
+0.9377198
+</td>
+<td style="text-align:right;">
+0.0041364
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bisson2016_calculus
+</td>
+<td style="text-align:right;">
+0.9397453
+</td>
+<td style="text-align:right;">
+4.073845
+</td>
+<td style="text-align:right;">
+0.9431696
+</td>
+<td style="text-align:right;">
+0.0034243
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Thr
+</td>
+<td style="text-align:right;">
+0.9401588
+</td>
+<td style="text-align:right;">
+4.087896
+</td>
+<td style="text-align:right;">
+0.9435376
+</td>
+<td style="text-align:right;">
+0.0033788
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StadthagenGonzalez2019_eng-to-spa
+</td>
+<td style="text-align:right;">
+0.9404675
+</td>
+<td style="text-align:right;">
+4.098481
+</td>
+<td style="text-align:right;">
+0.9438125
+</td>
+<td style="text-align:right;">
+0.0033450
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study2-rigour
+</td>
+<td style="text-align:right;">
+0.9422135
+</td>
+<td style="text-align:right;">
+4.159939
+</td>
+<td style="text-align:right;">
+0.9453704
+</td>
+<td style="text-align:right;">
+0.0031569
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Mountain
+</td>
+<td style="text-align:right;">
+0.9422777
+</td>
+<td style="text-align:right;">
+4.162251
+</td>
+<td style="text-align:right;">
+0.9454278
+</td>
+<td style="text-align:right;">
+0.0031500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017_example2
+</td>
+<td style="text-align:right;">
+0.9443830
+</td>
+<td style="text-align:right;">
+4.240296
+</td>
+<td style="text-align:right;">
+0.9473133
+</td>
+<td style="text-align:right;">
+0.0029303
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sangwin2021_study1-rigour
+</td>
+<td style="text-align:right;">
+0.9477803
+</td>
+<td style="text-align:right;">
+4.376056
+</td>
+<td style="text-align:right;">
+0.9503719
+</td>
+<td style="text-align:right;">
+0.0025916
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017_example4
+</td>
+<td style="text-align:right;">
+0.9485595
+</td>
+<td style="text-align:right;">
+4.409076
+</td>
+<td style="text-align:right;">
+0.9510762
+</td>
+<td style="text-align:right;">
+0.0025167
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vatavu2019
+</td>
+<td style="text-align:right;">
+0.9495352
+</td>
+<td style="text-align:right;">
+4.451492
+</td>
+<td style="text-align:right;">
+0.9519595
+</td>
+<td style="text-align:right;">
+0.0024244
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2015b
+</td>
+<td style="text-align:right;">
+0.9502261
+</td>
+<td style="text-align:right;">
+4.482281
+</td>
+<td style="text-align:right;">
+0.9525861
+</td>
+<td style="text-align:right;">
+0.0023600
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy2b
+</td>
+<td style="text-align:right;">
+0.9503385
+</td>
+<td style="text-align:right;">
+4.487350
+</td>
+<td style="text-align:right;">
+0.9526881
+</td>
+<td style="text-align:right;">
+0.0023496
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy2a
+</td>
+<td style="text-align:right;">
+0.9516662
+</td>
+<td style="text-align:right;">
+4.548565
+</td>
+<td style="text-align:right;">
+0.9538946
+</td>
+<td style="text-align:right;">
+0.0022284
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ramos2021_Auckland
+</td>
+<td style="text-align:right;">
+0.9534534
+</td>
+<td style="text-align:right;">
+4.635068
+</td>
+<td style="text-align:right;">
+0.9555236
+</td>
+<td style="text-align:right;">
+0.0020702
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AlMaimani2017
+</td>
+<td style="text-align:right;">
+0.9543464
+</td>
+<td style="text-align:right;">
+4.680177
+</td>
+<td style="text-align:right;">
+0.9563396
+</td>
+<td style="text-align:right;">
+0.0019933
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2013b
+</td>
+<td style="text-align:right;">
+0.9561418
+</td>
+<td style="text-align:right;">
+4.775014
+</td>
+<td style="text-align:right;">
+0.9579845
+</td>
+<td style="text-align:right;">
+0.0018427
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LuckettX_odor-pleasant
+</td>
+<td style="text-align:right;">
+0.9588550
+</td>
+<td style="text-align:right;">
+4.929937
+</td>
+<td style="text-align:right;">
+0.9604810
+</td>
+<td style="text-align:right;">
+0.0016260
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2015a_subset-of-scripts
+</td>
+<td style="text-align:right;">
+0.9602843
+</td>
+<td style="text-align:right;">
+5.017865
+</td>
+<td style="text-align:right;">
+0.9618014
+</td>
+<td style="text-align:right;">
+0.0015171
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_ielts-writing
+</td>
+<td style="text-align:right;">
+0.9608904
+</td>
+<td style="text-align:right;">
+5.056596
+</td>
+<td style="text-align:right;">
+0.9623624
+</td>
+<td style="text-align:right;">
+0.0014720
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy2c
+</td>
+<td style="text-align:right;">
+0.9627824
+</td>
+<td style="text-align:right;">
+5.183529
+</td>
+<td style="text-align:right;">
+0.9641178
+</td>
+<td style="text-align:right;">
+0.0013355
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ramos2021_Rutgers
+</td>
+<td style="text-align:right;">
+0.9628799
+</td>
+<td style="text-align:right;">
+5.190335
+</td>
+<td style="text-align:right;">
+0.9642085
+</td>
+<td style="text-align:right;">
+0.0013286
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_music
+</td>
+<td style="text-align:right;">
+0.9634046
+</td>
+<td style="text-align:right;">
+5.227410
+</td>
+<td style="text-align:right;">
+0.9646965
+</td>
+<td style="text-align:right;">
+0.0012919
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bramley2018_1a
+</td>
+<td style="text-align:right;">
+0.9675736
+</td>
+<td style="text-align:right;">
+5.553295
+</td>
+<td style="text-align:right;">
+0.9685921
+</td>
+<td style="text-align:right;">
+0.0010184
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_efl-oracy
+</td>
+<td style="text-align:right;">
+0.9708549
+</td>
+<td style="text-align:right;">
+5.857566
+</td>
+<td style="text-align:right;">
+0.9716803
+</td>
+<td style="text-align:right;">
+0.0008254
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Clark2018_Study1
+</td>
+<td style="text-align:right;">
+0.9710256
+</td>
+<td style="text-align:right;">
+5.874799
+</td>
+<td style="text-align:right;">
+0.9718415
+</td>
+<td style="text-align:right;">
+0.0008159
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2015a_all-scripts
+</td>
+<td style="text-align:right;">
+0.9714079
+</td>
+<td style="text-align:right;">
+5.913937
+</td>
+<td style="text-align:right;">
+0.9722026
+</td>
+<td style="text-align:right;">
+0.0007948
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy1
+</td>
+<td style="text-align:right;">
+0.9734448
+</td>
+<td style="text-align:right;">
+6.136566
+</td>
+<td style="text-align:right;">
+0.9741318
+</td>
+<td style="text-align:right;">
+0.0006869
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_efl-writing
+</td>
+<td style="text-align:right;">
+0.9744106
+</td>
+<td style="text-align:right;">
+6.251290
+</td>
+<td style="text-align:right;">
+0.9750490
+</td>
+<td style="text-align:right;">
+0.0006385
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zucco2019_experts
+</td>
+<td style="text-align:right;">
+0.9771198
+</td>
+<td style="text-align:right;">
+6.611039
+</td>
+<td style="text-align:right;">
+0.9776316
+</td>
+<td style="text-align:right;">
+0.0005118
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2012a
+</td>
+<td style="text-align:right;">
+0.9779996
+</td>
+<td style="text-align:right;">
+6.741941
+</td>
+<td style="text-align:right;">
+0.9784732
+</td>
+<td style="text-align:right;">
+0.0004736
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Fracts
+</td>
+<td style="text-align:right;">
+0.9786962
+</td>
+<td style="text-align:right;">
+6.851278
+</td>
+<td style="text-align:right;">
+0.9791406
+</td>
+<td style="text-align:right;">
+0.0004444
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_design
+</td>
+<td style="text-align:right;">
+0.9787771
+</td>
+<td style="text-align:right;">
+6.864325
+</td>
+<td style="text-align:right;">
+0.9792182
+</td>
+<td style="text-align:right;">
+0.0004411
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Clark2018_Study2
+</td>
+<td style="text-align:right;">
+0.9795754
+</td>
+<td style="text-align:right;">
+6.997183
+</td>
+<td style="text-align:right;">
+0.9799842
+</td>
+<td style="text-align:right;">
+0.0004088
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_mcq-difficulty
+</td>
+<td style="text-align:right;">
+0.9813463
+</td>
+<td style="text-align:right;">
+7.321790
+</td>
+<td style="text-align:right;">
+0.9816879
+</td>
+<td style="text-align:right;">
+0.0003416
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2013a_novice
+</td>
+<td style="text-align:right;">
+0.9824695
+</td>
+<td style="text-align:right;">
+7.552719
+</td>
+<td style="text-align:right;">
+0.9827716
+</td>
+<td style="text-align:right;">
+0.0003020
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vatavu2020
+</td>
+<td style="text-align:right;">
+0.9853436
+</td>
+<td style="text-align:right;">
+8.260120
+</td>
+<td style="text-align:right;">
+0.9855553
+</td>
+<td style="text-align:right;">
+0.0002117
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2020_brightness-equalised
+</td>
+<td style="text-align:right;">
+0.9856657
+</td>
+<td style="text-align:right;">
+8.352400
+</td>
+<td style="text-align:right;">
+0.9858682
+</td>
+<td style="text-align:right;">
+0.0002026
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Isnac2020
+</td>
+<td style="text-align:right;">
+0.9885587
+</td>
+<td style="text-align:right;">
+9.348959
+</td>
+<td style="text-align:right;">
+0.9886882
+</td>
+<td style="text-align:right;">
+0.0001294
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2020_main-study
+</td>
+<td style="text-align:right;">
+0.9919567
+</td>
+<td style="text-align:right;">
+11.150226
+</td>
+<td style="text-align:right;">
+0.9920209
+</td>
+<td style="text-align:right;">
+0.0000642
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Esen2019
+</td>
+<td style="text-align:right;">
+0.9938275
+</td>
+<td style="text-align:right;">
+12.728298
+</td>
+<td style="text-align:right;">
+0.9938654
+</td>
+<td style="text-align:right;">
+0.0000379
+</td>
+</tr>
+</tbody>
+</table>
+
+![](figs-web/03-reliability-measures/unnamed-chunk-6-1.png)<!-- -->
+
+So for the following analyses, we use the correct value of the SSR
+instead.
+
 # SSR vs split-halves
 
 ![](figs-web/03-reliability-measures/ssr-vs-splithalves-1.png)<!-- -->
@@ -160,7 +1921,7 @@ AlMaimani2017
 0.976
 </td>
 <td style="text-align:right;">
-0.954
+0.956
 </td>
 </tr>
 <tr>
@@ -180,7 +1941,7 @@ Luckett2018_coldbrew
 0.814
 </td>
 <td style="text-align:right;">
-0.739
+0.793
 </td>
 </tr>
 </tbody>
@@ -240,7 +2001,7 @@ Kinnear2021_students-withsolutions2
 0.251
 </td>
 <td style="text-align:right;">
-0.679
+0.757
 </td>
 </tr>
 <tr>
@@ -263,7 +2024,7 @@ Davies2021_novice
 0.385
 </td>
 <td style="text-align:right;">
-0.658
+0.745
 </td>
 </tr>
 <tr>
@@ -286,7 +2047,7 @@ Kinnear2021_students-withsolutions1
 0.398
 </td>
 <td style="text-align:right;">
-0.569
+0.699
 </td>
 </tr>
 <tr>
@@ -309,7 +2070,7 @@ Spehar2016_expt2-Plain
 0.411
 </td>
 <td style="text-align:right;">
-0.852
+0.871
 </td>
 </tr>
 <tr>
@@ -332,7 +2093,7 @@ Sangwin2021_study2-insight
 0.438
 </td>
 <td style="text-align:right;">
-0.724
+0.784
 </td>
 </tr>
 <tr>
@@ -355,7 +2116,7 @@ Settembri2018
 0.455
 </td>
 <td style="text-align:right;">
-0.734
+0.790
 </td>
 </tr>
 <tr>
@@ -378,7 +2139,7 @@ Luckett2018_icecream
 0.495
 </td>
 <td style="text-align:right;">
-0.513
+0.672
 </td>
 </tr>
 <tr>
@@ -401,7 +2162,7 @@ Spehar2016_expt2-Edges
 0.507
 </td>
 <td style="text-align:right;">
-0.890
+0.901
 </td>
 </tr>
 <tr>
@@ -424,7 +2185,7 @@ Kinnear2021_students-odd
 0.522
 </td>
 <td style="text-align:right;">
-0.804
+0.836
 </td>
 </tr>
 <tr>
@@ -447,7 +2208,7 @@ Bramley2018_2
 0.537
 </td>
 <td style="text-align:right;">
-0.738
+0.793
 </td>
 </tr>
 <tr>
@@ -470,7 +2231,7 @@ Zucco2019_legislators
 0.541
 </td>
 <td style="text-align:right;">
-0.803
+0.836
 </td>
 </tr>
 <tr>
@@ -493,7 +2254,7 @@ Jones2013a_peer1
 0.572
 </td>
 <td style="text-align:right;">
-0.820
+0.848
 </td>
 </tr>
 <tr>
@@ -516,7 +2277,7 @@ Jones2014_GCSE030211data
 0.579
 </td>
 <td style="text-align:right;">
-0.776
+0.817
 </td>
 </tr>
 <tr>
@@ -539,7 +2300,7 @@ Kinnear2021_students-withsolutions
 0.583
 </td>
 <td style="text-align:right;">
-0.770
+0.813
 </td>
 </tr>
 <tr>
@@ -562,7 +2323,7 @@ Kinnear2021_students-withoutsolutions
 0.591
 </td>
 <td style="text-align:right;">
-0.774
+0.816
 </td>
 </tr>
 <tr>
@@ -585,7 +2346,7 @@ Kinnear2021_experts-odd
 0.591
 </td>
 <td style="text-align:right;">
-0.847
+0.867
 </td>
 </tr>
 <tr>
@@ -608,7 +2369,7 @@ Daal2017_sample2
 0.595
 </td>
 <td style="text-align:right;">
-0.782
+0.821
 </td>
 </tr>
 <tr>
@@ -631,7 +2392,7 @@ Jones2013a_peer2
 0.607
 </td>
 <td style="text-align:right;">
-0.841
+0.863
 </td>
 </tr>
 <tr>
@@ -654,7 +2415,7 @@ Coertjens2021
 0.610
 </td>
 <td style="text-align:right;">
-0.792
+0.828
 </td>
 </tr>
 <tr>
@@ -677,7 +2438,7 @@ Jones2016b_realscripts
 0.617
 </td>
 <td style="text-align:right;">
-0.826
+0.852
 </td>
 </tr>
 <tr>
@@ -700,7 +2461,7 @@ Bramley2018_1b
 0.634
 </td>
 <td style="text-align:right;">
-0.753
+0.802
 </td>
 </tr>
 <tr>
@@ -723,7 +2484,7 @@ Jones2013a_expert2
 0.636
 </td>
 <td style="text-align:right;">
-0.878
+0.891
 </td>
 </tr>
 <tr>
@@ -746,7 +2507,7 @@ PollittX_college
 0.645
 </td>
 <td style="text-align:right;">
-0.934
+0.938
 </td>
 </tr>
 <tr>
@@ -769,7 +2530,7 @@ Luckett2018_pizza
 0.653
 </td>
 <td style="text-align:right;">
-0.667
+0.750
 </td>
 </tr>
 <tr>
@@ -792,7 +2553,7 @@ Holmes2017
 0.657
 </td>
 <td style="text-align:right;">
-0.830
+0.855
 </td>
 </tr>
 <tr>
@@ -815,7 +2576,7 @@ Daal2017_sample3
 0.659
 </td>
 <td style="text-align:right;">
-0.870
+0.885
 </td>
 </tr>
 <tr>
@@ -838,7 +2599,7 @@ Kinnear2021_experts-withsolutions
 0.665
 </td>
 <td style="text-align:right;">
-0.835
+0.858
 </td>
 </tr>
 <tr>
@@ -861,7 +2622,7 @@ Jones2013a_expert1
 0.665
 </td>
 <td style="text-align:right;">
-0.896
+0.906
 </td>
 </tr>
 <tr>
@@ -884,7 +2645,7 @@ Sangwin2021_study2-understanding
 0.675
 </td>
 <td style="text-align:right;">
-0.845
+0.866
 </td>
 </tr>
 <tr>
@@ -907,7 +2668,7 @@ Davies2021_expert
 0.679
 </td>
 <td style="text-align:right;">
-0.829
+0.854
 </td>
 </tr>
 <tr>
@@ -930,7 +2691,7 @@ Daal2017_sample1
 0.681
 </td>
 <td style="text-align:right;">
-0.819
+0.847
 </td>
 </tr>
 <tr>
@@ -953,7 +2714,7 @@ Bisson2019
 0.686
 </td>
 <td style="text-align:right;">
-0.833
+0.857
 </td>
 </tr>
 <tr>
@@ -976,7 +2737,7 @@ PollittX_business
 0.692
 </td>
 <td style="text-align:right;">
-0.873
+0.888
 </td>
 </tr>
 <tr>
@@ -999,7 +2760,7 @@ Spehar2016_expt2-Mountain
 0.694
 </td>
 <td style="text-align:right;">
-0.942
+0.945
 </td>
 </tr>
 </tbody>
@@ -1025,17 +2786,28 @@ There are two reliability measures proposed for EloChoice: see
 discussion in
 <https://cran.r-project.org/web/packages/EloChoice/vignettes/EloChoice-tutorial.html>
 
-We use the weighted version, $R'$, computed based on 1000 iterations.
+We use the weighted version,
+![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'"),
+computed based on 1000 iterations.
 
 ### SSR vs EloChoice
+
+    ## Warning: ggrepel: 1 unlabeled data points (too many overlaps). Consider
+    ## increasing max.overlaps
 
 ![](figs-web/03-reliability-measures/ssr-vs-elo-1.png)<!-- -->
 
 ### Split-halves vs EloChoice
 
+    ## Warning: ggrepel: 30 unlabeled data points (too many overlaps). Consider
+    ## increasing max.overlaps
+
 ![](figs-web/03-reliability-measures/splithalves-vs-elo-1.png)<!-- -->
 
 ### Split-halves vs EloChoice `N_CR` \>= 10
+
+    ## Warning: ggrepel: 6 unlabeled data points (too many overlaps). Consider
+    ## increasing max.overlaps
 
 ![](figs-web/03-reliability-measures/splithalves-vs-elo-10-1.png)<!-- -->
 
@@ -1114,7 +2886,7 @@ PollittX_efl-oracy
 0.8714799
 </td>
 <td style="text-align:right;">
-0.9708549
+0.9716803
 </td>
 </tr>
 <tr>
@@ -1140,7 +2912,7 @@ PollittX_college
 0.6449471
 </td>
 <td style="text-align:right;">
-0.9335833
+0.9377198
 </td>
 </tr>
 <tr>
@@ -1166,7 +2938,7 @@ PollittX_music
 0.7844205
 </td>
 <td style="text-align:right;">
-0.9634046
+0.9646965
 </td>
 </tr>
 <tr>
@@ -1192,7 +2964,7 @@ PollittX_design
 0.9026506
 </td>
 <td style="text-align:right;">
-0.9787771
+0.9792182
 </td>
 </tr>
 <tr>
@@ -1218,7 +2990,7 @@ Jones2015a_subset-of-scripts
 0.7933694
 </td>
 <td style="text-align:right;">
-0.9602843
+0.9618014
 </td>
 </tr>
 <tr>
@@ -1244,7 +3016,7 @@ PollittX_ielts-writing
 0.8506706
 </td>
 <td style="text-align:right;">
-0.9608904
+0.9623624
 </td>
 </tr>
 <tr>
@@ -1270,7 +3042,7 @@ PollittX_philosophy1
 0.8635246
 </td>
 <td style="text-align:right;">
-0.9734448
+0.9741318
 </td>
 </tr>
 <tr>
@@ -1296,7 +3068,7 @@ Jones2015a_all-scripts
 0.7868488
 </td>
 <td style="text-align:right;">
-0.9714079
+0.9722026
 </td>
 </tr>
 <tr>
@@ -1322,7 +3094,7 @@ Zucco2019_legislators
 0.5412221
 </td>
 <td style="text-align:right;">
-0.8032555
+0.8356002
 </td>
 </tr>
 <tr>
@@ -1348,7 +3120,7 @@ PollittX_mcq-difficulty
 0.9058105
 </td>
 <td style="text-align:right;">
-0.9813463
+0.9816879
 </td>
 </tr>
 <tr>
@@ -1374,7 +3146,7 @@ Pollitt2012a
 0.8710961
 </td>
 <td style="text-align:right;">
-0.9779996
+0.9784732
 </td>
 </tr>
 <tr>
@@ -1400,7 +3172,7 @@ Jones2013a_novice
 0.8875759
 </td>
 <td style="text-align:right;">
-0.9824695
+0.9827716
 </td>
 </tr>
 <tr>
@@ -1426,20 +3198,25 @@ Bramley2018_1a
 0.8780558
 </td>
 <td style="text-align:right;">
-0.9675736
+0.9685921
 </td>
 </tr>
 </tbody>
 </table>
 
-The $R'$ measure is quite low for all of those.
+The
+![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
+measure is quite low for all of those.
 
-Looking at the relationship of $R'$ with the Elo-BTM correlation:
+Looking at the relationship of
+![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
+with the Elo-BTM correlation:
 
 ![](figs-web/03-reliability-measures/elo-reliability-vs-btmcorr-1.png)<!-- -->
 
-It’s odd that there are some judging sessions with low $R'$ but high
-correlation of Elo and BTM scores.
+It’s odd that there are some judging sessions with low
+![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
+but high correlation of Elo and BTM scores.
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1494,7 +3271,7 @@ Luckett2018_coldbrew
 0.8137861
 </td>
 <td style="text-align:right;">
-0.7385786
+0.7927565
 </td>
 </tr>
 <tr>
@@ -1520,7 +3297,7 @@ Luckett2018_cola
 0.8360254
 </td>
 <td style="text-align:right;">
-0.8732902
+0.8875400
 </td>
 </tr>
 <tr>
@@ -1546,7 +3323,7 @@ Luckett2018_pizza
 0.6526395
 </td>
 <td style="text-align:right;">
-0.6671128
+0.7502510
 </td>
 </tr>
 <tr>
@@ -1572,7 +3349,7 @@ Spehar2016_expt2-Mountain
 0.6939253
 </td>
 <td style="text-align:right;">
-0.9422777
+0.9454278
 </td>
 </tr>
 <tr>
@@ -1598,7 +3375,7 @@ Isnac2020
 0.9666396
 </td>
 <td style="text-align:right;">
-0.9885587
+0.9886882
 </td>
 </tr>
 <tr>
@@ -1624,7 +3401,7 @@ Spehar2016_expt2-Edges
 0.5067319
 </td>
 <td style="text-align:right;">
-0.8904222
+0.9012437
 </td>
 </tr>
 <tr>
@@ -1650,7 +3427,7 @@ Spehar2016_expt2-Thr
 0.7192029
 </td>
 <td style="text-align:right;">
-0.9401588
+0.9435376
 </td>
 </tr>
 <tr>
@@ -1676,7 +3453,7 @@ Luckett2018_icecream
 0.4949369
 </td>
 <td style="text-align:right;">
-0.5129689
+0.6724809
 </td>
 </tr>
 <tr>
@@ -1702,15 +3479,16 @@ Spehar2016_expt2-Plain
 0.4106837
 </td>
 <td style="text-align:right;">
-0.8515141
+0.8707116
 </td>
 </tr>
 </tbody>
 </table>
 
 Those ones all seem to have a small number of representations - so
-perhaps the $R'$ measure is systematically underestimating reliability
-in those cases.
+perhaps the
+![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
+measure is systematically underestimating reliability in those cases.
 
 # Proportion of correct judgements
 
@@ -1754,8 +3532,7 @@ reliability.
 ![](figs-web/03-reliability-measures/prop-vs-elo-1.png)<!-- -->
 
     ## Warning: Removed 2 rows containing non-finite values (stat_smooth).
-
-    ## Warning: Removed 2 rows containing missing values (geom_point).
+    ## Removed 2 rows containing missing values (geom_point).
 
 ## Proportion of correction judgements vs split-halves
 
