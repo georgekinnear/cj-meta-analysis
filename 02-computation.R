@@ -17,11 +17,13 @@ compute_btm <- function(csv_contents, judging_session, seed = 123, ...) {
   
   if(file.exists(cache_file)) {
     ssr_cached = read_csv(cache_file %>% str_replace("_results", "_ssr"), show_col_types = FALSE)
+    sepG_cached = read_csv(cache_file %>% str_replace("_results", "_sepG"), show_col_types = FALSE)
     btm_cached = read_csv(cache_file, show_col_types = FALSE)
     print(str_glue("  ✔ retrieved from cache"))
     
     return(list(
       ssr = list(ssr_cached$ssr),
+      sepG = list(sepG_cached$sepG),
       btm_estimates = list(btm_cached)
     ))
   } else {
@@ -44,9 +46,11 @@ compute_btm <- function(csv_contents, judging_session, seed = 123, ...) {
     
     write_csv(sirt_result$effects, file = cache_file)
     write_csv(tibble(ssr = sirt_result$mle.rel), file = cache_file %>% str_replace("_results", "_ssr"))
+    write_csv(tibble(sepG = sirt_result$sepG), file = cache_file %>% str_replace("_results", "_sepG"))
     
     return(list(
       ssr = list(sirt_result$mle.rel),
+      sepG = list(sirt_result$sepG),
       btm_estimates = list(sirt_result$effects)
     ))
   
@@ -70,12 +74,20 @@ btm_data <- judgement_data_tidy %>%
 
 # 3. Read in all the saved SSR values ----
 
-ssr_values <- tibble(path = fs::dir_ls("data-cache", recurse = TRUE, glob = "*btm_ssr*")) %>% 
+btm_ssr_values <- tibble(path = fs::dir_ls("data-cache", recurse = TRUE, glob = "*btm_ssr*")) %>% 
   separate(path, into = c(NA, "judging_session", NA), sep = "/", remove = FALSE) %>% 
   mutate(ssr = map(path, vroom::vroom, delim = ",", show_col_types = FALSE)) %>% 
   unnest(ssr) %>% 
   select(-path)
 
+sepG_values <- tibble(path = fs::dir_ls("data-cache", recurse = TRUE, glob = "*btm_sepG*")) %>% 
+  separate(path, into = c(NA, "judging_session", NA), sep = "/", remove = FALSE) %>% 
+  mutate(sepG = map(path, vroom::vroom, delim = ",", show_col_types = FALSE)) %>% 
+  unnest(sepG) %>% 
+  select(-path)
+
+ssr_values <- btm_ssr_values %>% 
+  left_join(sepG_values, by = "judging_session")
 
 #### Split-halves ####
 
