@@ -97,7 +97,9 @@ meta_analysis_data <- meta_analysis_data %>%
   mutate(ssr_bad = ssr) %>% 
   mutate(ssr_good = ssr_alt) %>% 
   # but pick the correct one for going forward
-  mutate(ssr = ssr_good)
+  mutate(ssr = ssr_good) %>% 
+  # tidy up the presentation of the adaptivity field
+  mutate(adaptivity = str_replace(adaptivity, "TRUE", "Adaptive") %>% str_replace("FALSE", "Non-adapative"))
 ```
 
 
@@ -122,6 +124,23 @@ meta_analysis_data %>%
   labs(title = paste("r = ", toString(SSRvSplitHalves_r), ", p = ", toString(SSRvSplitHalves_p)), 
        x = "SSR", y = "Mean split-halves correlation")
 ggsave("figs-pdf/FIG-ssr-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
+```
+
+
+```{r ssr-vs-splithalves-by-adaptivity}
+meta_analysis_data %>% 
+  filter(!is.na(ssr)) %>% 
+  ggplot(aes(x = ssr, y = mean_split_corr)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  ggpubr::stat_cor(p.accuracy = 0.001) +
+  facet_grid(cols = vars(adaptivity)) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(x = "SSR", y = "Mean split-halves correlation")
 ```
 
 ### SSR vs split-halves for `N_CR` > 10 

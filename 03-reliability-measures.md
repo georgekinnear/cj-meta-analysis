@@ -1860,6 +1860,8 @@ instead.
 
 ![](figs-web/03-reliability-measures/ssr-vs-splithalves-1.png)<!-- -->
 
+![](figs-web/03-reliability-measures/ssr-vs-splithalves-by-adaptivity-1.png)<!-- -->
+
 ### SSR vs split-halves for `N_CR` \> 10
 
 NMM recommends 5 judgements per item, i.e. N_CR \>= 9
@@ -2826,10 +2828,10 @@ Bradley-Terry?
 
 Previous work has found high agreement:
 
--   0.95 and 0.94 in Clark et al. (2018)
-    <https://doi.org/10.1371/journal.pone.0190393>
--   Kendall’s tau score of 0.96 for rank orders in Gray et al. (2022)
-    <https://doi.org/10.48550/arXiv.2204.01805>
+- 0.95 and 0.94 in Clark et al. (2018)
+  <https://doi.org/10.1371/journal.pone.0190393>
+- Kendall’s tau score of 0.96 for rank orders in Gray et al. (2022)
+  <https://doi.org/10.48550/arXiv.2204.01805>
 
 ![](figs-web/03-reliability-measures/elobtmcorr-histogram-1.png)<!-- -->
 
