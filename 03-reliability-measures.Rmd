@@ -99,7 +99,7 @@ meta_analysis_data <- meta_analysis_data %>%
   # but pick the correct one for going forward
   mutate(ssr = ssr_good) %>% 
   # tidy up the presentation of the adaptivity field
-  mutate(adaptivity = str_replace(adaptivity, "TRUE", "Adaptive") %>% str_replace("FALSE", "Non-adapative"))
+  mutate(adaptivity = str_replace(adaptivity, "TRUE", "Adaptive") %>% str_replace("FALSE", "Non-adaptive"))
 ```
 
 
@@ -142,6 +142,78 @@ meta_analysis_data %>%
   ylim(c(0,1)) +
   labs(x = "SSR", y = "Mean split-halves correlation")
 ```
+
+### Using SSR of the halves
+
+When forming split halves, we fit the Bradley-Terry model using data from each half of the judges. Since this is a subset of the data, the SSR for the split halves will almost certainly be lower than the SSR for the full dataset.
+
+One way to interpret reliability is "how likely would I be to get results like these if I repeated the process?". The split-halves approach answers this by comparing the scores from two subsets of the judges, A and B. If we imagine instead that group A was the only one that we collected data from, then the SSR from judge group A would be another way to estimate the "reliability", so should bear some relation to the correlation of group A's scores with group B's (imagining group B as "repeating the process" with a new group of judges).
+
+So here, rather than using the SSR of the full dataset on the x-axis, we use only the SSR of one of the split halves. Plotted here is every one of the 100 splits from each of the studies in the sample:
+
+```{r}
+if(file.exists("data-cache/split_halves_summary.csv")) {
+  splits_stats <- read_csv("data-cache/split_halves_summary.csv", show_col_types = FALSE)
+} else {
+  files <- list.files(pattern = "split_halves.csv", recursive = TRUE)
+  
+  splits <- vroom::vroom("data-cache/Bisson2019/split_halves.csv") %>% 
+    mutate(data = purrr::map(path, ~ vroom::vroom(.x) %>% select(contains("theta"))))
+  
+  splits <- tibble(file = list.files(pattern = "split_halves.csv", recursive = TRUE)) %>% 
+    #head(n = 10) %>% 
+    mutate(file_contents = purrr::map(file, ~ vroom::vroom(.x, show_col_types = FALSE))) %>% 
+    unnest(file_contents) %>% 
+    mutate(data = purrr::map(path, ~ vroom::vroom(.x, show_col_types = FALSE) %>% select(contains("theta"))))
+  
+  splits_stats <- splits %>% 
+    mutate(
+      halves_info = purrr::map(data,
+                               function(df) {
+                                 df %>%
+                                   summarise(
+                                     G_x = sd(theta.x) / sqrt(mean(se.theta.x ^ 2)),
+                                     ssr_x = G_x ^ 2 / (1 + G_x ^ 2),
+                                     G_y = sd(theta.y) / sqrt(mean(se.theta.y ^ 2)),
+                                     ssr_y = G_y ^ 2 / (1 + G_y ^ 2)
+                                   )
+                               })
+    ) %>% 
+    unnest(cols = c(halves_info))
+  
+  splits_stats %>% write_csv("data-cache/split_halves_summary.csv")
+}
+
+
+
+splits_stats %>% 
+  ggplot(aes(x = ssr_x, y = split_corr)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  ggpubr::stat_cor(p.accuracy = 0.001)
+```
+
+Here we omit studies where the number of comparisons is too low for the split half to meet the recommendations set out by Verhavert et al., and add the prediction interval to the plot:
+
+```{r}
+splits_stats %>% 
+  separate(file, into = c(NA, "study", NA), sep = "/") %>% 
+  left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
+  # restrict to those studies that gathered enough data for each split half to meet the Verhavert recommended N_CR
+  # note: results are quite different if you do/don't use this filter!
+  filter(observed_N_C/observed_N_R > 2*17) %>% 
+  # add the prediction interval
+  cbind(
+    predict(lm(split_corr ~ ssr_x, data = .), interval = "prediction")
+  ) %>% 
+  ggplot(aes(x = ssr_x, y = split_corr)) +
+  geom_point(aes(colour = study), alpha = 0.3) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  geom_ribbon(aes(ymin = lwr, ymax = upr), fill = "blue", alpha = 0.2) +
+  ggpubr::stat_cor(p.accuracy = 0.001) +
+  theme(legend.position = "none")
+```
+
 
 ### SSR vs split-halves for `N_CR` > 10 
 NMM recommends 5 judgements per item, i.e. N_CR >= 9

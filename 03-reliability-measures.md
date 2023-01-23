@@ -1862,6 +1862,36 @@ instead.
 
 ![](figs-web/03-reliability-measures/ssr-vs-splithalves-by-adaptivity-1.png)<!-- -->
 
+### Using SSR of the halves
+
+When forming split halves, we fit the Bradley-Terry model using data
+from each half of the judges. Since this is a subset of the data, the
+SSR for the split halves will almost certainly be lower than the SSR for
+the full dataset.
+
+One way to interpret reliability is “how likely would I be to get
+results like these if I repeated the process?”. The split-halves
+approach answers this by comparing the scores from two subsets of the
+judges, A and B. If we imagine instead that group A was the only one
+that we collected data from, then the SSR from judge group A would be
+another way to estimate the “reliability”, so should bear some relation
+to the correlation of group A’s scores with group B’s (imagining group B
+as “repeating the process” with a new group of judges).
+
+So here, rather than using the SSR of the full dataset on the x-axis, we
+use only the SSR of one of the split halves. Plotted here is every one
+of the 100 splits from each of the studies in the sample:
+
+![](figs-web/03-reliability-measures/unnamed-chunk-8-1.png)<!-- -->
+
+Here we omit studies where the number of comparisons is too low for the
+split half to meet the recommendations set out by Verhavert et al., and
+add the prediction interval to the plot:
+
+    ## Warning in predict.lm(lm(split_corr ~ ssr_x, data = .), interval = "prediction"): predictions on current data refer to _future_ responses
+
+![](figs-web/03-reliability-measures/unnamed-chunk-9-1.png)<!-- -->
+
 ### SSR vs split-halves for `N_CR` \> 10
 
 NMM recommends 5 judgements per item, i.e. N_CR \>= 9
