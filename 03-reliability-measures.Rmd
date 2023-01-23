@@ -214,6 +214,31 @@ splits_stats %>%
   theme(legend.position = "none")
 ```
 
+This is then a bit like the plot by Verhavert et al. (2018), appearing in the bottom middle (or bottom right) panel of their Figure C1, and similarly shows a fairly "y=x" trend line:
+
+```{r}
+splits_stats %>% 
+  separate(file, into = c(NA, "study", NA), sep = "/") %>% 
+  left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
+  # restrict to those studies that gathered enough data for each split half to meet the Verhavert recommended N_CR
+  # note: results are quite different if you do/don't use this filter!
+  #filter(observed_N_C/observed_N_R > 2*17) %>% 
+  group_by(study) %>% 
+  summarise(ssr_x = mean(ssr_x), split_corr = mean(split_corr)) %>% 
+  # add the prediction interval
+  cbind(
+    predict(lm(split_corr ~ ssr_x, data = .), interval = "prediction")
+  ) %>% 
+  ggplot(aes(x = ssr_x, y = split_corr)) +
+  geom_point(aes(colour = study), alpha = 0.9) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  geom_ribbon(aes(ymin = lwr, ymax = upr), fill = "blue", alpha = 0.2) +
+  ggpubr::stat_cor(p.accuracy = 0.001) +
+  geom_abline(slope = 1) +
+  expand_limits(x = 0, y = 0) +
+  theme(legend.position = "none")
+```
+
 
 ### SSR vs split-halves for `N_CR` > 10 
 NMM recommends 5 judgements per item, i.e. N_CR >= 9

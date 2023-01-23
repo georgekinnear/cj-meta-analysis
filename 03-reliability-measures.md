@@ -1892,6 +1892,14 @@ add the prediction interval to the plot:
 
 ![](figs-web/03-reliability-measures/unnamed-chunk-9-1.png)<!-- -->
 
+This is then a bit like the plot by Verhavert et al. (2018), appearing
+in the bottom middle (or bottom right) panel of their Figure C1, and
+similarly shows a fairly “y=x” trend line:
+
+    ## Warning in predict.lm(lm(split_corr ~ ssr_x, data = .), interval = "prediction"): predictions on current data refer to _future_ responses
+
+![](figs-web/03-reliability-measures/unnamed-chunk-10-1.png)<!-- -->
+
 ### SSR vs split-halves for `N_CR` \> 10
 
 NMM recommends 5 judgements per item, i.e. N_CR \>= 9
