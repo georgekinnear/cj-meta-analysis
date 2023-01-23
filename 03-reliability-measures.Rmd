@@ -222,7 +222,7 @@ splits_stats %>%
   left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
   # restrict to those studies that gathered enough data for each split half to meet the Verhavert recommended N_CR
   # note: results are quite different if you do/don't use this filter!
-  #filter(observed_N_C/observed_N_R > 2*17) %>% 
+  filter(observed_N_C/observed_N_R > 2*17) %>% 
   group_by(study) %>% 
   summarise(ssr_x = mean(ssr_x), split_corr = mean(split_corr)) %>% 
   # add the prediction interval
