@@ -141,3 +141,51 @@ plotRels <- rels %>%                 # define dataframe
 
 plotRels
 ```
+
+
+## Scatter plots for RQ1 CJ META-ANALYSIS: Derived Counts
+
+```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
+library("readr")
+library("gghalves")
+
+
+#get counts (ass, rep, comp) data
+counts2 <- rq1[,9:11]
+counts2 <- gather(counts2)
+
+
+
+# Raincloud plot with repeated measurements
+plotCounts2 <- counts2 %>%                 # define dataframe
+  ggplot(aes(x = key,       # define x var
+             y = value)) + # define y var
+  
+  #Add individual observations to the plot
+  geom_point(
+    position = position_jitter(width=.1), # add jitter to the observations
+    size=.5, alpha=.8, # set the size of each dot. alpha adds transparency
+    color = "black", fill = "black") + 
+  
+  #x tick labels
+ scale_x_discrete(labels=c("Comparisons per assessor" , "Comparisons per representation", "Representations per assessor")) +
+  #y tick labels
+  scale_y_continuous(trans='log10', labels = scales::comma) +
+  
+  # Optional styling
+  coord_flip() +                          # flip x & y coordinates
+  xlab(NULL) +        # x-axis label
+  ylab("Frequency") + # y-axis label
+  theme_minimal() + # apply minimal theme to hide many unnecessary features of plot
+  theme(            # make modifications to the theme
+    panel.grid.major.y=element_blank(),   # hide major grid for y axis
+    panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
+    panel.grid.major.x=element_line(),    # show major grid for x axis
+    panel.grid.minor.x=element_blank(),   # hide minor grid for x axis
+    legend.position="none")
+
+
+plotCounts2
+
+```
+
