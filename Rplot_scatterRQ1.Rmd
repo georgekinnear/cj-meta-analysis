@@ -57,16 +57,21 @@ plotCounts <- counts %>%                 # define dataframe
     size=.5, alpha=.4, # set the size of each dot. alpha adds transparency
     color = "black", fill = "black") + 
   
-  #x tick labels
-  scale_x_discrete(labels=c("Representations" , "Comparisons" , "Assessors")) +
+  
   #y tick labels
   scale_y_continuous(trans='log10', labels = scales::comma) +
+  
+  geom_text(x = 3.3, y = 3, label = "Assessors") +
+  geom_text(x = 2.3, y = 3, label = "Comparisons") +
+  geom_text(x = 1.3, y = 3, label = "Representations") +
   
   # Optional styling
   coord_flip() +                          # flip x & y coordinates
   xlab(NULL) +        # x-axis label
   ylab(NULL) + # y-axis label
   theme(            # make modifications to the theme
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
     aspect.ratio = 1,
     panel.grid.major.y=element_blank(),   # hide major grid for y axis
     panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
@@ -166,16 +171,22 @@ plotCounts2 <- counts2 %>%                 # define dataframe
     size=.5, alpha=.4, # set the size of each dot. alpha adds transparency
     color = "black", fill = "black") + 
   
-  #x tick labels
- scale_x_discrete(labels=c("Comparisons per assessor" , "Comparisons per representation", "Representations per assessor")) +
+ 
   #y tick labels
   scale_y_continuous(trans='log10', labels = scales::comma) +
+  
+    
+  geom_text(x = 3.3, y = 1, label = "Representations per assessor") +
+  geom_text(x = 2.3, y = 1, label = "Comparisons per representation") +
+  geom_text(x = 1.3, y = 1, label = "Comparisons per assessor") +
   
   # Optional styling
   coord_flip() +                          # flip x & y coordinates
   xlab(NULL) +        # x-axis label
   ylab(NULL) + # y-axis label
   theme(            # make modifications to the theme
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
     aspect.ratio = 1,
     panel.grid.major.y=element_blank(),   # hide major grid for y axis
     panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
