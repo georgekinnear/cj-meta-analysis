@@ -28,29 +28,6 @@ library(tidyverse)
 #dir.create(file.path(mainDir, "figs"))
 
 ```
-## Theme
-
-```{r theme, include=TRUE, attr.output='.numberLines'}
-
-# you can optionally create a ggplot2 theme to use across many plots
-# for example, we used ggplot's minimal theme as a base, and modified it to be
-# used across most of our plots
-
-theme_minimalism <- function(){
-  theme_minimal() + # ggplot's minimal theme hides many unnecessary features of plot
-  theme(            # make modifications to the theme
-    panel.grid.major.y=element_blank(),   # hide major grid for y axis
-    panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
-    panel.grid.major.x=element_blank(),   # hide major grid for x axis
-    panel.grid.minor.x=element_blank(),   # hide minor grid for x axis
-    text=element_text(size=14),           # font aesthetics 
-    axis.text=element_text(size=12),
-    axis.title=element_text(size=14,face="bold"))
-}
-
-# you can use this custom theme by adding theme_minimalism() to the ggplot object
-
-```
 
 ## Raincloud plots for RQ1 CJ META-ANALYSIS: Counts
 
@@ -89,8 +66,8 @@ plotCounts <- counts %>%                 # define dataframe
   coord_flip() +                          # flip x & y coordinates
   xlab(NULL) +        # x-axis label
   ylab(NULL) + # y-axis label
-  theme_minimal() + # apply minimal theme to hide many unnecessary features of plot
   theme(            # make modifications to the theme
+    aspect.ratio = 1,
     panel.grid.major.y=element_blank(),   # hide major grid for y axis
     panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
     panel.grid.major.x=element_line(),    # show major grid for x axis
@@ -198,8 +175,8 @@ plotCounts2 <- counts2 %>%                 # define dataframe
   coord_flip() +                          # flip x & y coordinates
   xlab(NULL) +        # x-axis label
   ylab(NULL) + # y-axis label
-  theme_minimal() + # apply minimal theme to hide many unnecessary features of plot
   theme(            # make modifications to the theme
+    aspect.ratio = 1,
     panel.grid.major.y=element_blank(),   # hide major grid for y axis
     panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
     panel.grid.major.x=element_line(),    # show major grid for x axis
@@ -208,7 +185,7 @@ plotCounts2 <- counts2 %>%                 # define dataframe
 
 
 plotCounts2
-ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
+ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Representations per assessor vs Comparisons per representation
 
