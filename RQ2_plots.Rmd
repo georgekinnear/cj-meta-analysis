@@ -99,6 +99,7 @@ plotRels <- rels %>%                 # define dataframe
 
 
 plotRels
+ggsave("figs-pdf/FIG-RQ2_reliabilities_raincloud.pdf", units = "cm", width = 20, height = 14)
 ```
 
 
