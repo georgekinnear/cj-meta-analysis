@@ -1,0 +1,105 @@
+
+---
+title: "RQ2 plots"
+author: "Ian Jones"
+date: "Feb 2023"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Setup
+
+```{r setup, include=TRUE, attr.output='.numberLines'}
+knitr::opts_chunk$set(echo = TRUE,
+                      dev.args = list(png = list(type = "cairo")))
+library(ggplot2)     # required to make plots
+library(dplyr)       # for data wrangling/hygiene
+library(viridis)     # viridis colour palettes
+library(colorspace)  # colorspace colour palettes
+library(ggExtra)     # to add marginal density plots & histograms
+library(gghalves)    # required to make raincloud plots
+library(gridExtra)   #put plots side by side
+library(readr)
+library(gghalves)
+library(tidyverse)
+
+# create subdirectory to store figures if it doesn't exist
+#mainDir = setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#dir.create(file.path(mainDir, "figs"))
+
+```
+## Theme
+
+```{r theme, include=TRUE, attr.output='.numberLines'}
+
+# you can optionally create a ggplot2 theme to use across many plots
+# for example, we used ggplot's minimal theme as a base, and modified it to be
+# used across most of our plots
+
+theme_minimalism <- function(){
+  theme_minimal() + # ggplot's minimal theme hides many unnecessary features of plot
+  theme(            # make modifications to the theme
+    panel.grid.major.y=element_blank(),   # hide major grid for y axis
+    panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
+    panel.grid.major.x=element_blank(),   # hide major grid for x axis
+    panel.grid.minor.x=element_blank(),   # hide minor grid for x axis
+    text=element_text(size=14),           # font aesthetics 
+    axis.text=element_text(size=12),
+    axis.title=element_text(size=14,face="bold"))
+}
+
+# you can use this custom theme by adding theme_minimalism() to the ggplot object
+
+```
+
+
+
+## Raincloud plots for RQ2 CJ META-ANALYSIS: Relaibilities
+
+```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
+library("readr")
+library("gghalves")
+
+rq1 <- read.csv("data/00-RQ1_table_fewercolumns.csv")
+#get rid of summary stats rows
+rq1 <- rq1[1:101,]
+#get counts (ass, rep, comp) data
+
+#get rels columns
+rels <- rq1[,6:8]
+rels <- pivot_longer(rels, everything())
+colnames(rels)[1] <- "key"
+
+# Raincloud plot with repeated measurements
+plotRels <- rels %>%                 # define dataframe
+  ggplot(aes(x = key,       # define x var
+             y = value)) + # define y var
+  
+  #Add individual observations to the plot
+  geom_point(
+    position = position_jitter(width=.1), # add jitter to the observations
+    size=.5, alpha=.4, # set the size of each dot. alpha adds transparency
+    color = "black", fill = "black") + 
+  
+  #x tick labels
+  scale_x_discrete(labels=c("Correct comparisons" , "Inter-rater reliability" , "Scale Separation Reliability")) +
+  
+  # Optional styling
+  coord_flip() +                          # flip x & y coordinates
+  xlab(NULL) +              # x-axis label
+  ylab(NULL) + # y-axis label
+  theme_minimal() + # apply minimal theme to hide many unnecessary features of plot
+  theme(            # make modifications to the theme
+    panel.grid.major.y=element_blank(),   # hide major grid for y axis
+    panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
+    panel.grid.major.x=element_line(),    # show major grid for x axis
+    panel.grid.minor.x=element_blank(),   # hide minor grid for x axis
+    legend.position="none")
+
+
+plotRels
+```
+
+
+
