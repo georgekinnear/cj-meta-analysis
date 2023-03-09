@@ -100,6 +100,8 @@ plotCounts <- counts %>%                 # define dataframe
 
 plotCounts
 
+ggsave("figs-pdf/FIG-RQ1_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
+
 ```
 
 ## Scatterplots for RQ1:  Assessors vs Comparisons
@@ -119,6 +121,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Assessors", y = "Comparisons")
+ggsave("figs-pdf/FIG-RQ1_assVScomp.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Assessors vs Representations
 
@@ -137,6 +140,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Assessors", y = "Representations")
+ggsave("figs-pdf/FIG-RQ1_assVSrep.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Comparisons vs Representations
 
@@ -155,6 +159,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Comparisons", y = "Representations")
+ggsave("figs-pdf/FIG-RQ1_compVSrep.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ## Raincloud plot for RQ1 CJ META-ANALYSIS: Derived Counts
@@ -203,7 +208,7 @@ plotCounts2 <- counts2 %>%                 # define dataframe
 
 
 plotCounts2
-
+ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
 ```
 ## Scatterplots for RQ1:  Representations per assessor vs Comparisons per representation
 
@@ -222,6 +227,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Representations per assessor", y = "Comparisons per representation")
+ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1: Representations per assessor vs Comparisons per assessor
 
@@ -240,6 +246,8 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Representations per assessor", y = "Comparisons per assessor")
+ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERass.pdf", units = "cm", width = 14, height = 14)
+
 ```
 ## Scatterplots for RQ1: Comparisons per representation vs Comparisons per assessor
 
@@ -258,4 +266,6 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Comparisons per representation", y = "Comparisons per assessor")
+ggsave("figs-pdf/FIG-RQ1_CompPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
+
 ```
