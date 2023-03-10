@@ -98,12 +98,12 @@ rq1 %>%
 #  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
-  ggpubr::stat_cor(p.accuracy = 0.001) +
+ # ggpubr::stat_cor(p.accuracy = 0.001) +
   theme(aspect.ratio = 1) +
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Assessors", y = "Comparisons")
-#ggsave("figs-pdf/FIG-RQ1_assVScomp.pdf", units = "cm", width = 14, height = 14)
+ggsave("figs-pdf/FIG-RQ1_assVScomp.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Assessors vs Representations
 
@@ -117,12 +117,12 @@ rq1 %>%
 #  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
-  ggpubr::stat_cor(p.accuracy = 0.001) +
+  #ggpubr::stat_cor(p.accuracy = 0.001) +
   theme(aspect.ratio = 1) +
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Assessors", y = "Representations")
-#ggsave("figs-pdf/FIG-RQ1_assVSrep.pdf", units = "cm", width = 14, height = 14)
+ggsave("figs-pdf/FIG-RQ1_assVSrep.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Comparisons vs Representations
 
@@ -136,12 +136,12 @@ rq1 %>%
 #  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
-  ggpubr::stat_cor(p.accuracy = 0.001) +
+  #ggpubr::stat_cor(p.accuracy = 0.001) +
   theme(aspect.ratio = 1) +
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Comparisons", y = "Representations")
-#ggsave("figs-pdf/FIG-RQ1_compVSrep.pdf", units = "cm", width = 14, height = 14)
+ggsave("figs-pdf/FIG-RQ1_compVSrep.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ## Raincloud plot for RQ1 CJ META-ANALYSIS: Derived Counts
@@ -210,12 +210,12 @@ rq1 %>%
  # geom_abline(slope = -1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
-  ggpubr::stat_cor(p.accuracy = 0.001) +
+  #ggpubr::stat_cor(p.accuracy = 0.001) +
   theme(aspect.ratio = 1) +
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Representations per assessor", y = "Comparisons per representation")
-#ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
+ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1: Representations per assessor vs Comparisons per assessor
 
@@ -229,12 +229,12 @@ rq1 %>%
  # geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
-  ggpubr::stat_cor(p.accuracy = 0.001) +
+  #ggpubr::stat_cor(p.accuracy = 0.001) +
   theme(aspect.ratio = 1) +
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Representations per assessor", y = "Comparisons per assessor")
-#ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERass.pdf", units = "cm", width = 14, height = 14)
+ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERass.pdf", units = "cm", width = 14, height = 14)
 
 ```
 ## Scatterplots for RQ1: Comparisons per representation vs Comparisons per assessor
@@ -249,11 +249,11 @@ rq1 %>%
 #  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
-  ggpubr::stat_cor(p.accuracy = 0.001) +
+  #ggpubr::stat_cor(p.accuracy = 0.001) +
   theme(aspect.ratio = 1) +
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Comparisons per representation", y = "Comparisons per assessor")
-#ggsave("figs-pdf/FIG-RQ1_CompPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
+ggsave("figs-pdf/FIG-RQ1_CompPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
 
 ```
