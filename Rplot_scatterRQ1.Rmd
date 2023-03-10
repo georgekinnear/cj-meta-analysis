@@ -69,6 +69,7 @@ plotCounts <- counts %>%                 # define dataframe
   coord_flip() +                          # flip x & y coordinates
   xlab(NULL) +        # x-axis label
   ylab(NULL) + # y-axis label
+  theme_minimal() + 
   theme(            # make modifications to the theme
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
@@ -184,6 +185,7 @@ plotCounts2 <- counts2 %>%                 # define dataframe
   coord_flip() +                          # flip x & y coordinates
   xlab(NULL) +        # x-axis label
   ylab(NULL) + # y-axis label
+  theme_minimal() + 
   theme(            # make modifications to the theme
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
