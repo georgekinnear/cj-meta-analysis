@@ -52,14 +52,6 @@ meta_analysis_data %>%
 ```
 
 
-```{r include=FALSE}
-CperR <- round(cj_sessions$observed_N_C/cj_sessions$observed_N_R,0)
-meta_analysis_data$CperR <- CperR
-meta_analysis_data_34 <- meta_analysis_data[meta_analysis_data$CperR > 33,]
-meta_analysis_data_20 <- meta_analysis_data[meta_analysis_data$CperR > 19,]
-meta_analysis_data_10 <- meta_analysis_data[meta_analysis_data$CperR > 9,]
-```
-
 # SSR computation
 
 There seems to be a problem with the way `sirt::btm` computes the SSR:
@@ -81,6 +73,18 @@ ssr_comparison_data <- meta_analysis_data %>%
 
 ssr_comparison_data %>% basic_kable()
 ```
+
+
+
+```{r include=FALSE}
+CperR <- round(cj_sessions$observed_N_C/cj_sessions$observed_N_R,0)
+meta_analysis_data$CperR <- CperR
+meta_analysis_data_34 <- meta_analysis_data[meta_analysis_data$CperR > 33,]
+meta_analysis_data_20 <- meta_analysis_data[meta_analysis_data$CperR > 19,]
+meta_analysis_data_10 <- meta_analysis_data[meta_analysis_data$CperR > 9,]
+```
+
+
 ```{r}
 ssr_comparison_data %>% 
   ggplot(aes(x = ssr_alt, y = ssr)) +
@@ -245,8 +249,8 @@ splits_stats %>%
 ```
 
 
-### SSR vs split-halves for `N_CR` > 10 
-NMM recommends 5 judgements per item, i.e. N_CR >= 9. With SSR based on all assessors' comparisons:
+### SSR vs split-halves for `N_CR` => 10 
+NMM recommends 5 judgements per item, i.e. N_CR > 9. With SSR based on all assessors' comparisons:
 
 ```{r ssr-vs-splithalves-10}
 SSRvSplitHalves_10 <- cor.test(meta_analysis_data_10$ssr, meta_analysis_data_10$mean_split_corr)
@@ -265,23 +269,29 @@ meta_analysis_data_10 %>%
   xlim(c(0,1)) +
   ylim(c(0,1)) +
   labs(title = paste("r = ", toString(SSRvSplitHalves_r_10), ", p = ", toString(SSRvSplitHalves_p_10)), 
-       x = "SSR", y = "Mean split-halves correlation")
+       x = "SSR", y = "Median split-halves correlation")
 ggsave("figs-pdf/FIG-ssr-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
 ```
 
-And here N_CR >= 9 with SSR based on half of assessors' comparisons:
+And here N_CR > 9 with SSR based on half of assessors' comparisons:
 
 ```{r ssr_x-vs-splithalves-10}
   
-  splits_stats %>% 
-  separate(file, into = c(NA, "study", NA), sep = "/") %>% 
-  left_join(meta_analysis_data_10, by = c("study" = "judging_session")) %>% 
-  
-   filter(!str_detect(study, "Spehar")) %>% 
+  splits_stats_10 = splits_stats %>% 
+  separate(file, into = c(NA, "study", NA), sep = "/") %>%
+  left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
+  filter(!str_detect(study, "Spehar")) %>% 
+  filter(CperR > 2*9) %>% 
   group_by(study) %>% 
   summarise(ssr_x = median(ssr_x), median_split_corr = median(split_corr)) %>% 
+  filter(!is.na(ssr_x)) %>%  as.data.frame
+  
+  SSR_xvSplitHalves_10 <- cor.test(splits_stats_10$ssr_x,
+                                  splits_stats_10$median_split_corr)
+  SSR_xvSplitHalves_r_10 <- round(SSR_xvSplitHalves_10$estimate, 3)
+  SSR_xvSplitHalves_p_10 <- round(SSR_xvSplitHalves_10$p.value, 3)
 
-  filter(!is.na(ssr_x)) %>% 
+  splits_stats_10 %>% 
   mutate(pt_label = ifelse(median_split_corr < 0.5 | ssr_x < 0.7, study, "")) %>% 
   ggplot(aes(x = ssr_x, y = median_split_corr, label = pt_label)) +
   geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
@@ -289,17 +299,17 @@ And here N_CR >= 9 with SSR based on half of assessors' comparisons:
   geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
-  ggrepel::geom_text_repel(alpha = 0.3) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
   xlim(c(0,1)) +
   ylim(c(0,1)) +
-  labs(title = paste("r = ", "George can you make these", ", p = ", "values appear?"), 
-       x = "SSR", y = "Mean split-halves correlation")
+  labs(title = paste("r = ", toString(SSR_xvSplitHalves_r_10), ", p = ", toString(SSR_xvSplitHalves_p_10)), 
+       x = "SSR", y = "Median split-halves correlation")
 ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
 ### SSR vs split-halves for `N_CR` >= 20 
-Jones recommends 10 judgements per item, i.e. N_CR >= 19
+Jones recommends 10 judgements per item, i.e. N_CR > 19 with SSR based on all assessors' comparisons:
 
 ```{r ssr-vs-splithalves-20}
 SSRvSplitHalves_20 <- cor.test(meta_analysis_data_20$ssr, meta_analysis_data_20$mean_split_corr)
@@ -318,12 +328,47 @@ meta_analysis_data_20 %>%
   xlim(c(0,1)) +
   ylim(c(0,1)) +
   labs(title = paste("r = ", toString(SSRvSplitHalves_r_20), ", p = ", toString(SSRvSplitHalves_p_20)), 
-       x = "SSR", y = "Mean split-halves correlation")
+       x = "SSR", y = "Median split-halves correlation")
 ggsave("figs-pdf/FIG-ssr-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
 ```
+And here N_CR > 19 with SSR based on half of assessors' comparisons:
+
+```{r ssr_x-vs-splithalves-20}
+  
+  splits_stats_20 = splits_stats %>% 
+  separate(file, into = c(NA, "study", NA), sep = "/") %>% 
+  left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
+  filter(!str_detect(study, "Spehar")) %>% 
+  filter(CperR > 2*19) %>% 
+  group_by(study) %>% 
+  summarise(ssr_x = median(ssr_x), median_split_corr = median(split_corr)) %>% 
+  filter(!is.na(ssr_x)) %>%  as.data.frame
+  
+  SSR_xvSplitHalves_20 <- cor.test(splits_stats_20$ssr_x,
+                                  splits_stats_20$median_split_corr)
+  SSR_xvSplitHalves_r_20 <- round(SSR_xvSplitHalves_20$estimate, 3)
+  SSR_xvSplitHalves_p_20 <- round(SSR_xvSplitHalves_20$p.value, 3)
+
+  splits_stats_20 %>% 
+  mutate(pt_label = ifelse(median_split_corr < 0.5 | ssr_x < 0.7, study, "")) %>% 
+  ggplot(aes(x = ssr_x, y = median_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(SSR_xvSplitHalves_r_20), ", p = ", toString(SSR_xvSplitHalves_p_20)), 
+       x = "SSR", y = "Median split-halves correlation")
+ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
+```
+
+
 
 ### SSR vs split-halves for `N_CR` >= 34 
-Verhavert et al. 2019 recommend 17 judgements per item, i.e. N_CR >= 34
+Verhavert et al. 2019 recommend 17 judgements per item, i.e. N_CR > 33  with SSR based on all assessors' comparisons:
 
 ```{r ssr-vs-splithalves-34}
 SSRvSplitHalves_34 <- cor.test(meta_analysis_data_34$ssr, meta_analysis_data_34$mean_split_corr)
@@ -345,6 +390,40 @@ meta_analysis_data_34 %>%
        x = "SSR", y = "Mean split-halves correlation")
 ggsave("figs-pdf/FIG-ssr-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
 ```
+And here N_CR > 33 with SSR based on half of assessors' comparisons:
+
+```{r ssr_x-vs-splithalves-20}
+  
+  splits_stats_34 = splits_stats %>% 
+  separate(file, into = c(NA, "study", NA), sep = "/") %>% 
+  left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
+  filter(!str_detect(study, "Spehar")) %>% 
+  filter(CperR > 2*33) %>% 
+  group_by(study) %>% 
+  summarise(ssr_x = median(ssr_x), median_split_corr = median(split_corr)) %>% 
+  filter(!is.na(ssr_x)) %>%  as.data.frame
+  
+  SSR_xvSplitHalves_34 <- cor.test(splits_stats_34$ssr_x,
+                                  splits_stats_34$median_split_corr)
+  SSR_xvSplitHalves_r_34 <- round(SSR_xvSplitHalves_34$estimate, 3)
+  SSR_xvSplitHalves_p_34 <- round(SSR_xvSplitHalves_34$p.value, 3)
+
+  splits_stats_34 %>% 
+  mutate(pt_label = ifelse(median_split_corr < 0.5 | ssr_x < 0.7, study, "")) %>% 
+  ggplot(aes(x = ssr_x, y = median_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", toString(SSR_xvSplitHalves_r_34), ", p = ", toString(SSR_xvSplitHalves_p_34)), 
+       x = "SSR", y = "Median split-halves correlation")
+ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
+```
+
 
 It is very rare for the split-halves measure to be higher than SSR:
 
