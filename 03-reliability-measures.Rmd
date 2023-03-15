@@ -226,7 +226,9 @@ splits_stats %>%
   # these points are the outliers:
   # filter(!str_detect(study, "Spehar")) %>% 
   group_by(study) %>% 
-  summarise(ssr_x = mean(ssr_x), split_corr = mean(split_corr)) %>% 
+  #summarise(ssr_x = mean(ssr_x), split_corr = mean(split_corr)) %>% 
+  #should this not be the median?
+  summarise(ssr_x = median(ssr_x), split_corr = median(split_corr)) %>% 
   # add the prediction interval
   cbind(
     predict(lm(split_corr ~ ssr_x, data = .), interval = "prediction")
@@ -244,7 +246,7 @@ splits_stats %>%
 
 
 ### SSR vs split-halves for `N_CR` > 10 
-NMM recommends 5 judgements per item, i.e. N_CR >= 9
+NMM recommends 5 judgements per item, i.e. N_CR >= 9. With SSR based on all assessors' comparisons:
 
 ```{r ssr-vs-splithalves-10}
 SSRvSplitHalves_10 <- cor.test(meta_analysis_data_10$ssr, meta_analysis_data_10$mean_split_corr)
@@ -266,6 +268,35 @@ meta_analysis_data_10 %>%
        x = "SSR", y = "Mean split-halves correlation")
 ggsave("figs-pdf/FIG-ssr-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
 ```
+
+And here N_CR >= 9 with SSR based on half of assessors' comparisons:
+
+```{r ssr_x-vs-splithalves-10}
+  
+  splits_stats %>% 
+  separate(file, into = c(NA, "study", NA), sep = "/") %>% 
+  left_join(meta_analysis_data_10, by = c("study" = "judging_session")) %>% 
+  
+   filter(!str_detect(study, "Spehar")) %>% 
+  group_by(study) %>% 
+  summarise(ssr_x = median(ssr_x), median_split_corr = median(split_corr)) %>% 
+
+  filter(!is.na(ssr_x)) %>% 
+  mutate(pt_label = ifelse(median_split_corr < 0.5 | ssr_x < 0.7, study, "")) %>% 
+  ggplot(aes(x = ssr_x, y = median_split_corr, label = pt_label)) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  ggrepel::geom_text_repel(alpha = 0.3) +
+  xlim(c(0,1)) +
+  ylim(c(0,1)) +
+  labs(title = paste("r = ", "George can you make these", ", p = ", "values appear?"), 
+       x = "SSR", y = "Mean split-halves correlation")
+ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
+```
+
 
 ### SSR vs split-halves for `N_CR` >= 20 
 Jones recommends 10 judgements per item, i.e. N_CR >= 19
