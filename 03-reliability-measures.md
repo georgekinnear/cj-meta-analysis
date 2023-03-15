@@ -1858,7 +1858,19 @@ instead.
 
 # SSR vs split-halves
 
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
 ![](figs-web/03-reliability-measures/ssr-vs-splithalves-1.png)<!-- -->
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
 ![](figs-web/03-reliability-measures/ssr-vs-splithalves-by-adaptivity-1.png)<!-- -->
 
@@ -1900,23 +1912,110 @@ similarly shows a fairly “y=x” trend line:
 
 ![](figs-web/03-reliability-measures/unnamed-chunk-10-1.png)<!-- -->
 
-### SSR vs split-halves for `N_CR` \> 10
+### SSR vs split-halves for `N_CR` =\> 10
 
-NMM recommends 5 judgements per item, i.e. N_CR \>= 9
+NMM recommends 5 judgements per item, i.e. N_CR \> 9. With SSR based on
+all assessors’ comparisons:
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
 ![](figs-web/03-reliability-measures/ssr-vs-splithalves-10-1.png)<!-- -->
 
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
+And here N_CR \> 9 with SSR based on half of assessors’ comparisons:
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
+![](figs-web/03-reliability-measures/ssr_x-vs-splithalves-10-1.png)<!-- -->
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
 ### SSR vs split-halves for `N_CR` \>= 20
 
-Jones recommends 10 judgements per item, i.e. N_CR \>= 19
+Jones recommends 10 judgements per item, i.e. N_CR \> 19 with SSR based
+on all assessors’ comparisons:
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
 ![](figs-web/03-reliability-measures/ssr-vs-splithalves-20-1.png)<!-- -->
 
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
+And here N_CR \> 19 with SSR based on half of assessors’ comparisons:
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
+![](figs-web/03-reliability-measures/ssr_x-vs-splithalves-20-1.png)<!-- -->
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
 ### SSR vs split-halves for `N_CR` \>= 34
 
-Verhavert et al. 2019 recommend 17 judgements per item, i.e. N_CR \>= 34
+Verhavert et al. 2019 recommend 17 judgements per item, i.e. N_CR \> 33
+with SSR based on all assessors’ comparisons:
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
 ![](figs-web/03-reliability-measures/ssr-vs-splithalves-34-1.png)<!-- -->
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
+And here N_CR \> 33 with SSR based on half of assessors’ comparisons:
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
+![](figs-web/03-reliability-measures/ssr_x-vs-splithalves-34-1.png)<!-- -->
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
 It is very rare for the split-halves measure to be higher than SSR:
 
@@ -2808,7 +2907,7 @@ Spehar2016_expt2-Mountain
 
 Omitting the three sessions with N_CR = 400:
 
-    ## Warning: Removed 3 rows containing missing values (geom_point).
+    ## Warning: Removed 3 rows containing missing values (`geom_point()`).
 
 ![](figs-web/03-reliability-measures/low-splithaves-1.png)<!-- -->
 
@@ -2826,11 +2925,15 @@ There are two reliability measures proposed for EloChoice: see
 discussion in
 <https://cran.r-project.org/web/packages/EloChoice/vignettes/EloChoice-tutorial.html>
 
-We use the weighted version,
-![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'"),
-computed based on 1000 iterations.
+We use the weighted version, $R'$, computed based on 1000 iterations.
 
 ### SSR vs EloChoice
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
     ## Warning: ggrepel: 1 unlabeled data points (too many overlaps). Consider
     ## increasing max.overlaps
@@ -2839,12 +2942,24 @@ computed based on 1000 iterations.
 
 ### Split-halves vs EloChoice
 
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
     ## Warning: ggrepel: 30 unlabeled data points (too many overlaps). Consider
     ## increasing max.overlaps
 
 ![](figs-web/03-reliability-measures/splithalves-vs-elo-1.png)<!-- -->
 
 ### Split-halves vs EloChoice `N_CR` \>= 10
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
     ## Warning: ggrepel: 6 unlabeled data points (too many overlaps). Consider
     ## increasing max.overlaps
@@ -2853,9 +2968,21 @@ computed based on 1000 iterations.
 
 ### Split-halves vs EloChoice `N_CR` \>= 20
 
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
 ![](figs-web/03-reliability-measures/splithalves-vs-elo-20-1.png)<!-- -->
 
 ### Split-halves vs EloChoice `N_CR` \>= 34
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
 ![](figs-web/03-reliability-measures/splithalves-vs-elo-34-1.png)<!-- -->
 
@@ -3244,19 +3371,14 @@ Bramley2018_1a
 </tbody>
 </table>
 
-The
-![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
-measure is quite low for all of those.
+The $R'$ measure is quite low for all of those.
 
-Looking at the relationship of
-![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
-with the Elo-BTM correlation:
+Looking at the relationship of $R'$ with the Elo-BTM correlation:
 
 ![](figs-web/03-reliability-measures/elo-reliability-vs-btmcorr-1.png)<!-- -->
 
-It’s odd that there are some judging sessions with low
-![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
-but high correlation of Elo and BTM scores.
+It’s odd that there are some judging sessions with low $R'$ but high
+correlation of Elo and BTM scores.
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -3526,9 +3648,8 @@ Spehar2016_expt2-Plain
 </table>
 
 Those ones all seem to have a small number of representations - so
-perhaps the
-![R'](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%27 "R'")
-measure is systematically underestimating reliability in those cases.
+perhaps the $R'$ measure is systematically underestimating reliability
+in those cases.
 
 # Proportion of correct judgements
 
@@ -3561,35 +3682,107 @@ reliability.
 
 ## Proportion of correction judgements vs SSR
 
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
 ![](figs-web/03-reliability-measures/prop-vs-ssr-1.png)<!-- -->
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
 ## Proportion of correction judgements vs Elo
 
-    ## Warning: Removed 2 rows containing non-finite values (stat_smooth).
+    ## Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).
 
-    ## Warning: Removed 2 rows containing missing values (geom_point).
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
+    ## Warning: Removed 2 rows containing missing values (`geom_point()`).
 
 ![](figs-web/03-reliability-measures/prop-vs-elo-1.png)<!-- -->
 
-    ## Warning: Removed 2 rows containing non-finite values (stat_smooth).
-    ## Removed 2 rows containing missing values (geom_point).
+    ## Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
+    ## Warning: Removed 2 rows containing missing values (`geom_point()`).
 
 ## Proportion of correction judgements vs split-halves
 
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
 ![](figs-web/03-reliability-measures/prop-vs-splithalves-1.png)<!-- -->
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
 ### Proportion of correction judgements vs split-halves for `N_CR` \>= 10
 
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
 ![](figs-web/03-reliability-measures/prop-vs-splithalves-10-1.png)<!-- -->
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
 ### Proportion of correction judgements vs split-halves for `N_CR` \>= 20
 
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
 ![](figs-web/03-reliability-measures/prop-vs-splithalves-20-1.png)<!-- -->
+
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
 
 ### Proportion of correction judgements vs split-halves for `N_CR` \>= 34
 
-    ## Warning: Removed 18 rows containing missing values (geom_smooth).
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+
+    ## Warning: Removed 18 rows containing missing values (`geom_smooth()`).
 
 ![](figs-web/03-reliability-measures/prop-vs-splithalves-34-1.png)<!-- -->
 
-    ## Warning: Removed 18 rows containing missing values (geom_smooth).
+    ## Warning: The following aesthetics were dropped during statistical transformation: label
+    ## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+    ##   the data.
+    ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+    ##   variable into a factor?
+    ## Removed 18 rows containing missing values (`geom_smooth()`).
