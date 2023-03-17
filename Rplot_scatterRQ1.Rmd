@@ -257,3 +257,71 @@ rq1 %>%
 ggsave("figs-pdf/FIG-RQ1_CompPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
 
 ```
+
+Reliability measures raincloud with SSR based on all judges
+``` {r reliabilities_raincloud}
+
+# add column of thresholds for coloring
+th <- data.frame(th10=(rq1$CompPERrep > 9) * 10, 
+                 th20=(rq1$CompPERrep > 19) * 20 ,
+                 th34=(rq1$CompPERrep > 33) * 34)
+rq1$thresholds <- apply(th, 1, max, na.rm=TRUE)
+
+#get rels columns
+rels <- rq1[,c(6:8,12)]
+rels <- pivot_longer(rels, 
+                     cols = c("SSR", "r", "Correct")
+                     )
+colnames(rels)[2] <- "key"
+rels$thresholds <- as.character(rels$thresholds)
+
+# Raincloud plot with repeated measurements
+plotRels <- rels %>%                 # define dataframe
+  ggplot(aes(x = key,       # define x var
+             y = value,     # define y var
+             colour = thresholds)) + 
+  
+  #Add individual observations to the plot
+  geom_point(
+    position = position_jitter(width=.1), # add jitter to the observations
+    #alpha=.8, # set the size of each dot. alpha adds transparency
+    shape = 16,
+    size = 3
+      ) + 
+  
+   scale_colour_manual(
+     values = c('#bdc9e1','#74a9cf','#2b8cbe','#045a8d'),
+     breaks = c("0","10","20","34"),
+     labels = c("0 to 9","10 to 19","20 to 33","34 or more")
+     ) +
+  
+  #y tick labels
+  scale_y_continuous( labels = scales::comma) + #, minor_breaks = c(0.2, 0.3, 0.4, 0.6,0.7, 0.8, 0.9)) +
+  
+    annotate("text", x = 3.3, y = .6, label = "Scale Separation Reliability") +
+    annotate("text", x = 2.3, y = .6, label = "Split-halves reliability") +
+    annotate("text", x = 1.3, y = .6, label = "Correct comparisons") +
+  
+  # Optional styling
+  coord_flip() +                          # flip x & y coordinates
+  xlab(NULL) +        # x-axis label
+  ylab(NULL) + # y-axis label
+  labs(colour = "Comparisons per representation") +
+  theme_minimal() +   
+  theme(            # make modifications to the theme
+    #text = element_text(size=14),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    panel.grid.major.y=element_blank(),   # hide major grid for y axis
+    panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
+    panel.grid.major.x=element_line(),    # show major grid for x axis
+    panel.grid.minor.x=element_line(),   # hide minor grid for x axis
+    legend.position = "bottom"
+   #legend.position= c(0.15,.8)
+    )
+
+
+plotRels
+ggsave("figs-pdf/FIG-RQ2_reliabilities_raincloud.pdf", units = "cm", width = 20, height = 14)
+
+```

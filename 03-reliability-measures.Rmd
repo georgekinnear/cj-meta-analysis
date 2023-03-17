@@ -250,68 +250,8 @@ splits_stats %>%
   expand_limits(x = 0, y = 0) +
   theme(legend.position = "bottom")
 ```
-### Distributions of values for reliability measures
-Reliability measures raincloud with SSR based on all judges
-``` {r reliabilities_raincloud}
-rq1 <- read.csv("data/00-RQ1_table_fewercolumns.csv")
-#get rid of summary stats rows
-rq1 <- rq1[1:101,]
-# add column of thresholds for coloring
-th <- data.frame(th10=(rq1$CompPERrep > 9) * 9, 
-                 th20=(rq1$CompPERrep > 19) * 19 ,
-                 th34=(rq1$CompPERrep > 33) * 33)
-rq1$thresholds <- apply(th, 1, max, na.rm=TRUE)
-
-#get rels columns
-rels <- rq1[,c(6:8,12)]
-rels <- pivot_longer(rels, 
-                     cols = c("SSR", "r", "Correct")
-                     )
-colnames(rels)[2] <- "key"
-
-# Raincloud plot with repeated measurements
-plotRels <- rels %>%                 # define dataframe
-  ggplot(aes(x = key,       # define x var
-             y = value,     # define y var
-             colour = thresholds)) + 
-  
-  #Add individual observations to the plot
-  geom_point(
-    position = position_jitter(width=.1), # add jitter to the observations
-    alpha=.4, # set the size of each dot. alpha adds transparency
-      ) + 
-  
-  scale_colour_manual(
-    values = c("#eff3ff", "#bdd7e7", "#6baed6", "#2171b5"),
-    breaks = c(0,10,20,33)
-    ) +
-  
-  #y tick labels
-  scale_y_continuous( labels = scales::comma) + #, minor_breaks = c(0.2, 0.3, 0.4, 0.6,0.7, 0.8, 0.9)) +
-  
-    annotate("text", x = 3.3, y = .6, label = "Scale Separation Reliability") +
-    annotate("text", x = 2.3, y = .6, label = "Split-halves reliability") +
-    annotate("text", x = 1.3, y = .6, label = "Correct comparisons") +
-  
-  # Optional styling
-  coord_flip() +                          # flip x & y coordinates
-  xlab(NULL) +        # x-axis label
-  ylab(NULL) + # y-axis label
-  theme_minimal() +   
-  theme(            # make modifications to the theme
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    panel.grid.major.y=element_blank(),   # hide major grid for y axis
-    panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
-    panel.grid.major.x=element_line(),    # show major grid for x axis
-    panel.grid.minor.x=element_line(),   # hide minor grid for x axis
-    legend.position="none")
 
 
-plotRels
-ggsave("figs-pdf/FIG-RQ2_reliabilities_raincloud.pdf", units = "cm", width = 20, height = 14)
-
-```
 
 
 ### SSR vs split-halves for `N_CR` => 10 
