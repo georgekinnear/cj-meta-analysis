@@ -50,26 +50,26 @@ counts$key <- factor(counts$key, levels=c('Rep', 'Comp', 'Ass'))
 plotCounts <- counts %>%                 # define dataframe
   ggplot(aes(x = key,       # define x var
              y = value)) + # define y var
-  
+
   #Add individual observations to the plot
   geom_point(
     position = position_jitter(width=.1), # add jitter to the observations
     alpha=.4, # set the size of each dot. alpha adds transparency
-    color = "black", fill = "black") + 
-  
-  
+    color = "black", fill = "black") +
+
+
   #y tick labels
   scale_y_continuous(trans='log10', labels = scales::comma) +
-  
+
     annotate("text", x = 3.3, y = 1000, label = "Assessors") +
     annotate("text", x = 2.3, y = 1000, label = "Comparisons") +
     annotate("text", x = 1.3, y = 1000, label = "Representations") +
-  
+
   # Optional styling
   coord_flip() +                          # flip x & y coordinates
   xlab(NULL) +        # x-axis label
   ylab(NULL) + # y-axis label
-  theme_minimal() + 
+  theme_minimal() +
   theme(            # make modifications to the theme
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
@@ -82,14 +82,14 @@ plotCounts <- counts %>%                 # define dataframe
 
 plotCounts
 
-ggsave("figs-pdf/FIG-RQ1_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
 
 ```
 
 ## Scatterplots for RQ1:  Assessors vs Comparisons
 
 ```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
-rq1 %>% 
+rq1 %>%
   ggplot(aes(x = Ass, y = Comp)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
   scale_x_continuous(trans='log10', labels = scales::comma) +
@@ -108,7 +108,7 @@ ggsave("figs-pdf/FIG-RQ1_assVScomp.pdf", units = "cm", width = 14, height = 14)
 ## Scatterplots for RQ1:  Assessors vs Representations
 
 ```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
-rq1 %>% 
+rq1 %>%
   ggplot(aes(x = Ass, y = Rep)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
   scale_x_continuous(trans='log10', labels = scales::comma) +
@@ -122,12 +122,12 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Assessors", y = "Representations")
-ggsave("figs-pdf/FIG-RQ1_assVSrep.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_assVSrep.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Comparisons vs Representations
 
 ```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
-rq1 %>% 
+rq1 %>%
   ggplot(aes(x = Comp, y = Rep)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
   scale_x_continuous(trans='log10', labels = scales::comma) +
@@ -141,7 +141,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Comparisons", y = "Representations")
-ggsave("figs-pdf/FIG-RQ1_compVSrep.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_compVSrep.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ## Raincloud plot for RQ1 CJ META-ANALYSIS: Derived Counts
@@ -164,27 +164,27 @@ colnames(counts2)[2] <- "key"
 plotCounts2 <- counts2 %>%                 # define dataframe
   ggplot(aes(x = key,       # define x var
              y = value)) + # define y var
-  
+
   #Add individual observations to the plot
   geom_point(
     position = position_jitter(width=.1), # add jitter to the observations
      alpha=.4, # set the size of each dot. alpha adds transparency
-    color = "black", fill = "black") + 
-  
- 
+    color = "black", fill = "black") +
+
+
   #y tick labels
   scale_y_continuous(trans='log10', labels = scales::comma) +
-  
-    
+
+
   annotate("text", x = 3.3, y = 10, label = "Representations per assessor") +
     annotate("text", x = 2.3, y = 10, label = "Comparisons per representation") +
     annotate("text", x = 1.3, y = 10, label = "Comparisons per assessor") +
-  
+
   # Optional styling
   coord_flip() +                          # flip x & y coordinates
   xlab(NULL) +        # x-axis label
   ylab(NULL) + # y-axis label
-  theme_minimal() + 
+  theme_minimal() +
   theme(            # make modifications to the theme
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
@@ -196,12 +196,12 @@ plotCounts2 <- counts2 %>%                 # define dataframe
 
 
 plotCounts2
-ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
 ```
 ## Scatterplots for RQ1:  Representations per assessor vs Comparisons per representation
 
 ```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
-rq1 %>% 
+rq1 %>%
   ggplot(aes(x = repPERass, y = CompPERrep)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
   scale_x_continuous(trans='log10', labels = scales::comma) +
@@ -215,12 +215,12 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Representations per assessor", y = "Comparisons per representation")
-ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1: Representations per assessor vs Comparisons per assessor
 
 ```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
-rq1 %>% 
+rq1 %>%
   ggplot(aes(x = repPERass, y = CompPERass)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
   scale_x_continuous(trans='log10', labels = scales::comma) +
@@ -234,13 +234,13 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Representations per assessor", y = "Comparisons per assessor")
-ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERass.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERass.pdf", units = "cm", width = 14, height = 14)
 
 ```
 ## Scatterplots for RQ1: Comparisons per representation vs Comparisons per assessor
 
 ```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
-rq1 %>% 
+rq1 %>%
   ggplot(aes(x = CompPERrep, y = CompPERass)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
   scale_x_continuous(trans='log10', labels = scales::comma) +
@@ -254,22 +254,22 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Comparisons per representation", y = "Comparisons per assessor")
-ggsave("figs-pdf/FIG-RQ1_CompPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_CompPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
 
 ```
 
-Reliability measures raincloud with SSR based on all judges
-``` {r reliabilities_raincloud}
+Reliability measures raincloud with SSR based on all assessors
+``` {r reliabilities_raincloud_all_assessors}
 
 # add column of thresholds for coloring
-th <- data.frame(th10=(rq1$CompPERrep > 9) * 10, 
+th <- data.frame(th10=(rq1$CompPERrep > 9) * 10,
                  th20=(rq1$CompPERrep > 19) * 20 ,
                  th34=(rq1$CompPERrep > 33) * 34)
 rq1$thresholds <- apply(th, 1, max, na.rm=TRUE)
 
 #get rels columns
 rels <- rq1[,c(6:8,12)]
-rels <- pivot_longer(rels, 
+rels <- pivot_longer(rels,
                      cols = c("SSR", "r", "Correct")
                      )
 colnames(rels)[2] <- "key"
@@ -279,35 +279,35 @@ rels$thresholds <- as.character(rels$thresholds)
 plotRels <- rels %>%                 # define dataframe
   ggplot(aes(x = key,       # define x var
              y = value,     # define y var
-             colour = thresholds)) + 
-  
+             colour = thresholds)) +
+
   #Add individual observations to the plot
   geom_point(
     position = position_jitter(width=.1), # add jitter to the observations
     #alpha=.8, # set the size of each dot. alpha adds transparency
     shape = 16,
     size = 3
-      ) + 
-  
+      ) +
+
    scale_colour_manual(
      values = c('#bdc9e1','#74a9cf','#2b8cbe','#045a8d'),
      breaks = c("0","10","20","34"),
      labels = c("0 to 9","10 to 19","20 to 33","34 or more")
      ) +
-  
+
   #y tick labels
   scale_y_continuous( labels = scales::comma) + #, minor_breaks = c(0.2, 0.3, 0.4, 0.6,0.7, 0.8, 0.9)) +
-  
+
     annotate("text", x = 3.3, y = .6, label = "Scale Separation Reliability") +
     annotate("text", x = 2.3, y = .6, label = "Split-halves reliability") +
     annotate("text", x = 1.3, y = .6, label = "Correct comparisons") +
-  
+
   # Optional styling
   coord_flip() +                          # flip x & y coordinates
   xlab(NULL) +        # x-axis label
   ylab(NULL) + # y-axis label
   labs(colour = "Comparisons per representation") +
-  theme_minimal() +   
+  theme_minimal() +
   theme(            # make modifications to the theme
     #text = element_text(size=14),
     axis.text.y = element_blank(),
@@ -323,5 +323,42 @@ plotRels <- rels %>%                 # define dataframe
 
 plotRels
 ggsave("figs-pdf/FIG-RQ2_reliabilities_raincloud.pdf", units = "cm", width = 20, height = 14)
+
+```
+
+
+Reliability measures raincloud with SSR based on half of assessors
+``` {r reliabilities_raincloud_all_assessors}
+# get the reliability data
+reliability_stats <- read_csv("data/01-meta-analysis-data.csv", show_col_types = FALSE)
+#these stats contain the mean not median split-halves reliability!!!
+
+#get the splits_stats data to get ssr_x
+splits_stats <- read_csv("data-cache/split_halves_summary.csv", show_col_types = FALSE)
+
+#we need the session data to calculate comparisons per representation for the dot colouring
+session_data <- read_csv("data/00-judging_sessions_summary.csv", show_col_types = FALSE)[,c(1,3,4)]
+#calculate comparisons per representation
+session_data$CompPERrep <- session_data$observed_N_C / session_data$observed_N_R
+# add column of thresholds
+thr <- data.frame(thr10=(session_data$CompPERrep > 9) * 10,
+                 thr20=(session_data$CompPERrep > 19) * 20 ,
+                 thr34=(session_data$CompPERrep > 33) * 34)
+session_data$thresholds <- apply(thr, 1, max, na.rm=TRUE)
+
+#join the thresholds to reliability_stats
+ reliability_stats <- full_join(session_data, reliability_stats)
+
+splits_stats_r = splits_stats %>%
+  separate(file, into = c(NA, "study", NA), sep = "/") %>%
+  left_join(reliability_stats, by = c("study" = "judging_session")) %>%
+  filter(!str_detect(study, "Spehar")) %>%  #get rid of outlier 5 studies
+  group_by(study) %>%
+  summarise(ssr_x = median(ssr_x)) %>%
+  filter(!is.na(ssr_x)) %>% as.data.frame
+
+splits_stats_r <- left_join(splits_stats_r, reliability_stats, by = c("study" = "judging_session"))
+glimpse(splits_stats_r)
+glimpse(rels)
 
 ```
