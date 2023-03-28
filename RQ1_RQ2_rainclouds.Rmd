@@ -1,5 +1,5 @@
 ---
-title: "RQ1 plots"
+title: "RQ1 and RQ2 rainclouds"
 author: "Ian Jones"
 date: "Feb 2023"
 output:
@@ -82,7 +82,7 @@ plotCounts <- counts %>%                 # define dataframe
 
 plotCounts
 
-#ggsave("figs-pdf/FIG-RQ1_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
+##ggsave("figs-pdf/FIG-RQ1_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
 
 ```
 
@@ -103,7 +103,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Assessors", y = "Comparisons")
-ggsave("figs-pdf/FIG-RQ1_assVScomp.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_assVScomp.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Assessors vs Representations
 
@@ -122,7 +122,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Assessors", y = "Representations")
-#ggsave("figs-pdf/FIG-RQ1_assVSrep.pdf", units = "cm", width = 14, height = 14)
+##ggsave("figs-pdf/FIG-RQ1_assVSrep.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Comparisons vs Representations
 
@@ -141,7 +141,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Comparisons", y = "Representations")
-#ggsave("figs-pdf/FIG-RQ1_compVSrep.pdf", units = "cm", width = 14, height = 14)
+##ggsave("figs-pdf/FIG-RQ1_compVSrep.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ## Raincloud plot for RQ1 CJ META-ANALYSIS: Derived Counts
@@ -196,7 +196,7 @@ plotCounts2 <- counts2 %>%                 # define dataframe
 
 
 plotCounts2
-#ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
+##ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
 ```
 ## Scatterplots for RQ1:  Representations per assessor vs Comparisons per representation
 
@@ -215,7 +215,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Representations per assessor", y = "Comparisons per representation")
-#ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
+##ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1: Representations per assessor vs Comparisons per assessor
 
@@ -234,7 +234,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Representations per assessor", y = "Comparisons per assessor")
-#ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERass.pdf", units = "cm", width = 14, height = 14)
+##ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERass.pdf", units = "cm", width = 14, height = 14)
 
 ```
 ## Scatterplots for RQ1: Comparisons per representation vs Comparisons per assessor
@@ -254,7 +254,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Comparisons per representation", y = "Comparisons per assessor")
-#ggsave("figs-pdf/FIG-RQ1_CompPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
+##ggsave("figs-pdf/FIG-RQ1_CompPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
 
 ```
 
@@ -301,6 +301,8 @@ plotRels <- rels %>%                 # define dataframe
     annotate("text", x = 3.3, y = .6, label = "Scale Separation Reliability") +
     annotate("text", x = 2.3, y = .6, label = "Split-halves reliability") +
     annotate("text", x = 1.3, y = .6, label = "Correct comparisons") +
+    
+    annotate("text", x = 3.4, y = .1, label = "italic(n) == 101", parse=TRUE) +
 
   # Optional styling
   coord_flip() +                          # flip x & y coordinates
@@ -349,6 +351,7 @@ session_data$thresholds <- apply(thr, 1, max, na.rm=TRUE)
 #join the thresholds to reliability_stats
  reliability_stats <- full_join(session_data, reliability_stats)
 
+#join the splits stats SSRs to the reliability stats
 splits_stats_r = splits_stats %>%
   separate(file, into = c(NA, "study", NA), sep = "/") %>%
   left_join(reliability_stats, by = c("study" = "judging_session")) %>%
@@ -358,7 +361,70 @@ splits_stats_r = splits_stats %>%
   filter(!is.na(ssr_x)) %>% as.data.frame
 
 splits_stats_r <- left_join(splits_stats_r, reliability_stats, by = c("study" = "judging_session"))
-glimpse(splits_stats_r)
-glimpse(rels)
+
+
+#take only the columns we need from splits_stats_r 
+#i.e. thresholds, ssr_x, mean_split_corr, prop_correct_judgements
+splits_stats_rels <-splits_stats_r[,c(6,2,9,16)]
+#make names consistent with raincloud for all judgements included in SSR
+colnames(splits_stats_rels) <- c("thresholds", "SSR", "r", "Correct")
+
+#make splits_stats_rels long
+splits_stats_rels <- pivot_longer(splits_stats_rels,
+                     cols = c("SSR", "r", "Correct")
+                     )
+colnames(splits_stats_rels)[2] <- "key"
+splits_stats_rels$thresholds <- as.character(splits_stats_rels$thresholds)
+
+# Raincloud plot with repeated measurements
+plotSSrels <- splits_stats_rels %>%                 # define dataframe
+  ggplot(aes(x = key,       # define x var
+             y = value,     # define y var
+             colour = thresholds)) +
+
+  #Add individual observations to the plot
+  geom_point(
+    position = position_jitter(width=.1), # add jitter to the observations
+    #alpha=.8, # set the size of each dot. alpha adds transparency
+    shape = 16,
+    size = 3
+      ) +
+
+   scale_colour_manual(
+     values = c('#bdc9e1','#74a9cf','#2b8cbe','#045a8d'),
+     breaks = c("0","10","20","34"),
+     labels = c("0 to 9","10 to 19","20 to 33","34 or more")
+     ) +
+
+  #y tick labels
+  scale_y_continuous( labels = scales::comma) + #, minor_breaks = c(0.2, 0.3, 0.4, 0.6,0.7, 0.8, 0.9)) +
+
+    annotate("text", x = 3.3, y = .6, label = "Scale Separation Reliability") +
+    annotate("text", x = 2.3, y = .6, label = "Split-halves reliability") +
+    annotate("text", x = 1.3, y = .6, label = "Correct comparisons") +
+  
+    annotate("text", x = 3.4, y = .1, label = "italic(n) == 96", parse=TRUE) +
+
+  # Optional styling
+  coord_flip() +                          # flip x & y coordinates
+  xlab(NULL) +        # x-axis label
+  ylab(NULL) + # y-axis label
+  labs(colour = "Comparisons per representation") +
+  theme_minimal() +
+  theme(            # make modifications to the theme
+    #text = element_text(size=14),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    panel.grid.major.y=element_blank(),   # hide major grid for y axis
+    panel.grid.minor.y=element_blank(),   # hide minor grid for y axis
+    panel.grid.major.x=element_line(),    # show major grid for x axis
+    panel.grid.minor.x=element_line(),   # hide minor grid for x axis
+    legend.position = "bottom"
+   #legend.position= c(0.15,.8)
+    )
+
+
+plotSSrels
+ggsave("figs-pdf/FIG-RQ2_reliabilities_ssrx_raincloud.pdf", units = "cm", width = 20, height = 14)
 
 ```
