@@ -130,7 +130,7 @@ meta_analysis_data %>%
   ylim(c(0,1)) +
   labs(title = paste("r = ", toString(SSRvSplitHalves_r), ", p = ", toString(SSRvSplitHalves_p)), 
        x = "SSR", y = "Median split-halves correlation")
-ggsave("figs-pdf/FIG-ssr-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -276,8 +276,8 @@ splits_stats %>%
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(0.25,1)) +
+  ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(SSR_xvSplitHalves_r_all), ", p = ", toString(SSR_xvSplitHalves_p_all)), 
        x = "SSR", y = "Median split-halves correlation")
 ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-all.pdf", units = "cm", width = 14, height = 14)
@@ -302,8 +302,8 @@ meta_analysis_data_10 %>%
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(0.25,1)) +
+  ylim(c(0.25,1)) +
   labs(title = paste("r = ", toString(SSRvSplitHalves_r_10), ", p = ", toString(SSRvSplitHalves_p_10)), 
        x = "SSR", y = "Median split-halves correlation")
 ggsave("figs-pdf/FIG-ssr-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
@@ -336,8 +336,8 @@ And here N_CR > 9 with SSR based on half of assessors' comparisons:
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(0.25,1)) +
+  ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(SSR_xvSplitHalves_r_10), ", p = ", toString(SSR_xvSplitHalves_p_10)), 
        x = "SSR", y = "Median split-halves correlation")
 ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
@@ -361,8 +361,8 @@ meta_analysis_data_20 %>%
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(0.25,1)) +
+  ylim(c(0.25,1)) +
   labs(title = paste("r = ", toString(SSRvSplitHalves_r_20), ", p = ", toString(SSRvSplitHalves_p_20)), 
        x = "SSR", y = "Median split-halves correlation")
 ggsave("figs-pdf/FIG-ssr-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
@@ -398,7 +398,7 @@ And here N_CR > 19 with SSR based on half of assessors' comparisons:
   ylim(c(0,1)) +
   labs(#title = paste("r = ", toString(SSR_xvSplitHalves_r_20), ", p = ", toString(SSR_xvSplitHalves_p_20)), 
        x = "SSR", y = "Median split-halves correlation")
-ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -424,7 +424,7 @@ meta_analysis_data_34 %>%
   ylim(c(0,1)) +
   labs(title = paste("r = ", toString(SSRvSplitHalves_r_34), ", p = ", toString(SSRvSplitHalves_p_34)), 
        x = "SSR", y = "Median split-halves correlation")
-ggsave("figs-pdf/FIG-ssr-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
 ```
 And here N_CR > 33 with SSR based on half of assessors' comparisons:
 
@@ -457,7 +457,7 @@ And here N_CR > 33 with SSR based on half of assessors' comparisons:
   ylim(c(0,1)) +
   labs(#title = paste("r = ", toString(SSR_xvSplitHalves_r_34), ", p = ", toString(SSR_xvSplitHalves_p_34)), 
        x = "SSR", y = "Median split-halves correlation")
-ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -694,7 +694,7 @@ meta_analysis_data %>%
   ylim(c(0,1)) +
   labs(#title = paste("r = ", toString(PropvsSSR_r), ", p = ", toString(PropvsSSR_p)), 
        x = "Proportion of correction judgements", y = "SSR")
-ggsave("figs-pdf/FIG-prop-vs-ssr.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-prop-vs-ssr.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ### SSR vs proportion correct for half the assessors
@@ -712,15 +712,15 @@ ggsave("figs-pdf/FIG-prop-vs-ssr.pdf", units = "cm", width = 14, height = 14)
 
   splits_stats_three %>% 
   mutate(pt_label = ifelse(median_split_corr < 0.5 | ssr_x < 0.7, study, "")) %>% 
-  ggplot(aes(y = ssr_x, x = median_split_corr, label = pt_label)) +
+  ggplot(aes(y = ssr_x, x = prop_correct_judgements, label = pt_label)) +
   geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
   geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
   geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(.5,1)) +
+  ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_all), ", p = ", toString(SSR_xvProp_p_all)), 
        y = "SSR", x = "Proportion of correct comparisons")
 ggsave("figs-pdf/FIG-ssr_x-vs-prop-all.pdf", units = "cm", width = 14, height = 14)
@@ -738,21 +738,21 @@ ggsave("figs-pdf/FIG-ssr_x-vs-prop-all.pdf", units = "cm", width = 14, height = 
       filter(!is.na(ssr_x)) %>%  as.data.frame()
 
   SSR_xvProp_10 <- cor.test(splits_stats_three_10$ssr_x,
-                                  splits_stats_three_10$median_split_corr)
+                                  splits_stats_three_10$prop_correct_judgements)
   SSR_xvProp_r_10 <- round(SSR_xvProp_10$estimate, 3)
   SSR_xvProp_p_10 <- round(SSR_xvProp_10$p.value, 3)
 
   splits_stats_three_10 %>% 
   mutate(pt_label = ifelse(median_split_corr < 0.5 | ssr_x < 0.7, study, "")) %>% 
-  ggplot(aes(y = ssr_x, x = median_split_corr, label = pt_label)) +
+  ggplot(aes(y = ssr_x, x = prop_correct_judgements, label = pt_label)) +
   geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
   geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
   geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(.5,1)) +
+  ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_10), ", p = ", toString(SSR_xvProp_p_10)), 
        y = "SSR", x = "Proportion of correct comparisons")
 ggsave("figs-pdf/FIG-ssr_x-vs-prop-10.pdf", units = "cm", width = 14, height = 14)
@@ -773,21 +773,21 @@ ggsave("figs-pdf/FIG-ssr_x-vs-prop-10.pdf", units = "cm", width = 14, height = 1
       filter(!is.na(ssr_x)) %>%  as.data.frame()
 
   SSR_xvProp_20 <- cor.test(splits_stats_three_20$ssr_x,
-                                  splits_stats_20$median_split_corr)
+                                  splits_stats_three_20$prop_correct_judgements)
   SSR_xvProp_r_20 <- round(SSR_xvProp_20$estimate, 3)
   SSR_xvProp_p_20 <- round(SSR_xvProp_20$p.value, 3)
 
   splits_stats_three_20 %>% 
   mutate(pt_label = ifelse(median_split_corr < 0.5 | ssr_x < 0.7, study, "")) %>% 
-  ggplot(aes(y = ssr_x, x = median_split_corr, label = pt_label)) +
+  ggplot(aes(y = ssr_x, x = prop_correct_judgements, label = pt_label)) +
   geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
   geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
   geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(.5,1)) +
+  ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_20), ", p = ", toString(SSR_xvProp_p_20)), 
        y = "SSR", x = "Proportion of correct comparisons")
 ggsave("figs-pdf/FIG-ssr_x-vs-prop-20.pdf", units = "cm", width = 14, height = 14)
@@ -805,22 +805,22 @@ ggsave("figs-pdf/FIG-ssr_x-vs-prop-20.pdf", units = "cm", width = 14, height = 1
       filter(!is.na(ssr_x)) %>%  as.data.frame()
 
   SSR_xvProp_34 <- cor.test(splits_stats_three_34$ssr_x,
-                                  splits_stats_34$median_split_corr)
+                                  splits_stats_three_34$prop_correct_judgements)
   SSR_xvProp_r_34 <- round(SSR_xvProp_34$estimate, 3)
   SSR_xvProp_p_34 <- round(SSR_xvProp_34$p.value, 3)
 
   splits_stats_three_34 %>% 
   mutate(pt_label = ifelse(median_split_corr < 0.5 | ssr_x < 0.7, study, "")) %>% 
-  ggplot(aes(y = ssr_x, x = median_split_corr, label = pt_label)) +
+  ggplot(aes(y = ssr_x, x = prop_correct_judgements, label = pt_label)) +
   geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
   geom_hline(yintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
   geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
-  labs(title = paste("r = ", toString(SSR_xvProp_r_34), ", p = ", toString(SSR_xvProp_p_34)), 
+  xlim(c(.5,1)) +
+  ylim(c(.5,1)) +
+  labs(#title = paste("r = ", toString(SSR_xvProp_r_34), ", p = ", toString(SSR_xvProp_p_34)), 
        y = "SSR", x = "Proportion of correct comparisons")
 ggsave("figs-pdf/FIG-ssr_x-vs-prop-34.pdf", units = "cm", width = 14, height = 14)
 ```
@@ -864,8 +864,8 @@ meta_analysis_data %>%
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(0.25,1)) +
+  ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r), ", p = ", toString(PropvsSplithalves_p)), 
        x = "Proportion of correction judgements", y = "Split halves")
 ggsave("figs-pdf/FIG-prop-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
@@ -887,8 +887,8 @@ meta_analysis_data_10 %>%
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(0.25,1)) +
+  ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r_10), ", p = ", toString(PropvsSplithalves_p_10)), 
        x = "Proportion of correction judgements", y = "Split halves")
 ggsave("figs-pdf/FIG-prop-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
@@ -910,8 +910,8 @@ meta_analysis_data_20 %>%
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(0.25,1)) +
+  ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r_20), ", p = ", toString(PropvsSplithalves_p_20)), 
        x = "Proportion of correction judgements", y = "Split halves")
 ggsave("figs-pdf/FIG-prop-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
@@ -933,8 +933,8 @@ meta_analysis_data_34 %>%
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   #ggrepel::geom_text_repel(alpha = 0.3) +
-  xlim(c(0,1)) +
-  ylim(c(0,1)) +
+  xlim(c(0.25,1)) +
+  ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r_34), ", p = ", toString(PropvsSplithalves_p_34)), 
        x = "Proportion of correction judgements", y = "Split halves")
 ggsave("figs-pdf/FIG-prop-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
