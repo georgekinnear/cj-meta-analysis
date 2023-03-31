@@ -23,6 +23,10 @@ library(readr)
 library(gghalves)
 library(tidyverse)
 
+# for plotting
+theme_set(theme_minimal())
+#library(patchwork)
+
 # create subdirectory to store figures if it doesn't exist
 #mainDir = setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 #dir.create(file.path(mainDir, "figs"))
@@ -82,13 +86,13 @@ plotCounts <- counts %>%                 # define dataframe
 
 plotCounts
 
-##ggsave("figs-pdf/FIG-RQ1_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
 
 ```
 
 ## Scatterplots for RQ1:  Assessors vs Comparisons
 
-```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
+```{r scatter_ass_comp, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
 rq1 %>%
   ggplot(aes(x = Ass, y = Comp)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
@@ -103,11 +107,11 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Assessors", y = "Comparisons")
-#ggsave("figs-pdf/FIG-RQ1_assVScomp.pdf", units = "cm", width = 14, height = 14)
+ggsave("figs-pdf/FIG-RQ1_assVScomp.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Assessors vs Representations
 
-```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
+```{r scatter_ass_rep, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
 rq1 %>%
   ggplot(aes(x = Ass, y = Rep)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
@@ -122,11 +126,11 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Assessors", y = "Representations")
-##ggsave("figs-pdf/FIG-RQ1_assVSrep.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_assVSrep.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Comparisons vs Representations
 
-```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
+```{r scatter_comp_rep, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
 rq1 %>%
   ggplot(aes(x = Comp, y = Rep)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
@@ -141,12 +145,12 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Comparisons", y = "Representations")
-##ggsave("figs-pdf/FIG-RQ1_compVSrep.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_compVSrep.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ## Raincloud plot for RQ1 CJ META-ANALYSIS: Derived Counts
 
-```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
+```{r raincloud_derived, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
 library("readr")
 library("gghalves")
 
@@ -196,11 +200,11 @@ plotCounts2 <- counts2 %>%                 # define dataframe
 
 
 plotCounts2
-##ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
 ```
 ## Scatterplots for RQ1:  Representations per assessor vs Comparisons per representation
 
-```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
+```{r scatter_RperA_CperR, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
 rq1 %>%
   ggplot(aes(x = repPERass, y = CompPERrep)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
@@ -215,11 +219,11 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Representations per assessor", y = "Comparisons per representation")
-##ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1: Representations per assessor vs Comparisons per assessor
 
-```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
+```{r scatter_RperA_CperA, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
 rq1 %>%
   ggplot(aes(x = repPERass, y = CompPERass)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
@@ -234,12 +238,12 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Representations per assessor", y = "Comparisons per assessor")
-##ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERass.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_repPERassVSCompPERass.pdf", units = "cm", width = 14, height = 14)
 
 ```
 ## Scatterplots for RQ1: Comparisons per representation vs Comparisons per assessor
 
-```{r scatter, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
+```{r scatter_CperR_CperA, include=TRUE, attr.output='.numberLines', eval = TRUE, echo = TRUE}
 rq1 %>%
   ggplot(aes(x = CompPERrep, y = CompPERass)) +
   scale_y_continuous(trans='log10', labels = scales::comma) +
@@ -254,7 +258,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Comparisons per representation", y = "Comparisons per assessor")
-##ggsave("figs-pdf/FIG-RQ1_CompPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_CompPERassVSCompPERrep.pdf", units = "cm", width = 14, height = 14)
 
 ```
 
@@ -330,7 +334,7 @@ ggsave("figs-pdf/FIG-RQ2_reliabilities_raincloud.pdf", units = "cm", width = 20,
 
 
 Reliability measures raincloud with SSR based on half of assessors
-``` {r reliabilities_raincloud_all_assessors}
+``` {r reliabilities_raincloud_all_assessors_ssrx}
 # get the reliability data
 reliability_stats <- read_csv("data/01-meta-analysis-data.csv", show_col_types = FALSE)
 #these stats contain the mean not median split-halves reliability!!!

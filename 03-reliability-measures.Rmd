@@ -866,7 +866,7 @@ meta_analysis_data %>%
   #ggrepel::geom_text_repel(alpha = 0.3) +
   xlim(c(0,1)) +
   ylim(c(0,1)) +
-  labs(title = paste("r = ", toString(PropvsSplithalves_r), ", p = ", toString(PropvsSplithalves_p)), 
+  labs(#title = paste("r = ", toString(PropvsSplithalves_r), ", p = ", toString(PropvsSplithalves_p)), 
        x = "Proportion of correction judgements", y = "Split halves")
 ggsave("figs-pdf/FIG-prop-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
 ```
@@ -889,7 +889,7 @@ meta_analysis_data_10 %>%
   #ggrepel::geom_text_repel(alpha = 0.3) +
   xlim(c(0,1)) +
   ylim(c(0,1)) +
-  labs(title = paste("r = ", toString(PropvsSplithalves_r_10), ", p = ", toString(PropvsSplithalves_p_10)), 
+  labs(#title = paste("r = ", toString(PropvsSplithalves_r_10), ", p = ", toString(PropvsSplithalves_p_10)), 
        x = "Proportion of correction judgements", y = "Split halves")
 ggsave("figs-pdf/FIG-prop-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
 ```
@@ -912,7 +912,7 @@ meta_analysis_data_20 %>%
   #ggrepel::geom_text_repel(alpha = 0.3) +
   xlim(c(0,1)) +
   ylim(c(0,1)) +
-  labs(title = paste("r = ", toString(PropvsSplithalves_r_20), ", p = ", toString(PropvsSplithalves_p_20)), 
+  labs(#title = paste("r = ", toString(PropvsSplithalves_r_20), ", p = ", toString(PropvsSplithalves_p_20)), 
        x = "Proportion of correction judgements", y = "Split halves")
 ggsave("figs-pdf/FIG-prop-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
 ```
@@ -935,7 +935,7 @@ meta_analysis_data_34 %>%
   #ggrepel::geom_text_repel(alpha = 0.3) +
   xlim(c(0,1)) +
   ylim(c(0,1)) +
-  labs(title = paste("r = ", toString(PropvsSplithalves_r_34), ", p = ", toString(PropvsSplithalves_p_34)), 
+  labs(#title = paste("r = ", toString(PropvsSplithalves_r_34), ", p = ", toString(PropvsSplithalves_p_34)), 
        x = "Proportion of correction judgements", y = "Split halves")
 ggsave("figs-pdf/FIG-prop-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
 ```
