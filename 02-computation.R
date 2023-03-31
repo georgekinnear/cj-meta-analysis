@@ -194,7 +194,7 @@ split_halves_data <- tibble(path = fs::dir_ls("data-cache", recurse = TRUE, glob
 
 split_halves_values <- split_halves_data %>% 
   group_by(judging_session) %>%
-  summarise(mean_split_corr = mean(split_corr))
+  summarise(median_split_corr = median(split_corr))
 
 
 #### EloChoice ####

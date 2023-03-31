@@ -2050,7 +2050,7 @@ observed_N\_R
 observed_N\_C
 </th>
 <th style="text-align:right;">
-mean_split_corr
+median_split_corr
 </th>
 <th style="text-align:right;">
 ssr
@@ -2072,7 +2072,7 @@ AlMaimani2017
 140
 </td>
 <td style="text-align:right;">
-0.976
+0.978
 </td>
 <td style="text-align:right;">
 0.956
@@ -2092,7 +2092,7 @@ Luckett2018_coldbrew
 300
 </td>
 <td style="text-align:right;">
-0.814
+0.927
 </td>
 <td style="text-align:right;">
 0.793
@@ -2101,7 +2101,7 @@ Luckett2018_coldbrew
 </tbody>
 </table>
 
-## Low mean split-halves reliability
+## Low median split-halves reliability
 
 These sessions have split-halves reliability below 0.7.
 
@@ -2127,7 +2127,7 @@ N_C
 N_CR
 </th>
 <th style="text-align:right;">
-mean_split_corr
+median_split_corr
 </th>
 <th style="text-align:right;">
 ssr
@@ -2152,7 +2152,7 @@ Kinnear2021_students-withsolutions2
 16.550
 </td>
 <td style="text-align:right;">
-0.251
+0.259
 </td>
 <td style="text-align:right;">
 0.757
@@ -2175,7 +2175,7 @@ Davies2021_novice
 9.943
 </td>
 <td style="text-align:right;">
-0.385
+0.387
 </td>
 <td style="text-align:right;">
 0.745
@@ -2198,33 +2198,10 @@ Kinnear2021_students-withsolutions1
 7.100
 </td>
 <td style="text-align:right;">
-0.398
+0.424
 </td>
 <td style="text-align:right;">
 0.699
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Plain
-</td>
-<td style="text-align:right;">
-50
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-3600
-</td>
-<td style="text-align:right;">
-400.000
-</td>
-<td style="text-align:right;">
-0.411
-</td>
-<td style="text-align:right;">
-0.871
 </td>
 </tr>
 <tr>
@@ -2244,7 +2221,7 @@ Sangwin2021_study2-insight
 29.200
 </td>
 <td style="text-align:right;">
-0.438
+0.456
 </td>
 <td style="text-align:right;">
 0.784
@@ -2267,10 +2244,33 @@ Settembri2018
 7.405
 </td>
 <td style="text-align:right;">
-0.455
+0.468
 </td>
 <td style="text-align:right;">
 0.790
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Plain
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:right;">
+400.000
+</td>
+<td style="text-align:right;">
+0.505
+</td>
+<td style="text-align:right;">
+0.871
 </td>
 </tr>
 <tr>
@@ -2290,33 +2290,10 @@ Luckett2018_icecream
 87.000
 </td>
 <td style="text-align:right;">
-0.495
+0.523
 </td>
 <td style="text-align:right;">
 0.672
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spehar2016_expt2-Edges
-</td>
-<td style="text-align:right;">
-50
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-3600
-</td>
-<td style="text-align:right;">
-400.000
-</td>
-<td style="text-align:right;">
-0.507
-</td>
-<td style="text-align:right;">
-0.901
 </td>
 </tr>
 <tr>
@@ -2336,7 +2313,7 @@ Kinnear2021_students-odd
 21.500
 </td>
 <td style="text-align:right;">
-0.522
+0.529
 </td>
 <td style="text-align:right;">
 0.836
@@ -2359,7 +2336,7 @@ Bramley2018_2
 7.313
 </td>
 <td style="text-align:right;">
-0.537
+0.538
 </td>
 <td style="text-align:right;">
 0.793
@@ -2382,10 +2359,33 @@ Zucco2019_legislators
 15.135
 </td>
 <td style="text-align:right;">
-0.541
+0.567
 </td>
 <td style="text-align:right;">
 0.836
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kinnear2021_experts-odd
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+181
+</td>
+<td style="text-align:right;">
+18.100
+</td>
+<td style="text-align:right;">
+0.571
+</td>
+<td style="text-align:right;">
+0.867
 </td>
 </tr>
 <tr>
@@ -2405,33 +2405,10 @@ Jones2013a_peer1
 7.143
 </td>
 <td style="text-align:right;">
-0.572
+0.573
 </td>
 <td style="text-align:right;">
 0.848
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jones2014_GCSE030211data
-</td>
-<td style="text-align:right;">
-12
-</td>
-<td style="text-align:right;">
-18
-</td>
-<td style="text-align:right;">
-151
-</td>
-<td style="text-align:right;">
-8.389
-</td>
-<td style="text-align:right;">
-0.579
-</td>
-<td style="text-align:right;">
-0.817
 </td>
 </tr>
 <tr>
@@ -2451,7 +2428,7 @@ Kinnear2021_students-withsolutions
 21.100
 </td>
 <td style="text-align:right;">
-0.583
+0.584
 </td>
 <td style="text-align:right;">
 0.813
@@ -2474,7 +2451,7 @@ Kinnear2021_students-withoutsolutions
 22.000
 </td>
 <td style="text-align:right;">
-0.591
+0.585
 </td>
 <td style="text-align:right;">
 0.816
@@ -2482,25 +2459,25 @@ Kinnear2021_students-withoutsolutions
 </tr>
 <tr>
 <td style="text-align:left;">
-Kinnear2021_experts-odd
+Jones2014_GCSE030211data
 </td>
 <td style="text-align:right;">
-10
+12
 </td>
 <td style="text-align:right;">
-10
+18
 </td>
 <td style="text-align:right;">
-181
+151
 </td>
 <td style="text-align:right;">
-18.100
+8.389
 </td>
 <td style="text-align:right;">
-0.591
+0.590
 </td>
 <td style="text-align:right;">
-0.867
+0.817
 </td>
 </tr>
 <tr>
@@ -2520,10 +2497,33 @@ Daal2017_sample2
 6.701
 </td>
 <td style="text-align:right;">
-0.595
+0.593
 </td>
 <td style="text-align:right;">
 0.821
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spehar2016_expt2-Edges
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:right;">
+400.000
+</td>
+<td style="text-align:right;">
+0.596
+</td>
+<td style="text-align:right;">
+0.901
 </td>
 </tr>
 <tr>
@@ -2551,29 +2551,6 @@ Jones2013a_peer2
 </tr>
 <tr>
 <td style="text-align:left;">
-Coertjens2021
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-22
-</td>
-<td style="text-align:right;">
-202
-</td>
-<td style="text-align:right;">
-9.182
-</td>
-<td style="text-align:right;">
-0.610
-</td>
-<td style="text-align:right;">
-0.828
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Jones2016b_realscripts
 </td>
 <td style="text-align:right;">
@@ -2589,10 +2566,33 @@ Jones2016b_realscripts
 9.158
 </td>
 <td style="text-align:right;">
-0.617
+0.618
 </td>
 <td style="text-align:right;">
 0.852
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Coertjens2021
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+202
+</td>
+<td style="text-align:right;">
+9.182
+</td>
+<td style="text-align:right;">
+0.627
+</td>
+<td style="text-align:right;">
+0.828
 </td>
 </tr>
 <tr>
@@ -2612,7 +2612,7 @@ Bramley2018_1b
 9.000
 </td>
 <td style="text-align:right;">
-0.634
+0.641
 </td>
 <td style="text-align:right;">
 0.802
@@ -2635,79 +2635,10 @@ Jones2013a_expert2
 7.244
 </td>
 <td style="text-align:right;">
-0.636
+0.643
 </td>
 <td style="text-align:right;">
 0.891
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX_college
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-72
-</td>
-<td style="text-align:right;">
-411
-</td>
-<td style="text-align:right;">
-5.708
-</td>
-<td style="text-align:right;">
-0.645
-</td>
-<td style="text-align:right;">
-0.938
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Luckett2018_pizza
-</td>
-<td style="text-align:right;">
-95
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-380
-</td>
-<td style="text-align:right;">
-76.000
-</td>
-<td style="text-align:right;">
-0.653
-</td>
-<td style="text-align:right;">
-0.750
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Holmes2017
-</td>
-<td style="text-align:right;">
-33
-</td>
-<td style="text-align:right;">
-66
-</td>
-<td style="text-align:right;">
-1650
-</td>
-<td style="text-align:right;">
-25.000
-</td>
-<td style="text-align:right;">
-0.657
-</td>
-<td style="text-align:right;">
-0.855
 </td>
 </tr>
 <tr>
@@ -2727,10 +2658,33 @@ Daal2017_sample3
 15.107
 </td>
 <td style="text-align:right;">
-0.659
+0.664
 </td>
 <td style="text-align:right;">
 0.885
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Holmes2017
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+1650
+</td>
+<td style="text-align:right;">
+25.000
+</td>
+<td style="text-align:right;">
+0.670
+</td>
+<td style="text-align:right;">
+0.855
 </td>
 </tr>
 <tr>
@@ -2750,7 +2704,7 @@ Kinnear2021_experts-withsolutions
 15.100
 </td>
 <td style="text-align:right;">
-0.665
+0.675
 </td>
 <td style="text-align:right;">
 0.858
@@ -2773,33 +2727,10 @@ Jones2013a_expert1
 7.244
 </td>
 <td style="text-align:right;">
-0.665
+0.681
 </td>
 <td style="text-align:right;">
 0.906
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sangwin2021_study2-understanding
-</td>
-<td style="text-align:right;">
-34
-</td>
-<td style="text-align:right;">
-15
-</td>
-<td style="text-align:right;">
-611
-</td>
-<td style="text-align:right;">
-40.733
-</td>
-<td style="text-align:right;">
-0.675
-</td>
-<td style="text-align:right;">
-0.866
 </td>
 </tr>
 <tr>
@@ -2819,7 +2750,7 @@ Davies2021_expert
 11.091
 </td>
 <td style="text-align:right;">
-0.679
+0.682
 </td>
 <td style="text-align:right;">
 0.854
@@ -2842,7 +2773,7 @@ Daal2017_sample1
 9.037
 </td>
 <td style="text-align:right;">
-0.681
+0.682
 </td>
 <td style="text-align:right;">
 0.847
@@ -2873,6 +2804,52 @@ Bisson2019
 </tr>
 <tr>
 <td style="text-align:left;">
+Sangwin2021_study2-understanding
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+611
+</td>
+<td style="text-align:right;">
+40.733
+</td>
+<td style="text-align:right;">
+0.686
+</td>
+<td style="text-align:right;">
+0.866
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_college
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+72
+</td>
+<td style="text-align:right;">
+411
+</td>
+<td style="text-align:right;">
+5.708
+</td>
+<td style="text-align:right;">
+0.689
+</td>
+<td style="text-align:right;">
+0.938
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 PollittX_business
 </td>
 <td style="text-align:right;">
@@ -2888,7 +2865,7 @@ PollittX_business
 5.000
 </td>
 <td style="text-align:right;">
-0.692
+0.689
 </td>
 <td style="text-align:right;">
 0.888
@@ -2896,25 +2873,25 @@ PollittX_business
 </tr>
 <tr>
 <td style="text-align:left;">
-Spehar2016_expt2-Mountain
+Luckett2018_pizza
 </td>
 <td style="text-align:right;">
-50
+95
 </td>
 <td style="text-align:right;">
-9
+5
 </td>
 <td style="text-align:right;">
-3600
+380
 </td>
 <td style="text-align:right;">
-400.000
+76.000
 </td>
 <td style="text-align:right;">
-0.694
+0.697
 </td>
 <td style="text-align:right;">
-0.945
+0.750
 </td>
 </tr>
 </tbody>
@@ -2922,7 +2899,7 @@ Spehar2016_expt2-Mountain
 
 Omitting the three sessions with N_CR = 400:
 
-    ## Warning: Removed 3 rows containing missing values (`geom_point()`).
+    ## Warning: Removed 2 rows containing missing values (`geom_point()`).
 
 ![](figs-web/03-reliability-measures/low-splithaves-1.png)<!-- -->
 
@@ -2963,7 +2940,7 @@ We use the weighted version, $R'$, computed based on 1000 iterations.
     ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
     ##   variable into a factor?
 
-    ## Warning: ggrepel: 30 unlabeled data points (too many overlaps). Consider
+    ## Warning: ggrepel: 29 unlabeled data points (too many overlaps). Consider
     ## increasing max.overlaps
 
 ![](figs-web/03-reliability-measures/splithalves-vs-elo-1.png)<!-- -->
@@ -3037,7 +3014,7 @@ observed_N\_C
 mean_eloR_weighted
 </th>
 <th style="text-align:right;">
-mean_split_corr
+median_split_corr
 </th>
 <th style="text-align:right;">
 ssr
@@ -3065,7 +3042,7 @@ PollittX_efl-oracy
 0.6115909
 </td>
 <td style="text-align:right;">
-0.8714799
+0.8727279
 </td>
 <td style="text-align:right;">
 0.9716803
@@ -3091,7 +3068,7 @@ PollittX_college
 0.6159040
 </td>
 <td style="text-align:right;">
-0.6449471
+0.6887194
 </td>
 <td style="text-align:right;">
 0.9377198
@@ -3117,7 +3094,7 @@ PollittX_music
 0.6150865
 </td>
 <td style="text-align:right;">
-0.7844205
+0.7932113
 </td>
 <td style="text-align:right;">
 0.9646965
@@ -3143,7 +3120,7 @@ PollittX_design
 0.6190804
 </td>
 <td style="text-align:right;">
-0.9026506
+0.9055028
 </td>
 <td style="text-align:right;">
 0.9792182
@@ -3169,7 +3146,7 @@ Jones2015a_subset-of-scripts
 0.6612726
 </td>
 <td style="text-align:right;">
-0.7933694
+0.8104218
 </td>
 <td style="text-align:right;">
 0.9618014
@@ -3195,7 +3172,7 @@ PollittX_ielts-writing
 0.6322866
 </td>
 <td style="text-align:right;">
-0.8506706
+0.8527379
 </td>
 <td style="text-align:right;">
 0.9623624
@@ -3221,7 +3198,7 @@ PollittX_philosophy1
 0.6008077
 </td>
 <td style="text-align:right;">
-0.8635246
+0.8668894
 </td>
 <td style="text-align:right;">
 0.9741318
@@ -3247,7 +3224,7 @@ Jones2015a_all-scripts
 0.6227864
 </td>
 <td style="text-align:right;">
-0.7868488
+0.8025084
 </td>
 <td style="text-align:right;">
 0.9722026
@@ -3273,7 +3250,7 @@ Zucco2019_legislators
 0.6385285
 </td>
 <td style="text-align:right;">
-0.5412221
+0.5667879
 </td>
 <td style="text-align:right;">
 0.8356002
@@ -3299,7 +3276,7 @@ PollittX_mcq-difficulty
 0.6299660
 </td>
 <td style="text-align:right;">
-0.9058105
+0.9106394
 </td>
 <td style="text-align:right;">
 0.9816879
@@ -3325,7 +3302,7 @@ Pollitt2012a
 0.6319983
 </td>
 <td style="text-align:right;">
-0.8710961
+0.8719738
 </td>
 <td style="text-align:right;">
 0.9784732
@@ -3351,7 +3328,7 @@ Jones2013a_novice
 0.6184804
 </td>
 <td style="text-align:right;">
-0.8875759
+0.8999829
 </td>
 <td style="text-align:right;">
 0.9827716
@@ -3377,7 +3354,7 @@ Bramley2018_1a
 0.6423687
 </td>
 <td style="text-align:right;">
-0.8780558
+0.8799075
 </td>
 <td style="text-align:right;">
 0.9685921
@@ -3417,7 +3394,7 @@ observed_N\_C
 mean_eloR_weighted
 </th>
 <th style="text-align:right;">
-mean_split_corr
+median_split_corr
 </th>
 <th style="text-align:right;">
 ssr
@@ -3445,7 +3422,7 @@ Luckett2018_coldbrew
 0.5451398
 </td>
 <td style="text-align:right;">
-0.8137861
+0.9269548
 </td>
 <td style="text-align:right;">
 0.7927565
@@ -3471,7 +3448,7 @@ Luckett2018_cola
 0.5614909
 </td>
 <td style="text-align:right;">
-0.8360254
+0.8577937
 </td>
 <td style="text-align:right;">
 0.8875400
@@ -3497,7 +3474,7 @@ Luckett2018_pizza
 0.5424153
 </td>
 <td style="text-align:right;">
-0.6526395
+0.6965950
 </td>
 <td style="text-align:right;">
 0.7502510
@@ -3523,7 +3500,7 @@ Spehar2016_expt2-Mountain
 0.5598559
 </td>
 <td style="text-align:right;">
-0.6939253
+0.8344748
 </td>
 <td style="text-align:right;">
 0.9454278
@@ -3549,7 +3526,7 @@ Isnac2020
 0.5784039
 </td>
 <td style="text-align:right;">
-0.9666396
+0.9687865
 </td>
 <td style="text-align:right;">
 0.9886882
@@ -3575,7 +3552,7 @@ Spehar2016_expt2-Edges
 0.5321237
 </td>
 <td style="text-align:right;">
-0.5067319
+0.5962884
 </td>
 <td style="text-align:right;">
 0.9012437
@@ -3601,7 +3578,7 @@ Spehar2016_expt2-Thr
 0.5580069
 </td>
 <td style="text-align:right;">
-0.7192029
+0.8103362
 </td>
 <td style="text-align:right;">
 0.9435376
@@ -3627,7 +3604,7 @@ Luckett2018_icecream
 0.5197877
 </td>
 <td style="text-align:right;">
-0.4949369
+0.5227275
 </td>
 <td style="text-align:right;">
 0.6724809
@@ -3653,7 +3630,7 @@ Spehar2016_expt2-Plain
 0.5228413
 </td>
 <td style="text-align:right;">
-0.4106837
+0.5049902
 </td>
 <td style="text-align:right;">
 0.8707116
@@ -3674,26 +3651,26 @@ reliability.
 
     ## 
     ## Call:
-    ## lm(formula = prop_correct_judgements ~ ssr + mean_split_corr + 
+    ## lm(formula = prop_correct_judgements ~ ssr + median_split_corr + 
     ##     mean_eloR, data = reliability_stats)
     ## 
     ## Residuals:
-    ##       Min        1Q    Median        3Q       Max 
-    ## -0.175619 -0.050941  0.004288  0.049643  0.186697 
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.18355 -0.05175  0.00111  0.04826  0.18082 
     ## 
     ## Coefficients:
-    ##                 Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)      0.09335    0.10872   0.859 0.392688    
-    ## ssr              0.52218    0.14855   3.515 0.000675 ***
-    ## mean_split_corr -0.16057    0.09420  -1.705 0.091541 .  
-    ## mean_eloR        0.51453    0.10544   4.880 4.27e-06 ***
+    ##                   Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)        0.06163    0.10107   0.610  0.54343    
+    ## ssr                0.64582    0.14303   4.515 1.81e-05 ***
+    ## median_split_corr -0.25951    0.09129  -2.843  0.00548 ** 
+    ## mean_eloR          0.51351    0.10008   5.131 1.52e-06 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.07728 on 95 degrees of freedom
+    ## Residual standard error: 0.07531 on 95 degrees of freedom
     ##   (2 observations deleted due to missingness)
-    ## Multiple R-squared:  0.3114, Adjusted R-squared:  0.2897 
-    ## F-statistic: 14.32 on 3 and 95 DF,  p-value: 8.995e-08
+    ## Multiple R-squared:  0.346,  Adjusted R-squared:  0.3253 
+    ## F-statistic: 16.75 on 3 and 95 DF,  p-value: 8.184e-09
 
 ## Proportion of correction judgements vs SSR
 
@@ -3855,7 +3832,7 @@ reliability.
     ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
     ##   variable into a factor?
 
-    ## Warning: Removed 18 rows containing missing values (`geom_smooth()`).
+    ## Warning: Removed 13 rows containing missing values (`geom_smooth()`).
 
 ![](figs-web/03-reliability-measures/prop-vs-splithalves-34-1.png)<!-- -->
 
@@ -3864,4 +3841,4 @@ reliability.
     ##   the data.
     ## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
     ##   variable into a factor?
-    ## Removed 18 rows containing missing values (`geom_smooth()`).
+    ## Removed 13 rows containing missing values (`geom_smooth()`).
