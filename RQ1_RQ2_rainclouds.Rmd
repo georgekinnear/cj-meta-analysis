@@ -407,7 +407,7 @@ plotSSrels <- splits_stats_rels %>%                 # define dataframe
     annotate("text", x = 2.3, y = .6, label = "Split-halves reliability") +
     annotate("text", x = 1.3, y = .6, label = "Correct comparisons") +
   
-    annotate("text", x = 3.4, y = .1, label = "italic(n) == 96", parse=TRUE) +
+    #annotate("text", x = 3.4, y = .1, label = "italic(n) == 96", parse=TRUE) +
 
   # Optional styling
   coord_flip() +                          # flip x & y coordinates
