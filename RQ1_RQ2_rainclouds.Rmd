@@ -86,7 +86,7 @@ plotCounts <- counts %>%                 # define dataframe
 
 plotCounts
 
-#ggsave("figs-pdf/FIG-RQ1_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
+##ggsave("figs-pdf/FIG-RQ1_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
 
 ```
 
@@ -107,7 +107,7 @@ rq1 %>%
 #  xlim(c(0,1)) +
 #  ylim(c(0,1)) +
   labs(x = "Assessors", y = "Comparisons")
-ggsave("figs-pdf/FIG-RQ1_assVScomp.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-RQ1_assVScomp.pdf", units = "cm", width = 14, height = 14)
 ```
 ## Scatterplots for RQ1:  Assessors vs Representations
 
@@ -200,7 +200,7 @@ plotCounts2 <- counts2 %>%                 # define dataframe
 
 
 plotCounts2
-#ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
+##ggsave("figs-pdf/FIG-RQ1_derived_counts_raincloud.pdf", units = "cm", width = 20, height = 14)
 ```
 ## Scatterplots for RQ1:  Representations per assessor vs Comparisons per representation
 
@@ -328,7 +328,7 @@ plotRels <- rels %>%                 # define dataframe
 
 
 plotRels
-ggsave("figs-pdf/FIG-RQ2_reliabilities_raincloud.pdf", units = "cm", width = 20, height = 14)
+##ggsave("figs-pdf/FIG-RQ2_reliabilities_raincloud.pdf", units = "cm", width = 20, height = 14)
 
 ```
 
@@ -429,6 +429,6 @@ plotSSrels <- splits_stats_rels %>%                 # define dataframe
 
 
 plotSSrels
-ggsave("figs-pdf/FIG-RQ2_reliabilities_ssrx_raincloud.pdf", units = "cm", width = 20, height = 14)
+#ggsave("figs-pdf/FIG-RQ2_reliabilities_ssrx_raincloud.pdf", units = "cm", width = 20, height = 14)
 
 ```
