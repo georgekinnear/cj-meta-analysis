@@ -130,7 +130,7 @@ meta_analysis_data %>%
   ylim(c(0,1)) +
   labs(title = paste("r = ", toString(SSRvSplitHalves_r), ", p = ", toString(SSRvSplitHalves_p)), 
        x = "SSR", y = "Median split-halves correlation")
-#ggsave("figs-pdf/FIG-ssr-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
+##ggsave("figs-pdf/FIG-ssr-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -280,7 +280,7 @@ splits_stats %>%
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(SSR_xvSplitHalves_r_all), ", p = ", toString(SSR_xvSplitHalves_p_all)), 
        x = "SSR", y = "Median split-halves correlation")
-ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-all.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-all.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -306,7 +306,7 @@ meta_analysis_data_10 %>%
   ylim(c(0.25,1)) +
   labs(title = paste("r = ", toString(SSRvSplitHalves_r_10), ", p = ", toString(SSRvSplitHalves_p_10)), 
        x = "SSR", y = "Median split-halves correlation")
-ggsave("figs-pdf/FIG-ssr-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
 ```
 
 And here N_CR > 9 with SSR based on half of assessors' comparisons:
@@ -340,7 +340,7 @@ And here N_CR > 9 with SSR based on half of assessors' comparisons:
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(SSR_xvSplitHalves_r_10), ", p = ", toString(SSR_xvSplitHalves_p_10)), 
        x = "SSR", y = "Median split-halves correlation")
-ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -365,7 +365,7 @@ meta_analysis_data_20 %>%
   ylim(c(0.25,1)) +
   labs(title = paste("r = ", toString(SSRvSplitHalves_r_20), ", p = ", toString(SSRvSplitHalves_p_20)), 
        x = "SSR", y = "Median split-halves correlation")
-ggsave("figs-pdf/FIG-ssr-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
 ```
 And here N_CR > 19 with SSR based on half of assessors' comparisons:
 
@@ -398,7 +398,7 @@ And here N_CR > 19 with SSR based on half of assessors' comparisons:
   ylim(c(0,1)) +
   labs(#title = paste("r = ", toString(SSR_xvSplitHalves_r_20), ", p = ", toString(SSR_xvSplitHalves_p_20)), 
        x = "SSR", y = "Median split-halves correlation")
-#ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
+##ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -424,7 +424,7 @@ meta_analysis_data_34 %>%
   ylim(c(0,1)) +
   labs(title = paste("r = ", toString(SSRvSplitHalves_r_34), ", p = ", toString(SSRvSplitHalves_p_34)), 
        x = "SSR", y = "Median split-halves correlation")
-#ggsave("figs-pdf/FIG-ssr-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
+##ggsave("figs-pdf/FIG-ssr-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
 ```
 And here N_CR > 33 with SSR based on half of assessors' comparisons:
 
@@ -457,7 +457,7 @@ And here N_CR > 33 with SSR based on half of assessors' comparisons:
   ylim(c(0,1)) +
   labs(#title = paste("r = ", toString(SSR_xvSplitHalves_r_34), ", p = ", toString(SSR_xvSplitHalves_p_34)), 
        x = "SSR", y = "Median split-halves correlation")
-#ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
+##ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -694,7 +694,7 @@ meta_analysis_data %>%
   ylim(c(0,1)) +
   labs(#title = paste("r = ", toString(PropvsSSR_r), ", p = ", toString(PropvsSSR_p)), 
        x = "Proportion of correction judgements", y = "SSR")
-#ggsave("figs-pdf/FIG-prop-vs-ssr.pdf", units = "cm", width = 14, height = 14)
+##ggsave("figs-pdf/FIG-prop-vs-ssr.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ### SSR vs proportion correct for half the assessors
@@ -723,7 +723,7 @@ meta_analysis_data %>%
   ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_all), ", p = ", toString(SSR_xvProp_p_all)), 
        y = "SSR", x = "Proportion of correct comparisons")
-ggsave("figs-pdf/FIG-ssr_x-vs-prop-all.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr_x-vs-prop-all.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -755,7 +755,7 @@ ggsave("figs-pdf/FIG-ssr_x-vs-prop-all.pdf", units = "cm", width = 14, height = 
   ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_10), ", p = ", toString(SSR_xvProp_p_10)), 
        y = "SSR", x = "Proportion of correct comparisons")
-ggsave("figs-pdf/FIG-ssr_x-vs-prop-10.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr_x-vs-prop-10.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -790,7 +790,7 @@ ggsave("figs-pdf/FIG-ssr_x-vs-prop-10.pdf", units = "cm", width = 14, height = 1
   ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_20), ", p = ", toString(SSR_xvProp_p_20)), 
        y = "SSR", x = "Proportion of correct comparisons")
-ggsave("figs-pdf/FIG-ssr_x-vs-prop-20.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr_x-vs-prop-20.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -822,7 +822,7 @@ ggsave("figs-pdf/FIG-ssr_x-vs-prop-20.pdf", units = "cm", width = 14, height = 1
   ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_34), ", p = ", toString(SSR_xvProp_p_34)), 
        y = "SSR", x = "Proportion of correct comparisons")
-ggsave("figs-pdf/FIG-ssr_x-vs-prop-34.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-ssr_x-vs-prop-34.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
@@ -845,7 +845,7 @@ meta_analysis_data %>%
   ylim(c(0,1)) +
   labs(title = paste("r = ", toString(PropvsElo_r), ", p = ", toString(PropvsElo_p)), 
        x = "Proportion of correction judgements", y = "Elo")
-ggsave("figs-pdf/FIG-prop-vs-elo.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-prop-vs-elo.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ## Proportion of correction judgements vs split-halves
@@ -868,7 +868,7 @@ meta_analysis_data %>%
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r), ", p = ", toString(PropvsSplithalves_p)), 
        x = "Proportion of correction judgements", y = "Split halves")
-ggsave("figs-pdf/FIG-prop-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-prop-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ### Proportion of correction judgements vs split-halves for `N_CR` >= 10 
@@ -891,7 +891,7 @@ meta_analysis_data_10 %>%
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r_10), ", p = ", toString(PropvsSplithalves_p_10)), 
        x = "Proportion of correction judgements", y = "Split halves")
-ggsave("figs-pdf/FIG-prop-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-prop-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ### Proportion of correction judgements vs split-halves for `N_CR` >= 20 
@@ -914,7 +914,7 @@ meta_analysis_data_20 %>%
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r_20), ", p = ", toString(PropvsSplithalves_p_20)), 
        x = "Proportion of correction judgements", y = "Split halves")
-ggsave("figs-pdf/FIG-prop-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-prop-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ### Proportion of correction judgements vs split-halves for `N_CR` >= 34 
@@ -937,5 +937,66 @@ meta_analysis_data_34 %>%
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r_34), ", p = ", toString(PropvsSplithalves_p_34)), 
        x = "Proportion of correction judgements", y = "Split halves")
-ggsave("figs-pdf/FIG-prop-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
+#ggsave("figs-pdf/FIG-prop-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
 ```
+
+Make table of min, max, median reliability statistics
+```{r min-max-median-reliabilities}
+  
+#create data frame including ssr_x, r, prop
+  min_max_median <- splits_stats %>% 
+  separate(file, into = c(NA, "study", NA), sep = "/") %>%
+  left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
+  group_by(study) %>% 
+  summarise(ssr_x = median(ssr_x), median_split_corr = median(split_corr)) %>% 
+  filter(!is.na(ssr_x)) %>%  
+  merge(meta_analysis_data[,c(1,29,31)], by.x = "study", by.y  = "judging_session") %>%
+  as.data.frame
+
+  colnames(min_max_median)[3:4] <- c("r", "prop")
+
+  min_max_median_summary <- 
+    data.frame(threshold = c(rep(0,3),rep(5,3),rep(10,3),rep(17,3)),
+      measure = c(rep(c("SSR", "r", "prop"),4)),
+      min = c(min(min_max_median$ssr_x),
+              min(min_max_median$r),
+              min(min_max_median$prop),
+              min(min_max_median$ssr_x[min_max_median$CperR>9]),
+              min(min_max_median$r[min_max_median$CperR>9]),
+              min(min_max_median$prop[min_max_median$CperR>9]),
+              min(min_max_median$ssr_x[min_max_median$CperR>19]),
+              min(min_max_median$r[min_max_median$CperR>19]),
+              min(min_max_median$prop[min_max_median$CperR>19]),
+              min(min_max_median$ssr_x[min_max_median$CperR>33]),
+              min(min_max_median$r[min_max_median$CperR>33]),
+              min(min_max_median$prop[min_max_median$CperR>33])),
+      max = c(max(min_max_median$ssr_x),
+              max(min_max_median$r),
+              max(min_max_median$prop),
+              max(min_max_median$ssr_x[min_max_median$CperR>9]),
+              max(min_max_median$r[min_max_median$CperR>9]),
+              max(min_max_median$prop[min_max_median$CperR>9]),
+              max(min_max_median$ssr_x[min_max_median$CperR>19]),
+              max(min_max_median$r[min_max_median$CperR>19]),
+              max(min_max_median$prop[min_max_median$CperR>19]),
+              max(min_max_median$ssr_x[min_max_median$CperR>33]),
+              max(min_max_median$r[min_max_median$CperR>33]),
+              max(min_max_median$prop[min_max_median$CperR>33])),
+        med = c(median(min_max_median$ssr_x),
+              median(min_max_median$r),
+              median(min_max_median$prop),
+              median(min_max_median$ssr_x[min_max_median$CperR>9]),
+              median(min_max_median$r[min_max_median$CperR>9]),
+              median(min_max_median$prop[min_max_median$CperR>9]),
+              median(min_max_median$ssr_x[min_max_median$CperR>19]),
+              median(min_max_median$r[min_max_median$CperR>19]),
+              median(min_max_median$prop[min_max_median$CperR>19]),
+              median(min_max_median$ssr_x[min_max_median$CperR>33]),
+              median(min_max_median$r[min_max_median$CperR>33]),
+              median(min_max_median$prop[min_max_median$CperR>33])))
+                                       
+min_max_median_summary[,3:5] <- round(min_max_median_summary[,3:5],2)
+min_max_median_summary 
+
+```
+
