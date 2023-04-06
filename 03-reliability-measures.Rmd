@@ -257,7 +257,6 @@ splits_stats %>%
   splits_stats_all <- splits_stats %>% 
   separate(file, into = c(NA, "study", NA), sep = "/") %>%
   left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
-  filter(!str_detect(study, "Spehar")) %>% 
   group_by(study) %>% 
   summarise(ssr_x = median(ssr_x), median_split_corr = median(split_corr)) %>% 
   filter(!is.na(ssr_x)) %>%  as.data.frame
@@ -316,7 +315,6 @@ And here N_CR > 9 with SSR based on half of assessors' comparisons:
   splits_stats_10 <- splits_stats %>% 
   separate(file, into = c(NA, "study", NA), sep = "/") %>%
   left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
-  filter(!str_detect(study, "Spehar")) %>% 
   filter(CperR > 9) %>% 
   group_by(study) %>% 
   summarise(ssr_x = median(ssr_x), median_split_corr = median(split_corr)) %>% 
@@ -374,7 +372,6 @@ And here N_CR > 19 with SSR based on half of assessors' comparisons:
   splits_stats_20 = splits_stats %>% 
   separate(file, into = c(NA, "study", NA), sep = "/") %>% 
   left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
-  filter(!str_detect(study, "Spehar")) %>% 
   filter(CperR > 19) %>% 
   group_by(study) %>% 
   summarise(ssr_x = median(ssr_x), median_split_corr = median(split_corr)) %>% 
@@ -433,7 +430,6 @@ And here N_CR > 33 with SSR based on half of assessors' comparisons:
   splits_stats_34 = splits_stats %>% 
   separate(file, into = c(NA, "study", NA), sep = "/") %>% 
   left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
-  filter(!str_detect(study, "Spehar")) %>% 
   filter(CperR > 33) %>% 
   group_by(study) %>% 
   summarise(ssr_x = median(ssr_x), median_split_corr = median(split_corr)) %>% 
@@ -733,7 +729,6 @@ meta_analysis_data %>%
 ```{r ssr_x-vs-prop-10}
   
  splits_stats_three_10 <- splits_stats_three %>%
-      filter(!str_detect(study, "Spehar")) %>% 
       filter(CperR > 9) %>% 
       filter(!is.na(ssr_x)) %>%  as.data.frame()
 
@@ -768,7 +763,6 @@ meta_analysis_data %>%
 ```{r ssr_x-vs-prop-20}
   
  splits_stats_three_20 <- splits_stats_three %>%
-      filter(!str_detect(study, "Spehar")) %>% 
       filter(CperR > 19) %>% 
       filter(!is.na(ssr_x)) %>%  as.data.frame()
 
@@ -800,7 +794,6 @@ meta_analysis_data %>%
 ```{r ssr_x-vs-prop-34}
   
  splits_stats_three_34 <- splits_stats_three %>%
-      filter(!str_detect(study, "Spehar")) %>% 
       filter(CperR > 33) %>% 
       filter(!is.na(ssr_x)) %>%  as.data.frame()
 
