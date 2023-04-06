@@ -250,23 +250,25 @@ splits_stats %>%
   expand_limits(x = 0, y = 0) +
   theme(legend.position = "bottom")
 ```
+
 ### SSR vs split-halves for half the assessors
 
 ```{r ssr_x-vs-splithalves-all}
   
-  splits_stats_all <- splits_stats %>% 
+splits_stats_all <- splits_stats %>%
   separate(file, into = c(NA, "study", NA), sep = "/") %>%
-  left_join(meta_analysis_data, by = c("study" = "judging_session")) %>% 
-  group_by(study) %>% 
-  summarise(ssr_x = median(ssr_x), median_split_corr = median(split_corr)) %>% 
+  left_join(meta_analysis_data, by = c("study" = "judging_session")) %>%
+  group_by(study) %>%
+  summarise(ssr_x = median(ssr_x),
+            median_split_corr = median(split_corr)) %>%
   filter(!is.na(ssr_x)) %>%  as.data.frame
-  
-  SSR_xvSplitHalves_all <- cor.test(splits_stats_all$ssr_x,
-                                  splits_stats_all$median_split_corr)
-  SSR_xvSplitHalves_r_all <- round(SSR_xvSplitHalves_all$estimate, 3)
-  SSR_xvSplitHalves_p_all <- round(SSR_xvSplitHalves_all$p.value, 3)
 
-  splits_stats_all %>% 
+SSR_xvSplitHalves_all <- cor.test(splits_stats_all$ssr_x,
+                                  splits_stats_all$median_split_corr)
+SSR_xvSplitHalves_r_all <- round(SSR_xvSplitHalves_all$estimate, 3)
+SSR_xvSplitHalves_p_all <- round(SSR_xvSplitHalves_all$p.value, 3)
+
+splits_stats_all %>% 
   mutate(pt_label = ifelse(median_split_corr < 0.5 | ssr_x < 0.7, study, "")) %>% 
   ggplot(aes(x = ssr_x, y = median_split_corr, label = pt_label)) +
   geom_vline(xintercept = 0.7, alpha = 0.3, colour = "#CC0000") +
@@ -278,7 +280,8 @@ splits_stats %>%
   xlim(c(0.25,1)) +
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(SSR_xvSplitHalves_r_all), ", p = ", toString(SSR_xvSplitHalves_p_all)), 
-       x = "SSR", y = "Median split-halves correlation")
+       x = "Median SSR of half the judges",
+       y = "Median split-halves correlation")
 #ggsave("figs-pdf/FIG-ssr_x-vs-splithalves-all.pdf", units = "cm", width = 14, height = 14)
 ```
 
