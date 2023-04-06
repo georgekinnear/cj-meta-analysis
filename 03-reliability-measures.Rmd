@@ -674,7 +674,8 @@ prop_correct_model <- lm(prop_correct_judgements ~ ssr + median_split_corr + mea
 summary(prop_correct_model)
 ```
 
-## Proportion of correction judgements vs SSR
+## Proportion of correct judgements vs SSR
+
 ```{r prop-vs-ssr}
 PropvsSSR <- cor.test(meta_analysis_data$prop_correct_judgements, meta_analysis_data$ssr, use = "complete.obs")
 PropvsSSR_r <- round(PropvsSSR$estimate, 3)
@@ -692,7 +693,7 @@ meta_analysis_data %>%
   xlim(c(0,1)) +
   ylim(c(0,1)) +
   labs(#title = paste("r = ", toString(PropvsSSR_r), ", p = ", toString(PropvsSSR_p)), 
-       x = "Proportion of correction judgements", y = "SSR")
+       x = "Proportion of correct judgements", y = "SSR")
 ##ggsave("figs-pdf/FIG-prop-vs-ssr.pdf", units = "cm", width = 14, height = 14)
 ```
 
@@ -721,7 +722,7 @@ meta_analysis_data %>%
   xlim(c(.5,1)) +
   ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_all), ", p = ", toString(SSR_xvProp_p_all)), 
-       y = "SSR", x = "Proportion of correct comparisons")
+       y = "SSR", x = "Proportion of correct judgements")
 #ggsave("figs-pdf/FIG-ssr_x-vs-prop-all.pdf", units = "cm", width = 14, height = 14)
 ```
 
@@ -752,7 +753,7 @@ meta_analysis_data %>%
   xlim(c(.5,1)) +
   ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_10), ", p = ", toString(SSR_xvProp_p_10)), 
-       y = "SSR", x = "Proportion of correct comparisons")
+       y = "SSR", x = "Proportion of correct judgements")
 #ggsave("figs-pdf/FIG-ssr_x-vs-prop-10.pdf", units = "cm", width = 14, height = 14)
 ```
 
@@ -786,7 +787,7 @@ meta_analysis_data %>%
   xlim(c(.5,1)) +
   ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_20), ", p = ", toString(SSR_xvProp_p_20)), 
-       y = "SSR", x = "Proportion of correct comparisons")
+       y = "SSR", x = "Proportion of correct judgements")
 #ggsave("figs-pdf/FIG-ssr_x-vs-prop-20.pdf", units = "cm", width = 14, height = 14)
 ```
 
@@ -817,12 +818,13 @@ meta_analysis_data %>%
   xlim(c(.5,1)) +
   ylim(c(.5,1)) +
   labs(#title = paste("r = ", toString(SSR_xvProp_r_34), ", p = ", toString(SSR_xvProp_p_34)), 
-       y = "SSR", x = "Proportion of correct comparisons")
+       y = "SSR", x = "Proportion of correct judgements")
 #ggsave("figs-pdf/FIG-ssr_x-vs-prop-34.pdf", units = "cm", width = 14, height = 14)
 ```
 
 
-## Proportion of correction judgements vs Elo
+## Proportion of correct judgements vs Elo
+
 ```{r prop-vs-elo}
 PropvsElo <- cor.test(meta_analysis_data$prop_correct_judgements, meta_analysis_data$mean_eloR_weighted, use = "complete.obs")
 PropvsElo_r <- round(PropvsElo$estimate, 3)
@@ -840,7 +842,7 @@ meta_analysis_data %>%
   xlim(c(0,1)) +
   ylim(c(0,1)) +
   labs(title = paste("r = ", toString(PropvsElo_r), ", p = ", toString(PropvsElo_p)), 
-       x = "Proportion of correction judgements", y = "Elo")
+       x = "Proportion of correct judgements", y = "Elo")
 #ggsave("figs-pdf/FIG-prop-vs-elo.pdf", units = "cm", width = 14, height = 14)
 ```
 
@@ -863,7 +865,7 @@ meta_analysis_data %>%
   xlim(c(0.25,1)) +
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r), ", p = ", toString(PropvsSplithalves_p)), 
-       x = "Proportion of correction judgements", y = "Split halves")
+       x = "Proportion of correct judgements", y = "Split halves")
 #ggsave("figs-pdf/FIG-prop-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
 ```
 
@@ -886,7 +888,7 @@ meta_analysis_data_10 %>%
   xlim(c(0.25,1)) +
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r_10), ", p = ", toString(PropvsSplithalves_p_10)), 
-       x = "Proportion of correction judgements", y = "Split halves")
+       x = "Proportion of correct judgements", y = "Split halves")
 #ggsave("figs-pdf/FIG-prop-vs-splithalves-10.pdf", units = "cm", width = 14, height = 14)
 ```
 
@@ -909,7 +911,7 @@ meta_analysis_data_20 %>%
   xlim(c(0.25,1)) +
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r_20), ", p = ", toString(PropvsSplithalves_p_20)), 
-       x = "Proportion of correction judgements", y = "Split halves")
+       x = "Proportion of correct judgements", y = "Split halves")
 #ggsave("figs-pdf/FIG-prop-vs-splithalves-20.pdf", units = "cm", width = 14, height = 14)
 ```
 
@@ -932,7 +934,7 @@ meta_analysis_data_34 %>%
   xlim(c(0.25,1)) +
   ylim(c(0.25,1)) +
   labs(#title = paste("r = ", toString(PropvsSplithalves_r_34), ", p = ", toString(PropvsSplithalves_p_34)), 
-       x = "Proportion of correction judgements", y = "Split halves")
+       x = "Proportion of correct judgements", y = "Split halves")
 #ggsave("figs-pdf/FIG-prop-vs-splithalves-34.pdf", units = "cm", width = 14, height = 14)
 ```
 
