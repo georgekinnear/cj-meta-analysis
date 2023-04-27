@@ -1,0 +1,167 @@
+---
+title: 'CJ meta-analysis: RQ1'
+author: "George Kinnear"
+date: "2023-04-27"
+output: github_document
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.path='figs-web/04-analysis-RQ1/')
+knitr::opts_chunk$set(dpi=300,fig.width=7)
+
+# for plotting
+theme_set(theme_minimal())
+
+library(knitr)
+library(kableExtra)
+basic_kable = function(df, ...) {
+  df %>% 
+    kable(...) %>%
+    kable_styling(bootstrap_options = "striped", full_width = F)
+}
+```
+
+# About the sample
+
+```{r}
+cj_sessions <- read_csv("data/00-judging_sessions_summary.csv", show_col_types = FALSE)
+reliability_stats <- read_csv("data/01-meta-analysis-data.csv", show_col_types = FALSE)
+
+meta_analysis_data <- cj_sessions %>% 
+  left_join(reliability_stats, by = "judging_session")
+
+meta_analysis_data %>% 
+  summarise(n_datatsets = n_distinct(judging_session))
+```
+
+```{r}
+rq1_data <- meta_analysis_data %>%
+  select(judging_session, starts_with("observed_N_")) %>%
+  pivot_longer(cols = starts_with("observed_N"), names_to = "feature", values_to = "count", names_prefix = "observed_N_") %>%
+  mutate(feature = case_when(
+    feature == "A" ~ "Assessors",
+    feature == "R" ~ "Representations",
+    feature == "C" ~ "Comparisons"
+  ))
+
+rq1_data_wide <- meta_analysis_data %>%
+  select(judging_session, starts_with("observed_N_")) %>%
+  rename(
+    Assessors = observed_N_A,
+    Representations = observed_N_R,
+    Comparisons = observed_N_C
+  )
+```
+
+
+# Judging session characteristics
+
+```{r, counts, fig.height=3, fig.width=6}
+plot_counts <- rq1_data %>% 
+  # pivot_longer(cols = !judging_session, names_to = "feature", values_to = "count") %>% 
+  ggplot(aes(x = feature, y = count)) +
+  #Add individual observations to the plot
+  geom_point(
+    position = position_jitter(width=.3, seed = 123), # add jitter to the observations, using seed so it's reproducible
+    alpha=.4, # set the size of each dot. alpha adds transparency
+    color = "black", fill = "black") +
+  geom_boxplot(width = 0.1, position = position_nudge(x = -0.5)) +
+  scale_y_continuous(trans='log10', labels = scales::comma) +
+  facet_wrap(~ feature, scales = "free_y", ncol = 1) + 
+  coord_flip() +
+  labs(x = "", y = "") +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    # left align the headings
+    strip.text.x = element_text(hjust = 0),
+    # add space between the rows
+    panel.spacing = unit(1, "lines"),
+  )
+
+plot_counts
+
+ggsave("figs-pdf/FIG_RQ1-counts.pdf", units = "cm", width = 15, height = 9)
+```
+
+
+# Relationship between characteristics
+
+```{r, scatter, fig.height=6, fig.width=6}
+plot_scatter <- rq1_data %>%
+  left_join(rq1_data, by = "judging_session") %>%
+  filter(feature.x != feature.y) %>%
+  filter(feature.y != "Assessors") %>%
+  filter(feature.x != "Representations") %>%
+  ggplot(aes(x = count.x, y = count.y)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  scale_y_continuous(trans = 'log10', labels = scales::comma) +
+  scale_x_continuous(trans = 'log10', labels = scales::comma) +
+  facet_grid(
+    rows = vars(feature.y),
+    cols = vars(feature.x),
+    scales = "free",
+    switch = "both"
+  ) +
+  labs(x = "", y = "") +
+  theme_minimal(base_size = 12) +
+  theme(
+    aspect.ratio = 1,
+    # put the facet titles outside the y-axis ticks
+    strip.placement = "outside",
+    # add space between the panels
+    panel.spacing = unit(2, "lines"),
+  )
+
+# kill off the unused top right panel! https://stackoverflow.com/a/49525552
+grob <- ggplotGrob(plot_scatter);
+# Remove facet
+grob$grobs[[which(grob$layout$name %in% c("panel-1-2"))]] <- grid::nullGrob();
+# Plot
+grid::grid.newpage()
+grid::grid.draw(grob)
+
+ggsave("figs-pdf/FIG_RQ1-scatterplot.pdf", plot = grob, units = "cm", width = 15, height = 15)
+```
+
+Correlations (Spearman):
+
+```{r}
+cor.test(rq1_data_wide$Assessors, rq1_data_wide$Comparisons, method = "spearman")
+cor.test(rq1_data_wide$Assessors, rq1_data_wide$Representations, method = "spearman")
+cor.test(rq1_data_wide$Comparisons, rq1_data_wide$Representations, method = "spearman")
+```
+
+Try some more elaborate methods for computing correlations:
+
+```{r}
+library(corrr)
+
+correlate(rq1_data_wide %>% select(!judging_session), method = "spearman") %>% basic_kable()
+```
+This plot shows only the significant correlations:
+
+```{r, corrplot}
+M <- corrplot::cor.mtest(rq1_data_wide %>% select(!judging_session), method = "spearman")
+
+corrplot::corrplot(
+  cor(rq1_data_wide %>% select(!judging_session), method = "spearman"),
+  p.mat = M$p,
+  sig.level = 0.05,
+  method = 'circle',
+  type = 'lower',
+  insig = 'blank',
+  addCoef.col = 'black',
+  number.cex = 0.8,
+  order = 'AOE',
+  diag = FALSE
+)
+```
+
+
+
