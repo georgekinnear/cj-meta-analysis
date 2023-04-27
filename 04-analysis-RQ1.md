@@ -12,7 +12,7 @@ George Kinnear
 
 # Judging session characteristics
 
-![](figs-web/04-analysis-RQ1/counts-1.png)<!-- -->
+![](figs-web/04-analysis-RQ1/counts-1.png)<!-- -->![](figs-web/04-analysis-RQ1/counts-2.png)<!-- -->
 
 # Relationship between characteristics
 
