@@ -160,6 +160,10 @@ compute_split_half_cors_from_cache <- function(judging_session, ...) {
     vroom::vroom(id = "path", show_col_types = FALSE) %>% 
     nest(data = !path) %>% 
     mutate(split_corr = map_dbl(data, ~ cor(.x$theta.x, .x$theta.y, method = "pearson"))) %>% 
+    # compute the sepG and SSR values for one of the split halves, to produce ssr_x
+    mutate(G_x = map_dbl(data, ~ sd(.x$theta.x) / sqrt(mean(.x$se.theta.x ^ 2)) ),
+           ssr_x = G_x ^ 2 / (1 + G_x ^ 2)
+    ) %>% 
     select(-data) %>% 
     write_csv(str_glue("data-cache/{judging_session}/split_halves.csv"))
 }
@@ -192,9 +196,14 @@ split_halves_data <- tibble(path = fs::dir_ls("data-cache", recurse = TRUE, glob
   separate(path, into = c(NA, "iteration"), sep = "split-halves/split") %>% 
   mutate(iteration = str_remove(iteration, ".csv"))
 
+# keep a cached copy of the split_corr and ssr_x for each split half
+split_halves_data %>% select(-G_x) %>% write_csv("data-cache/split_halves_summary_stats.csv")
+
+# summarise the splot_corr and ssr_x using medians
 split_halves_values <- split_halves_data %>% 
   group_by(judging_session) %>%
-  summarise(median_split_corr = median(split_corr))
+  summarise(median_split_corr = median(split_corr),
+            median_ssr_x = median(ssr_x))
 
 
 #### EloChoice ####
