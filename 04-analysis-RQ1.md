@@ -1,7 +1,7 @@
 CJ meta-analysis: RQ1
 ================
 George Kinnear
-2023-04-27
+2023-08-15
 
 # About the sample
 
@@ -140,3 +140,9 @@ This plot shows only the significant correlations:
     ## exact p-value with ties
 
 ![](figs-web/04-analysis-RQ1/corrplot-1.png)<!-- -->
+
+# Derived characteristics
+
+Now we look at ratios of the session characteristics.
+
+![](figs-web/04-analysis-RQ1/derived-counts-1.png)<!-- -->![](figs-web/04-analysis-RQ1/derived-counts-2.png)<!-- -->

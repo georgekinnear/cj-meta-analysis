@@ -1,7 +1,7 @@
 ---
 title: 'CJ meta-analysis: RQ1'
 author: "George Kinnear"
-date: "2023-04-27"
+date: "2023-08-15"
 output: github_document
 always_allow_html: true
 ---
@@ -69,7 +69,7 @@ plot_counts <- rq1_data %>%
     alpha=.4, # set the size of each dot. alpha adds transparency
     color = "black", fill = "black") +
   geom_boxplot(width = 0.1, position = position_nudge(x = -0.5)) +
-  scale_y_continuous(trans='log10', labels = scales::comma) +
+  scale_y_continuous(trans='log10', labels = scales::comma, minor_breaks = rep(1:9, 21)*(10^rep(-10:10, each=9))) +
   facet_wrap(~ feature, scales = "free_y", ncol = 1) + 
   coord_flip() +
   labs(x = "", y = "") +
@@ -93,7 +93,7 @@ plot_counts +
     geom = "text",
     fun = quantile,
     fun.args = list(probs = c(0, 0.5, 1)), # don't need the 0.25 and 0.75!
-    aes(label = sprintf("%1.0f", 10 ** ..y..)),
+    aes(label = sprintf("%1.0f", after_stat(y))),
     position = position_nudge(x = -0.8),
     size = 3,
     colour = "#999999"
@@ -109,7 +109,7 @@ ggsave("figs-pdf/FIG_RQ1-counts-labelled.pdf", units = "cm", width = 15, height 
 
 ```{r, scatter, fig.height=6, fig.width=6}
 plot_scatter <- rq1_data %>%
-  left_join(rq1_data, by = "judging_session") %>%
+  left_join(rq1_data, by = "judging_session", relationship = "many-to-many") %>%
   filter(feature.x != feature.y) %>%
   filter(feature.y != "Assessors") %>%
   filter(feature.x != "Representations") %>%
@@ -180,4 +180,70 @@ corrplot::corrplot(
 ```
 
 
+
+# Derived characteristics
+
+Now we look at ratios of the session characteristics.
+
+```{r, derived-counts-data}
+rq1_data_derived_wide <- rq1_data_wide %>% 
+  mutate(N_RA = Representations / Assessors,
+         N_CR = Comparisons / Representations,
+         N_CA = Comparisons / Assessors) %>% 
+  select(judging_session, starts_with("N_"))
+
+rq1_data_derived <- pivot_longer(rq1_data_derived_wide, starts_with("N_"), names_to = "feature", values_to = "count") %>% 
+  mutate(feature = case_when(
+    feature == "N_RA" ~ "Representations per assessor",
+    feature == "N_CR" ~ "Comparisons per representation",
+    feature == "N_CA" ~ "Comparisons per assessor"
+  ))
+```
+
+
+
+```{r, derived-counts, fig.height=3, fig.width=6}
+plot_derived_counts <- rq1_data_derived %>% 
+  # pivot_longer(cols = !judging_session, names_to = "feature", values_to = "count") %>% 
+  ggplot(aes(x = feature, y = count)) +
+  #Add individual observations to the plot
+  geom_point(
+    position = position_jitter(width=.3, seed = 123), # add jitter to the observations, using seed so it's reproducible
+    alpha=.4, # set the size of each dot. alpha adds transparency
+    color = "black", fill = "black") +
+  geom_boxplot(width = 0.1, position = position_nudge(x = -0.5)) +
+  scale_y_continuous(trans='log10', labels = scales::comma, minor_breaks = rep(1:9, 21)*(10^rep(-10:10, each=9))) +
+  facet_wrap(~ feature, scales = "free_y", ncol = 1) + 
+  coord_flip() +
+  labs(x = "", y = "") +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    # left align the headings
+    strip.text.x = element_text(hjust = 0),
+    # add space between the rows
+    panel.spacing = unit(1, "lines"),
+  )
+
+plot_derived_counts
+
+ggsave("figs-pdf/FIG_RQ1-derived-counts.pdf", units = "cm", width = 15, height = 9)
+
+plot_derived_counts +
+  # add max/min/median: https://stackoverflow.com/a/55762626
+  stat_summary(
+    geom = "text",
+    fun = quantile,
+    fun.args = list(probs = c(0, 0.5, 1)), # don't need the 0.25 and 0.75!
+    aes(label = sprintf("%1.02f", after_stat(y))),
+    position = position_nudge(x = -0.8),
+    size = 3,
+    colour = "#999999"
+  ) +
+  expand_limits(x = -0.1) # stop the boxplot labels getting chopped off
+
+ggsave("figs-pdf/FIG_RQ1-derived-counts-labelled.pdf", units = "cm", width = 15, height = 9)
+
+```
 
