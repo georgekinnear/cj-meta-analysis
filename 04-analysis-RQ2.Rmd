@@ -183,17 +183,26 @@ reliabilities_ncr_plot_data <-
     "34+" = reliabilities_ncr %>% filter(N_CR >= 34),
     .id = "ncr"
   ) %>% 
-  mutate(ncr = fct_relevel(ncr, "all", "10+", "20+", "34+"))
+  mutate(ncr = fct_relevel(ncr, "all", "10+", "20+", "34+")) %>% 
+  mutate(highlight = if_else(ncr == "all", "highlight", "plain"))
 
 reliabilities_ncr_plot_data %>% 
-  ggplot(aes(x = ncr, y = value)) +
+  ggplot(aes(x = ncr, y = value, color = highlight)) +
+  scale_colour_manual(
+    values = c("highlight" = "#045a8d", "plain" = "#777777"),
+    aesthetics = c("colour", "fill")
+  ) +
   geom_point(
-    position = position_jitter(width=.1, seed = 123), # add jitter to the observations, using seed so it's reproducible
-    alpha=.2, # set the size of each dot. alpha adds transparency
-    color = "black", fill = "black", size = 0.4) +
+    aes(color = highlight, fill = highlight),
+    position = position_jitter(width = 0.1, seed = 123), # add jitter to the observations, using seed so it's reproducible
+    alpha = 0.2, size = 0.4) +
   geom_boxplot(width = 0.2, position = position_nudge(x = 0.3), linewidth = 0.3, outlier.size = 0.4) +
   facet_grid(cols = vars(measure)) +
-  labs(y = "", x = "Number of comparisons per representation")
+  labs(y = "", x = "Number of comparisons per representation") +
+  theme(
+    legend.position = "none",
+    axis.title.x = element_text(size = 9)
+  )
 
 ggsave("figs-pdf/FIG_RQ2-varying-ncr.pdf", units = "cm", width = 14, height = 7)
 ```
@@ -205,7 +214,8 @@ reliabilities_ncr_plot_data %>%
     median = median(value),
     max = max(value),
     .by = c(ncr, measure)
-  )
+  ) %>% 
+  basic_kable(digits = 3)
 ```
 
 
@@ -214,6 +224,9 @@ reliabilities_ncr_plot_data %>%
 
 > TODO - single scatter plot version of Figure 6
 
+```{r}
+
+```
 
 
 

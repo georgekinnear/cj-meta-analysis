@@ -38,21 +38,233 @@ For these plots:
 
 ![](figs-web/04-analysis-RQ2/unnamed-chunk-4-1.png)<!-- -->
 
-    ## # A tibble: 12 × 5
-    ##    ncr   measure                        min median   max
-    ##    <fct> <fct>                        <dbl>  <dbl> <dbl>
-    ##  1 all   Scale Separation Reliability 0.513  0.899 0.994
-    ##  2 all   Split-halves reliability     0.259  0.785 0.985
-    ##  3 all   Correct comparisons          0.561  0.775 0.956
-    ##  4 10+   Scale Separation Reliability 0.513  0.899 0.994
-    ##  5 10+   Split-halves reliability     0.259  0.797 0.985
-    ##  6 10+   Correct comparisons          0.561  0.750 0.943
-    ##  7 20+   Scale Separation Reliability 0.513  0.927 0.994
-    ##  8 20+   Split-halves reliability     0.456  0.860 0.985
-    ##  9 20+   Correct comparisons          0.561  0.701 0.943
-    ## 10 34+   Scale Separation Reliability 0.513  0.946 0.994
-    ## 11 34+   Split-halves reliability     0.505  0.896 0.985
-    ## 12 34+   Correct comparisons          0.561  0.683 0.943
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+ncr
+</th>
+<th style="text-align:left;">
+measure
+</th>
+<th style="text-align:right;">
+min
+</th>
+<th style="text-align:right;">
+median
+</th>
+<th style="text-align:right;">
+max
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+all
+</td>
+<td style="text-align:left;">
+Scale Separation Reliability
+</td>
+<td style="text-align:right;">
+0.513
+</td>
+<td style="text-align:right;">
+0.899
+</td>
+<td style="text-align:right;">
+0.994
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+all
+</td>
+<td style="text-align:left;">
+Split-halves reliability
+</td>
+<td style="text-align:right;">
+0.259
+</td>
+<td style="text-align:right;">
+0.785
+</td>
+<td style="text-align:right;">
+0.985
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+all
+</td>
+<td style="text-align:left;">
+Correct comparisons
+</td>
+<td style="text-align:right;">
+0.561
+</td>
+<td style="text-align:right;">
+0.775
+</td>
+<td style="text-align:right;">
+0.956
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10+
+</td>
+<td style="text-align:left;">
+Scale Separation Reliability
+</td>
+<td style="text-align:right;">
+0.513
+</td>
+<td style="text-align:right;">
+0.899
+</td>
+<td style="text-align:right;">
+0.994
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10+
+</td>
+<td style="text-align:left;">
+Split-halves reliability
+</td>
+<td style="text-align:right;">
+0.259
+</td>
+<td style="text-align:right;">
+0.797
+</td>
+<td style="text-align:right;">
+0.985
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10+
+</td>
+<td style="text-align:left;">
+Correct comparisons
+</td>
+<td style="text-align:right;">
+0.561
+</td>
+<td style="text-align:right;">
+0.750
+</td>
+<td style="text-align:right;">
+0.943
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20+
+</td>
+<td style="text-align:left;">
+Scale Separation Reliability
+</td>
+<td style="text-align:right;">
+0.513
+</td>
+<td style="text-align:right;">
+0.927
+</td>
+<td style="text-align:right;">
+0.994
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20+
+</td>
+<td style="text-align:left;">
+Split-halves reliability
+</td>
+<td style="text-align:right;">
+0.456
+</td>
+<td style="text-align:right;">
+0.860
+</td>
+<td style="text-align:right;">
+0.985
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20+
+</td>
+<td style="text-align:left;">
+Correct comparisons
+</td>
+<td style="text-align:right;">
+0.561
+</td>
+<td style="text-align:right;">
+0.701
+</td>
+<td style="text-align:right;">
+0.943
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+34+
+</td>
+<td style="text-align:left;">
+Scale Separation Reliability
+</td>
+<td style="text-align:right;">
+0.513
+</td>
+<td style="text-align:right;">
+0.946
+</td>
+<td style="text-align:right;">
+0.994
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+34+
+</td>
+<td style="text-align:left;">
+Split-halves reliability
+</td>
+<td style="text-align:right;">
+0.505
+</td>
+<td style="text-align:right;">
+0.896
+</td>
+<td style="text-align:right;">
+0.985
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+34+
+</td>
+<td style="text-align:left;">
+Correct comparisons
+</td>
+<td style="text-align:right;">
+0.561
+</td>
+<td style="text-align:right;">
+0.683
+</td>
+<td style="text-align:right;">
+0.943
+</td>
+</tr>
+</tbody>
+</table>
 
 # Relationships between reliability measures
 
