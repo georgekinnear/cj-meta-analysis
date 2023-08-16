@@ -421,6 +421,12 @@ p_value
 
 (This seems to be driven by a couple of low outliers in the 34+ group.)
 
+    ## # A tibble: 2 × 5
+    ##   judging_session        median_ssr_x median_split_corr  N_CR ncr  
+    ##   <chr>                         <dbl>             <dbl> <dbl> <chr>
+    ## 1 Spehar2016_expt2-Edges        0.857             0.596   400 34+  
+    ## 2 Spehar2016_expt2-Plain        0.821             0.505   400 34+
+
 Likewise, the details for the linear model in each case show that the
 variance explained decreases with higher thresholds, i.e. `median_ssr_x`
 is less predictive of `median_split_corr`:

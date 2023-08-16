@@ -333,8 +333,10 @@ reliability_corr_plot_data %>%
   theme_minimal(base_size = 12) +
   theme(
     aspect.ratio = 1,
-    legend.position = "top"
+    legend.position = "bottom"
   )
+
+ggsave("figs-pdf/FIG_RQ2-ssr-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
 ```
 
 ```{r}
@@ -382,6 +384,12 @@ reliability_corr_values %>%
 ```
 
 (This seems to be driven by a couple of low outliers in the 34+ group.)
+
+```{r}
+reliability_corr_plot_data %>% 
+  filter(N_CR >= 34, median_ssr_x > 0.8, median_split_corr < 0.7, )
+```
+
 
 Likewise, the details for the linear model in each case show that the variance explained decreases with higher thresholds, i.e. `median_ssr_x` is less predictive of `median_split_corr`:
 
