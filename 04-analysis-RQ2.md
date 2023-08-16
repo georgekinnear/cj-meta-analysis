@@ -336,6 +336,8 @@ split-halves reliability)
 
 ![](figs-web/04-analysis-RQ2/unnamed-chunk-11-1.png)<!-- -->
 
+![](figs-web/04-analysis-RQ2/unnamed-chunk-12-1.png)<!-- -->
+
 However, looking at the correlations somewhat undermines that
 interpretation, as the correlation between the two variables decreases
 as the threshold on N_CR is increased:
@@ -345,6 +347,9 @@ as the threshold on N_CR is increased:
 <tr>
 <th style="text-align:right;">
 ncr_threshold
+</th>
+<th style="text-align:right;">
+num_studies
 </th>
 <th style="text-align:right;">
 correlation
@@ -360,6 +365,9 @@ p_value
 0
 </td>
 <td style="text-align:right;">
+101
+</td>
+<td style="text-align:right;">
 0.801
 </td>
 <td style="text-align:right;">
@@ -369,6 +377,9 @@ p_value
 <tr>
 <td style="text-align:right;">
 10
+</td>
+<td style="text-align:right;">
+64
 </td>
 <td style="text-align:right;">
 0.749
@@ -382,6 +393,9 @@ p_value
 20
 </td>
 <td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
 0.737
 </td>
 <td style="text-align:right;">
@@ -393,6 +407,9 @@ p_value
 34
 </td>
 <td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
 0.677
 </td>
 <td style="text-align:right;">
@@ -401,6 +418,8 @@ p_value
 </tr>
 </tbody>
 </table>
+
+(This seems to be driven by a couple of low outliers in the 34+ group.)
 
 Likewise, the details for the linear model in each case show that the
 variance explained decreases with higher thresholds, i.e. `median_ssr_x`

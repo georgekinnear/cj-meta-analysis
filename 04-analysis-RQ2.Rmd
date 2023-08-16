@@ -381,6 +381,7 @@ reliability_corr_values %>%
   basic_kable(digits = 3)
 ```
 
+(This seems to be driven by a couple of low outliers in the 34+ group.)
 
 Likewise, the details for the linear model in each case show that the variance explained decreases with higher thresholds, i.e. `median_ssr_x` is less predictive of `median_split_corr`:
 
