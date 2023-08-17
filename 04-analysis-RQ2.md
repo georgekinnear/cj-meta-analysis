@@ -509,3 +509,320 @@ is less predictive of `median_split_corr`:
     ## Residual standard error: 0.09972 on 28 degrees of freedom
     ## Multiple R-squared:  0.4582, Adjusted R-squared:  0.4388 
     ## F-statistic: 23.68 on 1 and 28 DF,  p-value: 4e-05
+
+## Recreating Verhavert et al. (2019) Figure 4
+
+Verhavert et al. (2019) define N_CR to be *double* the ratio N_C/N_R, to
+account for the fact that each CJ decision involves two items (e.g. 100
+decisions about 10 items will mean that each item is present in
+100/10\*2 = 20 decisions, i.e. has been compared 20 times).
+
+![](figs-web/04-analysis-RQ2/unnamed-chunk-17-1.png)<!-- -->
+
+We seem to have many more studies with low N_CR yet high SSR.
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+judging_session
+</th>
+<th style="text-align:left;">
+adaptivity
+</th>
+<th style="text-align:right;">
+N_CR
+</th>
+<th style="text-align:right;">
+SSR
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bramley2018_1a
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:right;">
+14.386667
+</td>
+<td style="text-align:right;">
+0.9675736
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2013a_novice
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:right;">
+14.488095
+</td>
+<td style="text-align:right;">
+0.9824695
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2014_GCSE070211data
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:right;">
+16.666667
+</td>
+<td style="text-align:right;">
+0.9027410
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2015a_all-scripts
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+9.618667
+</td>
+<td style="text-align:right;">
+0.9714079
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jones2015a_subset-of-scripts
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+10.000000
+</td>
+<td style="text-align:right;">
+0.9602843
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2012a
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:right;">
+12.478723
+</td>
+<td style="text-align:right;">
+0.9779996
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollitt2017_example4
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:right;">
+16.338338
+</td>
+<td style="text-align:right;">
+0.9485595
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_art1
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+13.226667
+</td>
+<td style="text-align:right;">
+0.9136365
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_art2
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+13.253333
+</td>
+<td style="text-align:right;">
+0.9139111
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_college
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+11.416667
+</td>
+<td style="text-align:right;">
+0.9335833
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_design
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+13.886487
+</td>
+<td style="text-align:right;">
+0.9787771
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_efl-oracy
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+13.910448
+</td>
+<td style="text-align:right;">
+0.9708549
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_ielts-writing
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+14.200000
+</td>
+<td style="text-align:right;">
+0.9608904
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_music
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+10.318408
+</td>
+<td style="text-align:right;">
+0.9634046
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_peer-assessment
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+19.875000
+</td>
+<td style="text-align:right;">
+0.9044001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy1
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+12.674286
+</td>
+<td style="text-align:right;">
+0.9734448
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy2a
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+10.062500
+</td>
+<td style="text-align:right;">
+0.9516662
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy2b
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+10.131250
+</td>
+<td style="text-align:right;">
+0.9503385
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PollittX_philosophy2c
+</td>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+10.193750
+</td>
+<td style="text-align:right;">
+0.9627824
+</td>
+</tr>
+</tbody>
+</table>
+
+The bulk of those are from Pollitt, where it is likely that adaptivity
+was used – and this is known to inflate SSR.
+
+Indeed, the adaptivity seems to produce separate clusters in our sample:
+
+![](figs-web/04-analysis-RQ2/unnamed-chunk-19-1.png)<!-- -->
+
+Let’s see what the main SSR vs split-halves plot looks like for only the
+non-adaptive studies.
+
+![](figs-web/04-analysis-RQ2/unnamed-chunk-20-1.png)<!-- -->
+
+Or the simpler version, with adaptive vs non-adaptive highlighted:
+
+![](figs-web/04-analysis-RQ2/unnamed-chunk-21-1.png)<!-- -->
+
+This suggests that the SSR/split-halves relationship looks quite similar
+whether studies used adaptivity or not.

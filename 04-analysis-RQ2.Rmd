@@ -326,11 +326,11 @@ ncr_thresholds_colours <- c(
   "34+" = RColorBrewer::brewer.pal(6, "Blues")[6]
 )
 reliability_corr_plot_data %>% 
-  ggplot(aes(x = median_ssr_x, y = median_split_corr, colour = ncr, shape = ncr)) +
+  ggplot(aes(x = median_ssr_x, y = median_split_corr, colour = ncr)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
   geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
   geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
-  geom_point(alpha = 0.7) +
+  geom_point(aes(shape = ncr), alpha = 0.7) +
   scale_colour_manual(values = ncr_thresholds_colours, aesthetics = c("colour", "fill")) +
   scale_shape_manual(values = c(18:15)) +
   #geom_smooth(method = "lm", formula = "y ~ x", se = FALSE) +
@@ -415,3 +415,109 @@ summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_p
 summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data %>% filter(N_CR >= 34)))
 ```
 
+## Recreating Verhavert et al. (2019) Figure 4
+
+Verhavert et al. (2019) define N_CR to be *double* the ratio N_C/N_R, to account for the fact that each CJ decision involves two items (e.g. 100 decisions about 10 items will mean that each item is present in 100/10*2 = 20 decisions, i.e. has been compared 20 times).
+
+```{r}
+verhavert_data <- read_delim("https://zenodo.org/record/2586084/files/Assessment_characterisitcs_data.csv?download=1", delim = ";", locale=locale(decimal_mark = ","), show_col_types = FALSE)
+```
+
+
+```{r}
+ssr_vs_ncr <- meta_analysis_data %>%
+    mutate(N_CR = observed_N_C / observed_N_R * 2) %>%
+    select(judging_session, adaptivity, N_CR, SSR = ssr)
+
+bind_rows(
+  "Verhavert" = verhavert_data %>%
+    transmute(judging_session = paste(Assessment, `Assessor group`), N_CR, SSR),
+  "Kinnear" = ssr_vs_ncr,
+  .id = "study"
+) %>% 
+  filter(N_CR < 60) %>% 
+  ggplot(aes(x = N_CR, y = SSR, shape = study, colour = study)) +
+  geom_point()
+```
+
+We seem to have many more studies with low N_CR yet high SSR.
+
+```{r}
+ssr_vs_ncr %>% 
+  filter(N_CR < 20, SSR > 0.9) %>% 
+  basic_kable()
+```
+
+The bulk of those are from Pollitt, where it is likely that adaptivity was used -- and this is known to inflate SSR.
+
+Indeed, the adaptivity seems to produce separate clusters in our sample:
+
+```{r}
+bind_rows(
+  "Verhavert" = verhavert_data %>%
+    transmute(judging_session = paste(Assessment, `Assessor group`), N_CR, SSR),
+  "Kinnear (non-adaptive)" = ssr_vs_ncr %>%
+    filter(adaptivity == FALSE),
+  "Kinnear (adaptive)" = ssr_vs_ncr %>%
+    filter(adaptivity == TRUE),
+  "Kinnear (unknown)" = ssr_vs_ncr %>%
+    filter(adaptivity == "unknown"),
+  .id = "study"
+) %>% 
+  filter(N_CR < 60) %>% 
+  ggplot(aes(x = N_CR, y = SSR, shape = study, colour = study)) +
+  geom_point()
+```
+
+Let's see what the main SSR vs split-halves plot looks like for only the non-adaptive studies.
+
+```{r}
+reliability_corr_plot_data_nonadaptive <- reliability_corr_plot_data %>% 
+  semi_join(ssr_vs_ncr %>% filter(adaptivity == FALSE), join_by(judging_session))
+
+reliability_corr_plot_data_nonadaptive %>% 
+  ggplot(aes(x = median_ssr_x, y = median_split_corr, colour = ncr)) +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point(aes(shape = ncr), alpha = 0.7) +
+  scale_colour_manual(values = ncr_thresholds_colours, aesthetics = c("colour", "fill")) +
+  scale_shape_manual(values = c(18:15)) +
+  #geom_smooth(method = "lm", formula = "y ~ x", se = FALSE) +
+  geom_smooth(data = reliability_corr_plot_data_nonadaptive %>% filter(N_CR > 0), colour = ncr_thresholds_colours["0+"], method = "lm", formula = "y ~ x", se = FALSE) +
+  geom_smooth(data = reliability_corr_plot_data_nonadaptive %>% filter(N_CR >= 10), colour = ncr_thresholds_colours["10+"], method = "lm", formula = "y ~ x", se = FALSE) +
+  geom_smooth(data = reliability_corr_plot_data_nonadaptive %>% filter(N_CR >= 20), colour = ncr_thresholds_colours["20+"], method = "lm", formula = "y ~ x", se = FALSE) +
+  geom_smooth(data = reliability_corr_plot_data_nonadaptive %>% filter(N_CR >= 34), colour = ncr_thresholds_colours["34+"], method = "lm", formula = "y ~ x", se = FALSE) +
+  labs(
+    x = "Median SSR of half the judges",
+    y = "Median split-halves correlation",
+    shape = "Comparisons per representation",
+    colour = "Comparisons per representation"
+  ) +
+  lims(x = c(0.5,1), y = c(0.25,1)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    aspect.ratio = 1,
+    legend.position = "bottom"
+  )
+```
+
+Or the simpler version, with adaptive vs non-adaptive highlighted:
+
+```{r}
+meta_analysis_data %>% 
+  ggplot(aes(x = median_ssr_x, y = median_split_corr, colour = adaptivity, shape = adaptivity)) +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "lm", formula = "y ~ x", se = FALSE) +
+  labs(x = "Median SSR of half the judges", y = "Median split-halves correlation") +
+  lims(x = c(0.25,1), y = c(0.25,1)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    aspect.ratio = 1,
+  )
+```
+
+This suggests that the SSR/split-halves relationship looks quite similar whether studies used adaptivity or not.
