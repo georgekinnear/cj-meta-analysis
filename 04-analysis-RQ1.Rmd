@@ -66,9 +66,9 @@ plot_counts <- rq1_data %>%
   #Add individual observations to the plot
   geom_point(
     position = position_jitter(width=.3, seed = 123), # add jitter to the observations, using seed so it's reproducible
-    alpha=.4, # set the size of each dot. alpha adds transparency
+    size = 1, alpha=.3, # set the size of each dot. alpha adds transparency
     color = "black", fill = "black") +
-  geom_boxplot(width = 0.1, position = position_nudge(x = -0.5)) +
+  geom_boxplot(width = 0.3, position = position_nudge(x = -0.6)) +
   scale_y_continuous(trans='log10', labels = scales::comma, minor_breaks = rep(1:9, 21)*(10^rep(-10:10, each=9))) +
   facet_wrap(~ feature, scales = "free_y", ncol = 1) + 
   coord_flip() +
@@ -94,11 +94,11 @@ plot_counts +
     fun = quantile,
     fun.args = list(probs = c(0, 0.5, 1)), # don't need the 0.25 and 0.75!
     aes(label = sprintf("%1.0f", after_stat(y))),
-    position = position_nudge(x = -0.8),
+    position = position_nudge(x = -1),
     size = 3,
     colour = "#999999"
   ) +
-  expand_limits(x = -0.1) # stop the boxplot labels getting chopped off
+  expand_limits(x = -0.2) # stop the boxplot labels getting chopped off
 
 ggsave("figs-pdf/FIG_RQ1-counts-labelled.pdf", units = "cm", width = 15, height = 9)
 
@@ -209,9 +209,9 @@ plot_derived_counts <- rq1_data_derived %>%
   #Add individual observations to the plot
   geom_point(
     position = position_jitter(width=.3, seed = 123), # add jitter to the observations, using seed so it's reproducible
-    alpha=.4, # set the size of each dot. alpha adds transparency
+    size = 1, alpha=.3, # set the size of each dot. alpha adds transparency
     color = "black", fill = "black") +
-  geom_boxplot(width = 0.1, position = position_nudge(x = -0.5)) +
+  geom_boxplot(width = 0.3, position = position_nudge(x = -0.6)) +
   scale_y_continuous(trans='log10', labels = scales::comma, minor_breaks = rep(1:9, 21)*(10^rep(-10:10, each=9))) +
   facet_wrap(~ feature, scales = "free_y", ncol = 1) + 
   coord_flip() +
@@ -237,11 +237,11 @@ plot_derived_counts +
     fun = quantile,
     fun.args = list(probs = c(0, 0.5, 1)), # don't need the 0.25 and 0.75!
     aes(label = sprintf("%1.02f", after_stat(y))),
-    position = position_nudge(x = -0.8),
+    position = position_nudge(x = -1),
     size = 3,
     colour = "#999999"
   ) +
-  expand_limits(x = -0.1) # stop the boxplot labels getting chopped off
+  expand_limits(x = -0.2) # stop the boxplot labels getting chopped off
 
 ggsave("figs-pdf/FIG_RQ1-derived-counts-labelled.pdf", units = "cm", width = 15, height = 9)
 
