@@ -317,18 +317,24 @@ ncr_thresholds_colours <- c(
   "34+" = RColorBrewer::brewer.pal(6, "Blues")[6]
 )
 reliability_corr_plot_data %>% 
-  ggplot(aes(x = median_ssr_x, y = median_split_corr, colour = ncr)) +
+  ggplot(aes(x = median_ssr_x, y = median_split_corr, colour = ncr, shape = ncr)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
   geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
   geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
   geom_point(alpha = 0.7) +
-  scale_colour_manual("Comparisons per representation", values = ncr_thresholds_colours, aesthetics = c("colour", "fill")) +
+  scale_colour_manual(values = ncr_thresholds_colours, aesthetics = c("colour", "fill")) +
+  scale_shape_manual(values = c(18:15)) +
   #geom_smooth(method = "lm", formula = "y ~ x", se = FALSE) +
   geom_smooth(data = reliability_corr_plot_data %>% filter(N_CR > 0), colour = ncr_thresholds_colours["0+"], method = "lm", formula = "y ~ x", se = FALSE) +
   geom_smooth(data = reliability_corr_plot_data %>% filter(N_CR >= 10), colour = ncr_thresholds_colours["10+"], method = "lm", formula = "y ~ x", se = FALSE) +
   geom_smooth(data = reliability_corr_plot_data %>% filter(N_CR >= 20), colour = ncr_thresholds_colours["20+"], method = "lm", formula = "y ~ x", se = FALSE) +
   geom_smooth(data = reliability_corr_plot_data %>% filter(N_CR >= 34), colour = ncr_thresholds_colours["34+"], method = "lm", formula = "y ~ x", se = FALSE) +
-  labs(x = "Median SSR of half the judges", y = "Median split-halves correlation") +
+  labs(
+    x = "Median SSR of half the judges",
+    y = "Median split-halves correlation",
+    shape = "Comparisons per representation",
+    colour = "Comparisons per representation"
+  ) +
   lims(x = c(0.5,1), y = c(0.25,1)) +
   theme_minimal(base_size = 12) +
   theme(
