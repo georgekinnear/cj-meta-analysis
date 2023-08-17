@@ -139,53 +139,50 @@ ggsave("figs-pdf/FIG_RQ2-observed-scatterplot.pdf", plot = grob, units = "cm", w
 
 # Effect of N_CR on reliability measures
 
-> TODO - decide which thresholds to use
+The descriptive plot for RQ1 shows N_CR as simply N_C / N_R.
+
+> TODO - update the RQ1 plot?
+
+Verhavert et al. (2019) defined N_CR as 2 * N_C / N_R, with the multiplier of 2 reflecting the fact that each judgement contributes a comparison for each of the items being compared.
+
+With N_CR = 2 * N_C / N_R, we consider various thresholds that have been suggested in the literature:
+
+* *N_CR >= 10*. "assuming 10 decisions per script (or 5 pairs) for a good level of reliability." (Wheadon et al., 2020, p. 59)
+* *N_CR >= 20*. “A general rule of thumb is to have at least 10 times the number of judgements to the number of scripts.” (Bisson et al., 2016, p. 154)
+* *N_CR >= 37*. “between 10 and 14 comparisons per representation are needed to reach a reliability of .70. To reach a reliability of .90, 26 to 37 comparisons per representation are needed.” (Verhavert et al., 2019, p. 557)
 
 ```{r}
 reliabilities_ncr <- observed_reliabilities %>% 
   left_join(cj_sessions %>% select(judging_session, observed_N_C, observed_N_R), join_by(judging_session)) %>% 
-  mutate(N_CR = observed_N_C / observed_N_R, .keep = "unused")
-
-reliabilities_ncr_plot_data <-
-  bind_rows(
-    "all" = reliabilities_ncr,
-    "5+" = reliabilities_ncr %>% filter(N_CR >= 5),
-    "10+" = reliabilities_ncr %>% filter(N_CR >= 10),
-    "17+" = reliabilities_ncr %>% filter(N_CR >= 17),
-    .id = "ncr"
-  ) %>% 
-  mutate(ncr = fct_relevel(ncr, "all", "5+", "10+", "17+"))
-
-reliabilities_ncr_plot_data %>% 
-  ggplot(aes(x = ncr, y = value)) +
-  geom_point(
-    position = position_jitter(width=.1, seed = 123), # add jitter to the observations, using seed so it's reproducible
-    alpha=.2, # set the size of each dot. alpha adds transparency
-    color = "black", fill = "black", size = 0.4) +
-  geom_boxplot(width = 0.2, position = position_nudge(x = 0.3), linewidth = 0.3, outlier.size = 0.4) +
-  facet_grid(cols = vars(measure)) +
-  labs(y = "", x = "Number of comparisons per representation")
-
-ggsave("figs-pdf/FIG_RQ2-varying-ncr.pdf", units = "cm", width = 14, height = 7)
-```
-
-
-```{r}
-reliabilities_ncr <- observed_reliabilities %>% 
-  left_join(cj_sessions %>% select(judging_session, observed_N_C, observed_N_R), join_by(judging_session)) %>% 
-  mutate(N_CR = observed_N_C / observed_N_R, .keep = "unused")
+  mutate(N_CR = 2 * observed_N_C / observed_N_R, .keep = "unused")
 
 reliabilities_ncr_plot_data <-
   bind_rows(
     "all" = reliabilities_ncr,
     "10+" = reliabilities_ncr %>% filter(N_CR >= 10),
     "20+" = reliabilities_ncr %>% filter(N_CR >= 20),
-    "34+" = reliabilities_ncr %>% filter(N_CR >= 34),
+    "37+" = reliabilities_ncr %>% filter(N_CR >= 37),
     .id = "ncr"
   ) %>% 
-  mutate(ncr = fct_relevel(ncr, "all", "10+", "20+", "34+")) %>% 
+  mutate(ncr = fct_relevel(ncr, "all", "10+", "20+", "37+")) %>% 
   mutate(highlight = if_else(ncr == "all", "highlight", "plain"))
 
+reliabilities_ncr_plot_data %>%
+  group_by(ncr) %>%
+  distinct(judging_session) %>%
+  tally(name = "num_studies") %>% 
+  basic_kable()
+```
+
+Since there is only one study that is just below the 10+ threshold, we will just proceed with the all/20+/37+ groups.
+
+```{r}
+reliabilities_ncr_plot_data <- reliabilities_ncr_plot_data %>% 
+  filter(ncr != "10+")
+```
+
+
+```{r}
 reliabilities_ncr_plot_data %>% 
   ggplot(aes(x = ncr, y = value, color = highlight)) +
   scale_colour_manual(
@@ -306,12 +303,12 @@ We split the data into groups, according to which ones meet various thresholds t
 
 ```{r}
 reliability_corr_plot_data <- meta_analysis_data %>% 
-  mutate(N_CR = observed_N_C / observed_N_R) %>% 
+  mutate(N_CR = 2 * observed_N_C / observed_N_R) %>% 
   select(judging_session, median_ssr_x, median_split_corr, N_CR) %>%
   mutate(ncr = case_when(
-    N_CR >= 34 ~ "34+",
+    N_CR >= 37 ~ "37+",
     N_CR >= 20 ~ "20+",
-    N_CR >= 10 ~ "10+",
+    #N_CR >= 10 ~ "10+",
     .default = "0+"
   ))
 ```
@@ -321,9 +318,9 @@ The trend seems to be that with increasing N_CR, the relationship between the tw
 ```{r}
 ncr_thresholds_colours <- c(
   "0+" = RColorBrewer::brewer.pal(6, "Blues")[3],
-  "10+" = RColorBrewer::brewer.pal(6, "Blues")[4],
+  #"10+" = RColorBrewer::brewer.pal(6, "Blues")[4],
   "20+" = RColorBrewer::brewer.pal(6, "Blues")[5],
-  "34+" = RColorBrewer::brewer.pal(6, "Blues")[6]
+  "37+" = RColorBrewer::brewer.pal(6, "Blues")[6]
 )
 reliability_corr_plot_data %>% 
   ggplot(aes(x = median_ssr_x, y = median_split_corr, colour = ncr)) +
@@ -335,9 +332,8 @@ reliability_corr_plot_data %>%
   scale_shape_manual(values = c(18:15)) +
   #geom_smooth(method = "lm", formula = "y ~ x", se = FALSE) +
   geom_smooth(data = reliability_corr_plot_data %>% filter(N_CR > 0), colour = ncr_thresholds_colours["0+"], method = "lm", formula = "y ~ x", se = FALSE) +
-  geom_smooth(data = reliability_corr_plot_data %>% filter(N_CR >= 10), colour = ncr_thresholds_colours["10+"], method = "lm", formula = "y ~ x", se = FALSE) +
   geom_smooth(data = reliability_corr_plot_data %>% filter(N_CR >= 20), colour = ncr_thresholds_colours["20+"], method = "lm", formula = "y ~ x", se = FALSE) +
-  geom_smooth(data = reliability_corr_plot_data %>% filter(N_CR >= 34), colour = ncr_thresholds_colours["34+"], method = "lm", formula = "y ~ x", se = FALSE) +
+  geom_smooth(data = reliability_corr_plot_data %>% filter(N_CR >= 37), colour = ncr_thresholds_colours["37+"], method = "lm", formula = "y ~ x", se = FALSE) +
   labs(
     x = "Median SSR of half the judges",
     y = "Median split-halves correlation",
@@ -355,13 +351,7 @@ ggsave("figs-pdf/FIG_RQ2-ssr-vs-splithalves.pdf", units = "cm", width = 14, heig
 ```
 
 ```{r}
-ncr_thresholds_colours <- c(
-  "0+" = RColorBrewer::brewer.pal(6, "Blues")[3],
-  "10+" = RColorBrewer::brewer.pal(6, "Blues")[4],
-  "20+" = RColorBrewer::brewer.pal(6, "Blues")[5],
-  "34+" = RColorBrewer::brewer.pal(6, "Blues")[6]
-)
-tibble(ncr_threshold = c(0, 10, 20, 34)) %>%  
+tibble(ncr_threshold = c(0, 20, 37)) %>%  
   mutate(relevant_data = map(ncr_threshold, ~ reliability_corr_plot_data %>% filter(N_CR >= .x))) %>% 
   unnest(relevant_data) %>% 
   ggplot(aes(x = median_ssr_x, y = median_split_corr, group = ncr_threshold)) +
@@ -384,7 +374,7 @@ tibble(ncr_threshold = c(0, 10, 20, 34)) %>%
 However, looking at the correlations somewhat undermines that interpretation, as the correlation between the two variables decreases as the threshold on N_CR is increased:
 
 ```{r}
-reliability_corr_values <- tibble(ncr_threshold = c(0, 10, 20, 34)) %>%  
+reliability_corr_values <- tibble(ncr_threshold = c(0, 20, 37)) %>%  
   mutate(relevant_data = map(ncr_threshold, ~ reliability_corr_plot_data %>% filter(N_CR >= .x))) %>% 
   mutate(test_results = map(relevant_data, ~ cor.test(.x$median_ssr_x, .x$median_split_corr))) %>% 
   mutate(
@@ -398,11 +388,11 @@ reliability_corr_values %>%
   basic_kable(digits = 3)
 ```
 
-(This seems to be driven by a couple of low outliers in the 34+ group.)
+(This seems to be driven by a couple of low outliers in the 37+ group.)
 
 ```{r}
 reliability_corr_plot_data %>% 
-  filter(N_CR >= 34, median_ssr_x > 0.8, median_split_corr < 0.7, )
+  filter(N_CR >= 37, median_ssr_x > 0.8, median_split_corr < 0.7, )
 ```
 
 
@@ -410,23 +400,23 @@ Likewise, the details for the linear model in each case show that the variance e
 
 ```{r}
 summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data))
-summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data %>% filter(N_CR >= 10)))
 summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data %>% filter(N_CR >= 20)))
-summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data %>% filter(N_CR >= 34)))
+summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data %>% filter(N_CR >= 37)))
 ```
 
 ## Recreating Verhavert et al. (2019) Figure 4
 
-Verhavert et al. (2019) define N_CR to be *double* the ratio N_C/N_R, to account for the fact that each CJ decision involves two items (e.g. 100 decisions about 10 items will mean that each item is present in 100/10*2 = 20 decisions, i.e. has been compared 20 times).
+Verhavert et al. (2019) analysed data from 49 different CJ sessions.
 
 ```{r}
 verhavert_data <- read_delim("https://zenodo.org/record/2586084/files/Assessment_characterisitcs_data.csv?download=1", delim = ";", locale=locale(decimal_mark = ","), show_col_types = FALSE)
 ```
 
+Here we combine their data with our own, to extend their analysis.
 
 ```{r}
 ssr_vs_ncr <- meta_analysis_data %>%
-    mutate(N_CR = observed_N_C / observed_N_R * 2) %>%
+    mutate(N_CR = 2 * observed_N_C / observed_N_R) %>%
     select(judging_session, adaptivity, N_CR, SSR = ssr)
 
 bind_rows(
@@ -448,9 +438,9 @@ ssr_vs_ncr %>%
   basic_kable()
 ```
 
-The bulk of those are from Pollitt, where it is likely that adaptivity was used -- and this is known to inflate SSR.
+The bulk of those are from Pollitt, where it is likely that adaptivity was used -- and this is known to inflate SSR (indeed, Bramley2018_1a was a study designed to show just that).
 
-Indeed, the adaptivity seems to produce separate clusters in our sample:
+The adaptivity seems to produce separate clusters in our sample:
 
 ```{r}
 bind_rows(
@@ -485,9 +475,8 @@ reliability_corr_plot_data_nonadaptive %>%
   scale_shape_manual(values = c(18:15)) +
   #geom_smooth(method = "lm", formula = "y ~ x", se = FALSE) +
   geom_smooth(data = reliability_corr_plot_data_nonadaptive %>% filter(N_CR > 0), colour = ncr_thresholds_colours["0+"], method = "lm", formula = "y ~ x", se = FALSE) +
-  geom_smooth(data = reliability_corr_plot_data_nonadaptive %>% filter(N_CR >= 10), colour = ncr_thresholds_colours["10+"], method = "lm", formula = "y ~ x", se = FALSE) +
   geom_smooth(data = reliability_corr_plot_data_nonadaptive %>% filter(N_CR >= 20), colour = ncr_thresholds_colours["20+"], method = "lm", formula = "y ~ x", se = FALSE) +
-  geom_smooth(data = reliability_corr_plot_data_nonadaptive %>% filter(N_CR >= 34), colour = ncr_thresholds_colours["34+"], method = "lm", formula = "y ~ x", se = FALSE) +
+  geom_smooth(data = reliability_corr_plot_data_nonadaptive %>% filter(N_CR >= 37), colour = ncr_thresholds_colours["37+"], method = "lm", formula = "y ~ x", se = FALSE) +
   labs(
     x = "Median SSR of half the judges",
     y = "Median split-halves correlation",

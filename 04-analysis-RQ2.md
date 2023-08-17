@@ -32,11 +32,78 @@ For these plots:
 
 # Effect of N_CR on reliability measures
 
-> TODO - decide which thresholds to use
+The descriptive plot for RQ1 shows N_CR as simply N_C / N_R.
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-3-1.png)<!-- -->
+> TODO - update the RQ1 plot?
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-4-1.png)<!-- -->
+Verhavert et al. (2019) defined N_CR as 2 \* N_C / N_R, with the
+multiplier of 2 reflecting the fact that each judgement contributes a
+comparison for each of the items being compared.
+
+With N_CR = 2 \* N_C / N_R, we consider various thresholds that have
+been suggested in the literature:
+
+- *N_CR \>= 10*. “assuming 10 decisions per script (or 5 pairs) for a
+  good level of reliability.” (Wheadon et al., 2020, p. 59)
+- *N_CR \>= 20*. “A general rule of thumb is to have at least 10 times
+  the number of judgements to the number of scripts.” (Bisson et al.,
+  2016, p. 154)
+- *N_CR \>= 37*. “between 10 and 14 comparisons per representation are
+  needed to reach a reliability of .70. To reach a reliability of .90,
+  26 to 37 comparisons per representation are needed.” (Verhavert et
+  al., 2019, p. 557)
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+ncr
+</th>
+<th style="text-align:right;">
+num_studies
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+all
+</td>
+<td style="text-align:right;">
+101
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10+
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20+
+</td>
+<td style="text-align:right;">
+64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+37+
+</td>
+<td style="text-align:right;">
+44
+</td>
+</tr>
+</tbody>
+</table>
+
+Since there is only one study that is just below the 10+ threshold, we
+will just proceed with the all/20+/37+ groups.
+
+![](figs-web/04-analysis-RQ2/unnamed-chunk-5-1.png)<!-- -->
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -112,7 +179,7 @@ Correct comparisons
 </tr>
 <tr>
 <td style="text-align:left;">
-10+
+20+
 </td>
 <td style="text-align:left;">
 Scale Separation Reliability
@@ -129,7 +196,7 @@ Scale Separation Reliability
 </tr>
 <tr>
 <td style="text-align:left;">
-10+
+20+
 </td>
 <td style="text-align:left;">
 Split-halves reliability
@@ -146,7 +213,7 @@ Split-halves reliability
 </tr>
 <tr>
 <td style="text-align:left;">
-10+
+20+
 </td>
 <td style="text-align:left;">
 Correct comparisons
@@ -163,7 +230,7 @@ Correct comparisons
 </tr>
 <tr>
 <td style="text-align:left;">
-20+
+37+
 </td>
 <td style="text-align:left;">
 Scale Separation Reliability
@@ -180,7 +247,7 @@ Scale Separation Reliability
 </tr>
 <tr>
 <td style="text-align:left;">
-20+
+37+
 </td>
 <td style="text-align:left;">
 Split-halves reliability
@@ -197,7 +264,7 @@ Split-halves reliability
 </tr>
 <tr>
 <td style="text-align:left;">
-20+
+37+
 </td>
 <td style="text-align:left;">
 Correct comparisons
@@ -207,57 +274,6 @@ Correct comparisons
 </td>
 <td style="text-align:right;">
 0.701
-</td>
-<td style="text-align:right;">
-0.943
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-34+
-</td>
-<td style="text-align:left;">
-Scale Separation Reliability
-</td>
-<td style="text-align:right;">
-0.513
-</td>
-<td style="text-align:right;">
-0.946
-</td>
-<td style="text-align:right;">
-0.994
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-34+
-</td>
-<td style="text-align:left;">
-Split-halves reliability
-</td>
-<td style="text-align:right;">
-0.505
-</td>
-<td style="text-align:right;">
-0.896
-</td>
-<td style="text-align:right;">
-0.985
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-34+
-</td>
-<td style="text-align:left;">
-Correct comparisons
-</td>
-<td style="text-align:right;">
-0.561
-</td>
-<td style="text-align:right;">
-0.683
 </td>
 <td style="text-align:right;">
 0.943
@@ -305,11 +321,11 @@ as an estimate of the expected value; both averages are very similar in
 practice, as shown in this plot of the raw values and their averages
 (mean in red, median in green) in the first 16 sets of judging data:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-7-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/unnamed-chunk-8-1.png)<!-- -->
 
 So using the medians, we have the following picture:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-8-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/unnamed-chunk-9-1.png)<!-- -->
 
 We can add a 95% prediction interval from the linear regression:
 
@@ -317,7 +333,7 @@ We can add a 95% prediction interval from the linear regression:
 
     ## Warning: Removed 13 rows containing missing values (`geom_line()`).
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-9-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/unnamed-chunk-10-1.png)<!-- -->
 
 So for instance, with an SSR of 0.8 we might then expect to get a
 correlation of anywhere between 0.55 and 0.9 with scores generated by a
@@ -334,9 +350,9 @@ between the two measures gets closer to the y=x line. (i.e., with
 sufficient judgements that split-halves makes sense, the SSR is
 split-halves reliability)
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-11-1.png)<!-- -->
-
 ![](figs-web/04-analysis-RQ2/unnamed-chunk-12-1.png)<!-- -->
+
+![](figs-web/04-analysis-RQ2/unnamed-chunk-13-1.png)<!-- -->
 
 However, looking at the correlations somewhat undermines that
 interpretation, as the correlation between the two variables decreases
@@ -376,7 +392,7 @@ p_value
 </tr>
 <tr>
 <td style="text-align:right;">
-10
+20
 </td>
 <td style="text-align:right;">
 64
@@ -390,7 +406,7 @@ p_value
 </tr>
 <tr>
 <td style="text-align:right;">
-20
+37
 </td>
 <td style="text-align:right;">
 44
@@ -402,30 +418,16 @@ p_value
 0
 </td>
 </tr>
-<tr>
-<td style="text-align:right;">
-34
-</td>
-<td style="text-align:right;">
-30
-</td>
-<td style="text-align:right;">
-0.677
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
 </tbody>
 </table>
 
-(This seems to be driven by a couple of low outliers in the 34+ group.)
+(This seems to be driven by a couple of low outliers in the 37+ group.)
 
     ## # A tibble: 2 × 5
     ##   judging_session        median_ssr_x median_split_corr  N_CR ncr  
     ##   <chr>                         <dbl>             <dbl> <dbl> <chr>
-    ## 1 Spehar2016_expt2-Edges        0.857             0.596   400 34+  
-    ## 2 Spehar2016_expt2-Plain        0.821             0.505   400 34+
+    ## 1 Spehar2016_expt2-Edges        0.857             0.596   800 37+  
+    ## 2 Spehar2016_expt2-Plain        0.821             0.505   800 37+
 
 Likewise, the details for the linear model in each case show that the
 variance explained decreases with higher thresholds, i.e. `median_ssr_x`
@@ -453,7 +455,7 @@ is less predictive of `median_split_corr`:
     ## 
     ## Call:
     ## lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data %>% 
-    ##     filter(N_CR >= 10))
+    ##     filter(N_CR >= 20))
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
@@ -473,7 +475,7 @@ is less predictive of `median_split_corr`:
     ## 
     ## Call:
     ## lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data %>% 
-    ##     filter(N_CR >= 20))
+    ##     filter(N_CR >= 37))
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
@@ -490,34 +492,13 @@ is less predictive of `median_split_corr`:
     ## Multiple R-squared:  0.5435, Adjusted R-squared:  0.5326 
     ## F-statistic:    50 on 1 and 42 DF,  p-value: 1.151e-08
 
-    ## 
-    ## Call:
-    ## lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data %>% 
-    ##     filter(N_CR >= 34))
-    ## 
-    ## Residuals:
-    ##       Min        1Q    Median        3Q       Max 
-    ## -0.301357 -0.007253  0.021676  0.034787  0.260165 
-    ## 
-    ## Coefficients:
-    ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)   0.09083    0.15827   0.574    0.571    
-    ## median_ssr_x  0.87147    0.17909   4.866    4e-05 ***
-    ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    ## 
-    ## Residual standard error: 0.09972 on 28 degrees of freedom
-    ## Multiple R-squared:  0.4582, Adjusted R-squared:  0.4388 
-    ## F-statistic: 23.68 on 1 and 28 DF,  p-value: 4e-05
-
 ## Recreating Verhavert et al. (2019) Figure 4
 
-Verhavert et al. (2019) define N_CR to be *double* the ratio N_C/N_R, to
-account for the fact that each CJ decision involves two items (e.g. 100
-decisions about 10 items will mean that each item is present in
-100/10\*2 = 20 decisions, i.e. has been compared 20 times).
+Verhavert et al. (2019) analysed data from 49 different CJ sessions.
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-17-1.png)<!-- -->
+Here we combine their data with our own, to extend their analysis.
+
+![](figs-web/04-analysis-RQ2/unnamed-chunk-18-1.png)<!-- -->
 
 We seem to have many more studies with low N_CR yet high SSR.
 
@@ -809,20 +790,21 @@ unknown
 </table>
 
 The bulk of those are from Pollitt, where it is likely that adaptivity
-was used – and this is known to inflate SSR.
+was used – and this is known to inflate SSR (indeed, Bramley2018_1a was
+a study designed to show just that).
 
-Indeed, the adaptivity seems to produce separate clusters in our sample:
+The adaptivity seems to produce separate clusters in our sample:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-19-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/unnamed-chunk-20-1.png)<!-- -->
 
 Let’s see what the main SSR vs split-halves plot looks like for only the
 non-adaptive studies.
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-20-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/unnamed-chunk-21-1.png)<!-- -->
 
 Or the simpler version, with adaptive vs non-adaptive highlighted:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-21-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/unnamed-chunk-22-1.png)<!-- -->
 
 This suggests that the SSR/split-halves relationship looks quite similar
 whether studies used adaptivity or not.
