@@ -189,14 +189,23 @@ reliabilities_ncr_plot_data <-
 reliabilities_ncr_plot_data %>% 
   ggplot(aes(x = ncr, y = value, color = highlight)) +
   scale_colour_manual(
-    values = c("highlight" = "#045a8d", "plain" = "#777777"),
+    values = c("highlight" = "#08519C", "plain" = "#777777"),
     aesthetics = c("colour", "fill")
   ) +
   geom_point(
     aes(color = highlight, fill = highlight),
-    position = position_jitter(width = 0.1, seed = 123), # add jitter to the observations, using seed so it's reproducible
-    alpha = 0.2, size = 0.4) +
-  geom_boxplot(width = 0.2, position = position_nudge(x = 0.3), linewidth = 0.3, outlier.size = 0.4) +
+    position = position_jitter(width = 0.1, seed = 123),
+    # add jitter to the observations, using seed so it's reproducible
+    alpha = 0.2,
+    size = 0.4
+  ) +
+  geom_boxplot(
+    width = 0.5,
+    varwidth = TRUE,
+    position = position_nudge(x = 0.45),
+    linewidth = 0.3,
+    outlier.size = 0.4
+  ) +
   facet_grid(cols = vars(measure)) +
   labs(y = "", x = "Number of comparisons per representation") +
   theme(
