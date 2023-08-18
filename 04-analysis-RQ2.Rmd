@@ -181,7 +181,6 @@ reliabilities_ncr_plot_data <- reliabilities_ncr_plot_data %>%
   filter(ncr != "10+")
 ```
 
-
 ```{r}
 reliabilities_ncr_plot_data %>% 
   ggplot(aes(x = ncr, y = value, color = highlight)) +
@@ -224,6 +223,130 @@ reliabilities_ncr_plot_data %>%
   basic_kable(digits = 3)
 ```
 
+The trend in "correct comparisons" seems to be down to the adaptive studies being more likely to have high values on that measure while having low N_CR:
+
+```{r}
+meta_analysis_data %>% 
+  mutate(N_CR = 2 * observed_N_C / observed_N_R) %>% 
+  ggplot(aes(x = adaptivity, y = prop_correct_judgements)) +
+  geom_point(
+    position = position_jitter(width = 0.1, seed = 123),
+    # add jitter to the observations, using seed so it's reproducible
+    alpha = 0.2,
+    size = 0.4
+  ) +
+  geom_boxplot(
+    width = 0.5,
+    varwidth = TRUE,
+    position = position_nudge(x = 0.45),
+    linewidth = 0.3,
+    outlier.size = 0.4
+  ) +
+  labs(y = "", x = "Adaptivity") +
+  theme(
+    legend.position = "none",
+    axis.title.x = element_text(size = 9)
+  )
+```
+
+It may also be ascribed to the prevalence of layperson judges in studies with large N_CR:
+
+```{r}
+meta_analysis_data %>% 
+  mutate(N_CR = 2 * observed_N_C / observed_N_R) %>% 
+  mutate(N_CR_above_37 = if_else(N_CR >= 37, "N_CR >= 37", "N_CR < 37")) %>% 
+  ggplot(aes(x = judge_expertise, y = prop_correct_judgements)) +
+  geom_point(
+    position = position_jitter(width = 0.1, seed = 123),
+    # add jitter to the observations, using seed so it's reproducible
+    alpha = 0.2,
+    size = 0.4
+  ) +
+  geom_boxplot(
+    width = 0.5,
+    varwidth = TRUE,
+    position = position_nudge(x = 0.45),
+    linewidth = 0.3,
+    outlier.size = 0.4
+  ) +
+  labs(y = "Proportion of judgements agreeing with final rank", x = "Judge expertise") +
+  theme(
+    legend.position = "none",
+    axis.title.x = element_text(size = 9)
+  ) +
+  facet_wrap(~ (N_CR_above_37), ncol = 2)
+```
+
+## SSR and split-halves only
+
+Focusing only on the SSR and split-halves measures:
+
+```{r}
+reliabilities_ncr_plot_data %>% 
+  filter(measure != "Correct comparisons") %>% 
+  ggplot(aes(x = ncr, y = value, color = highlight)) +
+  scale_colour_manual(
+    values = c("highlight" = "#08519C", "plain" = "#777777"),
+    aesthetics = c("colour", "fill")
+  ) +
+  geom_point(
+    aes(color = highlight, fill = highlight),
+    position = position_jitter(width = 0.1, seed = 123),
+    # add jitter to the observations, using seed so it's reproducible
+    alpha = 0.2,
+    size = 0.4
+  ) +
+  geom_boxplot(
+    width = 0.5,
+    varwidth = TRUE,
+    position = position_nudge(x = 0.45),
+    linewidth = 0.3,
+    outlier.size = 0.4
+  ) +
+  coord_flip() +
+  scale_x_discrete(limits = rev) +
+  facet_wrap(~ (measure), ncol = 1) +
+  labs(y = "", x = "Comparisons per representation\n") +
+  theme(
+    legend.position = "none",
+    axis.title.y = element_text(size = 9)
+  )
+
+ggsave("figs-pdf/FIG_RQ2-varying-ncr-horiz.pdf", units = "cm", width = 14, height = 8)
+```
+
+
+```{r}
+reliabilities_ncr_plot_data %>% 
+  filter(measure != "Correct comparisons") %>% 
+  ggplot(aes(x = ncr, y = value, color = highlight)) +
+  scale_colour_manual(
+    values = c("highlight" = "#08519C", "plain" = "#777777"),
+    aesthetics = c("colour", "fill")
+  ) +
+  geom_point(
+    aes(color = highlight, fill = highlight),
+    position = position_jitter(width = 0.1, seed = 123),
+    # add jitter to the observations, using seed so it's reproducible
+    alpha = 0.2,
+    size = 0.4
+  ) +
+  geom_boxplot(
+    width = 0.5,
+    varwidth = TRUE,
+    position = position_nudge(x = 0.45),
+    linewidth = 0.3,
+    outlier.size = 0.4
+  ) +
+  facet_wrap(~ (measure)) +
+  labs(y = "", x = "Comparisons per representation\n") +
+  theme(
+    legend.position = "none",
+    axis.title.x = element_text(size = 9)
+  )
+
+ggsave("figs-pdf/FIG_RQ2-varying-ncr-vert.pdf", units = "cm", width = 10, height = 7)
+```
 
 
 # Relationships between reliability measures
