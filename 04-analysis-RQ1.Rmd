@@ -188,7 +188,7 @@ Now we look at ratios of the session characteristics.
 ```{r, derived-counts-data}
 rq1_data_derived_wide <- rq1_data_wide %>% 
   mutate(N_RA = Representations / Assessors,
-         N_CR = Comparisons / Representations,
+         N_CR = 2 * Comparisons / Representations,
          N_CA = Comparisons / Assessors) %>% 
   select(judging_session, starts_with("N_"))
 
@@ -213,7 +213,7 @@ plot_derived_counts <- rq1_data_derived %>%
     color = "black", fill = "black") +
   geom_boxplot(width = 0.3, position = position_nudge(x = -0.6)) +
   scale_y_continuous(trans='log10', labels = scales::comma, minor_breaks = rep(1:9, 21)*(10^rep(-10:10, each=9))) +
-  facet_wrap(~ feature, scales = "free_y", ncol = 1) + 
+  facet_wrap(~ feature, scales = "free", ncol = 1) + 
   coord_flip() +
   labs(x = "", y = "") +
   theme_minimal(base_size = 12) +
@@ -245,5 +245,49 @@ plot_derived_counts +
 
 ggsave("figs-pdf/FIG_RQ1-derived-counts-labelled.pdf", units = "cm", width = 15, height = 9)
 
+```
+
+Top 3:
+
+```{r}
+rq1_data_derived %>% 
+  group_by(feature) %>% 
+  slice_max(count, n = 3) %>% 
+  basic_kable()
+```
+
+Bottom 3:
+
+```{r}
+rq1_data_derived %>% 
+  group_by(feature) %>% 
+  slice_min(count, n = 3) %>% 
+  basic_kable()
+```
+
+Proportion below certain levels:
+
+```{r}
+rq1_data_derived %>% 
+  summarise(
+    prop_below_10 = sum(count <= 10) / n(),
+    prop_below_100 = sum(count <= 100) / n(),
+    .by = "feature"
+  ) %>% 
+  mutate(across(starts_with("prop_"), ~ scales::percent(.x, accuracy = 0.1))) %>% 
+  basic_kable()
+```
+
+```{r}
+rq1_data_derived %>% 
+  filter(feature == "Comparisons per representation") %>% 
+  summarise(
+    prop_above_10 = sum(count >= 10) / n(),
+    prop_above_20 = sum(count >= 20) / n(),
+    prop_above_37 = sum(count >= 37) / n(),
+    .by = "feature"
+  ) %>% 
+  mutate(across(starts_with("prop_"), ~ scales::percent(.x, accuracy = 0.1))) %>% 
+  basic_kable()
 ```
 
