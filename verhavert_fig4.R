@@ -179,6 +179,7 @@ library(modelr)
 regression_ssr = brm(
   SSR ~ 1 + N_CR, 
   data = Data_reliab %>% filter(N_CR < 100), 
+  family = gaussian(link = "logit"),
   file = "data-cache/tidy-brms_regression_ssr.rds"  # cache model (can be removed)
 )
 
@@ -237,3 +238,57 @@ cowplot::plot_grid(ncol = 1, align = "v",
           data_plot,
           fit_plot
 )
+
+
+# Is there a way to get a more direct answer to the question:
+#   "how high should N_CR be to ensure SSR > 0.7?"
+
+threshold_07_data <- Data_reliab %>% 
+  mutate(SSR_level = ordered(if_else(SSR > 0.7, 1, 0))) %>% 
+  filter(N_CR < 100)
+
+m_ssr_ord_07 = brm(
+  SSR_level ~ N_CR, 
+  data = threshold_07_data, 
+  family = bernoulli,
+  seed = 58393,
+  
+  file = "data-cache/tidy-brms_m_ssr_ord_07.rds"  # cache model (can be removed)
+)
+
+data_plot_07 = threshold_07_data %>%
+  ggplot(aes(x = N_CR, y = SSR_level, color = SSR_level)) +
+  geom_point() +
+  scale_color_brewer(palette = "Dark2", name = "SSR_level") +
+  theme_minimal() +
+  lims(x = c(0, 40))
+
+fit_plot_07 = threshold_07_data %>%
+  data_grid(N_CR = seq_range(N_CR, n = 101)) %>%
+  add_epred_rvars(m_ssr_ord_07, value = "P(SSR_level | N_CR)") %>%
+  ggplot(aes(x = N_CR)) +
+  stat_lineribbon(aes(ydist = `P(SSR_level | N_CR)`), alpha = 0.9) +
+  scale_fill_brewer(palette = "Blues") +
+  geom_hline(yintercept = 0.7) +
+  geom_hline(yintercept = 0.9) +
+  labs(y = "P(SSR_level | N_CR)") +
+  theme_minimal() +
+  lims(x = c(0, 40))
+
+cowplot::plot_grid(ncol = 1, align = "v",
+                   data_plot_07,
+                   fit_plot_07
+)
+
+threshold_07_data %>%
+  data_grid(N_CR = seq_range(N_CR, n = 101)) %>%
+  add_epred_rvars(m_ssr_ord_07, value = "P(SSR_level | N_CR)") %>%
+  ggplot(aes(x = N_CR)) +
+  stat_lineribbon(aes(ydist = `P(SSR_level | N_CR)`), alpha = 0.9) +
+  scale_fill_brewer(palette = "Blues") +
+  geom_point(data = threshold_07_data,
+             aes(x = N_CR, y = as.integer(SSR_level)-1, colour = SSR_level)) +
+  scale_color_brewer(palette = "Dark2", name = "SSR > 0.7") +
+  labs(y = "Probability of SSR > 0.7") +
+  theme_minimal() +
+  lims(x = c(0, 40))
