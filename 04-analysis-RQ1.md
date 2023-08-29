@@ -14,6 +14,98 @@ George Kinnear
 
 ![](figs-web/04-analysis-RQ1/counts-1.png)<!-- -->![](figs-web/04-analysis-RQ1/counts-2.png)<!-- -->
 
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+N_A
+</th>
+<th style="text-align:right;">
+expert
+</th>
+<th style="text-align:right;">
+layperson
+</th>
+<th style="text-align:right;">
+novice
+</th>
+<th style="text-align:right;">
+peer
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+\<= 10
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+\<= 100
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+\<= 1000
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1000+
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+
 # Relationship between characteristics
 
 ![](figs-web/04-analysis-RQ1/scatter-1.png)<!-- -->

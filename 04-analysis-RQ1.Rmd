@@ -104,6 +104,18 @@ ggsave("figs-pdf/FIG_RQ1-counts-labelled.pdf", units = "cm", width = 15, height 
 
 ```
 
+```{r}
+meta_analysis_data %>% 
+  mutate(N_A = case_when(
+    observed_N_A <= 10 ~ "<= 10",
+    observed_N_A <= 100 ~ "<= 100",
+    observed_N_A <= 1000 ~ "<= 1000",
+    .default = "1000+"
+  )) %>% 
+  janitor::tabyl(N_A, judge_expertise) %>% 
+  basic_kable()
+```
+
 
 # Relationship between characteristics
 

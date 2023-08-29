@@ -139,10 +139,6 @@ ggsave("figs-pdf/FIG_RQ2-observed-scatterplot.pdf", plot = grob, units = "cm", w
 
 # Effect of N_CR on reliability measures
 
-The descriptive plot for RQ1 shows N_CR as simply N_C / N_R.
-
-> TODO - update the RQ1 plot?
-
 Verhavert et al. (2019) defined N_CR as 2 * N_C / N_R, with the multiplier of 2 reflecting the fact that each judgement contributes a comparison for each of the items being compared.
 
 With N_CR = 2 * N_C / N_R, we consider various thresholds that have been suggested in the literature:
@@ -218,6 +214,7 @@ reliabilities_ncr_plot_data %>%
     min = min(value),
     median = median(value),
     max = max(value),
+    `prop_above_0.7`= sum(value > 0.7) / n(),
     .by = c(ncr, measure)
   ) %>% 
   basic_kable(digits = 3)
@@ -345,7 +342,7 @@ reliabilities_ncr_plot_data %>%
     axis.title.x = element_text(size = 9)
   )
 
-ggsave("figs-pdf/FIG_RQ2-varying-ncr-vert.pdf", units = "cm", width = 10, height = 7)
+ggsave("figs-pdf/FIG_RQ2-ssr-vs-splithalves-by-ncr.pdf", units = "cm", width = 10, height = 7)
 ```
 
 
