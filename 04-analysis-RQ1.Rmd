@@ -116,6 +116,28 @@ meta_analysis_data %>%
   basic_kable()
 ```
 
+We can also consider the observed variance of the theta estimates for each judging session:
+
+```{r}
+variance_of_thetas_per_judging_session <- meta_analysis_data %>% 
+  select(judging_session) %>% 
+  mutate(path = str_glue("data-cache/{judging_session}/btm_results.csv")) %>% 
+  pull(path) %>% 
+  vroom::vroom(id = "path", show_col_types = FALSE) %>% 
+  separate(path, into = c(NA, "judging_session", NA), sep = "/") %>% 
+  summarise(theta_var = var(theta), .by = "judging_session")
+
+variance_of_thetas_per_judging_session
+```
+
+```{r variance_of_thetas_per_judging_session}
+variance_of_thetas_per_judging_session %>% 
+  ggplot(aes(x = theta_var)) +
+  geom_boxplot(position = position_nudge(y = -1)) +
+  geom_histogram()
+```
+
+
 
 # Relationship between characteristics
 

@@ -106,6 +106,28 @@ peer
 </tbody>
 </table>
 
+We can also consider the observed variance of the theta estimates for
+each judging session:
+
+    ## # A tibble: 101 × 2
+    ##    judging_session     theta_var
+    ##    <chr>                   <dbl>
+    ##  1 AlMaimani2017            5.15
+    ##  2 Bisson2016_algebra       3.80
+    ##  3 Bisson2016_calculus      1.93
+    ##  4 Bisson2016_stats         1.16
+    ##  5 Bisson2019               2.92
+    ##  6 Bramley2018_1a          15.3 
+    ##  7 Bramley2018_1b           1.46
+    ##  8 Bramley2018_2            2.43
+    ##  9 Clark2018_Study1         2.44
+    ## 10 Clark2018_Study2         1.75
+    ## # ℹ 91 more rows
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](figs-web/04-analysis-RQ1/variance_of_thetas_per_judging_session-1.png)<!-- -->
+
 # Relationship between characteristics
 
 ![](figs-web/04-analysis-RQ1/scatter-1.png)<!-- -->
