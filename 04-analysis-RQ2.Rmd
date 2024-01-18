@@ -8,6 +8,10 @@ always_allow_html: true
 
 ```{r setup, include=FALSE}
 library(tidyverse)
+library(rstatix)
+library(lm.beta)
+library(skimr)
+library(quantreg)
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(fig.path='figs-web/04-analysis-RQ2/')
 knitr::opts_chunk$set(dpi=300,fig.width=7)
@@ -177,7 +181,7 @@ reliabilities_ncr_plot_data <- reliabilities_ncr_plot_data %>%
   filter(ncr != "10+")
 ```
 
-```{r}
+```{r include=FALSE}
 reliabilities_ncr_plot_data %>% 
   ggplot(aes(x = ncr, y = value, color = highlight)) +
   scale_colour_manual(
@@ -209,13 +213,55 @@ ggsave("figs-pdf/FIG_RQ2-varying-ncr.pdf", units = "cm", width = 14, height = 7)
 ```
 
 ```{r}
+reliabilities_ncr %>% 
+  filter(measure!="Correct comparisons") %>%
+  mutate(ncr_shape = case_when(N_CR < 20 ~ 0,
+                               N_CR < 37 ~ 1,
+                               N_CR < 1000000 ~ 2)) %>%
+  ggplot(aes(x = measure, y = value, group =ncr_shape)) + 
+  geom_point(
+    position = position_jitter(width=.3, seed = 123), # add jitter to the observations, using seed so it's reproducible
+    alpha=.4, # set the size of each dot. alpha adds transparency
+    aes(shape = factor(ncr_shape))
+  ) +
+  geom_boxplot(width = 0.1, position = position_nudge(x = -0.5)) +
+  facet_wrap(~ measure, scales = "free_y", ncol = 1) + 
+  coord_flip() +
+  labs(x = "", y = "") +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    # left align the headings
+    strip.text.x = element_text(hjust = 0),
+    # add space between the rows
+    panel.spacing = unit(1, "lines"),
+    legend.position = "none"
+  ) +
+   stat_summary(
+    geom = "text",
+    group = 1,
+    fun = quantile,
+    fun.args = list(probs = c(0, 0.5, 1)), # don't need the 0.25 and 0.75!
+    aes(label = sprintf("%1.02f", after_stat(y))),
+    position = position_nudge(x = -0.8),
+    size = 3,
+     color = "black", fill = "black", shape = 8
+  ) +
+  expand_limits(x = -0.1) # stop the boxplot labels getting chopped off
+
+
+ggsave("figs-pdf/FIG_RQ2a.pdf", units = "cm", width = 14, height = 7)
+```
+
+```{r}
 reliabilities_ncr_plot_data %>% 
   summarise(
     min = min(value),
     median = median(value),
     max = max(value),
     `prop_above_0.7`= sum(value > 0.7) / n(),
-    .by = c(ncr, measure)
+    .by = c(measure, ncr)
   ) %>% 
   basic_kable(digits = 3)
 ```
@@ -384,21 +430,24 @@ raw_sims_head %>%
 So using the medians, we have the following picture:
 
 ```{r}
-ssr_vs_splithalves_plot1 <- meta_analysis_data %>% 
+ssr_vs_splithalves_plot1 <- 
+  meta_analysis_data %>% 
   ggplot(aes(x = median_ssr_x, y = median_split_corr)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
-  geom_vline(xintercept = 0.7, alpha = 0.3, colour = "red") +
-  geom_hline(yintercept = 0.7, alpha = 0.3, colour = "red") +
+  geom_vline(xintercept = 0.7, alpha = 0.3) +
+  geom_hline(yintercept = 0.7, alpha = 0.3) +
   geom_point(alpha = 0.7) +
-  geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, colour = "#003399") +
-  labs(x = "Median SSR of half the judges", y = "Median split-halves correlation") +
+  geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, 
+              colour = "black") +
+  labs(x = "SSR", y = "SHR") +
   lims(x = c(0.25,1), y = c(0.25,1)) +
   theme_minimal(base_size = 12) +
   theme(
     aspect.ratio = 1,
   )
 
-ssr_vs_splithalves_plot1
+#ssr_vs_splithalves_plot1
+ggsave("figs-pdf/FIG_RQ2b-ssr-vs-shr.pdf", units = "cm", width = 14, height = 14)
 ```
 
 We can add a 95% prediction interval from the linear regression:
@@ -496,7 +545,8 @@ However, looking at the correlations somewhat undermines that interpretation, as
 ```{r}
 reliability_corr_values <- tibble(ncr_threshold = c(0, 20, 37)) %>%  
   mutate(relevant_data = map(ncr_threshold, ~ reliability_corr_plot_data %>% filter(N_CR >= .x))) %>% 
-  mutate(test_results = map(relevant_data, ~ cor.test(.x$median_ssr_x, .x$median_split_corr))) %>% 
+  mutate(test_results = map(relevant_data, ~ cor.test(.x$median_ssr_x, .x$median_split_corr, 
+                                                      method = "spearman"))) %>% 
   mutate(
     num_studies = map_dbl(relevant_data, nrow),
     correlation = map_dbl(test_results, ~ .x$estimate),
@@ -524,6 +574,142 @@ summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_p
 summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data %>% filter(N_CR >= 37)))
 ```
 
+## How do study characteristics relate to reliability
+Look at how representations, assessors, comparisons and their derivatives relate to SSR and SHR.
+```{r}
+options(scipen = 999)
+reliability_characteristics <- meta_analysis_data %>%
+  mutate(
+    N_CA = observed_N_C/observed_N_A,
+    N_CR = 2*observed_N_C/observed_N_R,
+    N_RA = observed_N_R/observed_N_A)# %>%
+  #filter(observed_N_A < 1000,
+   #      observed_N_C < 10000)
+
+rel_corrs <- reliability_characteristics %>%
+  cor_test(
+    vars = c("median_split_corr", "median_ssr_x"),
+    vars2 = c("observed_N_A", "observed_N_R", "observed_N_C",
+              "N_CA", "N_CR", "N_RA"),
+    method = "spearman"
+  ) 
+
+rel_corrs
+
+write.csv(rel_corrs, "RQ2b_correlations.csv")
+
+```
+
+Sig correlations with SHR are N_A, N_C, N_CR. Check scatter plots for SHR.
+```{r}
+#create a function for plots
+scatter <- function(rel, cha) { 
+  dat <- data.frame(rel=rel, cha=cha)
+  ggplot(dat, aes(x = rel, y = cha)) +
+  geom_point() +
+  theme(
+    #axis.text.x=element_blank(), #remove x axis labels
+    #axis.text.y=element_blank(),  #remove y axis labels
+    #axis.title = element_blank(),
+    #axis.line = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank()) 
+}
+
+scatter_SHR <- reliability_characteristics$median_split_corr
+
+scatter(scatter_SHR, reliability_characteristics$observed_N_A)
+scatter(scatter_SHR, reliability_characteristics$observed_N_R)
+scatter(scatter_SHR, reliability_characteristics$observed_N_C)
+scatter(scatter_SHR, reliability_characteristics$N_CA)
+scatter(scatter_SHR, reliability_characteristics$N_CR)
+scatter(scatter_SHR, reliability_characteristics$N_RA)
+
+
+```
+
+
+
+Forced linear regression SHR:
+
+```{r}
+
+SHR_lm <- lm(median_split_corr ~ observed_N_A + observed_N_C + N_CR + N_RA, 
+             data = reliability_characteristics)
+  summary(SHR_lm)
+  lm.beta(SHR_lm)
+
+```
+
+SSR Scatterplots:
+```{r}
+scatter_SSR <- reliability_characteristics$median_ssr_x
+
+scatter(scatter_SSR, reliability_characteristics$observed_N_A)
+scatter(scatter_SSR, reliability_characteristics$observed_N_R)
+scatter(scatter_SSR, reliability_characteristics$observed_N_C)
+scatter(scatter_SSR, reliability_characteristics$N_CA)
+scatter(scatter_SSR, reliability_characteristics$N_CR)
+scatter(scatter_SSR, reliability_characteristics$N_RA)
+```
+
+
+SSR forced linear regression:
+
+```{r}
+
+SSR_lm <- lm(median_ssr_x ~ observed_N_A + observed_N_C + N_CA + N_CR, 
+             data = reliability_characteristics)
+  summary(SSR_lm)
+ lm.beta(SSR_lm)
+
+```
+
+## What about the theoretical thesholds of N_CR>=20 and NC_R>=37?
+Let's compare SSR and SHR for these thresholds
+```{r}
+#select the data we need
+thresholds <- reliability_characteristics %>% 
+  mutate(ncr_level = case_when(N_CR < 20 ~ 0, #0 is low
+                               N_CR < 37 ~ 1, #1 is medium
+                               N_CR < 1000000 ~ 2)) %>% #2 is high 
+  select(ncr_level, median_split_corr, median_ssr_x)
+
+```
+
+For the case of SSR
+```{r}
+
+#descriptives
+thresholds %>% group_by(ncr_level) %>% 
+  summarise(count=n(),
+            median = median(median_ssr_x),
+            min = min(median_ssr_x),
+            max = max(median_ssr_x))
+
+thresholds %>% kruskal_test(median_ssr_x ~ ncr_level) # p=0.000233	
+thresholds %>% dunn_test(median_ssr_x ~ ncr_level) 
+
+```
+
+
+
+For the case of SHR
+```{r}
+
+#descriptives
+thresholds %>% group_by(ncr_level) %>% 
+  summarise(count=n(),
+            median = median(median_split_corr),
+            min = min(median_split_corr),
+            max = max(median_split_corr))
+
+thresholds %>% kruskal_test(median_split_corr ~ ncr_level) # p=0.0000514	
+thresholds %>% dunn_test(median_split_corr ~ ncr_level) 	
+
+```
 ## Recreating Verhavert et al. (2019) Figure 4
 
 Verhavert et al. (2019) analysed data from 49 different CJ sessions.
