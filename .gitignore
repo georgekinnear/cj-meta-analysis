@@ -4,6 +4,7 @@
 .RData
 .Ruserdata
 data-cache/*/split-halves*
+data-cache/*/mcalc*
 data-raw/*
 *.bak
 *.sav
