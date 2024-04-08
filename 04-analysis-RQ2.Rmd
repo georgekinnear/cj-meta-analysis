@@ -383,12 +383,13 @@ reliabilities_ncr_plot_data %>%
   ) +
   facet_wrap(~ (measure)) +
   labs(y = "", x = "Comparisons per representation\n") +
+  theme_minimal(base_size = 12) +
   theme(
     legend.position = "none",
-    axis.title.x = element_text(size = 9)
+    axis.title.x = element_text(size = 10)
   )
 
-ggsave("figs-pdf/FIG_RQ2-ssr-vs-splithalves-by-ncr.pdf", units = "cm", width = 10, height = 7)
+ggsave("figs-pdf/FIG_RQ2-ssr-vs-splithalves-by-ncr.pdf", units = "cm", width = 12, height = 7)
 ```
 
 
