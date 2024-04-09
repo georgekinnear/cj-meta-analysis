@@ -230,7 +230,7 @@
     based experiments. Multimedia tools and applications, 76(15), 16727-16748.
   doi: 10.1007/s11042-016-3948-3
   open_data: no
-  comment: `interested researchers can obtain the dataset through a bilateral agreement of its use for reproduction of the results only` but we didnt get the pairwise data
+  comment: '`interested researchers can obtain the dataset through a bilateral agreement of its use for reproduction of the results only` but we didnt get the pairwise data'
   judging_sessions:
   - study: '[TODO] name for the study (only needed if there are many)'
     N_A: '[TODO]'
@@ -670,7 +670,7 @@
     judging_prompt: '[TODO]'
     
 - project_id: Verhavert2017
-  citation: Verhavert S, De Maeyer S, Donche V, Coertjens L. Scale Separation Reliability: What Does It Mean in the Context of Comparative Judgment? Applied Psychological Measurement. 2018;42(6):428-445. doi:10.1177/0146621617748321
+  citation: "Verhavert S, De Maeyer S, Donche V, Coertjens L. Scale Separation Reliability: What Does It Mean in the Context of Comparative Judgment? Applied Psychological Measurement. 2018;42(6):428-445. doi:10.1177/0146621617748321"
   doi: 10.1177/0146621617748321
   open_data: no
   judging_sessions:
@@ -684,7 +684,7 @@
     comment: meta-analysis of published data
     
 - project_id: Verhavert2019
-  citation:San Verhavert, Renske Bouwer, Vincent Donche & Sven De Maeyer (2019) A meta-analysis on the reliability of comparative judgement, Assessment in Education: Principles, Policy & Practice, 26:5, 541-562, DOI: 10.1080/0969594X.2019.1602027
+  citation: "San Verhavert, Renske Bouwer, Vincent Donche & Sven De Maeyer (2019) A meta-analysis on the reliability of comparative judgement, Assessment in Education: Principles, Policy & Practice, 26:5, 541-562, DOI: 10.1080/0969594X.2019.1602027"
   doi: 10.1080/0969594x.2019.1602027
   open_data: no
   judging_sessions:
@@ -761,9 +761,9 @@
     judging_prompt: '[TODO]'
     
 - project_id: Roose2017
-  citation: Roose, I., Vantieghem, W., Vanderlinde, R., & Van Avermaet, P. (2017).
+  citation: "Roose, I., Vantieghem, W., Vanderlinde, R., & Van Avermaet, P. (2017).
     Video-based comparative judgement as a method to measure teachers' professional
-    vision. In 17th Biennal EARLI Conference for Research on Learning and Instruction.
+    vision. In 17th Biennal EARLI Conference for Research on Learning and Instruction."
   doi: .na.character
   open_data: no
   judging_sessions:
