@@ -931,7 +931,7 @@
     items: Secondary student responses to problem-solving maths questions
     judge_expertise: expert
     judging_prompt: most mathematically able
-    adaptivity: unknown
+    adaptivity: yes
   - study: subset-of-scripts
     N_A: 5
     N_R: 250
@@ -939,7 +939,7 @@
     items: Secondary student responses to problem-solving maths questions
     judge_expertise: expert
     judging_prompt: most mathematically able
-    adaptivity: unknown
+    adaptivity: yes
   
 - project_id: Jones2015b
   citation: Jones, I., & Wheadon, C. (2015). Peer assessment using comparative and
