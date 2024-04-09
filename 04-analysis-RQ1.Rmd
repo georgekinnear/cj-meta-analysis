@@ -22,6 +22,9 @@ basic_kable = function(df, ...) {
     kable(...) %>%
     kable_styling(bootstrap_options = "striped", full_width = F)
 }
+
+# for correlations
+library(rstatix)
 ```
 
 # About the sample
@@ -190,27 +193,96 @@ cor.test(rq1_data_wide$Comparisons, rq1_data_wide$Representations, method = "spe
 Try some more elaborate methods for computing correlations:
 
 ```{r}
-library(corrr)
-
-correlate(rq1_data_wide %>% select(!judging_session), method = "spearman") %>% basic_kable()
+rq1_data_wide %>% select(!judging_session) %>%
+  rstatix::cor_test(
+    method = "spearman"
+  ) %>% 
+  filter(var1 < var2) %>%
+  select(-method) %>% 
+  basic_kable()
 ```
-This plot shows only the significant correlations:
 
-```{r, corrplot}
-M <- corrplot::cor.mtest(rq1_data_wide %>% select(!judging_session), method = "spearman")
 
-corrplot::corrplot(
-  cor(rq1_data_wide %>% select(!judging_session), method = "spearman"),
-  p.mat = M$p,
-  sig.level = 0.05,
-  method = 'circle',
-  type = 'lower',
-  insig = 'blank',
-  addCoef.col = 'black',
-  number.cex = 0.8,
-  order = 'AOE',
-  diag = FALSE
-)
+## Special N_CR plot
+
+There is a linear relationship in the log-log plot of N_C vs N_R, which means there is a relationship of the form $\log_{10} N_C = \beta_1\log_{10} N_R+\beta_0$, i.e. $N_C = 10^{\beta_0} N_R^{\beta_1}$
+
+```{r}
+ncr_lm <- rq1_data %>%
+  filter(feature %in% c("Representations", "Comparisons")) %>% 
+  pivot_wider(names_from = feature, values_from = count) %>% 
+  mutate(Representations = log10(Representations)) %>% 
+  mutate(Comparisons = log10(Comparisons)) %>% 
+  lm(data = ., formula = Comparisons ~ Representations)
+
+ncr_lm %>% 
+  summary()
+```
+
+Here we compute some values predicted by the linear regression (red points) and check that they match up with the plot from before:
+
+```{r}
+pred_interval <- tibble(Representations = seq(1, 3, by = 0.01))
+prediction_interval_data <- bind_cols(
+  pred_interval, predict(ncr_lm, new = pred_interval, se.fit = TRUE, interval = "prediction")$fit
+  ) %>% 
+  mutate(across(everything(), ~ 10^(.x)))
+
+rq1_data %>%
+  left_join(rq1_data, by = "judging_session", relationship = "many-to-many") %>%
+  filter(feature.x == "Representations") %>%
+  filter(feature.y == "Comparisons") %>%
+  ggplot(aes(x = count.x, y = count.y)) +
+  geom_point(alpha = 0.4) +
+  geom_point(data = prediction_interval_data, aes(x = Representations, y = fit), colour = "red") +
+  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  scale_y_continuous(trans = 'log10', labels = scales::comma) +
+  scale_x_continuous(trans = 'log10', labels = scales::comma) +
+  facet_grid(
+    rows = vars(feature.y),
+    cols = vars(feature.x),
+    scales = "free",
+    switch = "both"
+  ) +
+  labs(x = "", y = "") +
+  expand_limits(x = 1, y = 1) +
+  theme_minimal(base_size = 12) +
+  theme(
+    aspect.ratio = 1,
+    # put the facet titles outside the y-axis ticks
+    strip.placement = "outside",
+    # add space between the panels
+    panel.spacing = unit(2, "lines"),
+  )
+```
+
+Here is what it looks like on the non-transformed axes:
+
+```{r}
+rq1_data %>%
+  left_join(rq1_data, by = "judging_session", relationship = "many-to-many") %>%
+  filter(feature.x == "Representations") %>%
+  filter(feature.y == "Comparisons") %>%
+  ggplot(aes(x = count.x, y = count.y)) +
+  geom_point(data = prediction_interval_data, aes(x = Representations, y = fit), colour = "red") +
+  geom_function(fun = ~ 10^(2.145892)*(.x)^0.5345649, colour = "red") +
+  geom_point(alpha = 0.4) +
+  facet_grid(
+    rows = vars(feature.y),
+    cols = vars(feature.x),
+    scales = "free",
+    switch = "both"
+  ) +
+  labs(x = "", y = "") +
+  expand_limits(x = 1, y = 1) +
+  theme_minimal(base_size = 12) +
+  theme(
+    aspect.ratio = 1,
+    # put the facet titles outside the y-axis ticks
+    strip.placement = "outside",
+    # add space between the panels
+    panel.spacing = unit(2, "lines"),
+  )
 ```
 
 
