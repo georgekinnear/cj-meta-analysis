@@ -26,6 +26,11 @@ basic_kable = function(df, ...) {
     kable(...) %>%
     kable_styling(bootstrap_options = "striped", full_width = F)
 }
+
+apa2dp = function(x) {
+  #formatC(x, digits = 2, format = "f") %>% str_replace(., "0\\.", ".")
+  format(round(x, digits = 2), nsmall = 2) %>% str_replace('0.', '.')
+}
 ```
 
 # About the sample
@@ -711,10 +716,10 @@ rel_corrs <- reliability_characteristics %>%
     method = "pearson"
   ) 
 
-rel_corrs %>% 
+rel_corrs_tab <- rel_corrs %>% 
   select(var1, var2, cor, p) %>% 
   mutate(
-    rounded_cor = format(round(cor, digits = 2), nsmall = 2) %>% str_replace('0.', '.'),
+    rounded_cor = apa2dp(cor),
     p_stars = case_when(
       p < 0.001 ~ "***",
       p < 0.01 ~ "**",
@@ -730,9 +735,19 @@ rel_corrs %>%
   ) %>% 
   mutate(table_entry = str_glue("{rounded_cor}{p_stars}")) %>% 
   select(var1, var2, table_entry) %>% 
-  pivot_wider(names_from = var2, values_from = table_entry) %>% 
+  pivot_wider(names_from = var2, values_from = table_entry)
+
+rel_corrs_tab %>% 
   basic_kable()
 ```
+
+<details>
+  <summary>LaTeX table</summary>
+```{r}
+rel_corrs_tab %>% basic_kable(format = "latex", booktabs = TRUE) %>% cat()
+```
+</details>
+
 
 ```{r}
 sig_for_shr <- rel_corrs %>% 
@@ -764,10 +779,10 @@ show_corr <- function(data, mapping, ...) {
   
   # plot the cor value
   ggally_text(
-    label = formatC(corr$estimate, digits = 2, format = "f") %>% str_replace(., "0\\.", "."),
+    label = corr$estimate %>% apa2dp(),
     mapping = aes(),
     color = "black",
-    size = 4) +
+    size = 3) +
     cowplot::panel_border(size = ifelse(corr$p.value < 0.05, 1, 1/2), color = ifelse(corr$p.value < 0.05, "steelblue4", "grey85"))
 }
 
@@ -812,6 +827,8 @@ reliability_characteristics %>%
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank()
   )
+
+ggsave("figs-pdf/FIG_RQ2_all-correlations.pdf", units = "cm", width = 12, height = 11.5)
 ```
 
 
