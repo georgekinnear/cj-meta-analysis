@@ -31,6 +31,21 @@ apa2dp = function(x) {
   #formatC(x, digits = 2, format = "f") %>% str_replace(., "0\\.", ".")
   format(round(x, digits = 2), nsmall = 2) %>% str_replace('0.', '.')
 }
+apa_pvalue = Vectorize(function(p) {
+  if(p < 0.001) {
+    "<0.001"
+  } else {
+    format(round(p, digits = 3), nsmall = 3) %>% str_replace('0.', '.')
+  }
+})
+apa_pstars = Vectorize(function(p) {
+  case_when(
+      p < 0.001 ~ "***",
+      p < 0.01 ~ "**",
+      p < 0.05 ~ "*",
+      .default = ""
+  )
+})
 ```
 
 # About the sample
@@ -861,6 +876,15 @@ summary(SHR_lm)
 lm.beta(SHR_lm)
 ```
 
+```{r}
+shr_table <-
+  tibble(
+    parameter = names(lm.beta(SHR_lm)$standardized.coefficients),
+    beta = lm.beta(SHR_lm)$standardized.coefficients,
+    p = summary(SHR_lm)$coefficients[, 4]
+  ) %>%
+  mutate(pvalue = paste0(apa_pvalue(p), apa_pstars(p)), .keep = "unused")
+```
 
 
 
@@ -900,6 +924,42 @@ SSR_lm <- lm(formula = formula_ssr,
 summary(SSR_lm)
 lm.beta(SSR_lm)
 ```
+
+
+```{r}
+ssr_table <-
+  tibble(
+    parameter = names(lm.beta(SSR_lm)$standardized.coefficients),
+    beta = lm.beta(SSR_lm)$standardized.coefficients,
+    p = summary(SSR_lm)$coefficients[, 4]
+  ) %>%
+  mutate(pvalue = paste0(apa_pvalue(p), apa_pstars(p)), .keep = "unused")
+```
+
+```{r}
+forced_regressions_table <- shr_table %>% 
+  left_join(ssr_table, join_by(parameter), suffix = c("_shr", "_ssr")) %>% 
+  mutate(across(starts_with("beta"), ~ round(.x, digits = 2)))
+
+forced_regressions_table %>% 
+  basic_kable(col.names = c("Characteristic", "beta", "p", "beta", "p")) %>% 
+  add_header_above(c(" " = 1, "SHR" = 2, "SSR" = 2))
+
+```
+
+<details><summary>LaTeX table</summary>
+
+```{r}
+forced_regressions_table %>% 
+  basic_kable(
+    col.names = c("Characteristic", "beta", "p", "beta", "p"),
+    format = "latex",
+    booktabs = TRUE
+  ) %>% 
+  add_header_above(c(" " = 1, "SHR" = 2, "SSR" = 2)) %>% 
+  cat()
+```
+</details>
 
 ## Regression with interactions
 
