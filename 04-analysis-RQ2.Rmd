@@ -815,14 +815,51 @@ summary(SSR_lm)
 lm.beta(SSR_lm)
 ```
 
-SSR_lm <- lm(median_ssr_x ~ observed_N_A + observed_N_C + N_CA + N_CR, 
-             data = reliability_characteristics)
-  summary(SSR_lm)
- lm.beta(SSR_lm)
+## Regression with interactions
 
+As observed earlier, the three characteristics are inter-related, and correlated predictors pose a problem for regression models. One way of checking for correlated predictors is using the variance inflation factor (VIF), where values above 10 are typically taken as an indicator of high multicollinearity:
+
+```{r}
+lm(ssr ~ observed_N_A + observed_N_C + observed_N_R, 
+             data = reliability_characteristics) %>% car::vif()
 ```
 
-## What about the theoretical thesholds of N_CR>=20 and NC_R>=37?
+Regardless of multicollinearity, we can proceed with a regression model involving all three characteristics, as well as interaction terms between them:
+
+```{r}
+lm_chars_interactions <- lm(ssr ~ observed_N_A * observed_N_C * observed_N_R, 
+             data = reliability_characteristics)
+
+lm_chars_interactions %>% summary()
+```
+
+It is interesting here to see the interaction between $N_C$ and $N_R$ appearing significant in the model.
+
+Focusing on N_CR, here is a model with just $N_C$ and $N_R$ (and their interaction):
+
+```{r}
+lm_ncr_interaction <- lm(ssr ~ observed_N_C * observed_N_R, 
+             data = reliability_characteristics)
+
+lm_ncr_interaction %>% summary()
+
+lm.beta(lm_ncr_interaction)
+```
+
+Another approach would be to consider log-transformed versions of the three characteristics:
+
+```{r}
+reliability_characteristics %>% 
+  select(ssr, starts_with("observed_")) %>% 
+  mutate(across(starts_with("observed"), log10)) %>% 
+  rename_with(~ str_replace(.x, "observed_", "log_")) %>% 
+  lm(data = ., formula = ssr ~ log_N_A * log_N_C * log_N_R) %>% 
+  summary()
+```
+
+
+
+## What about the suggested thesholds of N_CR>=20 and NC_R>=37?
 
 Let's compare SSR and SHR for these thresholds
 
