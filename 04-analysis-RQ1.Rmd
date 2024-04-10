@@ -23,6 +23,11 @@ basic_kable = function(df, ...) {
     kable_styling(bootstrap_options = "striped", full_width = F)
 }
 
+apa2dp = function(x) {
+  #formatC(x, digits = 2, format = "f") %>% str_replace(., "0\\.", ".")
+  format(round(x, digits = 2), nsmall = 2) %>% str_replace('0.', '.')
+}
+
 # for correlations
 library(rstatix)
 ```
@@ -162,7 +167,7 @@ plot_scatter <- rq1_data %>%
     switch = "both"
   ) +
   labs(x = "", y = "") +
-  theme_minimal(base_size = 12) +
+  theme_minimal(base_size = 11) +
   theme(
     aspect.ratio = 1,
     # put the facet titles outside the y-axis ticks
@@ -179,7 +184,76 @@ grob$grobs[[which(grob$layout$name %in% c("panel-1-2"))]] <- grid::nullGrob();
 grid::grid.newpage()
 grid::grid.draw(grob)
 
-ggsave("figs-pdf/FIG_RQ1-scatterplot.pdf", plot = grob, units = "cm", width = 14, height = 14)
+ggsave("figs-pdf/FIG_RQ1-scatterplot.pdf", plot = grob, units = "cm", width = 12, height = 12)
+```
+
+Here we show all three variables in their raw scales, with Pearson correlations in the lower cells:
+
+```{r}
+library(GGally)
+
+# thanks to https://bookdown.org/content/3686/metric-predicted-variable-with-multiple-metric-predictors.html
+show_corr <- function(data, mapping, ...) {
+  
+  # get the x and y data to use the other code
+  x <- eval_data_col(data, mapping$x)
+  y <- eval_data_col(data, mapping$y)
+  
+  # compute the correlations
+  corr <- cor.test(x, y, method = "p", use = "pairwise")
+  
+  # plot the cor value
+  ggally_text(
+    label = corr$estimate %>% apa2dp(),
+    mapping = aes(),
+    color = "black",
+    size = 3) +
+    cowplot::panel_border(size = ifelse(corr$p.value < 0.05, 1, 1/2), color = ifelse(corr$p.value < 0.05, "steelblue4", "grey85"))
+}
+
+show_scatter <- function(data, mapping, ...) {
+  
+  # get the x and y data to use the other code
+  x <- eval_data_col(data, mapping$x)
+  y <- eval_data_col(data, mapping$y)
+  
+  # compute the correlations
+  corr <- cor.test(x, y, method = "p", use = "pairwise")
+  
+  ggplot(data = data, mapping = mapping) + 
+    #geom_point(size = .75, shape = 21, stroke = 1/10,
+    #           color = "white", fill = "steelblue4") +
+    geom_point(size = .75, stroke = 0, color = "steelblue4", alpha = 0.3) +
+    cowplot::panel_border(size = ifelse(corr$p.value < 0.05, 1, 1/2), color = ifelse(corr$p.value < 0.05, "steelblue4", "grey85"))
+}
+
+show_dist <- function(data, mapping, ...) {
+  ggplot(data = data, mapping = mapping) + 
+    geom_histogram(bins = 30) +
+    cowplot::panel_border(size = 1/2)
+}
+
+rq1_data %>% 
+  pivot_wider(names_from = feature, values_from = count) %>% 
+  select(-judging_session) %>% 
+  ggpairs(
+    upper = list(continuous = show_scatter),
+    lower = list(continuous = show_corr),
+    diag = list(continuous = show_dist),
+    progress = FALSE
+  ) +
+  theme(
+    strip.text = element_text(size = 6),
+    strip.text.y.right = element_text(angle = 0),
+    axis.title.x = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+
+ggsave("figs-pdf/FIG_RQ1_all-correlations.pdf", units = "cm", width = 12, height = 11.5)
 ```
 
 Correlations (Spearman):
