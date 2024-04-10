@@ -152,7 +152,7 @@ plot_scatter <- rq1_data %>%
   filter(feature.x != "Representations") %>%
   ggplot(aes(x = count.x, y = count.y)) +
   geom_point(alpha = 0.4) +
-  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
+  #geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
   scale_y_continuous(trans = 'log10', labels = scales::comma) +
   scale_x_continuous(trans = 'log10', labels = scales::comma) +
   facet_grid(
@@ -256,15 +256,16 @@ rq1_data %>%
   )
 ```
 
-Here is what it looks like on the non-transformed axes:
+Here is what it looks like on the non-transformed axes (restricted to $N_R<1000$):
 
 ```{r}
 rq1_data %>%
   left_join(rq1_data, by = "judging_session", relationship = "many-to-many") %>%
   filter(feature.x == "Representations") %>%
   filter(feature.y == "Comparisons") %>%
+  filter(count.x < 1000) %>% 
   ggplot(aes(x = count.x, y = count.y)) +
-  geom_point(data = prediction_interval_data, aes(x = Representations, y = fit), colour = "red") +
+  geom_point(data = prediction_interval_data, aes(x = Representations, y = fit), colour = "red", alpha = 0.2) +
   geom_function(fun = ~ 10^(2.145892)*(.x)^0.5345649, colour = "red") +
   geom_point(alpha = 0.4) +
   facet_grid(

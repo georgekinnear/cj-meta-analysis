@@ -134,8 +134,8 @@ each judging session:
 
 Correlations (Spearman):
 
-    ## Warning in cor.test.default(rq1_data_wide$Assessors,
-    ## rq1_data_wide$Comparisons, : Cannot compute exact p-value with ties
+    ## Warning in cor.test.default(rq1_data_wide$Assessors, rq1_data_wide$Comparisons,
+    ## : Cannot compute exact p-value with ties
 
     ## 
     ##  Spearman's rank correlation rho
@@ -175,24 +175,23 @@ Correlations (Spearman):
 
 Try some more elaborate methods for computing correlations:
 
-    ## 
-    ## Correlation method: 'spearman'
-    ## Missing treated using: 'pairwise.complete.obs'
-
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
-term
+var1
+</th>
+<th style="text-align:left;">
+var2
 </th>
 <th style="text-align:right;">
-Assessors
+cor
 </th>
 <th style="text-align:right;">
-Representations
+statistic
 </th>
 <th style="text-align:right;">
-Comparisons
+p
 </th>
 </tr>
 </thead>
@@ -201,59 +200,91 @@ Comparisons
 <td style="text-align:left;">
 Assessors
 </td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
--0.1308266
-</td>
-<td style="text-align:right;">
-0.4803719
-</td>
-</tr>
-<tr>
 <td style="text-align:left;">
 Representations
 </td>
 <td style="text-align:right;">
--0.1308266
+-0.13
 </td>
 <td style="text-align:right;">
-NA
+194162.92
 </td>
 <td style="text-align:right;">
-0.5348872
+1.92e-01
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Assessors
+</td>
+<td style="text-align:left;">
+Comparisons
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+89220.14
+</td>
+<td style="text-align:right;">
+4.00e-07
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Comparisons
 </td>
-<td style="text-align:right;">
-0.4803719
+<td style="text-align:left;">
+Representations
 </td>
 <td style="text-align:right;">
-0.5348872
+0.53
 </td>
 <td style="text-align:right;">
-NA
+79859.87
+</td>
+<td style="text-align:right;">
+0.00e+00
 </td>
 </tr>
 </tbody>
 </table>
 
-This plot shows only the significant correlations:
+## Special N_CR plot
 
-    ## Warning in cor.test.default(x = mat[, i], y = mat[, j], ...): Cannot compute
-    ## exact p-value with ties
+There is a linear relationship in the log-log plot of N_C vs N_R, which
+means there is a relationship of the form
+$\log_{10} N_C = \beta_1\log_{10} N_R+\beta_0$,
+i.e. $N_C = 10^{\beta_0} N_R^{\beta_1}$
 
-    ## Warning in cor.test.default(x = mat[, i], y = mat[, j], ...): Cannot compute
-    ## exact p-value with ties
+    ## 
+    ## Call:
+    ## lm(formula = Comparisons ~ Representations, data = .)
+    ## 
+    ## Residuals:
+    ##     Min      1Q  Median      3Q     Max 
+    ## -0.7013 -0.2911 -0.1090  0.1190  1.6181 
+    ## 
+    ## Coefficients:
+    ##                 Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)      2.14589    0.13332  16.096  < 2e-16 ***
+    ## Representations  0.53456    0.07219   7.405 4.42e-11 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.4923 on 99 degrees of freedom
+    ## Multiple R-squared:  0.3564, Adjusted R-squared:  0.3499 
+    ## F-statistic: 54.83 on 1 and 99 DF,  p-value: 4.417e-11
 
-    ## Warning in cor.test.default(x = mat[, i], y = mat[, j], ...): Cannot compute
-    ## exact p-value with ties
+Here we compute some values predicted by the linear regression (red
+points) and check that they match up with the plot from before:
 
-![](figs-web/04-analysis-RQ1/corrplot-1.png)<!-- -->
+![](figs-web/04-analysis-RQ1/unnamed-chunk-8-1.png)<!-- -->
+
+Here is what it looks like on the non-transformed axes (restricted to
+$N_R<1000$):
+
+![](figs-web/04-analysis-RQ1/unnamed-chunk-9-1.png)<!-- -->
 
 # Derived characteristics
 
