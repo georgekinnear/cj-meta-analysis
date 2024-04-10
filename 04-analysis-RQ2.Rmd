@@ -911,6 +911,7 @@ thresholds %>% dunn_test(ssr ~ ncr_level)
 ```
 
 
+
 For the case of SHR
 
 ```{r}
@@ -964,6 +965,8 @@ thresholds %>%
 
 
 For the case of SSR
+
+```{r}
 thresholds %>% group_by(ncr_level) %>% 
   summarise(count=n(),
             median = median(ssr),
@@ -990,7 +993,8 @@ thresholds %>% dunn_test(median_split_corr ~ ncr_level)
 
 ```
 
-## Recreating Verhavert et al. (2019) Figure 4
+
+# Recreating Verhavert et al. (2019) Figure 4
 
 Verhavert et al. (2019) analysed data from 49 different CJ sessions.
 
@@ -1006,9 +1010,9 @@ ssr_vs_ncr <- meta_analysis_data %>%
     select(judging_session, adaptivity, N_CR, SSR = ssr)
 
 bind_rows(
-  "Verhavert" = verhavert_data %>%
+  "Verhavert et al." = verhavert_data %>%
     transmute(judging_session = paste(Assessment, `Assessor group`), N_CR, SSR),
-  "Kinnear" = ssr_vs_ncr,
+  "Kinnear et al." = ssr_vs_ncr,
   .id = "study"
 ) %>% 
   filter(N_CR < 60) %>% 
@@ -1030,13 +1034,13 @@ The adaptivity seems to produce separate clusters in our sample:
 
 ```{r}
 bind_rows(
-  "Verhavert" = verhavert_data %>%
+  "Verhavert et al." = verhavert_data %>%
     transmute(judging_session = paste(Assessment, `Assessor group`), N_CR, SSR),
-  "Kinnear (non-adaptive)" = ssr_vs_ncr %>%
+  "Kinnear et al. (non-adaptive)" = ssr_vs_ncr %>%
     filter(adaptivity == FALSE),
-  "Kinnear (adaptive)" = ssr_vs_ncr %>%
+  "Kinnear et al. (adaptive)" = ssr_vs_ncr %>%
     filter(adaptivity == TRUE),
-  "Kinnear (unknown)" = ssr_vs_ncr %>%
+  "Kinnear et al. (unknown)" = ssr_vs_ncr %>%
     filter(adaptivity == "unknown"),
   .id = "study"
 ) %>% 
@@ -1096,3 +1100,25 @@ meta_analysis_data %>%
 ```
 
 This suggests that the SSR/split-halves relationship looks quite similar whether studies used adaptivity or not.
+
+
+### Regression with logit link function
+
+Following Verhavert et al. (2019), try using a logit link function on our data:
+
+```{r}
+reliability_characteristics %>% 
+  glm(ssr ~ N_CR, data = .,
+    family = gaussian(link = "logit")) %>% summary()
+```
+
+Verhavert et al. (2019) found that N_CR was significant in the model, while it's not for us.
+
+Restricting to only the non-adaptive studies in our sample, it is _just_ significant:
+
+```{r}
+reliability_characteristics %>% 
+  filter(adaptivity == FALSE) %>%  
+  glm(ssr ~ N_CR, data = .,
+    family = gaussian(link = "logit")) %>% summary()
+```
