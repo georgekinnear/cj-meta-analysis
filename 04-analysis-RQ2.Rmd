@@ -218,7 +218,6 @@ reliabilities_ncr %>%
   mutate(ncr_shape = case_when(N_CR < 20 ~ 0,
                                N_CR < 37 ~ 1,
                                N_CR < 1000000 ~ 2)) %>%
-  ggplot(aes(x = measure, y = value, group =ncr_shape)) + 
   ggplot(aes(x = measure, y = value)) + 
   geom_point(
     position = position_jitter(width=.3, seed = 123), # add jitter to the observations, using seed so it's reproducible
@@ -669,62 +668,98 @@ summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_p
 summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_plot_data %>% filter(N_CR >= 37)))
 ```
 
-## How do study characteristics relate to reliability
+
+
+# How do study characteristics relate to reliability?
 
 Look at how representations, assessors, comparisons and their derivatives relate to SSR and SHR.
+
 ```{r}
-options(scipen = 999)
+characteristics_of_interest <-
+  c("observed_N_A",
+    "observed_N_R",
+    "observed_N_C",
+    "N_CA",
+    "N_CR",
+    "N_RA")
+
 reliability_characteristics <- meta_analysis_data %>%
   mutate(
     N_CA = observed_N_C/observed_N_A,
     N_CR = 2*observed_N_C/observed_N_R,
-    N_RA = observed_N_R/observed_N_A)# %>%
-  #filter(observed_N_A < 1000,
-   #      observed_N_C < 10000)
+    N_RA = observed_N_R/observed_N_A)
 
+# write out a copy of this data in case it is useful elsewhere
+reliability_characteristics %>% 
+  select(judging_session, ssr, shr = median_split_corr, all_of(characteristics_of_interest)) %>% 
+  rename_with(~ str_remove(.x, "observed_")) %>% 
+  mutate(
+    log_N_A = log10(N_A),
+    log_N_C = log10(N_C),
+    log_N_R = log10(N_R)
+  ) %>% 
+  write.csv("data-cache/RQ2_characteristics_vs_reliability.csv")
+```
+
+In this table we include both SSR and SSR_HALF, though in fact there is not really a strong case for considering SSR_HALF any further (it was really only useful for the "SSR vs SHR" simulation analysis above).
+
+```{r}
 rel_corrs <- reliability_characteristics %>%
   cor_test(
-    vars = c("median_split_corr", "median_ssr_x"),
-    vars2 = c("observed_N_A", "observed_N_R", "observed_N_C",
-              "N_CA", "N_CR", "N_RA"),
+    #vars = c("median_split_corr", "median_ssr_x"),
+    vars = c("median_split_corr", "ssr", "median_ssr_x"),
+    vars2 = all_of(characteristics_of_interest),
     method = "spearman"
   ) 
 
-rel_corrs
-
-write.csv(rel_corrs, "RQ2b_correlations.csv")
-
+rel_corrs %>% 
+  select(var1, var2, cor, p) %>% 
+  mutate(
+    rounded_cor = format(round(cor, digits = 2), nsmall = 2) %>% str_replace('0.', '.'),
+    p_stars = case_when(
+      p < 0.001 ~ "***",
+      p < 0.01 ~ "**",
+      p < 0.05 ~ "*",
+      .default = ""
+    ),
+    var2 = str_remove(var2, "observed_"),
+    var1 = case_when(
+      var1 == "median_split_corr" ~ "SHR",
+      var1 == "median_ssr_x" ~ "SSR_HALF",
+      .default = var1
+    )
+  ) %>% 
+  mutate(table_entry = str_glue("{rounded_cor}{p_stars}")) %>% 
+  select(var1, var2, table_entry) %>% 
+  pivot_wider(names_from = var2, values_from = table_entry) %>% 
+  basic_kable()
 ```
+
+```{r}
+sig_for_shr <- rel_corrs %>% 
+  filter(var1 == "median_split_corr") %>% 
+  filter(p < 0.05) %>% 
+  pull(var2)
+
+sig_for_ssr <- rel_corrs %>% 
+  filter(var1 == "ssr") %>% 
+  filter(p < 0.05) %>% 
+  pull(var2)
+```
+
+
+## Split-halves reliability
 
 Sig correlations with SHR are N_A, N_C, N_CR. Check scatter plots for SHR.
 
 ```{r}
-#create a function for plots
-scatter <- function(rel, cha) { 
-  dat <- data.frame(rel=rel, cha=cha)
-  ggplot(dat, aes(x = rel, y = cha)) +
-  geom_point() +
-  theme(
-    #axis.text.x=element_blank(), #remove x axis labels
-    #axis.text.y=element_blank(),  #remove y axis labels
-    #axis.title = element_blank(),
-    #axis.line = element_blank(),
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.border = element_blank(),
-    panel.background = element_blank()) 
-}
-
-scatter_SHR <- reliability_characteristics$median_split_corr
-
-scatter(scatter_SHR, reliability_characteristics$observed_N_A)
-scatter(scatter_SHR, reliability_characteristics$observed_N_R)
-scatter(scatter_SHR, reliability_characteristics$observed_N_C)
-scatter(scatter_SHR, reliability_characteristics$N_CA)
-scatter(scatter_SHR, reliability_characteristics$N_CR)
-scatter(scatter_SHR, reliability_characteristics$N_RA)
-
-
+reliability_characteristics %>% 
+  select(median_split_corr, all_of(characteristics_of_interest)) %>% 
+  pivot_longer(cols = -median_split_corr, names_to = "characteristic") %>% 
+  ggplot(aes(x = value, y = median_split_corr)) +
+    geom_point() +
+    scale_x_continuous(trans = 'log10', labels = scales::comma) +
+    facet_wrap(~ characteristic, scales = "free")
 ```
 
 
@@ -732,30 +767,53 @@ scatter(scatter_SHR, reliability_characteristics$N_RA)
 Forced linear regression SHR:
 
 ```{r}
+formula_shr <- reformulate(sig_for_shr, response = "median_split_corr")
+formula_shr
 
-SHR_lm <- lm(median_split_corr ~ observed_N_A + observed_N_C + N_CR + N_RA, 
-             data = reliability_characteristics)
-  summary(SHR_lm)
-  lm.beta(SHR_lm)
-
+SHR_lm <- lm(formula = formula_shr,
+     data = reliability_characteristics)
+summary(SHR_lm)
+lm.beta(SHR_lm)
 ```
 
-SSR Scatterplots:
-```{r}
-scatter_SSR <- reliability_characteristics$median_ssr_x
 
-scatter(scatter_SSR, reliability_characteristics$observed_N_A)
-scatter(scatter_SSR, reliability_characteristics$observed_N_R)
-scatter(scatter_SSR, reliability_characteristics$observed_N_C)
-scatter(scatter_SSR, reliability_characteristics$N_CA)
-scatter(scatter_SSR, reliability_characteristics$N_CR)
-scatter(scatter_SSR, reliability_characteristics$N_RA)
+
+
+## SSR
+
+
+```{r}
+reliability_characteristics %>% 
+  select(ssr, all_of(characteristics_of_interest)) %>% 
+  pivot_longer(cols = -ssr, names_to = "characteristic") %>% 
+  ggplot(aes(x = value, y = ssr)) +
+    geom_point() +
+    scale_x_continuous(trans = 'log10', labels = scales::comma) +
+    facet_wrap(~ characteristic, scales = "free")
+```
+
+```{r}
+reliability_characteristics %>% 
+  select(ssr, N_CR) %>% 
+  pivot_longer(cols = -ssr, names_to = "characteristic") %>% 
+  ggplot(aes(x = value, y = ssr)) +
+    geom_point() +
+    scale_x_continuous(trans = 'log10', labels = scales::comma) +
+    facet_wrap(~ characteristic, scales = "free")
 ```
 
 
 SSR forced linear regression:
 
 ```{r}
+formula_ssr <- reformulate(sig_for_ssr, response = "ssr")
+formula_ssr
+
+SSR_lm <- lm(formula = formula_ssr,
+     data = reliability_characteristics)
+summary(SSR_lm)
+lm.beta(SSR_lm)
+```
 
 SSR_lm <- lm(median_ssr_x ~ observed_N_A + observed_N_C + N_CA + N_CR, 
              data = reliability_characteristics)
