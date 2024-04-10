@@ -866,36 +866,54 @@ Let's compare SSR and SHR for these thresholds
 ```{r}
 #select the data we need
 thresholds <- reliability_characteristics %>% 
-  mutate(ncr_level = case_when(N_CR < 20 ~ 0, #0 is low
-                               N_CR < 37 ~ 1, #1 is medium
-                               N_CR < 1000000 ~ 2)) %>% #2 is high 
-  select(ncr_level, median_split_corr, median_ssr_x)
-
+  mutate(ncr_level = case_when(N_CR < 20 ~ "0. low",
+                               N_CR < 37 ~ "1. medium",
+                               .default = "2. high"))
 ```
+
+```{r}
+thresholds %>% 
+  pivot_longer(cols = c(median_split_corr, ssr, median_ssr_x), names_to = "measure") %>% 
+  ggplot(aes(x = ncr_level, y = value)) +
+  geom_point(
+    position = position_jitter(width = 0.1, seed = 123),
+    # add jitter to the observations, using seed so it's reproducible
+    alpha = 0.2,
+    size = 0.4
+  ) +
+  geom_boxplot(
+    width = 0.5,
+    varwidth = TRUE,
+    position = position_nudge(x = 0.45),
+    linewidth = 0.3,
+    outlier.size = 0.4
+  ) +
+  facet_grid(cols = vars(measure)) +
+  labs(y = "", x = "Number of comparisons per representation") +
+  theme(
+    legend.position = "none",
+    axis.title.x = element_text(size = 9)
+  )
+```
+
 
 For the case of SSR
 
 ```{r}
-
-#descriptives
 thresholds %>% group_by(ncr_level) %>% 
   summarise(count=n(),
-            median = median(median_ssr_x),
-            min = min(median_ssr_x),
-            max = max(median_ssr_x))
+            median = median(ssr),
+            min = min(ssr),
+            max = max(ssr))
 
-thresholds %>% kruskal_test(median_ssr_x ~ ncr_level) # p=0.000233	
-thresholds %>% dunn_test(median_ssr_x ~ ncr_level) 
-
+thresholds %>% kruskal_test(ssr ~ ncr_level)
+thresholds %>% dunn_test(ssr ~ ncr_level) 
 ```
-
 
 
 For the case of SHR
 
 ```{r}
-
-#descriptives
 thresholds %>% group_by(ncr_level) %>% 
   summarise(count=n(),
             median = median(median_split_corr),
@@ -903,6 +921,71 @@ thresholds %>% group_by(ncr_level) %>%
             max = max(median_split_corr))
 
 thresholds %>% kruskal_test(median_split_corr ~ ncr_level) # p=0.0000514	
+thresholds %>% dunn_test(median_split_corr ~ ncr_level) 	
+
+```
+
+### Restricting to non-adaptive CJ
+
+
+```{r}
+#select the data we need
+thresholds <- reliability_characteristics %>% 
+  mutate(ncr_level = case_when(N_CR < 20 ~ "0. low",
+                               N_CR < 37 ~ "1. medium",
+                               .default = "2. high")) %>% 
+  filter(adaptivity == FALSE)
+```
+
+```{r}
+thresholds %>% 
+  pivot_longer(cols = c(median_split_corr, ssr, median_ssr_x), names_to = "measure") %>% 
+  ggplot(aes(x = ncr_level, y = value)) +
+  geom_point(
+    position = position_jitter(width = 0.1, seed = 123),
+    # add jitter to the observations, using seed so it's reproducible
+    alpha = 0.2,
+    size = 0.4
+  ) +
+  geom_boxplot(
+    width = 0.5,
+    varwidth = TRUE,
+    position = position_nudge(x = 0.45),
+    linewidth = 0.3,
+    outlier.size = 0.4
+  ) +
+  facet_grid(cols = vars(measure)) +
+  labs(y = "", x = "Number of comparisons per representation") +
+  theme(
+    legend.position = "none",
+    axis.title.x = element_text(size = 9)
+  )
+```
+
+
+For the case of SSR
+thresholds %>% group_by(ncr_level) %>% 
+  summarise(count=n(),
+            median = median(ssr),
+            min = min(ssr),
+            max = max(ssr))
+
+thresholds %>% kruskal_test(ssr ~ ncr_level)
+thresholds %>% dunn_test(ssr ~ ncr_level) 
+```
+
+
+
+For the case of SHR
+
+```{r}
+thresholds %>% group_by(ncr_level) %>% 
+  summarise(count=n(),
+            median = median(median_split_corr),
+            min = min(median_split_corr),
+            max = max(median_split_corr))
+
+thresholds %>% kruskal_test(median_split_corr ~ ncr_level)	
 thresholds %>% dunn_test(median_split_corr ~ ncr_level) 	
 
 ```
