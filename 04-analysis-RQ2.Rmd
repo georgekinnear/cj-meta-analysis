@@ -701,15 +701,14 @@ reliability_characteristics %>%
   write.csv("data-cache/RQ2_characteristics_vs_reliability.csv")
 ```
 
-In this table we include both SSR and SSR_HALF, though in fact there is not really a strong case for considering SSR_HALF any further (it was really only useful for the "SSR vs SHR" simulation analysis above).
+This table shows the Pearson correlation of each characteristic with SSR and with SHR:
 
 ```{r}
 rel_corrs <- reliability_characteristics %>%
   cor_test(
-    #vars = c("median_split_corr", "median_ssr_x"),
-    vars = c("median_split_corr", "ssr", "median_ssr_x"),
+    vars = c("median_split_corr", "ssr"),
     vars2 = all_of(characteristics_of_interest),
-    method = "spearman"
+    method = "pearson"
   ) 
 
 rel_corrs %>% 
@@ -725,7 +724,7 @@ rel_corrs %>%
     var2 = str_remove(var2, "observed_"),
     var1 = case_when(
       var1 == "median_split_corr" ~ "SHR",
-      var1 == "median_ssr_x" ~ "SSR_HALF",
+      var1 == "ssr" ~ "SSR",
       .default = var1
     )
   ) %>% 
@@ -748,9 +747,78 @@ sig_for_ssr <- rel_corrs %>%
 ```
 
 
+### Plotting
+
+```{r}
+library(GGally)
+
+# thanks to https://bookdown.org/content/3686/metric-predicted-variable-with-multiple-metric-predictors.html
+show_corr <- function(data, mapping, ...) {
+  
+  # get the x and y data to use the other code
+  x <- eval_data_col(data, mapping$x)
+  y <- eval_data_col(data, mapping$y)
+  
+  # compute the correlations
+  corr <- cor.test(x, y, method = "p", use = "pairwise")
+  
+  # plot the cor value
+  ggally_text(
+    label = formatC(corr$estimate, digits = 2, format = "f") %>% str_replace(., "0\\.", "."),
+    mapping = aes(),
+    color = "black",
+    size = 4) +
+    cowplot::panel_border(size = ifelse(corr$p.value < 0.05, 1, 1/2), color = ifelse(corr$p.value < 0.05, "steelblue4", "grey85"))
+}
+
+show_scatter <- function(data, mapping, ...) {
+  
+  # get the x and y data to use the other code
+  x <- eval_data_col(data, mapping$x)
+  y <- eval_data_col(data, mapping$y)
+  
+  # compute the correlations
+  corr <- cor.test(x, y, method = "p", use = "pairwise")
+  
+  ggplot(data = data, mapping = mapping) + 
+    #geom_point(size = .75, shape = 21, stroke = 1/10,
+    #           color = "white", fill = "steelblue4") +
+    geom_point(size = .75, stroke = 0, color = "steelblue4", alpha = 0.3) +
+    cowplot::panel_border(size = ifelse(corr$p.value < 0.05, 1, 1/2), color = ifelse(corr$p.value < 0.05, "steelblue4", "grey85"))
+}
+
+show_dist <- function(data, mapping, ...) {
+  ggplot(data = data, mapping = mapping) + 
+    geom_histogram(bins = 30) +
+    cowplot::panel_border(size = 1/2)
+}
+
+reliability_characteristics %>%
+  select(SSR = ssr, SHR = median_split_corr, all_of(characteristics_of_interest)) %>% 
+  rename_with(~ str_remove(., "observed_")) %>% 
+  ggpairs(
+    upper = list(continuous = show_scatter),
+    lower = list(continuous = show_corr),
+    diag = list(continuous = show_dist),
+    progress = FALSE
+  ) +
+  theme(
+    strip.text = element_text(size = 6),
+    strip.text.y.right = element_text(angle = 0),
+    axis.title.x = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+```
+
+
+
 ## Split-halves reliability
 
-Sig correlations with SHR are N_A, N_C, N_CR. Check scatter plots for SHR.
+Sig correlations with SHR are `r sig_for_shr`. Check scatter plots for SHR.
 
 ```{r}
 reliability_characteristics %>% 
@@ -781,6 +849,7 @@ lm.beta(SHR_lm)
 
 ## SSR
 
+For SSR we have significant correlation with `r sig_for_ssr`.
 
 ```{r}
 reliability_characteristics %>% 
