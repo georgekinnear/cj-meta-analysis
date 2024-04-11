@@ -8,7 +8,7 @@ George Kinnear
     ## # A tibble: 1 × 1
     ##   n_datatsets
     ##         <int>
-    ## 1         117
+    ## 1         121
 
 ## SSR correction
 
@@ -72,7 +72,7 @@ num_studies
 all
 </td>
 <td style="text-align:right;">
-117
+121
 </td>
 </tr>
 <tr>
@@ -80,7 +80,7 @@ all
 10+
 </td>
 <td style="text-align:right;">
-116
+120
 </td>
 </tr>
 <tr>
@@ -88,7 +88,7 @@ all
 20+
 </td>
 <td style="text-align:right;">
-80
+84
 </td>
 </tr>
 <tr>
@@ -96,7 +96,7 @@ all
 37+
 </td>
 <td style="text-align:right;">
-60
+62
 </td>
 </tr>
 </tbody>
@@ -142,7 +142,7 @@ all
 0.672
 </td>
 <td style="text-align:right;">
-0.916
+0.913
 </td>
 <td style="text-align:right;">
 0.994
@@ -162,13 +162,13 @@ all
 0.259
 </td>
 <td style="text-align:right;">
-0.794
+0.791
 </td>
 <td style="text-align:right;">
 0.985
 </td>
 <td style="text-align:right;">
-0.709
+0.719
 </td>
 </tr>
 <tr>
@@ -182,13 +182,13 @@ all
 0.561
 </td>
 <td style="text-align:right;">
-0.769
+0.768
 </td>
 <td style="text-align:right;">
 0.956
 </td>
 <td style="text-align:right;">
-0.761
+0.769
 </td>
 </tr>
 <tr>
@@ -202,7 +202,7 @@ Scale Separation Reliability
 0.672
 </td>
 <td style="text-align:right;">
-0.919
+0.915
 </td>
 <td style="text-align:right;">
 0.994
@@ -222,13 +222,13 @@ Split-halves reliability
 0.259
 </td>
 <td style="text-align:right;">
-0.827
+0.804
 </td>
 <td style="text-align:right;">
 0.985
 </td>
 <td style="text-align:right;">
-0.775
+0.786
 </td>
 </tr>
 <tr>
@@ -248,7 +248,7 @@ Correct comparisons
 0.943
 </td>
 <td style="text-align:right;">
-0.662
+0.679
 </td>
 </tr>
 <tr>
@@ -262,13 +262,13 @@ Scale Separation Reliability
 0.672
 </td>
 <td style="text-align:right;">
-0.938
+0.933
 </td>
 <td style="text-align:right;">
 0.994
 </td>
 <td style="text-align:right;">
-0.983
+0.984
 </td>
 </tr>
 <tr>
@@ -282,13 +282,13 @@ Split-halves reliability
 0.456
 </td>
 <td style="text-align:right;">
-0.856
+0.854
 </td>
 <td style="text-align:right;">
 0.985
 </td>
 <td style="text-align:right;">
-0.817
+0.823
 </td>
 </tr>
 <tr>
@@ -302,13 +302,13 @@ Correct comparisons
 0.561
 </td>
 <td style="text-align:right;">
-0.729
+0.724
 </td>
 <td style="text-align:right;">
 0.943
 </td>
 <td style="text-align:right;">
-0.583
+0.597
 </td>
 </tr>
 </tbody>
@@ -349,40 +349,40 @@ related:
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.23291 -0.03379  0.00746  0.03836  0.36852 
+    ## -0.23923 -0.03336  0.00557  0.03847  0.36321 
     ## 
     ## Coefficients:
     ##             Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept) -0.92429    0.09524  -9.704   <2e-16 ***
-    ## ssr          1.87034    0.10483  17.841   <2e-16 ***
+    ## (Intercept) -0.89634    0.09443  -9.492 2.98e-16 ***
+    ## ssr          1.84178    0.10407  17.697  < 2e-16 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.07515 on 115 degrees of freedom
-    ## Multiple R-squared:  0.7346, Adjusted R-squared:  0.7323 
-    ## F-statistic: 318.3 on 1 and 115 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.07526 on 119 degrees of freedom
+    ## Multiple R-squared:  0.7247, Adjusted R-squared:  0.7223 
+    ## F-statistic: 313.2 on 1 and 119 DF,  p-value: < 2.2e-16
 
     ## 
     ##  Pearson's product-moment correlation
     ## 
     ## data:  median_split_corr and ssr
-    ## t = 17.841, df = 115, p-value < 2.2e-16
+    ## t = 17.697, df = 119, p-value < 2.2e-16
     ## alternative hypothesis: true correlation is not equal to 0
     ## 95 percent confidence interval:
-    ##  0.8000345 0.8987815
+    ##  0.7933180 0.8939349
     ## sample estimates:
-    ##     cor 
-    ## 0.85709
+    ##       cor 
+    ## 0.8512707
 
     ## 
     ##  Spearman's rank correlation rho
     ## 
     ## data:  median_split_corr and ssr
-    ## S = 34708, p-value < 2.2e-16
+    ## S = 39980, p-value < 2.2e-16
     ## alternative hypothesis: true rho is not equal to 0
     ## sample estimates:
     ##       rho 
-    ## 0.8699666
+    ## 0.8645847
 
 ## Introducing SSR_HALF
 
@@ -446,18 +446,18 @@ There is a strong linear relationship here:
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.37120 -0.02439  0.00461  0.02651  0.40138 
+    ## -0.37498 -0.02627  0.00401  0.02643  0.39610 
     ## 
     ## Coefficients:
     ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)  -0.39517    0.07592  -5.205 8.57e-07 ***
-    ## median_ssr_x  1.39314    0.09027  15.433  < 2e-16 ***
+    ## (Intercept)  -0.37665    0.07484  -5.033 1.73e-06 ***
+    ## median_ssr_x  1.37311    0.08913  15.405  < 2e-16 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.08323 on 115 degrees of freedom
-    ## Multiple R-squared:  0.6744, Adjusted R-squared:  0.6716 
-    ## F-statistic: 238.2 on 1 and 115 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.08288 on 119 degrees of freedom
+    ## Multiple R-squared:  0.666,  Adjusted R-squared:  0.6632 
+    ## F-statistic: 237.3 on 1 and 119 DF,  p-value: < 2.2e-16
 
 We can add a 95% prediction interval from the linear regression:
 
@@ -515,13 +515,13 @@ pct
 0.70
 </td>
 <td style="text-align:right;">
-112
+116
 </td>
 <td style="text-align:right;">
-82
+86
 </td>
 <td style="text-align:left;">
-73%
+74%
 </td>
 </tr>
 <tr>
@@ -529,10 +529,10 @@ pct
 0.75
 </td>
 <td style="text-align:right;">
-99
+103
 </td>
 <td style="text-align:right;">
-82
+86
 </td>
 <td style="text-align:left;">
 83%
@@ -543,10 +543,10 @@ pct
 0.80
 </td>
 <td style="text-align:right;">
-78
+80
 </td>
 <td style="text-align:right;">
-72
+74
 </td>
 <td style="text-align:left;">
 92%
@@ -557,10 +557,10 @@ pct
 0.85
 </td>
 <td style="text-align:right;">
-51
+52
 </td>
 <td style="text-align:right;">
-50
+51
 </td>
 <td style="text-align:left;">
 98%
@@ -624,16 +624,16 @@ Number of studies
 0.70
 </td>
 <td style="text-align:right;">
-112
+116
 </td>
 <td style="text-align:left;">
-82 (73%)
+86 (74%)
 </td>
 <td style="text-align:left;">
-54 (48%)
+54 (47%)
 </td>
 <td style="text-align:left;">
-23 (21%)
+23 (20%)
 </td>
 </tr>
 <tr>
@@ -641,16 +641,16 @@ Number of studies
 0.75
 </td>
 <td style="text-align:right;">
-99
+103
 </td>
 <td style="text-align:left;">
-82 (83%)
+86 (83%)
 </td>
 <td style="text-align:left;">
-54 (55%)
+54 (52%)
 </td>
 <td style="text-align:left;">
-23 (23%)
+23 (22%)
 </td>
 </tr>
 <tr>
@@ -658,13 +658,13 @@ Number of studies
 0.80
 </td>
 <td style="text-align:right;">
-78
+80
 </td>
 <td style="text-align:left;">
-72 (92%)
+74 (92%)
 </td>
 <td style="text-align:left;">
-51 (65%)
+51 (64%)
 </td>
 <td style="text-align:left;">
 23 (29%)
@@ -675,16 +675,16 @@ Number of studies
 0.85
 </td>
 <td style="text-align:right;">
-51
+52
 </td>
 <td style="text-align:left;">
-50 (98%)
+51 (98%)
 </td>
 <td style="text-align:left;">
-47 (92%)
+47 (90%)
 </td>
 <td style="text-align:left;">
-23 (45%)
+23 (44%)
 </td>
 </tr>
 <tr>
@@ -749,10 +749,10 @@ p_value
 0
 </td>
 <td style="text-align:right;">
-117
+121
 </td>
 <td style="text-align:right;">
-0.867
+0.860
 </td>
 <td style="text-align:right;">
 0
@@ -763,10 +763,10 @@ p_value
 20
 </td>
 <td style="text-align:right;">
-80
+84
 </td>
 <td style="text-align:right;">
-0.866
+0.858
 </td>
 <td style="text-align:right;">
 0
@@ -777,10 +777,10 @@ p_value
 37
 </td>
 <td style="text-align:right;">
-60
+62
 </td>
 <td style="text-align:right;">
-0.858
+0.857
 </td>
 <td style="text-align:right;">
 0
@@ -807,18 +807,18 @@ is less predictive of `median_split_corr`:
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.37120 -0.02439  0.00461  0.02651  0.40138 
+    ## -0.37498 -0.02627  0.00401  0.02643  0.39610 
     ## 
     ## Coefficients:
     ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)  -0.39517    0.07592  -5.205 8.57e-07 ***
-    ## median_ssr_x  1.39314    0.09027  15.433  < 2e-16 ***
+    ## (Intercept)  -0.37665    0.07484  -5.033 1.73e-06 ***
+    ## median_ssr_x  1.37311    0.08913  15.405  < 2e-16 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.08323 on 115 degrees of freedom
-    ## Multiple R-squared:  0.6744, Adjusted R-squared:  0.6716 
-    ## F-statistic: 238.2 on 1 and 115 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.08288 on 119 degrees of freedom
+    ## Multiple R-squared:  0.666,  Adjusted R-squared:  0.6632 
+    ## F-statistic: 237.3 on 1 and 119 DF,  p-value: < 2.2e-16
 
     ## 
     ## Call:
@@ -827,18 +827,18 @@ is less predictive of `median_split_corr`:
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.38071 -0.01795  0.01064  0.02518  0.38599 
+    ## -0.38672 -0.01811  0.01197  0.02584  0.37759 
     ## 
     ## Coefficients:
     ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)   -0.3279     0.1025  -3.198    0.002 ** 
-    ## median_ssr_x   1.3147     0.1195  11.006   <2e-16 ***
+    ## (Intercept)  -0.29856    0.09922  -3.009  0.00348 ** 
+    ## median_ssr_x  1.28296    0.11597  11.063  < 2e-16 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.09101 on 78 degrees of freedom
-    ## Multiple R-squared:  0.6083, Adjusted R-squared:  0.6033 
-    ## F-statistic: 121.1 on 1 and 78 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.08994 on 82 degrees of freedom
+    ## Multiple R-squared:  0.5988, Adjusted R-squared:  0.5939 
+    ## F-statistic: 122.4 on 1 and 82 DF,  p-value: < 2.2e-16
 
     ## 
     ## Call:
@@ -847,18 +847,18 @@ is less predictive of `median_split_corr`:
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.25909 -0.03094  0.00994  0.02568  0.35354 
+    ## -0.25897 -0.02733  0.01009  0.02542  0.35358 
     ## 
     ## Coefficients:
     ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)   -0.2135     0.1116  -1.913   0.0606 .  
-    ## median_ssr_x   1.1906     0.1281   9.294 4.35e-13 ***
+    ## (Intercept)   -0.2132     0.1095  -1.947   0.0562 .  
+    ## median_ssr_x   1.1901     0.1258   9.457  1.7e-13 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.08771 on 58 degrees of freedom
-    ## Multiple R-squared:  0.5983, Adjusted R-squared:  0.5914 
-    ## F-statistic: 86.38 on 1 and 58 DF,  p-value: 4.352e-13
+    ## Residual standard error: 0.08631 on 60 degrees of freedom
+    ## Multiple R-squared:  0.5985, Adjusted R-squared:  0.5918 
+    ## F-statistic: 89.43 on 1 and 60 DF,  p-value: 1.696e-13
 
 # How do study characteristics relate to reliability?
 
@@ -923,7 +923,7 @@ SHR
 SSR
 </td>
 <td style="text-align:left;">
-.18\*
+.19\*
 </td>
 <td style="text-align:left;">
 .15
@@ -938,7 +938,7 @@ SSR
 .23\*
 </td>
 <td style="text-align:left;">
-.09
+.10
 </td>
 </tr>
 </tbody>
@@ -955,7 +955,7 @@ LaTeX table
     ## var1 & N\_A & N\_R & N\_C & N\_CA & N\_CR & N\_RA\\
     ## \midrule
     ## SHR & .21* & .07 & .19* & -.01 & .24** & -.05\\
-    ## SSR & .18* & .15 & .19* & .08 & .23* & .09\\
+    ## SSR & .19* & .15 & .19* & .08 & .23* & .10\\
     ## \bottomrule
     ## \end{tabular}
     ## \end{table}
@@ -989,20 +989,20 @@ Forced linear regression SHR:
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.49754 -0.07468  0.02723  0.10889  0.21927 
+    ## -0.49794 -0.07128  0.02523  0.10811  0.21888 
     ## 
     ## Coefficients:
     ##               Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)  7.537e-01  1.400e-02  53.834   <2e-16 ***
-    ## observed_N_A 1.431e-05  1.450e-04   0.099   0.9216    
-    ## observed_N_C 6.744e-07  2.155e-06   0.313   0.7549    
-    ## N_CR         7.316e-05  3.242e-05   2.257   0.0259 *  
+    ## (Intercept)  7.541e-01  1.351e-02  55.800   <2e-16 ***
+    ## observed_N_A 1.500e-05  1.425e-04   0.105   0.9164    
+    ## observed_N_C 6.621e-07  2.117e-06   0.313   0.7550    
+    ## N_CR         7.295e-05  3.183e-05   2.292   0.0237 *  
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.1406 on 113 degrees of freedom
-    ## Multiple R-squared:  0.0868, Adjusted R-squared:  0.06255 
-    ## F-statistic:  3.58 on 3 and 113 DF,  p-value: 0.01614
+    ## Residual standard error: 0.1382 on 117 degrees of freedom
+    ## Multiple R-squared:  0.08665,    Adjusted R-squared:  0.06323 
+    ## F-statistic:   3.7 on 3 and 117 DF,  p-value: 0.01378
 
     ## 
     ## Call:
@@ -1010,7 +1010,7 @@ Forced linear regression SHR:
     ## 
     ## Standardized Coefficients::
     ##  (Intercept) observed_N_A observed_N_C         N_CR 
-    ##           NA   0.04054942   0.12679746   0.22085702
+    ##           NA   0.04250891   0.12454483   0.22043111
 
 ## SSR
 
@@ -1031,20 +1031,20 @@ SSR forced linear regression:
     ## 
     ## Residuals:
     ##       Min        1Q    Median        3Q       Max 
-    ## -0.228413 -0.032857  0.009193  0.053790  0.084774 
+    ## -0.227361 -0.033042  0.009608  0.053622  0.086032 
     ## 
     ## Coefficients:
     ##                Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)   8.989e-01  6.426e-03 139.882   <2e-16 ***
-    ## observed_N_A -5.627e-05  6.658e-05  -0.845   0.3998    
-    ## observed_N_C  1.210e-06  9.891e-07   1.223   0.2238    
-    ## N_CR          3.648e-05  1.488e-05   2.452   0.0157 *  
+    ## (Intercept)   8.978e-01  6.249e-03 143.666   <2e-16 ***
+    ## observed_N_A -5.764e-05  6.591e-05  -0.875   0.3836    
+    ## observed_N_C  1.235e-06  9.790e-07   1.262   0.2096    
+    ## N_CR          3.724e-05  1.472e-05   2.530   0.0127 *  
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.06455 on 113 degrees of freedom
-    ## Multiple R-squared:  0.08371,    Adjusted R-squared:  0.05939 
-    ## F-statistic: 3.441 on 3 and 113 DF,  p-value: 0.01924
+    ## Residual standard error: 0.06393 on 117 degrees of freedom
+    ## Multiple R-squared:  0.08565,    Adjusted R-squared:  0.0622 
+    ## F-statistic: 3.653 on 3 and 117 DF,  p-value: 0.01463
 
     ## 
     ## Call:
@@ -1052,7 +1052,7 @@ SSR forced linear regression:
     ## 
     ## Standardized Coefficients::
     ##  (Intercept) observed_N_A observed_N_C         N_CR 
-    ##           NA   -0.3479033    0.4963493    0.2403271
+    ##           NA   -0.3534834    0.5027320    0.2434924
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1122,13 +1122,13 @@ observed_N_A
 0.04
 </td>
 <td style="text-align:left;">
-.922
+.916
 </td>
 <td style="text-align:right;">
 -0.35
 </td>
 <td style="text-align:left;">
-.400
+.384
 </td>
 </tr>
 <tr>
@@ -1136,7 +1136,7 @@ observed_N_A
 observed_N_C
 </td>
 <td style="text-align:right;">
-0.13
+0.12
 </td>
 <td style="text-align:left;">
 .755
@@ -1145,7 +1145,7 @@ observed_N_C
 0.50
 </td>
 <td style="text-align:left;">
-.224
+.210
 </td>
 </tr>
 <tr>
@@ -1156,13 +1156,13 @@ N_CR
 0.22
 </td>
 <td style="text-align:left;">
-.026\*
+.024\*
 </td>
 <td style="text-align:right;">
 0.24
 </td>
 <td style="text-align:left;">
-.016\*
+.013\*
 </td>
 </tr>
 </tbody>
@@ -1181,9 +1181,9 @@ LaTeX table
     ## Characteristic & beta & p & beta & p\\
     ## \midrule
     ## (Intercept) & NA & <0.001*** & NA & <0.001***\\
-    ## observed\_N\_A & 0.04 & .922 & -0.35 & .400\\
-    ## observed\_N\_C & 0.13 & .755 & 0.50 & .224\\
-    ## N\_CR & 0.22 & .026* & 0.24 & .016*\\
+    ## observed\_N\_A & 0.04 & .916 & -0.35 & .384\\
+    ## observed\_N\_C & 0.12 & .755 & 0.50 & .210\\
+    ## N\_CR & 0.22 & .024* & 0.24 & .013*\\
     ## \bottomrule
     ## \end{tabular}
     ## \end{table}
@@ -1199,7 +1199,7 @@ factor (VIF), where values above 10 are typically taken as an indicator
 of high multicollinearity:
 
     ## observed_N_A observed_N_C observed_N_R 
-    ##    31.397280    36.468675     2.301802
+    ##     31.34443     36.41562      2.29866
 
 Regardless of multicollinearity, we can proceed with a regression model
 involving all three characteristics, as well as interaction terms
@@ -1212,18 +1212,18 @@ between them:
     ## 
     ## Residuals:
     ##       Min        1Q    Median        3Q       Max 
-    ## -0.205831 -0.035577  0.008015  0.045801  0.087453 
+    ## -0.205444 -0.035728  0.008875  0.043268  0.086729 
     ## 
     ## Coefficients:
     ##                                          Estimate Std. Error t value Pr(>|t|)
-    ## (Intercept)                             8.803e-01  1.051e-02  83.720  < 2e-16
-    ## observed_N_A                           -1.104e-04  1.780e-04  -0.620 0.536475
-    ## observed_N_C                            1.869e-05  6.197e-06   3.016 0.003184
-    ## observed_N_R                            5.469e-05  3.626e-05   1.508 0.134342
-    ## observed_N_A:observed_N_C              -1.099e-08  2.063e-08  -0.533 0.595256
-    ## observed_N_A:observed_N_R              -8.121e-07  4.541e-07  -1.788 0.076496
-    ## observed_N_C:observed_N_R              -9.582e-09  2.808e-09  -3.412 0.000906
-    ## observed_N_A:observed_N_C:observed_N_R  1.184e-11  1.907e-11   0.621 0.536096
+    ## (Intercept)                             8.792e-01  1.009e-02  87.174  < 2e-16
+    ## observed_N_A                           -1.034e-04  1.753e-04  -0.590 0.556477
+    ## observed_N_C                            1.903e-05  6.080e-06   3.130 0.002224
+    ## observed_N_R                            5.572e-05  3.568e-05   1.561 0.121216
+    ## observed_N_A:observed_N_C              -1.215e-08  2.026e-08  -0.600 0.549948
+    ## observed_N_A:observed_N_R              -8.360e-07  4.463e-07  -1.873 0.063634
+    ## observed_N_C:observed_N_R              -9.755e-09  2.747e-09  -3.551 0.000561
+    ## observed_N_A:observed_N_C:observed_N_R  1.292e-11  1.872e-11   0.690 0.491755
     ##                                           
     ## (Intercept)                            ***
     ## observed_N_A                              
@@ -1236,9 +1236,9 @@ between them:
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.06189 on 109 degrees of freedom
-    ## Multiple R-squared:  0.1875, Adjusted R-squared:  0.1353 
-    ## F-statistic: 3.593 on 7 and 109 DF,  p-value: 0.001614
+    ## Residual standard error: 0.06114 on 113 degrees of freedom
+    ## Multiple R-squared:  0.1922, Adjusted R-squared:  0.1422 
+    ## F-statistic: 3.841 on 7 and 113 DF,  p-value: 0.0008778
 
 It is interesting here to see the interaction between $N_C$ and $N_R$
 appearing significant in the model.
@@ -1251,21 +1251,21 @@ interaction):
     ## lm(formula = ssr ~ observed_N_C * observed_N_R, data = reliability_characteristics)
     ## 
     ## Residuals:
-    ##      Min       1Q   Median       3Q      Max 
-    ## -0.21529 -0.03048  0.00891  0.04673  0.08778 
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.214449 -0.031547  0.008919  0.046565  0.088417 
     ## 
     ## Coefficients:
     ##                             Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)                8.839e-01  7.826e-03 112.946  < 2e-16 ***
-    ## observed_N_C               7.802e-06  1.935e-06   4.032 0.000101 ***
-    ## observed_N_R               9.780e-05  2.908e-05   3.363 0.001053 ** 
-    ## observed_N_C:observed_N_R -7.007e-09  1.809e-09  -3.874 0.000180 ***
+    ## (Intercept)                8.830e-01  7.538e-03 117.135  < 2e-16 ***
+    ## observed_N_C               7.915e-06  1.901e-06   4.164    6e-05 ***
+    ## observed_N_R               9.966e-05  2.851e-05   3.495 0.000669 ***
+    ## observed_N_C:observed_N_R -7.113e-09  1.777e-09  -4.004 0.000110 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.0621 on 113 degrees of freedom
-    ## Multiple R-squared:  0.1519, Adjusted R-squared:  0.1294 
-    ## F-statistic: 6.747 on 3 and 113 DF,  p-value: 0.0003154
+    ## Residual standard error: 0.06141 on 117 degrees of freedom
+    ## Multiple R-squared:  0.1562, Adjusted R-squared:  0.1346 
+    ## F-statistic:  7.22 on 3 and 117 DF,  p-value: 0.0001733
 
     ## 
     ## Call:
@@ -1273,9 +1273,9 @@ interaction):
     ## 
     ## Standardized Coefficients::
     ##               (Intercept)              observed_N_C              observed_N_R 
-    ##                        NA                 3.2012061                 0.4913485 
+    ##                        NA                 3.2214507                 0.4977375 
     ## observed_N_C:observed_N_R 
-    ##                -3.2911051
+    ##                -3.3135224
 
 Another approach would be to consider log-transformed versions of the
 three characteristics:
@@ -1286,24 +1286,24 @@ three characteristics:
     ## 
     ## Residuals:
     ##       Min        1Q    Median        3Q       Max 
-    ## -0.169643 -0.032800  0.007891  0.047142  0.092695 
+    ## -0.169385 -0.031491  0.008151  0.045062  0.091696 
     ## 
     ## Coefficients:
     ##                          Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)              0.870550   0.226103   3.850 0.000199 ***
-    ## log_N_A                 -0.251412   0.139957  -1.796 0.075207 .  
-    ## log_N_C                  0.088168   0.077921   1.131 0.260328    
-    ## log_N_R                 -0.098080   0.119844  -0.818 0.414916    
-    ## log_N_A:log_N_C          0.039468   0.041520   0.951 0.343919    
-    ## log_N_A:log_N_R          0.122037   0.070828   1.723 0.087722 .  
-    ## log_N_C:log_N_R         -0.003162   0.033758  -0.094 0.925543    
-    ## log_N_A:log_N_C:log_N_R -0.020435   0.017389  -1.175 0.242500    
+    ## (Intercept)              0.867965   0.221953   3.911 0.000158 ***
+    ## log_N_A                 -0.248442   0.137581  -1.806 0.073613 .  
+    ## log_N_C                  0.090586   0.076577   1.183 0.239312    
+    ## log_N_R                 -0.102389   0.117747  -0.870 0.386379    
+    ## log_N_A:log_N_C          0.037977   0.040865   0.929 0.354691    
+    ## log_N_A:log_N_R          0.122243   0.069666   1.755 0.082023 .  
+    ## log_N_C:log_N_R         -0.002531   0.033219  -0.076 0.939404    
+    ## log_N_A:log_N_C:log_N_R -0.020302   0.017119  -1.186 0.238142    
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.05925 on 109 degrees of freedom
-    ## Multiple R-squared:  0.2553, Adjusted R-squared:  0.2075 
-    ## F-statistic: 5.339 on 7 and 109 DF,  p-value: 2.823e-05
+    ## Residual standard error: 0.05844 on 113 degrees of freedom
+    ## Multiple R-squared:  0.2621, Adjusted R-squared:  0.2164 
+    ## F-statistic: 5.734 on 7 and 113 DF,  p-value: 1.08e-05
 
 ## What about the suggested thesholds of N_CR\>=20 and NC_R\>=37?
 
@@ -1317,20 +1317,20 @@ For the case of SSR
     ##   ncr_level count median   min   max
     ##   <chr>     <int>  <dbl> <dbl> <dbl>
     ## 1 0. low       37  0.911 0.699 0.983
-    ## 2 1. medium    20  0.885 0.757 0.982
-    ## 3 2. high      60  0.938 0.672 0.994
+    ## 2 1. medium    22  0.880 0.757 0.982
+    ## 3 2. high      62  0.933 0.672 0.994
 
     ## # A tibble: 1 × 6
     ##   .y.       n statistic    df      p method        
     ## * <chr> <int>     <dbl> <int>  <dbl> <chr>         
-    ## 1 ssr     117      6.32     2 0.0424 Kruskal-Wallis
+    ## 1 ssr     121      7.75     2 0.0208 Kruskal-Wallis
 
     ## # A tibble: 3 × 9
-    ##   .y.   group1    group2       n1    n2 statistic      p  p.adj p.adj.signif
-    ## * <chr> <chr>     <chr>     <int> <int>     <dbl>  <dbl>  <dbl> <chr>       
-    ## 1 ssr   0. low    1. medium    37    20     -1.03 0.305  0.305  ns          
-    ## 2 ssr   0. low    2. high      37    60      1.55 0.120  0.240  ns          
-    ## 3 ssr   1. medium 2. high      20    60      2.36 0.0183 0.0549 ns
+    ##   .y.   group1    group2       n1    n2 statistic       p  p.adj p.adj.signif
+    ## * <chr> <chr>     <chr>     <int> <int>     <dbl>   <dbl>  <dbl> <chr>       
+    ## 1 ssr   0. low    1. medium    37    22     -1.31 0.191   0.257  ns          
+    ## 2 ssr   0. low    2. high      37    62      1.52 0.128   0.257  ns          
+    ## 3 ssr   1. medium 2. high      22    62      2.69 0.00713 0.0214 *
 
 For the case of SHR
 
@@ -1338,20 +1338,20 @@ For the case of SHR
     ##   ncr_level count median   min   max
     ##   <chr>     <int>  <dbl> <dbl> <dbl>
     ## 1 0. low       37  0.732 0.387 0.906
-    ## 2 1. medium    20  0.740 0.259 0.911
-    ## 3 2. high      60  0.856 0.456 0.985
+    ## 2 1. medium    22  0.744 0.259 0.911
+    ## 3 2. high      62  0.854 0.456 0.985
 
     ## # A tibble: 1 × 6
     ##   .y.                   n statistic    df        p method        
     ## * <chr>             <int>     <dbl> <int>    <dbl> <chr>         
-    ## 1 median_split_corr   117      16.3     2 0.000292 Kruskal-Wallis
+    ## 1 median_split_corr   121      16.3     2 0.000282 Kruskal-Wallis
 
     ## # A tibble: 3 × 9
     ##   .y.           group1 group2    n1    n2 statistic       p   p.adj p.adj.signif
     ## * <chr>         <chr>  <chr>  <int> <int>     <dbl>   <dbl>   <dbl> <chr>       
-    ## 1 median_split… 0. low 1. me…    37    20     0.286 7.75e-1 7.75e-1 ns          
-    ## 2 median_split… 0. low 2. hi…    37    60     3.69  2.21e-4 6.62e-4 ***         
-    ## 3 median_split… 1. me… 2. hi…    20    60     2.68  7.29e-3 1.46e-2 *
+    ## 1 median_split… 0. low 1. me…    37    22     0.269 7.88e-1 7.88e-1 ns          
+    ## 2 median_split… 0. low 2. hi…    37    62     3.66  2.50e-4 7.50e-4 ***         
+    ## 3 median_split… 1. me… 2. hi…    22    62     2.77  5.55e-3 1.11e-2 *
 
 ### Restricting to non-adaptive CJ
 
@@ -1363,20 +1363,20 @@ For the case of SSR
     ##   ncr_level count median   min   max
     ##   <chr>     <int>  <dbl> <dbl> <dbl>
     ## 1 0. low        9  0.802 0.699 0.867
-    ## 2 1. medium    16  0.873 0.757 0.947
-    ## 3 2. high      55  0.939 0.672 0.994
+    ## 2 1. medium    18  0.869 0.757 0.947
+    ## 3 2. high      57  0.939 0.672 0.994
 
     ## # A tibble: 1 × 6
     ##   .y.       n statistic    df          p method        
     ## * <chr> <int>     <dbl> <int>      <dbl> <chr>         
-    ## 1 ssr      80      24.7     2 0.00000425 Kruskal-Wallis
+    ## 1 ssr      84      26.7     2 0.00000159 Kruskal-Wallis
 
     ## # A tibble: 3 × 9
     ##   .y.   group1    group2       n1    n2 statistic         p   p.adj p.adj.signif
     ## * <chr> <chr>     <chr>     <int> <int>     <dbl>     <dbl>   <dbl> <chr>       
-    ## 1 ssr   0. low    1. medium     9    16      1.83   6.71e-2 6.71e-2 ns          
-    ## 2 ssr   0. low    2. high       9    55      4.46   8.20e-6 2.46e-5 ****        
-    ## 3 ssr   1. medium 2. high      16    55      2.96   3.08e-3 6.15e-3 **
+    ## 1 ssr   0. low    1. medium     9    18      1.81   7.07e-2 7.07e-2 ns          
+    ## 2 ssr   0. low    2. high       9    57      4.53   6.04e-6 1.81e-5 ****        
+    ## 3 ssr   1. medium 2. high      18    57      3.27   1.06e-3 2.12e-3 **
 
 For the case of SHR
 
@@ -1384,20 +1384,20 @@ For the case of SHR
     ##   ncr_level count median   min   max
     ##   <chr>     <int>  <dbl> <dbl> <dbl>
     ## 1 0. low        9  0.593 0.387 0.724
-    ## 2 1. medium    16  0.730 0.259 0.900
-    ## 3 2. high      55  0.863 0.456 0.985
+    ## 2 1. medium    18  0.735 0.259 0.900
+    ## 3 2. high      57  0.858 0.456 0.985
 
     ## # A tibble: 1 × 6
-    ##   .y.                   n statistic    df         p method        
-    ## * <chr>             <int>     <dbl> <int>     <dbl> <chr>         
-    ## 1 median_split_corr    80      22.9     2 0.0000106 Kruskal-Wallis
+    ##   .y.                   n statistic    df          p method        
+    ## * <chr>             <int>     <dbl> <int>      <dbl> <chr>         
+    ## 1 median_split_corr    84      24.0     2 0.00000601 Kruskal-Wallis
 
     ## # A tibble: 3 × 9
     ##   .y.           group1 group2    n1    n2 statistic       p   p.adj p.adj.signif
     ## * <chr>         <chr>  <chr>  <int> <int>     <dbl>   <dbl>   <dbl> <chr>       
-    ## 1 median_split… 0. low 1. me…     9    16      1.57 1.16e-1 1.16e-1 ns          
-    ## 2 median_split… 0. low 2. hi…     9    55      4.20 2.68e-5 8.05e-5 ****        
-    ## 3 median_split… 1. me… 2. hi…    16    55      3.01 2.63e-3 5.26e-3 **
+    ## 1 median_split… 0. low 1. me…     9    18      1.72 8.57e-2 8.57e-2 ns          
+    ## 2 median_split… 0. low 2. hi…     9    57      4.30 1.75e-5 5.24e-5 ****        
+    ## 3 median_split… 1. me… 2. hi…    18    57      3.10 1.91e-3 3.82e-3 **
 
 # Recreating Verhavert et al. (2019) Figure 4
 
@@ -1742,20 +1742,20 @@ our data:
     ## 
     ## Deviance Residuals: 
     ##       Min         1Q     Median         3Q        Max  
-    ## -0.238903  -0.034784   0.007721   0.052822   0.085166  
+    ## -0.238378  -0.035775   0.008844   0.052579   0.086508  
     ## 
     ## Coefficients:
     ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept) 2.1563916  0.0811184   26.58   <2e-16 ***
-    ## N_CR        0.0010015  0.0005998    1.67   0.0977 .  
+    ## (Intercept) 2.1411433  0.0784364  27.298   <2e-16 ***
+    ## N_CR        0.0010519  0.0006039   1.742   0.0841 .  
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## (Dispersion parameter for gaussian family taken to be 0.004190147)
+    ## (Dispersion parameter for gaussian family taken to be 0.004109175)
     ## 
-    ##     Null deviance: 0.51384  on 116  degrees of freedom
-    ## Residual deviance: 0.48186  on 115  degrees of freedom
-    ## AIC: -304.56
+    ##     Null deviance: 0.52293  on 120  degrees of freedom
+    ## Residual deviance: 0.48898  on 119  degrees of freedom
+    ## AIC: -317.48
     ## 
     ## Number of Fisher Scoring iterations: 7
 
@@ -1774,19 +1774,19 @@ significant:
     ## 
     ## Deviance Residuals: 
     ##      Min        1Q    Median        3Q       Max  
-    ## -0.25358  -0.03591   0.01168   0.04605   0.07959  
+    ## -0.25688  -0.03019   0.01060   0.04485   0.08081  
     ## 
     ## Coefficients:
     ##             Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept) 1.725769   0.118742   14.53  < 2e-16 ***
-    ## N_CR        0.004608   0.001562    2.95  0.00419 ** 
+    ## (Intercept) 1.700846   0.113777  14.949  < 2e-16 ***
+    ## N_CR        0.005035   0.001586   3.174  0.00211 ** 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## (Dispersion parameter for gaussian family taken to be 0.004415026)
+    ## (Dispersion parameter for gaussian family taken to be 0.004221426)
     ## 
-    ##     Null deviance: 0.41546  on 79  degrees of freedom
-    ## Residual deviance: 0.34402  on 78  degrees of freedom
-    ## AIC: -202.9
+    ##     Null deviance: 0.42208  on 83  degrees of freedom
+    ## Residual deviance: 0.34599  on 82  degrees of freedom
+    ## AIC: -216.96
     ## 
     ## Number of Fisher Scoring iterations: 25
