@@ -5,9 +5,6 @@ George Kinnear
 
 We gathered comparative judgement data from a range of research studies.
 
-    ## Warning in readLines(file, warn = readLines.warn): incomplete final line found
-    ## on 'data/00-projects-with-data.yml'
-
 - This document summarises the sample in a readable way.
 - It draws on raw data in the `data/00-projects-with-data.yml` file.
 - This script processes the raw data and saves it in CSV format in
@@ -755,6 +752,22 @@ meaning in vehicles in the park cases. Philosophical Psychology, 1–21.
 <a href="https://doi.org/10.1080/09515089.2023.2263036" style="     ">https://doi.org/10.1080/09515089.2023.2263036</a>
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+Evans2022
+</td>
+<td style="text-align:left;">
+Evans, T., Mejía-Ramos, J. P., & Inglis, M. (2022). Do mathematicians
+and undergraduates agree about explanation quality? Educational Studies
+in Mathematics.
+</td>
+<td style="text-align:left;">
+<https://doi.org/10.17028/rd.lboro.14213831.v1>
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1007/s10649-022-10164-2" style="     ">https://doi.org/10.1007/s10649-022-10164-2</a>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -786,7 +799,7 @@ No
 31
 </td>
 <td style="text-align:left;">
-70.5%
+68.9%
 </td>
 </tr>
 <tr>
@@ -794,10 +807,10 @@ No
 Yes
 </td>
 <td style="text-align:right;">
-13
+14
 </td>
 <td style="text-align:left;">
-29.5%
+31.1%
 </td>
 </tr>
 </tbody>
@@ -900,6 +913,14 @@ expert<br>novice
 Esen2019
 </td>
 <td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Evans2022
+</td>
+<td style="text-align:left;">
+undergraduate<br>mathematician
 </td>
 </tr>
 <tr>
@@ -1471,6 +1492,52 @@ Esen2019
 </td>
 <td style="text-align:left;">
 12852
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Evans2022_mathematician
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+320
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Evans2022_undergraduate
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:left;">
+32
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+320
 </td>
 </tr>
 <tr>
@@ -4036,10 +4103,10 @@ percent
 FALSE
 </td>
 <td style="text-align:right;">
-80
+82
 </td>
 <td style="text-align:right;">
-0.6837607
+0.6890756
 </td>
 </tr>
 <tr>
@@ -4050,7 +4117,7 @@ TRUE
 19
 </td>
 <td style="text-align:right;">
-0.1623932
+0.1596639
 </td>
 </tr>
 <tr>
@@ -4061,7 +4128,7 @@ unknown
 18
 </td>
 <td style="text-align:right;">
-0.1538462
+0.1512605
 </td>
 </tr>
 </tbody>
@@ -4089,10 +4156,10 @@ percent
 expert
 </td>
 <td style="text-align:right;">
-70
+71
 </td>
 <td style="text-align:right;">
-0.5982906
+0.5966387
 </td>
 </tr>
 <tr>
@@ -4103,7 +4170,7 @@ layperson
 26
 </td>
 <td style="text-align:right;">
-0.2222222
+0.2184874
 </td>
 </tr>
 <tr>
@@ -4111,10 +4178,10 @@ layperson
 novice
 </td>
 <td style="text-align:right;">
-15
+16
 </td>
 <td style="text-align:right;">
-0.1282051
+0.1344538
 </td>
 </tr>
 <tr>
@@ -4125,7 +4192,7 @@ peer
 6
 </td>
 <td style="text-align:right;">
-0.0512821
+0.0504202
 </td>
 </tr>
 </tbody>

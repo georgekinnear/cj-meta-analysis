@@ -937,3 +937,23 @@ purrr::iwalk(
   split(tanswell2023out, tanswell2023out$session),
   ~ vroom::vroom_write(.x %>% select(-session), glue::glue("data/Tanswell2023_{.y}.csv"), ",")
 )
+
+# Evans, T., Mejía-Ramos, J. P., & Inglis, M. (2022). Do mathematicians and undergraduates agree about explanation quality? Educational Studies in Mathematics.
+# judgement data from https://doi.org/10.17028/rd.lboro.14213831.v1
+# in particular, https://repository.lboro.ac.uk/ndownloader/files/26812085
+evans2022excel <- readxl::read_excel(path = "data-raw/Evans/Data_for_sharing.xlsx", sheet = 2)
+evans2022 <- evans2022excel %>% 
+  transmute(
+    judge = Judge,
+    candidate_chosen = `Candidate Chosen`,
+    candidate_not_chosen = `Candidate Not Chosen`,
+    time_taken = `Time Taken`
+  ) %>% 
+  mutate(study = case_when(
+    str_detect(judge, "U") ~ "undergraduate",
+    str_detect(judge, "M") ~ "mathematician"
+  ))
+purrr::iwalk(
+  split(evans2022, evans2022$study),
+  ~ vroom::vroom_write(.x %>% select(-study), glue::glue("data/Evans2022_{.y}.csv"), ",")
+)

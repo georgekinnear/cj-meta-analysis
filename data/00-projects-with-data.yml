@@ -1264,3 +1264,25 @@
     judge_expertise: layperson
     judging_prompt: 'Which example would be the bigger nuisance in a park?'
     adaptivity: no
+
+- project_id: Evans2022
+  citation: "Evans, T., Mejía-Ramos, J. P., & Inglis, M. (2022). Do mathematicians and undergraduates agree about explanation quality? Educational Studies in Mathematics."
+  doi: 10.1007/s10649-022-10164-2
+  open_data: https://doi.org/10.17028/rd.lboro.14213831.v1
+  judging_sessions:
+  - study: undergraduate
+    N_A: 32
+    N_R: 10
+    N_J: 320
+    items: 'explanations of the concept of vector space'
+    judge_expertise: novice
+    judging_prompt: 'which is the better explanation of what a vector space is?'
+    adaptivity: no
+  - study: mathematician
+    N_A: 16
+    N_R: 10
+    N_J: 320
+    items: 'explanations of the concept of vector space'
+    judge_expertise: expert
+    judging_prompt: 'which is the better explanation of what a vector space is?'
+    adaptivity: no
