@@ -420,7 +420,7 @@ ggsave("figs-pdf/FIG_RQ2-ssr-vs-splithalves-by-ncr.pdf", units = "cm", width = 1
 For each study, we computed the SSR and SHR from the judgement data. Here, each point is one study and we see that the two values are closely related:
 
 ```{r}
-ssr_vs_splithalves_plot2 <- 
+ssr_all_vs_splithalves_plot <- 
   meta_analysis_data %>% 
   ggplot(aes(x = ssr, y = median_split_corr)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
@@ -438,12 +438,13 @@ ssr_vs_splithalves_plot2 <-
     aspect.ratio = 1,
   )
 
-ssr_vs_splithalves_plot2
+ssr_all_vs_splithalves_plot
 
 ggsave("figs-pdf/FIG_RQ2b-ssrALL-vs-shr.pdf", units = "cm", width = 14, height = 14)
 
 
 lm(formula = median_split_corr ~ ssr, data = meta_analysis_data) %>% summary()
+cor.test(formula = ~ median_split_corr + ssr, data = meta_analysis_data, method = "pearson")
 cor.test(formula = ~ median_split_corr + ssr, data = meta_analysis_data, method = "spearman")
 ```
 
@@ -486,7 +487,7 @@ raw_sims_head %>%
 So using the medians, we have the following picture:
 
 ```{r}
-ssr_vs_splithalves_plot1 <- 
+ssr_half_vs_splithalves_plot <- 
   meta_analysis_data %>% 
   ggplot(aes(x = median_ssr_x, y = median_split_corr)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
@@ -504,10 +505,22 @@ ssr_vs_splithalves_plot1 <-
     aspect.ratio = 1,
   )
 
-ssr_vs_splithalves_plot1
+ssr_half_vs_splithalves_plot
 
 ggsave("figs-pdf/FIG_RQ2b-ssr-vs-shr.pdf", units = "cm", width = 12, height = 12)
 ```
+<details><summary>Extra plot</summary>
+
+```{r}
+library(patchwork)
+wrap_plots(ssr_all_vs_splithalves_plot, ssr_half_vs_splithalves_plot) +
+  plot_annotation(tag_levels = 'a', tag_prefix = '(', tag_suffix = ')')
+
+ggsave("figs-pdf/FIG_RQ2b-ssr-vs-shr-both-ways.pdf", units = "cm", width = 16, height = 8)
+```
+</details>
+
+
 There is a strong linear relationship here:
 
 ```{r}
@@ -515,7 +528,6 @@ ssr_vs_splithalves_lm <- lm(formula = median_split_corr ~ median_ssr_x, data = m
 
 ssr_vs_splithalves_lm %>% summary()
 ```
-
 
 We can add a 95% prediction interval from the linear regression:
 
