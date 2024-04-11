@@ -957,3 +957,27 @@ purrr::iwalk(
   split(evans2022, evans2022$study),
   ~ vroom::vroom_write(.x %>% select(-study), glue::glue("data/Evans2022_{.y}.csv"), ",")
 )
+
+# Taha, S., Kinnear, G., & Iannone, P. (2024). Perceptions of Effective Formative Feedback: A comparative Analysis Between Undergraduate Students and Mathematics Lecturers.
+# To appear at FAME2024
+taha2024 <- bind_rows(
+  "students" = read_csv("data-raw/Taha/judgements_students.csv") %>%
+    transmute(
+      judge = judgeName,
+      candidate_chosen = chosen,
+      candidate_not_chosen = notChosen,
+      time_taken = timeTaken
+    ),
+  "lecturers" = read_csv("data-raw/Taha/judgements_lecturers.csv") %>%
+    transmute(
+      judge = judgeName,
+      candidate_chosen = chosen,
+      candidate_not_chosen = notChosen,
+      time_taken = timeTaken
+    ),
+  .id = "study"
+)
+purrr::iwalk(
+  split(taha2024, taha2024$study),
+  ~ vroom::vroom_write(.x %>% select(-study), glue::glue("data/Taha2024_{.y}.csv"), ",")
+)

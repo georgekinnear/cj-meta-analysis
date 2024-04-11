@@ -1286,3 +1286,25 @@
     judge_expertise: expert
     judging_prompt: 'which is the better explanation of what a vector space is?'
     adaptivity: no
+
+- project_id: Taha2024
+  citation: "Taha, S., Kinnear, G., & Iannone, P. (2024). Perceptions of Effective Formative Feedback: A comparative Analysis Between Undergraduate Students and Mathematics Lecturers"
+  doi: .na.character
+  open_data: no
+  judging_sessions:
+  - study: students
+    N_A: 16
+    N_R: 22
+    N_J: 240
+    items: 'feedback message on a mathematics e-assessment task'
+    judge_expertise: novice
+    judging_prompt: 'which feedback do you think is more effective?'
+    adaptivity: no
+  - study: lecturers
+    N_A: 16
+    N_R: 22
+    N_J: 240
+    items: 'feedback message on a mathematics e-assessment task'
+    judge_expertise: expert
+    judging_prompt: 'which feedback do you think is more effective?'
+    adaptivity: no
