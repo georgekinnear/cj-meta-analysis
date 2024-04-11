@@ -1,0 +1,69 @@
+---
+title: "Lens topup search in 2024"
+author: "George Kinnear"
+date: "2024-04-11"
+always_allow_html: true
+output:
+  github_document: default
+  html_document: default
+# knit: (function(inputFile, encoding) {
+#   rmarkdown::render(inputFile, encoding = encoding,
+#   output_format = "all") })
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+
+# Tables
+library(knitr)
+library(kableExtra)
+basic_kable = function(df, ...) {
+  df %>% 
+    kable(...) %>%
+    kable_styling(bootstrap_options = "striped", full_width = F)
+}
+```
+
+## Repeated search
+
+> (
+>  ("comparative judgement" OR "comparative judgment")
+>  OR
+>  (("pairwise comparisons" OR "paired comparisons") AND "Bradley" AND "Terry")
+> )
+
+We repeated the lens.org search on 11/04/2024, with the "Year Published" filter set to "2021 - " (since the previous search had included all sources "2010 - 2021" but was run mid-way through 2021).
+
+```{r message=FALSE, warning=FALSE}
+new_results <- bib2df::bib2df("lens-export-2024-04-11.bib") %>% janitor::clean_names()
+```
+
+This new search returned `r nrow(new_results)` hits.
+
+There is a little bit of overlap with the previous search, though.
+
+```{r message=FALSE, warning=FALSE}
+original <- bib2df::bib2df("../20210602 CJMetaAnalysis FirstParse.bib") %>% janitor::clean_names()
+
+previous_topup <- bib2df::bib2df("2021-06-07-topup.bib") %>% janitor::clean_names()
+```
+```{r}
+genuine_new_hits <- new_results %>% 
+  anti_join(original, join_by(bibtexkey)) %>% 
+  anti_join(previous_topup, join_by(bibtexkey))
+```
+
+That still leaves `r nrow(genuine_new_hits)` genuinely new records to review.
+
+This does include some new work that is definitely in scope for us:
+
+```{r}
+genuine_new_hits %>% 
+  filter(str_detect(author, "Inglis")) %>% 
+  select(bibtexkey, author, year, title, doi) %>% 
+  basic_kable()
+```
+
+
+
