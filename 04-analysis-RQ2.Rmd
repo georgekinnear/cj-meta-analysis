@@ -61,6 +61,16 @@ meta_analysis_data %>%
   summarise(n_datatsets = n_distinct(judging_session))
 ```
 
+## SSR correction
+
+The `ssr` column stores the `mle.rel` value from `sirt::btm` which is incorrect; here, we replace the `ssr` values with the correct ones, computed from `sepG`:
+
+```{r}
+meta_analysis_data <- meta_analysis_data %>% 
+  mutate(ssr = sepG^2 / (1+sepG^2))
+```
+
+
 # Observed distribution of reliability measures
 
 For these plots:
@@ -537,7 +547,7 @@ prediction_interval_data <- bind_cols(
   pred_interval, predict(lm(formula = median_split_corr ~ median_ssr_x, data = meta_analysis_data), new = pred_interval, se.fit = TRUE, interval = "prediction")$fit
   )
 
-ssr_vs_splithalves_plot1 +
+ssr_half_vs_splithalves_plot +
   geom_line(data = prediction_interval_data, aes(x = median_ssr_x, y = lwr), colour = "#00339999") +
   geom_line(data = prediction_interval_data, aes(x = median_ssr_x, y = upr), colour = "#00339999")
 ```
@@ -1272,7 +1282,7 @@ reliability_characteristics %>%
 
 Verhavert et al. (2019) found that N_CR was significant in the model, while it's not for us.
 
-Restricting to only the non-adaptive studies in our sample, it is _just_ significant:
+Restricting to only the non-adaptive studies in our sample, it is significant:
 
 ```{r}
 reliability_characteristics %>% 
