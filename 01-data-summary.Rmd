@@ -31,9 +31,10 @@ sessions <- yaml::read_yaml("data/00-projects-with-data.yml")
 
 all_sessions <- tibble(project = sessions) %>% 
   unnest_wider(project) %>% 
-#  mutate(
-#    open_data = map_chr(sessions, "open_data", as.character)
-#  ) %>% 
+  mutate(open_data = case_when(
+    open_data == FALSE ~ "FALSE",
+    .default = as.character(open_data)
+  )) %>% 
   unnest_longer(judging_sessions) %>%
   unnest_wider(judging_sessions) %>%
   # replace columns containing length-1 lists with just the contents
