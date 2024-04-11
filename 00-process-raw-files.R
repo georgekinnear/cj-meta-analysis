@@ -868,3 +868,72 @@ jones2020b_extracted <- jones2020b %>%
 jones2020b_extracted %>% select(judge) %>% distinct() %>% nrow() %>% paste("judges")
 jones2020b_extracted %>% nrow() %>% paste("judgements")
 jones2020b_extracted %>% write_csv("data/Jones2020_brightness-equalised.csv")
+
+
+# Sangwin, C., & Kinnear, G. (2024) Insight and rigour (experts)
+# judgement data not yet public, at https://github.com/georgekinnear/insight-rigour-experts
+sangwin2024 <- read_csv("https://raw.githubusercontent.com/georgekinnear/insight-rigour-experts/main/data-out/judgement_data_all.csv?token=GHSAT0AAAAAACMS4X6OZCOEIF3ZF5WWJP2OZQXYBVA")
+sangwin2024out <- sangwin2024 %>% 
+  transmute(
+    session = str_glue("{study}-{dimension}"),
+    judge = judge_id,
+    candidate_chosen = won,
+    candidate_not_chosen = lost,
+    time_taken = time_taken
+  )
+purrr::iwalk(
+  split(sangwin2024out, sangwin2024out$session),
+  ~ vroom::vroom_write(.x %>% select(-session), glue::glue("data/Sangwin2024_{.y}.csv"), ",")
+)
+
+# Woollacott, B., Alcock, L., & Inglis, M. (2023). The spatial contiguity principle in mathematics textbooks. Research in Mathematics Education, 1-21.
+# judgement data from https://figshare.com/s/59e3a7a57251ccd101dc
+woollacott2023 <- bind_rows(
+  "students" = read_csv("data-raw/Woollacott/CJ_students_clean_data.csv") %>%
+    transmute(
+      judge = judgeName,
+      candidate_chosen = chosen,
+      candidate_not_chosen = notChosen,
+      time_taken = timeTaken
+    ),
+  "undergraduates" = read_csv("data-raw/Woollacott/CJ_undergraduates_clean_data.csv") %>%
+    transmute(
+      judge = paste0(Judge),
+      candidate_chosen = `Candidate Chosen`,
+      candidate_not_chosen = `Candidate Not Chosen`,
+      time_taken = `Time Taken`
+    ),
+  "teachers" = read_csv("data-raw/Woollacott/CJ_teachers_clean_data.csv") %>%
+    transmute(
+      judge = paste0(Judge),
+      candidate_chosen = `Candidate Chosen`,
+      candidate_not_chosen = `Candidate Not Chosen`,
+      time_taken = `Time Taken`
+    ),
+  .id = "study"
+)
+purrr::iwalk(
+  split(woollacott2023, woollacott2023$study),
+  ~ vroom::vroom_write(.x %>% select(-study), glue::glue("data/Woollacott2023_{.y}.csv"), ",")
+)
+
+# Tanswell, F., Davies, B., Jones, I., & Kinnear, G. (2023). Comparative judgement for experimental philosophy: A method for assessing ordinary meaning in vehicles in the park cases. Philosophical Psychology, 0(0), 1–21. https://doi.org/10.1080/09515089.2023.2263036
+# https://raw.githubusercontent.com/georgekinnear/vehicles-in-the-park/main/data-raw/judgements_all.csv
+tanswell2023 <- read_csv("https://raw.githubusercontent.com/georgekinnear/vehicles-in-the-park/main/data-raw/judgements_all.csv")
+tanswell2023out <- tanswell2023 %>% 
+  filter(str_detect(study, "pairs")) %>%
+  # attention checks and dropped judges - see https://github.com/georgekinnear/vehicles-in-the-park/blob/426edcc43d1d14faaddfefee97d8ac05137a0300/01-produce-scales.Rmd#L70
+  filter(left != 0, right != 0) %>% 
+  filter(!judge_id %in% c(59, 110)) %>% 
+  mutate(study = str_remove(study, "_pairs")) %>% 
+  transmute(
+    session = study,
+    judge = judge_id,
+    candidate_chosen = won,
+    candidate_not_chosen = lost,
+    time_taken = time_taken
+  )
+purrr::iwalk(
+  split(tanswell2023out, tanswell2023out$session),
+  ~ vroom::vroom_write(.x %>% select(-session), glue::glue("data/Tanswell2023_{.y}.csv"), ",")
+)

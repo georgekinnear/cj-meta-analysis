@@ -1117,3 +1117,150 @@
     judge_expertise: layperson
     judging_prompt: 'which of these two storms looks the most complicated?'
     adaptivity: no
+
+- project_id: Sangwin2024
+  citation: Sangwin, C., & Kinnear, G. (2024) Experts study
+  doi: .na.character
+  open_data: https://github.com/georgekinnear/insight-rigour-experts/blob/main/data-out/judgement_data_all.csv
+  source: snowballing
+  judging_sessions:
+  - study: experts-rigour
+    N_A: 39
+    N_R: 15
+    N_J: 636
+    items: proofs
+    judge_expertise: expert
+    adaptivity: no 
+    judging_prompt: 'which proof is more rigorous?'
+  - study: experts-insight
+    N_A: 25
+    N_R: 15
+    N_J: 438
+    items: proofs
+    judge_expertise: expert
+    adaptivity: no 
+    judging_prompt: 'which proof gives more insight into why the theorem is true?'
+  - study: experts-simple
+    N_A: 32
+    N_R: 15
+    N_J: 526
+    items: proofs
+    judge_expertise: expert
+    adaptivity: no 
+    judging_prompt: 'which proof is the simplest?'
+  - study: experts-understanding
+    N_A: 34
+    N_R: 15
+    N_J: 611
+    items: proofs
+    judge_expertise: expert
+    adaptivity: no 
+    judging_prompt: 'which proof best helps you understand why the theorem is true?'
+  - study: experts-marks
+    N_A: 23
+    N_R: 15
+    N_J: 382
+    items: proofs
+    judge_expertise: expert
+    adaptivity: no 
+    judging_prompt: 'which proof would get the most marks in an assessment?'
+  - study: phd-rigour
+    N_A: 39
+    N_R: 15
+    N_J: 636
+    items: proofs
+    judge_expertise: expert
+    adaptivity: no 
+    judging_prompt: 'which proof is more rigorous?'
+  - study: phd-insight
+    N_A: 25
+    N_R: 15
+    N_J: 438
+    items: proofs
+    judge_expertise: expert
+    adaptivity: no 
+    judging_prompt: 'which proof gives more insight into why the theorem is true?'
+  - study: phd-simple
+    N_A: 32
+    N_R: 15
+    N_J: 526
+    items: proofs
+    judge_expertise: expert
+    adaptivity: no 
+    judging_prompt: 'which proof is the simplest?'
+  - study: phd-understanding
+    N_A: 34
+    N_R: 15
+    N_J: 611
+    items: proofs
+    judge_expertise: expert
+    adaptivity: no 
+    judging_prompt: 'which proof best helps you understand why the theorem is true?'
+  - study: phd-marks
+    N_A: 23
+    N_R: 15
+    N_J: 382
+    items: proofs
+    judge_expertise: expert
+    adaptivity: no 
+    judging_prompt: 'which proof would get the most marks in an assessment?'
+
+- project_id: Woollacott2023
+  citation: "Woollacott, B., Alcock, L., & Inglis, M. (2023). The spatial contiguity principle in mathematics textbooks. Research in Mathematics Education, 1-21."
+  doi: 10.1080/14794802.2022.2158122
+  open_data: https://figshare.com/s/59e3a7a57251ccd101dc
+  judging_sessions:
+  - study: students
+    N_A: 125
+    N_R: 16
+    N_J: 900
+    items: 'excerpts from A-level mathematics textbooks'
+    judge_expertise: novice
+    judging_prompt: 'Choose the better explanation'
+    adaptivity: no
+  - study: teachers
+    N_A: 83
+    N_R: 16
+    N_J: 1155
+    items: 'excerpts from A-level mathematics textbooks'
+    judge_expertise: expert
+    judging_prompt: 'Choose the better explanation'
+    adaptivity: no
+  - study: undergraduates
+    N_A: 220
+    N_R: 16
+    N_J: 3210
+    items: 'excerpts from A-level mathematics textbooks'
+    judge_expertise: novice
+    judging_prompt: 'Choose the better explanation'
+    adaptivity: no
+
+- project_id: Tanswell2023
+  citation: "Tanswell, F., Davies, B., Jones, I., & Kinnear, G. (2023). Comparative judgement for experimental philosophy: A method for assessing ordinary meaning in vehicles in the park cases. Philosophical Psychology, 1–21."
+  doi: 10.1080/09515089.2023.2263036
+  open_data: https://github.com/georgekinnear/vehicles-in-the-park/blob/main/data-raw/judgements_all.csv
+  judging_sessions:
+  - study: vehicle
+    N_A: 21
+    N_R: 25
+    N_J: 1950
+    items: 'description of an object'
+    judge_expertise: layperson
+    judging_prompt: 'Which is the better example of a vehicle?'
+    adaptivity: no
+  - study: violation
+    N_A: 20
+    N_R: 25
+    N_J: 1900
+    items: 'description of an object'
+    judge_expertise: layperson
+    judging_prompt: 'A sign says "no vehicles in the park". Which example would be the worst violation?'
+    adaptivity: no
+  - study: nuisance
+    N_A: 17
+    N_R: 25
+    N_J: 1650
+    items: 'description of an object'
+    judge_expertise: layperson
+    judging_prompt: 'Which example would be the bigger nuisance in a park?'
+    adaptivity: no
