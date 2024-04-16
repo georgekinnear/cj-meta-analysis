@@ -1,7 +1,7 @@
 ---
 title: 'CJ meta-analysis: data summary'
 author: "George Kinnear"
-date: "2022-08-25"
+date: "2024-02-12"
 output: github_document
 always_allow_html: true
 ---
@@ -31,9 +31,10 @@ sessions <- yaml::read_yaml("data/00-projects-with-data.yml")
 
 all_sessions <- tibble(project = sessions) %>% 
   unnest_wider(project) %>% 
-#  mutate(
-#    open_data = map_chr(sessions, "open_data", as.character)
-#  ) %>% 
+  mutate(open_data = case_when(
+    open_data == FALSE ~ "FALSE",
+    .default = as.character(open_data)
+  )) %>%
   unnest_longer(judging_sessions) %>%
   unnest_wider(judging_sessions) %>%
   # replace columns containing length-1 lists with just the contents
@@ -204,3 +205,39 @@ At least, we might want to trawl through looking for open data? We included Jone
 nodata_sessions %>% janitor::tabyl(open_data)
 ```
 
+# Summary table
+
+```{r}
+summary_table <- all_sessions %>%
+  transmute(
+    source = replace_na(source, "Search"),
+    source = str_to_title(source),
+    judge_expertise = str_to_title(judge_expertise),
+    adaptivity = case_when(
+      adaptivity == "FALSE" ~ "No",
+      adaptivity == "TRUE" ~ "Yes",
+      .default = "Unknown"
+    ),
+    open_data = case_when(open_data == "FALSE" ~ "No",
+                          .default = "Yes"),
+  ) %>% 
+  gtsummary::tbl_summary(
+    by = source,
+    label = list(
+      adaptivity ~ "Adaptive CJ",
+      judge_expertise ~ "Assessor expertise",
+      open_data ~ "Open data"
+    )
+  ) %>% 
+  gtsummary::add_overall() %>% 
+  gtsummary::modify_footnote(update = everything() ~ NA)
+
+summary_table
+```
+
+<details><summary>LaTeX table</summary>
+
+```{r}
+summary_table %>% gtsummary::as_gt() %>% gt::as_latex() %>% cat()
+```
+</details>

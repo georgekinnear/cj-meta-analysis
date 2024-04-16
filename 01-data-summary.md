@@ -1,14 +1,14 @@
 CJ meta-analysis: data summary
 ================
 George Kinnear
-2022-08-25
+2024-02-12
 
 We gathered comparative judgement data from a range of research studies.
 
--   This document summarises the sample in a readable way.
--   It draws on raw data in the `data/00-projects-with-data.yml` file.
--   This script processes the raw data and saves it in CSV format in
-    `data/00-judging_sessions_summary.csv`.
+- This document summarises the sample in a readable way.
+- It draws on raw data in the `data/00-projects-with-data.yml` file.
+- This script processes the raw data and saves it in CSV format in
+  `data/00-judging_sessions_summary.csv`.
 
 # Publications/projects
 
@@ -23,6 +23,9 @@ project_id
 </th>
 <th style="text-align:left;">
 citation
+</th>
+<th style="text-align:left;">
+open_data
 </th>
 <th style="text-align:left;">
 doi_link
@@ -40,6 +43,9 @@ variations in aesthetic responses to fractal patterns. Frontiers in
 human neuroscience, 10, 350.
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.3389/fnhum.2016.00350" style="     ">https://doi.org/10.3389/fnhum.2016.00350</a>
 </td>
 </tr>
@@ -52,6 +58,9 @@ Stadthagen-González, H., Parafita Couto, M. C., Párraga, C. A., &
 Damian, M. F. (2019). Testing alternative theoretical accounts of
 code-switching: Insights from comparative judgments of adjective–noun
 order. International Journal of Bilingualism, 23(1), 200-220.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1177/1367006917728390" style="     ">https://doi.org/10.1177/1367006917728390</a>
@@ -68,6 +77,9 @@ In 19th International Conference on Mobile and Ubiquitous
 Multimedia (pp. 1-12).
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1145/3428361.3428467" style="     ">https://doi.org/10.1145/3428361.3428467</a>
 </td>
 </tr>
@@ -79,6 +91,9 @@ Vatavu2019
 Vanderdonckt, J., Zen, M., & Vatavu, R. D. (2019). AB4Web: An on-line
 A/B tester for comparing user interface design alternatives. Proceedings
 of the ACM on Human-Computer Interaction, 3(EICS), 1-28.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1145/3331160" style="     ">https://doi.org/10.1145/3331160</a>
@@ -93,6 +108,9 @@ Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’
 Assessments of the Explanatory Value of Proofs. Axiomathes (2021). 
 </td>
 <td style="text-align:left;">
+<https://doi.org/10.17028/rd.lboro.12458486.v1>
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1007/s10516-021-09545-8" style="     ">https://doi.org/10.1007/s10516-021-09545-8</a>
 </td>
 </tr>
@@ -104,6 +122,9 @@ Smith2020
 Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused
 Research in Further Adult and Vocational Education (pp. 77-98). Palgrave
 Macmillan, Cham.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/978-3-030-38994-9_5" style="     ">https://doi.org/10.1007/978-3-030-38994-9_5</a>
@@ -121,6 +142,9 @@ Policy. Retrieved
 from <https://cerp.aqa.org.uk/research-library/using-adaptive-comparative-judgement-obtain-highly-reliable-rank-order-summative-assessment>
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -134,6 +158,9 @@ standards. In Standard Setting in Education (pp. 279-298). Springer,
 Cham.
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1007/978-3-319-50856-6_16" style="     ">https://doi.org/10.1007/978-3-319-50856-6_16</a>
 </td>
 </tr>
@@ -143,6 +170,9 @@ PollittX
 </td>
 <td style="text-align:left;">
 Pollitt, A. (n.d.). Unpublished data.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
@@ -158,6 +188,9 @@ evaluation preferences according to learning approaches. Elementary
 Education Online, 19 (3), 1284-1294.
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.17051/ilkonline.2020.728048" style="     ">https://doi.org/10.17051/ilkonline.2020.728048</a>
 </td>
 </tr>
@@ -169,6 +202,9 @@ Esen2019
 Esen, Y. D. (2019). Scaling the teachers’ perception of competence
 regarding measurement and evaluation. \[Unpublished Masters
 dissertation\]. Ankara University.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
@@ -186,6 +222,9 @@ Computing Systems (pp. 2440-2448). Association for Computing Machinery
 (ACM). <https://doi.org/10.1145/3025453.3025655>
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1145/3025453.3025655" style="     ">https://doi.org/10.1145/3025453.3025655</a>
 </td>
 </tr>
@@ -198,6 +237,9 @@ Clark, A. P., Howard, K. L., Woods, A. T., Penton-Voak, I. S., &
 Neumann, C. (2018). Why rate when you could compare? Using the
 “EloChoice” package to assess pairwise comparisons of perceived physical
 strength. PloS one, 13(1), e0190393.
+</td>
+<td style="text-align:left;">
+<https://doi.org/10.17633/rd.brunel.4902977.v1>
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1371/journal.pone.0190393" style="     ">https://doi.org/10.1371/journal.pone.0190393</a>
@@ -213,6 +255,9 @@ salience using the Bradley–Terry model: An illustration with data from
 Brazil. Research & Politics, 6(1), 2053168019832089.
 </td>
 <td style="text-align:left;">
+<https://doi.org/10.7910/DVN/HJZSIM>
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1177/2053168019832089" style="     ">https://doi.org/10.1177/2053168019832089</a>
 </td>
 </tr>
@@ -226,6 +271,9 @@ of Relative Acceptability from Paired Preferences.
 <https://doi.org/10.31234/osf.io/gvq97>
 </td>
 <td style="text-align:left;">
+<https://doi.org/10.17605/OSF.IO/SGJ6N>
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.31234/osf.io/gvq97" style="     ">https://doi.org/10.31234/osf.io/gvq97</a>
 </td>
 </tr>
@@ -235,6 +283,9 @@ LuckettX
 </td>
 <td style="text-align:left;">
 Luckett, C. (n.d.) Unpublished data.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
@@ -250,6 +301,9 @@ rigour as separate constructs in mathematical proof.
 <https://doi.org/10.35542/osf.io/egks4>
 </td>
 <td style="text-align:left;">
+<http://doi.org/10.5281/zenodo.4893915>
+</td>
+<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -260,6 +314,9 @@ Kinnear2021
 <td style="text-align:left;">
 Kinnear, G., et al. (2021). Using compative judgement \[Unpublished
 undergraduate dissertation\]. The University of Edinburgh.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
@@ -275,6 +332,9 @@ reliability coefficient in adaptive comparative judgement. Assessment in
 Education: Principles, Policy & Practice, 26, 43–58.
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1080/0969594x.2017.1418734" style="     ">https://doi.org/10.1080/0969594x.2017.1418734</a>
 </td>
 </tr>
@@ -287,6 +347,9 @@ Settembri, P., Van Gasse, R., Coertjens, L., & De Maeyer, S. (2018).
 Oranges and Apples? Using Comparative Judgement for Reliable Briefing
 Paper Assessment in Simulation Games. In Simulations of Decision-Making
 as Active Learning Tools (pp. 93-108). Springer, Cham.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/978-3-319-74147-5_8" style="     ">https://doi.org/10.1007/978-3-319-74147-5_8</a>
@@ -304,6 +367,9 @@ rubrics or comparative judgment. Association for Educational Assessment
 Europe Conference (Glasgow, Scotland, from 05/11/2015 to 7/11/2015).
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -316,6 +382,9 @@ van Daal, T., Lesterhuis, M., Coertjens, L., van de Kamp, M. T., Donche,
 V., & De Maeyer, S. (2017, August). The complexity of assessing student
 work using comparative judgment: The moderating role of decision
 accuracy. In Frontiers in Education (Vol. 2, p. 44). Frontiers.
+</td>
+<td style="text-align:left;">
+<https://osf.io/7etq2/> Ch8\>Data\>01)Raw Data
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.3389/feduc.2017.00044" style="     ">https://doi.org/10.3389/feduc.2017.00044</a>
@@ -332,6 +401,9 @@ Assessment Practices: Comparative Judgment as an Alternative to
 Rubrics. Teaching and Learning in Medicine, 1-11.
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1080/10401334.2021.1877709" style="     ">https://doi.org/10.1080/10401334.2021.1877709</a>
 </td>
 </tr>
@@ -344,6 +416,9 @@ Holmes, S. D., He, Q., & Meadows, M. (2017). An investigation of
 construct relevant and irrelevant features of mathematics
 problem-solving questions using comparative judgement and Kelly’s
 Repertory Grid. Research in Mathematics Education, 19(2), 112-129.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1080/14794802.2017.1334576" style="     ">https://doi.org/10.1080/14794802.2017.1334576</a>
@@ -359,6 +434,9 @@ and Assessment of Problem Solving across GCSE Maths Sample Assessment
 Materials. <https://tinyurl.com/y8v2e4xx>
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -370,6 +448,9 @@ Davies2020a
 Davies, B., Alcock, L., & Jones, I. (2020). Comparative judgement, proof
 summaries and proof comprehension. Educational Studies in
 Mathematics, 105(2), 181-197.
+</td>
+<td style="text-align:left;">
+<https://doi.org/10.17028/rd.lboro.8940149>
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/s10649-020-09984-x" style="     ">https://doi.org/10.1007/s10649-020-09984-x</a>
@@ -385,6 +466,9 @@ by proof? A comparative-judgement study of students’ and mathematicians’
 views. The Journal of Mathematical Behavior, 61, 100824.
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1016/j.jmathb.2020.100824" style="     ">https://doi.org/10.1016/j.jmathb.2020.100824</a>
 </td>
 </tr>
@@ -396,6 +480,9 @@ Jones2013a
 Jones, I., & Alcock, L. (2014). Peer assessment without assessment
 criteria. Studies in Higher Education, 39(10), 1774–1787.
 <https://doi.org/10.1080/03075079.2013.821974>
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1080/03075079.2013.821974" style="     ">https://doi.org/10.1080/03075079.2013.821974</a>
@@ -413,6 +500,9 @@ Group for the Psychology of Mathematics Education (Vol. 3, pp. 113–120).
 IGPME.
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -425,6 +515,9 @@ Jones, I., Swan, M., & Pollitt, A. (2014). Assessing mathematical
 problem solving using comparative judgement. International Journal of
 Science and Mathematics Education, 13(1), 151–177.
 <https://doi.org/10.1007/s10763-013-9497-6>
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/s10763-013-9497-6" style="     ">https://doi.org/10.1007/s10763-013-9497-6</a>
@@ -440,6 +533,9 @@ teacher assessment. Assessment in Education: Principles, Policy &
 Practice, 22(3), 368–389. <https://doi.org/10.1080/0969594X.2014.978839>
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1080/0969594x.2014.978839" style="     ">https://doi.org/10.1080/0969594x.2014.978839</a>
 </td>
 </tr>
@@ -451,6 +547,9 @@ Jones2015a
 Jones, I., & Inglis, M. (2015). The problem of assessing problem
 solving: Can comparative judgement help? Educational Studies in
 Mathematics, 89(3), 337–355. <https://doi.org/10.1007/s10649-015-9607-1>
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/s10649-015-9607-1" style="     ">https://doi.org/10.1007/s10649-015-9607-1</a>
@@ -466,6 +565,9 @@ absolute judgement. Studies in Educational Evaluation, 47, 93–101.
 <https://doi.org/10.1016/j.stueduc.2015.09.004>
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1016/j.stueduc.2015.09.004" style="     ">https://doi.org/10.1016/j.stueduc.2015.09.004</a>
 </td>
 </tr>
@@ -479,6 +581,9 @@ of A-level mathematics: Have standards changed? British Educational
 Research Journal, 42(4), 543–560. <https://doi.org/10.1002/berj.3224>
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1002/berj.3224" style="     ">https://doi.org/10.1002/berj.3224</a>
 </td>
 </tr>
@@ -490,6 +595,9 @@ Jones2017
 Jones, I., & Sirl, D. (2017). Peer assessment of mathematical
 understanding using comparative judgement. Nordic Studies in Mathematics
 Education, 22(4), 147–164.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
@@ -506,6 +614,9 @@ comparative judgement help? British Educational Research Journal, 45(3),
 662–680. <https://doi.org/10.1002/berj.3519>
 </td>
 <td style="text-align:left;">
+<https://lboro.figshare.com/s/2d4cfa> 142ebf1ff24841
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1002/berj.3519" style="     ">https://doi.org/10.1002/berj.3519</a>
 </td>
 </tr>
@@ -520,6 +631,9 @@ English in New Zealand. New Zealand Journal of Educational Studies,
 55(1), 49–71.
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1007/s40841-020-00163-3" style="     ">https://doi.org/10.1007/s40841-020-00163-3</a>
 </td>
 </tr>
@@ -531,6 +645,9 @@ Bisson2016
 Bisson, M.-J., Gilmore, C., Inglis, M., & Jones, I. (2016). Measuring
 conceptual understanding using comparative judgement. International
 Journal of Research in Undergraduate Mathematics Education, 2, 141–164.
+</td>
+<td style="text-align:left;">
+FALSE
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1007/s40753-016-0024-3" style="     ">https://doi.org/10.1007/s40753-016-0024-3</a>
@@ -547,6 +664,9 @@ Annual Conference of the Mathematics Education Research Group of
 Australasia, 41, 400–407. <https://eric.ed.gov/?id=ED592426>
 </td>
 <td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
 <a href="NA" style="     ">NA</a>
 </td>
 </tr>
@@ -561,6 +681,9 @@ case of differential calculus through a comparative judgement technique.
 Research in Mathematics Education, 22, 284–303.
 </td>
 <td style="text-align:left;">
+<https://doi.org/10.17028/rd.lboro.5845683.v1>
+</td>
+<td style="text-align:left;">
 <a href="https://doi.org/10.1080/14794802.2019.1692060" style="     ">https://doi.org/10.1080/14794802.2019.1692060</a>
 </td>
 </tr>
@@ -572,6 +695,12 @@ Jones2020
 Jones, S. R., Scott, C. J., Barnard, L. A., Highfield, R., Lintott, C.
 J., & Baeten, E. (2020). The visual complexity of coronal mass ejections
 follows the solar cycle. Space Weather, 18(10), e2020SW002556.
+</td>
+<td style="text-align:left;">
+The paired comparison data from “Protect our Planet from Solar Storms”
+can be found at <https://figshare.com/s/7e0270daa8153bb0416e>, and the
+code used is available
+at <https://github.com/S-hannon/complexity-solar-cycle> website
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1029/2020sw002556" style="     ">https://doi.org/10.1029/2020sw002556</a>
@@ -954,136 +1083,7 @@ legislators<br>experts
 </tbody>
 </table>
 
-## Adaptivity
-
-When adding data to the repository, we checked the publication to see
-whether the CJ session made use of an adaptive algorithm.
-
-This was recorded as:
-
--   `adaptivity = FALSE` when the publication stated that judgements
-    were made on randomly selected pairs
--   `adaptivity = TRUE` when the publication stated that an adaptive
-    algorithm was used
--   `adaptivity = unknown` when we could see no details on this point in
-    the publication
-
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-adaptivity
-</th>
-<th style="text-align:right;">
-n
-</th>
-<th style="text-align:right;">
-percent
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:right;">
-64
-</td>
-<td style="text-align:right;">
-0.6336634
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:right;">
-17
-</td>
-<td style="text-align:right;">
-0.1683168
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-unknown
-</td>
-<td style="text-align:right;">
-20
-</td>
-<td style="text-align:right;">
-0.1980198
-</td>
-</tr>
-</tbody>
-</table>
-
-## Judge expertise
-
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-judge_expertise
-</th>
-<th style="text-align:right;">
-n
-</th>
-<th style="text-align:right;">
-percent
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-expert
-</td>
-<td style="text-align:right;">
-59
-</td>
-<td style="text-align:right;">
-0.5841584
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-layperson
-</td>
-<td style="text-align:right;">
-23
-</td>
-<td style="text-align:right;">
-0.2277228
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-novice
-</td>
-<td style="text-align:right;">
-13
-</td>
-<td style="text-align:right;">
-0.1287129
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-peer
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-0.0594059
-</td>
-</tr>
-</tbody>
-</table>
-
-# Reading the data
+## Reading the data
 
 All the judgement data is stored in the `data` folder, with filenames
 corresponding to the `project_id` (and for papers with multiple CJ
@@ -1091,11 +1091,8 @@ sessions, the `study` within that project, e.g. `Bisson2016_stats.csv`).
 
 ### Data matches with the paper
 
-These ones all have
-![N_R](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;N_R "N_R")
-and
-![N_A](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;N_A "N_A")
-numbers that match our records of what is reported in the paper:
+These ones all have $N_R$ and $N_A$ numbers that match our records of
+what is reported in the paper:
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1104,13 +1101,13 @@ numbers that match our records of what is reported in the paper:
 judging_session
 </th>
 <th style="text-align:right;">
-observed_N\_A
+observed_N_A
 </th>
 <th style="text-align:right;">
-observed_N\_R
+observed_N_R
 </th>
 <th style="text-align:right;">
-observed_N\_C
+observed_N_C
 </th>
 <th style="text-align:left;">
 N_A
@@ -2834,11 +2831,8 @@ Vatavu2020
 
 ### Data inconsistent with reported values
 
-The following sessions have
-![N_A](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;N_A "N_A")
-or
-![N_R](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;N_R "N_R")
-values that differ from those expected:
+The following sessions have $N_A$ or $N_R$ values that differ from those
+expected:
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -2847,13 +2841,13 @@ values that differ from those expected:
 judging_session
 </th>
 <th style="text-align:right;">
-observed_N\_A
+observed_N_A
 </th>
 <th style="text-align:right;">
-observed_N\_R
+observed_N_R
 </th>
 <th style="text-align:right;">
-observed_N\_C
+observed_N_C
 </th>
 <th style="text-align:left;">
 N_A
@@ -3517,6 +3511,38 @@ note
 </thead>
 <tbody>
 <tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+:—————
+</td>
+<td style="text-align:left;">
+:——–
+</td>
+<td style="text-align:left;">
+:—–
+</td>
+<td style="text-align:left;">
+:—————
+</td>
+<td style="text-align:left;">
+:—-
+</td>
 </tr>
 </tbody>
 </table>
@@ -3545,14 +3571,605 @@ note
 
 # Other things to do
 
+## Adaptivity
+
+We wanted to add a note about whether the CJ method used adaptivity.
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+adaptivity
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+0.6336634
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+0.1881188
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+unknown
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+0.1782178
+</td>
+</tr>
+</tbody>
+</table>
+
+## Judge expertise
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+judge_expertise
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+expert
+</td>
+<td style="text-align:right;">
+59
+</td>
+<td style="text-align:right;">
+0.5841584
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+layperson
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+0.2277228
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+novice
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+0.1287129
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+peer
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0.0594059
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Projects without data
 
 Do we want to fill out details for these studies?
+
+    ## New names:
+    ## • `comment` -> `comment...13`
+    ## • `comment` -> `comment...14`
 
 At least, we might want to trawl through looking for open data? We
 included Jones2020 on this basis, see
 <https://github.com/georgekinnear/cj-meta-analysis/issues/2>
 
-    ##                    open_data  n   percent
-    ##                        FALSE 41 0.5774648
-    ##  TODO... CHECK FOR OPEN DATA 30 0.4225352
+    ##  open_data  n percent
+    ##      FALSE 70       1
+
+# Summary table
+
+<div id="xouwpfrgnu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xouwpfrgnu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+&#10;#xouwpfrgnu thead, #xouwpfrgnu tbody, #xouwpfrgnu tfoot, #xouwpfrgnu tr, #xouwpfrgnu td, #xouwpfrgnu th {
+  border-style: none;
+}
+&#10;#xouwpfrgnu p {
+  margin: 0;
+  padding: 0;
+}
+&#10;#xouwpfrgnu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+&#10;#xouwpfrgnu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+&#10;#xouwpfrgnu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+&#10;#xouwpfrgnu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+&#10;#xouwpfrgnu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+&#10;#xouwpfrgnu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+&#10;#xouwpfrgnu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+&#10;#xouwpfrgnu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+&#10;#xouwpfrgnu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+&#10;#xouwpfrgnu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+&#10;#xouwpfrgnu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+&#10;#xouwpfrgnu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+&#10;#xouwpfrgnu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+&#10;#xouwpfrgnu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+&#10;#xouwpfrgnu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#xouwpfrgnu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+&#10;#xouwpfrgnu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+&#10;#xouwpfrgnu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+&#10;#xouwpfrgnu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#xouwpfrgnu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+&#10;#xouwpfrgnu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#xouwpfrgnu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+&#10;#xouwpfrgnu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#xouwpfrgnu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+&#10;#xouwpfrgnu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#xouwpfrgnu .gt_left {
+  text-align: left;
+}
+&#10;#xouwpfrgnu .gt_center {
+  text-align: center;
+}
+&#10;#xouwpfrgnu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+&#10;#xouwpfrgnu .gt_font_normal {
+  font-weight: normal;
+}
+&#10;#xouwpfrgnu .gt_font_bold {
+  font-weight: bold;
+}
+&#10;#xouwpfrgnu .gt_font_italic {
+  font-style: italic;
+}
+&#10;#xouwpfrgnu .gt_super {
+  font-size: 65%;
+}
+&#10;#xouwpfrgnu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+&#10;#xouwpfrgnu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+&#10;#xouwpfrgnu .gt_indent_1 {
+  text-indent: 5px;
+}
+&#10;#xouwpfrgnu .gt_indent_2 {
+  text-indent: 10px;
+}
+&#10;#xouwpfrgnu .gt_indent_3 {
+  text-indent: 15px;
+}
+&#10;#xouwpfrgnu .gt_indent_4 {
+  text-indent: 20px;
+}
+&#10;#xouwpfrgnu .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;Characteristic&lt;/strong&gt;"><strong>Characteristic</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;Overall&lt;/strong&gt;, N = 101"><strong>Overall</strong>, N = 101</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;Search&lt;/strong&gt;, N = 63"><strong>Search</strong>, N = 63</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;Snowballing&lt;/strong&gt;, N = 38"><strong>Snowballing</strong>, N = 38</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="label" class="gt_row gt_left">Assessor expertise</td>
+<td headers="stat_0" class="gt_row gt_center"><br /></td>
+<td headers="stat_1" class="gt_row gt_center"><br /></td>
+<td headers="stat_2" class="gt_row gt_center"><br /></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    Expert</td>
+<td headers="stat_0" class="gt_row gt_center">59 (58%)</td>
+<td headers="stat_1" class="gt_row gt_center">40 (63%)</td>
+<td headers="stat_2" class="gt_row gt_center">19 (50%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    Layperson</td>
+<td headers="stat_0" class="gt_row gt_center">23 (23%)</td>
+<td headers="stat_1" class="gt_row gt_center">18 (29%)</td>
+<td headers="stat_2" class="gt_row gt_center">5 (13%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    Novice</td>
+<td headers="stat_0" class="gt_row gt_center">13 (13%)</td>
+<td headers="stat_1" class="gt_row gt_center">0 (0%)</td>
+<td headers="stat_2" class="gt_row gt_center">13 (34%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    Peer</td>
+<td headers="stat_0" class="gt_row gt_center">6 (5.9%)</td>
+<td headers="stat_1" class="gt_row gt_center">5 (7.9%)</td>
+<td headers="stat_2" class="gt_row gt_center">1 (2.6%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">Adaptive CJ</td>
+<td headers="stat_0" class="gt_row gt_center"><br /></td>
+<td headers="stat_1" class="gt_row gt_center"><br /></td>
+<td headers="stat_2" class="gt_row gt_center"><br /></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    No</td>
+<td headers="stat_0" class="gt_row gt_center">64 (63%)</td>
+<td headers="stat_1" class="gt_row gt_center">41 (65%)</td>
+<td headers="stat_2" class="gt_row gt_center">23 (61%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    Unknown</td>
+<td headers="stat_0" class="gt_row gt_center">18 (18%)</td>
+<td headers="stat_1" class="gt_row gt_center">3 (4.8%)</td>
+<td headers="stat_2" class="gt_row gt_center">15 (39%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    Yes</td>
+<td headers="stat_0" class="gt_row gt_center">19 (19%)</td>
+<td headers="stat_1" class="gt_row gt_center">19 (30%)</td>
+<td headers="stat_2" class="gt_row gt_center">0 (0%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">Open data</td>
+<td headers="stat_0" class="gt_row gt_center">25 (25%)</td>
+<td headers="stat_1" class="gt_row gt_center">18 (29%)</td>
+<td headers="stat_2" class="gt_row gt_center">7 (18%)</td></tr>
+  </tbody>
+  &#10;  
+</table>
+</div>
+<details>
+<summary>
+LaTeX table
+</summary>
+
+    ## \begin{longtable}{lccc}
+    ## \toprule
+    ## \textbf{Characteristic} & \textbf{Overall}, N = 101 & \textbf{Search}, N = 63 & \textbf{Snowballing}, N = 38 \\ 
+    ## \midrule\addlinespace[2.5pt]
+    ## Assessor expertise &  &  &  \\ 
+    ##     Expert & 59 (58\%) & 40 (63\%) & 19 (50\%) \\ 
+    ##     Layperson & 23 (23\%) & 18 (29\%) & 5 (13\%) \\ 
+    ##     Novice & 13 (13\%) & 0 (0\%) & 13 (34\%) \\ 
+    ##     Peer & 6 (5.9\%) & 5 (7.9\%) & 1 (2.6\%) \\ 
+    ## Adaptive CJ &  &  &  \\ 
+    ##     No & 64 (63\%) & 41 (65\%) & 23 (61\%) \\ 
+    ##     Unknown & 18 (18\%) & 3 (4.8\%) & 15 (39\%) \\ 
+    ##     Yes & 19 (19\%) & 19 (30\%) & 0 (0\%) \\ 
+    ## Open data & 25 (25\%) & 18 (29\%) & 7 (18\%) \\ 
+    ## \bottomrule
+    ## \end{longtable}
+
+</details>
