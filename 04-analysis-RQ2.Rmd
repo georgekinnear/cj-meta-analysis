@@ -79,16 +79,15 @@ For these plots:
 * Split-halves reliability comes from computing the Pearson correlation coefficient of the scores produced by fitting the Bradley-Terry model separately on two randomly-selected partitions of the judges, and taking the median of 100 such random splits,
 * Correct comparisons is the proportion of individual decisions that agree with the final rank order of the items.
 
-```{r}
+```{r reliabilities-distribution}
 observed_reliabilities <- meta_analysis_data %>% 
-  select(judging_session, ssr, median_split_corr, prop_correct_judgements) %>% 
+  select(judging_session, ssr, median_split_corr) %>% 
   pivot_longer(-judging_session, names_to = "measure", values_to = "value") %>% 
   mutate(measure = case_when(
     measure == "ssr" ~ "Scale Separation Reliability",
-    measure == "median_split_corr" ~ "Split-halves reliability",
-    measure == "prop_correct_judgements" ~ "Correct comparisons"
+    measure == "median_split_corr" ~ "Split-halves reliability"
   )) %>% 
-  mutate(measure = fct_relevel(measure, "Scale Separation Reliability", "Split-halves reliability", "Correct comparisons"))
+  mutate(measure = fct_relevel(measure, "Scale Separation Reliability", "Split-halves reliability"))
 
 plot_reliabilities <- observed_reliabilities %>% 
   ggplot(aes(x = measure, y = value)) +
@@ -126,49 +125,9 @@ plot_reliabilities +
   ) +
   expand_limits(x = -0.1) # stop the boxplot labels getting chopped off
 
-ggsave("figs-pdf/FIG_RQ2-distribution.pdf", units = "cm", width = 15, height = 9)
+ggsave("figs-pdf/FIG_RQ2-distribution.pdf", units = "cm", width = 15, height = 6)
 ```
 
-
-## Relationship between observed measures
-
-```{r, scatter, fig.height=6, fig.width=6}
-plot_scatter <- observed_reliabilities %>%
-  left_join(observed_reliabilities, by = "judging_session", relationship = "many-to-many") %>%
-  filter(measure.x != measure.y) %>%
-  filter(measure.x != "Correct comparisons") %>%
-  filter(measure.y != "Scale Separation Reliability") %>%
-  ggplot(aes(x = value.x, y = value.y)) +
-  geom_point(alpha = 0.4) +
-  geom_smooth(method = "lm", formula = "y ~ x", colour = "#003399", se = FALSE) +
-  geom_abline(slope = 1, intercept = 0) +
-  facet_grid(
-    rows = vars(measure.y),
-    cols = vars(measure.x),
-    scales = "free",
-    switch = "both"
-  ) +
-  labs(x = "", y = "") +
-  lims(x = c(0,1), y = c(0,1)) +
-  theme_minimal(base_size = 12) +
-  theme(
-    aspect.ratio = 1,
-    # put the facet titles outside the y-axis ticks
-    strip.placement = "outside",
-    # add space between the panels
-    panel.spacing = unit(2, "lines"),
-  )
-
-# kill off the unused top right panel! https://stackoverflow.com/a/49525552
-grob <- ggplotGrob(plot_scatter);
-# Remove facet
-grob$grobs[[which(grob$layout$name %in% c("panel-1-2"))]] <- grid::nullGrob();
-# Plot
-grid::grid.newpage()
-grid::grid.draw(grob)
-
-ggsave("figs-pdf/FIG_RQ2-observed-scatterplot.pdf", plot = grob, units = "cm", width = 14, height = 14)
-```
 
 
 # Effect of N_CR on reliability measures
@@ -211,7 +170,7 @@ reliabilities_ncr_plot_data <- reliabilities_ncr_plot_data %>%
   filter(ncr != "10+")
 ```
 
-```{r include=FALSE}
+```{r reliabilities-by-ncr, include=FALSE}
 reliabilities_ncr_plot_data %>% 
   ggplot(aes(x = ncr, y = value, color = highlight)) +
   scale_colour_manual(
@@ -242,7 +201,7 @@ reliabilities_ncr_plot_data %>%
 ggsave("figs-pdf/FIG_RQ2-varying-ncr.pdf", units = "cm", width = 14, height = 7)
 ```
 
-```{r}
+```{r reliabilities-by-ncr-with-shapes}
 reliabilities_ncr %>% 
   filter(measure!="Correct comparisons") %>%
   mutate(ncr_shape = case_when(N_CR < 20 ~ 0,
@@ -296,9 +255,11 @@ reliabilities_ncr_plot_data %>%
   basic_kable(digits = 3)
 ```
 
+### Adaptivity
+
 The trend in "correct comparisons" seems to be down to the adaptive studies being more likely to have high values on that measure while having low N_CR:
 
-```{r}
+```{r adaptivity-correct-comparisons}
 meta_analysis_data %>% 
   mutate(N_CR = 2 * observed_N_C / observed_N_R) %>% 
   ggplot(aes(x = adaptivity, y = prop_correct_judgements)) +
@@ -315,7 +276,7 @@ meta_analysis_data %>%
     linewidth = 0.3,
     outlier.size = 0.4
   ) +
-  labs(y = "", x = "Adaptivity") +
+  labs(x = "Adaptivity") +
   theme(
     legend.position = "none",
     axis.title.x = element_text(size = 9)
@@ -324,7 +285,7 @@ meta_analysis_data %>%
 
 It may also be ascribed to the prevalence of layperson judges in studies with large N_CR:
 
-```{r}
+```{r judge-expertise-ncr}
 meta_analysis_data %>% 
   mutate(N_CR = 2 * observed_N_C / observed_N_R) %>% 
   mutate(N_CR_above_37 = if_else(N_CR >= 37, "N_CR >= 37", "N_CR < 37")) %>% 
@@ -354,7 +315,7 @@ meta_analysis_data %>%
 
 Focusing only on the SSR and split-halves measures:
 
-```{r}
+```{r varying-ncr-horiz}
 reliabilities_ncr_plot_data %>% 
   filter(measure != "Correct comparisons") %>% 
   ggplot(aes(x = ncr, y = value, color = highlight)) +
@@ -389,7 +350,7 @@ ggsave("figs-pdf/FIG_RQ2-varying-ncr-horiz.pdf", units = "cm", width = 14, heigh
 ```
 
 
-```{r}
+```{r varying-ncr}
 reliabilities_ncr_plot_data %>% 
   filter(measure != "Correct comparisons") %>% 
   ggplot(aes(x = ncr, y = value, color = highlight)) +
@@ -429,9 +390,12 @@ ggsave("figs-pdf/FIG_RQ2-ssr-vs-splithalves-by-ncr.pdf", units = "cm", width = 1
 
 For each study, we computed the SSR and SHR from the judgement data. Here, each point is one study and we see that the two values are closely related:
 
-```{r}
+```{r ssr-vs-shr}
+ssr_vs_shr_data <- meta_analysis_data %>% 
+  filter(adaptivity == FALSE)
+
 ssr_all_vs_splithalves_plot <- 
-  meta_analysis_data %>% 
+  ssr_vs_shr_data %>% 
   ggplot(aes(x = ssr, y = median_split_corr)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
   geom_vline(xintercept = 0.7, alpha = 0.3) +
@@ -439,7 +403,8 @@ ssr_all_vs_splithalves_plot <-
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, 
               colour = "black") +
-  labs(x = expression(SSR[ALL]), y = "Split-halves reliability (SHR)") +
+  #labs(x = expression(SSR[ALL]), y = "Split-halves reliability (SHR)") +
+  labs(x = "SSR", y = "Split-halves reliability (SHR)") +
   scale_y_continuous(limits = c(0, 1), breaks = seq(0, 1, by = .20)) +
   scale_x_continuous(limits = c(0, 1), breaks = seq(0, 1, by = .20)) +
   #lims(x = c(0.25,1), y = c(0.25,1)) +
@@ -451,11 +416,11 @@ ssr_all_vs_splithalves_plot <-
 ssr_all_vs_splithalves_plot
 
 ggsave("figs-pdf/FIG_RQ2b-ssrALL-vs-shr.pdf", units = "cm", width = 14, height = 14)
+ggsave("figs-pdf/FIG_PANEL_RQ2b-ssrALL-vs-shr.pdf", units = "cm", width = 8, height = 8)
 
-
-lm(formula = median_split_corr ~ ssr, data = meta_analysis_data) %>% summary()
-cor.test(formula = ~ median_split_corr + ssr, data = meta_analysis_data, method = "pearson")
-cor.test(formula = ~ median_split_corr + ssr, data = meta_analysis_data, method = "spearman")
+lm(formula = median_split_corr ~ ssr, data = ssr_vs_shr_data) %>% summary()
+cor.test(formula = ~ median_split_corr + ssr, data = ssr_vs_shr_data, method = "pearson")
+cor.test(formula = ~ median_split_corr + ssr, data = ssr_vs_shr_data, method = "spearman")
 ```
 
 
@@ -480,7 +445,7 @@ Now the question is: how do `ssr_x` and `split_corr` relate? (That would give so
 
 From each judging session, we have 100 data points to address that question, but they are not really independent since they are built on the same judgement data. So we summarise each judging session by the *median* of `ssr_x` and `split_corr` across the 100 different splits. We could have used the *mean* but it doesn't actually make much difference as an estimate of the expected value; both averages are very similar in practice, as shown in this plot of the raw values and their averages (mean in red, median in green) in the first 16 sets of judging data:
 
-```{r}
+```{r raw-sims}
 raw_sims_head <- raw_sims %>% 
   group_by(judging_session) %>% 
   filter(cur_group_id() <= 16) %>% 
@@ -496,9 +461,9 @@ raw_sims_head %>%
 
 So using the medians, we have the following picture:
 
-```{r}
+```{r ssrHALF-vs-shr}
 ssr_half_vs_splithalves_plot <- 
-  meta_analysis_data %>% 
+  ssr_vs_shr_data %>% 
   ggplot(aes(x = median_ssr_x, y = median_split_corr)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
   geom_vline(xintercept = 0.7, alpha = 0.3) +
@@ -518,10 +483,11 @@ ssr_half_vs_splithalves_plot <-
 ssr_half_vs_splithalves_plot
 
 ggsave("figs-pdf/FIG_RQ2b-ssr-vs-shr.pdf", units = "cm", width = 12, height = 12)
+ggsave("figs-pdf/FIG_PANEL_RQ2b-ssrHALF-vs-shr.pdf", units = "cm", width = 8, height = 8)
 ```
 <details><summary>Extra plot</summary>
 
-```{r}
+```{r two-ssr-vs-shr-plots}
 library(patchwork)
 wrap_plots(ssr_all_vs_splithalves_plot, ssr_half_vs_splithalves_plot) +
   plot_annotation(tag_levels = 'a', tag_prefix = '(', tag_suffix = ')')
@@ -534,17 +500,17 @@ ggsave("figs-pdf/FIG_RQ2b-ssr-vs-shr-both-ways.pdf", units = "cm", width = 16, h
 There is a strong linear relationship here:
 
 ```{r}
-ssr_vs_splithalves_lm <- lm(formula = median_split_corr ~ median_ssr_x, data = meta_analysis_data)
+ssr_vs_splithalves_lm <- lm(formula = median_split_corr ~ median_ssr_x, data = ssr_vs_shr_data)
 
 ssr_vs_splithalves_lm %>% summary()
 ```
 
 We can add a 95% prediction interval from the linear regression:
 
-```{r}
+```{r prediction-interval}
 pred_interval <- tibble(median_ssr_x = seq(0.5, 1, by = 0.01))
 prediction_interval_data <- bind_cols(
-  pred_interval, predict(lm(formula = median_split_corr ~ median_ssr_x, data = meta_analysis_data), new = pred_interval, se.fit = TRUE, interval = "prediction")$fit
+  pred_interval, predict(lm(formula = median_split_corr ~ median_ssr_x, data = ssr_vs_shr_data), new = pred_interval, se.fit = TRUE, interval = "prediction")$fit
   )
 
 ssr_half_vs_splithalves_plot +
@@ -552,7 +518,36 @@ ssr_half_vs_splithalves_plot +
   geom_line(data = prediction_interval_data, aes(x = median_ssr_x, y = upr), colour = "#00339999")
 ```
 
-So for instance, with an SSR of 0.8 we might then read off the blue prediction interval and expect to get a correlation of anywhere between 0.55 and 0.9 with scores generated by a similar group of judges.
+So for instance, with an SSR of 0.8 we might then read off the blue prediction interval and expect to get a correlation of anywhere between 0.5 and 0.9 with scores generated by a similar group of judges.
+
+### Spearman-Brown correction
+
+We apply the Spearman-Brown correction to the SHR value:
+
+\[\text{SRH}_\text{SB}=\frac{2\times\text{SHR}}{1+\text{SHR}}\]
+
+```{r ssr-vs-shr-spearman-brown}
+ssr_vs_shr_data %>% 
+  mutate(shr_sb = 2*median_split_corr / (1 + median_split_corr)) %>% 
+  ggplot(aes(x = ssr, y = shr_sb)) +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
+  geom_vline(xintercept = 0.7, alpha = 0.3) +
+  geom_hline(yintercept = 0.7, alpha = 0.3) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, 
+              colour = "black") +
+  labs(x = "SSR", y = "Spearman-Brown corrected SHR") +
+  scale_y_continuous(limits = c(0, 1), breaks = seq(0, 1, by = .20)) +
+  scale_x_continuous(limits = c(0, 1), breaks = seq(0, 1, by = .20)) +
+  #lims(x = c(0.25,1), y = c(0.25,1)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    aspect.ratio = 1,
+  )
+
+ggsave("figs-pdf/FIG_PANEL_RQ2b-ssrALL-vs-shrSB.pdf", units = "cm", width = 8, height = 8)
+```
+
 
 ## Comparing SSR and SHR thresholds
 
@@ -574,8 +569,8 @@ tibble(
   ssr_threshold = c(.7, .75, .8, .85, .9)
 ) %>% 
   mutate(
-    n = purrr::map_int(ssr_threshold, ~ meta_analysis_data %>% filter(median_ssr_x > .x) %>% nrow()),
-    n_with_shr_above_pt7 = purrr::map_int(ssr_threshold, ~ meta_analysis_data %>% filter(median_ssr_x > .x) %>% filter(median_split_corr > 0.7) %>% nrow()),
+    n = purrr::map_int(ssr_threshold, ~ ssr_vs_shr_data %>% filter(median_ssr_x > .x) %>% nrow()),
+    n_with_shr_above_pt7 = purrr::map_int(ssr_threshold, ~ ssr_vs_shr_data %>% filter(median_ssr_x > .x) %>% filter(median_split_corr > 0.7) %>% nrow()),
     pct = round(n_with_shr_above_pt7 / n * 100, digits = 0) %>% paste0("%")
   ) %>% 
   basic_kable()
@@ -620,7 +615,7 @@ reliability_corr_plot_data <- meta_analysis_data %>%
 
 The trend seems to be that with increasing N_CR, the relationship between the two measures gets closer to the y=x line. (i.e., with sufficient judgements that split-halves makes sense, the SSR is  split-halves reliability)
 
-```{r}
+```{r ssr-vs-shr-regression}
 ncr_thresholds_colours <- c(
   "0+" = RColorBrewer::brewer.pal(6, "Blues")[3],
   #"10+" = RColorBrewer::brewer.pal(6, "Blues")[4],
@@ -655,7 +650,7 @@ reliability_corr_plot_data %>%
 ggsave("figs-pdf/FIG_RQ2-ssr-vs-splithalves.pdf", units = "cm", width = 14, height = 14)
 ```
 
-```{r}
+```{r ssr-vs-shr-regression-facets}
 tibble(ncr_threshold = c(0, 20, 37)) %>%  
   mutate(relevant_data = map(ncr_threshold, ~ reliability_corr_plot_data %>% filter(N_CR >= .x))) %>% 
   unnest(relevant_data) %>% 
@@ -716,6 +711,8 @@ summary(lm(formula = median_split_corr ~ median_ssr_x, data = reliability_corr_p
 
 Look at how representations, assessors, comparisons and their derivatives relate to SSR and SHR.
 
+Note that here we restrict to only the *non-adaptive* CJ sessions.
+
 ```{r}
 characteristics_of_interest <-
   c("observed_N_A",
@@ -729,7 +726,8 @@ reliability_characteristics <- meta_analysis_data %>%
   mutate(
     N_CA = observed_N_C/observed_N_A,
     N_CR = 2*observed_N_C/observed_N_R,
-    N_RA = observed_N_R/observed_N_A)
+    N_RA = observed_N_R/observed_N_A) %>% 
+  filter(adaptivity == FALSE)
 
 # write out a copy of this data in case it is useful elsewhere
 reliability_characteristics %>% 
@@ -801,7 +799,7 @@ sig_for_ssr <- rel_corrs %>%
 
 ### Plotting
 
-```{r}
+```{r all-correlations}
 library(GGally)
 
 # thanks to https://bookdown.org/content/3686/metric-predicted-variable-with-multiple-metric-predictors.html
@@ -874,7 +872,7 @@ ggsave("figs-pdf/FIG_RQ2_all-correlations.pdf", units = "cm", width = 12, height
 
 Sig correlations with SHR are `r sig_for_shr`. Check scatter plots for SHR.
 
-```{r}
+```{r shr-scatter}
 reliability_characteristics %>% 
   select(median_split_corr, all_of(characteristics_of_interest)) %>% 
   pivot_longer(cols = -median_split_corr, names_to = "characteristic") %>% 
@@ -914,7 +912,7 @@ shr_table <-
 
 For SSR we have significant correlation with `r sig_for_ssr`.
 
-```{r}
+```{r ssr-scatter}
 reliability_characteristics %>% 
   select(ssr, all_of(characteristics_of_interest)) %>% 
   pivot_longer(cols = -ssr, names_to = "characteristic") %>% 
@@ -924,7 +922,7 @@ reliability_characteristics %>%
     facet_wrap(~ characteristic, scales = "free")
 ```
 
-```{r}
+```{r ssr-vs-ncr}
 reliability_characteristics %>% 
   select(ssr, N_CR) %>% 
   pivot_longer(cols = -ssr, names_to = "characteristic") %>% 
@@ -1033,15 +1031,23 @@ Let's compare SSR and SHR for these thresholds
 
 ```{r}
 #select the data we need
-thresholds <- reliability_characteristics %>% 
-  mutate(ncr_level = case_when(N_CR < 20 ~ "0. low",
-                               N_CR < 37 ~ "1. medium",
-                               .default = "2. high"))
+thresholds <- reliability_characteristics %>%
+  mutate(
+    ncr_level = case_when(N_CR < 20 ~ "0. low",
+                          N_CR < 37 ~ "1. medium",
+                          .default = "2. high")
+  )
 ```
 
-```{r}
+```{r reliability-by-ncr}
 thresholds %>% 
-  pivot_longer(cols = c(median_split_corr, ssr, median_ssr_x), names_to = "measure") %>% 
+  pivot_longer(cols = c(median_split_corr, ssr), names_to = "measure") %>% 
+  mutate(
+    measure = case_when(
+      measure == "ssr" ~ "Scale Separation Reliability",
+      measure == "median_split_corr" ~ "Split-halves reliability"
+    )
+  ) %>% 
   ggplot(aes(x = ncr_level, y = value)) +
   geom_point(
     position = position_jitter(width = 0.1, seed = 123),
@@ -1057,11 +1063,17 @@ thresholds %>%
     outlier.size = 0.4
   ) +
   facet_grid(cols = vars(measure)) +
-  labs(y = "", x = "Number of comparisons per representation") +
+  labs(y = "", x = "Comparisons per representation") +
+  scale_x_discrete(
+    labels = c("low\n(<20)", "medium\n(20+)", "high\n(37+)")
+  ) +
+  theme_minimal(base_size = 12) +
   theme(
     legend.position = "none",
     axis.title.x = element_text(size = 9)
   )
+
+ggsave("figs-pdf/FIG_RQ2-ssr-shr-by-ncr.pdf", units = "cm", width = 11, height = 7)
 ```
 
 
@@ -1072,10 +1084,10 @@ thresholds %>% group_by(ncr_level) %>%
   summarise(count=n(),
             median = median(ssr),
             min = min(ssr),
-            max = max(ssr))
+            max = max(ssr)) %>% basic_kable()
 
-thresholds %>% kruskal_test(ssr ~ ncr_level)
-thresholds %>% dunn_test(ssr ~ ncr_level) 
+thresholds %>% kruskal_test(ssr ~ ncr_level) %>% basic_kable()
+thresholds %>% dunn_test(ssr ~ ncr_level)  %>% basic_kable()
 ```
 
 
@@ -1087,77 +1099,10 @@ thresholds %>% group_by(ncr_level) %>%
   summarise(count=n(),
             median = median(median_split_corr),
             min = min(median_split_corr),
-            max = max(median_split_corr))
+            max = max(median_split_corr)) %>% basic_kable()
 
-thresholds %>% kruskal_test(median_split_corr ~ ncr_level) # p=0.0000514	
-thresholds %>% dunn_test(median_split_corr ~ ncr_level) 	
-
-```
-
-### Restricting to non-adaptive CJ
-
-
-```{r}
-#select the data we need
-thresholds <- reliability_characteristics %>% 
-  mutate(ncr_level = case_when(N_CR < 20 ~ "0. low",
-                               N_CR < 37 ~ "1. medium",
-                               .default = "2. high")) %>% 
-  filter(adaptivity == FALSE)
-```
-
-```{r}
-thresholds %>% 
-  pivot_longer(cols = c(median_split_corr, ssr, median_ssr_x), names_to = "measure") %>% 
-  ggplot(aes(x = ncr_level, y = value)) +
-  geom_point(
-    position = position_jitter(width = 0.1, seed = 123),
-    # add jitter to the observations, using seed so it's reproducible
-    alpha = 0.2,
-    size = 0.4
-  ) +
-  geom_boxplot(
-    width = 0.5,
-    varwidth = TRUE,
-    position = position_nudge(x = 0.45),
-    linewidth = 0.3,
-    outlier.size = 0.4
-  ) +
-  facet_grid(cols = vars(measure)) +
-  labs(y = "", x = "Number of comparisons per representation") +
-  theme(
-    legend.position = "none",
-    axis.title.x = element_text(size = 9)
-  )
-```
-
-
-For the case of SSR
-
-```{r}
-thresholds %>% group_by(ncr_level) %>% 
-  summarise(count=n(),
-            median = median(ssr),
-            min = min(ssr),
-            max = max(ssr))
-
-thresholds %>% kruskal_test(ssr ~ ncr_level)
-thresholds %>% dunn_test(ssr ~ ncr_level) 
-```
-
-
-
-For the case of SHR
-
-```{r}
-thresholds %>% group_by(ncr_level) %>% 
-  summarise(count=n(),
-            median = median(median_split_corr),
-            min = min(median_split_corr),
-            max = max(median_split_corr))
-
-thresholds %>% kruskal_test(median_split_corr ~ ncr_level)	
-thresholds %>% dunn_test(median_split_corr ~ ncr_level) 	
+thresholds %>% kruskal_test(median_split_corr ~ ncr_level) %>% basic_kable()
+thresholds %>% dunn_test(median_split_corr ~ ncr_level) %>% basic_kable()
 
 ```
 
@@ -1172,7 +1117,7 @@ verhavert_data <- read_delim("https://zenodo.org/record/2586084/files/Assessment
 
 Here we combine their data with our own, to extend their analysis.
 
-```{r}
+```{r combined-with-verhavert}
 ssr_vs_ncr <- meta_analysis_data %>%
     mutate(N_CR = 2 * observed_N_C / observed_N_R) %>%
     select(judging_session, adaptivity, N_CR, SSR = ssr)
@@ -1200,26 +1145,42 @@ The bulk of those are from Pollitt, where it is likely that adaptivity was used 
 
 The adaptivity seems to produce separate clusters in our sample:
 
-```{r}
-bind_rows(
+```{r ncr-vs-ssr-by-adaptivity}
+ncr_vs_ssr_by_adaptivity_data <- bind_rows(
   "Verhavert et al." = verhavert_data %>%
     transmute(judging_session = paste(Assessment, `Assessor group`), N_CR, SSR),
-  "Kinnear et al. (non-adaptive)" = ssr_vs_ncr %>%
+  "non-adaptive" = ssr_vs_ncr %>%
     filter(adaptivity == FALSE),
-  "Kinnear et al. (adaptive)" = ssr_vs_ncr %>%
+  "adaptive" = ssr_vs_ncr %>%
     filter(adaptivity == TRUE),
-  "Kinnear et al. (unknown)" = ssr_vs_ncr %>%
+  "unknown" = ssr_vs_ncr %>%
     filter(adaptivity == "unknown"),
   .id = "study"
-) %>% 
-  filter(N_CR < 60) %>% 
+)
+
+ncr_vs_ssr_by_adaptivity_data %>% 
+  filter(N_CR >= 300) %>% 
+  basic_kable(caption = "Omitted studies")
+
+
+ncr_vs_ssr_by_adaptivity_data %>% 
+  filter(N_CR >= 100) %>% 
+  filter(SSR < 0.8) %>% 
+  basic_kable(caption = "Outliers")
+
+ncr_vs_ssr_by_adaptivity_data %>% 
+  filter(N_CR < 300) %>% 
   ggplot(aes(x = N_CR, y = SSR, shape = study, colour = study)) +
-  geom_point()
+  geom_point() +
+  scale_colour_viridis_d(end = 0.9, option = "plasma") +
+  labs(x = expression(N[CR]))
+
+ggsave("figs-pdf/FIG_RQ2-ncr-vs-ssr.pdf", units = "cm", width = 12, height = 8)
 ```
 
 Let's see what the main SSR vs split-halves plot looks like for only the non-adaptive studies.
 
-```{r}
+```{r ssr-vs-ncr-regression-nonadaptive}
 reliability_corr_plot_data_nonadaptive <- reliability_corr_plot_data %>% 
   semi_join(ssr_vs_ncr %>% filter(adaptivity == FALSE), join_by(judging_session))
 
@@ -1251,7 +1212,7 @@ reliability_corr_plot_data_nonadaptive %>%
 
 Or the simpler version, with adaptive vs non-adaptive highlighted:
 
-```{r}
+```{r ssr-vs-ncr-regression-by-adaptivity}
 meta_analysis_data %>% 
   ggplot(aes(x = median_ssr_x, y = median_split_corr, colour = adaptivity, shape = adaptivity)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
@@ -1280,13 +1241,45 @@ reliability_characteristics %>%
     family = gaussian(link = "logit")) %>% summary()
 ```
 
-Verhavert et al. (2019) found that N_CR was significant in the model, while it's not for us.
+This replicates the finding from Verhavert et al. (2019), that N_CR was significant in the model.
 
-Restricting to only the non-adaptive studies in our sample, it is significant:
+
+> TODO - the logit link is not supported in `stan_glm`:
 
 ```{r}
+library(rstanarm)
+fit2 <- 
 reliability_characteristics %>% 
   filter(adaptivity == FALSE) %>%  
-  glm(ssr ~ N_CR, data = .,
-    family = gaussian(link = "logit")) %>% summary()
+  filter(N_CR < 100) %>% 
+  stan_glm(
+  ssr ~ 1 + N_CR,
+  data = .,
+  family = gaussian(link = "log"),
+  prior_intercept = normal(0, 10),
+  refresh = 0,
+  # for speed of example only
+  chains = 4, iter = 2000
+)
+
+fit2
+
+plot(fit2, plotfun = "areas", prob = 0.9,
+     pars = c("(Intercept)", "N_CR"))
 ```
+
+```{r}
+library(tidybayes)
+library(modelr)
+
+rel_dat <- reliability_characteristics %>% 
+  filter(adaptivity == FALSE) %>% 
+  filter(N_CR < 100)
+rel_dat %>%
+  data_grid(N_CR = seq_range(N_CR, n = 51)) %>%
+  add_epred_draws(fit2) %>%
+  ggplot(aes(x = N_CR, y = ssr)) +
+  stat_lineribbon(aes(y = .epred)) +
+  geom_point(data = rel_dat)
+```
+

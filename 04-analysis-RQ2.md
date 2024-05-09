@@ -30,11 +30,7 @@ For these plots:
 - Correct comparisons is the proportion of individual decisions that
   agree with the final rank order of the items.
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-3-1.png)<!-- -->
-
-## Relationship between observed measures
-
-![](figs-web/04-analysis-RQ2/scatter-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/reliabilities-distribution-1.png)<!-- -->
 
 # Effect of N_CR on reliability measures
 
@@ -105,7 +101,7 @@ all
 Since there is only one study that is just below the 10+ threshold, we
 will just proceed with the all/20+/37+ groups.
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-7-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/reliabilities-by-ncr-with-shapes-1.png)<!-- -->
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -173,26 +169,6 @@ all
 </tr>
 <tr>
 <td style="text-align:left;">
-Correct comparisons
-</td>
-<td style="text-align:left;">
-all
-</td>
-<td style="text-align:right;">
-0.561
-</td>
-<td style="text-align:right;">
-0.775
-</td>
-<td style="text-align:right;">
-0.956
-</td>
-<td style="text-align:right;">
-0.752
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Scale Separation Reliability
 </td>
 <td style="text-align:left;">
@@ -229,26 +205,6 @@ Split-halves reliability
 </td>
 <td style="text-align:right;">
 0.734
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Correct comparisons
-</td>
-<td style="text-align:left;">
-20+
-</td>
-<td style="text-align:right;">
-0.561
-</td>
-<td style="text-align:right;">
-0.750
-</td>
-<td style="text-align:right;">
-0.943
-</td>
-<td style="text-align:right;">
-0.625
 </td>
 </tr>
 <tr>
@@ -291,47 +247,29 @@ Split-halves reliability
 0.773
 </td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Correct comparisons
-</td>
-<td style="text-align:left;">
-37+
-</td>
-<td style="text-align:right;">
-0.561
-</td>
-<td style="text-align:right;">
-0.701
-</td>
-<td style="text-align:right;">
-0.943
-</td>
-<td style="text-align:right;">
-0.500
-</td>
-</tr>
 </tbody>
 </table>
+
+### Adaptivity
 
 The trend in “correct comparisons” seems to be down to the adaptive
 studies being more likely to have high values on that measure while
 having low N_CR:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-9-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/adaptivity-correct-comparisons-1.png)<!-- -->
 
 It may also be ascribed to the prevalence of layperson judges in studies
 with large N_CR:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-10-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/judge-expertise-ncr-1.png)<!-- -->
 
 ## SSR and split-halves only
 
 Focusing only on the SSR and split-halves measures:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-11-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/varying-ncr-horiz-1.png)<!-- -->
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-12-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/varying-ncr-1.png)<!-- -->
 
 # Relationships between reliability measures
 
@@ -341,48 +279,48 @@ For each study, we computed the SSR and SHR from the judgement data.
 Here, each point is one study and we see that the two values are closely
 related:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-13-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/ssr-vs-shr-1.png)<!-- -->
 
     ## 
     ## Call:
-    ## lm(formula = median_split_corr ~ ssr, data = meta_analysis_data)
+    ## lm(formula = median_split_corr ~ ssr, data = ssr_vs_shr_data)
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.23648 -0.04462  0.00308  0.04420  0.36646 
+    ## -0.23620 -0.02650  0.00257  0.02624  0.36198 
     ## 
     ## Coefficients:
     ##             Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)  -0.8887     0.1060  -8.385 3.56e-13 ***
-    ## ssr           1.8280     0.1172  15.595  < 2e-16 ***
+    ## (Intercept)  -0.9902     0.1319  -7.505 2.86e-10 ***
+    ## ssr           1.9617     0.1484  13.216  < 2e-16 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.08016 on 99 degrees of freedom
-    ## Multiple R-squared:  0.7107, Adjusted R-squared:  0.7078 
-    ## F-statistic: 243.2 on 1 and 99 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.08826 on 62 degrees of freedom
+    ## Multiple R-squared:  0.738,  Adjusted R-squared:  0.7338 
+    ## F-statistic: 174.7 on 1 and 62 DF,  p-value: < 2.2e-16
 
     ## 
     ##  Pearson's product-moment correlation
     ## 
     ## data:  median_split_corr and ssr
-    ## t = 15.595, df = 99, p-value < 2.2e-16
+    ## t = 13.216, df = 62, p-value < 2.2e-16
     ## alternative hypothesis: true correlation is not equal to 0
     ## 95 percent confidence interval:
-    ##  0.7753259 0.8915675
+    ##  0.7774385 0.9122476
     ## sample estimates:
     ##       cor 
-    ## 0.8430227
+    ## 0.8590768
 
     ## 
     ##  Spearman's rank correlation rho
     ## 
     ## data:  median_split_corr and ssr
-    ## S = 24378, p-value < 2.2e-16
+    ## S = 4624, p-value < 2.2e-16
     ## alternative hypothesis: true rho is not equal to 0
     ## sample estimates:
     ##       rho 
-    ## 0.8580198
+    ## 0.8941392
 
 ## Introducing SSR_HALF
 
@@ -423,11 +361,11 @@ as an estimate of the expected value; both averages are very similar in
 practice, as shown in this plot of the raw values and their averages
 (mean in red, median in green) in the first 16 sets of judging data:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-15-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/raw-sims-1.png)<!-- -->
 
 So using the medians, we have the following picture:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-16-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/ssrHALF-vs-shr-1.png)<!-- -->
 <details>
 <summary>
 Extra plot
@@ -435,39 +373,47 @@ Extra plot
 
     ## Warning: package 'patchwork' was built under R version 4.2.3
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-17-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/two-ssr-vs-shr-plots-1.png)<!-- -->
 </details>
 
 There is a strong linear relationship here:
 
     ## 
     ## Call:
-    ## lm(formula = median_split_corr ~ median_ssr_x, data = meta_analysis_data)
+    ## lm(formula = median_split_corr ~ median_ssr_x, data = ssr_vs_shr_data)
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.37257 -0.02588  0.00454  0.03109  0.39919 
+    ## -0.36634 -0.03026  0.00819  0.04000  0.40715 
     ## 
     ## Coefficients:
     ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)  -0.38572    0.08655  -4.457  2.2e-05 ***
-    ## median_ssr_x  1.38217    0.10392  13.301  < 2e-16 ***
+    ## (Intercept)   -0.4089     0.1118  -3.657 0.000527 ***
+    ## median_ssr_x   1.4051     0.1349  10.413 3.06e-15 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.08927 on 99 degrees of freedom
-    ## Multiple R-squared:  0.6412, Adjusted R-squared:  0.6376 
-    ## F-statistic: 176.9 on 1 and 99 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.104 on 62 degrees of freedom
+    ## Multiple R-squared:  0.6362, Adjusted R-squared:  0.6303 
+    ## F-statistic: 108.4 on 1 and 62 DF,  p-value: 3.056e-15
 
 We can add a 95% prediction interval from the linear regression:
 
-    ## Warning: Removed 13 rows containing missing values (`geom_line()`).
+    ## Warning: Removed 15 rows containing missing values (`geom_line()`).
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-19-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/prediction-interval-1.png)<!-- -->
 
 So for instance, with an SSR of 0.8 we might then read off the blue
 prediction interval and expect to get a correlation of anywhere between
-0.55 and 0.9 with scores generated by a similar group of judges.
+0.5 and 0.9 with scores generated by a similar group of judges.
+
+### Spearman-Brown correction
+
+We apply the Spearman-Brown correction to the SHR value:
+
+$$\text{SRH}_\text{SB}=\frac{2\times\text{SHR}}{1+\text{SHR}}$$
+
+![](figs-web/04-analysis-RQ2/ssr-vs-shr-spearman-brown-1.png)<!-- -->
 
 ## Comparing SSR and SHR thresholds
 
@@ -515,13 +461,13 @@ pct
 0.70
 </td>
 <td style="text-align:right;">
-96
+59
 </td>
 <td style="text-align:right;">
-67
+38
 </td>
 <td style="text-align:left;">
-70%
+64%
 </td>
 </tr>
 <tr>
@@ -529,13 +475,13 @@ pct
 0.75
 </td>
 <td style="text-align:right;">
-84
+50
 </td>
 <td style="text-align:right;">
-67
+38
 </td>
 <td style="text-align:left;">
-80%
+76%
 </td>
 </tr>
 <tr>
@@ -543,13 +489,13 @@ pct
 0.80
 </td>
 <td style="text-align:right;">
-63
+35
 </td>
 <td style="text-align:right;">
-57
+32
 </td>
 <td style="text-align:left;">
-90%
+91%
 </td>
 </tr>
 <tr>
@@ -557,13 +503,13 @@ pct
 0.85
 </td>
 <td style="text-align:right;">
-39
+26
 </td>
 <td style="text-align:right;">
-38
+25
 </td>
 <td style="text-align:left;">
-97%
+96%
 </td>
 </tr>
 <tr>
@@ -571,10 +517,10 @@ pct
 0.90
 </td>
 <td style="text-align:right;">
-25
+16
 </td>
 <td style="text-align:right;">
-25
+16
 </td>
 <td style="text-align:left;">
 100%
@@ -718,9 +664,9 @@ between the two measures gets closer to the y=x line. (i.e., with
 sufficient judgements that split-halves makes sense, the SSR is
 split-halves reliability)
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-23-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/ssr-vs-shr-regression-1.png)<!-- -->
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-24-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/ssr-vs-shr-regression-facets-1.png)<!-- -->
 
 However, looking at the correlations somewhat undermines that
 interpretation, as the correlation between the two variables decreases
@@ -865,6 +811,8 @@ is less predictive of `median_split_corr`:
 Look at how representations, assessors, comparisons and their
 derivatives relate to SSR and SHR.
 
+Note that here we restrict to only the *non-adaptive* CJ sessions.
+
 This table shows the Pearson correlation of each characteristic with SSR
 and with SHR:
 
@@ -900,36 +848,7 @@ N_RA
 SHR
 </td>
 <td style="text-align:left;">
-.23\*
-</td>
-<td style="text-align:left;">
-.11
-</td>
-<td style="text-align:left;">
-.22\*
-</td>
-<td style="text-align:left;">
-.01
-</td>
-<td style="text-align:left;">
-.26\*\*
-</td>
-<td style="text-align:left;">
--.01
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-SSR
-</td>
-<td style="text-align:left;">
-.20\*
-</td>
-<td style="text-align:left;">
-.19
-</td>
-<td style="text-align:left;">
-.21\*
+.28\*
 </td>
 <td style="text-align:left;">
 .09
@@ -938,7 +857,36 @@ SSR
 .25\*
 </td>
 <td style="text-align:left;">
-.13
+-.03
+</td>
+<td style="text-align:left;">
+.32\*\*
+</td>
+<td style="text-align:left;">
+-.14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SSR
+</td>
+<td style="text-align:left;">
+.29\*
+</td>
+<td style="text-align:left;">
+.12
+</td>
+<td style="text-align:left;">
+.28\*
+</td>
+<td style="text-align:left;">
+.03
+</td>
+<td style="text-align:left;">
+.37\*\*
+</td>
+<td style="text-align:left;">
+-.11
 </td>
 </tr>
 </tbody>
@@ -954,8 +902,8 @@ LaTeX table
     ## \toprule
     ## var1 & N\_A & N\_R & N\_C & N\_CA & N\_CR & N\_RA\\
     ## \midrule
-    ## SHR & .23* & .11 & .22* & .01 & .26** & -.01\\
-    ## SSR & .20* & .19 & .21* & .09 & .25* & .13\\
+    ## SHR & .28* & .09 & .25* & -.03 & .32** & -.14\\
+    ## SSR & .29* & .12 & .28* & .03 & .37** & -.11\\
     ## \bottomrule
     ## \end{tabular}
     ## \end{table}
@@ -970,14 +918,14 @@ LaTeX table
     ##   method from   
     ##   +.gg   ggplot2
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-32-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/all-correlations-1.png)<!-- -->
 
 ## Split-halves reliability
 
 Sig correlations with SHR are observed_N_A, observed_N_C, N_CR. Check
 scatter plots for SHR.
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-33-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/shr-scatter-1.png)<!-- -->
 
 Forced linear regression SHR:
 
@@ -989,20 +937,20 @@ Forced linear regression SHR:
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.48465 -0.06253  0.00572  0.11828  0.23211 
+    ## -0.46045 -0.08076  0.00762  0.14120  0.25577 
     ## 
     ## Coefficients:
     ##               Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)  7.407e-01  1.524e-02  48.614   <2e-16 ***
-    ## observed_N_A 9.699e-06  1.490e-04   0.065   0.9482    
-    ## observed_N_C 8.113e-07  2.215e-06   0.366   0.7150    
-    ## N_CR         7.566e-05  3.292e-05   2.298   0.0237 *  
+    ## (Intercept)  7.160e-01  2.237e-02  32.004   <2e-16 ***
+    ## observed_N_A 3.992e-05  1.732e-04   0.230   0.8185    
+    ## observed_N_C 4.598e-07  2.576e-06   0.179   0.8589    
+    ## N_CR         8.599e-05  3.830e-05   2.245   0.0285 *  
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.1424 on 97 degrees of freedom
-    ## Multiple R-squared:  0.1051, Adjusted R-squared:  0.07746 
-    ## F-statistic: 3.799 on 3 and 97 DF,  p-value: 0.01268
+    ## Residual standard error: 0.1613 on 60 degrees of freedom
+    ## Multiple R-squared:  0.1536, Adjusted R-squared:  0.1112 
+    ## F-statistic: 3.629 on 3 and 60 DF,  p-value: 0.01785
 
     ## 
     ## Call:
@@ -1010,16 +958,16 @@ Forced linear regression SHR:
     ## 
     ## Standardized Coefficients::
     ##  (Intercept) observed_N_A observed_N_C         N_CR 
-    ##           NA   0.02893218   0.16055744   0.24023892
+    ##           NA   0.12878042   0.09859018   0.28996489
 
 ## SSR
 
 For SSR we have significant correlation with observed_N_A, observed_N_C,
 N_CR.
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-36-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/ssr-scatter-1.png)<!-- -->
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-37-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/ssr-vs-ncr-1.png)<!-- -->
 
 SSR forced linear regression:
 
@@ -1031,20 +979,20 @@ SSR forced linear regression:
     ## 
     ## Residuals:
     ##       Min        1Q    Median        3Q       Max 
-    ## -0.222871 -0.036059  0.004854  0.054963  0.090531 
+    ## -0.202262 -0.031208 -0.001938  0.048620  0.109100 
     ## 
     ## Coefficients:
     ##                Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)   8.933e-01  7.048e-03 126.755   <2e-16 ***
-    ## observed_N_A -5.810e-05  6.893e-05  -0.843   0.4014    
-    ## observed_N_C  1.266e-06  1.025e-06   1.236   0.2195    
-    ## N_CR          3.753e-05  1.523e-05   2.465   0.0155 *  
+    ## (Intercept)   8.696e-01  9.486e-03  91.672  < 2e-16 ***
+    ## observed_N_A -4.607e-05  7.344e-05  -0.627  0.53286    
+    ## observed_N_C  1.176e-06  1.092e-06   1.077  0.28599    
+    ## N_CR          4.957e-05  1.624e-05   3.052  0.00338 ** 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.06588 on 97 degrees of freedom
-    ## Multiple R-squared:  0.09977,    Adjusted R-squared:  0.07193 
-    ## F-statistic: 3.583 on 3 and 97 DF,  p-value: 0.01658
+    ## Residual standard error: 0.06838 on 60 degrees of freedom
+    ## Multiple R-squared:  0.2064, Adjusted R-squared:  0.1667 
+    ## F-statistic: 5.202 on 3 and 60 DF,  p-value: 0.002926
 
     ## 
     ## Call:
@@ -1052,7 +1000,7 @@ SSR forced linear regression:
     ## 
     ## Standardized Coefficients::
     ##  (Intercept) observed_N_A observed_N_C         N_CR 
-    ##           NA   -0.3758196    0.5434517    0.2584404
+    ##           NA   -0.3394115    0.5757150    0.3816990
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1119,16 +1067,16 @@ NA
 observed_N_A
 </td>
 <td style="text-align:right;">
-0.03
+0.13
 </td>
 <td style="text-align:left;">
-.948
+.819
 </td>
 <td style="text-align:right;">
--0.38
+-0.34
 </td>
 <td style="text-align:left;">
-.401
+.533
 </td>
 </tr>
 <tr>
@@ -1136,16 +1084,16 @@ observed_N_A
 observed_N_C
 </td>
 <td style="text-align:right;">
-0.16
+0.10
 </td>
 <td style="text-align:left;">
-.715
+.859
 </td>
 <td style="text-align:right;">
-0.54
+0.58
 </td>
 <td style="text-align:left;">
-.219
+.286
 </td>
 </tr>
 <tr>
@@ -1153,16 +1101,16 @@ observed_N_C
 N_CR
 </td>
 <td style="text-align:right;">
-0.24
+0.29
 </td>
 <td style="text-align:left;">
-.024\*
+.028\*
 </td>
 <td style="text-align:right;">
-0.26
+0.38
 </td>
 <td style="text-align:left;">
-.015\*
+.003\*\*
 </td>
 </tr>
 </tbody>
@@ -1181,9 +1129,9 @@ LaTeX table
     ## Characteristic & beta & p & beta & p\\
     ## \midrule
     ## (Intercept) & NA & <0.001*** & NA & <0.001***\\
-    ## observed\_N\_A & 0.03 & .948 & -0.38 & .401\\
-    ## observed\_N\_C & 0.16 & .715 & 0.54 & .219\\
-    ## N\_CR & 0.24 & .024* & 0.26 & .015*\\
+    ## observed\_N\_A & 0.13 & .819 & -0.34 & .533\\
+    ## observed\_N\_C & 0.10 & .859 & 0.58 & .286\\
+    ## N\_CR & 0.29 & .028* & 0.38 & .003**\\
     ## \bottomrule
     ## \end{tabular}
     ## \end{table}
@@ -1199,7 +1147,7 @@ factor (VIF), where values above 10 are typically taken as an indicator
 of high multicollinearity:
 
     ## observed_N_A observed_N_C observed_N_R 
-    ##    32.553490    37.725036     2.319116
+    ##    37.764378    45.317187     2.833599
 
 Regardless of multicollinearity, we can proceed with a regression model
 involving all three characteristics, as well as interaction terms
@@ -1212,33 +1160,33 @@ between them:
     ## 
     ## Residuals:
     ##       Min        1Q    Median        3Q       Max 
-    ## -0.198106 -0.031430  0.008437  0.041221  0.088498 
+    ## -0.193257 -0.028208  0.002355  0.042499  0.103311 
     ## 
     ## Coefficients:
     ##                                          Estimate Std. Error t value Pr(>|t|)
-    ## (Intercept)                             8.699e-01  1.130e-02  76.987  < 2e-16
-    ## observed_N_A                           -7.975e-05  1.945e-04  -0.410 0.682667
-    ## observed_N_C                            1.825e-05  6.340e-06   2.879 0.004947
-    ## observed_N_R                            7.843e-05  3.716e-05   2.111 0.037493
-    ## observed_N_A:observed_N_C              -1.046e-08  2.168e-08  -0.483 0.630436
-    ## observed_N_A:observed_N_R              -7.413e-07  4.673e-07  -1.586 0.116103
-    ## observed_N_C:observed_N_R              -1.006e-08  2.873e-09  -3.502 0.000711
-    ## observed_N_A:observed_N_C:observed_N_R  1.116e-11  2.001e-11   0.558 0.578238
+    ## (Intercept)                             8.492e-01  1.494e-02  56.846  < 2e-16
+    ## observed_N_A                            9.393e-05  2.362e-04   0.398  0.69238
+    ## observed_N_C                            2.506e-05  7.447e-06   3.365  0.00139
+    ## observed_N_R                           -7.351e-05  9.994e-05  -0.736  0.46507
+    ## observed_N_A:observed_N_C              -3.580e-08  2.478e-08  -1.445  0.15411
+    ## observed_N_A:observed_N_R              -1.866e-06  6.379e-07  -2.926  0.00495
+    ## observed_N_C:observed_N_R              -7.414e-09  4.404e-09  -1.684  0.09781
+    ## observed_N_A:observed_N_C:observed_N_R  3.589e-11  2.289e-11   1.568  0.12249
     ##                                           
     ## (Intercept)                            ***
     ## observed_N_A                              
     ## observed_N_C                           ** 
-    ## observed_N_R                           *  
+    ## observed_N_R                              
     ## observed_N_A:observed_N_C                 
-    ## observed_N_A:observed_N_R                 
-    ## observed_N_C:observed_N_R              ***
+    ## observed_N_A:observed_N_R              ** 
+    ## observed_N_C:observed_N_R              .  
     ## observed_N_A:observed_N_C:observed_N_R    
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.06211 on 93 degrees of freedom
-    ## Multiple R-squared:  0.2327, Adjusted R-squared:  0.175 
-    ## F-statistic: 4.029 on 7 and 93 DF,  p-value: 0.0006776
+    ## Residual standard error: 0.06524 on 56 degrees of freedom
+    ## Multiple R-squared:  0.3258, Adjusted R-squared:  0.2415 
+    ## F-statistic: 3.866 on 7 and 56 DF,  p-value: 0.001692
 
 It is interesting here to see the interaction between $N_C$ and $N_R$
 appearing significant in the model.
@@ -1252,20 +1200,20 @@ interaction):
     ## 
     ## Residuals:
     ##       Min        1Q    Median        3Q       Max 
-    ## -0.205468 -0.039235  0.007434  0.047747  0.085765 
+    ## -0.189793 -0.042033  0.003282  0.053390  0.101307 
     ## 
     ## Coefficients:
     ##                             Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)                8.736e-01  8.585e-03 101.755  < 2e-16 ***
-    ## observed_N_C               8.657e-06  1.964e-06   4.408 2.70e-05 ***
-    ## observed_N_R               1.163e-04  2.981e-05   3.903 0.000176 ***
-    ## observed_N_C:observed_N_R -7.822e-09  1.837e-09  -4.259 4.76e-05 ***
+    ## (Intercept)                8.571e-01  1.177e-02  72.805  < 2e-16 ***
+    ## observed_N_C               1.034e-05  3.036e-06   3.406  0.00118 ** 
+    ## observed_N_R               1.482e-04  5.464e-05   2.713  0.00869 ** 
+    ## observed_N_C:observed_N_R -9.409e-09  2.926e-09  -3.216  0.00210 ** 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.06201 on 97 degrees of freedom
-    ## Multiple R-squared:  0.2024, Adjusted R-squared:  0.1778 
-    ## F-statistic: 8.206 on 3 and 97 DF,  p-value: 6.371e-05
+    ## Residual standard error: 0.06801 on 60 degrees of freedom
+    ## Multiple R-squared:  0.2151, Adjusted R-squared:  0.1758 
+    ## F-statistic:  5.48 on 3 and 60 DF,  p-value: 0.002143
 
     ## 
     ## Call:
@@ -1273,9 +1221,9 @@ interaction):
     ## 
     ## Standardized Coefficients::
     ##               (Intercept)              observed_N_C              observed_N_R 
-    ##                        NA                 3.7148476                 0.6043463 
+    ##                        NA                 5.0620229                 0.7974489 
     ## observed_N_C:observed_N_R 
-    ##                -3.8427763
+    ##                -5.2741432
 
 Another approach would be to consider log-transformed versions of the
 three characteristics:
@@ -1286,118 +1234,540 @@ three characteristics:
     ## 
     ## Residuals:
     ##       Min        1Q    Median        3Q       Max 
-    ## -0.167908 -0.035564  0.002824  0.047125  0.105615 
+    ## -0.149009 -0.033278  0.005137  0.037749  0.094847 
     ## 
     ## Coefficients:
-    ##                          Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)              0.969341   0.235720   4.112 8.45e-05 ***
-    ## log_N_A                 -0.302560   0.145163  -2.084   0.0399 *  
-    ## log_N_C                  0.030431   0.084047   0.362   0.7181    
-    ## log_N_R                 -0.101004   0.122462  -0.825   0.4116    
-    ## log_N_A:log_N_C          0.066723   0.043898   1.520   0.1319    
-    ## log_N_A:log_N_R          0.125360   0.072570   1.727   0.0874 .  
-    ## log_N_C:log_N_R          0.009525   0.034931   0.273   0.7857    
-    ## log_N_A:log_N_C:log_N_R -0.026630   0.017938  -1.485   0.1410    
+    ##                         Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)              1.26822    0.24691   5.136 3.67e-06 ***
+    ## log_N_A                 -0.48759    0.14964  -3.258 0.001907 ** 
+    ## log_N_C                  0.02357    0.08515   0.277 0.782908    
+    ## log_N_R                 -0.51419    0.14218  -3.616 0.000642 ***
+    ## log_N_A:log_N_C          0.08159    0.04372   1.866 0.067274 .  
+    ## log_N_A:log_N_R          0.33984    0.08719   3.898 0.000262 ***
+    ## log_N_C:log_N_R          0.07481    0.03690   2.027 0.047417 *  
+    ## log_N_A:log_N_C:log_N_R -0.06151    0.01969  -3.124 0.002828 ** 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.06031 on 93 degrees of freedom
-    ## Multiple R-squared:  0.2766, Adjusted R-squared:  0.2221 
-    ## F-statistic:  5.08 on 7 and 93 DF,  p-value: 6.507e-05
+    ## Residual standard error: 0.05497 on 56 degrees of freedom
+    ## Multiple R-squared:  0.5214, Adjusted R-squared:  0.4615 
+    ## F-statistic: 8.715 on 7 and 56 DF,  p-value: 3.382e-07
 
 ## What about the suggested thesholds of N_CR\>=20 and NC_R\>=37?
 
 Let’s compare SSR and SHR for these thresholds
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-47-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/reliability-by-ncr-1.png)<!-- -->
 
 For the case of SSR
 
-    ## # A tibble: 3 × 5
-    ##   ncr_level count median   min   max
-    ##   <chr>     <int>  <dbl> <dbl> <dbl>
-    ## 1 0. low       37  0.911 0.699 0.983
-    ## 2 1. medium    20  0.885 0.757 0.982
-    ## 3 2. high      44  0.932 0.672 0.994
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+ncr_level
+</th>
+<th style="text-align:right;">
+count
+</th>
+<th style="text-align:right;">
+median
+</th>
+<th style="text-align:right;">
+min
+</th>
+<th style="text-align:right;">
+max
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
 
-    ## # A tibble: 1 × 6
-    ##   .y.       n statistic    df     p method        
-    ## * <chr> <int>     <dbl> <int> <dbl> <chr>         
-    ## 1 ssr     101      3.51     2 0.173 Kruskal-Wallis
+0.  low
+    </td>
+    <td style="text-align:right;">
+    9
+    </td>
+    <td style="text-align:right;">
+    0.8021354
+    </td>
+    <td style="text-align:right;">
+    0.6985923
+    </td>
+    <td style="text-align:right;">
+    0.8667137
+    </td>
+    </tr>
+    <tr>
+    <td style="text-align:left;">
 
-    ## # A tibble: 3 × 9
-    ##   .y.   group1    group2       n1    n2 statistic      p p.adj p.adj.signif
-    ## * <chr> <chr>     <chr>     <int> <int>     <dbl>  <dbl> <dbl> <chr>       
-    ## 1 ssr   0. low    1. medium    37    20    -0.898 0.369  0.554 ns          
-    ## 2 ssr   0. low    2. high      37    44     1.09  0.277  0.554 ns          
-    ## 3 ssr   1. medium 2. high      20    44     1.82  0.0683 0.205 ns
+    1.  medium
+        </td>
+        <td style="text-align:right;">
+        16
+        </td>
+        <td style="text-align:right;">
+        0.8727270
+        </td>
+        <td style="text-align:right;">
+        0.7571373
+        </td>
+        <td style="text-align:right;">
+        0.9473133
+        </td>
+        </tr>
+        <tr>
+        <td style="text-align:left;">
+
+        2.  high
+            </td>
+            <td style="text-align:right;">
+            39
+            </td>
+            <td style="text-align:right;">
+            0.9431696
+            </td>
+            <td style="text-align:right;">
+            0.6724809
+            </td>
+            <td style="text-align:right;">
+            0.9938654
+            </td>
+            </tr>
+            </tbody>
+            </table>
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+.y.
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+statistic
+</th>
+<th style="text-align:right;">
+df
+</th>
+<th style="text-align:right;">
+p
+</th>
+<th style="text-align:left;">
+method
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ssr
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+19.22894
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+6.68e-05
+</td>
+<td style="text-align:left;">
+Kruskal-Wallis
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+.y.
+</th>
+<th style="text-align:left;">
+group1
+</th>
+<th style="text-align:left;">
+group2
+</th>
+<th style="text-align:right;">
+n1
+</th>
+<th style="text-align:right;">
+n2
+</th>
+<th style="text-align:right;">
+statistic
+</th>
+<th style="text-align:right;">
+p
+</th>
+<th style="text-align:right;">
+p.adj
+</th>
+<th style="text-align:left;">
+p.adj.signif
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ssr
+</td>
+<td style="text-align:left;">
+
+0.  low
+    </td>
+    <td style="text-align:left;">
+
+    1.  medium
+        </td>
+        <td style="text-align:right;">
+        9
+        </td>
+        <td style="text-align:right;">
+        16
+        </td>
+        <td style="text-align:right;">
+        2.131337
+        </td>
+        <td style="text-align:right;">
+        0.0330614
+        </td>
+        <td style="text-align:right;">
+        0.0514532
+        </td>
+        <td style="text-align:left;">
+        ns
+        </td>
+        </tr>
+        <tr>
+        <td style="text-align:left;">
+        ssr
+        </td>
+        <td style="text-align:left;">
+
+        0.  low
+            </td>
+            <td style="text-align:left;">
+
+            2.  high
+                </td>
+                <td style="text-align:right;">
+                9
+                </td>
+                <td style="text-align:right;">
+                39
+                </td>
+                <td style="text-align:right;">
+                4.192008
+                </td>
+                <td style="text-align:right;">
+                0.0000276
+                </td>
+                <td style="text-align:right;">
+                0.0000829
+                </td>
+                <td style="text-align:left;">
+                \*\*\*\*
+                </td>
+                </tr>
+                <tr>
+                <td style="text-align:left;">
+                ssr
+                </td>
+                <td style="text-align:left;">
+
+                1.  medium
+                    </td>
+                    <td style="text-align:left;">
+
+                    2.  high
+                        </td>
+                        <td style="text-align:right;">
+                        16
+                        </td>
+                        <td style="text-align:right;">
+                        39
+                        </td>
+                        <td style="text-align:right;">
+                        2.230314
+                        </td>
+                        <td style="text-align:right;">
+                        0.0257266
+                        </td>
+                        <td style="text-align:right;">
+                        0.0514532
+                        </td>
+                        <td style="text-align:left;">
+                        ns
+                        </td>
+                        </tr>
+                        </tbody>
+                        </table>
 
 For the case of SHR
 
-    ## # A tibble: 3 × 5
-    ##   ncr_level count median   min   max
-    ##   <chr>     <int>  <dbl> <dbl> <dbl>
-    ## 1 0. low       37  0.732 0.387 0.906
-    ## 2 1. medium    20  0.740 0.259 0.911
-    ## 3 2. high      44  0.860 0.456 0.985
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+ncr_level
+</th>
+<th style="text-align:right;">
+count
+</th>
+<th style="text-align:right;">
+median
+</th>
+<th style="text-align:right;">
+min
+</th>
+<th style="text-align:right;">
+max
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
 
-    ## # A tibble: 1 × 6
-    ##   .y.                   n statistic    df       p method        
-    ## * <chr>             <int>     <dbl> <int>   <dbl> <chr>         
-    ## 1 median_split_corr   101      11.0     2 0.00402 Kruskal-Wallis
+0.  low
+    </td>
+    <td style="text-align:right;">
+    9
+    </td>
+    <td style="text-align:right;">
+    0.5934963
+    </td>
+    <td style="text-align:right;">
+    0.3874069
+    </td>
+    <td style="text-align:right;">
+    0.7242134
+    </td>
+    </tr>
+    <tr>
+    <td style="text-align:left;">
 
-    ## # A tibble: 3 × 9
-    ##   .y.           group1 group2    n1    n2 statistic       p   p.adj p.adj.signif
-    ## * <chr>         <chr>  <chr>  <int> <int>     <dbl>   <dbl>   <dbl> <chr>       
-    ## 1 median_split… 0. low 1. me…    37    20     0.298 0.766   0.766   ns          
-    ## 2 median_split… 0. low 2. hi…    37    44     3.11  0.00189 0.00568 **          
-    ## 3 median_split… 1. me… 2. hi…    20    44     2.26  0.0237  0.0473  *
+    1.  medium
+        </td>
+        <td style="text-align:right;">
+        16
+        </td>
+        <td style="text-align:right;">
+        0.7295652
+        </td>
+        <td style="text-align:right;">
+        0.2589035
+        </td>
+        <td style="text-align:right;">
+        0.8995312
+        </td>
+        </tr>
+        <tr>
+        <td style="text-align:left;">
 
-### Restricting to non-adaptive CJ
+        2.  high
+            </td>
+            <td style="text-align:right;">
+            39
+            </td>
+            <td style="text-align:right;">
+            0.8650461
+            </td>
+            <td style="text-align:right;">
+            0.4563501
+            </td>
+            <td style="text-align:right;">
+            0.9847176
+            </td>
+            </tr>
+            </tbody>
+            </table>
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-51-1.png)<!-- -->
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+.y.
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+statistic
+</th>
+<th style="text-align:right;">
+df
+</th>
+<th style="text-align:right;">
+p
+</th>
+<th style="text-align:left;">
+method
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+median_split_corr
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+17.67413
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.000145
+</td>
+<td style="text-align:left;">
+Kruskal-Wallis
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+.y.
+</th>
+<th style="text-align:left;">
+group1
+</th>
+<th style="text-align:left;">
+group2
+</th>
+<th style="text-align:right;">
+n1
+</th>
+<th style="text-align:right;">
+n2
+</th>
+<th style="text-align:right;">
+statistic
+</th>
+<th style="text-align:right;">
+p
+</th>
+<th style="text-align:right;">
+p.adj
+</th>
+<th style="text-align:left;">
+p.adj.signif
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+median_split_corr
+</td>
+<td style="text-align:left;">
 
-For the case of SSR
+0.  low
+    </td>
+    <td style="text-align:left;">
 
-    ## # A tibble: 3 × 5
-    ##   ncr_level count median   min   max
-    ##   <chr>     <int>  <dbl> <dbl> <dbl>
-    ## 1 0. low        9  0.802 0.699 0.867
-    ## 2 1. medium    16  0.873 0.757 0.947
-    ## 3 2. high      39  0.943 0.672 0.994
+    1.  medium
+        </td>
+        <td style="text-align:right;">
+        9
+        </td>
+        <td style="text-align:right;">
+        16
+        </td>
+        <td style="text-align:right;">
+        1.728522
+        </td>
+        <td style="text-align:right;">
+        0.0838946
+        </td>
+        <td style="text-align:right;">
+        0.0838946
+        </td>
+        <td style="text-align:left;">
+        ns
+        </td>
+        </tr>
+        <tr>
+        <td style="text-align:left;">
+        median_split_corr
+        </td>
+        <td style="text-align:left;">
 
-    ## # A tibble: 1 × 6
-    ##   .y.       n statistic    df         p method        
-    ## * <chr> <int>     <dbl> <int>     <dbl> <chr>         
-    ## 1 ssr      64      19.2     2 0.0000668 Kruskal-Wallis
+        0.  low
+            </td>
+            <td style="text-align:left;">
 
-    ## # A tibble: 3 × 9
-    ##   .y.   group1    group2       n1    n2 statistic         p   p.adj p.adj.signif
-    ## * <chr> <chr>     <chr>     <int> <int>     <dbl>     <dbl>   <dbl> <chr>       
-    ## 1 ssr   0. low    1. medium     9    16      2.13 0.0331    5.15e-2 ns          
-    ## 2 ssr   0. low    2. high       9    39      4.19 0.0000276 8.29e-5 ****        
-    ## 3 ssr   1. medium 2. high      16    39      2.23 0.0257    5.15e-2 ns
+            2.  high
+                </td>
+                <td style="text-align:right;">
+                9
+                </td>
+                <td style="text-align:right;">
+                39
+                </td>
+                <td style="text-align:right;">
+                3.901534
+                </td>
+                <td style="text-align:right;">
+                0.0000956
+                </td>
+                <td style="text-align:right;">
+                0.0002868
+                </td>
+                <td style="text-align:left;">
+                \*\*\*
+                </td>
+                </tr>
+                <tr>
+                <td style="text-align:left;">
+                median_split_corr
+                </td>
+                <td style="text-align:left;">
 
-For the case of SHR
+                1.  medium
+                    </td>
+                    <td style="text-align:left;">
 
-    ## # A tibble: 3 × 5
-    ##   ncr_level count median   min   max
-    ##   <chr>     <int>  <dbl> <dbl> <dbl>
-    ## 1 0. low        9  0.593 0.387 0.724
-    ## 2 1. medium    16  0.730 0.259 0.900
-    ## 3 2. high      39  0.865 0.456 0.985
+                    2.  high
+                        </td>
+                        <td style="text-align:right;">
+                        16
+                        </td>
+                        <td style="text-align:right;">
+                        39
+                        </td>
+                        <td style="text-align:right;">
+                        2.433834
+                        </td>
+                        <td style="text-align:right;">
+                        0.0149398
+                        </td>
+                        <td style="text-align:right;">
+                        0.0298797
+                        </td>
+                        <td style="text-align:left;">
 
-    ## # A tibble: 1 × 6
-    ##   .y.                   n statistic    df        p method        
-    ## * <chr>             <int>     <dbl> <int>    <dbl> <chr>         
-    ## 1 median_split_corr    64      17.7     2 0.000145 Kruskal-Wallis
-
-    ## # A tibble: 3 × 9
-    ##   .y.           group1 group2    n1    n2 statistic       p   p.adj p.adj.signif
-    ## * <chr>         <chr>  <chr>  <int> <int>     <dbl>   <dbl>   <dbl> <chr>       
-    ## 1 median_split… 0. low 1. me…     9    16      1.73 8.39e-2 8.39e-2 ns          
-    ## 2 median_split… 0. low 2. hi…     9    39      3.90 9.56e-5 2.87e-4 ***         
-    ## 3 median_split… 1. me… 2. hi…    16    39      2.43 1.49e-2 2.99e-2 *
+                        - </td>
+                          </tr>
+                          </tbody>
+                          </table>
 
 # Recreating Verhavert et al. (2019) Figure 4
 
@@ -1405,7 +1775,7 @@ Verhavert et al. (2019) analysed data from 49 different CJ sessions.
 
 Here we combine their data with our own, to extend their analysis.
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-55-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/combined-with-verhavert-1.png)<!-- -->
 
 We seem to have many more studies with low N_CR yet high SSR.
 
@@ -1716,16 +2086,290 @@ a study designed to show just that).
 
 The adaptivity seems to produce separate clusters in our sample:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-57-1.png)<!-- -->
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Omitted studies
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+study
+</th>
+<th style="text-align:left;">
+judging_session
+</th>
+<th style="text-align:right;">
+N_CR
+</th>
+<th style="text-align:right;">
+SSR
+</th>
+<th style="text-align:left;">
+adaptivity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Esen2019
+</td>
+<td style="text-align:right;">
+3213.0000
+</td>
+<td style="text-align:right;">
+0.9938654
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Isnac2020
+</td>
+<td style="text-align:right;">
+3108.0000
+</td>
+<td style="text-align:right;">
+0.9886882
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Jones2020_main-study
+</td>
+<td style="text-align:right;">
+444.0900
+</td>
+<td style="text-align:right;">
+0.9920209
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Luckett2018_cola
+</td>
+<td style="text-align:right;">
+330.0000
+</td>
+<td style="text-align:right;">
+0.8875400
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Spehar2016_expt2-Edges
+</td>
+<td style="text-align:right;">
+800.0000
+</td>
+<td style="text-align:right;">
+0.9012437
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Spehar2016_expt2-Fracts
+</td>
+<td style="text-align:right;">
+800.0000
+</td>
+<td style="text-align:right;">
+0.9791406
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Spehar2016_expt2-Mountain
+</td>
+<td style="text-align:right;">
+800.0000
+</td>
+<td style="text-align:right;">
+0.9454278
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Spehar2016_expt2-Plain
+</td>
+<td style="text-align:right;">
+800.0000
+</td>
+<td style="text-align:right;">
+0.8707116
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Spehar2016_expt2-Thr
+</td>
+<td style="text-align:right;">
+800.0000
+</td>
+<td style="text-align:right;">
+0.9435376
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Vatavu2020
+</td>
+<td style="text-align:right;">
+942.1429
+</td>
+<td style="text-align:right;">
+0.9855553
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Outliers
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+study
+</th>
+<th style="text-align:left;">
+judging_session
+</th>
+<th style="text-align:right;">
+N_CR
+</th>
+<th style="text-align:right;">
+SSR
+</th>
+<th style="text-align:left;">
+adaptivity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Luckett2018_coldbrew
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+0.7927565
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Luckett2018_icecream
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+0.6724809
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-adaptive
+</td>
+<td style="text-align:left;">
+Luckett2018_pizza
+</td>
+<td style="text-align:right;">
+152
+</td>
+<td style="text-align:right;">
+0.7502510
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
+
+![](figs-web/04-analysis-RQ2/ncr-vs-ssr-by-adaptivity-1.png)<!-- -->
 
 Let’s see what the main SSR vs split-halves plot looks like for only the
 non-adaptive studies.
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-58-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/ssr-vs-ncr-regression-nonadaptive-1.png)<!-- -->
 
 Or the simpler version, with adaptive vs non-adaptive highlighted:
 
-![](figs-web/04-analysis-RQ2/unnamed-chunk-59-1.png)<!-- -->
+![](figs-web/04-analysis-RQ2/ssr-vs-ncr-regression-by-adaptivity-1.png)<!-- -->
 
 This suggests that the SSR/split-halves relationship looks quite similar
 whether studies used adaptivity or not.
@@ -1734,36 +2378,6 @@ whether studies used adaptivity or not.
 
 Following Verhavert et al. (2019), try using a logit link function on
 our data:
-
-    ## 
-    ## Call:
-    ## glm(formula = ssr ~ N_CR, family = gaussian(link = "logit"), 
-    ##     data = .)
-    ## 
-    ## Deviance Residuals: 
-    ##      Min        1Q    Median        3Q       Max  
-    ## -0.23347  -0.03676   0.00241   0.05259   0.08927  
-    ## 
-    ## Coefficients:
-    ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept) 2.1144557  0.0823993   25.66   <2e-16 ***
-    ## N_CR        0.0008658  0.0005552    1.56    0.122    
-    ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    ## 
-    ## (Dispersion parameter for gaussian family taken to be 0.004400395)
-    ## 
-    ##     Null deviance: 0.46762  on 100  degrees of freedom
-    ## Residual deviance: 0.43564  on  99  degrees of freedom
-    ## AIC: -257.43
-    ## 
-    ## Number of Fisher Scoring iterations: 6
-
-Verhavert et al. (2019) found that N_CR was significant in the model,
-while it’s not for us.
-
-Restricting to only the non-adaptive studies in our sample, it is
-significant:
 
     ## 
     ## Call:
@@ -1788,3 +2402,50 @@ significant:
     ## AIC: -160.03
     ## 
     ## Number of Fisher Scoring iterations: 13
+
+This replicates the finding from Verhavert et al. (2019), that N_CR was
+significant in the model.
+
+> TODO - the logit link is not supported in `stan_glm`:
+
+    ## Warning: package 'rstanarm' was built under R version 4.2.3
+
+    ## Loading required package: Rcpp
+
+    ## Warning: package 'Rcpp' was built under R version 4.2.3
+
+    ## This is rstanarm version 2.32.1
+
+    ## - See https://mc-stan.org/rstanarm/articles/priors for changes to default priors!
+
+    ## - Default priors may change, so it's safest to specify priors, even if equivalent to the defaults.
+
+    ## - For execution on a local, multicore CPU with excess RAM we recommend calling
+
+    ##   options(mc.cores = parallel::detectCores())
+
+    ## stan_glm
+    ##  family:       gaussian [log]
+    ##  formula:      ssr ~ 1 + N_CR
+    ##  observations: 42
+    ##  predictors:   2
+    ## ------
+    ##             Median MAD_SD
+    ## (Intercept) -0.2    0.0  
+    ## N_CR         0.0    0.0  
+    ## 
+    ## Auxiliary parameter(s):
+    ##       Median MAD_SD
+    ## sigma 0.1    0.0   
+    ## 
+    ## ------
+    ## * For help interpreting the printed output see ?print.stanreg
+    ## * For info on the priors used see ?prior_summary.stanreg
+
+![](figs-web/04-analysis-RQ2/unnamed-chunk-34-1.png)<!-- -->
+
+    ## Warning: package 'tidybayes' was built under R version 4.2.3
+
+    ## Warning: package 'modelr' was built under R version 4.2.3
+
+![](figs-web/04-analysis-RQ2/unnamed-chunk-35-1.png)<!-- -->
