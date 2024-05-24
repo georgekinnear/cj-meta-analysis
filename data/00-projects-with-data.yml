@@ -6,6 +6,7 @@
   citation: Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual variations in aesthetic responses to fractal patterns. Frontiers in human neuroscience, 10, 350.
   doi: 10.3389/fnhum.2016.00350
   open_data: no
+  category: "other"
   note: "Data for Experiment 1 was not available - see https://github.com/georgekinnear/cj-meta-analysis/issues/11"
   judging_sessions: 
   - study: expt2-Edges
@@ -54,6 +55,7 @@
   citation: "Stadthagen-González, H., Parafita Couto, M. C., Párraga, C. A., & Damian, M. F. (2019). Testing alternative theoretical accounts of code-switching: Insights from comparative judgments of adjective–noun order. International Journal of Bilingualism, 23(1), 200-220."
   doi: 10.1177/1367006917728390
   open_data: no
+  category: "other"
   source: snowballing
   judging_sessions:
   - study: eng-to-spa
@@ -81,6 +83,7 @@
     International Conference on Mobile and Ubiquitous Multimedia (pp. 1-12).'
   doi: 10.1145/3428361.3428467
   open_data: no
+  category: "other"
   judging_sessions: 
   - N_A: 251
     N_R: 14
@@ -94,6 +97,7 @@
   citation: 'Vanderdonckt, J., Zen, M., & Vatavu, R. D. (2019). AB4Web: An on-line A/B tester for comparing user interface design alternatives. Proceedings of the ACM on Human-Computer Interaction, 3(EICS), 1-28.'
   doi: 10.1145/3331160
   open_data: no
+  category: "other"
   source: snowballing
   judging_sessions: 
   - N_A: 108
@@ -109,6 +113,7 @@
     of the Explanatory Value of Proofs. Axiomathes (2021). 
   doi: 10.1007/s10516-021-09545-8
   open_data: https://doi.org/10.17028/rd.lboro.12458486.v1
+  category: "other"
   judging_sessions: 
   - study: Auckland
     N_A: 16
@@ -131,6 +136,7 @@
   citation: Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused Research in Further Adult and Vocational Education (pp. 77-98). Palgrave Macmillan, Cham.
   doi: 10.1007/978-3-030-38994-9_5
   open_data: No 
+  category: "education"
   judging_sessions:
   - N_A: 5
     N_R: 15
@@ -146,6 +152,7 @@
     Centre for Education Research and Policy. Retrieved from https://cerp.aqa.org.uk/research-library/using-adaptive-comparative-judgement-obtain-highly-reliable-rank-order-summative-assessment
   doi: .na.character
   open_data: no
+  category: "education"
   judging_sessions:
   - N_A: 23
     N_R: 564
@@ -159,6 +166,7 @@
   citation: Pollitt, A. (2017). Using professional judgement to equate exam standards. In Standard Setting in Education (pp. 279-298). Springer, Cham.
   doi: 10.1007/978-3-319-50856-6_16
   open_data: no
+  category: "education"
   judging_sessions:
   - study: example4
     N_A: 52
@@ -181,6 +189,7 @@
   citation: Pollitt, A. (n.d.). Unpublished data.
   doi: .na.character
   open_data: no
+  category: "education"
   source: snowballing
   judging_sessions:
   - study: art1
@@ -310,6 +319,7 @@
     Online, 19 (3), 1284-1294.
   doi: 10.17051/ilkonline.2020.728048
   open_data: no
+  category: "education"
   judging_sessions:
   - N_A: 444
     N_R: 8
@@ -325,6 +335,7 @@
     measurement and evaluation. [Unpublished Masters dissertation]. Ankara University.
   doi: .na.character
   open_data: no
+  category: "education"
   source: snowballing
   judging_sessions:
   - N_A: 459
@@ -342,6 +353,7 @@
     Association for Computing Machinery (ACM). https://doi.org/10.1145/3025453.3025655'
   doi: 10.1145/3025453.3025655
   open_data: no
+  category: "other"
   judging_sessions:
   - N_A: 12
     N_R: 4
@@ -358,6 +370,7 @@
     pairwise comparisons of perceived physical strength. PloS one, 13(1), e0190393.
   doi: 10.1371/journal.pone.0190393
   open_data: https://doi.org/10.17633/rd.brunel.4902977.v1
+  category: "other"
   judging_sessions:
   - study: Study1
     N_A: 56
@@ -382,6 +395,7 @@
     & Politics, 6(1), 2053168019832089.'
   doi: 10.1177/2053168019832089
   open_data: https://doi.org/10.7910/DVN/HJZSIM
+  category: "other"
   judging_sessions:
   - study: legislators
     N_A: 142
@@ -404,6 +418,7 @@
   citation: Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates of Relative Acceptability from Paired Preferences. https://doi.org/10.31234/osf.io/gvq97
   doi: 10.31234/osf.io/gvq97
   open_data: https://doi.org/10.17605/OSF.IO/SGJ6N
+  category: "other"
   judging_sessions:
   - study: coldbrew
     N_A: 100
@@ -442,6 +457,7 @@
   citation: Luckett, C. (n.d.) Unpublished data.
   doi: .na.character
   open_data: no
+  category: "other"
   source: snowballing
   judging_sessions:
   - study: odor-familiar
@@ -466,6 +482,7 @@
     as separate constructs in mathematical proof. https://doi.org/10.35542/osf.io/egks4
   doi: .na.character
   open_data: http://doi.org/10.5281/zenodo.4893915
+  category: "education"
   source: snowballing
   judging_sessions:
   - study: study1-insight
@@ -530,6 +547,7 @@
     dissertation]. The University of Edinburgh.
   doi: .na.character
   open_data: no
+  category: "education"
   source: snowballing
   judging_sessions:
   - study: experts-even
@@ -614,6 +632,7 @@
   citation: "Bramley, T., & Vitello, S. (2019). The effect of adaptivity on the reliability coefficient in adaptive comparative judgement. Assessment in Education: Principles, Policy & Practice, 26, 43–58."
   doi: 10.1080/0969594x.2017.1418734
   open_data: no
+  category: "education"
   note: Decision data is not openly available, but contextual and other data here https://www.tandfonline.com/doi/figure/10.1080/0969594X.2017.1418734?scroll=top&needAccess=true
   judging_sessions:
   - study: 1a
@@ -648,6 +667,7 @@
     93-108). Springer, Cham.
   doi: 10.1007/978-3-319-74147-5_8
   open_data: no
+  category: "education"
   judging_sessions:
   - N_A: 4
     N_R: 84
@@ -660,6 +680,7 @@
 - project_id: Coertjens2015
   citation: "Coertjens, Liesje; Verhavert, San; Lesterhuis, Marije; Goossens, Maarten; De Maeyer, Sven. Is comparative judgment more efficient? An explorative study into the reliability efficiency trade-off when using rubrics or comparative judgment. Association for Educational Assessment Europe Conference (Glasgow, Scotland, from 05/11/2015 to 7/11/2015)."
   open_data: no
+  category: "education"
   note: "This was a presentation so the full text is not available; however details can be found in this Dutch language publication: https://pedagogischestudien.nl/download?type=document&identifier=641007"
   judging_sessions:
   - study: stress
@@ -678,6 +699,7 @@
     Education (Vol. 2, p. 44). Frontiers.'
   doi: 10.3389/feduc.2017.00044
   open_data: "https://osf.io/7etq2/ Ch8>Data>01)Raw Data"
+  category: "education"
   judging_sessions:
   - study: sample1
     N_A: 49
@@ -710,6 +732,7 @@
     Judgment as an Alternative to Rubrics. Teaching and Learning in Medicine, 1-11."
   doi: 10.1080/10401334.2021.1877709
   open_data: N
+  category: "education"
   judging_sessions:
   - N_A: 8
     N_R: 22
@@ -726,6 +749,7 @@
     112-129.
   doi: 10.1080/14794802.2017.1334576
   open_data: no
+  category: "education"
   judging_sessions:
   - N_A: 33
     N_R: 66
@@ -740,6 +764,7 @@
   Problem Solving across GCSE Maths Sample Assessment Materials. https://tinyurl.com/y8v2e4xx"
   doi: .na.character
   open_data: no
+  category: "education"
   source: snowballing
   judging_sessions:
   - N_A: 35
@@ -756,6 +781,7 @@
     181-197.
   doi: 10.1007/s10649-020-09984-x
   open_data: https://doi.org/10.17028/rd.lboro.8940149
+  category: "education"
   judging_sessions:
   - N_A: 11
     N_R: 134
@@ -771,6 +797,7 @@
     Journal of Mathematical Behavior, 61, 100824.
   doi: 10.1016/j.jmathb.2020.100824
   open_data: no
+  category: "education"
   judging_sessions:
   - study: expert
     N_A: 29
@@ -794,6 +821,7 @@
     Studies in Higher Education, 39(10), 1774–1787. https://doi.org/10.1080/03075079.2013.821974
   doi: 10.1080/03075079.2013.821974
   open_data: no
+  category: "education"
   judging_sessions:
   - study: expert1
     N_A: 11
@@ -844,6 +872,7 @@
     Education (Vol. 3, pp. 113–120). IGPME.
   doi: .na.character
   open_data: no
+  category: "education"
   judging_sessions:
   - N_A: 8
     N_R: 25
@@ -859,6 +888,7 @@
     Education, 13(1), 151–177. https://doi.org/10.1007/s10763-013-9497-6
   doi: 10.1007/s10763-013-9497-6
   open_data: no
+  category: "education"
   judging_sessions:  
   - study: Bowland030211data
     N_A: 12
@@ -899,6 +929,7 @@
     368–389. https://doi.org/10.1080/0969594X.2014.978839"
   doi: 10.1080/0969594x.2014.978839
   open_data: no
+  category: "education"
   judging_sessions:
   - study: teachers  
     N_A: 5
@@ -923,6 +954,7 @@
     https://doi.org/10.1007/s10649-015-9607-1"
   doi: 10.1007/s10649-015-9607-1
   open_data: no
+  category: "education"
   judging_sessions:
   - study: all-scripts
     N_A: 15
@@ -946,6 +978,7 @@
     absolute judgement. Studies in Educational Evaluation, 47, 93–101. https://doi.org/10.1016/j.stueduc.2015.09.004
   doi: 10.1016/j.stueduc.2015.09.004
   open_data: no
+  category: "education"
   judging_sessions:
   - N_A: 76
     N_R: 24
@@ -961,6 +994,7 @@
     42(4), 543–560. https://doi.org/10.1002/berj.3224"
   doi: 10.1002/berj.3224
   open_data: no
+  category: "education"
   judging_sessions:
   - study: realscripts
     N_A: 20
@@ -984,6 +1018,7 @@
     using comparative judgement. Nordic Studies in Mathematics Education, 22(4), 147–164.
   doi: .na.character
   open_data: no
+  category: "education"
   judging_sessions:
   - N_A: 132
     N_R: 141
@@ -999,6 +1034,7 @@
     British Educational Research Journal, 45(3), 662–680. https://doi.org/10.1002/berj.3519"
   doi: 10.1002/berj.3519
   open_data: https://lboro.figshare.com/s/2d4cfa 142ebf1ff24841
+  category: "education"
   judging_sessions:
   - N_A: 10
     N_R: 188
@@ -1014,6 +1050,7 @@
     Zealand. New Zealand Journal of Educational Studies, 55(1), 49–71."
   doi: 10.1007/s40841-020-00163-3
   open_data: no
+  category: "education"
   judging_sessions:
   - study: statistics
     N_A: 21
@@ -1038,6 +1075,7 @@
     Research in Undergraduate Mathematics Education, 2, 141–164.
   doi: 10.1007/s40753-016-0024-3
   open_data: N
+  category: "education"
   judging_sessions:
   - study: stats
     N_A: 10
@@ -1068,6 +1106,7 @@
     Mathematics Education Research Group of Australasia, 41, 400–407. https://eric.ed.gov/?id=ED592426"
   doi: .na.character
   open_data: no
+  category: "education"
   judging_sessions:
   - N_A: 39 (paper reports 20)
     N_R: 2035 (paper reports 1912)
@@ -1084,6 +1123,7 @@
     Mathematics Education, 22, 284–303.'
   doi: 10.1080/14794802.2019.1692060
   open_data: https://doi.org/10.17028/rd.lboro.5845683.v1
+  category: "education"
   judging_sessions:
   - N_A: 10
     N_R: 189
@@ -1100,6 +1140,7 @@
   open_data: The paired comparison data from “Protect our Planet from Solar Storms”
     can be found at https://figshare.com/s/7e0270daa8153bb0416e, and the code used
     is available at https://github.com/S-hannon/complexity-solar-cycle website
+  category: "other"
   judging_sessions:
   - study: main-study
     N_A: 4028

@@ -19,6 +19,9 @@ the table below.
 <thead>
 <tr>
 <th style="text-align:left;">
+category
+</th>
+<th style="text-align:left;">
 project_id
 </th>
 <th style="text-align:left;">
@@ -35,294 +38,47 @@ doi_link
 <tbody>
 <tr>
 <td style="text-align:left;">
-Spehar2016
+education
 </td>
 <td style="text-align:left;">
-Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual
-variations in aesthetic responses to fractal patterns. Frontiers in
-human neuroscience, 10, 350.
+Bisson2016
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.3389/fnhum.2016.00350" style="     ">https://doi.org/10.3389/fnhum.2016.00350</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-StadthagenGonzalez2019
-</td>
-<td style="text-align:left;">
-Stadthagen-González, H., Parafita Couto, M. C., Párraga, C. A., &
-Damian, M. F. (2019). Testing alternative theoretical accounts of
-code-switching: Insights from comparative judgments of adjective–noun
-order. International Journal of Bilingualism, 23(1), 200-220.
+Bisson, M.-J., Gilmore, C., Inglis, M., & Jones, I. (2016). Measuring
+conceptual understanding using comparative judgement. International
+Journal of Research in Undergraduate Mathematics Education, 2, 141–164.
 </td>
 <td style="text-align:left;">
 FALSE
 </td>
 <td style="text-align:left;">
-<a href="https://doi.org/10.1177/1367006917728390" style="     ">https://doi.org/10.1177/1367006917728390</a>
+<a href="https://doi.org/10.1007/s40753-016-0024-3" style="     ">https://doi.org/10.1007/s40753-016-0024-3</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Vatavu2020
+education
 </td>
 <td style="text-align:left;">
-Vatavu, R. D., & Vanderdonckt, J. (2020, November). Design Space and
-Users’ Preferences for Smartglasses Graphical Menus: A Vignette Study.
-In 19th International Conference on Mobile and Ubiquitous
-Multimedia (pp. 1-12).
+Bisson2019
 </td>
 <td style="text-align:left;">
-FALSE
+Bisson, M.-J., Gilmore, C., Inglis, M., & Jones, I. (2019). Teaching
+using contextualised and decontextualised representations: Examining the
+case of differential calculus through a comparative judgement technique.
+Research in Mathematics Education, 22, 284–303.
 </td>
 <td style="text-align:left;">
-<a href="https://doi.org/10.1145/3428361.3428467" style="     ">https://doi.org/10.1145/3428361.3428467</a>
+<https://doi.org/10.17028/rd.lboro.5845683.v1>
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1080/14794802.2019.1692060" style="     ">https://doi.org/10.1080/14794802.2019.1692060</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Vatavu2019
+education
 </td>
-<td style="text-align:left;">
-Vanderdonckt, J., Zen, M., & Vatavu, R. D. (2019). AB4Web: An on-line
-A/B tester for comparing user interface design alternatives. Proceedings
-of the ACM on Human-Computer Interaction, 3(EICS), 1-28.
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.1145/3331160" style="     ">https://doi.org/10.1145/3331160</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Ramos2021
-</td>
-<td style="text-align:left;">
-Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’
-Assessments of the Explanatory Value of Proofs. Axiomathes (2021). 
-</td>
-<td style="text-align:left;">
-<https://doi.org/10.17028/rd.lboro.12458486.v1>
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.1007/s10516-021-09545-8" style="     ">https://doi.org/10.1007/s10516-021-09545-8</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Smith2020
-</td>
-<td style="text-align:left;">
-Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused
-Research in Further Adult and Vocational Education (pp. 77-98). Palgrave
-Macmillan, Cham.
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.1007/978-3-030-38994-9_5" style="     ">https://doi.org/10.1007/978-3-030-38994-9_5</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2012a
-</td>
-<td style="text-align:left;">
-Whitehouse, C., & Pollitt, A. (2012). Using adaptive comparative
-judgement to obtain a highly reliable rank order in summative
-assessment. Manchester, NH: AQA Centre for Education Research and
-Policy. Retrieved
-from <https://cerp.aqa.org.uk/research-library/using-adaptive-comparative-judgement-obtain-highly-reliable-rank-order-summative-assessment>
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="NA" style="     ">NA</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pollitt2017
-</td>
-<td style="text-align:left;">
-Pollitt, A. (2017). Using professional judgement to equate exam
-standards. In Standard Setting in Education (pp. 279-298). Springer,
-Cham.
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.1007/978-3-319-50856-6_16" style="     ">https://doi.org/10.1007/978-3-319-50856-6_16</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-PollittX
-</td>
-<td style="text-align:left;">
-Pollitt, A. (n.d.). Unpublished data.
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="NA" style="     ">NA</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Isnac2020
-</td>
-<td style="text-align:left;">
-İsnaç, F., & Doğan, C. D. (2020). Scaling of secondary school students’
-evaluation preferences according to learning approaches. Elementary
-Education Online, 19 (3), 1284-1294.
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.17051/ilkonline.2020.728048" style="     ">https://doi.org/10.17051/ilkonline.2020.728048</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Esen2019
-</td>
-<td style="text-align:left;">
-Esen, Y. D. (2019). Scaling the teachers’ perception of competence
-regarding measurement and evaluation. \[Unpublished Masters
-dissertation\]. Ankara University.
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="NA" style="     ">NA</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-AlMaimani2017
-</td>
-<td style="text-align:left;">
-Al Maimani, A. , & Roudaut, A. (2017). Frozen suit: designing a
-changeable stiffness suit and its application to increase realism in
-games. In Proceedings of the 2017 CHI Conference on Human Factors in
-Computing Systems (pp. 2440-2448). Association for Computing Machinery
-(ACM). <https://doi.org/10.1145/3025453.3025655>
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.1145/3025453.3025655" style="     ">https://doi.org/10.1145/3025453.3025655</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Clark2018
-</td>
-<td style="text-align:left;">
-Clark, A. P., Howard, K. L., Woods, A. T., Penton-Voak, I. S., &
-Neumann, C. (2018). Why rate when you could compare? Using the
-“EloChoice” package to assess pairwise comparisons of perceived physical
-strength. PloS one, 13(1), e0190393.
-</td>
-<td style="text-align:left;">
-<https://doi.org/10.17633/rd.brunel.4902977.v1>
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.1371/journal.pone.0190393" style="     ">https://doi.org/10.1371/journal.pone.0190393</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Zucco2019
-</td>
-<td style="text-align:left;">
-Zucco Jr, C., Batista, M., & Power, T. J. (2019). Measuring portfolio
-salience using the Bradley–Terry model: An illustration with data from
-Brazil. Research & Politics, 6(1), 2053168019832089.
-</td>
-<td style="text-align:left;">
-<https://doi.org/10.7910/DVN/HJZSIM>
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.1177/2053168019832089" style="     ">https://doi.org/10.1177/2053168019832089</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Luckett2018
-</td>
-<td style="text-align:left;">
-Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates
-of Relative Acceptability from Paired Preferences.
-<https://doi.org/10.31234/osf.io/gvq97>
-</td>
-<td style="text-align:left;">
-<https://doi.org/10.17605/OSF.IO/SGJ6N>
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.31234/osf.io/gvq97" style="     ">https://doi.org/10.31234/osf.io/gvq97</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-LuckettX
-</td>
-<td style="text-align:left;">
-Luckett, C. (n.d.) Unpublished data.
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="NA" style="     ">NA</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sangwin2021
-</td>
-<td style="text-align:left;">
-Sangwin, C., & Kinnear, G. (2021, June 4). Investigating insight and
-rigour as separate constructs in mathematical proof.
-<https://doi.org/10.35542/osf.io/egks4>
-</td>
-<td style="text-align:left;">
-<http://doi.org/10.5281/zenodo.4893915>
-</td>
-<td style="text-align:left;">
-<a href="NA" style="     ">NA</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kinnear2021
-</td>
-<td style="text-align:left;">
-Kinnear, G., et al. (2021). Using compative judgement \[Unpublished
-undergraduate dissertation\]. The University of Edinburgh.
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="NA" style="     ">NA</a>
-</td>
-</tr>
-<tr>
 <td style="text-align:left;">
 Bramley2018
 </td>
@@ -340,22 +96,8 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
-Settembri2018
+education
 </td>
-<td style="text-align:left;">
-Settembri, P., Van Gasse, R., Coertjens, L., & De Maeyer, S. (2018).
-Oranges and Apples? Using Comparative Judgement for Reliable Briefing
-Paper Assessment in Simulation Games. In Simulations of Decision-Making
-as Active Learning Tools (pp. 93-108). Springer, Cham.
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.1007/978-3-319-74147-5_8" style="     ">https://doi.org/10.1007/978-3-319-74147-5_8</a>
-</td>
-</tr>
-<tr>
 <td style="text-align:left;">
 Coertjens2015
 </td>
@@ -375,22 +117,8 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
-Daal2017
+education
 </td>
-<td style="text-align:left;">
-van Daal, T., Lesterhuis, M., Coertjens, L., van de Kamp, M. T., Donche,
-V., & De Maeyer, S. (2017, August). The complexity of assessing student
-work using comparative judgment: The moderating role of decision
-accuracy. In Frontiers in Education (Vol. 2, p. 44). Frontiers.
-</td>
-<td style="text-align:left;">
-<https://osf.io/7etq2/> Ch8\>Data\>01)Raw Data
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.3389/feduc.2017.00044" style="     ">https://doi.org/10.3389/feduc.2017.00044</a>
-</td>
-</tr>
-<tr>
 <td style="text-align:left;">
 Coertjens2021
 </td>
@@ -409,38 +137,28 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
-Holmes2017
+education
 </td>
 <td style="text-align:left;">
-Holmes, S. D., He, Q., & Meadows, M. (2017). An investigation of
-construct relevant and irrelevant features of mathematics
-problem-solving questions using comparative judgement and Kelly’s
-Repertory Grid. Research in Mathematics Education, 19(2), 112-129.
+Daal2017
 </td>
 <td style="text-align:left;">
-FALSE
+van Daal, T., Lesterhuis, M., Coertjens, L., van de Kamp, M. T., Donche,
+V., & De Maeyer, S. (2017, August). The complexity of assessing student
+work using comparative judgment: The moderating role of decision
+accuracy. In Frontiers in Education (Vol. 2, p. 44). Frontiers.
 </td>
 <td style="text-align:left;">
-<a href="https://doi.org/10.1080/14794802.2017.1334576" style="     ">https://doi.org/10.1080/14794802.2017.1334576</a>
+<https://osf.io/7etq2/> Ch8\>Data\>01)Raw Data
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.3389/feduc.2017.00044" style="     ">https://doi.org/10.3389/feduc.2017.00044</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Ofqual2015
+education
 </td>
-<td style="text-align:left;">
-Ofqual (2015). A Comparison of Expected Difficulty, Actual Difficulty
-and Assessment of Problem Solving across GCSE Maths Sample Assessment
-Materials. <https://tinyurl.com/y8v2e4xx>
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="NA" style="     ">NA</a>
-</td>
-</tr>
-<tr>
 <td style="text-align:left;">
 Davies2020a
 </td>
@@ -458,6 +176,9 @@ Mathematics, 105(2), 181-197.
 </tr>
 <tr>
 <td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
 Davies2021
 </td>
 <td style="text-align:left;">
@@ -474,6 +195,87 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+Esen2019
+</td>
+<td style="text-align:left;">
+Esen, Y. D. (2019). Scaling the teachers’ perception of competence
+regarding measurement and evaluation. \[Unpublished Masters
+dissertation\]. Ankara University.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+Holmes2017
+</td>
+<td style="text-align:left;">
+Holmes, S. D., He, Q., & Meadows, M. (2017). An investigation of
+construct relevant and irrelevant features of mathematics
+problem-solving questions using comparative judgement and Kelly’s
+Repertory Grid. Research in Mathematics Education, 19(2), 112-129.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1080/14794802.2017.1334576" style="     ">https://doi.org/10.1080/14794802.2017.1334576</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+Hunter2018
+</td>
+<td style="text-align:left;">
+Hunter, J., & Jones, I. (2018). Free-response tasks in primary
+mathematics: A window on students’ thinking. Proceedings of the 41st
+Annual Conference of the Mathematics Education Research Group of
+Australasia, 41, 400–407. <https://eric.ed.gov/?id=ED592426>
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+Isnac2020
+</td>
+<td style="text-align:left;">
+İsnaç, F., & Doğan, C. D. (2020). Scaling of secondary school students’
+evaluation preferences according to learning approaches. Elementary
+Education Online, 19 (3), 1284-1294.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.17051/ilkonline.2020.728048" style="     ">https://doi.org/10.17051/ilkonline.2020.728048</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
 Jones2013a
 </td>
 <td style="text-align:left;">
@@ -489,6 +291,9 @@ FALSE
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+education
+</td>
 <td style="text-align:left;">
 Jones2013b
 </td>
@@ -508,6 +313,9 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
 Jones2014
 </td>
 <td style="text-align:left;">
@@ -525,21 +333,8 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
-McMahon2014
+education
 </td>
-<td style="text-align:left;">
-McMahon, S., & Jones, I. (2015). A comparative judgement approach to
-teacher assessment. Assessment in Education: Principles, Policy &
-Practice, 22(3), 368–389. <https://doi.org/10.1080/0969594X.2014.978839>
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-<a href="https://doi.org/10.1080/0969594x.2014.978839" style="     ">https://doi.org/10.1080/0969594x.2014.978839</a>
-</td>
-</tr>
-<tr>
 <td style="text-align:left;">
 Jones2015a
 </td>
@@ -557,6 +352,9 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
 Jones2015b
 </td>
 <td style="text-align:left;">
@@ -572,6 +370,9 @@ FALSE
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+education
+</td>
 <td style="text-align:left;">
 Jones2016b
 </td>
@@ -589,6 +390,9 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
 Jones2017
 </td>
 <td style="text-align:left;">
@@ -604,6 +408,9 @@ FALSE
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+education
+</td>
 <td style="text-align:left;">
 Jones2019
 </td>
@@ -622,6 +429,27 @@ comparative judgement help? British Educational Research Journal, 45(3),
 </tr>
 <tr>
 <td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+Kinnear2021
+</td>
+<td style="text-align:left;">
+Kinnear, G., et al. (2021). Using compative judgement \[Unpublished
+undergraduate dissertation\]. The University of Edinburgh.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
 Marshall2020
 </td>
 <td style="text-align:left;">
@@ -639,29 +467,34 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
-Bisson2016
+education
 </td>
 <td style="text-align:left;">
-Bisson, M.-J., Gilmore, C., Inglis, M., & Jones, I. (2016). Measuring
-conceptual understanding using comparative judgement. International
-Journal of Research in Undergraduate Mathematics Education, 2, 141–164.
+McMahon2014
+</td>
+<td style="text-align:left;">
+McMahon, S., & Jones, I. (2015). A comparative judgement approach to
+teacher assessment. Assessment in Education: Principles, Policy &
+Practice, 22(3), 368–389. <https://doi.org/10.1080/0969594X.2014.978839>
 </td>
 <td style="text-align:left;">
 FALSE
 </td>
 <td style="text-align:left;">
-<a href="https://doi.org/10.1007/s40753-016-0024-3" style="     ">https://doi.org/10.1007/s40753-016-0024-3</a>
+<a href="https://doi.org/10.1080/0969594x.2014.978839" style="     ">https://doi.org/10.1080/0969594x.2014.978839</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Hunter2018
+education
 </td>
 <td style="text-align:left;">
-Hunter, J., & Jones, I. (2018). Free-response tasks in primary
-mathematics: A window on students’ thinking. Proceedings of the 41st
-Annual Conference of the Mathematics Education Research Group of
-Australasia, 41, 400–407. <https://eric.ed.gov/?id=ED592426>
+Ofqual2015
+</td>
+<td style="text-align:left;">
+Ofqual (2015). A Comparison of Expected Difficulty, Actual Difficulty
+and Assessment of Problem Solving across GCSE Maths Sample Assessment
+Materials. <https://tinyurl.com/y8v2e4xx>
 </td>
 <td style="text-align:left;">
 FALSE
@@ -672,22 +505,164 @@ FALSE
 </tr>
 <tr>
 <td style="text-align:left;">
-Bisson2019
+education
 </td>
 <td style="text-align:left;">
-Bisson, M.-J., Gilmore, C., Inglis, M., & Jones, I. (2019). Teaching
-using contextualised and decontextualised representations: Examining the
-case of differential calculus through a comparative judgement technique.
-Research in Mathematics Education, 22, 284–303.
+Pollitt2012a
 </td>
 <td style="text-align:left;">
-<https://doi.org/10.17028/rd.lboro.5845683.v1>
+Whitehouse, C., & Pollitt, A. (2012). Using adaptive comparative
+judgement to obtain a highly reliable rank order in summative
+assessment. Manchester, NH: AQA Centre for Education Research and
+Policy. Retrieved
+from <https://cerp.aqa.org.uk/research-library/using-adaptive-comparative-judgement-obtain-highly-reliable-rank-order-summative-assessment>
 </td>
 <td style="text-align:left;">
-<a href="https://doi.org/10.1080/14794802.2019.1692060" style="     ">https://doi.org/10.1080/14794802.2019.1692060</a>
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+Pollitt2017
+</td>
+<td style="text-align:left;">
+Pollitt, A. (2017). Using professional judgement to equate exam
+standards. In Standard Setting in Education (pp. 279-298). Springer,
+Cham.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1007/978-3-319-50856-6_16" style="     ">https://doi.org/10.1007/978-3-319-50856-6_16</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+PollittX
+</td>
+<td style="text-align:left;">
+Pollitt, A. (n.d.). Unpublished data.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+Sangwin2021
+</td>
+<td style="text-align:left;">
+Sangwin, C., & Kinnear, G. (2021, June 4). Investigating insight and
+rigour as separate constructs in mathematical proof.
+<https://doi.org/10.35542/osf.io/egks4>
+</td>
+<td style="text-align:left;">
+<http://doi.org/10.5281/zenodo.4893915>
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+Settembri2018
+</td>
+<td style="text-align:left;">
+Settembri, P., Van Gasse, R., Coertjens, L., & De Maeyer, S. (2018).
+Oranges and Apples? Using Comparative Judgement for Reliable Briefing
+Paper Assessment in Simulation Games. In Simulations of Decision-Making
+as Active Learning Tools (pp. 93-108). Springer, Cham.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1007/978-3-319-74147-5_8" style="     ">https://doi.org/10.1007/978-3-319-74147-5_8</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+Smith2020
+</td>
+<td style="text-align:left;">
+Smith, M. (2020). Adaptive Comparative Judgement. In Practice-Focused
+Research in Further Adult and Vocational Education (pp. 77-98). Palgrave
+Macmillan, Cham.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1007/978-3-030-38994-9_5" style="     ">https://doi.org/10.1007/978-3-030-38994-9_5</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:left;">
+AlMaimani2017
+</td>
+<td style="text-align:left;">
+Al Maimani, A. , & Roudaut, A. (2017). Frozen suit: designing a
+changeable stiffness suit and its application to increase realism in
+games. In Proceedings of the 2017 CHI Conference on Human Factors in
+Computing Systems (pp. 2440-2448). Association for Computing Machinery
+(ACM). <https://doi.org/10.1145/3025453.3025655>
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1145/3025453.3025655" style="     ">https://doi.org/10.1145/3025453.3025655</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:left;">
+Clark2018
+</td>
+<td style="text-align:left;">
+Clark, A. P., Howard, K. L., Woods, A. T., Penton-Voak, I. S., &
+Neumann, C. (2018). Why rate when you could compare? Using the
+“EloChoice” package to assess pairwise comparisons of perceived physical
+strength. PloS one, 13(1), e0190393.
+</td>
+<td style="text-align:left;">
+<https://doi.org/10.17633/rd.brunel.4902977.v1>
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1371/journal.pone.0190393" style="     ">https://doi.org/10.1371/journal.pone.0190393</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
 <td style="text-align:left;">
 Jones2020
 </td>
@@ -704,6 +679,157 @@ at <https://github.com/S-hannon/complexity-solar-cycle> website
 </td>
 <td style="text-align:left;">
 <a href="https://doi.org/10.1029/2020sw002556" style="     ">https://doi.org/10.1029/2020sw002556</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:left;">
+Luckett2018
+</td>
+<td style="text-align:left;">
+Luckett, C., Burns, S., & Jenkinson, L. (2018, September 21). Estimates
+of Relative Acceptability from Paired Preferences.
+<https://doi.org/10.31234/osf.io/gvq97>
+</td>
+<td style="text-align:left;">
+<https://doi.org/10.17605/OSF.IO/SGJ6N>
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.31234/osf.io/gvq97" style="     ">https://doi.org/10.31234/osf.io/gvq97</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:left;">
+LuckettX
+</td>
+<td style="text-align:left;">
+Luckett, C. (n.d.) Unpublished data.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="NA" style="     ">NA</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:left;">
+Ramos2021
+</td>
+<td style="text-align:left;">
+Mejía Ramos, J.P., Evans, T., Rittberg, C. et al. Mathematicians’
+Assessments of the Explanatory Value of Proofs. Axiomathes (2021). 
+</td>
+<td style="text-align:left;">
+<https://doi.org/10.17028/rd.lboro.12458486.v1>
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1007/s10516-021-09545-8" style="     ">https://doi.org/10.1007/s10516-021-09545-8</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:left;">
+Spehar2016
+</td>
+<td style="text-align:left;">
+Spehar, B., Walker, N., & Taylor, R. P. (2016). Taxonomy of individual
+variations in aesthetic responses to fractal patterns. Frontiers in
+human neuroscience, 10, 350.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.3389/fnhum.2016.00350" style="     ">https://doi.org/10.3389/fnhum.2016.00350</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:left;">
+StadthagenGonzalez2019
+</td>
+<td style="text-align:left;">
+Stadthagen-González, H., Parafita Couto, M. C., Párraga, C. A., &
+Damian, M. F. (2019). Testing alternative theoretical accounts of
+code-switching: Insights from comparative judgments of adjective–noun
+order. International Journal of Bilingualism, 23(1), 200-220.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1177/1367006917728390" style="     ">https://doi.org/10.1177/1367006917728390</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:left;">
+Vatavu2019
+</td>
+<td style="text-align:left;">
+Vanderdonckt, J., Zen, M., & Vatavu, R. D. (2019). AB4Web: An on-line
+A/B tester for comparing user interface design alternatives. Proceedings
+of the ACM on Human-Computer Interaction, 3(EICS), 1-28.
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1145/3331160" style="     ">https://doi.org/10.1145/3331160</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:left;">
+Vatavu2020
+</td>
+<td style="text-align:left;">
+Vatavu, R. D., & Vanderdonckt, J. (2020, November). Design Space and
+Users’ Preferences for Smartglasses Graphical Menus: A Vignette Study.
+In 19th International Conference on Mobile and Ubiquitous
+Multimedia (pp. 1-12).
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1145/3428361.3428467" style="     ">https://doi.org/10.1145/3428361.3428467</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+other
+</td>
+<td style="text-align:left;">
+Zucco2019
+</td>
+<td style="text-align:left;">
+Zucco Jr, C., Batista, M., & Power, T. J. (2019). Measuring portfolio
+salience using the Bradley–Terry model: An illustration with data from
+Brazil. Research & Politics, 6(1), 2053168019832089.
+</td>
+<td style="text-align:left;">
+<https://doi.org/10.7910/DVN/HJZSIM>
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.1177/2053168019832089" style="     ">https://doi.org/10.1177/2053168019832089</a>
 </td>
 </tr>
 </tbody>
@@ -749,6 +875,95 @@ Yes
 </td>
 <td style="text-align:left;">
 24.4%
+</td>
+</tr>
+</tbody>
+</table>
+
+## Categories
+
+`category` records whether the study was about “education” or “other”:
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+category
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:left;">
+percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Education
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:left;">
+73.2%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+26.8%
+</td>
+</tr>
+</tbody>
+</table>
+
+## Sources
+
+`source` records whether the study originated in the literature search
+or from subsequent “snowballing”:
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+source
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:left;">
+percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Literature search
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:left;">
+80.5%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Snowballing
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+19.5%
 </td>
 </tr>
 </tbody>
@@ -3707,20 +3922,20 @@ included Jones2020 on this basis, see
 
 # Summary table
 
-<div id="xouwpfrgnu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xouwpfrgnu table {
+<div id="fvukyvrskk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fvukyvrskk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#xouwpfrgnu thead, #xouwpfrgnu tbody, #xouwpfrgnu tfoot, #xouwpfrgnu tr, #xouwpfrgnu td, #xouwpfrgnu th {
+&#10;#fvukyvrskk thead, #fvukyvrskk tbody, #fvukyvrskk tfoot, #fvukyvrskk tr, #fvukyvrskk td, #fvukyvrskk th {
   border-style: none;
 }
-&#10;#xouwpfrgnu p {
+&#10;#fvukyvrskk p {
   margin: 0;
   padding: 0;
 }
-&#10;#xouwpfrgnu .gt_table {
+&#10;#fvukyvrskk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3745,11 +3960,11 @@ included Jones2020 on this basis, see
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_caption {
+&#10;#fvukyvrskk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#xouwpfrgnu .gt_title {
+&#10;#fvukyvrskk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3760,7 +3975,7 @@ included Jones2020 on this basis, see
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#xouwpfrgnu .gt_subtitle {
+&#10;#fvukyvrskk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3771,7 +3986,7 @@ included Jones2020 on this basis, see
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#xouwpfrgnu .gt_heading {
+&#10;#fvukyvrskk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3782,12 +3997,12 @@ included Jones2020 on this basis, see
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_bottom_border {
+&#10;#fvukyvrskk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_col_headings {
+&#10;#fvukyvrskk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3801,7 +4016,7 @@ included Jones2020 on this basis, see
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_col_heading {
+&#10;#fvukyvrskk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3820,7 +4035,7 @@ included Jones2020 on this basis, see
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#xouwpfrgnu .gt_column_spanner_outer {
+&#10;#fvukyvrskk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3831,13 +4046,13 @@ included Jones2020 on this basis, see
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#xouwpfrgnu .gt_column_spanner_outer:first-child {
+&#10;#fvukyvrskk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#xouwpfrgnu .gt_column_spanner_outer:last-child {
+&#10;#fvukyvrskk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#xouwpfrgnu .gt_column_spanner {
+&#10;#fvukyvrskk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3848,10 +4063,10 @@ included Jones2020 on this basis, see
   display: inline-block;
   width: 100%;
 }
-&#10;#xouwpfrgnu .gt_spanner_row {
+&#10;#fvukyvrskk .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#xouwpfrgnu .gt_group_heading {
+&#10;#fvukyvrskk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3876,7 +4091,7 @@ included Jones2020 on this basis, see
   vertical-align: middle;
   text-align: left;
 }
-&#10;#xouwpfrgnu .gt_empty_group_heading {
+&#10;#fvukyvrskk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3890,13 +4105,13 @@ included Jones2020 on this basis, see
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#xouwpfrgnu .gt_from_md > :first-child {
+&#10;#fvukyvrskk .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#xouwpfrgnu .gt_from_md > :last-child {
+&#10;#fvukyvrskk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#xouwpfrgnu .gt_row {
+&#10;#fvukyvrskk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3914,7 +4129,7 @@ included Jones2020 on this basis, see
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#xouwpfrgnu .gt_stub {
+&#10;#fvukyvrskk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3926,7 +4141,7 @@ included Jones2020 on this basis, see
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#xouwpfrgnu .gt_stub_row_group {
+&#10;#fvukyvrskk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3939,13 +4154,13 @@ included Jones2020 on this basis, see
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#xouwpfrgnu .gt_row_group_first td {
+&#10;#fvukyvrskk .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#xouwpfrgnu .gt_row_group_first th {
+&#10;#fvukyvrskk .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#xouwpfrgnu .gt_summary_row {
+&#10;#fvukyvrskk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3954,14 +4169,14 @@ included Jones2020 on this basis, see
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#xouwpfrgnu .gt_first_summary_row {
+&#10;#fvukyvrskk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_first_summary_row.thick {
+&#10;#fvukyvrskk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#xouwpfrgnu .gt_last_summary_row {
+&#10;#fvukyvrskk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3970,7 +4185,7 @@ included Jones2020 on this basis, see
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_grand_summary_row {
+&#10;#fvukyvrskk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3979,7 +4194,7 @@ included Jones2020 on this basis, see
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#xouwpfrgnu .gt_first_grand_summary_row {
+&#10;#fvukyvrskk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3988,7 +4203,7 @@ included Jones2020 on this basis, see
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_last_grand_summary_row_top {
+&#10;#fvukyvrskk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3997,10 +4212,10 @@ included Jones2020 on this basis, see
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_striped {
+&#10;#fvukyvrskk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#xouwpfrgnu .gt_table_body {
+&#10;#fvukyvrskk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4008,7 +4223,7 @@ included Jones2020 on this basis, see
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_footnotes {
+&#10;#fvukyvrskk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4021,7 +4236,7 @@ included Jones2020 on this basis, see
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_footnote {
+&#10;#fvukyvrskk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4029,7 +4244,7 @@ included Jones2020 on this basis, see
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#xouwpfrgnu .gt_sourcenotes {
+&#10;#fvukyvrskk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4042,57 +4257,57 @@ included Jones2020 on this basis, see
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#xouwpfrgnu .gt_sourcenote {
+&#10;#fvukyvrskk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#xouwpfrgnu .gt_left {
+&#10;#fvukyvrskk .gt_left {
   text-align: left;
 }
-&#10;#xouwpfrgnu .gt_center {
+&#10;#fvukyvrskk .gt_center {
   text-align: center;
 }
-&#10;#xouwpfrgnu .gt_right {
+&#10;#fvukyvrskk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#xouwpfrgnu .gt_font_normal {
+&#10;#fvukyvrskk .gt_font_normal {
   font-weight: normal;
 }
-&#10;#xouwpfrgnu .gt_font_bold {
+&#10;#fvukyvrskk .gt_font_bold {
   font-weight: bold;
 }
-&#10;#xouwpfrgnu .gt_font_italic {
+&#10;#fvukyvrskk .gt_font_italic {
   font-style: italic;
 }
-&#10;#xouwpfrgnu .gt_super {
+&#10;#fvukyvrskk .gt_super {
   font-size: 65%;
 }
-&#10;#xouwpfrgnu .gt_footnote_marks {
+&#10;#fvukyvrskk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#xouwpfrgnu .gt_asterisk {
+&#10;#fvukyvrskk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#xouwpfrgnu .gt_indent_1 {
+&#10;#fvukyvrskk .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#xouwpfrgnu .gt_indent_2 {
+&#10;#fvukyvrskk .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#xouwpfrgnu .gt_indent_3 {
+&#10;#fvukyvrskk .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#xouwpfrgnu .gt_indent_4 {
+&#10;#fvukyvrskk .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#xouwpfrgnu .gt_indent_5 {
+&#10;#fvukyvrskk .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4142,6 +4357,18 @@ included Jones2020 on this basis, see
 <td headers="stat_0" class="gt_row gt_center">19 (19%)</td>
 <td headers="stat_1" class="gt_row gt_center">19 (30%)</td>
 <td headers="stat_2" class="gt_row gt_center">0 (0%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">category</td>
+<td headers="stat_0" class="gt_row gt_center"><br /></td>
+<td headers="stat_1" class="gt_row gt_center"><br /></td>
+<td headers="stat_2" class="gt_row gt_center"><br /></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    Education</td>
+<td headers="stat_0" class="gt_row gt_center">77 (76%)</td>
+<td headers="stat_1" class="gt_row gt_center">44 (70%)</td>
+<td headers="stat_2" class="gt_row gt_center">33 (87%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    Other</td>
+<td headers="stat_0" class="gt_row gt_center">24 (24%)</td>
+<td headers="stat_1" class="gt_row gt_center">19 (30%)</td>
+<td headers="stat_2" class="gt_row gt_center">5 (13%)</td></tr>
     <tr><td headers="label" class="gt_row gt_left">Open data</td>
 <td headers="stat_0" class="gt_row gt_center">25 (25%)</td>
 <td headers="stat_1" class="gt_row gt_center">18 (29%)</td>
@@ -4168,6 +4395,9 @@ LaTeX table
     ##     No & 64 (63\%) & 41 (65\%) & 23 (61\%) \\ 
     ##     Unknown & 18 (18\%) & 3 (4.8\%) & 15 (39\%) \\ 
     ##     Yes & 19 (19\%) & 19 (30\%) & 0 (0\%) \\ 
+    ## category &  &  &  \\ 
+    ##     Education & 77 (76\%) & 44 (70\%) & 33 (87\%) \\ 
+    ##     Other & 24 (24\%) & 19 (30\%) & 5 (13\%) \\ 
     ## Open data & 25 (25\%) & 18 (29\%) & 7 (18\%) \\ 
     ## \bottomrule
     ## \end{longtable}

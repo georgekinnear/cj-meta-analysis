@@ -53,11 +53,12 @@ Judgement data was gathered from the publications/projects summarised in the tab
 
 ```{r}
 all_sessions %>% 
-  select(project_id, citation, doi, open_data) %>% 
+  select(category, project_id, citation, doi, open_data) %>% 
   mutate(doi = if_else(str_detect(doi, "doi.org"), doi, paste0("https://doi.org/", doi))) %>% 
   mutate(doi_link = text_spec(doi, link = doi)) %>% 
   select(-doi) %>% 
   distinct() %>%
+  arrange(category, project_id) %>% 
   kable("html", escape = FALSE) %>%
   kable_styling() 
 ```
@@ -76,6 +77,33 @@ all_sessions %>%
   basic_kable()
 ```
 
+## Categories
+
+`category` records whether the study was about "education" or "other":
+
+```{r}
+all_sessions %>% 
+  select(project_id, category) %>% 
+  distinct() %>% 
+  mutate(category = ifelse(category != "education", "Other", "Education")) %>% 
+  janitor::tabyl(category) %>% 
+  janitor::adorn_pct_formatting() %>% 
+  basic_kable()
+```
+
+## Sources
+
+`source` records whether the study originated in the literature search or from subsequent "snowballing":
+
+```{r}
+all_sessions %>% 
+  select(project_id, source) %>% 
+  distinct() %>% 
+  mutate(source = if_else(source == "snowballing", "Snowballing", "Literature search", missing = "Literature search")) %>% 
+  janitor::tabyl(source) %>% 
+  janitor::adorn_pct_formatting() %>% 
+  basic_kable()
+```
 
 # CJ sessions
 
@@ -218,6 +246,8 @@ summary_table <- all_sessions %>%
       adaptivity == "TRUE" ~ "Yes",
       .default = "Unknown"
     ),
+    category = case_when(category == "education" ~ "Education",
+                         .default = "Other"),
     open_data = case_when(open_data == "FALSE" ~ "No",
                           .default = "Yes"),
   ) %>% 
