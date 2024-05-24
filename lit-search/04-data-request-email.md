@@ -1,3 +1,5 @@
+To: Corresponding author (where the publication does not have a clear corresponding author, try either the first author, or one of the authors already on our list of researchers to contact as corresponding author of a different publication)
+
 Subject: Request for data
 
 Dear X,
