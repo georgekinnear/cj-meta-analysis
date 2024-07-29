@@ -398,8 +398,8 @@ ssr_all_vs_splithalves_plot <-
   ssr_vs_shr_data %>% 
   ggplot(aes(x = ssr, y = median_split_corr)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
-  geom_vline(xintercept = 0.7, alpha = 0.3) +
-  geom_hline(yintercept = 0.7, alpha = 0.3) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, linetype = "dashed") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, linetype = "dashed") +
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, 
               colour = "black") +
@@ -466,8 +466,8 @@ ssr_half_vs_splithalves_plot <-
   ssr_vs_shr_data %>% 
   ggplot(aes(x = median_ssr_x, y = median_split_corr)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
-  geom_vline(xintercept = 0.7, alpha = 0.3) +
-  geom_hline(yintercept = 0.7, alpha = 0.3) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, linetype = "dashed") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, linetype = "dashed") +
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, 
               colour = "black") +
@@ -531,8 +531,8 @@ ssr_vs_shr_data %>%
   mutate(shr_sb = 2*median_split_corr / (1 + median_split_corr)) %>% 
   ggplot(aes(x = ssr, y = shr_sb)) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3) +
-  geom_vline(xintercept = 0.7, alpha = 0.3) +
-  geom_hline(yintercept = 0.7, alpha = 0.3) +
+  geom_vline(xintercept = 0.7, alpha = 0.3, linetype = "dashed") +
+  geom_hline(yintercept = 0.7, alpha = 0.3, linetype = "dashed") +
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, 
               colour = "black") +
