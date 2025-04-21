@@ -170,17 +170,6 @@ judging_sessions_summary %>%
   basic_kable()
 ```
 
-```{r}
-judging_sessions_summary %>% 
-  mutate(source = ifelse(is.na(source), "Lens search", source)) %>% 
-  left_join(all_papers_in_screening %>% select(project_id, category), by = "project_id") %>% 
-  janitor::tabyl(category, source) %>% 
-  janitor::adorn_totals() %>% 
-  janitor::adorn_percentages(denominator = "col") %>% 
-  janitor::adorn_pct_formatting(digits = 0) %>% 
-  janitor::adorn_ns(position = "front") %>% 
-  basic_kable()
-```
 
 
 
@@ -219,16 +208,16 @@ digraph graph2 {{
 graph [layout = dot]
 
 # node definitions with substituted label text
-node [shape = rectangle, width = 4, fillcolor = Biege, fontname = 'Arial']
+node [shape = rectangle, width = 4, fontname = 'Arial']
 step1 [label = 'Records identified from lens.org (n = {data$step1})']
 step2 [label = 'Records screened (n = {data$step1})']
 step3 [label = 'Reports assessed for eligibility (n = {data$step2})']
 step4 [label = 'Reports identified as eligible (n = {data$step3})']
-step5 [label = 'Data obtained (n = {data$step4})\n({nrow(judging_sessions_summary %>% filter(is.na(source)))} datasets)']
+step5 [label = 'Data obtained (n = {data$step4})\n({nrow(judging_sessions_summary %>% filter(is.na(source)))} judging sessions)']
 step2out [label = 'Records excluded: \\n {step2outdata}']
 step3out [label = 'Reports excluded (n = {data$step2 - data$step3})']
-snowball [label = 'Additional reports identified (n = {data$snowball})\n({nrow(judging_sessions_summary %>% filter(source == 'snowballing'))} datasets)']
-final [label = 'Reports included in the analysis (n = {data$final})\n({nrow(judging_sessions_summary)} datasets)']
+snowball [label = 'Additional reports identified (n = {data$snowball})\n({nrow(judging_sessions_summary %>% filter(source == 'snowballing'))} judging sessions)']
+final [label = 'Reports included in the analysis (n = {data$final})\n({nrow(judging_sessions_summary)} judging sessions)']
 
 # make the exclusions appear on the same level as their step
 subgraph {{ rank = same; step2; step2out }}
@@ -250,6 +239,8 @@ flowchart %>%
   writeLines("flowchart.svg")
 
 rsvg::rsvg_pdf(svg = "flowchart.svg", file = "flowchart.pdf")
+
+rsvg::rsvg_pdf(svg = "flowchart.svg", file = "../figs-pdf/FIG_01-flowchart.pdf")
 ```
 
 ![Flowchart](flowchart.svg)

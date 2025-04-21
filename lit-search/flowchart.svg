@@ -44,8 +44,8 @@
 <title>step2out</title>
 <polygon fill="none" stroke="#000000" points="594,-374.5003 306,-374.5003 306,-299.0997 594,-299.0997 594,-374.5003"/>
 <text text-anchor="middle" x="450" y="-357.8" font-family="Arial" font-size="14.00" fill="#000000">Records excluded: </text>
-<text text-anchor="middle" x="450" y="-341" font-family="Arial" font-size="14.00" fill="#000000"> Not in English (n=72)</text>
-<text text-anchor="middle" x="450" y="-324.2" font-family="Arial" font-size="14.00" fill="#000000">Not Relevant (n=1129)</text>
+<text text-anchor="middle" x="450" y="-341" font-family="Arial" font-size="14.00" fill="#000000"> Not Relevant (n=1129)</text>
+<text text-anchor="middle" x="450" y="-324.2" font-family="Arial" font-size="14.00" fill="#000000">Not in English (n=72)</text>
 <text text-anchor="middle" x="450" y="-307.4" font-family="Arial" font-size="14.00" fill="#000000">Theoretical (n=132)</text>
 </g>
 <!-- step2&#45;&gt;step2out -->
@@ -83,7 +83,7 @@
 <title>step5</title>
 <polygon fill="none" stroke="#000000" points="288,-119.0019 0,-119.0019 0,-77.7981 288,-77.7981 288,-119.0019"/>
 <text text-anchor="middle" x="144" y="-102.6" font-family="Arial" font-size="14.00" fill="#000000">Data obtained (n = 33)</text>
-<text text-anchor="middle" x="144" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">(63 datasets)</text>
+<text text-anchor="middle" x="144" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">(63 judging sessions)</text>
 </g>
 <!-- step4&#45;&gt;step5 -->
 <g id="edge4" class="edge">
@@ -96,7 +96,7 @@
 <title>final</title>
 <polygon fill="none" stroke="#000000" points="441,-41.4019 153,-41.4019 153,-.1981 441,-.1981 441,-41.4019"/>
 <text text-anchor="middle" x="297" y="-25" font-family="Arial" font-size="14.00" fill="#000000">Reports included in the analysis (n = 41)</text>
-<text text-anchor="middle" x="297" y="-8.2" font-family="Arial" font-size="14.00" fill="#000000">(101 datasets)</text>
+<text text-anchor="middle" x="297" y="-8.2" font-family="Arial" font-size="14.00" fill="#000000">(101 judging sessions)</text>
 </g>
 <!-- step5&#45;&gt;final -->
 <g id="edge8" class="edge">
@@ -109,7 +109,7 @@
 <title>snowball</title>
 <polygon fill="none" stroke="#000000" points="594,-119.0019 306,-119.0019 306,-77.7981 594,-77.7981 594,-119.0019"/>
 <text text-anchor="middle" x="450" y="-102.6" font-family="Arial" font-size="14.00" fill="#000000">Additional reports identified (n = 8)</text>
-<text text-anchor="middle" x="450" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">(38 datasets)</text>
+<text text-anchor="middle" x="450" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">(38 judging sessions)</text>
 </g>
 <!-- snowball&#45;&gt;final -->
 <g id="edge7" class="edge">
