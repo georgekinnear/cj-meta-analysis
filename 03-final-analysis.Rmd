@@ -287,6 +287,28 @@ rq1_data_derived %>%
   basic_kable()
 ```
 
+Representations per assessor:
+
+```{r}
+rq1_data_wide %>% 
+  mutate(N_RA = Representations / Assessors) %>% 
+  summarise(median_N_RA = median(N_RA))
+
+rq1_data_wide %>% 
+  mutate(N_RA = Representations / Assessors) %>% 
+  filter(N_RA < 1.5) %>% 
+  arrange(N_RA)
+
+rq1_data_wide %>% 
+  mutate(N_RA = Representations / Assessors) %>% 
+  filter(N_RA > 1.5, N_RA <= 2.5) %>% 
+  arrange(N_RA)
+
+rq1_data_derived %>% 
+  filter(feature == "Representations per assessor")
+```
+
+
 
 ## Reliability measures
 
@@ -459,6 +481,20 @@ omitted_studies %>%
   basic_kable(caption = "Omitted studies")
 ```
 
+```{r}
+adaptive_max_ncr <- max(ncr_vs_ssr_by_adaptivity_data %>% filter(study == "adaptive") %>% pull(N_CR))
+ncr_vs_ssr_by_adaptivity_data %>% 
+  filter(str_detect(study, "adaptive")) %>% 
+  filter(N_CR <= adaptive_max_ncr) %>% 
+  summarise(
+    mean_SSR = mean(SSR),
+    sd_SSR = sd(SSR),
+    n = n(),
+    .by = study
+  )
+```
+
+
 
 ## Identifying characteristics that influence reliability
 
@@ -613,7 +649,7 @@ shr_table <-
 
 
 <details>
-  <summary>TODO</summary>
+  <summary>**TODO** - log transformed predictors</summary>
   
 ```{r}
 # (1) here is the model with the variables logged - R^2 is .322 and only N_CR is significant in the model
@@ -708,10 +744,20 @@ Another approach would be to consider log-transformed versions of the three char
 
 ```{r fig.height=10, fig.width=8}
 ssr_log_predictors <- reliability_characteristics %>% 
-  select(ssr, starts_with("observed_")) %>% 
+  select(ssr, starts_with("observed_"), N_CA, N_CR, N_RA) %>% 
   mutate(across(starts_with("observed"), log10)) %>% 
-  rename_with(~ str_replace(.x, "observed_", "log_"))
+  rename_with(~ str_replace(.x, "observed_", "")) %>% 
+  mutate(across(starts_with("N_"), log10)) %>% 
+  rename_with(~ str_replace(.x, "N_", "log_N_"))
 
+ssr_log_predictors %>% 
+  lm(data = ., formula = ssr ~ log_N_A + log_N_C + log_N_R + log_N_CR + log_N_CA) %>% 
+  summary()
+```
+
+And with interactions: 
+
+```{r fig.height=10, fig.width=8}
 ssr_log_predictors %>% 
   lm(data = ., formula = ssr ~ log_N_A * log_N_C * log_N_R) %>% 
   summary()
@@ -946,6 +992,35 @@ raw_sims_head %>%
   geom_point(data = raw_sims_head %>% summarise(ssr_x = median(ssr_x), split_corr = median(split_corr), .by = "judging_session"), colour = "green", shape = 25, size = 3) +
   facet_wrap(~ judging_session)
 ```
+
+#### Why 100 replicates?
+
+Partly this is down to computational efficiency - generating replicates for some of the larger datasets is computationally intensive.
+
+But we also found that 100 replicates was sufficient to get a reasonably precise estimate of the mean `ssr_x` and `split_corr` values. This shows the distribution of the SEM for each measure, across all the judging sessions:
+
+```{r}
+biases <- raw_sims %>% 
+  group_by(judging_session) %>% 
+  summarise(
+    bias_split_corr = sd(split_corr) / sqrt(n()),
+    bias_ssr_x = sd(ssr_x) / sqrt(n())
+  ) %>% 
+  pivot_longer(cols = starts_with("bias_"), names_prefix = "bias_")
+
+biases %>% 
+  ggplot(aes(x = name, y = value)) +
+  geom_boxplot() +
+  labs(x = "measure", y = "bias (standard error of the mean)")
+
+biases %>% 
+  group_by(name) %>% 
+  summarise(
+    bias_max = max(value),
+    bias_median = median(value)
+  )
+```
+
 
 ### SSR_HALF versus SSR (Figure)
 

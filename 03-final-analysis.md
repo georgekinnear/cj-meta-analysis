@@ -454,6 +454,58 @@ Comparisons per representation
 </tbody>
 </table>
 
+Representations per assessor:
+
+    ## # A tibble: 1 × 1
+    ##   median_N_RA
+    ##         <dbl>
+    ## 1        1.68
+
+    ## # A tibble: 45 × 5
+    ##    judging_session        Assessors Representations Comparisons   N_RA
+    ##    <chr>                      <dbl>           <dbl>       <dbl>  <dbl>
+    ##  1 Esen2019                     459               8       12852 0.0174
+    ##  2 Isnac2020                    444               8       12432 0.0180
+    ##  3 Luckett2018_coldbrew         100               3         300 0.03  
+    ##  4 Luckett2018_pizza             95               5         380 0.0526
+    ##  5 Vatavu2020                   251              14        6595 0.0558
+    ##  6 Luckett2018_icecream          87               5         435 0.0575
+    ##  7 Luckett2018_cola              99               6         990 0.0606
+    ##  8 LuckettX_odor-familiar        52               5         520 0.0962
+    ##  9 LuckettX_odor-pleasant        52               5         520 0.0962
+    ## 10 Zucco2019_experts            283              37        3101 0.131 
+    ## # ℹ 35 more rows
+
+    ## # A tibble: 11 × 5
+    ##    judging_session                   Assessors Representations Comparisons  N_RA
+    ##    <chr>                                 <dbl>           <dbl>       <dbl> <dbl>
+    ##  1 Kinnear2021_experts-withsolutions        13              20         302  1.54
+    ##  2 Jones2014_Bowland070211data              11              18         143  1.64
+    ##  3 Jones2014_GCSE070211data                 11              18         150  1.64
+    ##  4 Jones2013a_peer1                        100             168        1200  1.68
+    ##  5 Jones2013a_peer2                         93             168        1210  1.81
+    ##  6 Bisson2016_stats                         10              20         453  2   
+    ##  7 Holmes2017                               33              66        1650  2   
+    ##  8 Kinnear2021_students-withsolutio…         9              20         331  2.22
+    ##  9 Jones2016b_perfect                       17              38         810  2.24
+    ## 10 Daal2017_sample1                         56             136        1229  2.43
+    ## 11 Kinnear2021_students-withsolutio…         8              20         142  2.5
+
+    ## # A tibble: 101 × 3
+    ##    judging_session     feature                       count
+    ##    <chr>               <chr>                         <dbl>
+    ##  1 AlMaimani2017       Representations per assessor  0.333
+    ##  2 Bisson2016_algebra  Representations per assessor  4.6  
+    ##  3 Bisson2016_calculus Representations per assessor  1.33 
+    ##  4 Bisson2016_stats    Representations per assessor  2    
+    ##  5 Bisson2019          Representations per assessor 20.6  
+    ##  6 Bramley2018_1a      Representations per assessor  8.33 
+    ##  7 Bramley2018_1b      Representations per assessor  1.11 
+    ##  8 Bramley2018_2       Representations per assessor  9.38 
+    ##  9 Clark2018_Study1    Representations per assessor  1.46 
+    ## 10 Clark2018_Study2    Representations per assessor  0.854
+    ## # ℹ 91 more rows
+
 ## Reliability measures
 
 - Scale Separation Reliability (SSR) is the value of SSR computed from
@@ -1096,6 +1148,12 @@ FALSE
 </tbody>
 </table>
 
+    ## # A tibble: 2 × 4
+    ##   study        mean_SSR sd_SSR     n
+    ##   <chr>           <dbl>  <dbl> <int>
+    ## 1 non-adaptive    0.850 0.0545    32
+    ## 2 adaptive        0.917 0.0478    19
+
 ## Identifying characteristics that influence reliability
 
 Look at how representations, assessors, comparisons and their
@@ -1262,7 +1320,7 @@ Forced linear regression SHR:
 
 <details>
 <summary>
-TODO
+**TODO** - log transformed predictors
 </summary>
 
     ## 
@@ -1330,7 +1388,7 @@ TODO
     ## Multiple R-squared:  0.3225, Adjusted R-squared:  0.2886 
     ## F-statistic: 9.518 on 3 and 60 DF,  p-value: 3.111e-05
 
-![](figs-web/03-final-analysis/unnamed-chunk-21-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-23-1.png)<!-- -->
 
 </details>
 
@@ -1521,35 +1579,61 @@ three characteristics:
 
     ## 
     ## Call:
-    ## lm(formula = ssr ~ log_N_A * log_N_C * log_N_R, data = .)
+    ## lm(formula = ssr ~ log_N_A + log_N_C + log_N_R + log_N_CR + log_N_CA, 
+    ##     data = .)
     ## 
     ## Residuals:
     ##       Min        1Q    Median        3Q       Max 
-    ## -0.149009 -0.033278  0.005137  0.037749  0.094847 
+    ## -0.180607 -0.021683  0.003992  0.034082  0.124242 
     ## 
     ## Coefficients:
-    ##                         Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)              1.26822    0.24691   5.136 3.67e-06 ***
-    ## log_N_A                 -0.48759    0.14964  -3.258 0.001907 ** 
-    ## log_N_C                  0.02357    0.08515   0.277 0.782908    
-    ## log_N_R                 -0.51419    0.14218  -3.616 0.000642 ***
-    ## log_N_A:log_N_C          0.08159    0.04372   1.866 0.067274 .  
-    ## log_N_A:log_N_R          0.33984    0.08719   3.898 0.000262 ***
-    ## log_N_C:log_N_R          0.07481    0.03690   2.027 0.047417 *  
-    ## log_N_A:log_N_C:log_N_R -0.06151    0.01969  -3.124 0.002828 ** 
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.94131    0.13431   7.009 2.83e-09 ***
+    ## log_N_A      0.45328    0.28666   1.581  0.11926    
+    ## log_N_C     -1.55295    0.78861  -1.969  0.05371 .  
+    ## log_N_R      0.41931    0.19318   2.171  0.03407 *  
+    ## log_N_CR     0.17868    0.05980   2.988  0.00411 ** 
+    ## log_N_CA     0.14391    0.08344   1.725  0.08991 .  
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.05497 on 56 degrees of freedom
-    ## Multiple R-squared:  0.5214, Adjusted R-squared:  0.4615 
-    ## F-statistic: 8.715 on 7 and 56 DF,  p-value: 3.382e-07
+    ## Residual standard error: 0.0591 on 58 degrees of freedom
+    ## Multiple R-squared:  0.427,  Adjusted R-squared:  0.3777 
+    ## F-statistic: 8.646 on 5 and 58 DF,  p-value: 3.609e-06
 
-    ## Start:  AIC=-363.87
+And with interactions:
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log_N_A * log_N_C * log_N_R, data = .)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.15225 -0.03506  0.01282  0.03299  0.08749 
+    ## 
+    ## Coefficients:
+    ##                         Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)               0.5631     0.1061   5.305 1.99e-06 ***
+    ## log_N_A                  -0.4181     0.3385  -1.235 0.221877    
+    ## log_N_C                   0.8764     0.2795   3.135 0.002732 ** 
+    ## log_N_R                  -0.6463     0.3324  -1.945 0.056857 .  
+    ## log_N_A:log_N_C           0.1941     0.8044   0.241 0.810246    
+    ## log_N_A:log_N_R           4.1455     1.1066   3.746 0.000426 ***
+    ## log_N_C:log_N_R           0.2894     0.7212   0.401 0.689698    
+    ## log_N_A:log_N_C:log_N_R  -4.9372     2.1295  -2.319 0.024096 *  
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.05363 on 56 degrees of freedom
+    ## Multiple R-squared:  0.5444, Adjusted R-squared:  0.4875 
+    ## F-statistic: 9.561 on 7 and 56 DF,  p-value: 9.387e-08
+
+    ## Start:  AIC=-367.03
     ## ssr ~ log_N_A * log_N_C * log_N_R
     ## 
     ##                           Df Sum of Sq     RSS     AIC
-    ## <none>                                 0.16922 -363.87
-    ## - log_N_A:log_N_C:log_N_R  1  0.029483 0.19870 -355.59
+    ## <none>                                 0.16106 -367.03
+    ## - log_N_A:log_N_C:log_N_R  1  0.015461 0.17652 -363.16
 
     ## 
     ## Call:
@@ -1557,15 +1641,15 @@ three characteristics:
     ## 
     ## Coefficients:
     ##             (Intercept)                  log_N_A                  log_N_C  
-    ##                 1.26822                 -0.48759                  0.02357  
+    ##                  0.5631                  -0.4181                   0.8764  
     ##                 log_N_R          log_N_A:log_N_C          log_N_A:log_N_R  
-    ##                -0.51419                  0.08159                  0.33984  
+    ##                 -0.6463                   0.1941                   4.1455  
     ##         log_N_C:log_N_R  log_N_A:log_N_C:log_N_R  
-    ##                 0.07481                 -0.06151
+    ##                  0.2894                  -4.9372
 
-![](figs-web/03-final-analysis/unnamed-chunk-26-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-29-1.png)<!-- -->
 
-![](figs-web/03-final-analysis/unnamed-chunk-27-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-30-1.png)<!-- -->
 
 </details>
 
@@ -2181,6 +2265,24 @@ practice, as shown in this plot of the raw values and their averages
 (mean in red, median in green) in the first 16 sets of judging data:
 
 ![](figs-web/03-final-analysis/raw-sims-1.png)<!-- -->
+
+#### Why 100 replicates?
+
+Partly this is down to computational efficiency - generating replicates
+for some of the larger datasets is computationally intensive.
+
+But we also found that 100 replicates was sufficient to get a reasonably
+precise estimate of the mean `ssr_x` and `split_corr` values. This shows
+the distribution of the SEM for each measure, across all the judging
+sessions:
+
+![](figs-web/03-final-analysis/unnamed-chunk-36-1.png)<!-- -->
+
+    ## # A tibble: 2 × 3
+    ##   name       bias_max bias_median
+    ##   <chr>         <dbl>       <dbl>
+    ## 1 split_corr   0.0402     0.00435
+    ## 2 ssr_x        0.0173     0.00257
 
 ### SSR_HALF versus SSR (Figure)
 
