@@ -1323,6 +1323,11 @@ Forced linear regression SHR:
 **TODO** - log transformed predictors
 </summary>
 
+1)  here is the model with the variables logged - R^2 is .322 and only
+    N_CR is significant in the model
+
+<!-- -->
+
     ## 
     ## Call:
     ## lm(formula = median_split_corr ~ log(N_CR) + log(observed_N_A) + 
@@ -1345,6 +1350,11 @@ Forced linear regression SHR:
     ## Multiple R-squared:  0.3225, Adjusted R-squared:  0.2886 
     ## F-statistic: 9.518 on 3 and 60 DF,  p-value: 3.111e-05
 
+2)  model (1) has redundancy in N_C, since it appears in N_CR, and
+    removing that term gives R^2 of .319 and both predictors significant
+
+<!-- -->
+
     ## 
     ## Call:
     ## lm(formula = median_split_corr ~ log(N_CR) + log(observed_N_A), 
@@ -1365,6 +1375,13 @@ Forced linear regression SHR:
     ## Residual standard error: 0.1434 on 61 degrees of freedom
     ## Multiple R-squared:  0.3199, Adjusted R-squared:  0.2976 
     ## F-statistic: 14.35 on 2 and 61 DF,  p-value: 7.826e-06
+
+3)  model (2) effectively just has N_C, N_R and N_A in it. So why not
+    just use them directly? This also gives R^2 of .322 but now only N_R
+    is significant - and the interpretation of (3) is maybe not so easy
+    as (1)
+
+<!-- -->
 
     ## 
     ## Call:
@@ -1388,7 +1405,7 @@ Forced linear regression SHR:
     ## Multiple R-squared:  0.3225, Adjusted R-squared:  0.2886 
     ## F-statistic: 9.518 on 3 and 60 DF,  p-value: 3.111e-05
 
-![](figs-web/03-final-analysis/unnamed-chunk-23-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-25-1.png)<!-- -->
 
 </details>
 
@@ -1647,9 +1664,9 @@ And with interactions:
     ##         log_N_C:log_N_R  log_N_A:log_N_C:log_N_R  
     ##                  0.2894                  -4.9372
 
-![](figs-web/03-final-analysis/unnamed-chunk-29-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-31-1.png)<!-- -->
 
-![](figs-web/03-final-analysis/unnamed-chunk-30-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-32-1.png)<!-- -->
 
 </details>
 
@@ -2276,7 +2293,7 @@ precise estimate of the mean `ssr_x` and `split_corr` values. This shows
 the distribution of the SEM for each measure, across all the judging
 sessions:
 
-![](figs-web/03-final-analysis/unnamed-chunk-36-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-38-1.png)<!-- -->
 
     ## # A tibble: 2 × 3
     ##   name       bias_max bias_median

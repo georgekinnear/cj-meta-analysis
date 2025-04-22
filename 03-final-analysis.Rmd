@@ -651,16 +651,24 @@ shr_table <-
 <details>
   <summary>**TODO** - log transformed predictors</summary>
   
+(1) here is the model with the variables logged - R^2 is .322 and only N_CR is significant in the model
+
 ```{r}
-# (1) here is the model with the variables logged - R^2 is .322 and only N_CR is significant in the model
 lm(formula = median_split_corr ~ log(N_CR) + log(observed_N_A) + log(observed_N_C),
      data = reliability_characteristics) %>% summary()
+```
 
-# (2) model (1) has redundancy in N_C, since it appears in N_CR, and removing that term gives R^2 of .319 and both predictors significant
+(2) model (1) has redundancy in N_C, since it appears in N_CR, and removing that term gives R^2 of .319 and both predictors significant
+
+```{r}
 lm(formula = median_split_corr ~ log(N_CR) + log(observed_N_A),
      data = reliability_characteristics) %>% summary()
+```
 
-# (3) model (2) effectively just has N_C, N_R and N_A in it. So why not just use them directly? This also gives R^2 of .322 but now only N_R is significant - and the interpretation of (3) is maybe not so easy as (1)
+(3) model (2) effectively just has N_C, N_R and N_A in it. So why not just use them directly? This also gives R^2 of .322 but now only N_R is significant - and the interpretation of (3) is maybe not so easy as (1)
+
+```{r}
+
 lm(formula = median_split_corr ~ log(observed_N_A) + log(observed_N_C) + log(observed_N_R),
      data = reliability_characteristics) %>% summary()
 ```
