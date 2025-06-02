@@ -519,15 +519,133 @@ reliability_characteristics <- meta_analysis_data %>%
   filter(adaptivity == FALSE)
 
 # write out a copy of this data in case it is useful elsewhere
-reliability_characteristics %>% 
+reliability_predictors <- reliability_characteristics %>% 
   select(judging_session, ssr, shr = median_split_corr, all_of(characteristics_of_interest)) %>% 
   rename_with(~ str_remove(.x, "observed_")) %>% 
   mutate(
     log_N_A = log10(N_A),
     log_N_C = log10(N_C),
     log_N_R = log10(N_R)
-  ) %>% 
+  )
+
+reliability_predictors %>% 
   write.csv("data-cache/RQ2_characteristics_vs_reliability.csv")
+```
+
+
+### Regression
+
+There are three characteristics of interest: N_A, N_C and N_R. We will use these as predictors of SSR and of SHR, in separate regression models.
+
+#### Log-transforming the predictors
+
+First, we log-transform the predictor variables, since our earlier exploration of their distributions showed that they are best presented on a logarithmic scale.
+
+Here we see how each of the log-transformed variables individually correlate with the two reliability measures:
+
+```{r}
+reliability_predictors %>%
+  pivot_longer(cols = c(ssr, shr), names_to = "reliability_measure", values_to = "reliability") %>% 
+  pivot_longer(cols = c(N_A, N_C, N_R), names_to = "characteristic", values_to = "value") %>% 
+  mutate(log_value = log10(value)) %>% 
+  ggplot(aes(x = value, y = reliability)) +
+    geom_point(alpha = 0.5, shape = 16) +
+    scale_x_continuous(trans = 'log10', labels = scales::comma) +
+    facet_grid(cols = vars(characteristic), rows = vars(str_to_upper(reliability_measure)), scales = "free_x", switch = "y") +
+    ggpubr::stat_cor(position = position_nudge(y = 0.12), p.accuracy = 0.001) +
+    labs(x = "value (log scale)", y = "Reliability")
+```
+
+#### Regression model building
+
+We use a stepwise selection procedure to build up the best fitting model:
+
+```{r}
+step_lm <- step(
+  object = lm(data = reliability_predictors, formula = ssr ~ 1),
+  scope = ~ log_N_A * log_N_R * log_N_C,
+  direction = "both"
+)
+```
+
+This results in a model with both N_C and N_R as significant predictors.
+
+```{r}
+summary(step_lm)
+```
+This model overall explains 37% of the variance.
+
+#### Interpreting the model coefficients
+
+Interpreting the coefficients is a bit fiddly. To interpret (say) the coefficient for N_C you need to keep N_R fixed.
+
+Here each predictor is shown separately, along with the regression line given by the best-fitting model:
+
+```{r}
+reliability_predictors %>% 
+  ggplot(aes(x = log_N_C, y = ssr)) +
+  geom_point() +
+  geom_abline(slope = 0.08, intercept = 0.7 + mean(reliability_predictors$log_N_R)*(-0.04833))
+
+reliability_predictors %>% 
+  ggplot(aes(x = log_N_R, y = ssr)) +
+  geom_point() +
+  geom_abline(slope = -0.04833, intercept = 0.7 + mean(reliability_predictors$log_N_C)*(0.08386))
+```
+
+So for instance, assuming the number of representations is kept constant, increasing the number of comparisons by 10% would increase the SSR by $0.08386 \times \log_{10}(1.1)=0.0034$.
+
+```{r}
+tibble(increase_N_C_pc = 10 * c(1:10)) %>%
+  mutate(increase_ssr = 0.08386 * log10(1 + increase_N_C_pc / 100)) %>%
+  ggplot(aes(x = increase_N_C_pc, y = increase_ssr)) +
+  geom_point() +
+  labs(x = "Percentage increase in N_C", y = "Resulting increase in SSR", title = "Interpreting the 0.08386 coefficient for N_C")
+```
+
+Alternatively, using log with base 2, the coefficients show e.g. "what happens to SSR if you double N_C":
+
+```{r}
+lm(data = reliability_predictors, formula = ssr ~ log2(N_C) + log2(N_R)) %>% summary()
+```
+
+(Here, the 0.025 coefficient for N_C matches up with what we see in the previous plot, since a 100% increase in N_C is a doubling of N_C.)
+
+#### How does N_CR fit in?
+
+Note that from the definition of N_CR, $\log N_{CR} = \log(2 N_C / N_R) = \log(2) + \log(N_C) - \log(N_R)$.
+
+In the best fitting model, we see that the relative magnitude of the coefficients of N_C and N_R is about 2 to 1, so we have approximately $SSR = \beta_1 \times (2 \log N_C - \log N_R) + \beta_0$
+
+So we could re-express the best-fitting model using N_C and N_CR:
+
+```{r}
+lm(data = reliability_predictors, formula = ssr ~ log10(N_C) + log10(N_CR)) %>% summary()
+```
+
+But that model doesn't really make sense, since the two predictors are not independent -- e.g., to interpret the coefficient for N_C you would need to keep N_CR fixed and to do this you would need to adjust N_R.
+
+Using only N_CR as a predictor does make the model a bit worse -- the $R^2$ goes down to .28:
+
+```{r}
+lm(data = reliability_predictors, formula = ssr ~ log10(N_CR)) %>% summary()
+```
+
+Since 28% of variance explained is actually quite a lot of the way toward the best-fitting model's 37%, this does somewhat support the previous conclusion of Verhavert et al. that N_CR is the most important factor to consider. That motivates our focus on it in the next section.
+
+
+#### Aside: Check on the log transformation
+
+Note that if we did not log-transform the variables, we get a less predictive model. Applying stepwise selection in this case results in a model with N_A as the only predictor, explaining 8% of the variance:
+
+```{r}
+step_lm <- step(
+  object = lm(data = reliability_predictors, formula = ssr ~ 1),
+  scope = ~ N_A * N_R * N_C,
+  direction = "both"
+)
+
+summary(step_lm)
 ```
 
 
@@ -619,7 +737,8 @@ reliability_characteristics %>%
     geom_point(alpha = 0.5, shape = 16) +
     scale_x_continuous(trans = 'log10', labels = scales::comma) +
     facet_wrap( ~ characteristic, scales = "free") +
-    ggpubr::stat_cor(position = position_nudge(y = 0.2), p.accuracy = 0.001)
+    ggpubr::stat_cor(position = position_nudge(y = 0.2), p.accuracy = 0.001) +
+    labs(x = "value (log scale)", y = "SHR")
 ```
 
 
@@ -673,6 +792,64 @@ lm(formula = median_split_corr ~ log(observed_N_A) + log(observed_N_C) + log(obs
      data = reliability_characteristics) %>% summary()
 ```
 
+
+(4) or, going back to the correlations, we actually find that log(N_RA) is also significant -- so we should return to model (1) and augment it with log(N_RA). This gives strange output -- the estimates for the last predictor come out as NA, presumably because of redundancy in the predictors?
+
+
+```{r}
+lm(formula = median_split_corr ~ log(N_RA) + log(N_CR) + log(observed_N_A) + log(observed_N_C),
+     data = reliability_characteristics) %>% summary()
+```
+
+Build up the model stepwise?
+
+```{r}
+ssr_all_logged <- reliability_characteristics %>% 
+  lm(data = ., formula = median_split_corr ~ log(N_CR) + log(N_RA) + log(N_CA) + log(observed_N_A) + log(observed_N_C) + log(observed_N_R))
+
+step_lm <- step(ssr_all_logged, direction = "forward")
+
+summary(step_lm)
+
+step_lm$anova
+
+step_lm <- step(
+  object = lm(data = reliability_characteristics, formula = median_split_corr ~ 1),
+  scope = ~ log(N_CR) + log(N_RA) + log(N_CA) + log(observed_N_A) + log(observed_N_C) + log(observed_N_R),
+  direction = "forward"
+)
+
+summary(step_lm)
+
+step_glm <- step(
+  object = glm(data = reliability_characteristics, formula = median_split_corr ~ 1),
+  scope = ~ log(N_CR) + log(N_RA) + log(N_CA) + log(observed_N_A) + log(observed_N_C) + log(observed_N_R),
+  direction = "both"
+)
+
+summary(step_glm)
+1 - step_glm$deviance/step_glm$null.deviance
+```
+
+Approach used by Verhavert et al. (2019):
+
+```{r}
+BIC(
+  glm( ssr ~ 1, data = reliability_characteristics, 
+       family = gaussian( link = "logit" ) ),
+  glm( ssr ~ N_CR, data = reliability_characteristics, 
+       family = gaussian( link = "logit" ) )
+)
+
+glm( ssr ~ N_CR, data = reliability_characteristics, 
+       family = gaussian( link = "logit" ) ) %>% summary()
+
+glm( ssr ~ N_CR, data = reliability_characteristics ) %>% summary()
+```
+
+
+
+
 ```{r}
 par(mfrow = c(2, 2))
 plot(SHR_lm)
@@ -690,9 +867,11 @@ reliability_characteristics %>%
   select(ssr, all_of(characteristics_of_interest)) %>% 
   pivot_longer(cols = -ssr, names_to = "characteristic") %>% 
   ggplot(aes(x = value, y = ssr)) +
-    geom_point() +
+    geom_point(alpha = 0.5, shape = 16) +
     scale_x_continuous(trans = 'log10', labels = scales::comma) +
-    facet_wrap(~ characteristic, scales = "free")
+    facet_wrap( ~ characteristic, scales = "free") +
+    ggpubr::stat_cor(position = position_nudge(y = 0.06), p.accuracy = 0.001) +
+    labs(x = "value (log scale)", y = "SSR")
 ```
 
 SSR forced linear regression:
@@ -706,6 +885,56 @@ SSR_lm <- lm(formula = formula_ssr,
 summary(SSR_lm)
 lm.beta(SSR_lm)
 ```
+
+```{r}
+step_lm_ssr <- step(
+  object = lm(data = reliability_characteristics,
+              formula = ssr ~ 1),
+  scope = ~ log(N_CR) + log(N_RA) + log(N_CA) + log(observed_N_A) + log(observed_N_C) + log(observed_N_R),
+  direction = "forward"
+)
+
+summary(step_lm_ssr)
+
+step_lm_ssr$anova
+
+AIC(
+  lm(data = reliability_characteristics,
+     formula = ssr ~ log(N_CR)),
+  lm(data = reliability_characteristics,
+     formula = ssr ~ log(N_CR)+log(observed_N_C)),
+  lm(data = reliability_characteristics,
+     formula = ssr ~ log(N_CR)+log(observed_N_R)),
+  lm(data = reliability_characteristics,
+     formula = ssr ~ log(N_CR)+log(observed_N_C)+log(observed_N_R))
+)
+
+
+lm(data = reliability_characteristics,
+     formula = ssr ~ log(observed_N_C) + log(observed_N_R) + log(observed_N_A)) %>% summary()
+
+step_lm_ssr_noratios <- step(
+  object = lm(data = reliability_characteristics,
+              formula = ssr ~ 1),
+  scope = ~ log2(observed_N_A) * log2(observed_N_C) * log2(observed_N_R),
+  direction = "both"
+)
+
+summary(step_lm_ssr_noratios)
+
+
+lm(data = reliability_characteristics,
+     formula = ssr ~ log10(N_CR)) %>% summary()
+
+reliability_characteristics %>% summarise(mean_log10_N_C = mean(log10(observed_N_C)), mean_log10_N_R = mean(log10(observed_N_R)), mean_log10_N_CR = mean(log10(N_CR)), mean_N_CR = mean(N_CR))
+```
+
+
+```{r fig.height=8, fig.width=5}
+performance::check_model(step_lm_ssr_noratios)
+```
+
+
 
 #### Regression results (Table 4)
 

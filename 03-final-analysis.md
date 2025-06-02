@@ -1161,6 +1161,222 @@ derivatives relate to SSR and SHR.
 
 Note that here we restrict to only the *non-adaptive* CJ sessions.
 
+### Regression
+
+There are three characteristics of interest: N_A, N_C and N_R. We will
+use these as predictors of SSR and of SHR, in separate regression
+models.
+
+#### Log-transforming the predictors
+
+First, we log-transform the predictor variables, since our earlier
+exploration of their distributions showed that they are best presented
+on a logarithmic scale.
+
+Here we see how each of the log-transformed variables individually
+correlate with the two reliability measures:
+
+![](figs-web/03-final-analysis/unnamed-chunk-16-1.png)<!-- -->
+
+#### Regression model building
+
+We use a stepwise selection procedure to build up the best fitting
+model:
+
+    ## Start:  AIC=-330.71
+    ## ssr ~ 1
+    ## 
+    ##           Df Sum of Sq     RSS     AIC
+    ## + log_N_C  1  0.088506 0.26504 -347.15
+    ## + log_N_A  1  0.071129 0.28242 -343.09
+    ## <none>                 0.35355 -330.71
+    ## + log_N_R  1  0.000634 0.35292 -328.83
+    ## 
+    ## Step:  AIC=-347.15
+    ## ssr ~ log_N_C
+    ## 
+    ##           Df Sum of Sq     RSS     AIC
+    ## + log_N_R  1  0.040713 0.22433 -355.83
+    ## <none>                 0.26504 -347.15
+    ## + log_N_A  1  0.006860 0.25818 -346.83
+    ## - log_N_C  1  0.088506 0.35355 -330.71
+    ## 
+    ## Step:  AIC=-355.83
+    ## ssr ~ log_N_C + log_N_R
+    ## 
+    ##                   Df Sum of Sq     RSS     AIC
+    ## <none>                         0.22433 -355.83
+    ## + log_N_A          1  0.002080 0.22225 -354.42
+    ## + log_N_R:log_N_C  1  0.000121 0.22421 -353.86
+    ## - log_N_R          1  0.040713 0.26504 -347.15
+    ## - log_N_C          1  0.128585 0.35292 -328.83
+
+This results in a model with both N_C and N_R as significant predictors.
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log_N_C + log_N_R, data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.214910 -0.024555  0.005735  0.039012  0.105553 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.69992    0.03553  19.697  < 2e-16 ***
+    ## log_N_C      0.08386    0.01418   5.913 1.64e-07 ***
+    ## log_N_R     -0.04833    0.01453  -3.327  0.00149 ** 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06064 on 61 degrees of freedom
+    ## Multiple R-squared:  0.3655, Adjusted R-squared:  0.3447 
+    ## F-statistic: 17.57 on 2 and 61 DF,  p-value: 9.427e-07
+
+This model overall explains 37% of the variance.
+
+#### Interpreting the model coefficients
+
+Interpreting the coefficients is a bit fiddly. To interpret (say) the
+coefficient for N_C you need to keep N_R fixed.
+
+Here each predictor is shown separately, along with the regression line
+given by the best-fitting model:
+
+![](figs-web/03-final-analysis/unnamed-chunk-19-1.png)<!-- -->![](figs-web/03-final-analysis/unnamed-chunk-19-2.png)<!-- -->
+
+So for instance, assuming the number of representations is kept
+constant, increasing the number of comparisons by 10% would increase the
+SSR by $0.08386 \times \log_{10}(1.1)=0.0034$.
+
+![](figs-web/03-final-analysis/unnamed-chunk-20-1.png)<!-- -->
+
+Alternatively, using log with base 2, the coefficients show e.g. “what
+happens to SSR if you double N_C”:
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log2(N_C) + log2(N_R), data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.214910 -0.024555  0.005735  0.039012  0.105553 
+    ## 
+    ## Coefficients:
+    ##              Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.699919   0.035535  19.697  < 2e-16 ***
+    ## log2(N_C)    0.025244   0.004269   5.913 1.64e-07 ***
+    ## log2(N_R)   -0.014550   0.004373  -3.327  0.00149 ** 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06064 on 61 degrees of freedom
+    ## Multiple R-squared:  0.3655, Adjusted R-squared:  0.3447 
+    ## F-statistic: 17.57 on 2 and 61 DF,  p-value: 9.427e-07
+
+(Here, the 0.025 coefficient for N_C matches up with what we see in the
+previous plot, since a 100% increase in N_C is a doubling of N_C.)
+
+#### How does N_CR fit in?
+
+Note that from the definition of N_CR,
+$\log N_{CR} = \log(2 N_C / N_R) = \log(2) + \log(N_C) - \log(N_R)$.
+
+In the best fitting model, we see that the relative magnitude of the
+coefficients of N_C and N_R is about 2 to 1, so we have approximately
+$SSR = \beta_1 \times (2 \log N_C - \log N_R) + \beta_0$
+
+So we could re-express the best-fitting model using N_C and N_CR:
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log10(N_C) + log10(N_CR), data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.214910 -0.024555  0.005735  0.039012  0.105553 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.68537    0.03644  18.810  < 2e-16 ***
+    ## log10(N_C)   0.03552    0.01255   2.830  0.00629 ** 
+    ## log10(N_CR)  0.04833    0.01453   3.327  0.00149 ** 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06064 on 61 degrees of freedom
+    ## Multiple R-squared:  0.3655, Adjusted R-squared:  0.3447 
+    ## F-statistic: 17.57 on 2 and 61 DF,  p-value: 9.427e-07
+
+But that model doesn’t really make sense, since the two predictors are
+not independent – e.g., to interpret the coefficient for N_C you would
+need to keep N_CR fixed and to do this you would need to adjust N_R.
+
+Using only N_CR as a predictor does make the model a bit worse – the
+$R^2$ goes down to .28 – but it’s not hugely much worse:
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log10(N_CR), data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.23729 -0.02564  0.00939  0.04597  0.08549 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.75917    0.02684  28.281  < 2e-16 ***
+    ## log10(N_CR)  0.06721    0.01361   4.937  6.3e-06 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06398 on 62 degrees of freedom
+    ## Multiple R-squared:  0.2822, Adjusted R-squared:  0.2706 
+    ## F-statistic: 24.37 on 1 and 62 DF,  p-value: 6.299e-06
+
+#### Check on the log transformation
+
+Note that if we did not log-transform the variables, we get a less
+predictive model. Applying stepwise selection in this case results in a
+model with N_A as the only predictor, explaining 8% of the variance:
+
+    ## Start:  AIC=-330.71
+    ## ssr ~ 1
+    ## 
+    ##        Df Sum of Sq     RSS     AIC
+    ## + N_A   1 0.0294217 0.32413 -334.27
+    ## + N_C   1 0.0278012 0.32575 -333.95
+    ## <none>              0.35355 -330.71
+    ## + N_R   1 0.0053955 0.34815 -329.70
+    ## 
+    ## Step:  AIC=-334.27
+    ## ssr ~ N_A
+    ## 
+    ##        Df Sum of Sq     RSS     AIC
+    ## <none>              0.32413 -334.27
+    ## + N_R   1 0.0000484 0.32408 -332.28
+    ## + N_C   1 0.0000007 0.32413 -332.27
+    ## - N_A   1 0.0294217 0.35355 -330.71
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ N_A, data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.210820 -0.044835  0.005185  0.062658  0.097289 
+    ## 
+    ## Coefficients:
+    ##              Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept) 8.799e-01  9.362e-03  93.991   <2e-16 ***
+    ## N_A         3.916e-05  1.651e-05   2.372   0.0208 *  
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.0723 on 62 degrees of freedom
+    ## Multiple R-squared:  0.08322,    Adjusted R-squared:  0.06843 
+    ## F-statistic: 5.628 on 1 and 62 DF,  p-value: 0.02079
+
 ### Correlations (Table 3)
 
 This table shows the Pearson correlation of each characteristic with SSR
@@ -1405,7 +1621,246 @@ Forced linear regression SHR:
     ## Multiple R-squared:  0.3225, Adjusted R-squared:  0.2886 
     ## F-statistic: 9.518 on 3 and 60 DF,  p-value: 3.111e-05
 
-![](figs-web/03-final-analysis/unnamed-chunk-25-1.png)<!-- -->
+4)  or, going back to the correlations, we actually find that log(N_RA)
+    is also significant – so we should return to model (1) and augment
+    it with log(N_RA). This gives strange output – the estimates for the
+    last predictor come out as NA, presumably because of redundancy in
+    the predictors?
+
+<!-- -->
+
+    ## 
+    ## Call:
+    ## lm(formula = median_split_corr ~ log(N_RA) + log(N_CR) + log(observed_N_A) + 
+    ##     log(observed_N_C), data = reliability_characteristics)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.39902 -0.06812  0.01420  0.09713  0.28832 
+    ## 
+    ## Coefficients: (1 not defined because of singularities)
+    ##                   Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)       0.397841   0.099479   3.999 0.000177 ***
+    ## log(N_RA)         0.007651   0.016085   0.476 0.636032    
+    ## log(N_CR)         0.045906   0.025244   1.819 0.073977 .  
+    ## log(observed_N_A) 0.042472   0.019849   2.140 0.036452 *  
+    ## log(observed_N_C)       NA         NA      NA       NA    
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.1443 on 60 degrees of freedom
+    ## Multiple R-squared:  0.3225, Adjusted R-squared:  0.2886 
+    ## F-statistic: 9.518 on 3 and 60 DF,  p-value: 3.111e-05
+
+Build up the model stepwise?
+
+    ## Start:  AIC=-243.93
+    ## median_split_corr ~ log(N_CR) + log(N_RA) + log(N_CA) + log(observed_N_A) + 
+    ##     log(observed_N_C) + log(observed_N_R)
+
+    ## 
+    ## Call:
+    ## lm(formula = median_split_corr ~ log(N_CR) + log(N_RA) + log(N_CA) + 
+    ##     log(observed_N_A) + log(observed_N_C) + log(observed_N_R), 
+    ##     data = .)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.39902 -0.06812  0.01420  0.09713  0.28832 
+    ## 
+    ## Coefficients: (3 not defined because of singularities)
+    ##                   Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)       0.397841   0.099479   3.999 0.000177 ***
+    ## log(N_CR)         0.045906   0.025244   1.819 0.073977 .  
+    ## log(N_RA)         0.007651   0.016085   0.476 0.636032    
+    ## log(N_CA)               NA         NA      NA       NA    
+    ## log(observed_N_A) 0.042472   0.019849   2.140 0.036452 *  
+    ## log(observed_N_C)       NA         NA      NA       NA    
+    ## log(observed_N_R)       NA         NA      NA       NA    
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.1443 on 60 degrees of freedom
+    ## Multiple R-squared:  0.3225, Adjusted R-squared:  0.2886 
+    ## F-statistic: 9.518 on 3 and 60 DF,  p-value: 3.111e-05
+
+    ##   Step Df Deviance Resid. Df Resid. Dev       AIC
+    ## 1      NA       NA        60   1.249135 -243.9316
+
+    ## Start:  AIC=-225.02
+    ## median_split_corr ~ 1
+    ## 
+    ##                     Df Sum of Sq    RSS     AIC
+    ## + log(observed_N_A)  1   0.50390 1.3397 -243.45
+    ## + log(N_CR)          1   0.49719 1.3464 -243.13
+    ## + log(N_RA)          1   0.29224 1.5514 -234.06
+    ## + log(observed_N_C)  1   0.28389 1.5597 -233.72
+    ## <none>                           1.8436 -225.02
+    ## + log(observed_N_R)  1   0.00613 1.8375 -223.23
+    ## + log(N_CA)          1   0.00368 1.8399 -223.15
+    ## 
+    ## Step:  AIC=-243.45
+    ## median_split_corr ~ log(observed_N_A)
+    ## 
+    ##                     Df Sum of Sq    RSS     AIC
+    ## + log(N_CR)          1  0.085863 1.2538 -245.69
+    ## <none>                           1.3397 -243.45
+    ## + log(N_RA)          1  0.021726 1.3180 -242.50
+    ## + log(observed_N_R)  1  0.021726 1.3180 -242.50
+    ## + log(N_CA)          1  0.002836 1.3369 -241.59
+    ## + log(observed_N_C)  1  0.002836 1.3369 -241.59
+    ## 
+    ## Step:  AIC=-245.69
+    ## median_split_corr ~ log(observed_N_A) + log(N_CR)
+    ## 
+    ##                     Df Sum of Sq    RSS     AIC
+    ## <none>                           1.2538 -245.69
+    ## + log(N_CA)          1 0.0047107 1.2491 -243.93
+    ## + log(N_RA)          1 0.0047107 1.2491 -243.93
+    ## + log(observed_N_C)  1 0.0047107 1.2491 -243.93
+    ## + log(observed_N_R)  1 0.0047107 1.2491 -243.93
+
+    ## 
+    ## Call:
+    ## lm(formula = median_split_corr ~ log(observed_N_A) + log(N_CR), 
+    ##     data = reliability_characteristics)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.39980 -0.07071  0.01840  0.09811  0.27932 
+    ## 
+    ## Coefficients:
+    ##                   Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)        0.43477    0.06180   7.035 2.02e-09 ***
+    ## log(observed_N_A)  0.04172    0.01966   2.122   0.0379 *  
+    ## log(N_CR)          0.03779    0.01849   2.044   0.0453 *  
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.1434 on 61 degrees of freedom
+    ## Multiple R-squared:  0.3199, Adjusted R-squared:  0.2976 
+    ## F-statistic: 14.35 on 2 and 61 DF,  p-value: 7.826e-06
+
+    ## Start:  AIC=-41.39
+    ## median_split_corr ~ 1
+    ## 
+    ##                     Df Deviance     AIC
+    ## + log(observed_N_A)  1   1.3397 -59.827
+    ## + log(N_CR)          1   1.3464 -59.508
+    ## + log(N_RA)          1   1.5514 -50.439
+    ## + log(observed_N_C)  1   1.5597 -50.096
+    ## <none>                   1.8436 -41.394
+    ## + log(observed_N_R)  1   1.8375 -39.607
+    ## + log(N_CA)          1   1.8399 -39.522
+    ## 
+    ## Step:  AIC=-59.83
+    ## median_split_corr ~ log(observed_N_A)
+    ## 
+    ##                     Df Deviance     AIC
+    ## + log(N_CR)          1   1.2538 -62.067
+    ## <none>                   1.3397 -59.827
+    ## + log(N_RA)          1   1.3180 -58.874
+    ## + log(observed_N_R)  1   1.3180 -58.874
+    ## + log(N_CA)          1   1.3369 -57.963
+    ## + log(observed_N_C)  1   1.3369 -57.963
+    ## - log(observed_N_A)  1   1.8436 -41.394
+    ## 
+    ## Step:  AIC=-62.07
+    ## median_split_corr ~ log(observed_N_A) + log(N_CR)
+    ## 
+    ##                     Df Deviance     AIC
+    ## <none>                   1.2538 -62.067
+    ## + log(N_RA)          1   1.2491 -60.307
+    ## + log(N_CA)          1   1.2491 -60.307
+    ## + log(observed_N_C)  1   1.2491 -60.307
+    ## + log(observed_N_R)  1   1.2491 -60.307
+    ## - log(N_CR)          1   1.3397 -59.827
+    ## - log(observed_N_A)  1   1.3464 -59.508
+
+    ## 
+    ## Call:
+    ## glm(formula = median_split_corr ~ log(observed_N_A) + log(N_CR), 
+    ##     data = reliability_characteristics)
+    ## 
+    ## Deviance Residuals: 
+    ##      Min        1Q    Median        3Q       Max  
+    ## -0.39980  -0.07071   0.01840   0.09811   0.27932  
+    ## 
+    ## Coefficients:
+    ##                   Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)        0.43477    0.06180   7.035 2.02e-09 ***
+    ## log(observed_N_A)  0.04172    0.01966   2.122   0.0379 *  
+    ## log(N_CR)          0.03779    0.01849   2.044   0.0453 *  
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## (Dispersion parameter for gaussian family taken to be 0.02055485)
+    ## 
+    ##     Null deviance: 1.8436  on 63  degrees of freedom
+    ## Residual deviance: 1.2538  on 61  degrees of freedom
+    ## AIC: -62.067
+    ## 
+    ## Number of Fisher Scoring iterations: 2
+
+    ## [1] 0.3198969
+
+Approach used by Verhavert et al. (2019):
+
+    ##                                                                                        df
+    ## glm(ssr ~ 1, data = reliability_characteristics, family = gaussian(link = "logit"))     2
+    ## glm(ssr ~ N_CR, data = reliability_characteristics, family = gaussian(link = "logit"))  3
+    ##                                                                                              BIC
+    ## glm(ssr ~ 1, data = reliability_characteristics, family = gaussian(link = "logit"))    -142.7694
+    ## glm(ssr ~ N_CR, data = reliability_characteristics, family = gaussian(link = "logit")) -153.5535
+
+    ## 
+    ## Call:
+    ## glm(formula = ssr ~ N_CR, family = gaussian(link = "logit"), 
+    ##     data = reliability_characteristics)
+    ## 
+    ## Deviance Residuals: 
+    ##       Min         1Q     Median         3Q        Max  
+    ## -0.222757  -0.032873   0.007371   0.052066   0.089445  
+    ## 
+    ## Coefficients:
+    ##              Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept) 1.7803625  0.1010092  17.626   <2e-16 ***
+    ## N_CR        0.0020979  0.0008948   2.345   0.0223 *  
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## (Dispersion parameter for gaussian family taken to be 0.004515218)
+    ## 
+    ##     Null deviance: 0.35355  on 63  degrees of freedom
+    ## Residual deviance: 0.27993  on 62  degrees of freedom
+    ## AIC: -160.03
+    ## 
+    ## Number of Fisher Scoring iterations: 13
+
+    ## 
+    ## Call:
+    ## glm(formula = ssr ~ N_CR, data = reliability_characteristics)
+    ## 
+    ## Deviance Residuals: 
+    ##       Min         1Q     Median         3Q        Max  
+    ## -0.209664  -0.039666   0.005652   0.064737   0.097900  
+    ## 
+    ## Coefficients:
+    ##              Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept) 8.737e-01  9.532e-03  91.660  < 2e-16 ***
+    ## N_CR        4.862e-05  1.529e-05   3.179  0.00231 ** 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## (Dispersion parameter for gaussian family taken to be 0.004903261)
+    ## 
+    ##     Null deviance: 0.35355  on 63  degrees of freedom
+    ## Residual deviance: 0.30400  on 62  degrees of freedom
+    ## AIC: -154.75
+    ## 
+    ## Number of Fisher Scoring iterations: 2
+
+![](figs-web/03-final-analysis/unnamed-chunk-37-1.png)<!-- -->
 
 </details>
 
@@ -1448,6 +1903,170 @@ SSR forced linear regression:
     ## Standardized Coefficients::
     ##  (Intercept) observed_N_A observed_N_C         N_CR 
     ##           NA   -0.3394115    0.5757150    0.3816990
+
+    ## Start:  AIC=-330.71
+    ## ssr ~ 1
+    ## 
+    ##                     Df Sum of Sq     RSS     AIC
+    ## + log(N_CR)          1  0.099766 0.25378 -349.93
+    ## + log(observed_N_C)  1  0.088506 0.26504 -347.15
+    ## + log(observed_N_A)  1  0.071129 0.28242 -343.09
+    ## + log(N_RA)          1  0.025280 0.32827 -333.46
+    ## + log(N_CA)          1  0.012357 0.34119 -330.99
+    ## <none>                           0.35355 -330.71
+    ## + log(observed_N_R)  1  0.000634 0.35292 -328.83
+    ## 
+    ## Step:  AIC=-349.93
+    ## ssr ~ log(N_CR)
+    ## 
+    ##                     Df Sum of Sq     RSS     AIC
+    ## + log(observed_N_C)  1 0.0294530 0.22433 -355.83
+    ## + log(observed_N_R)  1 0.0294530 0.22433 -355.83
+    ## + log(N_RA)          1 0.0255078 0.22828 -354.71
+    ## + log(N_CA)          1 0.0255078 0.22828 -354.71
+    ## <none>                           0.25378 -349.93
+    ## + log(observed_N_A)  1 0.0041892 0.24959 -349.00
+    ## 
+    ## Step:  AIC=-355.83
+    ## ssr ~ log(N_CR) + log(observed_N_C)
+    ## 
+    ##                     Df Sum of Sq     RSS     AIC
+    ## <none>                           0.22433 -355.83
+    ## + log(N_RA)          1 0.0020799 0.22225 -354.42
+    ## + log(N_CA)          1 0.0020799 0.22225 -354.42
+    ## + log(observed_N_A)  1 0.0020799 0.22225 -354.42
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log(N_CR) + log(observed_N_C), data = reliability_characteristics)
+    ## 
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.214910 -0.024555  0.005735  0.039012  0.105553 
+    ## 
+    ## Coefficients:
+    ##                   Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)       0.685368   0.036436  18.810  < 2e-16 ***
+    ## log(N_CR)         0.020992   0.006309   3.327  0.00149 ** 
+    ## log(observed_N_C) 0.015427   0.005451   2.830  0.00629 ** 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06064 on 61 degrees of freedom
+    ## Multiple R-squared:  0.3655, Adjusted R-squared:  0.3447 
+    ## F-statistic: 17.57 on 2 and 61 DF,  p-value: 9.427e-07
+
+    ##                  Step Df   Deviance Resid. Df Resid. Dev       AIC
+    ## 1                     NA         NA        63  0.3535498 -330.7113
+    ## 2         + log(N_CR) -1 0.09976614        62  0.2537837 -349.9300
+    ## 3 + log(observed_N_C) -1 0.02945296        61  0.2243307 -355.8251
+
+    ##                                                                                                           df
+    ## lm(data = reliability_characteristics, formula = ssr ~ log(N_CR))                                          3
+    ## lm(data = reliability_characteristics, formula = ssr ~ log(N_CR) + log(observed_N_C))                      4
+    ## lm(data = reliability_characteristics, formula = ssr ~ log(N_CR) + log(observed_N_R))                      4
+    ## lm(data = reliability_characteristics, formula = ssr ~ log(N_CR) + log(observed_N_C) + log(observed_N_R))  4
+    ##                                                                                                                 AIC
+    ## lm(data = reliability_characteristics, formula = ssr ~ log(N_CR))                                         -166.3059
+    ## lm(data = reliability_characteristics, formula = ssr ~ log(N_CR) + log(observed_N_C))                     -172.2010
+    ## lm(data = reliability_characteristics, formula = ssr ~ log(N_CR) + log(observed_N_R))                     -172.2010
+    ## lm(data = reliability_characteristics, formula = ssr ~ log(N_CR) + log(observed_N_C) + log(observed_N_R)) -172.2010
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log(observed_N_C) + log(observed_N_R) + log(observed_N_A), 
+    ##     data = reliability_characteristics)
+    ## 
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.207754 -0.019514  0.004951  0.036300  0.103931 
+    ## 
+    ## Coefficients:
+    ##                    Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)        0.693546   0.036663  18.917  < 2e-16 ***
+    ## log(observed_N_C)  0.042916   0.010648   4.030 0.000159 ***
+    ## log(observed_N_R) -0.024482   0.007860  -3.115 0.002823 ** 
+    ## log(observed_N_A) -0.007756   0.010350  -0.749 0.456587    
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06086 on 60 degrees of freedom
+    ## Multiple R-squared:  0.3714, Adjusted R-squared:  0.3399 
+    ## F-statistic: 11.82 on 3 and 60 DF,  p-value: 3.503e-06
+
+    ## Start:  AIC=-330.71
+    ## ssr ~ 1
+    ## 
+    ##                      Df Sum of Sq     RSS     AIC
+    ## + log2(observed_N_C)  1  0.088506 0.26504 -347.15
+    ## + log2(observed_N_A)  1  0.071129 0.28242 -343.09
+    ## <none>                            0.35355 -330.71
+    ## + log2(observed_N_R)  1  0.000634 0.35292 -328.83
+    ## 
+    ## Step:  AIC=-347.15
+    ## ssr ~ log2(observed_N_C)
+    ## 
+    ##                      Df Sum of Sq     RSS     AIC
+    ## + log2(observed_N_R)  1  0.040713 0.22433 -355.83
+    ## <none>                            0.26504 -347.15
+    ## + log2(observed_N_A)  1  0.006860 0.25818 -346.83
+    ## - log2(observed_N_C)  1  0.088506 0.35355 -330.71
+    ## 
+    ## Step:  AIC=-355.83
+    ## ssr ~ log2(observed_N_C) + log2(observed_N_R)
+    ## 
+    ##                                         Df Sum of Sq     RSS     AIC
+    ## <none>                                               0.22433 -355.83
+    ## + log2(observed_N_A)                     1  0.002080 0.22225 -354.42
+    ## + log2(observed_N_C):log2(observed_N_R)  1  0.000121 0.22421 -353.86
+    ## - log2(observed_N_R)                     1  0.040713 0.26504 -347.15
+    ## - log2(observed_N_C)                     1  0.128585 0.35292 -328.83
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log2(observed_N_C) + log2(observed_N_R), data = reliability_characteristics)
+    ## 
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.214910 -0.024555  0.005735  0.039012  0.105553 
+    ## 
+    ## Coefficients:
+    ##                     Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)         0.699919   0.035535  19.697  < 2e-16 ***
+    ## log2(observed_N_C)  0.025244   0.004269   5.913 1.64e-07 ***
+    ## log2(observed_N_R) -0.014550   0.004373  -3.327  0.00149 ** 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06064 on 61 degrees of freedom
+    ## Multiple R-squared:  0.3655, Adjusted R-squared:  0.3447 
+    ## F-statistic: 17.57 on 2 and 61 DF,  p-value: 9.427e-07
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log10(N_CR), data = reliability_characteristics)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.23729 -0.02564  0.00939  0.04597  0.08549 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.75917    0.02684  28.281  < 2e-16 ***
+    ## log10(N_CR)  0.06721    0.01361   4.937  6.3e-06 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06398 on 62 degrees of freedom
+    ## Multiple R-squared:  0.2822, Adjusted R-squared:  0.2706 
+    ## F-statistic: 24.37 on 1 and 62 DF,  p-value: 6.299e-06
+
+    ## # A tibble: 1 × 4
+    ##   mean_log10_N_C mean_log10_N_R mean_log10_N_CR mean_N_CR
+    ##            <dbl>          <dbl>           <dbl>     <dbl>
+    ## 1           3.08           1.50            1.88      247.
+
+![](figs-web/03-final-analysis/unnamed-chunk-40-1.png)<!-- -->
 
 #### Regression results (Table 4)
 
@@ -1664,9 +2283,9 @@ And with interactions:
     ##         log_N_C:log_N_R  log_N_A:log_N_C:log_N_R  
     ##                  0.2894                  -4.9372
 
-![](figs-web/03-final-analysis/unnamed-chunk-31-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-45-1.png)<!-- -->
 
-![](figs-web/03-final-analysis/unnamed-chunk-32-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-46-1.png)<!-- -->
 
 </details>
 
@@ -2293,7 +2912,7 @@ precise estimate of the mean `ssr_x` and `split_corr` values. This shows
 the distribution of the SEM for each measure, across all the judging
 sessions:
 
-![](figs-web/03-final-analysis/unnamed-chunk-38-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-52-1.png)<!-- -->
 
     ## # A tibble: 2 × 3
     ##   name       bias_max bias_median

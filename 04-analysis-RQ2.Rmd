@@ -80,25 +80,39 @@ For these plots:
 * Correct comparisons is the proportion of individual decisions that agree with the final rank order of the items.
 
 ```{r reliabilities-distribution}
-observed_reliabilities <- meta_analysis_data %>% 
-  select(judging_session, ssr, median_split_corr) %>% 
-  pivot_longer(-judging_session, names_to = "measure", values_to = "value") %>% 
-  mutate(measure = case_when(
-    measure == "ssr" ~ "Scale Separation Reliability",
-    measure == "median_split_corr" ~ "Split-halves reliability"
-  )) %>% 
-  mutate(measure = fct_relevel(measure, "Scale Separation Reliability", "Split-halves reliability"))
+observed_reliabilities <- meta_analysis_data %>%
+  select(judging_session, ssr, median_split_corr) %>%
+  pivot_longer(-judging_session, names_to = "measure", values_to = "value") %>%
+  mutate(
+    measure = case_when(
+      measure == "ssr" ~ "Scale Separation Reliability",
+      measure == "median_split_corr" ~ "Split-halves reliability"
+    )
+  ) %>%
+  mutate(measure = fct_relevel(
+    measure,
+    "Scale Separation Reliability",
+    "Split-halves reliability"
+  ))
 
-plot_reliabilities <- observed_reliabilities %>% 
+plot_reliabilities <- observed_reliabilities %>%
   ggplot(aes(x = measure, y = value)) +
   #Add individual observations to the plot
   geom_point(
-    position = position_jitter(width=.3, seed = 123), # add jitter to the observations, using seed so it's reproducible
-    alpha=.4, # set the size of each dot. alpha adds transparency
-    color = "black", fill = "black") +
-  geom_boxplot(width = 0.1, position = position_nudge(x = -0.5)) +
+    position = position_jitter(width = .3, seed = 123),
+    # add jitter to the observations, using seed so it's reproducible
+    alpha = .4,
+    # set the size of each dot. alpha adds transparency
+    color = "black",
+    fill = "black"
+  ) +
+  geom_boxplot(
+    width = 0.1,
+    position = position_nudge(x = -0.5),
+    outlier.shape = 4
+  ) +
   #scale_y_continuous(trans='log10', labels = scales::comma, minor_breaks = rep(1:9, 21)*(10^rep(-10:10, each=9))) +
-  facet_wrap(~ measure, scales = "free_y", ncol = 1) + 
+  facet_wrap( ~ measure, scales = "free_y", ncol = 1) +
   coord_flip() +
   labs(x = "", y = "") +
   theme_minimal(base_size = 12) +
