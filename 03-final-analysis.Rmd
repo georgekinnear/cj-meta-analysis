@@ -556,7 +556,7 @@ reliability_predictors %>%
     labs(x = "value (log scale)", y = "Reliability")
 ```
 
-#### Regression model building
+#### Regression model building: SSR
 
 We use a stepwise selection procedure to build up the best fitting model:
 
@@ -634,6 +634,30 @@ lm(data = reliability_predictors, formula = ssr ~ log10(N_CR)) %>% summary()
 Since 28% of variance explained is actually quite a lot of the way toward the best-fitting model's 37%, this does somewhat support the previous conclusion of Verhavert et al. that N_CR is the most important factor to consider. That motivates our focus on it in the next section.
 
 
+#### Regression model building: SHR
+
+We use a stepwise selection procedure to build up the best fitting model:
+
+```{r}
+step_lm_shr <- step(
+  object = lm(data = reliability_predictors, formula = shr ~ 1),
+  scope = ~ log_N_A * log_N_R * log_N_C,
+  direction = "both"
+)
+```
+
+```{r}
+summary(step_lm_shr)
+```
+
+In this case the best-fitting model just has log(N_A) as a predictor, and explains 27% of the variance.
+
+However, note that the model with just log(N_CR) achieves only a marginally lower value of $R^2$:
+
+```{r}
+lm(data = reliability_predictors, formula = shr ~ log10(N_C) + log10(N_R)) %>% summary()
+```
+
 #### Aside: Check on the log transformation
 
 Note that if we did not log-transform the variables, we get a less predictive model. Applying stepwise selection in this case results in a model with N_A as the only predictor, explaining 8% of the variance:
@@ -647,6 +671,8 @@ step_lm <- step(
 
 summary(step_lm)
 ```
+
+
 
 
 ### Correlations (Table 3)
