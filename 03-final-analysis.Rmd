@@ -516,7 +516,7 @@ reliability_characteristics <- meta_analysis_data %>%
     N_CA = observed_N_C/observed_N_A,
     N_CR = 2*observed_N_C/observed_N_R,
     N_RA = observed_N_R/observed_N_A) %>% 
-  filter(adaptivity == FALSE)
+   filter(adaptivity == FALSE)
 
 # write out a copy of this data in case it is useful elsewhere
 reliability_predictors <- reliability_characteristics %>% 
@@ -549,12 +549,134 @@ reliability_predictors %>%
   pivot_longer(cols = c(N_A, N_C, N_R), names_to = "characteristic", values_to = "value") %>% 
   mutate(log_value = log10(value)) %>% 
   ggplot(aes(x = value, y = reliability)) +
-    geom_point(alpha = 0.5, shape = 16) +
-    scale_x_continuous(trans = 'log10', labels = scales::comma) +
-    facet_grid(cols = vars(characteristic), rows = vars(str_to_upper(reliability_measure)), scales = "free_x", switch = "y") +
-    ggpubr::stat_cor(position = position_nudge(y = 0.12), p.accuracy = 0.001) +
-    labs(x = "value (log scale)", y = "Reliability")
+  geom_point(alpha = 0.5, shape = 16) +
+  scale_x_continuous(trans = 'log10', labels = scales::comma) +
+  facet_grid(
+    cols = vars(characteristic),
+    rows = vars(str_to_upper(reliability_measure)),
+    scales = "free_x",
+    switch = "both",
+    labeller = as_labeller(c("N_A"="N[A]", "N_C"="N[C]", "N_R"="N[R]", "SSR"="SSR", "SHR"="SHR"),
+                           default = label_parsed)
+  ) +
+  ggpubr::stat_cor(position = position_nudge(y = 0.12), p.accuracy = 0.001) +
+  labs(x = "", y = "") +
+  theme(
+    strip.placement = "outside",
+    strip.text = element_text(size = 12)
+  )
+
+ggsave("figs-pdf/FIG_05b-chars-vs-reliability.pdf", units = "cm", width = 15, height = 10)
 ```
+
+#### Forced regression
+
+What do we get if we put all three predictors into a linear model?
+
+```{r}
+lm(data = reliability_predictors, formula = ssr ~ log_N_A + log_N_C + log_N_R) %>% summary()
+lm(data = reliability_predictors, formula = shr ~ log_N_A + log_N_C + log_N_R) %>% summary()
+```
+
+In each case, log_N_A is the least significant predictor. Removing it, we get only very slight reductions in R^2 (37% to 36.6% for SSR; 32% to 30% for SHR) and both log_N_C and log_N_R are significant predictors in the models:
+
+```{r}
+lm(data = reliability_predictors, formula = ssr ~ log_N_C + log_N_R) %>% summary()
+lm(data = reliability_predictors, formula = shr ~ log_N_C + log_N_R) %>% summary()
+```
+In fact, replacing these with just log10(N_CR) as a predictor (effectively constraining the coefficients of N_C and N_R to be in a 2-to-1 ratio), we get that it is a significant predictor that still explains a substantial chunk of the variance (28% for SSR and 27% for SHR).
+
+```{r}
+lm(data = reliability_predictors, formula = ssr ~ log10(N_CR)) %>% summary()
+lm(data = reliability_predictors, formula = shr ~ log10(N_CR)) %>% summary()
+```
+
+
+```{r}
+all_regressions_dat <- reliability_predictors %>% 
+  pivot_longer(cols = c("ssr", "shr"), names_to = "reliability_measure", values_to = "reliability_value") %>% 
+  nest(data = -reliability_measure)
+
+regression_results <- bind_rows(
+  all_regressions_dat %>%
+    mutate(
+      lm_object = map(
+        data,
+        ~ lm(reliability_value ~ log_N_A + log_N_C + log_N_R, data = .x)
+      ),
+      model = map(lm_object, broom::tidy),
+      stat = map(lm_object, broom::glance)
+    ) %>%
+    unnest(c(model, stat), names_sep = "_"),
+  all_regressions_dat %>%
+    mutate(
+      lm_object = map(
+        data,
+        ~ lm(reliability_value ~ log_N_C + log_N_R, data = .x)
+      ),
+      model = map(lm_object, broom::tidy),
+      stat = map(lm_object, broom::glance)
+    ) %>%
+    unnest(c(model, stat), names_sep = "_"),
+  all_regressions_dat %>%
+    mutate(
+      lm_object = map(
+        data,
+        ~ lm(reliability_value ~ log10(N_CR), data = .x)
+      ),
+      model = map(lm_object, broom::tidy),
+      stat = map(lm_object, broom::glance)
+    ) %>%
+    unnest(c(model, stat), names_sep = "_"),
+)
+
+table3 <- regression_results %>% 
+  select(-data, -lm_object, -starts_with("stat_"), stat_r.squared, stat_p.value, starts_with("model_")) %>% 
+  select(reliability_measure, starts_with("stat_"), starts_with("model_")) %>% 
+  mutate(stat_p.value = apa_pvalue(stat_p.value)) %>% 
+  mutate(model_p.value = apa_pvalue(model_p.value)) %>% 
+  group_by(reliability_measure) %>% 
+  mutate(
+    reliability_measure = if_else(model_term == "(Intercept)", str_to_upper(reliability_measure), NA),
+    stat_p.value = if_else(model_term == "(Intercept)", stat_p.value, NA),
+    stat_r.squared = if_else(model_term == "(Intercept)", stat_r.squared, NA),
+    model_term = case_when(
+      model_term == "(Intercept)" ~ "Intercept",
+      str_detect(model_term, "log") ~ paste0(str_replace(model_term, 'log_', 'log('), ')')
+    )
+  ) %>% 
+  unnest(reliability_measure)
+
+options(knitr.kable.NA = '')
+table3 %>% 
+  basic_kable(digits = 3, booktabs = TRUE, col.names = c("Model", "R^2", "p", "Term", "Estimate", "SE", "t", "p")) %>%
+  add_header_above(c(" " = 1, "Model fit" = 2, "Coefficients" = 5))
+```
+
+<details><summary>LaTeX table</summary>
+
+```{r}
+table3 %>%
+  basic_kable(
+    #digits = 3,
+    digits = c(2, 2, 3, 2, 2, 2, 2, 3),
+    booktabs = TRUE,
+    format = "latex",
+    col.names = c("Model", "R^2", "p", "Term", "Estimate", "SE", "t", "p")
+  ) %>%
+  add_header_above(c(
+    " " = 1,
+    "Model fit" = 2,
+    "Coefficients" = 5
+  )) %>%
+  as.character() %>%
+  str_replace_all("log\\(N\\\\_([ACR])\\)", "\\\\(\\\\log(N_\\1)\\\\)") %>% 
+  cat()
+
+```
+
+</details>
+
 
 #### Regression model building: SSR
 
@@ -641,7 +763,7 @@ We use a stepwise selection procedure to build up the best fitting model:
 ```{r}
 step_lm_shr <- step(
   object = lm(data = reliability_predictors, formula = shr ~ 1),
-  scope = ~ log_N_A * log_N_R * log_N_C,
+  scope = ~ log_N_A * log_N_C * log_N_R,
   direction = "both"
 )
 ```
@@ -656,6 +778,11 @@ However, note that the model with just log(N_CR) achieves only a marginally lowe
 
 ```{r}
 lm(data = reliability_predictors, formula = shr ~ log10(N_C) + log10(N_R)) %>% summary()
+```
+
+
+```{r}
+lm(data = reliability_predictors, formula = shr ~ log10(N_CR)) %>% summary()
 ```
 
 #### Aside: Check on the log transformation

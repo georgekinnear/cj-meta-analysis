@@ -1178,7 +1178,668 @@ correlate with the two reliability measures:
 
 ![](figs-web/03-final-analysis/unnamed-chunk-16-1.png)<!-- -->
 
-#### Regression model building
+#### Forced regression
+
+What do we get if we put all three predictors into a linear model?
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log_N_A + log_N_C + log_N_R, data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.207754 -0.019514  0.004951  0.036300  0.103931 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.69355    0.03666  18.917  < 2e-16 ***
+    ## log_N_A     -0.01786    0.02383  -0.749 0.456587    
+    ## log_N_C      0.09882    0.02452   4.030 0.000159 ***
+    ## log_N_R     -0.05637    0.01810  -3.115 0.002823 ** 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06086 on 60 degrees of freedom
+    ## Multiple R-squared:  0.3714, Adjusted R-squared:  0.3399 
+    ## F-statistic: 11.82 on 3 and 60 DF,  p-value: 3.503e-06
+
+    ## 
+    ## Call:
+    ## lm(formula = shr ~ log_N_A + log_N_C + log_N_R, data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.39902 -0.06812  0.01420  0.09713  0.28832 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.42966    0.08692   4.943 6.51e-06 ***
+    ## log_N_A      0.08018    0.05650   1.419   0.1611    
+    ## log_N_C      0.10570    0.05813   1.819   0.0740 .  
+    ## log_N_R     -0.08809    0.04291  -2.053   0.0445 *  
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.1443 on 60 degrees of freedom
+    ## Multiple R-squared:  0.3225, Adjusted R-squared:  0.2886 
+    ## F-statistic: 9.518 on 3 and 60 DF,  p-value: 3.111e-05
+
+In each case, log_N_A is the least significant predictor. Removing it,
+we get only very slight reductions in R^2 (37% to 36.6% for SSR; 32% to
+30% for SHR) and both log_N_C and log_N_R are significant predictors in
+the models:
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log_N_C + log_N_R, data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.214910 -0.024555  0.005735  0.039012  0.105553 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.69992    0.03553  19.697  < 2e-16 ***
+    ## log_N_C      0.08386    0.01418   5.913 1.64e-07 ***
+    ## log_N_R     -0.04833    0.01453  -3.327  0.00149 ** 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06064 on 61 degrees of freedom
+    ## Multiple R-squared:  0.3655, Adjusted R-squared:  0.3447 
+    ## F-statistic: 17.57 on 2 and 61 DF,  p-value: 9.427e-07
+
+    ## 
+    ## Call:
+    ## lm(formula = shr ~ log_N_C + log_N_R, data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.41620 -0.06305  0.01999  0.10114  0.28104 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.40105    0.08525   4.705 1.50e-05 ***
+    ## log_N_C      0.17287    0.03402   5.081 3.81e-06 ***
+    ## log_N_R     -0.12416    0.03485  -3.563 0.000719 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.1455 on 61 degrees of freedom
+    ## Multiple R-squared:  0.2997, Adjusted R-squared:  0.2768 
+    ## F-statistic: 13.05 on 2 and 61 DF,  p-value: 1.91e-05
+
+In fact, replacing these with just log10(N_CR) as a predictor
+(effectively constraining the coefficients of N_C and N_R to be in a
+2-to-1 ratio), we get that it is a significant predictor that still
+explains a substantial chunk of the variance (28% for SSR and 27% for
+SHR).
+
+    ## 
+    ## Call:
+    ## lm(formula = ssr ~ log10(N_CR), data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.23729 -0.02564  0.00939  0.04597  0.08549 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.75917    0.02684  28.281  < 2e-16 ***
+    ## log10(N_CR)  0.06721    0.01361   4.937  6.3e-06 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.06398 on 62 degrees of freedom
+    ## Multiple R-squared:  0.2822, Adjusted R-squared:  0.2706 
+    ## F-statistic: 24.37 on 1 and 62 DF,  p-value: 6.299e-06
+
+    ## 
+    ## Call:
+    ## lm(formula = shr ~ log10(N_CR), data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.43400 -0.07202  0.02697  0.11457  0.23662 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.46486    0.06183   7.518 2.71e-10 ***
+    ## log10(N_CR)  0.15005    0.03136   4.785 1.10e-05 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.1474 on 62 degrees of freedom
+    ## Multiple R-squared:  0.2697, Adjusted R-squared:  0.2579 
+    ## F-statistic: 22.89 on 1 and 62 DF,  p-value: 1.098e-05
+
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+
+Model fit
+
+</div>
+
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="5">
+
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+
+Coefficients
+
+</div>
+
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+Model
+</th>
+<th style="text-align:right;">
+R^2
+</th>
+<th style="text-align:left;">
+p
+</th>
+<th style="text-align:left;">
+Term
+</th>
+<th style="text-align:right;">
+Estimate
+</th>
+<th style="text-align:right;">
+SE
+</th>
+<th style="text-align:right;">
+t
+</th>
+<th style="text-align:left;">
+p
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SSR
+</td>
+<td style="text-align:right;">
+0.371
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+<td style="text-align:left;">
+Intercept
+</td>
+<td style="text-align:right;">
+0.694
+</td>
+<td style="text-align:right;">
+0.037
+</td>
+<td style="text-align:right;">
+18.917
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log(N_A)
+</td>
+<td style="text-align:right;">
+-0.018
+</td>
+<td style="text-align:right;">
+0.024
+</td>
+<td style="text-align:right;">
+-0.749
+</td>
+<td style="text-align:left;">
+.457
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log(N_C)
+</td>
+<td style="text-align:right;">
+0.099
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+4.030
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log(N_R)
+</td>
+<td style="text-align:right;">
+-0.056
+</td>
+<td style="text-align:right;">
+0.018
+</td>
+<td style="text-align:right;">
+-3.115
+</td>
+<td style="text-align:left;">
+.003
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SHR
+</td>
+<td style="text-align:right;">
+0.322
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+<td style="text-align:left;">
+Intercept
+</td>
+<td style="text-align:right;">
+0.430
+</td>
+<td style="text-align:right;">
+0.087
+</td>
+<td style="text-align:right;">
+4.943
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log(N_A)
+</td>
+<td style="text-align:right;">
+0.080
+</td>
+<td style="text-align:right;">
+0.057
+</td>
+<td style="text-align:right;">
+1.419
+</td>
+<td style="text-align:left;">
+.161
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log(N_C)
+</td>
+<td style="text-align:right;">
+0.106
+</td>
+<td style="text-align:right;">
+0.058
+</td>
+<td style="text-align:right;">
+1.819
+</td>
+<td style="text-align:left;">
+.074
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log(N_R)
+</td>
+<td style="text-align:right;">
+-0.088
+</td>
+<td style="text-align:right;">
+0.043
+</td>
+<td style="text-align:right;">
+-2.053
+</td>
+<td style="text-align:left;">
+.044
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SSR
+</td>
+<td style="text-align:right;">
+0.365
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+<td style="text-align:left;">
+Intercept
+</td>
+<td style="text-align:right;">
+0.700
+</td>
+<td style="text-align:right;">
+0.036
+</td>
+<td style="text-align:right;">
+19.697
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log(N_C)
+</td>
+<td style="text-align:right;">
+0.084
+</td>
+<td style="text-align:right;">
+0.014
+</td>
+<td style="text-align:right;">
+5.913
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log(N_R)
+</td>
+<td style="text-align:right;">
+-0.048
+</td>
+<td style="text-align:right;">
+0.015
+</td>
+<td style="text-align:right;">
+-3.327
+</td>
+<td style="text-align:left;">
+.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SHR
+</td>
+<td style="text-align:right;">
+0.300
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+<td style="text-align:left;">
+Intercept
+</td>
+<td style="text-align:right;">
+0.401
+</td>
+<td style="text-align:right;">
+0.085
+</td>
+<td style="text-align:right;">
+4.705
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log(N_C)
+</td>
+<td style="text-align:right;">
+0.173
+</td>
+<td style="text-align:right;">
+0.034
+</td>
+<td style="text-align:right;">
+5.081
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log(N_R)
+</td>
+<td style="text-align:right;">
+-0.124
+</td>
+<td style="text-align:right;">
+0.035
+</td>
+<td style="text-align:right;">
+-3.563
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SSR
+</td>
+<td style="text-align:right;">
+0.282
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+<td style="text-align:left;">
+Intercept
+</td>
+<td style="text-align:right;">
+0.759
+</td>
+<td style="text-align:right;">
+0.027
+</td>
+<td style="text-align:right;">
+28.281
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log10(N_CR))
+</td>
+<td style="text-align:right;">
+0.067
+</td>
+<td style="text-align:right;">
+0.014
+</td>
+<td style="text-align:right;">
+4.937
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SHR
+</td>
+<td style="text-align:right;">
+0.270
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+<td style="text-align:left;">
+Intercept
+</td>
+<td style="text-align:right;">
+0.465
+</td>
+<td style="text-align:right;">
+0.062
+</td>
+<td style="text-align:right;">
+7.518
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+log10(N_CR))
+</td>
+<td style="text-align:right;">
+0.150
+</td>
+<td style="text-align:right;">
+0.031
+</td>
+<td style="text-align:right;">
+4.785
+</td>
+<td style="text-align:left;">
+\<0.001
+</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+LaTeX table
+</summary>
+
+    ## \begin{table}
+    ## \centering
+    ## \begin{tabular}{lrllrrrl}
+    ## \toprule
+    ## \multicolumn{1}{c}{ } & \multicolumn{2}{c}{Model fit} & \multicolumn{5}{c}{Coefficients} \\
+    ## \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-8}
+    ## Model & R\textasciicircum{}2 & p & Term & Estimate & SE & t & p\\
+    ## \midrule
+    ## SSR & 0.37 & <0.001 & Intercept & 0.69 & 0.04 & 18.92 & <0.001\\
+    ##  &  &  & \(\log(N_A)\) & -0.02 & 0.02 & -0.75 & .457\\
+    ##  &  &  & \(\log(N_C)\) & 0.10 & 0.02 & 4.03 & <0.001\\
+    ##  &  &  & \(\log(N_R)\) & -0.06 & 0.02 & -3.11 & .003\\
+    ## SHR & 0.32 & <0.001 & Intercept & 0.43 & 0.09 & 4.94 & <0.001\\
+    ## \addlinespace
+    ##  &  &  & \(\log(N_A)\) & 0.08 & 0.06 & 1.42 & .161\\
+    ##  &  &  & \(\log(N_C)\) & 0.11 & 0.06 & 1.82 & .074\\
+    ##  &  &  & \(\log(N_R)\) & -0.09 & 0.04 & -2.05 & .044\\
+    ## SSR & 0.37 & <0.001 & Intercept & 0.70 & 0.04 & 19.70 & <0.001\\
+    ##  &  &  & \(\log(N_C)\) & 0.08 & 0.01 & 5.91 & <0.001\\
+    ## \addlinespace
+    ##  &  &  & \(\log(N_R)\) & -0.05 & 0.01 & -3.33 & .001\\
+    ## SHR & 0.30 & <0.001 & Intercept & 0.40 & 0.09 & 4.70 & <0.001\\
+    ##  &  &  & \(\log(N_C)\) & 0.17 & 0.03 & 5.08 & <0.001\\
+    ##  &  &  & \(\log(N_R)\) & -0.12 & 0.03 & -3.56 & <0.001\\
+    ## SSR & 0.28 & <0.001 & Intercept & 0.76 & 0.03 & 28.28 & <0.001\\
+    ## \addlinespace
+    ##  &  &  & log10(N\_CR)) & 0.07 & 0.01 & 4.94 & <0.001\\
+    ## SHR & 0.27 & <0.001 & Intercept & 0.46 & 0.06 & 7.52 & <0.001\\
+    ##  &  &  & log10(N\_CR)) & 0.15 & 0.03 & 4.78 & <0.001\\
+    ## \bottomrule
+    ## \end{tabular}
+    ## \end{table}
+
+</details>
+
+#### Regression model building: SSR
 
 We use a stepwise selection procedure to build up the best fitting
 model:
@@ -1243,13 +1904,13 @@ coefficient for N_C you need to keep N_R fixed.
 Here each predictor is shown separately, along with the regression line
 given by the best-fitting model:
 
-![](figs-web/03-final-analysis/unnamed-chunk-19-1.png)<!-- -->![](figs-web/03-final-analysis/unnamed-chunk-19-2.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-24-1.png)<!-- -->![](figs-web/03-final-analysis/unnamed-chunk-24-2.png)<!-- -->
 
 So for instance, assuming the number of representations is kept
 constant, increasing the number of comparisons by 10% would increase the
 SSR by $0.08386 \times \log_{10}(1.1)=0.0034$.
 
-![](figs-web/03-final-analysis/unnamed-chunk-20-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-25-1.png)<!-- -->
 
 Alternatively, using log with base 2, the coefficients show e.g. “what
 happens to SSR if you double N_C”:
@@ -1313,7 +1974,7 @@ not independent – e.g., to interpret the coefficient for N_C you would
 need to keep N_CR fixed and to do this you would need to adjust N_R.
 
 Using only N_CR as a predictor does make the model a bit worse – the
-$R^2$ goes down to .28 – but it’s not hugely much worse:
+$R^2$ goes down to .28:
 
     ## 
     ## Call:
@@ -1334,7 +1995,99 @@ $R^2$ goes down to .28 – but it’s not hugely much worse:
     ## Multiple R-squared:  0.2822, Adjusted R-squared:  0.2706 
     ## F-statistic: 24.37 on 1 and 62 DF,  p-value: 6.299e-06
 
-#### Check on the log transformation
+Since 28% of variance explained is actually quite a lot of the way
+toward the best-fitting model’s 37%, this does somewhat support the
+previous conclusion of Verhavert et al. that N_CR is the most important
+factor to consider. That motivates our focus on it in the next section.
+
+#### Regression model building: SHR
+
+We use a stepwise selection procedure to build up the best fitting
+model:
+
+    ## Start:  AIC=-225.02
+    ## shr ~ 1
+    ## 
+    ##           Df Sum of Sq    RSS     AIC
+    ## + log_N_A  1   0.50390 1.3397 -243.45
+    ## + log_N_C  1   0.28389 1.5597 -233.72
+    ## <none>                 1.8436 -225.02
+    ## + log_N_R  1   0.00613 1.8375 -223.23
+    ## 
+    ## Step:  AIC=-243.45
+    ## shr ~ log_N_A
+    ## 
+    ##           Df Sum of Sq    RSS     AIC
+    ## <none>                 1.3397 -243.45
+    ## + log_N_R  1   0.02173 1.3180 -242.50
+    ## + log_N_C  1   0.00284 1.3369 -241.59
+    ## - log_N_A  1   0.50390 1.8436 -225.02
+
+    ## 
+    ## Call:
+    ## lm(formula = shr ~ log_N_A, data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.39301 -0.09856  0.03871  0.09005  0.30634 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.49865    0.05466   9.122 4.59e-13 ***
+    ## log_N_A      0.16061    0.03326   4.829 9.35e-06 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.147 on 62 degrees of freedom
+    ## Multiple R-squared:  0.2733, Adjusted R-squared:  0.2616 
+    ## F-statistic: 23.32 on 1 and 62 DF,  p-value: 9.348e-06
+
+In this case the best-fitting model just has log(N_A) as a predictor,
+and explains 27% of the variance.
+
+However, note that the model with just log(N_CR) achieves only a
+marginally lower value of $R^2$:
+
+    ## 
+    ## Call:
+    ## lm(formula = shr ~ log10(N_C) + log10(N_R), data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.41620 -0.06305  0.01999  0.10114  0.28104 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.40105    0.08525   4.705 1.50e-05 ***
+    ## log10(N_C)   0.17287    0.03402   5.081 3.81e-06 ***
+    ## log10(N_R)  -0.12416    0.03485  -3.563 0.000719 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.1455 on 61 degrees of freedom
+    ## Multiple R-squared:  0.2997, Adjusted R-squared:  0.2768 
+    ## F-statistic: 13.05 on 2 and 61 DF,  p-value: 1.91e-05
+
+    ## 
+    ## Call:
+    ## lm(formula = shr ~ log10(N_CR), data = reliability_predictors)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -0.43400 -0.07202  0.02697  0.11457  0.23662 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  0.46486    0.06183   7.518 2.71e-10 ***
+    ## log10(N_CR)  0.15005    0.03136   4.785 1.10e-05 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 0.1474 on 62 degrees of freedom
+    ## Multiple R-squared:  0.2697, Adjusted R-squared:  0.2579 
+    ## F-statistic: 22.89 on 1 and 62 DF,  p-value: 1.098e-05
+
+#### Aside: Check on the log transformation
 
 Note that if we did not log-transform the variables, we get a less
 predictive model. Applying stepwise selection in this case results in a
@@ -1860,7 +2613,7 @@ Approach used by Verhavert et al. (2019):
     ## 
     ## Number of Fisher Scoring iterations: 2
 
-![](figs-web/03-final-analysis/unnamed-chunk-37-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-46-1.png)<!-- -->
 
 </details>
 
@@ -2066,7 +2819,7 @@ SSR forced linear regression:
     ##            <dbl>          <dbl>           <dbl>     <dbl>
     ## 1           3.08           1.50            1.88      247.
 
-![](figs-web/03-final-analysis/unnamed-chunk-40-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-49-1.png)<!-- -->
 
 #### Regression results (Table 4)
 
@@ -2118,13 +2871,11 @@ p
 (Intercept)
 </td>
 <td style="text-align:right;">
-NA
 </td>
 <td style="text-align:left;">
 \<0.001\*\*\*
 </td>
 <td style="text-align:right;">
-NA
 </td>
 <td style="text-align:left;">
 \<0.001\*\*\*
@@ -2196,7 +2947,7 @@ LaTeX table
     ## \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5}
     ## Characteristic & beta & p & beta & p\\
     ## \midrule
-    ## (Intercept) & NA & <0.001*** & NA & <0.001***\\
+    ## (Intercept) &  & <0.001*** &  & <0.001***\\
     ## observed\_N\_A & 0.13 & .819 & -0.34 & .533\\
     ## observed\_N\_C & 0.10 & .859 & 0.58 & .286\\
     ## N\_CR & 0.29 & .028* & 0.38 & .003**\\
@@ -2283,9 +3034,9 @@ And with interactions:
     ##         log_N_C:log_N_R  log_N_A:log_N_C:log_N_R  
     ##                  0.2894                  -4.9372
 
-![](figs-web/03-final-analysis/unnamed-chunk-45-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-54-1.png)<!-- -->
 
-![](figs-web/03-final-analysis/unnamed-chunk-46-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-55-1.png)<!-- -->
 
 </details>
 
@@ -2912,7 +3663,7 @@ precise estimate of the mean `ssr_x` and `split_corr` values. This shows
 the distribution of the SEM for each measure, across all the judging
 sessions:
 
-![](figs-web/03-final-analysis/unnamed-chunk-52-1.png)<!-- -->
+![](figs-web/03-final-analysis/unnamed-chunk-61-1.png)<!-- -->
 
     ## # A tibble: 2 × 3
     ##   name       bias_max bias_median
