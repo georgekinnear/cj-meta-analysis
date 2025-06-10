@@ -35,6 +35,6 @@ We collected raw comparative judgement data from each study -- either from exist
 
 * [01-data-summary.Rmd](01-data-summary.Rmd) - [output here](01-data-summary.md) - summarises features of the CJ datasets
 
-* [02-computation.R](02-computation.R) - this script fits the Bradley-Terry model to each of the CJ datasets, and computes the reliability statistics featuring in our meta-analysis. It saves intermediate computations (e.g., split-halves) into the `data-cache` folder, which is not shared here due to its size. The final results of the calculations are saved as [data/01-meta-analysis-data.csv](data/01-meta-analysis-data.csv).
+* [02-computation.R](02-computation.R) - this script fits the Bradley-Terry model to each of the CJ datasets, and computes the reliability statistics featuring in our meta-analysis. It saves intermediate computations into the `data-cache` folder (note however that the cached split-halves are not shared here due their size). The final results of the calculations are saved as [data/01-meta-analysis-data.csv](data/01-meta-analysis-data.csv).
 
 * [03-final-analysis.Rmd](03-final-analysis.Rmd) - [output here](03-final-analysis.Rmd) - this includes all of the analyses reported in the paper, and generates all the tables/figures that appear in the paper (these are saved in the `figs-pdf` folder).
